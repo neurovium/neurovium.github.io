@@ -1,0 +1,52 @@
+title: "Nima Dehghani"
+description: "Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics"
+author: "Nima Dehghani"
+email: nima_d@mit.edu
+url: "https://neurovium.github.io"
+baseurl: ""
+
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:year/:month/:day/:title/
+
+collections:
+  papers:
+    output: true
+    permalink: /papers/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: papers
+    values:
+      layout: paper
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - CLAUDE.md
+  - "CLAUDE.md:*"
+  - vendor
+  - node_modules
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+social:
+  github: "https://github.com/neurovium"
+  scholar: "https://scholar.google.com/citations?user=XXXXXX"
+  linkedin: "https://linkedin.com/in/XXXXXX"
+  twitter: "https://twitter.com/XXXXXX"
+  bluesky: "https://bsky.app/profile/XXXXXX"
+  email: "nima_d@mit.edu"
+
+n3hub: "https://sites.mit.edu/n3hub/"
+compneuro: "https://compneuro.mit.edu/"

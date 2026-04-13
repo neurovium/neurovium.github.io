@@ -1,0 +1,24 @@
+{% assign path = page.url %}
+<aside class="sidebar" id="sidebar" aria-label="Primary">
+  <div class="sidebar__brand">
+    <a href="{{ '/' | relative_url }}">Nima Dehghani</a>
+    <div class="sidebar__tagline">Neuroscience Researcher @ MIT</div>
+  </div>
+
+  <nav class="sidebar__nav" aria-label="Main navigation">
+    <a href="{{ '/' | relative_url }}" class="{% if path == '/' %}is-active{% endif %}">Home</a>
+    <a href="{{ '/about/' | relative_url }}" class="{% if path contains '/about' %}is-active{% endif %}">About</a>
+    <a href="{{ '/papers/' | relative_url }}" class="{% if path contains '/papers' %}is-active{% endif %}">Papers</a>
+    <a href="{{ '/presentations/' | relative_url }}" class="{% if path contains '/presentations' %}is-active{% endif %}">Presentations</a>
+    <a href="{{ '/blog/' | relative_url }}" class="{% if path contains '/blog' %}is-active{% endif %}">Blog</a>
+  </nav>
+
+  <div class="sidebar__social" aria-label="Social links">
+    {% include social-icons.html %}
+  </div>
+
+  <div class="sidebar__footer">
+    <a href="{{ site.n3hub }}" target="_blank" rel="noopener">N3HUB</a> ·
+    <a href="{{ site.compneuro }}" target="_blank" rel="noopener">compneuro@MIT</a>
+  </div>
+</aside>

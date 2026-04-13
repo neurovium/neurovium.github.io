@@ -1,0 +1,44 @@
+---
+layout: default
+title: Home
+---
+
+<section class="hero">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <h1 class="hero__name">Nima Dehghani</h1>
+  <div class="hero__tagline">NeuroPhysics · NeuroComputation · NeuroDynamics</div>
+  <div class="hero__affiliation">
+    MIT ·
+    <a href="{{ site.n3hub }}" target="_blank" rel="noopener">N3HUB Research Group</a> ·
+    <a href="{{ site.compneuro }}" target="_blank" rel="noopener">compneuro@MIT</a>
+  </div>
+  <div class="hero__social">
+    {% include social-icons.html %}
+  </div>
+</section>
+
+<section>
+  <div class="section-title">
+    <h2>Latest</h2>
+    <span class="meta">// recent papers & posts</span>
+  </div>
+
+  {% assign papers = site.papers | sort: 'date' | reverse %}
+  {% assign posts = site.posts %}
+
+  <div class="card-grid">
+    {% for p in papers limit: 6 %}
+      {% include paper-card.html paper=p %}
+    {% endfor %}
+
+    {% for post in posts limit: 3 %}
+      <a class="card card--compact reveal" href="{{ post.url | relative_url }}">
+        <div class="card__body">
+          <span class="card__kicker">Post · {{ post.date | date: "%Y" }}</span>
+          <h3 class="card__title">{{ post.title }}</h3>
+          <div class="card__meta">{{ post.date | date: "%b %-d, %Y" }}</div>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</section>

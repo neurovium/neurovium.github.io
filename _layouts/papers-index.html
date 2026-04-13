@@ -1,0 +1,85 @@
+---
+layout: default
+---
+
+<header style="padding:2rem 0 1rem;border-bottom:1px solid var(--border);margin-bottom:1.5rem;">
+  <h1>{{ page.title }}</h1>
+  {% if page.description %}<p style="color:var(--text-secondary);max-width:62ch;">{{ page.description }}</p>{% endif %}
+</header>
+
+<div class="tag-filter" id="tag-filter" role="toolbar" aria-label="Filter papers by tag">
+  <button type="button" class="is-active" data-tag="__all__">All</button>
+</div>
+
+<div class="card-grid" id="papers-grid">
+  {% assign papers = site.papers | sort: 'date' | reverse %}
+  {% for p in papers %}
+    {% include paper-card.html paper=p %}
+  {% endfor %}
+</div>
+
+<p id="papers-empty" style="display:none;color:var(--text-dim);padding:2rem 0;">No papers match the selected tags.</p>
+
+<script>
+(function () {
+  const grid = document.getElementById('papers-grid');
+  const filterBar = document.getElementById('tag-filter');
+  const empty = document.getElementById('papers-empty');
+  if (!grid || !filterBar) return;
+
+  const cards = Array.from(grid.querySelectorAll('.card'));
+  const tagSet = new Set();
+  cards.forEach(c => (c.dataset.tags || '').split(',').forEach(t => {
+    const tag = t.trim();
+    if (tag) tagSet.add(tag);
+  }));
+
+  const tags = Array.from(tagSet).sort();
+  tags.forEach(tag => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.dataset.tag = tag;
+    b.textContent = tag;
+    filterBar.appendChild(b);
+  });
+
+  const active = new Set();
+
+  function apply() {
+    const all = active.size === 0;
+    let visible = 0;
+    cards.forEach(card => {
+      const cardTags = (card.dataset.tags || '').split(',').map(s => s.trim());
+      const match = all || Array.from(active).every(t => cardTags.includes(t));
+      card.classList.toggle('is-hidden', !match);
+      if (match) visible++;
+    });
+    empty.style.display = visible === 0 ? 'block' : 'none';
+
+    filterBar.querySelectorAll('button').forEach(btn => {
+      const t = btn.dataset.tag;
+      const on = t === '__all__' ? all : active.has(t);
+      btn.classList.toggle('is-active', on);
+    });
+  }
+
+  // Read initial filter from URL (?tag=foo or ?tags=a,b)
+  const params = new URLSearchParams(location.search);
+  const initial = (params.get('tags') || params.get('tag') || '').split(',').map(s => s.trim()).filter(Boolean);
+  initial.forEach(t => { if (tagSet.has(t)) active.add(t); });
+
+  filterBar.addEventListener('click', (e) => {
+    const btn = e.target.closest('button');
+    if (!btn) return;
+    const t = btn.dataset.tag;
+    if (t === '__all__') {
+      active.clear();
+    } else {
+      if (active.has(t)) active.delete(t); else active.add(t);
+    }
+    apply();
+  });
+
+  apply();
+})();
+</script>

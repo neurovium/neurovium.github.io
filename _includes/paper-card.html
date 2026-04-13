@@ -1,0 +1,19 @@
+{% assign p = include.paper %}
+<a class="card reveal" href="{{ p.url | relative_url }}" data-tags="{{ p.tags | join: ',' }}">
+  {% if p.image %}
+    <img class="card__image" src="{{ p.image | relative_url }}" alt="{{ p.title | escape }}">
+  {% else %}
+    <div class="card__placeholder" aria-hidden="true"></div>
+  {% endif %}
+  <div class="card__overlay" aria-hidden="true"></div>
+  <div class="card__body">
+    <span class="card__kicker">Paper · {{ p.year }}</span>
+    <h3 class="card__title">{{ p.title }}</h3>
+    <div class="card__meta">{{ p.venue }}{% if p.authors %} · {{ p.authors }}{% endif %}</div>
+    {% if p.tags %}
+    <div class="card__tags">
+      {% for t in p.tags limit: 3 %}<span class="tag">{{ t }}</span>{% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</a>
