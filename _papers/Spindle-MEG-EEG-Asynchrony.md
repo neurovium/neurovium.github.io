@@ -11,7 +11,7 @@ tags: [Spindle, Sleep, Oscillation, Synchrony, MEG, EEG]
 arxiv: ""
 doi: "10.1152/jn.00198.2010"
 pdf: ""
-repo: "https://github.com/neurovium/depth-coarse-graining"
+repo: ""
 mirrors:
   - name: "Journal link"
     url: "https://journals.physiology.org/doi/full/10.1152/jn.00198.2010"
