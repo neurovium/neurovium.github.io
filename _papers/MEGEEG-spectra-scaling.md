@@ -292,9 +292,7 @@ The paper therefore makes a methodological point that remains important:
 This matters especially for low-frequency field potentials, where tissue filtering and volume conduction can be substantial. If the extracellular medium imposes a frequency-dependent transfer function, then the measured PSD can be written schematically as
 
 $$
-P_{\mathrm{measured}}(f)
-=
-|H(f)|^2 P_{\mathrm{source}}(f),
+P_{\mathrm{measured}}(f) = |H(f)|^2 P_{\mathrm{source}}(f),
 $$
 
 where $H(f)$ is an effective transfer function of the medium, geometry, and measurement apparatus. A resistive medium corresponds to a much simpler case in which $H(f)$ does not introduce strong frequency dependence. A non-resistive medium does.
