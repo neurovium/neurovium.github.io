@@ -10,9 +10,9 @@ Block:
 
 
 
-\[
+$$
 \nabla \cdot \mathbf{E} = \rho
-\]
+$$
 
 
 $$
