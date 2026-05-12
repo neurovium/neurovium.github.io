@@ -10,7 +10,7 @@ image: /assets/img/papers/depth-cg-teaser.png
 tags: [Spindle, Synchrony, MEG, EEG, Cortex, Thalamus, Inverse solution, Oscillation]
 arxiv: ""
 doi: "https://doi.org/10.1016/j.clinph.2010.06.018"
-pdf: ""
+pdf: "https://www.sciencedirect.com/science/article/pii/S1388245710005432/pdf"
 repo: ""
 mirrors:
   - name: "Journal Link"
