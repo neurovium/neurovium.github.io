@@ -790,11 +790,10 @@ a.tag:hover { color: var(--fork); border-color: var(--fork-soft); }
 }
 
 /* =====================================================================
-   Open Science page  (/open-science/)
-   Three-tab data-driven layout: ODIN · Essays · Papers.
-   Tabs reuse the embossed .ebtn slab; cards reuse .news shadow tokens.
+   Open Science  (/open-science/ + sub-pages /odin/, /essays/, /papers/)
    ===================================================================== */
 
+/* Manifesto + landing intro */
 .os-manifesto {
   font-family: var(--serif); font-style: italic; font-weight: 300;
   font-size: 20px; line-height: 1.4; color: var(--ink-soft);
@@ -806,20 +805,66 @@ a.tag:hover { color: var(--fork); border-color: var(--fork-soft); }
   font-family: var(--sans); font-size: 16px; line-height: 1.7;
   letter-spacing: 0.16px; color: var(--body); max-width: 62ch; margin: 0;
 }
+.os-manifesto__body em { font-family: var(--serif); font-style: italic; color: var(--ink-soft); }
 
-.os-tabs {
-  display: flex; flex-wrap: wrap; gap: 12px;
-  margin: 28px 0 36px; padding-bottom: 22px;
-  border-bottom: 1px solid var(--hairline);
+/* Crumb in sub-page kicker */
+.os-crumb { color: var(--fork); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.18s; }
+.os-crumb:hover { border-bottom-color: var(--fork); }
+.os-crumb-sep { color: var(--muted-soft); margin: 0 4px; }
+
+/* ----- Landing: 3 raised tile-buttons ----- */
+.os-tiles {
+  display: grid; gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin: 32px 0 8px;
 }
-.os-tabs .ebtn { height: 44px; padding: 0 20px; font-size: 14px; letter-spacing: 0.02em; }
-.os-tabs .ebtn svg { width: 15px; height: 15px; }
+.os-tile {
+  position: relative; display: flex; flex-direction: column;
+  padding: 28px 26px 26px; border-radius: 18px;
+  text-decoration: none; color: inherit;
+  background: linear-gradient(to bottom, #faf3e4 0%, #ecdcbc 100%);
+  border: 1px solid #c9b48f;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.95), inset 0 -1px 0 rgba(122,75,30,0.10),
+    0 1px 0 #c9b48f, 0 3px 0 -1px #ecdcbc, 0 5px 0 -2px #c9b48f,
+    0 12px 24px -6px rgba(74,46,24,0.22), 0 2px 4px rgba(74,46,24,0.06);
+  transition: transform 0.18s ease, box-shadow 0.22s ease, border-color 0.18s ease;
+}
+.os-tile:hover {
+  transform: translateY(-2px); border-color: var(--ink);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1), 0 1px 0 var(--ink),
+    0 5px 0 -1px #ecdcbc, 0 8px 0 -2px var(--ink),
+    0 18px 30px -8px rgba(74,46,24,0.32);
+}
+.os-tile:active { transform: translateY(2px); box-shadow: inset 0 2px 6px rgba(74,46,24,0.18), 0 1px 0 #c9b48f, 0 1px 4px rgba(74,46,24,0.12); }
 
-.os-panel { display: none; }
-.os-panel.is-active { display: block; animation: osFade 0.32s var(--ease); }
-@keyframes osFade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+.os-tile__art {
+  width: 96px; height: 96px; border-radius: 14px;
+  margin-bottom: 18px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--paper-soft); border: 1px solid var(--hairline-strong);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.7), 0 2px 4px rgba(74,46,24,0.08);
+  overflow: hidden;
+}
+.os-tile__art--image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.os-tile__art--icon { color: var(--ink-soft); }
+.os-tile__art--icon svg { width: 56px; height: 56px; }
 
-/* ODIN intro head: logo + prose */
+.os-tile__kicker {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
+}
+.os-tile__title {
+  font-family: var(--serif); font-weight: 300; font-size: 30px;
+  line-height: 1.1; letter-spacing: -0.6px; color: var(--ink); margin: 0 0 6px;
+}
+.os-tile__sub {
+  font-family: var(--sans); font-size: 14px; line-height: 1.55;
+  letter-spacing: 0.12px; color: var(--body); margin: 0;
+}
+
+/* ----- ODIN sub-page ----- */
 .os-odin-head {
   display: grid; grid-template-columns: 168px 1fr; gap: 28px; align-items: start;
   margin-bottom: 36px; padding-bottom: 28px;
@@ -837,21 +882,21 @@ a.tag:hover { color: var(--fork); border-color: var(--fork-soft); }
   letter-spacing: 0.16px; color: var(--body); margin: 0 0 12px;
 }
 .os-odin-intro em { font-family: var(--serif); font-style: italic; color: var(--ink-soft); }
-.os-odin-links {
-  list-style: none; padding: 0; margin: 6px 0 0;
-  display: flex; flex-wrap: wrap; gap: 8px 18px;
+
+/* Plain inline link row — used across ODIN intro, events, essays, papers */
+.os-inline-links {
+  font-family: var(--sans); font-size: 14px; color: var(--ink-soft);
+  margin: 6px 0 0; letter-spacing: 0.12px;
 }
-.os-odin-links a {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em;
-  text-transform: uppercase; color: var(--ink); text-decoration: none;
-  border-bottom: 1px solid var(--hairline-strong); padding-bottom: 2px;
+.os-inline-links a {
+  color: var(--ink); text-decoration: none;
+  border-bottom: 1px solid var(--hairline-strong); padding-bottom: 1px;
+  transition: border-color 0.18s, color 0.18s;
 }
-.os-odin-links a:hover { border-bottom-color: var(--ink); }
-.os-odin-links svg { width: 12px; height: 12px; }
+.os-inline-links a:hover { border-bottom-color: var(--ink); color: var(--ink-press); }
 
 /* Event cards (ODIN symposia / workshops) */
-.os-events { display: flex; flex-direction: column; gap: 28px; max-width: 820px; }
+.os-events { display: flex; flex-direction: column; gap: 28px; max-width: 860px; }
 .os-event {
   position: relative; padding: 24px 26px; border-radius: 16px;
   border: 1px solid var(--card-edge); background: var(--card-bg, var(--paper));
@@ -859,7 +904,7 @@ a.tag:hover { color: var(--fork); border-color: var(--fork-soft); }
     inset 0 1px 0 rgba(255,255,255,0.85), inset 0 -1px 0 rgba(122,75,30,0.06),
     0 1px 0 var(--card-edge), 0 3px 0 -1px #e2cdaa, 0 5px 0 -2px var(--card-edge),
     0 12px 22px -8px rgba(74,46,24,0.20);
-  display: flex; flex-direction: column; gap: 14px;
+  display: flex; flex-direction: column; gap: 12px;
 }
 .os-event__kicker {
   font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em;
@@ -885,42 +930,20 @@ a.tag:hover { color: var(--fork); border-color: var(--fork-soft); }
   border-radius: 12px; overflow: hidden;
   background: var(--ink); border: 1px solid var(--card-edge);
   box-shadow: 0 8px 18px -8px rgba(26,24,20,0.30);
+  margin-top: 4px;
 }
-.os-yt iframe {
-  position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
-}
+.os-yt iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
-.os-event__links {
-  display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px;
-}
-.os-link-pill {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-family: var(--mono); font-size: 11px; letter-spacing: 0.10em;
-  text-transform: uppercase; color: var(--ink); text-decoration: none;
-  padding: 6px 12px; border-radius: 9999px;
-  border: 1px solid var(--hairline-strong); background: var(--paper-soft);
-  transition: color 0.18s, border-color 0.18s, background 0.18s;
-}
-.os-link-pill:hover { border-color: var(--ink); background: var(--paper); }
-.os-link-pill svg { width: 12px; height: 12px; }
-
-/* Essay / paper cards — reuses the news--link shadow recipe */
+/* ----- Essays / papers list cards ----- */
 .os-list { display: flex; flex-direction: column; gap: 16px; max-width: 760px; }
 .os-card {
   position: relative; padding: 22px 24px; border-radius: 14px;
   border: 1px solid var(--hairline); background: var(--paper);
   display: flex; flex-direction: column; gap: 10px;
-  text-decoration: none; color: inherit;
-  transition: border-color 0.18s, box-shadow 0.18s, transform 0.18s;
+  color: inherit;
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.6), 0 1px 0 var(--hairline-strong),
     0 2px 0 -1px var(--paper-deep), 0 8px 18px -6px rgba(26,24,20,0.12);
-}
-.os-card:hover {
-  border-color: var(--ink-soft); transform: translateY(-1px);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.6), 0 1px 0 var(--hairline-strong),
-    0 2px 0 -1px var(--paper-deep), 0 12px 24px -6px rgba(26,24,20,0.18);
 }
 .os-card__kicker {
   font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em;
@@ -934,16 +957,14 @@ a.tag:hover { color: var(--fork); border-color: var(--fork-soft); }
   font-family: var(--serif); font-style: italic; font-weight: 300;
   font-size: 14px; color: var(--ink-soft); margin: 0;
 }
-.os-card__blurb { font-family: var(--sans); font-size: 14px; line-height: 1.6; color: var(--body); margin: 0; }
+.os-card__blurb { font-family: var(--sans); font-size: 15px; line-height: 1.65; color: var(--body); margin: 0; }
 .os-card__blurb p { margin: 0; font: inherit; color: inherit; }
-.os-card__cta {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-family: var(--sans); font-size: 13px; font-weight: 500;
-  color: var(--ink); margin-top: 4px;
-}
-.os-card__cta svg { width: 14px; height: 14px; }
 
 @media (max-width: 760px) {
+  .os-tile { padding: 22px 20px; }
+  .os-tile__art { width: 80px; height: 80px; margin-bottom: 14px; }
+  .os-tile__art--icon svg { width: 46px; height: 46px; }
+  .os-tile__title { font-size: 26px; }
   .os-odin-head { grid-template-columns: 1fr; gap: 20px; }
   .os-odin-logo { width: 140px; }
   .os-event { padding: 20px 18px; }
@@ -953,5 +974,4 @@ a.tag:hover { color: var(--fork); border-color: var(--fork-soft); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
   .reveal { opacity: 1; transform: none; }
-  .os-panel.is-active { animation: none; }
 }

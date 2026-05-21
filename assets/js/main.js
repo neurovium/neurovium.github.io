@@ -172,40 +172,6 @@
   }
 
   /* ---------------------------------------------------------------
-     Open Science tabs (/open-science/)
-     --------------------------------------------------------------- */
-  var osTabs = document.querySelectorAll('[data-os-tab]');
-  if (osTabs.length) {
-    var osPanels = document.querySelectorAll('[data-os-panel]');
-    var osKeys = ['odin', 'essays', 'papers'];
-    function activateOs(key) {
-      if (osKeys.indexOf(key) === -1) key = 'odin';
-      osTabs.forEach(function (b) {
-        var on = b.dataset.osTab === key;
-        b.classList.toggle('is-active', on);
-        b.classList.toggle('ebtn--primary', on);
-        b.classList.toggle('ebtn--outline', !on);
-        b.setAttribute('aria-selected', on ? 'true' : 'false');
-        b.setAttribute('tabindex', on ? '0' : '-1');
-      });
-      osPanels.forEach(function (p) {
-        var on = p.dataset.osPanel === key;
-        p.classList.toggle('is-active', on);
-        if (on) { p.removeAttribute('hidden'); } else { p.setAttribute('hidden', ''); }
-      });
-    }
-    osTabs.forEach(function (b) {
-      b.addEventListener('click', function () {
-        var key = b.dataset.osTab;
-        activateOs(key);
-        if (history.replaceState) history.replaceState(null, '', '#' + key);
-      });
-    });
-    var initial = (location.hash || '').replace('#', '');
-    if (osKeys.indexOf(initial) !== -1) activateOs(initial);
-  }
-
-  /* ---------------------------------------------------------------
      Corridor keyboard navigation (paper rooms): ← / →
      --------------------------------------------------------------- */
   if (document.querySelector('.corridor')) {
