@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#ead7be">
-<title>Depth as Successive Coarse-Graining in Plain MLPs · Nima Dehghani</title>
-<meta name="description" content="A mathematical framework showing that deep neural networks implement successive coarse-graining, where each layer preserves task-relevant information while discarding irrelevant nuisance information — analogous to renormalization group flow in physics.">
+<title>Experimental validation of the influence of white matter anisotropy on the intracranial EEG forward solution · Nima Dehghani</title>
+<meta name="description" content="This paper investigates how the directional electrical conductivity (anisotropy) of white matter affects the precision of mapping electrical fields inside the brain. By simultaneously applying localized electrical stimulation at known brain locations and recording intracranial EEG, the study empirically tests various Finite Element Method (FEM) head models against directly measured data. The findings demonstrate that incorporating Diffusion Tensor Imaging (DTI)-based tissue anisotropy and cerebrospinal fluid into the forward model significantly improves calculation accuracy over traditional isotropic models, particularly when the active electrical source is located near highly anisotropic brain regions.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,40 +14,29 @@
 
 <link type="application/atom+xml" rel="alternate" href="https://neurovium.github.io/feed.xml" title="Nima Dehghani" />
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Depth as Successive Coarse-Graining in Plain MLPs | Nima Dehghani</title>
+<title>Experimental validation of the influence of white matter anisotropy on the intracranial EEG forward solution | Nima Dehghani</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Depth as Successive Coarse-Graining in Plain MLPs" />
+<meta property="og:title" content="Experimental validation of the influence of white matter anisotropy on the intracranial EEG forward solution" />
 <meta name="author" content="Nima Dehghani" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="A mathematical framework showing that deep neural networks implement successive coarse-graining, where each layer preserves task-relevant information while discarding irrelevant nuisance information — analogous to renormalization group flow in physics." />
-<meta property="og:description" content="A mathematical framework showing that deep neural networks implement successive coarse-graining, where each layer preserves task-relevant information while discarding irrelevant nuisance information — analogous to renormalization group flow in physics." />
-<link rel="canonical" href="https://neurovium.github.io/papers/depth-coarse-graining/" />
-<meta property="og:url" content="https://neurovium.github.io/papers/depth-coarse-graining/" />
+<meta name="description" content="This paper investigates how the directional electrical conductivity (anisotropy) of white matter affects the precision of mapping electrical fields inside the brain. By simultaneously applying localized electrical stimulation at known brain locations and recording intracranial EEG, the study empirically tests various Finite Element Method (FEM) head models against directly measured data. The findings demonstrate that incorporating Diffusion Tensor Imaging (DTI)-based tissue anisotropy and cerebrospinal fluid into the forward model significantly improves calculation accuracy over traditional isotropic models, particularly when the active electrical source is located near highly anisotropic brain regions." />
+<meta property="og:description" content="This paper investigates how the directional electrical conductivity (anisotropy) of white matter affects the precision of mapping electrical fields inside the brain. By simultaneously applying localized electrical stimulation at known brain locations and recording intracranial EEG, the study empirically tests various Finite Element Method (FEM) head models against directly measured data. The findings demonstrate that incorporating Diffusion Tensor Imaging (DTI)-based tissue anisotropy and cerebrospinal fluid into the forward model significantly improves calculation accuracy over traditional isotropic models, particularly when the active electrical source is located near highly anisotropic brain regions." />
+<link rel="canonical" href="https://neurovium.github.io/papers/Forward-ieegeeg/" />
+<meta property="og:url" content="https://neurovium.github.io/papers/Forward-ieegeeg/" />
 <meta property="og:site_name" content="Nima Dehghani" />
-<meta property="og:image" content="https://neurovium.github.io/assets/img/papers/depth-cg-teaser.png" />
+<meta property="og:image" content="https://neurovium.github.io/assets/img/papers/Forward-ieeg4.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-06-01T00:00:00+00:00" />
+<meta property="article:published_time" content="2026-06-11T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="https://neurovium.github.io/assets/img/papers/depth-cg-teaser.png" />
-<meta property="twitter:title" content="Depth as Successive Coarse-Graining in Plain MLPs" />
+<meta property="twitter:image" content="https://neurovium.github.io/assets/img/papers/Forward-ieeg4.png" />
+<meta property="twitter:title" content="Experimental validation of the influence of white matter anisotropy on the intracranial EEG forward solution" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Nima Dehghani"},"dateModified":"2025-06-01T00:00:00+00:00","datePublished":"2025-06-01T00:00:00+00:00","description":"A mathematical framework showing that deep neural networks implement successive coarse-graining, where each layer preserves task-relevant information while discarding irrelevant nuisance information — analogous to renormalization group flow in physics.","headline":"Depth as Successive Coarse-Graining in Plain MLPs","image":"https://neurovium.github.io/assets/img/papers/depth-cg-teaser.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://neurovium.github.io/papers/depth-coarse-graining/"},"url":"https://neurovium.github.io/papers/depth-coarse-graining/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Nima Dehghani"},"dateModified":"2026-06-11T00:00:00+00:00","datePublished":"2026-06-11T00:00:00+00:00","description":"This paper investigates how the directional electrical conductivity (anisotropy) of white matter affects the precision of mapping electrical fields inside the brain. By simultaneously applying localized electrical stimulation at known brain locations and recording intracranial EEG, the study empirically tests various Finite Element Method (FEM) head models against directly measured data. The findings demonstrate that incorporating Diffusion Tensor Imaging (DTI)-based tissue anisotropy and cerebrospinal fluid into the forward model significantly improves calculation accuracy over traditional isotropic models, particularly when the active electrical source is located near highly anisotropic brain regions.","headline":"Experimental validation of the influence of white matter anisotropy on the intracranial EEG forward solution","image":"https://neurovium.github.io/assets/img/papers/Forward-ieeg4.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://neurovium.github.io/papers/Forward-ieegeeg/"},"url":"https://neurovium.github.io/papers/Forward-ieegeeg/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
 
 
-
-<script>
-window.MathJax = {
-  tex: {
-    inlineMath: [['\\(', '\\)'], ['$', '$']],
-    displayMath: [['\\[', '\\]'], ['$$', '$$']]
-  },
-  options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
-};
-</script>
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
 </head>
@@ -149,27 +138,27 @@ window.MathJax = {
     <div class="paper__crumb">
       <a href="/papers/">← Paper Maze</a>
       <span style="color:var(--muted-soft);">·</span>
-      <span>Room 01 · 2025</span>
+      <span>Room 07 · 2010</span>
     </div>
 
-    <h1>Depth as Successive Coarse-Graining in Plain MLPs</h1>
-    <div class="paper__subtitle">An Information-Theoretic Treatment</div>
+    <h1>Experimental validation of the influence of white matter anisotropy on the intracranial EEG forward solution</h1>
+    <div class="paper__subtitle"></div>
     <p class="paper__authors">Nima Dehghani</p>
     <div class="paper__venue">
-      <span>Preprint · 2025</span>
-      
+      <span>Journal of Computational Neuroscience · 2010</span>
+      <span>DOI · 10.1007/s10827-009-0205-z</span>
     </div>
 
-    <div class="paper__teaser" style="--wash-color: var(--wash-slate);">
+    <div class="paper__teaser" style="--wash-color: var(--wash-plum);">
       
-        <img src="/assets/img/papers/depth-cg-teaser.png" alt="Depth as Successive Coarse-Graining in Plain MLPs — teaser figure">
+        <img src="/assets/img/papers/Forward-ieeg4.png" alt="Experimental validation of the influence of white matter anisotropy on the intracranial EEG forward solution — teaser figure">
       
     </div>
 
     
     <section class="paper__section">
       <h2>Summary</h2>
-      <p style="font-family:var(--sans);font-size:16px;color:var(--ink-soft);line-height:1.65;max-width:62ch;letter-spacing:0.16px;">A mathematical framework showing that deep neural networks implement successive coarse-graining, where each layer preserves task-relevant information while discarding irrelevant nuisance information — analogous to renormalization group flow in physics.</p>
+      <p style="font-family:var(--sans);font-size:16px;color:var(--ink-soft);line-height:1.65;max-width:62ch;letter-spacing:0.16px;">This paper investigates how the directional electrical conductivity (anisotropy) of white matter affects the precision of mapping electrical fields inside the brain. By simultaneously applying localized electrical stimulation at known brain locations and recording intracranial EEG, the study empirically tests various Finite Element Method (FEM) head models against directly measured data. The findings demonstrate that incorporating Diffusion Tensor Imaging (DTI)-based tissue anisotropy and cerebrospinal fluid into the forward model significantly improves calculation accuracy over traditional isotropic models, particularly when the active electrical source is located near highly anisotropic brain regions.</p>
     </section>
     
 
@@ -177,17 +166,17 @@ window.MathJax = {
       <h2>Links</h2>
       <div class="linkbar">
         
-        <a href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          arXiv
+        
+        <a href="https://doi.org/10.1007/s10827-009-0205-z" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          DOI
         </a>
         
         
         
         
         
-        
-        <a href="https://github.com/neurovium/depth-coarse-graining" target="_blank" rel="noopener">
+        <a href="" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           Repo
         </a>
@@ -197,11 +186,27 @@ window.MathJax = {
       
       <details class="bibtex">
         <summary>BibTeX <span style="color:var(--muted-soft);">tap to expand</span></summary>
-        <pre><code>@article{dehghani2025depth,
-  title={Depth as Successive Coarse-Graining in Plain MLPs: An Information-Theoretic Treatment},
-  author={Dehghani, Nima},
-  year={2025},
-  journal={Preprint}
+        <pre><code>@Article{Bangera2010,
+author={Bangera, Nitin B.
+and Schomer, Donald L.
+and Dehghani, Nima
+and Ulbert, Istvan
+and Cash, Sydney
+and Papavasiliou, Steve
+and Eisenberg, Solomon R.
+and Dale, Anders M.
+and Halgren, Eric},
+title={Experimental validation of the influence of white matter anisotropy on the intracranial EEG forward solution},
+journal={Journal of Computational Neuroscience},
+year={2010},
+month={Dec},
+day={01},
+volume={29},
+number={3},
+pages={371-387},
+issn={1573-6873},
+doi={10.1007/s10827-009-0205-z},
+url={https://doi.org/10.1007/s10827-009-0205-z}
 }
 </code></pre>
       </details>
@@ -213,9 +218,9 @@ window.MathJax = {
       <h2>Code &amp; Data</h2>
       
       <div class="linkbar">
-        <a href="https://github.com/neurovium/depth-coarse-graining" target="_blank" rel="noopener">
+        <a href="" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-          neurovium/depth-coarse-graining
+          
         </a>
       </div>
       
@@ -223,7 +228,7 @@ window.MathJax = {
       <span class="meta" style="display:block;margin:18px 0 8px;">Mirrors &amp; related repos</span>
       <ul style="list-style:none;padding:0;margin:0;">
         
-        <li style="padding:8px 0;border-bottom:1px solid var(--hairline);"><a class="inline" href="https://github.com/example/fork" target="_blank" rel="noopener">Student fork (extended experiments)</a></li>
+        <li style="padding:8px 0;border-bottom:1px solid var(--hairline);"><a class="inline" href="https://link.springer.com/article/10.1007/s10827-009-0205-z" target="_blank" rel="noopener">Journal Link</a></li>
         
       </ul>
       
@@ -232,43 +237,9 @@ window.MathJax = {
 
     <section class="paper__section prose">
       <h2>The room</h2>
-      <h2 id="abstract">Abstract</h2>
-<p><em>xyz</em></p>
+      <p><em>Abstract</em></p>
 
-<h2 id="overview">Overview</h2>
-
-<p>This work provides a mathematical framework for understanding deep neural networks
-through the lens of renormalization group (RG) theory from physics. The central
-insight is that <strong>depth implements successive coarse-graining</strong>: each layer preserves
-task-relevant information while systematically discarding irrelevant “nuisance”
-information.</p>
-
-<p>Formally, this is analogous to RG flow in statistical physics, where successive
-transformations integrate out short-distance degrees of freedom to reveal effective
-long-distance behavior. The theory establishes that depth provides a <em>qualitatively</em>
-different computational strategy — not merely additional parameters, but a structured
-information-processing pipeline that separates signal from noise across scales.</p>
-
-<h2 id="quick-start">Quick start</h2>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/neurovium/depth-coarse-graining.git
-<span class="nb">cd </span>depth-coarse-graining
-pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
-python run_experiments.py <span class="nt">--config</span> configs/default.yaml
-</code></pre></div></div>
-
-<h2 id="repository-layout">Repository layout</h2>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>depth-coarse-graining/
-├── configs/            # experiment configurations (YAML)
-├── src/
-│   ├── models/         # plain MLP definitions
-│   ├── info/           # mutual information estimators
-│   └── rg/             # coarse-graining analysis
-├── notebooks/          # figure-generating notebooks
-├── run_experiments.py
-└── requirements.txt
-</code></pre></div></div>
+<p>Forward solutions with different levels of complexity are employed for localization of current generators, which are responsible for the electric and magnetic fields measured from the human brain. The influence of brain anisotropy on the forward solution is poorly understood. The goal of this study is to validate an anisotropic model for the intracranial electric forward solution by comparing with the directly measured ‘gold standard’. Dipolar sources are created at known locations in the brain and intracranial electroencephalogram (EEG) is recorded simultaneously. Isotropic models with increasing level of complexity are generated along with anisotropic models based on Diffusion tensor imaging (DTI). A Finite Element Method based forward solution is calculated and validated using the measured data. Major findings are (1) An anisotropic model with a linear scaling between the eigenvalues of the electrical conductivity tensor and water self-diffusion tensor in brain tissue is validated. The greatest improvement was obtained when the stimulation site is close to a region of high anisotropy. The model with a global anisotropic ratio of 10:1 between the eigenvalues (parallel: tangential to the fiber direction) has the worst performance of all the anisotropic models. (2) Inclusion of cerebrospinal fluid as well as brain anisotropy in the forward model is necessary for an accurate description of the electric field inside the skull. The results indicate that an anisotropic model based on the DTI can be constructed non-invasively and shows an improved performance when compared to the isotropic models for the calculation of the intracranial EEG forward solution.</p>
 
 <h2 id="citing">Citing</h2>
 
@@ -281,18 +252,22 @@ BibTeX entry above.</p>
     <section class="paper__section">
       <h2>Doors · concepts in this room</h2>
       <div class="paper__tags">
-        <a href="/papers/?tag=renormalization-group">renormalization-group</a><a href="/papers/?tag=deep-learning">deep-learning</a><a href="/papers/?tag=information-theory">information-theory</a><a href="/papers/?tag=coarse-graining">coarse-graining</a><a href="/papers/?tag=neural-networks">neural-networks</a><a href="/papers/?tag=statistical-physics">statistical-physics</a>
+        <a href="/papers/?tag=Brain%20Mapping">Brain Mapping</a><a href="/papers/?tag=Diffusion%20Tensor%20Imaging">Diffusion Tensor Imaging</a><a href="/papers/?tag=Evoked%20potentials">Evoked potentials</a><a href="/papers/?tag=MEG">MEG</a><a href="/papers/?tag=EEG">EEG</a><a href="/papers/?tag=Forward%20Model">Forward Model</a><a href="/papers/?tag=Neuroanatomy">Neuroanatomy</a><a href="/papers/?tag=Einite%20Element%20Model">Einite Element Model</a>
       </div>
     </section>
     
 
     <nav class="corridor" aria-label="Corridor navigation">
       
-      <span></span>
+      <a class="corridor__cell" href="/papers/Spindle-topo-frq/">
+          <span class="corridor__glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></span>
+          <span><span class="corridor__lbl">Previous room · 2021</span><span class="corridor__t" style="display:block;">Topographical frequency dynamics within EEG and MEG sleep spindles</span></span>
+        </a>
       
-      <a class="corridor__cell is-next" href="/papers/MEGEEG-spectra-scaling/">
+      
+      <a class="corridor__cell is-next" href="/papers/K-Complex_isolated_downstate/">
           <span class="corridor__glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-          <span><span class="corridor__lbl">Next room · 2025</span><span class="corridor__t" style="display:block;">Comparative power spectral analysis of simultaneous electroencephalographic and magnetoencephalographic recordings in humans suggests non-resistive extracellular media</span></span>
+          <span><span class="corridor__lbl">Next room · 2009</span><span class="corridor__t" style="display:block;">The Human K-Complex as an Isolated Cortical "Down-State"</span></span>
         </a>
       
     </nav>
@@ -323,25 +298,6 @@ BibTeX entry above.</p>
 </a>
 
 
-<a class="card pcard reveal" href="/papers/Forward-ieegeeg/" data-tags="Brain Mapping,Diffusion Tensor Imaging,Evoked potentials,MEG,EEG,Forward Model,Neuroanatomy,Einite Element Model" style="--wash-color: var(--wash-plum);">
-  <div class="card__media">
-    
-      <img class="card__image" src="/assets/img/papers/Forward-ieeg4.png" alt="Experimental validation of the influence of white matter anisotropy on the intracranial EEG forward solution">
-    
-  </div>
-  <div class="card__body">
-    <span class="card__kicker">2010 · Journal of Computational Neuroscience</span>
-    <h3 class="card__title">Experimental validation of the influence of white matter anisotropy on the intracranial EEG forward solution</h3>
-    <div class="card__meta">Nima Dehghani</div>
-    
-    <div class="card__tags">
-      <span class="tag">Brain Mapping</span><span class="tag">Diffusion Tensor Imaging</span><span class="tag">Evoked potentials</span>
-    </div>
-    
-  </div>
-</a>
-
-
 <a class="card pcard reveal" href="/papers/Spindle-topo-frq/" data-tags="Spindle,Synchrony,MEG,EEG,Cortex,Thalamus,Inverse solution,Oscillation" style="--wash-color: var(--wash-dust);">
   <div class="card__media">
     
@@ -355,6 +311,25 @@ BibTeX entry above.</p>
     
     <div class="card__tags">
       <span class="tag">Spindle</span><span class="tag">Synchrony</span><span class="tag">MEG</span>
+    </div>
+    
+  </div>
+</a>
+
+
+<a class="card pcard reveal" href="/papers/Spindle-divergent-generator/" data-tags="Spindle,Thalamocortical,Oscillation,Statistical Parametric Mapping,Source Localization,MEG,EEG,Sleep" style="--wash-color: var(--wash-teal);">
+  <div class="card__media">
+    
+      <img class="card__image" src="/assets/img/papers/spindle_dspm2.png" alt="Divergent Cortical Generators of Sleep Spindles">
+    
+  </div>
+  <div class="card__body">
+    <span class="card__kicker">2010 · Plos One</span>
+    <h3 class="card__title">Divergent Cortical Generators of Sleep Spindles</h3>
+    <div class="card__meta">Nima Dehghani</div>
+    
+    <div class="card__tags">
+      <span class="tag">Spindle</span><span class="tag">Thalamocortical</span><span class="tag">Oscillation</span>
     </div>
     
   </div>

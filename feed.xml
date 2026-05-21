@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://neurovium.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neurovium.github.io/" rel="alternate" type="text/html" /><updated>2026-05-21T03:47:56+00:00</updated><id>https://neurovium.github.io/feed.xml</id><title type="html">Nima Dehghani</title><subtitle>Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics</subtitle><author><name>Nima Dehghani</name></author><entry><title type="html">The Hidden Topography of Sleep Spindles: From Asynchronous MEG Generators to Synchronous EEG Events</title><link href="https://neurovium.github.io/blog/2011/12/01/spindle-emergence/" rel="alternate" type="text/html" title="The Hidden Topography of Sleep Spindles: From Asynchronous MEG Generators to Synchronous EEG Events" /><published>2011-12-01T00:00:00+00:00</published><updated>2011-12-01T00:00:00+00:00</updated><id>https://neurovium.github.io/blog/2011/12/01/spindle-emergence</id><content type="html" xml:base="https://neurovium.github.io/blog/2011/12/01/spindle-emergence/"><![CDATA[<p>Sleep spindles occupy a special place in systems neuroscience. They are among the most recognizable oscillatory signatures of non-REM sleep, appearing as transient bursts of approximately (10)–(15\,\mathrm{Hz}) activity, typically lasting (0.5)–(2\,\mathrm{s}), and most prominently associated with Stage 2 sleep. They have been studied as markers of thalamocortical physiology, sleep architecture, memory consolidation, and large-scale neural synchrony. But they also pose a more basic question: when we observe a spindle at the scalp, what exactly is the spatial and dynamical organization of the neural activity that produced it?</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://neurovium.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neurovium.github.io/" rel="alternate" type="text/html" /><updated>2026-05-21T04:13:11+00:00</updated><id>https://neurovium.github.io/feed.xml</id><title type="html">Nima Dehghani</title><subtitle>Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics</subtitle><author><name>Nima Dehghani</name></author><entry><title type="html">The Hidden Topography of Sleep Spindles: From Asynchronous MEG Generators to Synchronous EEG Events</title><link href="https://neurovium.github.io/blog/2011/12/01/spindle-emergence/" rel="alternate" type="text/html" title="The Hidden Topography of Sleep Spindles: From Asynchronous MEG Generators to Synchronous EEG Events" /><published>2011-12-01T00:00:00+00:00</published><updated>2011-12-01T00:00:00+00:00</updated><id>https://neurovium.github.io/blog/2011/12/01/spindle-emergence</id><content type="html" xml:base="https://neurovium.github.io/blog/2011/12/01/spindle-emergence/"><![CDATA[<p>Sleep spindles occupy a special place in systems neuroscience. They are among the most recognizable oscillatory signatures of non-REM sleep, appearing as transient bursts of approximately (10)–(15\,\mathrm{Hz}) activity, typically lasting (0.5)–(2\,\mathrm{s}), and most prominently associated with Stage 2 sleep. They have been studied as markers of thalamocortical physiology, sleep architecture, memory consolidation, and large-scale neural synchrony. But they also pose a more basic question: when we observe a spindle at the scalp, what exactly is the spatial and dynamical organization of the neural activity that produced it?</p>
 
 <p>For a long time, the dominant picture was that sleep spindles reflect a broadly synchronous thalamocortical event. Classical animal physiology, intracellular studies, computational models, and scalp EEG observations all contributed to this view. In scalp EEG, spindles often appear nearly simultaneous across many electrodes, suggesting a large-scale coordinated oscillation distributed across the cortical mantle. This has made the spindle a natural model for studying how the thalamus and cortex generate coherent rhythms over large spatial scales.</p>
 
@@ -498,7 +498,264 @@ A_{\mathrm{slow}}(t)
 
 <p>For neurophysiology, this emphasizes that macroscopic brain rhythms must be analyzed as evolving events, not only as spectral peaks. For systems neuroscience, it suggests that thalamocortical synchrony is organized through the sequential engagement of heterogeneous cortical modules. For physics-oriented approaches to brain dynamics, it provides an example of transient order in a distributed, nonuniform oscillatory system.</p>
 
-<p>The spindle, then, is not just a marker of sleep stage. It is a window into how the brain coordinates distributed circuits during a state in which external input is reduced, internal dynamics dominate, and memory-related reorganization may unfold. Its frequency structure, spatial organization, and temporal evolution together reveal a form of thalamocortical synchrony that is coordinated, heterogeneous, and dynamically ordered.</p>]]></content><author><name>Nima Dehghani</name></author><category term="Spindle" /><category term="MEG" /><category term="EEG" /><category term="Oscillation" /><category term="Cortex" /><summary type="html"><![CDATA[Sleep spindles occupy a special place in systems neuroscience. They are among the most visible macroscopic signatures of thalamocortical coordination: brief, approximately one-second bursts of 10–16 Hz activity that recur during stage 2 non-REM sleep. They are large enough to be detected at the scalp, structured enough to be described as oscillatory events, and mechanistically constrained enough to be linked to thalamocortical circuit models. For that reason, spindles have long served as a bridge between cellular neurophysiology, whole-brain electrophysiology, and theories of sleep-dependent memory consolidation.]]></summary></entry><entry><title type="html">Electromagnetic scaling in the brain: EEG, MEG, and the resistive-medium assumption</title><link href="https://neurovium.github.io/blog/2010/08/01/meg-spectra/" rel="alternate" type="text/html" title="Electromagnetic scaling in the brain: EEG, MEG, and the resistive-medium assumption" /><published>2010-08-01T00:00:00+00:00</published><updated>2010-08-01T00:00:00+00:00</updated><id>https://neurovium.github.io/blog/2010/08/01/meg-spectra</id><content type="html" xml:base="https://neurovium.github.io/blog/2010/08/01/meg-spectra/"><![CDATA[<p><em>Companion post to:</em><br />
+<p>The spindle, then, is not just a marker of sleep stage. It is a window into how the brain coordinates distributed circuits during a state in which external input is reduced, internal dynamics dominate, and memory-related reorganization may unfold. Its frequency structure, spatial organization, and temporal evolution together reveal a form of thalamocortical synchrony that is coordinated, heterogeneous, and dynamically ordered.</p>]]></content><author><name>Nima Dehghani</name></author><category term="Spindle" /><category term="MEG" /><category term="EEG" /><category term="Oscillation" /><category term="Cortex" /><summary type="html"><![CDATA[Sleep spindles occupy a special place in systems neuroscience. They are among the most visible macroscopic signatures of thalamocortical coordination: brief, approximately one-second bursts of 10–16 Hz activity that recur during stage 2 non-REM sleep. They are large enough to be detected at the scalp, structured enough to be described as oscillatory events, and mechanistically constrained enough to be linked to thalamocortical circuit models. For that reason, spindles have long served as a bridge between cellular neurophysiology, whole-brain electrophysiology, and theories of sleep-dependent memory consolidation.]]></summary></entry><entry><title type="html">Experimental validation of the influence of white matter anisotropy on the intracranial EEG forward solution</title><link href="https://neurovium.github.io/blog/2010/12/01/forward-ieeg/" rel="alternate" type="text/html" title="Experimental validation of the influence of white matter anisotropy on the intracranial EEG forward solution" /><published>2010-12-01T00:00:00+00:00</published><updated>2010-12-01T00:00:00+00:00</updated><id>https://neurovium.github.io/blog/2010/12/01/forward-ieeg</id><content type="html" xml:base="https://neurovium.github.io/blog/2010/12/01/forward-ieeg/"><![CDATA[<h1 id="beyond-isotropic-head-models-white-matter-anisotropy-and-the-intracranial-eeg-forward-solution">Beyond Isotropic Head Models: White Matter Anisotropy and the Intracranial EEG Forward Solution</h1>
+
+<p>Accurate source localization in EEG, MEG, and intracranial EEG depends on a chain of assumptions. Some of these assumptions are statistical, some are anatomical, and some are biophysical. But one of the most fundamental is often hidden in the forward model: how does electrical current actually propagate through the human head?</p>
+
+<p>The inverse problem asks us to infer the location, orientation, and strength of neural current generators from measured potentials or fields. But the inverse problem is only as good as the forward solution it uses. If the forward model does not correctly predict how a known source would appear at the sensors, then the inverse solution is already constrained by a distorted physical map. This is especially important in clinical and neurophysiological settings where source localization is used to interpret epileptiform activity, guide surgical planning, or relate intracranial recordings to underlying neural generators.</p>
+
+<p>For many years, the computational and anatomical constraints of EEG modeling led to simplified head models: spherical shells, homogeneous compartments, or boundary element models with limited tissue detail. These models were often useful, and in some cases surprisingly effective. But they also concealed an important fact: the brain is not an isotropic volume conductor. It is structured, compartmentalized, and directionally organized. White matter, in particular, is anisotropic: current does not encounter the same conductivity in all directions. It is easier for current to flow along some anatomical directions than others, especially along coherent fiber tracts.</p>
+
+<p>The paper discussed here was designed to address a direct question:</p>
+
+<blockquote>
+  <p>How much does white matter anisotropy matter for the intracranial EEG forward solution, and can a realistic anisotropic model be experimentally validated against measurements from the human brain?</p>
+</blockquote>
+
+<p>The central point is that this was not only a simulation study. We used known artificial dipoles generated through implanted depth electrodes in human subjects, recorded the resulting intracranial potentials, and compared those measurements against patient-specific finite element models with increasing anatomical and biophysical detail. In this sense, the experiment provided a rare in vivo validation framework for testing whether anisotropic forward models actually improve the prediction of intracranial electric fields.</p>
+
+<hr />
+
+<h2 id="the-forward-problem-as-a-physical-constraint">The forward problem as a physical constraint</h2>
+
+<p>The EEG forward problem is the calculation of the electric potential distribution produced by a known current source inside the head. In quasi-static conditions, the relevant physics is often written as a volume-conduction problem,</p>
+
+\[\nabla \cdot \left( \boldsymbol{\sigma}(\mathbf{x}) \nabla \phi(\mathbf{x}) \right)
+=
+\nabla \cdot \mathbf{J}_p(\mathbf{x}),\]
+
+<p>where $\phi(\mathbf{x})$ is the electric potential, $\mathbf{J}_p(\mathbf{x})$ is the primary current source, and $\boldsymbol{\sigma}(\mathbf{x})$ is the conductivity tensor.</p>
+
+<p>This tensor is the key object. In simplified isotropic models, conductivity is represented as a scalar:</p>
+
+\[\boldsymbol{\sigma}(\mathbf{x}) = \sigma(\mathbf{x}) \mathbf{I}.\]
+
+<p>In that case, conductivity may vary across tissue compartments, but at each location current sees the same conductivity in every direction. The medium can be inhomogeneous but not anisotropic.</p>
+
+<p>In an anisotropic model, however, conductivity is direction-dependent:</p>
+
+\[\boldsymbol{\sigma}(\mathbf{x})
+=
+\mathbf{V}_{\sigma}(\mathbf{x})
+\boldsymbol{\Lambda}_{\sigma}(\mathbf{x})
+\mathbf{V}_{\sigma}^{T}(\mathbf{x}),\]
+
+<p>where $\mathbf{V}<em>{\sigma}$ gives the principal directions of conductivity and $\boldsymbol{\Lambda}</em>{\sigma}$ gives the corresponding eigenvalues. In white matter, these directions are expected to relate to fiber orientation. The question is not merely whether anisotropy exists anatomically, but whether it is strong enough, structured enough, and measurable enough to alter the forward solution in a way that improves agreement with real intracranial recordings.</p>
+
+<p>That is the problem the paper addresses.</p>
+
+<hr />
+
+<h2 id="why-intracranial-validation-matters">Why intracranial validation matters</h2>
+
+<p>A major difficulty in validating EEG forward models is that the true source is usually unknown. In most neurophysiological contexts, we observe the potentials and then infer the source. But to test a forward model properly, one wants the opposite: a known source and measured potentials.</p>
+
+<p>Previous validation studies used tank models, skull phantoms, implanted sources, or scalp recordings. These studies were important, but they had limitations. Scalp EEG measurements conflate multiple sources of modeling error: skull conductivity, skull anisotropy, scalp properties, cerebrospinal fluid, brain tissue inhomogeneity, and white matter anisotropy. If a model performs poorly at the scalp, it can be difficult to know which part of the physical model is responsible.</p>
+
+<p>The intracranial domain provides a cleaner test of brain tissue effects. Since the measurements are made inside the skull, the recorded potentials are less dominated by the skull and scalp. This allows the effect of intracranial tissue structure, especially white matter anisotropy and CSF, to be examined more directly.</p>
+
+<p>The experiment used patients with medically intractable epilepsy who had implanted depth electrodes for clinical monitoring. By passing a biphasic square current pulse between alternating contacts on an implanted catheter, we generated artificial dipoles at known locations. The resulting potentials were recorded simultaneously from other intracranial contacts.</p>
+
+<p>This design gave three crucial ingredients:</p>
+
+<ol>
+  <li>known source locations,</li>
+  <li>intracranial measurements of the resulting field,</li>
+  <li>patient-specific anatomy for constructing realistic forward models.</li>
+</ol>
+
+<p>The stimulation currents were kept within safe charge-density limits, and the measured potentials were analyzed only when the signal-to-noise ratio was sufficient. This made it possible to compare measured and model-predicted intracranial potential topographies directly.</p>
+
+<hr />
+
+<h2 id="patient-specific-finite-element-models">Patient-specific finite element models</h2>
+
+<p>The forward models were constructed using multimodal imaging: CT, T1-weighted MRI, proton-density MRI, and diffusion tensor imaging. CT helped localize implanted electrodes. Structural MRI provided anatomical segmentation. DTI provided information about local diffusion anisotropy, which was used to infer conductivity anisotropy.</p>
+
+<p>The models were implemented using the finite element method (FEM). FEM is particularly useful here because it can represent complicated geometries and spatially varying tensor conductivities. A realistic head is not a set of smooth nested spheres. It contains folded cortex, ventricles, CSF spaces, skull, scalp, subcortical tissue, white matter tracts, and implanted electrodes. FEM allows these details to be incorporated into the volume conductor model.</p>
+
+<p>We compared several classes of models.</p>
+
+<h3 id="isotropic-models">Isotropic models</h3>
+
+<p>The isotropic models differed in anatomical complexity:</p>
+
+<ul>
+  <li><strong>ISO_I</strong>: a three-tissue model with brain, skull, and scalp.</li>
+  <li><strong>ISO_II</strong>: a four-tissue model adding CSF as a separate compartment.</li>
+  <li><strong>ISO_III</strong>: a more detailed model with fifteen tissue labels, including gray matter, white matter, CSF, ventricles, skull, scalp, and other structures.</li>
+</ul>
+
+<p>These models allowed us to ask whether simply increasing tissue detail improves the forward solution.</p>
+
+<h3 id="anisotropic-models">Anisotropic models</h3>
+
+<p>The anisotropic models incorporated DTI-derived information. The guiding assumption was that the conductivity tensor and diffusion tensor share the same eigenvectors:</p>
+
+\[\mathbf{V}_{\sigma} = \mathbf{V}_{d}.\]
+
+<p>This does not mean conductivity and diffusion are identical physical processes. But it assumes that the principal anatomical directions measured by water diffusion also define the principal directions of electrical conductivity. The remaining question is how to assign the conductivity eigenvalues.</p>
+
+<p>We tested two broad ideas.</p>
+
+<p>First, a <strong>linear anisotropic model</strong> assumed that conductivity eigenvalues are proportional to diffusion eigenvalues:</p>
+
+\[\sigma_{\lambda} = k d_{\lambda}.\]
+
+<p>This was applied to white matter in the ANISO_WM_I model and extended to gray and subcortical tissue in the ANISO_IC model.</p>
+
+<p>Second, a <strong>global anisotropy-ratio model</strong> imposed a fixed ratio between conductivity along the fiber direction and conductivity transverse to the fiber direction:</p>
+
+\[\sigma_{\mathrm{long}} = k \sigma_{\mathrm{trans}}.\]
+
+<p>Several ratios were tested, including the historically cited $10:1$ ratio. These models were useful because they tested whether one can represent white matter anisotropy with a single global ratio.</p>
+
+<hr />
+
+<h2 id="comparing-models-to-measured-intracranial-potentials">Comparing models to measured intracranial potentials</h2>
+
+<p>To quantify model accuracy, we used the Relative Difference Measure (RDM), which compares the topography of the predicted potential distribution to the measured one. RDM is insensitive to simple global amplitude scaling and therefore focuses on spatial pattern. This is appropriate for comparing forward models because one wants to know whether the model predicts the correct potential distribution across sensors, not merely whether it can be rescaled to match the overall magnitude.</p>
+
+<p>If $V_{\mathrm{calc}}$ is the model-predicted potential vector and $V_{\mathrm{meas}}$ is the measured potential vector, RDM compares their normalized spatial patterns:</p>
+
+\[\mathrm{RDM}(V_{\mathrm{calc}},V_{\mathrm{meas}})
+=
+\left\|
+\frac{V_{\mathrm{calc}}}{\|V_{\mathrm{calc}}\|}
+-
+\frac{V_{\mathrm{meas}}}{\|V_{\mathrm{meas}}\|}
+\right\|
+\times 100.\]
+
+<p>Lower RDM means better agreement between model and experiment.</p>
+
+<p>The central result was clear: the DTI-derived anisotropic model, especially ANISO_IC, produced the most accurate forward solutions. The improvement was not uniform in a trivial way; it depended on the anatomical relation between the stimulation site, recording site, and intervening tissue. The largest gains appeared when the source or measurement pathway was close to strongly anisotropic white matter, such as the corpus callosum or corona radiata.</p>
+
+<p>This is exactly what one would expect if anisotropy is not just a modeling embellishment but a real physical determinant of current flow.</p>
+
+<hr />
+
+<h2 id="why-the-global-101-anisotropy-assumption-failed">Why the global 10:1 anisotropy assumption failed</h2>
+
+<p>One of the most important findings was negative: the model using a global $10:1$ anisotropy ratio performed poorly. In fact, it was the worst of the anisotropic models tested.</p>
+
+<p>This matters because a $10:1$ ratio had appeared in the literature as a possible estimate of white matter anisotropy. But a global ratio is too crude. White matter is not a uniform bundle of identical parallel fibers. The degree of anisotropy varies across locations. Fiber architecture varies. Partial volume effects vary. The local relation between diffusion and conductivity is not captured by a single number imposed throughout the brain.</p>
+
+<p>The failure of the $10:1$ model does not mean anisotropy is unimportant. It means that the wrong anisotropy model can be worse than no anisotropy model. Anisotropy must be spatially specific and anatomically informed.</p>
+
+<p>This distinction is essential. The question is not whether to include more biological detail for its own sake. The question is which details enter the forward problem in a physically meaningful way. A large global anisotropy ratio imposes an artificial structure on the field. A DTI-derived tensor model allows anisotropy to vary with local anatomy.</p>
+
+<hr />
+
+<h2 id="dti-derived-anisotropy-improved-the-forward-solution">DTI-derived anisotropy improved the forward solution</h2>
+
+<p>The best-performing model was ANISO_IC, which used DTI-derived anisotropy and extended the linear conductivity-diffusion relation beyond white matter into gray and subcortical tissue compartments. This model gave the lowest average RDM across subjects and stimulation sites.</p>
+
+<p>The interpretation is that DTI can provide more than anatomical visualization. It can supply subject-specific directional information that improves the electrical forward model. The model does not treat the brain as a generic conductor. It treats each patient’s brain as a structured physical medium.</p>
+
+<p>The improvement was strongest in anatomically meaningful cases. For example, when stimulation occurred near the corpus callosum or corona radiata, the anisotropic model better predicted the measured potentials. These are regions where the local fiber architecture is coherent enough to influence the direction of return currents. The forward solution was not simply altered near the source; anisotropic tissue along the current pathway also mattered.</p>
+
+<p>This point is important for source localization. A source and a sensor are not connected through empty space. They are connected through a structured volume conductor. The intervening tissue can shape the potential field in ways that affect localization.</p>
+
+<hr />
+
+<h2 id="current-does-not-merely-spread-it-is-guided-by-tissue-structure">Current does not merely spread; it is guided by tissue structure</h2>
+
+<p>One of the strengths of the study was that the model comparison was complemented by visualization of the electric current density vector field. Using line integral convolution and stream-based visualization, we examined how current flow changed across models.</p>
+
+<p>In a simple isotropic model, current flow around a dipole resembles the classical pattern expected in a relatively uniform conductor. When CSF and tissue compartments are added, this pattern is distorted by inhomogeneity. When anisotropy is added, the pattern changes further: current lines bend and become more aligned with local white matter directions.</p>
+
+<p>This is not a metaphor. In the anisotropic FEM solution, current density vectors are redirected by the conductivity tensor. In regions such as the corpus callosum and superior corona radiata, the anisotropic model showed current vectors deviating from the isotropic prediction and aligning more closely with the principal fiber direction.</p>
+
+<p>The effect is not absolute. Current does not simply become trapped inside fiber bundles or flow only along axons. Rather, the anisotropic medium biases the current flow. The field is still governed by the full geometry, source configuration, boundary conditions, and conductivity distribution. But the directionality of white matter changes the current paths enough to improve agreement with measured intracranial potentials.</p>
+
+<p>For physicists, this is the central physical message: the head is not merely a complicated geometry with scalar conductivity labels. It is a tensor-valued volume conductor. Directional structure changes the solution of the field equation.</p>
+
+<hr />
+
+<h2 id="the-role-of-csf-inhomogeneity-also-matters">The role of CSF: inhomogeneity also matters</h2>
+
+<p>Although the main focus was white matter anisotropy, the paper also showed that CSF plays a major role. CSF has high conductivity relative to many surrounding tissues and can act as a preferential pathway for current flow. In the visualizations, CSF regions showed increased current density and substantial distortion of the field.</p>
+
+<p>This was especially clear for stimulation sites and recording electrodes near interhemispheric CSF spaces or ventricles. In those cases, including CSF as a separate compartment markedly reduced RDM. Removing CSF from the model degraded performance.</p>
+
+<p>However, the relationship between anatomical detail and model accuracy was not monotonic in the isotropic models. Surprisingly, the simplest three-tissue isotropic model sometimes performed better on average than the more detailed isotropic models. This does not mean the simpler model was more physically correct. Rather, it suggests that model errors can compensate for each other. If anisotropy is omitted, removing some inhomogeneous detail may accidentally produce an average field pattern closer to the measured one in some cases.</p>
+
+<p>This is a cautionary lesson. A model can fit better for the wrong reason. The goal is not only numerical agreement but physically interpretable agreement. The combination of CSF, tissue inhomogeneity, and DTI-derived anisotropy produced the most meaningful improvement.</p>
+
+<hr />
+
+<h2 id="implications-for-source-localization">Implications for source localization</h2>
+
+<p>The practical motivation for improving the forward model is source localization. In EEG and iEEG, inverse solutions depend on the lead field matrix, and the lead field matrix is computed from the forward model. Errors in the forward model propagate into the inverse solution.</p>
+
+<p>For epilepsy, this matters directly. Localization of epileptogenic tissue can influence clinical decision-making, surgical planning, and interpretation of invasive recordings. The long-term goal is to reduce uncertainty in noninvasive or minimally invasive localization. If patient-specific anisotropic FEM models reduce forward error, they can improve the physical foundation on which inverse methods are built.</p>
+
+<p>The same logic applies beyond epilepsy. Deep brain stimulation, cortical stimulation mapping, and stimulation-based network studies all depend on understanding how current spreads through heterogeneous tissue. The volume of tissue activated by stimulation is shaped not only by electrode geometry and stimulation amplitude but also by local conductivity structure. Anisotropy can influence which tissue regions experience stronger fields.</p>
+
+<p>For neuroimaging, the message is broader: source localization is not only an optimization problem. It is a biophysical modeling problem. Statistical inverse methods cannot recover physical information that was excluded or distorted in the forward model.</p>
+
+<hr />
+
+<h2 id="intracranial-eeg-and-the-anatomy-of-volume-conduction">Intracranial EEG and the anatomy of volume conduction</h2>
+
+<p>Intracranial EEG is often treated as spatially precise relative to scalp EEG, and in many respects it is. But intracranial potentials are still field potentials. They are still shaped by volume conduction. The measured signal at a depth contact is not only a local readout of nearby neurons; it is also influenced by the geometry and conductivity of surrounding tissue.</p>
+
+<p>This does not diminish the value of iEEG. Instead, it clarifies what iEEG measures. Intracranial recordings provide access to signals with much higher spatial specificity than scalp EEG, but they are still embedded in a physical medium. The forward solution remains relevant.</p>
+
+<p>This point is especially important when interpreting depth-electrode recordings in deep or white-matter-adjacent structures. Contacts near the hippocampus, amygdala, cingulate, corpus callosum, or corona radiata may be affected by local anisotropic pathways. The field measured at a contact depends not only on distance from a source but also on tissue directionality between source and sensor.</p>
+
+<p>In this sense, the study connects source localization to a more general neurophysiological issue: field potentials are not disembodied signals. They are physical fields generated and filtered by structured tissue.</p>
+
+<hr />
+
+<h2 id="what-the-study-establishes">What the study establishes</h2>
+
+<p>The paper supports several conclusions.</p>
+
+<p>First, realistic anisotropic forward models can be experimentally validated in vivo using known intracranial sources and intracranial measurements.</p>
+
+<p>Second, white matter anisotropy measurably influences the intracranial EEG forward solution. The effect is strongest near regions of high fractional anisotropy and along current pathways involving organized white matter.</p>
+
+<p>Third, DTI-derived anisotropy provides a better basis for modeling conductivity than imposing a fixed global anisotropy ratio. The assumption that conductivity and diffusion tensors share eigenvectors, together with a linear scaling of eigenvalues, was experimentally supported by the observed improvements in model accuracy.</p>
+
+<p>Fourth, CSF and tissue inhomogeneity remain essential. A realistic model must include both inhomogeneous compartments and anisotropic conductivity. Omitting either can produce distorted fields or compensatory errors.</p>
+
+<p>Fifth, forward model accuracy is not an abstract numerical concern. It has consequences for inverse localization, stimulation modeling, and the interpretation of intracranial field potentials.</p>
+
+<hr />
+
+<h2 id="limitations-and-open-directions">Limitations and open directions</h2>
+
+<p>The study also points to limitations that remain important today.</p>
+
+<p>The models were purely resistive. Real biological tissue may have frequency-dependent and reactive properties. Extracellular media can filter potentials in ways that depend on frequency, tissue composition, and geometry. Incorporating complex conductivity could further improve forward models, especially for broadband electrophysiological signals.</p>
+
+<p>The spatial resolution of the FEM mesh and DTI data also constrained the model. The diffusion tensor images had finite voxel size, and the FEM elements had finite edge lengths. Higher-resolution diffusion imaging and finer meshes could improve the representation of local anisotropy, especially near tissue boundaries and narrow structures.</p>
+
+<p>The subject sample was small, and the strongest dataset came from the subject with the highest stimulation current and broadest high-SNR measurement coverage. This is understandable given the difficulty of human intracranial validation experiments, but it also means that future studies with more extensive stimulation and recording configurations could further refine the conclusions.</p>
+
+<p>Finally, the relationship between diffusion and conductivity remains an approximation. DTI measures water diffusion, not electrical conductivity directly. The success of the DTI-derived model supports the use of diffusion information, but it does not imply that diffusion and conductivity are identical. More direct conductivity imaging, improved microstructural modeling, and multimodal constraints may help refine the mapping from anatomy to electrical properties.</p>
+
+<hr />
+
+<h2 id="why-this-remains-conceptually-important">Why this remains conceptually important</h2>
+
+<p>The deeper lesson of this work is that neural source localization cannot be separated from the physics of the medium. The brain is not an isotropic sphere, and it is not merely a segmented anatomical object with scalar conductivities assigned to tissue classes. It is a structured, anisotropic conductor in which white matter architecture shapes the flow of current.</p>
+
+<p>For a physicist, this is a problem of fields in complex media. For a neurophysiologist, it is a reminder that the signal recorded at an electrode is shaped by the tissue through which it propagates. For a neuroimager, it is a call to treat anatomical and diffusion information not as optional visual context but as part of the measurement model. For source localization, it means that improving the inverse problem requires improving the forward problem.</p>
+
+<p>The experimental value of this study lies in its use of known intracranial dipoles. Instead of only asking whether anisotropy changes simulated fields, the study asked whether anisotropy improves prediction of fields measured inside the human brain. The answer was yes, but with an important qualification: anisotropy must be modeled in a patient-specific and anatomically grounded way.</p>
+
+<p>A fixed global anisotropy ratio is not enough. A homogeneous or overly simplified head model is not enough. The forward solution must respect the structured physical medium in which the field exists.</p>
+
+<p>In the end, the paper argues for a simple but consequential principle:</p>
+
+<blockquote>
+  <p>accurate electrophysiological source localization requires realistic biophysics, and realistic biophysics requires the brain’s anisotropic structure to be part of the forward model.</p>
+</blockquote>
+
+<p>That principle remains central for the future of EEG, iEEG, MEG, stimulation modeling, and clinically meaningful source imaging.</p>]]></content><author><name>Nima Dehghani</name></author><category term="Brain Mapping" /><category term="Diffusion Tensor Imaging" /><category term="Evoked potentials" /><category term="MEG" /><category term="EEG" /><category term="Forward Model" /><category term="Neuroanatomy" /><category term="Einite Element Model" /><summary type="html"><![CDATA[Beyond Isotropic Head Models: White Matter Anisotropy and the Intracranial EEG Forward Solution]]></summary></entry><entry><title type="html">Electromagnetic scaling in the brain: EEG, MEG, and the resistive-medium assumption</title><link href="https://neurovium.github.io/blog/2010/08/01/meg-spectra/" rel="alternate" type="text/html" title="Electromagnetic scaling in the brain: EEG, MEG, and the resistive-medium assumption" /><published>2010-08-01T00:00:00+00:00</published><updated>2010-08-01T00:00:00+00:00</updated><id>https://neurovium.github.io/blog/2010/08/01/meg-spectra</id><content type="html" xml:base="https://neurovium.github.io/blog/2010/08/01/meg-spectra/"><![CDATA[<p><em>Companion post to:</em><br />
 <strong>Comparative power spectral analysis of simultaneous electroencephalographic and magnetoencephalographic recordings in humans suggests non-resistive extracellular media</strong><br />
 Nima Dehghani, Claude Bédard, Sydney S. Cash, Eric Halgren, and Alain Destexhe<br />
 <em>Journal of Computational Neuroscience</em> 29, 405–421, 2010<br />
@@ -1423,5 +1680,4 @@ C_{\mathrm{EEG,MEG}} \approx 0.44.
 
 <p>For me, the importance of this result is that it transforms the K-complex from a descriptive EEG graphoelement into a mechanistically defined cortical state. It links human sleep EEG to laminar cortical physiology, to thalamocortical dynamics, and to fundamental questions about excitability, sensory gating, and memory-related network organization during sleep.</p>
 
-<p>The K-complex is not simply a large wave in the sleeping brain. It is a moment when the cortex briefly turns itself down.
-```</p>]]></content><author><name>Nima Dehghani</name></author><category term="Sleep" /><category term="Slow-Wave" /><category term="Local Field Potential" /><category term="Multiunit Activity" /><summary type="html"><![CDATA[Sleep EEG has always occupied a strange position in neuroscience. It is one of the oldest and most useful measurements of brain activity, yet many of its most recognizable waveforms have historically been understood more as phenomenological signatures than as precisely localized cellular or circuit events. We can score sleep from the EEG. We can identify stages, transitions, arousals, spindles, slow waves, and K-complexes. But for much of the history of human sleep neurophysiology, the connection between these macroscopic graphoelements and their underlying cortical microphysiology remained incomplete.]]></summary></entry></feed>
+<p>The K-complex is not simply a large wave in the sleeping brain. It is a moment when the cortex briefly turns itself down.</p>]]></content><author><name>Nima Dehghani</name></author><category term="Sleep" /><category term="Slow-Wave" /><category term="Local Field Potential" /><category term="Multiunit Activity" /><summary type="html"><![CDATA[Sleep EEG has always occupied a strange position in neuroscience. It is one of the oldest and most useful measurements of brain activity, yet many of its most recognizable waveforms have historically been understood more as phenomenological signatures than as precisely localized cellular or circuit events. We can score sleep from the EEG. We can identify stages, transitions, arousals, spindles, slow waves, and K-complexes. But for much of the history of human sleep neurophysiology, the connection between these macroscopic graphoelements and their underlying cortical microphysiology remained incomplete.]]></summary></entry></feed>
