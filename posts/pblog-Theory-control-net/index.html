@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ead7be">
+<title>Theoretical Principles of Multiscale Spatiotemporal Control of Neuronal Networks: A Complex Systems Perspective · Nima Dehghani</title>
+<meta name="description" content="Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<link type="application/atom+xml" rel="alternate" href="https://neurovium.github.io/feed.xml" title="Nima Dehghani" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Theoretical Principles of Multiscale Spatiotemporal Control of Neuronal Networks: A Complex Systems Perspective | Nima Dehghani</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Theoretical Principles of Multiscale Spatiotemporal Control of Neuronal Networks: A Complex Systems Perspective" />
+<meta name="author" content="Nima Dehghani" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Companion post to: Theoretical Principles of Multiscale Spatiotemporal Control of Neuronal Networks: A Complex Systems Perspective Nima Dehghani Frontiers in Computational Neuroscience 29, pages 371–387, (2010) DOI: 10.3389/fncom.2018.00081" />
+<meta property="og:description" content="Companion post to: Theoretical Principles of Multiscale Spatiotemporal Control of Neuronal Networks: A Complex Systems Perspective Nima Dehghani Frontiers in Computational Neuroscience 29, pages 371–387, (2010) DOI: 10.3389/fncom.2018.00081" />
+<link rel="canonical" href="https://neurovium.github.io/posts/pblog-Theory-control-net/" />
+<meta property="og:url" content="https://neurovium.github.io/posts/pblog-Theory-control-net/" />
+<meta property="og:site_name" content="Nima Dehghani" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-01-01T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Theoretical Principles of Multiscale Spatiotemporal Control of Neuronal Networks: A Complex Systems Perspective" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Nima Dehghani"},"dateModified":"2018-01-01T00:00:00+00:00","datePublished":"2018-01-01T00:00:00+00:00","description":"Companion post to: Theoretical Principles of Multiscale Spatiotemporal Control of Neuronal Networks: A Complex Systems Perspective Nima Dehghani Frontiers in Computational Neuroscience 29, pages 371–387, (2010) DOI: 10.3389/fncom.2018.00081","headline":"Theoretical Principles of Multiscale Spatiotemporal Control of Neuronal Networks: A Complex Systems Perspective","mainEntityOfPage":{"@type":"WebPage","@id":"https://neurovium.github.io/posts/pblog-Theory-control-net/"},"url":"https://neurovium.github.io/posts/pblog-Theory-control-net/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+  },
+  options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+</head>
+<body>
+  <header class="topbar">
+    <a href="/" class="topbar__brand">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"><line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/><line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/><line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/></g><circle cx="18" cy="20" r="2.2" fill="currentColor"/></svg>
+      Nima Dehghani
+    </a>
+    <button class="topbar__toggle" id="sidebar-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sidebar">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </header>
+
+  <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
+
+  <div class="app">
+    
+
+<aside class="side" id="sidebar" aria-label="Primary">
+  <a class="side__brand" href="/">
+    <svg class="glyph" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none">
+        <line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/>
+        <line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/>
+        <line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/>
+      </g>
+      <circle cx="18" cy="20" r="2.2" fill="currentColor"/>
+    </svg>
+    <span>
+      <span class="side__name">Nima Dehghani</span>
+      <span class="side__tag">@neurovium · MIT</span>
+    </span>
+  </a>
+
+  <nav class="side__nav" aria-label="Main navigation">
+    <a href="/" class="">Home</a>
+    <a href="/news/" class="">News<span class="side__pip" aria-label="new"></span></a>
+    <a href="/research/" class="">Research</a>
+    <a href="/papers/" class="">Paper Maze</a>
+    <a href="/garden/" class="">Idea Garden</a>
+    <a href="/blog/" class="">Blog</a>
+    <a href="/open-science/" class="">Open Science</a>
+    <a href="/about/" class="">About</a>
+  </nav>
+
+  <div class="side__social" aria-label="Social links">
+    <div class="side__social-row">
+      <a href="https://scholar.google.com/citations?user=acFMrVUAAAAJ&hl=en" title="Google Scholar" target="_blank" rel="noopener" aria-label="Google Scholar">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9zm6.82 7L12 12.72 5.18 9 12 5.28zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73z"/></svg>
+      </a>
+      <a href="mailto:nima.dehghani@mit.edu" title="Email" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/nimadehghani/" title="LinkedIn" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+    </div>
+    <div class="side__social-row">
+      <a href="https://github.com/neurovium" title="GitHub" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      </a>
+      <a href="https://twitter.com/neurovium" title="X" target="_blank" rel="noopener" aria-label="X">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://bsky.app/profile/neurovium.bsky.social" class="is-bsky" title="Bluesky" target="_blank" rel="noopener" aria-label="Bluesky">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.335 5.144c2.606 1.957 5.41 5.923 6.44 8.051.99-2.046 3.855-6.132 6.44-8.051 1.864-1.383 4.885-2.453 4.885 1.002 0 .69-.396 5.795-.629 6.624-.809 2.882-3.748 3.616-6.363 3.17 4.573.78 5.737 3.359 3.224 5.939-4.772 4.9-6.859-1.23-7.394-2.802-.534 1.572-2.622 7.702-7.394 2.802-2.513-2.58-1.349-5.16 3.224-5.939-2.615.446-5.554-.288-6.363-3.17-.233-.829-.629-5.934-.629-6.624 0-3.455 3.021-2.385 4.885-1.002z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="n4-set" aria-label="N⁴ : NeuroAI ⊃ N³">
+    <span class="n4-set__lbl">N&#8308;</span>
+    <div class="n4-set n4-set--ai">
+      <span class="n4-set__lbl">NeuroAI</span>
+      <div class="n4-set n4-set--n3">
+        <span class="n4-set__lbl">N&#179;</span>
+        <ul>
+          <li>NeuroPhysics</li>
+          <li>NeuroComputation</li>
+          <li>NeuroDynamics</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="side__foot">
+    <span>
+      <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+      ·
+      <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    </span>
+  </div>
+</aside>
+
+    <main class="main">
+      <article class="paper">
+  <div class="paper__crumb">
+    <a href="/blog/">← Blog</a>
+    <span style="color:var(--muted-soft);">·</span>
+    <span>Jan 1, 2018</span>
+  </div>
+
+  <h1>Theoretical Principles of Multiscale Spatiotemporal Control of Neuronal Networks: A Complex Systems Perspective</h1>
+  
+  
+
+  <section class="paper__section prose" style="margin-top:28px;">
+    <p><em>Companion post to:</em><br />
+<strong>Theoretical Principles of Multiscale Spatiotemporal Control of Neuronal Networks: A Complex Systems Perspective</strong><br />
+Nima Dehghani
+<em>Frontiers in Computational Neuroscience</em> 29, pages 371–387, (2010)<br />
+DOI: <code class="language-plaintext highlighter-rouge">10.3389/fncom.2018.00081</code></p>
+
+<hr />
+
+<h1 id="beyond-the-connectome-multiscale-information-dynamics-and-the-control-of-neuronal-networks">Beyond the Connectome: Multiscale Information, Dynamics, and the Control of Neuronal Networks</h1>
+
+<p>Modern neuroscience has acquired increasingly powerful tools for perturbing the nervous system. Electrical stimulation, deep brain stimulation, transcranial stimulation, optogenetics, and closed-loop neuromodulation all represent attempts to intervene in neural activity with increasing spatial, temporal, and cell-type specificity. The implicit promise behind many of these technologies is simple: if we can stimulate the right cells, at the right time, with sufficient precision, then we should be able to control neural circuits and eventually control behavior.</p>
+
+<p>The central argument of my paper, <em>Theoretical Principles of Multiscale Spatiotemporal Control of Neuronal Networks: A Complex Systems Perspective</em>, is that this intuition is incomplete. The difficulty of neural control is not merely that our tools are still too coarse. It is that the nervous system is a multiscale adaptive complex system, and the scale at which we intervene is not necessarily the scale at which the relevant computation is organized.</p>
+
+<p>This distinction matters. A neural circuit is not a passive collection of independent components waiting to be individually tuned. It is a dynamical system whose behavior emerges from interactions among elements across spatial and temporal scales. The activity of a single neuron matters, but its meaning depends on circuit context, population state, neuromodulatory regime, behavioral state, and the larger dynamical trajectory in which it is embedded. Conversely, macroscopic behavior may remain stable despite large variability at microscopic scales. This is not an accidental imperfection of biological systems; it is one of their defining principles.</p>
+
+<p>The paper therefore argues for a shift in how we think about neural stimulation and neural control. Rather than treating control as the precise manipulation of microscopic elements, we should formulate it as the control of information flow across scales. The problem is not simply where to stimulate, but what scale of computation we aim to influence, what variables are relevant at that scale, and how perturbations propagate through the hierarchy of neural organization.</p>
+
+<p>In this view, the goal of stimulation is not to impose a predetermined microscopic state on the nervous system. The goal is to guide the system toward a desired macroscopic or mesoscale computational regime while respecting the intrinsic dynamics that make biological computation robust, flexible, and adaptive.</p>
+
+<hr />
+
+<h2 id="1-from-stimulation-precision-to-control-failure">1. From stimulation precision to control failure</h2>
+
+<p>The dream of controlling the nervous system through direct physical intervention is old. Since Galvani’s observation that electrical stimulation could produce muscle contraction, the nervous system has been understood as an excitable medium: a biological substrate whose activity can be externally perturbed by electrical, chemical, optical, or mechanical means. This insight eventually led to cortical stimulation, deep brain stimulation, transcranial magnetic stimulation, transcranial current stimulation, and modern optogenetics.</p>
+
+<p>Each technological stage has improved some dimension of stimulation. Deep brain stimulation made chronic stimulation of deep structures clinically possible. Transcranial stimulation provided noninvasive access to large-scale cortical dynamics. Optogenetics introduced millisecond-scale control of genetically specified neuronal populations. From an engineering perspective, this progression appears to move toward the ideal: more precise stimulation in space, time, and cell type.</p>
+
+<p>Yet the empirical reality is more complicated. Increased precision of stimulation does not automatically produce increased precision of behavioral or computational control. Microstimulation can bias behavior but often with variable efficacy. Optogenetic perturbations can produce striking effects, but they can also have indirect downstream consequences that are difficult to predict. Transcranial stimulation can modulate cortical excitability, but its effects spread through tissue, depend on state, and vary across subjects and timescales. Deep brain stimulation can be clinically powerful, yet parameter tuning often remains partly empirical.</p>
+
+<p>The question, then, is not only how to stimulate more precisely. The deeper question is why precise perturbation of components does not necessarily translate into precise control of the whole system.</p>
+
+<p>The answer is that the nervous system is not organized as a linear machine in which microscopic control variables map cleanly onto macroscopic outcomes. It is a nonlinear, recurrent, adaptive, multiscale system. In such systems, microscopic perturbations are filtered, amplified, suppressed, rerouted, or transformed depending on the current dynamical state of the system. The same stimulation may have different effects depending on behavioral context, network state, neuromodulatory tone, ongoing oscillations, and the history of previous perturbations.</p>
+
+<p>This is why neural stimulation cannot be understood only as an engineering problem of device precision. It is also a theoretical problem about the scale-dependent organization of neural computation.</p>
+
+<hr />
+
+<h2 id="2-the-constructionist-temptation">2. The constructionist temptation</h2>
+
+<p>A persistent assumption in neuroscience is that if we know enough microscopic detail, we will eventually be able to predict and control the macroscopic system. In the strongest version of this view, the connectome, cell types, synaptic weights, ion channels, dendritic morphologies, and biophysical parameters together form the complete explanatory basis for neural computation. Once all of these details are mapped, the system should become controllable.</p>
+
+<p>This constructionist view is attractive because it aligns with the reductionist success of many physical sciences. If a system is composed of parts, then perhaps understanding the parts in sufficient detail should yield understanding of the whole. But complex systems do not generally behave this way. The difficulty is not that microscopic details are irrelevant. The difficulty is that their relevance is scale-dependent.</p>
+
+<p>A neuronal network contains many levels of organization: ion channels, synapses, dendrites, neurons, microcircuits, columns, areas, distributed networks, behavioral states, and organism-level interactions with the environment. These levels are physically connected, but they are not independent layers that can be studied in isolation and then simply stacked together. Nor are they perfectly coherent, such that the state of the whole can be read directly from the state of any single level.</p>
+
+<p>In a complex system, the relevant variables change with scale. At one scale, individual spikes or synaptic release probabilities may be essential. At another scale, the relevant object may be a population trajectory, an oscillatory mode, an excitation/inhibition balance, or a low-dimensional manifold of neural activity. At still larger scales, the relevant variable may be a behavioral policy, a sensory prediction, a motor program, or a cognitive state.</p>
+
+<p>The mistake is to assume that the finest scale is always the most fundamental scale for control. It may be the most detailed scale, but detail and control are not the same thing.</p>
+
+<p>A system can be microscopically variable and macroscopically robust. This is a central property of biological organization. Multiple microscopic configurations can produce similar macroscopic outcomes. Different circuit parameter sets can yield similar rhythms. Different synaptic configurations can support similar population-level functions. Similar behaviors can arise from partially distinct neural trajectories. This degeneracy is not a failure of biological design; it is a mechanism of robustness.</p>
+
+<p>Thus, the control problem should not be framed as: how do we force every microscopic component into a desired state?</p>
+
+<p>It should be framed as: what macroscopic or mesoscale computational state do we want to induce, and what perturbations can reliably guide the system there despite microscopic variability?</p>
+
+<hr />
+
+<h2 id="3-marrs-levels-and-the-missing-problem-of-scale-coupling">3. Marr’s levels and the missing problem of scale coupling</h2>
+
+<p>David Marr’s famous framework divided explanation into computational, algorithmic, and implementational levels. This distinction was enormously useful because it clarified that understanding a neural system requires more than describing its physical substrate. One must also ask what problem is being solved and by what representational or algorithmic strategy.</p>
+
+<p>However, for complex biological systems, a strict separation of levels can become problematic. The nervous system does not simply instantiate an abstract computation in a passive substrate. Its computation is dynamically entangled with its implementation. The physical structure of a circuit constrains possible computations, but it does not uniquely determine them. Similarly, a computation may be realized through multiple physical configurations.</p>
+
+<p>The problem is therefore not only that we need multiple levels of explanation. It is that these levels interact.</p>
+
+<p>A multiscale theory of neural control must therefore go beyond a static separation of computation, algorithm, and implementation. It must ask how information moves between levels, how fine-scale variability affects coarse-scale dynamics, and how coarse-scale constraints shape the relevance of fine-scale details.</p>
+
+<p>This can be stated in information-theoretic terms. Let $X$ represent the full microscopic state of a neural system. At a given scale $s$, we observe or define a coarse-grained variable</p>
+
+\[Y_s = \Phi_s(X),\]
+
+<p>where $\Phi_s$ is a scale-dependent coarse-graining map. The control problem is not necessarily to specify $X(t)$ in all microscopic detail. In most cases, that is neither possible nor desirable. Instead, the goal is to shape the trajectory of $Y_s(t)$, where $Y_s$ captures the relevant computational variable at the scale of interest.</p>
+
+<p>The crucial issue is that different choices of $s$ produce different descriptions of the system. At too fine a scale, we may include enormous variability that has little bearing on the target computation. At too coarse a scale, we may erase the variables that make control possible. The correct scale is not given in advance. It depends on the computation, the circuit, the perturbation, and the desired behavioral or physiological outcome.</p>
+
+<p>This is why a multiscale information-theoretic framework is necessary. It provides a way to ask how much information is required to describe the system at each scale, which variables retain predictive power, and which perturbations are meaningful for control.</p>
+
+<hr />
+
+<h2 id="4-network-control-is-not-enough">4. Network control is not enough</h2>
+
+<p>For physicists and network theorists, it is natural to approach neural control through network control theory. If the brain is represented as a graph, with nodes and edges corresponding to neural elements and their connections, then perhaps control can be achieved by identifying driver nodes whose manipulation moves the system into a desired state.</p>
+
+<p>This approach has produced important insights in many systems. But when applied too literally to biological neural networks, it risks confusing structural connectivity with dynamical control.</p>
+
+<p>A connectome is not a dynamics. A graph tells us which elements are connected, but not how signals are transformed, gated, delayed, amplified, synchronized, suppressed, or reconfigured over time. Neural edges are not passive wires. Synapses have time constants, nonlinearities, short-term plasticity, neuromodulatory dependence, and state-dependent efficacy. Nodes are not identical units. Neurons differ in intrinsic excitability, morphology, cell type, receptor composition, and embedding within local and long-range circuits.</p>
+
+<p>Moreover, the same structural network can support multiple dynamical regimes. Oscillation, synchrony, metastability, chaotic transients, balanced irregular activity, and attractor-like dynamics can all arise depending on parameters and state. Conversely, similar dynamics can arise from different structural configurations.</p>
+
+<p>Thus, the graph alone does not define controllability. Node dynamics matter. Edge dynamics matter. Delays matter. The depth of the network matters. The ratio between internal and external coupling matters. The current state of the system matters.</p>
+
+<p>This is especially important for the nervous system because biological networks are not shallow input-output devices. They are deeply recurrent systems with strong internal interactions. In a shallow network, an external input may directly determine the behavior of downstream nodes. In a deep recurrent network, a perturbation is absorbed into ongoing activity, transformed through internal loops, and modulated by the current state of the system.</p>
+
+<p>A structural driver node may therefore fail as a dynamical control point if the system’s current regime does not allow that perturbation to propagate in the intended way. Conversely, a node that appears structurally modest may become dynamically important under specific states.</p>
+
+<p>This means that neural control requires a joint theory of structure and dynamics. The relevant object is not merely the connectivity matrix $A$, but the dynamical system</p>
+
+\[\frac{dx}{dt} = F(x, A, u, \theta, t),\]
+
+<p>where $x$ is the neural state, $u$ is the control input, $\theta$ represents parameters such as excitability and synaptic efficacy, and $t$ matters because the system is adaptive and history-dependent.</p>
+
+<p>The control problem is therefore not solved by finding important nodes in $A$. It requires understanding how perturbations interact with the flow generated by $F$.</p>
+
+<hr />
+
+<h2 id="5-complexity-profile-and-the-information-required-for-control">5. Complexity profile and the information required for control</h2>
+
+<p>One of the central ideas in the paper is that control should be matched to the system’s complexity profile. In the language of complex systems, a complexity profile describes how much information is needed to describe a system as a function of scale.</p>
+
+<p>At very fine scales, the nervous system contains enormous detail: ion channel states, synaptic vesicle probabilities, dendritic conductances, spike timing, local field fluctuations, and molecular signaling pathways. A complete description of these variables would require a vast number of bits. But not all of this information is relevant for every computational or behavioral outcome.</p>
+
+<p>At coarser scales, many microscopic degrees of freedom become irrelevant or redundant. Population activity, oscillatory phase, excitation/inhibition balance, and low-dimensional neural trajectories may capture the variables that matter for a given computation. The number of possible relevant states may decrease, even though the underlying microscopic variability remains large.</p>
+
+<p>This is one of the reasons biological systems can be robust. They do not need to preserve exact microscopic configurations to maintain function. They need to preserve the relevant macroscopic or mesoscale organization.</p>
+
+<p>From this perspective, stimulation should be designed according to the informational scale of the target. If the goal is to alter a local sensory representation, a fine-scale perturbation may be appropriate. If the goal is to shift a pathological network state, such as seizure-like hypersynchrony, the relevant scale may be a population-level dynamical regime. If the goal is to alter cognition or behavior, the target may not be a single anatomical locus but a distributed trajectory through neural state space.</p>
+
+<p>The precision required for control is therefore not simply technological precision. It is computational precision: the amount of information needed to specify and guide the relevant state at the relevant scale.</p>
+
+<p>This distinction can be summarized as follows:</p>
+
+\[\text{effective control} \neq \text{maximal microscopic precision}.\]
+
+<p>Rather,</p>
+
+\[\text{effective control} \sim \text{scale-matched perturbation of relevant dynamical variables}.\]
+
+<p>This is a different way of thinking about neuromodulation. The question becomes not “How do we stimulate more precisely?” but “What scale of organization must be perturbed to change the computation we care about?”</p>
+
+<hr />
+
+<h2 id="6-variability-as-a-feature-of-neural-computation">6. Variability as a feature of neural computation</h2>
+
+<p>A common engineering instinct is to treat variability as noise to be eliminated. In biological systems, however, variability is not merely a nuisance. It is part of the architecture of robustness and adaptability.</p>
+
+<p>Neurons are variable. Synapses are variable. Ion channels fluctuate. Population responses vary across trials. Behavioral responses vary even under controlled conditions. But this variability coexists with stable macroscopic function. Animals can perceive, decide, move, and adapt despite fluctuations at every level of the nervous system.</p>
+
+<p>This coexistence of microscopic variability and macroscopic reliability is a defining feature of complex adaptive systems. It implies that the system does not rely on exact microscopic reproducibility. Instead, it relies on ensembles of possible configurations that preserve the relevant functional output.</p>
+
+<p>A useful way to think about this is through the idea of degeneracy: structurally different configurations can produce functionally similar outcomes. Degeneracy is distinct from simple redundancy. In engineered redundancy, one often copies identical components so that if one fails another can replace it. In biological degeneracy, different components or configurations can contribute to similar functions in context-dependent ways.</p>
+
+<p>This has profound consequences for control. If many microscopic states correspond to the same macroscopic function, then attempting to control a specific microscopic state may be unnecessary. Worse, it may be counterproductive, because it may fight against the system’s own mechanisms of robustness.</p>
+
+<p>Instead, control should aim to shape the probability distribution over relevant population states. The goal is not necessarily to force a single deterministic response, but to bias the system toward a family of desirable trajectories.</p>
+
+<p>In this sense, neural control is closer to guiding a distribution than commanding a machine. A perturbation should be evaluated not only by its immediate effect on local activity, but by how it changes the likelihood of the system entering or remaining within a desired dynamical regime.</p>
+
+<hr />
+
+<h2 id="7-excitable-media-synchrony-and-the-loss-of-complexity">7. Excitable media, synchrony, and the loss of complexity</h2>
+
+<p>The nervous system belongs to a broader class of excitable biological media. Like cardiac tissue, cortical networks contain elements that can produce propagating activity, synchronization, oscillation, and transitions between dynamical regimes. This comparison is useful because it emphasizes that pathological states often involve not simply too much or too little activity, but a collapse of dynamical repertoire.</p>
+
+<p>In healthy systems, variability across scales supports a rich set of possible macroscopic states. The system can respond flexibly to perturbations while maintaining functional stability. In pathological regimes, excessive coupling or abnormal synchronization can reduce this repertoire. The system becomes more regular, more constrained, and less capable of adaptive response.</p>
+
+<p>Seizures and cardiac arrhythmias are examples of this principle. In both cases, the problem is not merely that individual elements are active. The problem is that the collective dynamics have entered an abnormal regime. The system loses complexity in the sense that many possible degrees of freedom collapse into an overly synchronized or stereotyped pattern.</p>
+
+<p>This matters for stimulation because the appropriate target is not necessarily a particular cell or anatomical point. The target may be the collective dynamical regime itself. The intervention must restore or redirect the system’s state-space trajectory, not merely suppress or excite local activity.</p>
+
+<p>This view also explains why closed-loop and irregular stimulation can sometimes be more effective than simple periodic forcing. If a pathological state is a dynamical regime, then control must be timed relative to the system’s own trajectory. Perturbations should be applied when they can redirect the flow of activity, not merely when a clock says to stimulate.</p>
+
+<p>The deeper principle is that control of excitable media requires sensitivity to phase, state, and scale.</p>
+
+<hr />
+
+<h2 id="8-predictability-in-high-dimensional-neural-systems">8. Predictability in high-dimensional neural systems</h2>
+
+<p>If neural systems are nonlinear, recurrent, noisy, and adaptive, are they inherently unpredictable?</p>
+
+<p>The answer is no, but their predictability is conditional. Complex systems are not unpredictable simply because they have many parts. They become difficult to predict when relevant information is distributed across scales and when interactions generate new macroscopic variables that cannot be inferred from isolated components.</p>
+
+<p>In simple chaotic systems, unpredictability is often associated with sensitivity to initial conditions. Small differences grow rapidly, limiting long-term prediction. But in complex adaptive systems, the issue is broader. The system may contain both unstable microscopic trajectories and stable macroscopic patterns. A single spike may strongly perturb the microscopic state while leaving population-level activity nearly unchanged. This is precisely the kind of scale-dependent stability that makes biological computation possible.</p>
+
+<p>The nervous system may therefore be microscopically unstable and macroscopically reliable at the same time.</p>
+
+<p>This distinction is essential. If one asks for exact prediction of all microscopic variables, the system may appear uncontrollable. If one asks for prediction of the relevant coarse-grained variables, the system may be substantially predictable.</p>
+
+<p>This is why dimensionality reduction has become so important in systems neuroscience. Population activity often evolves along low-dimensional trajectories embedded in a high-dimensional neural space. These trajectories may capture task variables, motor preparation, sensory context, decision dynamics, or internal state. They provide a natural language for control because they identify the collective variables that organize neural activity.</p>
+
+<p>A control input should therefore be judged by how it affects the trajectory of the system in this low-dimensional dynamical space. The goal is not to dictate every neuronal event, but to shape the flow of population activity.</p>
+
+<hr />
+
+<h2 id="9-metastability-transient-computation-and-heteroclinic-channels">9. Metastability, transient computation, and heteroclinic channels</h2>
+
+<p>A static attractor picture is insufficient for many forms of neural computation. Higher cognition, perception, and action often require transient dynamics: sequences of states that unfold over time, retain context, and transform input history into future behavior.</p>
+
+<p>This is where concepts such as reservoir computing, metastability, and stable heteroclinic channels become relevant.</p>
+
+<p>In reservoir computing, a recurrent system transforms input into rich transient dynamics. Computation does not require convergence to a fixed point. Instead, the transient trajectory itself carries information. This is attractive for neuroscience because cortical computation often appears to involve temporally extended population trajectories rather than static representations.</p>
+
+<p>However, transient dynamics must be reliable. A useful biological system must be sensitive enough to distinguish inputs, but stable enough to resist destructive perturbations. It must combine separation with robustness. This is a delicate balance.</p>
+
+<p>One possible mechanism is metastable sequencing. The system moves through a series of quasi-stable states, each of which constrains nearby trajectories. In dynamical systems language, one can think of computation as flow through a structured landscape of saddle states, where stable directions pull trajectories toward a channel and unstable directions move them onward to the next state.</p>
+
+<p>Such stable heteroclinic channels provide a way to understand how transient computation can be both flexible and reliable. The system does not remain fixed, but neither does it wander arbitrarily. It follows a constrained path through state space.</p>
+
+<p>For control, this suggests a strategy: do not attempt to impose the final state directly. Instead, apply small, repeated, state-dependent perturbations that keep the system within the desired computational channel.</p>
+
+<p>This is a fundamentally dynamical view of stimulation. The relevant question is not only whether a perturbation increases or decreases firing. The question is whether it redirects the trajectory toward or away from a desired sequence of metastable states.</p>
+
+<hr />
+
+<h2 id="10-precision-analog-computation-and-bounded-control">10. Precision, analog computation, and bounded control</h2>
+
+<p>At first glance, analog neural systems appear to pose a severe problem for control. If neural variables are continuous, and if computation depends on fine differences in state, then perhaps infinite precision would be required to fully control the system. This would make exact control impossible.</p>
+
+<p>But biological systems do not behave as if they require infinite microscopic precision. They produce reliable macroscopic behavior despite noise, variability, plasticity, and perturbation. This suggests that the relevant precision of biological computation is bounded.</p>
+
+<p>The paper connects this point to theoretical work on analog computation and recurrent neural networks. Even in systems with continuous variables, useful computation can often be described with finite precision over finite computational time. In simplified terms, if a computation proceeds for $N$ steps, then the relevant precision may scale linearly with $N$, rather than requiring unbounded specification of all analog variables.</p>
+
+<p>This has a biological interpretation. The nervous system may achieve reliable computation by decomposing tasks into multiscale modules, each operating within a bounded range of required precision. Rather than relying on infinite precision at the microscopic level, the system distributes computation across levels and timescales.</p>
+
+<p>For neural control, this implies that the appropriate intervention should respect the computational precision of the target scale. Too little precision fails to influence the relevant variables. But too much microscopic specificity may not improve control if the additional detail is irrelevant to the coarse-grained computation.</p>
+
+<p>The control problem is therefore bounded by scale:</p>
+
+\[\text{control precision required} \sim \text{precision of the relevant computation at scale } s.\]
+
+<p>This is not a call for imprecision. It is a call for matched precision.</p>
+
+<hr />
+
+<h2 id="11-why-more-data-alone-is-not-enough">11. Why more data alone is not enough</h2>
+
+<p>Large-scale neuroscience is increasingly capable of producing extraordinary datasets: connectomes, cell atlases, dense electrophysiology, calcium imaging, transcriptomics, and multimodal maps across brain regions and species. These data are essential. But data accumulation alone does not solve the problem of control.</p>
+
+<p>A complete map of microscopic components would still leave open the question of which variables matter for a given computation. It would not automatically tell us how fine-scale perturbations propagate to coarse-scale behavior. It would not identify the correct control scale. It would not by itself distinguish causal variables from irrelevant microscopic detail.</p>
+
+<p>The danger is a blind big-data approach: the assumption that sufficiently detailed measurement will automatically yield understanding. In complex systems, more detail can help only when embedded in the right theoretical framework. Without such a framework, additional detail may increase descriptive resolution without increasing explanatory or control power.</p>
+
+<p>What is needed is not less data, but scale-aware data. We need methods that identify how microscopic variability maps onto mesoscale dynamics, how mesoscale dynamics constrain macroscopic behavior, and how interventions at one scale alter information flow across others.</p>
+
+<p>This means that connectomics, physiology, perturbation experiments, and computational modeling must be integrated around explicit multiscale questions:</p>
+
+<ul>
+  <li>Which variables are relevant at the scale of the target computation?</li>
+  <li>How sensitive is the macroscopic output to fine-scale perturbations?</li>
+  <li>Which microscopic differences are functionally irrelevant?</li>
+  <li>Which perturbations alter the probability of entering a desired dynamical regime?</li>
+  <li>How does the system’s current state change the effect of stimulation?</li>
+  <li>What scale of intervention minimizes energy while maximizing functional specificity?</li>
+</ul>
+
+<p>These are not only empirical questions. They are theoretical questions about complexity, information, and dynamics.</p>
+
+<hr />
+
+<h2 id="12-toward-scale-matched-neuroengineering">12. Toward scale-matched neuroengineering</h2>
+
+<p>The practical consequence of this framework is that neuroengineering should not define progress solely by smaller electrodes, more precise light delivery, finer cell-type specificity, or higher temporal resolution. These are important technological achievements, but they are not sufficient.</p>
+
+<p>The deeper goal is scale-matched intervention.</p>
+
+<p>If a pathological condition is organized at the level of a local microcircuit, then local cell-type-specific stimulation may be appropriate. If it is organized as a distributed oscillatory state, then stimulation must target phase, synchrony, and network-level dynamics. If it involves abnormal transitions between macroscopic regimes, then closed-loop perturbation should be designed to redirect state-space trajectories. If it involves cognitive computation, then the relevant variables may be distributed, transient, and context-dependent.</p>
+
+<p>In each case, the stimulation strategy should be matched to the organization of the computation.</p>
+
+<p>This also means that control should often be compensatory rather than commanding. A command-based view imagines imposing a desired state from outside. A compensatory view recognizes that the system already has intrinsic dynamics and that effective perturbation works by nudging those dynamics. The goal is to exploit the system’s own structure rather than overwrite it.</p>
+
+<p>This is especially important for adaptive biological systems. Because the nervous system changes with plasticity, homeostasis, learning, and state-dependent modulation, a fixed stimulation policy may lose efficacy over time. Control must therefore be dynamic. It must monitor the system, infer its current regime, and adjust perturbations accordingly.</p>
+
+<p>In this sense, the future of neural stimulation is not merely more precise stimulation. It is theory-guided, closed-loop, multiscale control.</p>
+
+<hr />
+
+<h2 id="13-implications-for-computational-neuroscience-and-neurophysics">13. Implications for computational neuroscience and neurophysics</h2>
+
+<p>For computational neuroscience, the paper argues that models of neural control must move beyond static structure-function mappings. The connectome is important, but it is not the computation. A model must include dynamics, state dependence, scale, and perturbation response.</p>
+
+<p>For neurophysiology, the paper emphasizes that neural activity should be interpreted as part of an excitable, recurrent, multiscale medium. Oscillations, synchrony, metastability, and population trajectories are not secondary phenomena layered on top of cellular activity. They are central objects of computation and control.</p>
+
+<p>For physics and complex systems, the nervous system offers a concrete biological example of emergence, coarse-graining, robustness, and scale-dependent information. It is a system in which microscopic variability and macroscopic reliability coexist; in which structure constrains dynamics without uniquely determining them; and in which control requires understanding not only components, but the flow of information across levels.</p>
+
+<p>For network science, the paper is a caution against purely structural notions of controllability. Biological networks are not just graphs. They are dynamical, adaptive, heterogeneous systems whose control properties depend on the interaction between topology and node dynamics.</p>
+
+<p>For information theory, the key challenge is to formalize scale-dependent relevance. The amount of information needed to describe a system is not the same as the amount of information needed to control a particular computation. A multiscale information theory of neural systems should help identify which variables retain functional significance after coarse-graining and which details can be ignored.</p>
+
+<hr />
+
+<h2 id="14-the-central-claim">14. The central claim</h2>
+
+<p>The central claim of the paper can be stated simply:</p>
+
+<p>Neural control fails when the scale of perturbation is mismatched to the scale of computation.</p>
+
+<p>This does not mean that microscopic mechanisms are unimportant. They are essential. But their relevance depends on how they participate in multiscale dynamics. The nervous system cannot be controlled by blindly pushing its smallest parts any more than a fluid can be controlled by specifying the position of every molecule. In both cases, the useful variables often live at emergent scales.</p>
+
+<p>A successful theory of neural stimulation must therefore identify the scale at which the target computation is organized, the variables that define that computation, and the perturbations that can reliably alter those variables.</p>
+
+<p>This requires a shift from component-level control to multiscale dynamical control. It requires a theory of how microscopic variability supports macroscopic robustness. It requires understanding when fine-scale precision matters and when it does not. And it requires viewing stimulation not as an external command imposed on a passive circuit, but as an interaction with an active, adaptive, excitable medium.</p>
+
+<p>The long-term promise of neuroengineering will not be realized by precision alone. Precision must be guided by theory. The relevant theory is one in which neural systems are understood as complex dynamical systems whose computations are distributed across scales.</p>
+
+<p>Only then can stimulation move from empirical intervention toward principled control.</p>
+
+<hr />
+
+  </section>
+
+  
+  <section class="paper__section">
+    <h2>The room this opens</h2>
+    <div class="linkbar">
+      <a href="/papers/Theory-control-net/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="20" x2="12" y2="12"/><line x1="12" y1="12" x2="21" y2="4"/><line x1="12" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="21" y2="20"/></svg>
+        Follow this path into the Maze
+      </a>
+    </div>
+  </section>
+  
+</article>
+
+      <footer class="foot">
+  <span>© 2026 · Nima Dehghani</span>
+  <span>
+    <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    ·
+    <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+  </span>
+</footer>
+
+    </main>
+  </div>
+
+  <script src="/assets/js/quotes.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

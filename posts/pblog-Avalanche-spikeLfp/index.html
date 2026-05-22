@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ead7be">
+<title>Revisiting the Critical Brain: Neuronal Avalanches, Power Laws, and the Statistical Structure of In Vivo Cortex · Nima Dehghani</title>
+<meta name="description" content="Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<link type="application/atom+xml" rel="alternate" href="https://neurovium.github.io/feed.xml" title="Nima Dehghani" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Revisiting the Critical Brain: Neuronal Avalanches, Power Laws, and the Statistical Structure of In Vivo Cortex | Nima Dehghani</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Revisiting the Critical Brain: Neuronal Avalanches, Power Laws, and the Statistical Structure of In Vivo Cortex" />
+<meta name="author" content="Nima Dehghani" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Companion post to: Avalanche Analysis from Multielectrode Ensemble Recordings in Cat, Monkey, and Human Cerebral Cortex during Wakefulness and Sleep Dehghani, Nima and Hatsopoulos, Nicholas G. and Haga, Zach D. and Parker, Rebecca and Greger, Bradley and Halgren, Eric and Cash, Sydney S. and Destexhe, Alain Frontiers in Physiology Volume 3 - 2012 DOI: 10.3389/fphys.2012.00302" />
+<meta property="og:description" content="Companion post to: Avalanche Analysis from Multielectrode Ensemble Recordings in Cat, Monkey, and Human Cerebral Cortex during Wakefulness and Sleep Dehghani, Nima and Hatsopoulos, Nicholas G. and Haga, Zach D. and Parker, Rebecca and Greger, Bradley and Halgren, Eric and Cash, Sydney S. and Destexhe, Alain Frontiers in Physiology Volume 3 - 2012 DOI: 10.3389/fphys.2012.00302" />
+<link rel="canonical" href="https://neurovium.github.io/posts/pblog-Avalanche-spikeLfp/" />
+<meta property="og:url" content="https://neurovium.github.io/posts/pblog-Avalanche-spikeLfp/" />
+<meta property="og:site_name" content="Nima Dehghani" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2012-08-12T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Revisiting the Critical Brain: Neuronal Avalanches, Power Laws, and the Statistical Structure of In Vivo Cortex" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Nima Dehghani"},"dateModified":"2012-08-12T00:00:00+00:00","datePublished":"2012-08-12T00:00:00+00:00","description":"Companion post to: Avalanche Analysis from Multielectrode Ensemble Recordings in Cat, Monkey, and Human Cerebral Cortex during Wakefulness and Sleep Dehghani, Nima and Hatsopoulos, Nicholas G. and Haga, Zach D. and Parker, Rebecca and Greger, Bradley and Halgren, Eric and Cash, Sydney S. and Destexhe, Alain Frontiers in Physiology Volume 3 - 2012 DOI: 10.3389/fphys.2012.00302","headline":"Revisiting the Critical Brain: Neuronal Avalanches, Power Laws, and the Statistical Structure of In Vivo Cortex","mainEntityOfPage":{"@type":"WebPage","@id":"https://neurovium.github.io/posts/pblog-Avalanche-spikeLfp/"},"url":"https://neurovium.github.io/posts/pblog-Avalanche-spikeLfp/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+  },
+  options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+</head>
+<body>
+  <header class="topbar">
+    <a href="/" class="topbar__brand">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"><line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/><line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/><line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/></g><circle cx="18" cy="20" r="2.2" fill="currentColor"/></svg>
+      Nima Dehghani
+    </a>
+    <button class="topbar__toggle" id="sidebar-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sidebar">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </header>
+
+  <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
+
+  <div class="app">
+    
+
+<aside class="side" id="sidebar" aria-label="Primary">
+  <a class="side__brand" href="/">
+    <svg class="glyph" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none">
+        <line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/>
+        <line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/>
+        <line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/>
+      </g>
+      <circle cx="18" cy="20" r="2.2" fill="currentColor"/>
+    </svg>
+    <span>
+      <span class="side__name">Nima Dehghani</span>
+      <span class="side__tag">@neurovium · MIT</span>
+    </span>
+  </a>
+
+  <nav class="side__nav" aria-label="Main navigation">
+    <a href="/" class="">Home</a>
+    <a href="/news/" class="">News<span class="side__pip" aria-label="new"></span></a>
+    <a href="/research/" class="">Research</a>
+    <a href="/papers/" class="">Paper Maze</a>
+    <a href="/garden/" class="">Idea Garden</a>
+    <a href="/blog/" class="">Blog</a>
+    <a href="/open-science/" class="">Open Science</a>
+    <a href="/about/" class="">About</a>
+  </nav>
+
+  <div class="side__social" aria-label="Social links">
+    <div class="side__social-row">
+      <a href="https://scholar.google.com/citations?user=acFMrVUAAAAJ&hl=en" title="Google Scholar" target="_blank" rel="noopener" aria-label="Google Scholar">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9zm6.82 7L12 12.72 5.18 9 12 5.28zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73z"/></svg>
+      </a>
+      <a href="mailto:nima.dehghani@mit.edu" title="Email" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/nimadehghani/" title="LinkedIn" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+    </div>
+    <div class="side__social-row">
+      <a href="https://github.com/neurovium" title="GitHub" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      </a>
+      <a href="https://twitter.com/neurovium" title="X" target="_blank" rel="noopener" aria-label="X">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://bsky.app/profile/neurovium.bsky.social" class="is-bsky" title="Bluesky" target="_blank" rel="noopener" aria-label="Bluesky">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.335 5.144c2.606 1.957 5.41 5.923 6.44 8.051.99-2.046 3.855-6.132 6.44-8.051 1.864-1.383 4.885-2.453 4.885 1.002 0 .69-.396 5.795-.629 6.624-.809 2.882-3.748 3.616-6.363 3.17 4.573.78 5.737 3.359 3.224 5.939-4.772 4.9-6.859-1.23-7.394-2.802-.534 1.572-2.622 7.702-7.394 2.802-2.513-2.58-1.349-5.16 3.224-5.939-2.615.446-5.554-.288-6.363-3.17-.233-.829-.629-5.934-.629-6.624 0-3.455 3.021-2.385 4.885-1.002z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="n4-set" aria-label="N⁴ : NeuroAI ⊃ N³">
+    <span class="n4-set__lbl">N&#8308;</span>
+    <div class="n4-set n4-set--ai">
+      <span class="n4-set__lbl">NeuroAI</span>
+      <div class="n4-set n4-set--n3">
+        <span class="n4-set__lbl">N&#179;</span>
+        <ul>
+          <li>NeuroPhysics</li>
+          <li>NeuroComputation</li>
+          <li>NeuroDynamics</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="side__foot">
+    <span>
+      <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+      ·
+      <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    </span>
+  </div>
+</aside>
+
+    <main class="main">
+      <article class="paper">
+  <div class="paper__crumb">
+    <a href="/blog/">← Blog</a>
+    <span style="color:var(--muted-soft);">·</span>
+    <span>Aug 12, 2012</span>
+  </div>
+
+  <h1>Revisiting the Critical Brain: Neuronal Avalanches, Power Laws, and the Statistical Structure of In Vivo Cortex</h1>
+  
+  
+  <div class="paper__venue" style="margin-top:10px;">
+    <span>iEEG</span><span>EEG</span><span>forward-modeling</span><span>FEM</span><span>anisotropy</span><span>DTI</span><span>source-localization</span><span>epilepsy</span><span>volume-conduction</span>
+  </div>
+  
+
+  <section class="paper__section prose" style="margin-top:28px;">
+    <p><em>Companion post to:</em><br />
+<strong>Avalanche Analysis from Multielectrode Ensemble Recordings in Cat, Monkey, and Human Cerebral Cortex during Wakefulness and Sleep</strong><br />
+Dehghani, Nima  and Hatsopoulos, Nicholas G. and Haga, Zach D. and Parker, Rebecca  and Greger, Bradley  and Halgren, Eric  and Cash, Sydney S. and Destexhe, Alain
+<em>Frontiers in Physiology</em> Volume 3 - 2012
+DOI: <code class="language-plaintext highlighter-rouge">10.3389/fphys.2012.00302</code></p>
+
+<hr />
+
+<h1 id="revisiting-the-critical-brain-neuronal-avalanches-power-laws-and-the-statistical-structure-of-in-vivo-cortex">Revisiting the Critical Brain: Neuronal Avalanches, Power Laws, and the Statistical Structure of <em>In Vivo</em> Cortex</h1>
+
+<p>The idea that the brain may operate near a critical point has been one of the most attractive bridges between statistical physics and neuroscience. In its strongest form, the hypothesis suggests that cortical dynamics self-organize near a phase transition, where local interactions give rise to scale-free collective activity, long-range correlations, and a large dynamic range. For physicists, this is a familiar and powerful picture: systems poised near criticality can display universal scaling laws, avalanches, and sensitivity to perturbations across many scales. For neuroscientists, the appeal is equally clear. A critical cortex would provide a principled explanation for how local neural interactions support flexible, distributed, and adaptive computation.</p>
+
+<p>This paper was written in that context. It asked a direct question: do neuronal avalanches in the intact mammalian brain actually show the statistical signatures expected from self-organized criticality?</p>
+
+<p>The answer we found was: not clearly, and certainly not universally.</p>
+
+<p>The work analyzed multielectrode ensemble recordings from cat, monkey, and human cerebral cortex during wakefulness and natural sleep. We examined both spiking activity and local field potentials (LFPs), across multiple behavioral and brain states: quiet wakefulness, active wakefulness or task engagement, slow-wave sleep, and REM sleep. The goal was not to deny that criticality can exist in neural systems. Indeed, beautiful evidence for neuronal avalanches had already been reported in cultured networks and slices. The more specific question was whether the same statistical claims carry over to the intact, non-anesthetized mammalian cortex.</p>
+
+<p>The central result is that avalanche distributions derived from spikes did not show robust power-law scaling in any of the examined species or states. LFP-derived avalanches sometimes appeared power-law-like under conventional log-log plotting, but this apparent scaling did not survive more rigorous statistical tests. Moreover, similar apparent scaling was observed for both negative and positive LFP peaks, even though these two signals have different relationships to spiking activity. This suggests that some previously reported power-law-like behavior in LFP avalanches may reflect the analysis pipeline, thresholding of continuous signals, or field effects, rather than a direct signature of neuronal criticality.</p>
+
+<p>The broader implication is that the intact cortex may not be well described by a single universal critical regime. Instead, its ensemble dynamics appear more compatible with stochastic, multi-scale, and possibly metastable processes.</p>
+
+<h2 id="why-neuronal-avalanches-mattered">Why neuronal avalanches mattered</h2>
+
+<p>The concept of a neuronal avalanche is simple but powerful. One takes the activity of many recorded neural elements, bins the activity in time, and identifies contiguous periods of activity separated by silence. The total activity within such a contiguous event defines the avalanche size.</p>
+
+<p>If the system is scale-free, the probability of an avalanche of size $x$ should follow a power law,</p>
+
+\[p(x) \sim x^{-\alpha}.\]
+
+<p>The key point is not merely that large events are rare and small events are common. Many stochastic processes have that property. The claim of criticality is stronger: there should be no characteristic scale over some meaningful range of event sizes. In a log-log plot, the distribution should therefore appear approximately linear, and the exponent should fall within a regime compatible with known critical phenomena.</p>
+
+<p>In the neuroscience literature, the neuronal avalanche framework became especially influential after observations in cortical cultures suggested that spontaneous activity propagates in cascades whose size distributions follow power laws. This was exciting because it linked neural dynamics to a class of physical systems in which collective behavior emerges from local interactions without external fine-tuning.</p>
+
+<p>For a theory of neural computation, the stakes were substantial. If cortex operates near criticality, then many computational properties could be understood as consequences of this dynamical regime: large dynamic range, sensitivity to inputs, flexible propagation of activity, and the coexistence of stability with responsiveness. Such ideas are particularly important for those interested in the foundations of neural computation rather than only in task-specific neural coding.</p>
+
+<p>But the criticality hypothesis depends on statistical evidence. The presence or absence of a power law is not a superficial detail; it is one of the main empirical pillars of the theory.</p>
+
+<h2 id="the-problem-with-seeing-straight-lines-on-log-log-plots">The problem with seeing straight lines on log-log plots</h2>
+
+<p>A recurring difficulty in empirical studies of criticality is that power laws are easy to see and hard to prove. A distribution plotted on double-logarithmic axes may look linear even when it is not generated by a power-law process. This issue is especially severe in finite, noisy, biological data, where sampling limitations, thresholding, nonstationarity, and hidden mixtures of processes can all produce apparent scaling.</p>
+
+<p>A common but problematic approach is to fit a straight line to the probability density function on log-log axes. This can produce biased exponent estimates, especially because the tail of the distribution is noisy. It also depends strongly on which range of data is included. Including too many small events can distort the fit; excluding too many events can create a visually convincing but statistically narrow scaling regime.</p>
+
+<p>In this paper, we therefore used a more stringent approach. Rather than relying on visual inspection of log-log probability density functions, we analyzed the cumulative distribution function (CDF). If</p>
+
+\[p(x) = Cx^{-\alpha},\]
+
+<p>then the complementary cumulative distribution scales as</p>
+
+\[Pr(X &gt; x) \propto x^{-(\alpha - 1)}.\]
+
+<p>This representation is more stable in the tail and is generally preferred for evaluating candidate power-law behavior in empirical data.</p>
+
+<p>We also estimated the lower bound $X_{\min}$ of the putative scaling regime using a Kolmogorov–Smirnov criterion. This matters because power-law scaling, if present, may only hold above some lower cutoff. But that creates a tension: if $X_{\min}$ is moved too high, one can sometimes obtain a better-looking fit over a narrower range, while discarding much of the distribution. A power law that applies only to a small tail of the data is not the same as a robust scale-free organization of the system.</p>
+
+<p>The same problem appears at the upper end of the distribution. Some avalanche analyses impose an upper bound $X_{\max}$ equal to the number of electrodes or units. But this can introduce a major bias. If an avalanche revisits the same channel or continues over time, its total size can exceed the number of recording sites. Artificially truncating the distribution can preferentially remove large events and change the apparent quality of the fit. We showed that this kind of bound can affect different cortical regions and bin sizes differently, making comparisons unreliable.</p>
+
+<p>Thus, a central methodological message of the paper is that power-law claims in neural data require more than a straight line on a log-log plot. They require explicit treatment of lower bounds, upper bounds, goodness-of-fit, alternative distributions, and the biological meaning of the measured events.</p>
+
+<h2 id="spike-avalanches-do-not-show-robust-critical-scaling">Spike avalanches do not show robust critical scaling</h2>
+
+<p>The most direct test of neuronal avalanches is based on spiking activity. Spikes are discrete events, and they are the clearest measure of neuronal output. We therefore first asked whether avalanches constructed from unit firing show the expected power-law behavior.</p>
+
+<p>The analysis pooled spikes across recorded units, binned the ensemble activity at multiple temporal resolutions, and defined avalanches as contiguous non-empty bins separated by silent bins. This was repeated across bin widths from 1 to 15 ms. The data included recordings from cats, monkeys, and humans, with up to 160 single units in some recordings.</p>
+
+<p>Across wakefulness, slow-wave sleep, REM sleep, and task-engaged behavior, spike avalanche distributions did not show robust power-law scaling. In cases where a portion of the distribution could be fit above a statistically selected $X_{\min}$, the resulting exponents were often too large to be plausibly interpreted as signatures of self-organized criticality. More importantly, the candidate scaling regimes were partial and unstable across bin sizes and states.</p>
+
+<p>When the same spike avalanche distributions were plotted on log-linear axes, they showed behavior much closer to exponential scaling. This is important because exponential-like distributions are expected from Poisson-like stochastic processes or mixtures of stochastic processes with characteristic scales. Such dynamics are not trivial, especially in a biological network, but they are not the same as scale-free critical avalanches.</p>
+
+<p>This result was consistent across species and states. It was not simply a consequence of studying the wrong brain state. If criticality were preferentially expressed during slow oscillatory states, then slow-wave sleep might have been expected to show stronger evidence. It did not. If wakefulness or task engagement were the relevant conditions, then awake recordings in monkey or human cortex might have shown robust scaling. They did not.</p>
+
+<p>The conclusion was therefore not that no neural system can ever show criticality. Rather, the intact, non-anesthetized mammalian cortex, as sampled here, did not exhibit robust spike avalanche power laws.</p>
+
+<h2 id="lfp-avalanches-apparent-scaling-and-its-interpretation">LFP avalanches: apparent scaling and its interpretation</h2>
+
+<p>The situation becomes more subtle for local field potentials.</p>
+
+<p>LFPs are continuous signals reflecting a mixture of synaptic, dendritic, transmembrane, and volume-conducted activity. Previous reports of <em>in vivo</em> neuronal avalanches often relied on threshold-detected negative LFP peaks. The rationale is that negative LFP deflections are more closely associated with local neuronal activation and spiking than positive peaks.</p>
+
+<p>We therefore analyzed avalanche distributions constructed from negative LFP peaks, or nLFPs. The procedure involved detrending and normalizing each LFP channel, detecting local peaks above threshold, discretizing the events, and then applying the same avalanche definition used for spikes. We tested multiple thresholds and bin sizes.</p>
+
+<p>At first glance, nLFP avalanches looked more favorable to the criticality hypothesis than spike avalanches. In log-log representations, some of the distributions appeared approximately linear. This reproduced the kind of visual evidence that had previously motivated claims of neuronal avalanches in awake cortex.</p>
+
+<p>But when the same data were evaluated using CDF-based analyses and goodness-of-fit procedures, the evidence weakened. The apparent scaling was often narrow, unstable across thresholds and bin sizes, or associated with exponents that did not support a clean critical interpretation. In other words, the LFP data could look scale-free under a permissive visualization but did not provide robust statistical support for universal power-law organization.</p>
+
+<p>The most important control came from comparing negative and positive LFP peaks.</p>
+
+<p>Negative LFP peaks were more closely related to spiking activity, as expected. We verified this using wave-triggered averages of ensemble firing around LFP peaks. Negative peaks showed a stronger relationship to neuronal firing than positive peaks. We also tested this relationship using several randomization procedures, including Poisson surrogate spike trains, random permutations, local jitter of LFP peaks, and circular shifts preserving internal temporal structure while destroying spike–LFP alignment.</p>
+
+<p>Despite this physiological difference, avalanche distributions constructed from positive LFP peaks showed similar apparent scaling behavior to those constructed from negative peaks.</p>
+
+<p>This is a critical point. If positive LFP peaks are less directly related to spiking but produce similar avalanche statistics, then the observed LFP avalanche distributions cannot be interpreted straightforwardly as signatures of neuronal firing avalanches. The apparent power-law-like behavior may instead arise from the thresholding of continuous correlated signals, from field spread, from volume conduction, or from generic properties of stochastic processes under event detection.</p>
+
+<p>Thus, the LFP results do not simply support or reject criticality. They reveal a deeper ambiguity: the statistical object produced by thresholding LFP peaks may not correspond cleanly to the biological object required by the neuronal avalanche hypothesis.</p>
+
+<h2 id="why-positive-and-negative-lfp-peaks-matter">Why positive and negative LFP peaks matter</h2>
+
+<p>The comparison between nLFP and pLFP avalanches is one of the most important conceptual parts of the paper.</p>
+
+<p>A negative LFP peak is often interpreted as more closely related to local excitatory synaptic input, dendritic current sinks, and increased local neuronal firing. A positive LFP peak does not have the same relationship to local spiking. If avalanche statistics derived from nLFPs uniquely reflected neuronal cascade dynamics, then one would expect a meaningful difference between nLFP- and pLFP-derived avalanche distributions.</p>
+
+<p>But the avalanche statistics were strikingly similar.</p>
+
+<p>This does not mean that nLFPs and pLFPs are physiologically equivalent. They are not. The wave-triggered averages showed that nLFPs have a clearer relationship to ensemble spiking. The point is subtler: once the continuous LFP signal is thresholded and converted into a discrete event series, the avalanche statistics may become dominated by properties of the signal transformation rather than by the physiological asymmetry between negative and positive peaks.</p>
+
+<p>For neurophysiology, this is a warning about interpretation. A statistical regularity in a derived event series does not automatically identify the underlying biological mechanism. For statistical physics, it is a reminder that universality claims require careful attention to the measurement function. The measured avalanches are not the raw system; they are produced by a pipeline that includes filtering, thresholding, discretization, binning, and finite sampling.</p>
+
+<p>For foundations of neural computation, the implication is important. If we want to understand the dynamical basis of cortical computation, we cannot infer the computational regime from apparent scaling alone. We need to know what physiological events the scaling law refers to.</p>
+
+<h2 id="multi-exponential-dynamics-and-metastability">Multi-exponential dynamics and metastability</h2>
+
+<p>If the data are not well explained by a single critical power law, what kind of statistical structure do they suggest?</p>
+
+<p>We tested alternative distributions, including exponential and multi-exponential models. A single exponential could fit portions of the spike avalanche data, especially after excluding the initial non-linear region. But it did not capture the full distribution well. A bi-exponential model,</p>
+
+\[f(x) = a\exp(bx) + c\exp(dx),\]
+
+<p>provided a substantially better fit across the full range of avalanche sizes.</p>
+
+<p>This finding points toward a different picture of cortical ensemble dynamics. Rather than a single scale-free regime, the data may reflect the interaction of multiple stochastic processes, each with its own characteristic scale. Physiologically, one possible interpretation is that different neural populations or processes contribute distinct exponential components. Excitatory and inhibitory dynamics are an obvious candidate, although the paper does not claim that the two exponentials can be directly mapped onto E and I populations without further testing.</p>
+
+<p>The broader idea is that intact cortex may be better described as a multi-process, metastable system than as a system governed by one universal scaling exponent. In a metastable regime, the system can occupy transiently stable configurations and move between them under internal fluctuations, external inputs, behavioral state changes, and ongoing network interactions. Such dynamics can produce rich variability across scales without requiring global self-organized criticality.</p>
+
+<p>This is not a weaker picture of neural computation. It is arguably a more biological one. The awake brain is not an isolated sandpile. It is embedded in a body, coupled to behavior, shaped by neuromodulation, organized by cell-type-specific circuitry, and continuously interacting with sensory and internal variables. A theory of cortical computation may therefore need to account for mixtures of processes, changing local stability landscapes, and state-dependent transitions, rather than relying on a single scale-free law.</p>
+
+<h2 id="the-role-of-brain-state">The role of brain state</h2>
+
+<p>One motivation for including sleep states was the possibility that criticality might be state-dependent. Slow-wave sleep, in particular, contains large-scale synchronized events and alternating active and silent periods. If neuronal avalanches are most naturally expressed during oscillatory or synchronized states, slow-wave sleep might have been expected to reveal them.</p>
+
+<p>However, the analyses did not show robust power-law scaling in slow-wave sleep. REM sleep also failed to show convincing critical avalanche statistics. Across states, the spike avalanche distributions remained inconsistent with universal SOC-like power laws.</p>
+
+<p>This matters because the brain is not a stationary system. Wakefulness, slow-wave sleep, and REM sleep are not merely different levels of activity; they are distinct dynamical regimes. They differ in neuromodulation, synchrony, sensory coupling, responsiveness, and the structure of ongoing activity. A theory that claims universal cortical criticality should either hold across these regimes or specify precisely which state should express the critical point and why.</p>
+
+<p>The data here suggest that if criticality exists in some restricted form, it is not a universal property of cortical activity across natural brain states.</p>
+
+<h2 id="what-this-means-for-the-critical-brain-hypothesis">What this means for the critical brain hypothesis</h2>
+
+<p>The paper should not be read as a blanket rejection of all criticality-related ideas in neuroscience. Critical phenomena may still be relevant in certain preparations, scales, developmental regimes, pathological conditions, or model systems. Neuronal cultures and slices may genuinely display avalanche statistics close to criticality. Anesthetized preparations may produce dynamics that differ from natural wakefulness and sleep. Other observables, beyond avalanche size distributions, may reveal signatures of critical or near-critical organization.</p>
+
+<p>But the work does challenge a strong and common inference: that apparent power-law avalanche distributions in <em>in vivo</em> LFP data are sufficient evidence for self-organized criticality in the intact brain.</p>
+
+<p>Three points are especially important.</p>
+
+<p>First, spike avalanches did not show robust power-law scaling. Since spikes are the most direct measure of neuronal output, this places a major constraint on strong claims about neuronal avalanches in vivo.</p>
+
+<p>Second, LFP avalanche power laws were not statistically robust under more careful CDF-based analyses. Visual linearity in log-log plots was not enough.</p>
+
+<p>Third, positive and negative LFP peaks produced similar avalanche statistics despite their different relationships to spiking. This suggests that LFP-derived avalanche statistics may reflect signal-processing and measurement effects as much as underlying neuronal cascade dynamics.</p>
+
+<p>Together, these points argue for caution. The critical brain hypothesis remains conceptually powerful, but its empirical support depends strongly on the observable, the analysis method, and the statistical criteria used to define scale invariance.</p>
+
+<h2 id="implications-for-neural-computation">Implications for neural computation</h2>
+
+<p>For those interested in the foundations of neural computation, the most important lesson is not simply that one proposed theory failed a particular test. The deeper lesson is that the cortex may compute through dynamical regimes that are not captured by a single universal exponent.</p>
+
+<p>A task-oriented view of neural computation often begins with inputs, outputs, and performance. But the brain is not only a task-solving device. It is a physical, biological system whose computational capacities are constrained and enabled by its spontaneous dynamics. Understanding those dynamics requires asking what kind of collective system the cortex is.</p>
+
+<p>The criticality hypothesis offered one answer: cortex is a self-organized near-critical system. This paper suggests that, at least for the analyzed <em>in vivo</em> data, another answer may be more appropriate: cortex is a high-dimensional, stochastic, multi-scale, and metastable dynamical system, shaped by interactions among multiple processes with characteristic scales.</p>
+
+<p>This shift has consequences.</p>
+
+<p>If cortical activity is multi-exponential rather than scale-free, then models of neural computation should account for characteristic temporal and spatial scales rather than assuming scale invariance. If metastability is central, then computation may depend on transitions among transiently stable collective states. If LFP avalanches are strongly shaped by measurement and thresholding, then computational theories should be grounded in observables that can be physiologically interpreted. If excitation and inhibition contribute distinct dynamical components, then the balance and interaction between E and I populations may be more fundamental than global criticality.</p>
+
+<p>This perspective aligns with a view of computation as physical dynamics. Neural computation is not only a mapping from stimulus to response; it is the structured evolution of a biological system through state space. The relevant question is not simply whether the brain is critical, but what dynamical architecture allows it to remain stable, responsive, adaptive, and richly variable.</p>
+
+<h2 id="a-methodological-lesson-for-complex-systems-neuroscience">A methodological lesson for complex systems neuroscience</h2>
+
+<p>The study also illustrates a broader methodological issue in complex systems neuroscience. Concepts from statistical physics are extremely valuable, but they must be imported with care. Power laws, avalanches, phase transitions, and criticality are not metaphors; they are statistical and mechanistic claims. Their use requires appropriate tests, alternative hypotheses, and sensitivity to measurement.</p>
+
+<p>In neural data, this is especially difficult because the measurement process is part of the phenomenon. Spikes, LFPs, EEG, MEG, calcium signals, and BOLD signals do not measure the same object. Each observable is shaped by different biophysical filters, spatial scales, temporal scales, and preprocessing choices. A scaling law in one observable does not automatically imply a scaling law in another.</p>
+
+<p>This is why the comparison between spikes and LFPs is so important. The spike data directly test discrete neuronal output. The LFP data test thresholded events derived from a continuous field-like signal. These are different statistical objects. Treating them as equivalent can lead to misleading conclusions.</p>
+
+<p>A mature statistical physics of neural systems should therefore be measurement-aware. It should ask not only whether a distribution looks scale-free, but also what biological events define the distribution, how the measurement transforms the underlying dynamics, and whether alternative stochastic mechanisms can explain the same observation.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>The critical brain hypothesis remains one of the most elegant ideas at the interface of physics and neuroscience. It offers a compelling account of how local interactions might produce global flexibility, sensitivity, and coordination. But elegance is not enough. In the intact brain, claims of criticality must survive the statistical complexity of real neural data.</p>
+
+<p>In this paper, we analyzed avalanche dynamics from multielectrode recordings in cat, monkey, and human cortex during wakefulness and sleep. Spike avalanches did not show robust power-law scaling. LFP avalanches sometimes appeared power-law-like under conventional visualization, but more rigorous CDF-based analyses did not support universal critical scaling. Positive LFP peaks, despite their weaker relationship to spiking, produced avalanche statistics similar to negative peaks, suggesting that thresholded LFP avalanches may reflect properties of the measurement and analysis pipeline rather than direct neuronal cascade dynamics.</p>
+
+<p>The data point instead toward stochastic, multi-exponential, and possibly metastable dynamics. This does not make the cortex less interesting as a physical system. On the contrary, it suggests that the foundations of neural computation may lie not in a single universal critical law, but in the structured interaction of multiple dynamical processes across scales.</p>
+
+<p>For neuroscience, this means that we should continue to study collective cortical dynamics with the tools of statistical physics, but with stricter statistical standards and closer attention to physiology. For physics, it means that the brain remains a rich non-equilibrium system, but one whose complexity may not reduce to canonical self-organized criticality. For theories of neural computation, it suggests that the essential object is not a power law, but the evolving dynamical organization of the living cortex.</p>
+
+  </section>
+
+  
+  <section class="paper__section">
+    <h2>The room this opens</h2>
+    <div class="linkbar">
+      <a href="/papers/Avalanche-spikeLfp/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="20" x2="12" y2="12"/><line x1="12" y1="12" x2="21" y2="4"/><line x1="12" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="21" y2="20"/></svg>
+        Follow this path into the Maze
+      </a>
+    </div>
+  </section>
+  
+</article>
+
+      <footer class="foot">
+  <span>© 2026 · Nima Dehghani</span>
+  <span>
+    <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    ·
+    <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+  </span>
+</footer>
+
+    </main>
+  </div>
+
+  <script src="/assets/js/quotes.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

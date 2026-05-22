@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ead7be">
+<title>Open Data in Neurophysiology: From Data Sharing to Scientific Infrastructure · Nima Dehghani</title>
+<meta name="description" content="Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<link type="application/atom+xml" rel="alternate" href="https://neurovium.github.io/feed.xml" title="Nima Dehghani" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Open Data in Neurophysiology: From Data Sharing to Scientific Infrastructure | Nima Dehghani</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Open Data in Neurophysiology: From Data Sharing to Scientific Infrastructure" />
+<meta name="author" content="Nima Dehghani" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Companion post to: Open Data In Neurophysiology: Advancements, Solutions &amp; Challenges Colleen J. Gillon, Cody Baker, Ryan Ly, Edoardo Balzani, Bingni W. Brunton, Manuel Schottdorf, Satrajit Ghosh and Nima Dehghani eNeuro 20 November 2025, 12 (11) ENEURO.0486-24.2025 DOI: 10.1523/ENEURO.0486-24.2025" />
+<meta property="og:description" content="Companion post to: Open Data In Neurophysiology: Advancements, Solutions &amp; Challenges Colleen J. Gillon, Cody Baker, Ryan Ly, Edoardo Balzani, Bingni W. Brunton, Manuel Schottdorf, Satrajit Ghosh and Nima Dehghani eNeuro 20 November 2025, 12 (11) ENEURO.0486-24.2025 DOI: 10.1523/ENEURO.0486-24.2025" />
+<link rel="canonical" href="https://neurovium.github.io/posts/pblog-Odin/" />
+<meta property="og:url" content="https://neurovium.github.io/posts/pblog-Odin/" />
+<meta property="og:site_name" content="Nima Dehghani" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2010-01-10T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Open Data in Neurophysiology: From Data Sharing to Scientific Infrastructure" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Nima Dehghani"},"dateModified":"2010-01-10T00:00:00+00:00","datePublished":"2010-01-10T00:00:00+00:00","description":"Companion post to: Open Data In Neurophysiology: Advancements, Solutions &amp; Challenges Colleen J. Gillon, Cody Baker, Ryan Ly, Edoardo Balzani, Bingni W. Brunton, Manuel Schottdorf, Satrajit Ghosh and Nima Dehghani eNeuro 20 November 2025, 12 (11) ENEURO.0486-24.2025 DOI: 10.1523/ENEURO.0486-24.2025","headline":"Open Data in Neurophysiology: From Data Sharing to Scientific Infrastructure","mainEntityOfPage":{"@type":"WebPage","@id":"https://neurovium.github.io/posts/pblog-Odin/"},"url":"https://neurovium.github.io/posts/pblog-Odin/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+
+
+
+</head>
+<body>
+  <header class="topbar">
+    <a href="/" class="topbar__brand">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"><line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/><line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/><line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/></g><circle cx="18" cy="20" r="2.2" fill="currentColor"/></svg>
+      Nima Dehghani
+    </a>
+    <button class="topbar__toggle" id="sidebar-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sidebar">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </header>
+
+  <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
+
+  <div class="app">
+    
+
+<aside class="side" id="sidebar" aria-label="Primary">
+  <a class="side__brand" href="/">
+    <svg class="glyph" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none">
+        <line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/>
+        <line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/>
+        <line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/>
+      </g>
+      <circle cx="18" cy="20" r="2.2" fill="currentColor"/>
+    </svg>
+    <span>
+      <span class="side__name">Nima Dehghani</span>
+      <span class="side__tag">@neurovium · MIT</span>
+    </span>
+  </a>
+
+  <nav class="side__nav" aria-label="Main navigation">
+    <a href="/" class="">Home</a>
+    <a href="/news/" class="">News<span class="side__pip" aria-label="new"></span></a>
+    <a href="/research/" class="">Research</a>
+    <a href="/papers/" class="">Paper Maze</a>
+    <a href="/garden/" class="">Idea Garden</a>
+    <a href="/blog/" class="">Blog</a>
+    <a href="/open-science/" class="">Open Science</a>
+    <a href="/about/" class="">About</a>
+  </nav>
+
+  <div class="side__social" aria-label="Social links">
+    <div class="side__social-row">
+      <a href="https://scholar.google.com/citations?user=acFMrVUAAAAJ&hl=en" title="Google Scholar" target="_blank" rel="noopener" aria-label="Google Scholar">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9zm6.82 7L12 12.72 5.18 9 12 5.28zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73z"/></svg>
+      </a>
+      <a href="mailto:nima.dehghani@mit.edu" title="Email" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/nimadehghani/" title="LinkedIn" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+    </div>
+    <div class="side__social-row">
+      <a href="https://github.com/neurovium" title="GitHub" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      </a>
+      <a href="https://twitter.com/neurovium" title="X" target="_blank" rel="noopener" aria-label="X">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://bsky.app/profile/neurovium.bsky.social" class="is-bsky" title="Bluesky" target="_blank" rel="noopener" aria-label="Bluesky">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.335 5.144c2.606 1.957 5.41 5.923 6.44 8.051.99-2.046 3.855-6.132 6.44-8.051 1.864-1.383 4.885-2.453 4.885 1.002 0 .69-.396 5.795-.629 6.624-.809 2.882-3.748 3.616-6.363 3.17 4.573.78 5.737 3.359 3.224 5.939-4.772 4.9-6.859-1.23-7.394-2.802-.534 1.572-2.622 7.702-7.394 2.802-2.513-2.58-1.349-5.16 3.224-5.939-2.615.446-5.554-.288-6.363-3.17-.233-.829-.629-5.934-.629-6.624 0-3.455 3.021-2.385 4.885-1.002z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="n4-set" aria-label="N⁴ : NeuroAI ⊃ N³">
+    <span class="n4-set__lbl">N&#8308;</span>
+    <div class="n4-set n4-set--ai">
+      <span class="n4-set__lbl">NeuroAI</span>
+      <div class="n4-set n4-set--n3">
+        <span class="n4-set__lbl">N&#179;</span>
+        <ul>
+          <li>NeuroPhysics</li>
+          <li>NeuroComputation</li>
+          <li>NeuroDynamics</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="side__foot">
+    <span>
+      <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+      ·
+      <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    </span>
+  </div>
+</aside>
+
+    <main class="main">
+      <article class="paper">
+  <div class="paper__crumb">
+    <a href="/blog/">← Blog</a>
+    <span style="color:var(--muted-soft);">·</span>
+    <span>Jan 10, 2010</span>
+  </div>
+
+  <h1>Open Data in Neurophysiology: From Data Sharing to Scientific Infrastructure</h1>
+  
+  
+  <div class="paper__venue" style="margin-top:10px;">
+    <span>open-science</span><span>neurophysiology</span><span>ODIN</span><span>DANDI</span><span>NWB</span><span>computational-neuroscience</span><span>neuroinformatics</span>
+  </div>
+  
+
+  <section class="paper__section prose" style="margin-top:28px;">
+    <p><em>Companion post to:</em><br />
+<strong>Open Data In Neurophysiology: Advancements, Solutions &amp; Challenges</strong><br />
+Colleen J. Gillon, Cody Baker, Ryan Ly, Edoardo Balzani, Bingni W. Brunton, Manuel Schottdorf, Satrajit Ghosh and Nima Dehghani
+<em>eNeuro</em> 20 November 2025, 12 (11) ENEURO.0486-24.2025 
+DOI: <code class="language-plaintext highlighter-rouge">10.1523/ENEURO.0486-24.2025</code></p>
+
+<hr />
+
+<p>In November 2025, our paper <strong>“Open Data In Neurophysiology: Advancements, Solutions &amp; Challenges”</strong> was published in <em>eNeuro</em>:</p>
+
+<blockquote>
+  <p>Colleen J. Gillon, Cody Baker, Ryan Ly, Edoardo Balzani, Bingni W. Brunton, Manuel Schottdorf, Satrajit Ghosh, and Nima Dehghani.<br />
+<strong>Open Data In Neurophysiology: Advancements, Solutions &amp; Challenges.</strong><br />
+<em>eNeuro</em>, 12(11), 2025.<br />
+DOI: <a href="https://doi.org/10.1523/ENEURO.0486-24.2025">10.1523/ENEURO.0486-24.2025</a></p>
+</blockquote>
+
+<p>The paper grew out of the inaugural <strong>Open Data In Neurophysiology (ODIN)</strong> symposium, which we organized at MIT in 2023 through the Open Data In Neuroscience initiative at the McGovern Institute, in collaboration with DANDI. The full 2023 program is available here:</p>
+
+<p><a href="https://odin.mit.edu/conferences/odin2023/odin2023.html#S1">ODIN Symposium 2023 — Open Data In Neurophysiology</a></p>
+
+<p>and the video recordings are available here:</p>
+
+<p><a href="https://www.youtube.com/playlist?list=PLQVnU1OJzOn_mFlUL8aWQym4HfVvhlrGE">ODIN 2023 videos</a></p>
+
+<p>ODIN continued in 2025 at the Allen Institute, with the theme <strong>“Integrating Scales and Modalities: The Future of Neurophysiology.”</strong></p>
+
+<p><a href="https://alleninstitute.org/odin-symposium-2025-speakers/">ODIN Symposium 2025 speakers</a></p>
+
+<p><a href="https://www.youtube.com/playlist?list=PLN-QyZNMh3Pta-ouiPCLQnBAX2P0OrE06">ODIN 2025 videos</a></p>
+
+<p>As one of the founding organizers of ODIN, my motivation was not simply to create another conference on open science. The goal was to create a forum where experimental neurophysiologists, computational neuroscientists, tool builders, data infrastructure developers, modelers, and funders could discuss the practical future of open neurophysiology as an integrated scientific ecosystem.</p>
+
+<p>This paper is one outcome of that effort.</p>
+
+<h2 id="the-central-claim-open-data-is-not-enough">The central claim: open data is not enough</h2>
+
+<p>It is now almost routine to say that neuroscience should become more open. But “open data” can mean very different things.</p>
+
+<p>At its weakest, it means that a file is placed somewhere online after publication. At its strongest, it means that the data, metadata, code, computational environment, provenance, annotations, and scientific context are organized in a way that allows other researchers to inspect, reuse, compare, extend, and reinterpret the work.</p>
+
+<p>The ODIN paper argues for the second meaning.</p>
+
+<p>Modern neurophysiology is entering a regime where simple file sharing is no longer sufficient. The field now produces large, heterogeneous, multimodal datasets from Neuropixels probes, high-density ECoG, calcium imaging, voltage imaging, behavior tracking, whole-brain observatories, organoids, and increasingly complex closed-loop experiments. These datasets are often valuable far beyond the original experiment. But their value depends on whether they can be made scientifically usable outside the laboratory that produced them.</p>
+
+<p>That is the real challenge: not merely to make data available, but to make neurophysiology <strong>reusable, interpretable, computable, and interoperable</strong>.</p>
+
+<h2 id="why-neurophysiology-is-at-an-inflection-point">Why neurophysiology is at an inflection point</h2>
+
+<p>Many areas of biology have already been transformed by open data. Structural biology and genomics are obvious examples. Protein sequence and structure databases, genome repositories, and shared computational tools did not merely make old workflows more efficient. They changed what kinds of questions could be asked.</p>
+
+<p>Neurophysiology has the potential to undergo a similar transformation, but the problem is harder in several ways.</p>
+
+<p>A neurophysiology experiment is not just a matrix of measurements. It is a structured event in time: animals or humans behaving, stimuli being presented, neural activity being recorded across multiple devices, clocks drifting or requiring alignment, environmental conditions changing, interventions occurring, behavioral states fluctuating, and analysis pipelines transforming raw signals into derived objects.</p>
+
+<p>For such data to be reusable, it is not enough to know that a signal was recorded. We need to know what was recorded, from where, under what conditions, with what device, aligned to which behavioral and stimulus streams, processed through which pipeline, and interpreted through which assumptions.</p>
+
+<p>This is why neurophysiology needs more than repositories. It needs infrastructure.</p>
+
+<h2 id="standards-and-archives-nwb-dandi-and-the-problem-of-interoperability">Standards and archives: NWB, DANDI, and the problem of interoperability</h2>
+
+<p>A major part of the ODIN discussion centered on the role of common standards and archives. The <strong>Neurodata Without Borders (NWB)</strong> ecosystem has become one of the central standards for neurophysiology data. Its importance is not just that it gives the field a common file format. More importantly, it gives us a shared conceptual structure for organizing neural recordings, behavioral variables, stimuli, metadata, and derived data products.</p>
+
+<p>The <strong>DANDI Archive</strong> then provides a home for these standardized datasets. DANDI is especially important because neurophysiology data are large, and because researchers increasingly need cloud-native ways to access and compute on these datasets without downloading everything locally.</p>
+
+<p>But the paper also emphasizes that standards are not magic. They solve some problems while exposing others.</p>
+
+<p>For example, many experiments record multiple time series in parallel: neural signals, behavioral video, pose estimates, stimulus timing, running speed, eye tracking, pupil dynamics, optogenetic stimulation, electrophysiology streams from multiple probes, and so on. These streams may be recorded by different devices with different clocks. Aligning them is often nontrivial and may require laboratory-specific procedures. If that alignment is undocumented, hidden in a script, or only implicitly known by the original lab, then the shared dataset remains only partially reusable.</p>
+
+<p>This is one reason the paper spends significant attention on metadata, provenance, data stream alignment, and computational reproducibility. These are not bureaucratic details. They are part of the scientific object.</p>
+
+<h2 id="raw-data-processed-data-and-the-compression-of-future-possibility">Raw data, processed data, and the compression of future possibility</h2>
+
+<p>One of the hardest questions in open neurophysiology is deceptively simple:</p>
+
+<p><strong>What should be preserved?</strong></p>
+
+<p>With high-throughput electrophysiology and optical physiology, raw data can easily reach terabyte scales. Keeping everything forever is expensive. But sharing only heavily processed data can remove information that later turns out to be essential.</p>
+
+<p>Spike sorting is a clear example. Sharing sorted spike trains is convenient, compact, and often sufficient for many analyses. But spike sorting decisions depend on algorithmic choices, parameter settings, noise conditions, probe geometry, manual curation, and assumptions about unit identity. If the raw data are discarded, later researchers may not be able to evaluate false positives, false negatives, drift, waveform changes, or alternative sorting strategies.</p>
+
+<p>The same issue applies more broadly. Calcium imaging pipelines produce ROIs, traces, deconvolved events, neuropil corrections, motion correction outputs, and quality control metrics. Behavioral pipelines produce pose estimates, latent states, syllables, or task labels. Each transformation increases usability for some purposes but can remove information relevant to others.</p>
+
+<p>So the question is not simply “raw or processed?” The better question is:</p>
+
+<p><strong>Which levels of the data hierarchy need to be preserved so that future validation, reanalysis, and discovery remain possible?</strong></p>
+
+<p>This is where provenance becomes central. If we share processed data, we should also preserve enough information about the processing pipeline, software versions, parameters, quality metrics, and input data to make that transformation scientifically inspectable.</p>
+
+<h2 id="open-tools-are-part-of-the-scientific-record">Open tools are part of the scientific record</h2>
+
+<p>The ODIN paper also discusses a growing ecosystem of open-source neurophysiology tools. These include tools for data conversion, data management, spike sorting, calcium imaging, pose estimation, behavioral segmentation, visualization, benchmarking, cloud computation, and model evaluation.</p>
+
+<p>Examples include NWB GUIDE, NeuroConv, SpikeInterface, DataJoint, Spyglass, Neurosift, Dendro, DeepLabCut, SLEAP, MoSeq, CEBRA, Pynapple, Brain-Score, and others.</p>
+
+<p>The point is not that every lab should use the same tool for every task. Neurophysiology is too diverse for that. The point is that tools are becoming part of the shared infrastructure of the field. They encode assumptions, workflows, analysis conventions, and best practices. When they are well maintained, documented, tested, and connected to standards, they can substantially reduce the friction of doing reproducible science.</p>
+
+<p>But this also creates a social problem. Open-source tools do not maintain themselves.</p>
+
+<p>Many tools begin as graduate-student or postdoc projects. They may become widely used, but their maintenance often depends on fragile labor structures. When the original developer leaves, the tool may stagnate. Bugs accumulate. Documentation falls behind. Dependencies break. The field loses a resource that may have taken years to build.</p>
+
+<p>For this reason, the paper argues that open science requires funding mechanisms for research software engineering, data curation, documentation, benchmarking, and long-term maintenance. These should not be treated as peripheral technical services. They are now part of the epistemic machinery of neuroscience.</p>
+
+<h2 id="ai-ready-neuroscience-requires-more-than-large-datasets">AI-ready neuroscience requires more than large datasets</h2>
+
+<p>A particularly important theme in the paper is the relationship between open neurophysiology and AI.</p>
+
+<p>It is tempting to assume that once enough neurophysiology data are openly available, AI systems will simply extract the relevant structure. But that assumption is too simplistic. Large models require not only large datasets, but also consistent organization, rich metadata, reliable annotations, common vocabularies, and meaningful benchmarks.</p>
+
+<p>Neurophysiology currently lacks many of these ingredients.</p>
+
+<p>Even basic terms such as “burst,” “ripple,” “oscillation,” “state,” “assembly,” “event,” or “motif” can mean different things across subfields, species, brain areas, recording modalities, and analysis traditions. This is not merely a semantic inconvenience. It directly affects whether models trained on one dataset can generalize to another.</p>
+
+<p>Similarly, annotations are often sparse. Many datasets contain the annotations needed for the original paper, but not necessarily the richer descriptions needed for reuse, meta-analysis, or foundation-model training. Important information may remain in lab notebooks, custom spreadsheets, undocumented preprocessing scripts, or the memory of the people who ran the experiment.</p>
+
+<p>If we want AI systems that can reason across neurophysiology datasets, generate hypotheses, compare models, assist with analysis, or discover cross-dataset regularities, then the field needs datasets that are not only open, but <strong>AI-ready</strong>.</p>
+
+<p>That means:</p>
+
+<ul>
+  <li>standardized metadata;</li>
+  <li>explicit provenance;</li>
+  <li>machine-readable experimental structure;</li>
+  <li>robust quality metrics;</li>
+  <li>shared vocabularies and ontologies;</li>
+  <li>community annotation mechanisms;</li>
+  <li>benchmark datasets and tasks;</li>
+  <li>clear links between raw data, processed data, code, and interpretation.</li>
+</ul>
+
+<p>AI will not remove the need for careful neuroinformatics. It will make careful neuroinformatics more important.</p>
+
+<h2 id="from-observatories-to-ecosystems">From observatories to ecosystems</h2>
+
+<p>One of the most exciting developments discussed in the paper is the emergence of large-scale collaborative platforms and observatory-style models.</p>
+
+<p>The Allen Institute’s OpenScope platform, for example, is inspired by the logic of astronomical observatories: researchers propose experiments, and accepted proposals are carried out through standardized high-throughput pipelines. This model can democratize access to data collection technologies that would otherwise be available only to a small number of highly resourced laboratories.</p>
+
+<p>The International Brain Laboratory provides a different but complementary model: distributed laboratories using standardized protocols to generate reproducible, large-scale datasets across sites.</p>
+
+<p>These platforms show that open neurophysiology is not only about what happens after a paper is published. It also affects how experiments are designed, how data are collected, how metadata are captured, how pipelines are standardized, and how communities organize around shared scientific questions.</p>
+
+<p>At the same time, the ODIN paper emphasizes that smaller laboratory datasets remain essential. Neuroscience progresses through diversity: different preparations, species, tasks, brain areas, behavioral regimes, interventions, and theoretical motivations. Large platforms cannot and should not replace individual laboratories.</p>
+
+<p>The challenge is to create an ecosystem in which both large observatory-style datasets and smaller lab-generated datasets can be made interoperable, searchable, reusable, and scientifically meaningful.</p>
+
+<h2 id="data-quality-needs-to-become-visible">Data quality needs to become visible</h2>
+
+<p>Open data is useful only if users can evaluate whether a dataset is appropriate for their question.</p>
+
+<p>This requires quality metrics. In neurophysiology, such metrics might include signal quality, channel dropout, motion artifacts, spike sorting quality, imaging stability, behavioral tracking reliability, temporal alignment accuracy, metadata completeness, missingness, annotation quality, and reproducibility of derived features.</p>
+
+<p>The paper argues that the field needs community-driven ways to evaluate and report such properties. This would help researchers decide which datasets are suitable for specific analyses, and it would also provide feedback to improve future experiments.</p>
+
+<p>Importantly, quality does not mean perfection. Different datasets are useful for different purposes. A dataset with limitations may still be valuable if those limitations are transparent. The problem is not imperfection; the problem is opacity.</p>
+
+<h2 id="the-incentive-problem">The incentive problem</h2>
+
+<p>Perhaps the most important argument in the paper is that open science will not succeed through technical solutions alone.</p>
+
+<p>The current academic incentive structure is poorly aligned with the labor required to make neurophysiology data reusable. Preparing a dataset for reuse takes time. Writing documentation takes time. Cleaning metadata takes time. Creating tutorials takes time. Maintaining software takes time. Answering user questions takes time. Building community standards takes time.</p>
+
+<p>Yet these contributions are often undervalued relative to traditional papers.</p>
+
+<p>If we want open neurophysiology to become the norm, then datasets, codebases, benchmarks, standards, and tools must receive real academic credit. Funding agencies, journals, universities, hiring committees, tenure committees, and scientific societies all have a role to play.</p>
+
+<p>The paper therefore calls for:</p>
+
+<ul>
+  <li>stable support for open-source software and data infrastructure;</li>
+  <li>funding for research software engineers and data specialists;</li>
+  <li>institutional core facilities for data management and computational reproducibility;</li>
+  <li>clearer expectations from journals around data and code availability;</li>
+  <li>recognition of datasets and tools as scholarly contributions;</li>
+  <li>better mechanisms for measuring reuse, impact, and community value.</li>
+</ul>
+
+<p>Without these changes, open science remains dependent on volunteer labor and short-term enthusiasm. That is not a sustainable foundation for a field as technically demanding as modern neurophysiology.</p>
+
+<h2 id="odin-as-community-infrastructure">ODIN as community infrastructure</h2>
+
+<p>ODIN was created to help build the social layer around these technical problems.</p>
+
+<p>The inaugural ODIN symposium at MIT brought together people working on devices, neuroinformatics, data standards, platforms, open-source tools, modeling, benchmarking, AI, and community governance. The structure of the meeting reflected a central belief: open neurophysiology cannot be solved by any one group alone. It requires interaction between experimentalists, computational scientists, data engineers, tool developers, theorists, and institutions.</p>
+
+<p>The 2025 ODIN symposium at the Allen Institute continued this trajectory with a focus on integrating scales and modalities. That theme is exactly where the field is heading. Neurophysiology is no longer confined to a single modality or scale. We increasingly want to connect molecules, cell types, circuits, behavior, large-scale recordings, structural data, dynamics, and models.</p>
+
+<p>That integration will require open infrastructure.</p>
+
+<h2 id="what-i-hope-readers-take-from-the-paper">What I hope readers take from the paper</h2>
+
+<p>For experimental neurophysiologists, I hope the paper is useful as a practical map of the issues that now surround data collection, metadata, standards, sharing, and reuse.</p>
+
+<p>For computational neuroscientists, I hope it clarifies why access to data is only the first step. The deeper issue is whether datasets are sufficiently structured and documented to support serious modeling, benchmarking, and cross-dataset inference.</p>
+
+<p>For tool builders and neuroinformatics developers, I hope the paper gives a broader context for why your work matters. Tools are not just convenience layers. They shape what kinds of science become possible.</p>
+
+<p>For institutions and funders, I hope the message is clear: open neurophysiology requires durable support. Infrastructure, standards, curation, software maintenance, and data expertise must be funded as core scientific activities.</p>
+
+<p>And for the ODIN community, I see this paper as a snapshot of a movement still in formation. It documents where we are, what is already working, what remains fragile, and what we need to build next.</p>
+
+<p>Open neurophysiology is not simply about making data public. It is about building the conditions under which neurophysiology can become cumulative, reproducible, interoperable, and computationally powerful.</p>
+
+<p>That is the larger project ODIN is trying to support.</p>
+
+<h2 id="links">Links</h2>
+
+<ul>
+  <li>Paper: <a href="https://doi.org/10.1523/ENEURO.0486-24.2025">Open Data In Neurophysiology: Advancements, Solutions &amp; Challenges</a></li>
+  <li>ODIN 2023 program: <a href="https://odin.mit.edu/conferences/odin2023/odin2023.html#S1">Open Data In Neurophysiology, MIT</a></li>
+  <li>ODIN 2023 videos: <a href="https://www.youtube.com/playlist?list=PLQVnU1OJzOn_mFlUL8aWQym4HfVvhlrGE">YouTube playlist</a></li>
+  <li>ODIN 2025 speakers: <a href="https://alleninstitute.org/odin-symposium-2025-speakers/">Allen Institute ODIN Symposium 2025</a></li>
+  <li>ODIN 2025 videos: <a href="https://www.youtube.com/playlist?list=PLN-QyZNMh3Pta-ouiPCLQnBAX2P0OrE06">YouTube playlist</a></li>
+</ul>
+
+  </section>
+
+  
+  <section class="paper__section">
+    <h2>The room this opens</h2>
+    <div class="linkbar">
+      <a href="/papers/Odin/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="20" x2="12" y2="12"/><line x1="12" y1="12" x2="21" y2="4"/><line x1="12" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="21" y2="20"/></svg>
+        Follow this path into the Maze
+      </a>
+    </div>
+  </section>
+  
+</article>
+
+      <footer class="foot">
+  <span>© 2026 · Nima Dehghani</span>
+  <span>
+    <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    ·
+    <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+  </span>
+</footer>
+
+    </main>
+  </div>
+
+  <script src="/assets/js/quotes.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

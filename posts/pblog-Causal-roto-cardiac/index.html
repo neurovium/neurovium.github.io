@@ -1,0 +1,748 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ead7be">
+<title>Causal Scale of Rotors in a Cardiac System · Nima Dehghani</title>
+<meta name="description" content="Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<link type="application/atom+xml" rel="alternate" href="https://neurovium.github.io/feed.xml" title="Nima Dehghani" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Causal Scale of Rotors in a Cardiac System | Nima Dehghani</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Causal Scale of Rotors in a Cardiac System" />
+<meta name="author" content="Nima Dehghani" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Companion post to: Causal Scale of Rotors in a Cardiac System Hiroshi Ashikaga, Francisco Prieto-Castrillo, Mari Kawakatsu, Nima Dehghani Frontiers in Computational Physics Volume 6 - 2018 DOI: 10.3389/fphy.2018.00030" />
+<meta property="og:description" content="Companion post to: Causal Scale of Rotors in a Cardiac System Hiroshi Ashikaga, Francisco Prieto-Castrillo, Mari Kawakatsu, Nima Dehghani Frontiers in Computational Physics Volume 6 - 2018 DOI: 10.3389/fphy.2018.00030" />
+<link rel="canonical" href="https://neurovium.github.io/posts/pblog-Causal-roto-cardiac/" />
+<meta property="og:url" content="https://neurovium.github.io/posts/pblog-Causal-roto-cardiac/" />
+<meta property="og:site_name" content="Nima Dehghani" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-09-04T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Causal Scale of Rotors in a Cardiac System" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Nima Dehghani"},"dateModified":"2018-09-04T00:00:00+00:00","datePublished":"2018-09-04T00:00:00+00:00","description":"Companion post to: Causal Scale of Rotors in a Cardiac System Hiroshi Ashikaga, Francisco Prieto-Castrillo, Mari Kawakatsu, Nima Dehghani Frontiers in Computational Physics Volume 6 - 2018 DOI: 10.3389/fphy.2018.00030","headline":"Causal Scale of Rotors in a Cardiac System","mainEntityOfPage":{"@type":"WebPage","@id":"https://neurovium.github.io/posts/pblog-Causal-roto-cardiac/"},"url":"https://neurovium.github.io/posts/pblog-Causal-roto-cardiac/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+  },
+  options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+</head>
+<body>
+  <header class="topbar">
+    <a href="/" class="topbar__brand">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"><line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/><line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/><line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/></g><circle cx="18" cy="20" r="2.2" fill="currentColor"/></svg>
+      Nima Dehghani
+    </a>
+    <button class="topbar__toggle" id="sidebar-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sidebar">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </header>
+
+  <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
+
+  <div class="app">
+    
+
+<aside class="side" id="sidebar" aria-label="Primary">
+  <a class="side__brand" href="/">
+    <svg class="glyph" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none">
+        <line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/>
+        <line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/>
+        <line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/>
+      </g>
+      <circle cx="18" cy="20" r="2.2" fill="currentColor"/>
+    </svg>
+    <span>
+      <span class="side__name">Nima Dehghani</span>
+      <span class="side__tag">@neurovium · MIT</span>
+    </span>
+  </a>
+
+  <nav class="side__nav" aria-label="Main navigation">
+    <a href="/" class="">Home</a>
+    <a href="/news/" class="">News<span class="side__pip" aria-label="new"></span></a>
+    <a href="/research/" class="">Research</a>
+    <a href="/papers/" class="">Paper Maze</a>
+    <a href="/garden/" class="">Idea Garden</a>
+    <a href="/blog/" class="">Blog</a>
+    <a href="/open-science/" class="">Open Science</a>
+    <a href="/about/" class="">About</a>
+  </nav>
+
+  <div class="side__social" aria-label="Social links">
+    <div class="side__social-row">
+      <a href="https://scholar.google.com/citations?user=acFMrVUAAAAJ&hl=en" title="Google Scholar" target="_blank" rel="noopener" aria-label="Google Scholar">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9zm6.82 7L12 12.72 5.18 9 12 5.28zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73z"/></svg>
+      </a>
+      <a href="mailto:nima.dehghani@mit.edu" title="Email" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/nimadehghani/" title="LinkedIn" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+    </div>
+    <div class="side__social-row">
+      <a href="https://github.com/neurovium" title="GitHub" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      </a>
+      <a href="https://twitter.com/neurovium" title="X" target="_blank" rel="noopener" aria-label="X">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://bsky.app/profile/neurovium.bsky.social" class="is-bsky" title="Bluesky" target="_blank" rel="noopener" aria-label="Bluesky">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.335 5.144c2.606 1.957 5.41 5.923 6.44 8.051.99-2.046 3.855-6.132 6.44-8.051 1.864-1.383 4.885-2.453 4.885 1.002 0 .69-.396 5.795-.629 6.624-.809 2.882-3.748 3.616-6.363 3.17 4.573.78 5.737 3.359 3.224 5.939-4.772 4.9-6.859-1.23-7.394-2.802-.534 1.572-2.622 7.702-7.394 2.802-2.513-2.58-1.349-5.16 3.224-5.939-2.615.446-5.554-.288-6.363-3.17-.233-.829-.629-5.934-.629-6.624 0-3.455 3.021-2.385 4.885-1.002z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="n4-set" aria-label="N⁴ : NeuroAI ⊃ N³">
+    <span class="n4-set__lbl">N&#8308;</span>
+    <div class="n4-set n4-set--ai">
+      <span class="n4-set__lbl">NeuroAI</span>
+      <div class="n4-set n4-set--n3">
+        <span class="n4-set__lbl">N&#179;</span>
+        <ul>
+          <li>NeuroPhysics</li>
+          <li>NeuroComputation</li>
+          <li>NeuroDynamics</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="side__foot">
+    <span>
+      <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+      ·
+      <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    </span>
+  </div>
+</aside>
+
+    <main class="main">
+      <article class="paper">
+  <div class="paper__crumb">
+    <a href="/blog/">← Blog</a>
+    <span style="color:var(--muted-soft);">·</span>
+    <span>Sep 4, 2018</span>
+  </div>
+
+  <h1>Causal Scale of Rotors in a Cardiac System</h1>
+  
+  
+
+  <section class="paper__section prose" style="margin-top:28px;">
+    <p><em>Companion post to:</em><br />
+<strong>Causal Scale of Rotors in a Cardiac System</strong><br />
+Hiroshi Ashikaga, Francisco Prieto-Castrillo, Mari Kawakatsu, Nima Dehghani  <br />
+<em>Frontiers in Computational Physics</em> Volume 6 - 2018 
+DOI: <code class="language-plaintext highlighter-rouge">10.3389/fphy.2018.00030</code></p>
+
+<hr />
+
+<h1 id="the-causal-scale-of-rotors-in-cardiac-excitable-media">The Causal Scale of Rotors in Cardiac Excitable Media</h1>
+
+<p>Atrial fibrillation is often described through the language of mechanisms.<br />
+Some patterns trigger it, some sustain it, and some are thought to organize the
+otherwise irregular electrical activity of the atria. Among the most important
+of these proposed organizing structures are <strong>rotors</strong>: the rotating cores of
+spiral waves in cardiac tissue.</p>
+
+<p>Rotors are attractive objects for both physiology and physics. They are
+macroscopic structures, yet they arise from the local interaction of many
+excitable elements. They have topology, because their centers can be described
+as phase singularities. They have dynamics, because they drift, interact,
+appear, disappear, and sometimes fragment. And they have clinical relevance,
+because if rotors maintain atrial fibrillation, then finding and ablating them
+should, in principle, eliminate the arrhythmia.</p>
+
+<p>But this mechanistic picture has never been entirely straightforward. Early
+clinical attempts to map and ablate rotors in atrial fibrillation produced
+promising results, but subsequent outcomes were mixed. Part of the difficulty
+is technical: clinical mapping systems have finite spatial resolution, finite
+temporal resolution, and incomplete access to the atrial surface. But there is
+also a deeper conceptual problem. When we say that a rotor is a mechanism, at
+what scale is that statement supposed to be true?</p>
+
+<p>This paper was written around that question.</p>
+
+<p>The central argument is not that rotors are irrelevant. Nor is it that the
+microscopic behavior of cardiomyocytes alone is the only legitimate causal
+level. Instead, the paper asks whether the causal status of a rotor is
+<strong>scale-dependent</strong>. In other words: a rotor may be a causal mechanism at one
+spatiotemporal scale, but not at another.</p>
+
+<p>That is a different way of thinking about mechanism in excitable media. It
+moves the question from:</p>
+
+<blockquote>
+  <p>Are rotors causal mechanisms?</p>
+</blockquote>
+
+<p>to:</p>
+
+<blockquote>
+  <p>At what spatiotemporal scale do rotors have causal power?</p>
+</blockquote>
+
+<p>This distinction matters not only for cardiac electrophysiology, but also for
+broader problems in complex systems, neurophysiology, and biological
+computation, where macroscopic patterns are routinely invoked as mechanisms
+for microscopic dynamics.</p>
+
+<hr />
+
+<h2 id="rotors-as-emergent-objects-in-an-excitable-medium">Rotors as emergent objects in an excitable medium</h2>
+
+<p>Cardiac tissue is an excitable medium. Each local element can be activated,
+recover, and then become excitable again. When these local elements are coupled
+spatially, they support propagating waves. Under appropriate conditions, those
+waves can curl into spiral waves. The center of rotation is a rotor, or more
+precisely, a phase singularity: a point around which the phase winds but at
+which the phase itself is undefined.</p>
+
+<p>In a continuous excitable medium, a rotor is not simply an object placed on top
+of the tissue. It is a collective dynamical structure. It exists because of the
+local rules of excitation, recovery, conduction, refractoriness, curvature, and
+coupling. At the same time, once it exists, it appears to organize the activity
+around it. This is the classical tension of emergence: the macrostructure is
+generated by the microdynamics, but it may also constrain the future evolution
+of those microdynamics.</p>
+
+<p>This kind of macro–micro relationship appears throughout physiology and
+neuroscience. Cortical traveling waves, seizure propagation, sleep oscillations,
+population bursts, and spiral waves in neural tissue all raise similar
+questions. We observe a mesoscopic or macroscopic pattern and ask whether it is
+merely a description of many local events, or whether it has causal force as an
+organized dynamical entity.</p>
+
+<p>The answer cannot be obtained simply by naming the pattern. A spiral wave is
+not automatically a causal mechanism just because we can see it. A rotor is not
+automatically the cause of fibrillation simply because it is correlated with
+fibrillatory activity. The causal question requires a scale-sensitive
+description of the system.</p>
+
+<hr />
+
+<h2 id="why-scale-matters-for-causation">Why scale matters for causation</h2>
+
+<p>In many biological systems, the choice of scale changes the apparent
+mechanism. At the microscopic scale, one sees individual components and local
+interactions. At a more macroscopic scale, one sees collective modes,
+oscillations, waves, attractors, motifs, and spatial patterns. Both
+descriptions can be valid, but they do not necessarily carry the same causal
+information.</p>
+
+<p>A fully microscopic description is not always the most causally informative
+description. This is one of the important ideas behind <strong>causal emergence</strong>.
+A macroscopic description can sometimes have more effective causal power than
+the underlying microscopic description, because the macroscopic scale can
+suppress irrelevant degrees of freedom, reduce noise, and expose the
+state-transitions that matter for the system’s future behavior.</p>
+
+<p>This idea is especially natural from the perspective of statistical physics.
+Renormalization is not merely a tool for throwing away detail. It is a way of
+asking which degrees of freedom remain relevant under changes of scale. In a
+complex dynamical system, coarse-graining can reveal a level of description at
+which the system’s organization becomes more interpretable and, in some cases,
+more causally informative.</p>
+
+<p>For an excitable medium such as cardiac tissue, this is a concrete question.
+If we progressively coarse-grain the system in space and time, does the rotor
+remain a causal organizing structure? Or does its apparent causal role vanish
+when the description becomes too coarse?</p>
+
+<p>The paper addresses this by combining three ideas:</p>
+
+<ol>
+  <li>a numerical model of cardiac excitation,</li>
+  <li>a renormalization-like construction of spatiotemporal scales,</li>
+  <li>an information-theoretic measure of causal emergence.</li>
+</ol>
+
+<hr />
+
+<h2 id="modeling-spiral-waves-in-cardiac-tissue">Modeling spiral waves in cardiac tissue</h2>
+
+<p>The simulations used a modified FitzHugh–Nagumo model, a simplified but
+useful model of excitable dynamics. The model represents the local cardiac
+action potential through a fast excitation variable and a slower recovery
+variable:</p>
+
+\[\frac{\partial v}{\partial t}
+=
+0.26v(v-0.13)(1-v) - 0.1vr + I_{\mathrm{ex}} + \nabla \cdot (D\nabla v),\]
+
+\[\frac{\partial r}{\partial t}
+=
+0.013(v-r).\]
+
+<p>Here, $v$ is the transmembrane potential, $r$ is the recovery variable,
+$I_{\mathrm{ex}}$ is an external current, and $D$ is the diffusion tensor. In
+this study, the tissue was modeled as a two-dimensional isotropic homogeneous
+medium. This was an intentional simplification. The goal was not to reproduce
+every anatomical detail of atrial tissue, but to isolate the causal relationship
+between rotors and spiral waves without adding confounds from anisotropy,
+fibrosis, or tissue heterogeneity.</p>
+
+<p>Spiral waves were induced by random sequential point stimulations. Once the
+spiral waves were generated, the local phase of the signal was estimated using
+the analytic signal:</p>
+
+\[\xi(t) = v(t) + i v_H(t) = A(t)e^{i\phi(t)},\]
+
+<p>where $v_H(t)$ is the Hilbert transform of $v(t)$, $A(t)$ is the instantaneous
+amplitude, and $\phi(t)$ is the instantaneous phase.</p>
+
+<p>The rotor was then identified as a phase singularity. Around such a point, the
+phase winds by an integer multiple of $2\pi$. The topological charge was
+computed as</p>
+
+\[n_t =
+\frac{1}{2\pi}
+\oint_c \nabla \phi \cdot d\mathbf{l}.\]
+
+<p>A value of $n_t = +1$ corresponds to a counterclockwise rotor, $n_t = -1$ to a
+clockwise rotor, and $n_t = 0$ to the absence of a rotor. The magnitude
+$|n_t|$ was used to quantify the average number of rotors over the time series.</p>
+
+<p>This gives a concrete bridge between excitable-medium physiology and
+topological characterization. The rotor is not defined visually or
+heuristically; it is localized through phase structure.</p>
+
+<hr />
+
+<h2 id="constructing-a-spatiotemporal-renormalization-group">Constructing a spatiotemporal renormalization group</h2>
+
+<p>The next step was to describe the same cardiac system at multiple
+spatiotemporal scales.</p>
+
+<p>Each component of the lattice was first binarized: it was assigned a value of
+1 when excited and 0 when resting. This binary representation made it possible
+to define the system state at each time point as a high-dimensional binary
+configuration.</p>
+
+<p>Then the system was coarse-grained in space and time.</p>
+
+<p>Spatially, the lattice was decimated by a factor of 2. A block of neighboring
+sites was reduced to a representative site at the next scale. Temporally, the
+binary time series was downsampled by a factor of 2. Repeating these operations
+generated a family of system descriptions, ranging from relatively microscopic
+to highly macroscopic.</p>
+
+<p>The spatial scales were:</p>
+
+\[30 \times 30,\quad
+15 \times 15,\quad
+8 \times 8,\quad
+4 \times 4,\quad
+2 \times 2,\quad
+1 \times 1.\]
+
+<p>The temporal scales were:</p>
+
+\[400 \ \mathrm{Hz},\quad
+200 \ \mathrm{Hz},\quad
+100 \ \mathrm{Hz},\quad
+50 \ \mathrm{Hz},\quad
+25 \ \mathrm{Hz},\quad
+12 \ \mathrm{Hz}.\]
+
+<p>Together, these produced 36 spatiotemporal descriptions of the same underlying
+class of rotor dynamics.</p>
+
+<p>This construction is important because it treats scale as an explicit
+variable. The rotor is not assumed to be causal at all resolutions. Instead,
+the analysis asks how causal structure changes as the system is progressively
+coarse-grained.</p>
+
+<hr />
+
+<h2 id="effective-information-and-causal-emergence">Effective information and causal emergence</h2>
+
+<p>To quantify causal structure, the study used <strong>effective information</strong>.</p>
+
+<p>At each scale, the system can be treated as a process with possible causes
+$X$ and possible effects $Y$. Effective information measures how much
+information is generated when a system, starting from an unconstrained
+repertoire of possible causes, enters a specific state of possible effects.</p>
+
+<p>Formally, effective information is written as</p>
+
+\[EI(X \to Y) = I(X;Y),\]
+
+<p>where</p>
+
+\[I(X;Y)
+=
+H(X) + H(Y) - H(X,Y),\]
+
+<p>or equivalently,</p>
+
+\[I(X;Y)
+=
+\sum_{x,y} p(x,y)
+\log_2
+\frac{p(x,y)}{p(x)p(y)}.\]
+
+<p>On its own, mutual information is not a causal measure. It is a measure of
+statistical dependence. The causal interpretation comes from the construction
+of $X$: the possible causes are treated as an unconstrained repertoire, with a
+uniform probability distribution. This corresponds to perturbing the system
+into all possible states with equal probability and then evaluating how much
+information is generated by the transition to the observed effect state.</p>
+
+<p>Causal emergence is then defined as the difference in effective information
+between two scales:</p>
+
+\[CE =
+EI(X_m \to Y_m) - EI(X_n \to Y_n),\]
+
+<p>where $m$ and $n$ refer to different spatiotemporal scales.</p>
+
+<p>In this paper, causal emergence was evaluated relative to the most microscopic
+description. A positive value of $CE$ means that the more macroscopic
+description has greater effective information than the microscopic one. In
+that case, the macro-description is not merely a compressed summary; it has
+greater causal informativeness. A negative value means that the macro-scale
+description has lost causal information relative to the microscopic scale.</p>
+
+<p>This is the key conceptual move of the paper. Instead of asking whether the
+rotor is a cause in an absolute sense, the paper asks whether the scale at
+which the rotor is described has greater or lesser causal information than the
+microscopic description.</p>
+
+<hr />
+
+<h2 id="the-main-result-causation-peaks-at-an-intermediate-scale">The main result: causation peaks at an intermediate scale</h2>
+
+<p>The first major result is that effective information does not simply increase
+as the description becomes more microscopic, nor does it monotonically increase
+as the description becomes more macroscopic.</p>
+
+<p>Instead, effective information peaks at an intermediate spatiotemporal scale.</p>
+
+<p>This is the central finding. The most causally informative description of the
+rotor-bearing cardiac system was neither the most microscopic lattice nor the
+most extreme coarse-grained description. It was an intermediate scale, where
+the system retained enough spatial and temporal structure to capture rotor
+organization, while removing some of the microscopic degrees of freedom that
+do not contribute strongly to the causal architecture.</p>
+
+<p>In the aggregate simulations, effective information reached a global maximum
+around spatial scale 4 and temporal scale 4. Beyond that scale, further
+coarse-graining reduced effective information. This means that the system has
+a <strong>scale of peak causation</strong>.</p>
+
+<p>This has an important interpretation. At scales below the peak, the
+intermediate macro-description can exert downward causal organization relative
+to the microscopic description. But at scales above the peak, the system has
+been coarse-grained too aggressively. The macroscopic description no longer
+preserves the causal structure needed to describe rotor-mediated dynamics.</p>
+
+<p>Thus, causal power is not located at “the micro” or “the macro” in a simple
+way. It is distributed across scale, and in this system it is maximized at an
+intermediate level.</p>
+
+<p>This result is consistent with a broader intuition from complex systems:
+biological function often does not live at the finest possible resolution.
+Too much microscopic detail can obscure the collective variables that matter.
+But too much coarse-graining can erase the very organization one hoped to
+understand.</p>
+
+<hr />
+
+<h2 id="rotors-are-causal-but-not-universally-causal">Rotors are causal, but not universally causal</h2>
+
+<p>The second major result concerns the relationship between the number of rotors
+and causal emergence.</p>
+
+<p>Across 1,000 simulated datasets, the number of rotors ranged from 0 to 7. The
+study then asked whether systems with more rotors showed greater causal
+emergence at each spatiotemporal scale.</p>
+
+<p>At scales up to the scale of peak causation, the relationship was positive:
+more rotors were associated with greater causal emergence. In this regime,
+rotor dynamics behaved as an emergent causal organization of the system.</p>
+
+<p>But this relationship did not hold at all scales.</p>
+
+<p>At sufficiently coarse spatial scales, causal emergence became negative, and
+the correlation between rotor number and causal emergence reversed. In other
+words, when the system was described too macroscopically, increasing the number
+of rotors no longer corresponded to stronger emergent causal organization.
+Instead, rotor dynamics became reducible to the underlying microscopic
+description.</p>
+
+<p>This is the most important conceptual conclusion of the paper:</p>
+
+<p><strong>Rotors can be causal mechanisms for maintaining spiral waves, but they are
+not universal causal mechanisms across all spatiotemporal scales.</strong></p>
+
+<p>This statement avoids two overly simple interpretations.</p>
+
+<p>The first simplistic interpretation would be:</p>
+
+<blockquote>
+  <p>Rotors are the mechanism of atrial fibrillation.</p>
+</blockquote>
+
+<p>The second would be:</p>
+
+<blockquote>
+  <p>Rotors are not real mechanisms, because rotor ablation has produced mixed
+clinical outcomes.</p>
+</blockquote>
+
+<p>The scale-dependent view is more precise. Rotors may have causal power at
+some scales, but not at others. Therefore, the success or failure of a rotor
+based intervention may depend not only on whether a rotor exists, but also on
+whether the mapping, interpretation, and intervention operate at the scale at
+which that rotor has causal relevance.</p>
+
+<hr />
+
+<h2 id="why-spatial-coarse-graining-mattered-more-than-temporal-coarse-graining">Why spatial coarse-graining mattered more than temporal coarse-graining</h2>
+
+<p>Another important result was that spatial coarse-graining had a stronger
+effect on effective information than temporal coarse-graining.</p>
+
+<p>This makes sense physiologically. Spiral waves and rotors are spatially
+organized phenomena. Their identity depends on the spatial arrangement of
+phase, wavefront curvature, and propagation around a singularity. If spatial
+coarse-graining becomes too severe, the phase singularity is no longer
+represented in a meaningful way. The rotor has been erased by the measurement
+scale.</p>
+
+<p>Temporal coarse-graining also matters, because rotor dynamics unfold over
+time, and insufficient sampling can distort phase and propagation. But in this
+model, the loss of spatial structure was more damaging to the causal
+architecture than the loss of temporal resolution.</p>
+
+<p>For cardiac mapping, this distinction is important. A clinical mapping system
+does not merely observe the heart; it defines the effective scale at which the
+heart is represented. If the spatial resolution is too coarse, the mapping
+system may fail to capture the causal scale of the rotor even if a rotor-like
+dynamical structure exists in the tissue.</p>
+
+<p>The same point applies to neurophysiology. In cortical systems, waves,
+oscillations, avalanches, and phase singularities can look very different
+depending on whether they are measured by intracellular recordings, dense
+microelectrode arrays, ECoG, EEG, MEG, calcium imaging, or widefield optical
+signals. A collective pattern observed at one scale may not have the same
+causal interpretation at another.</p>
+
+<hr />
+
+<h2 id="mechanism-should-not-be-treated-as-scale-free">Mechanism should not be treated as scale-free</h2>
+
+<p>A major philosophical implication of the paper is that mechanism should not be
+treated as a binary, scale-free property.</p>
+
+<p>In many areas of physiology, we often ask whether a structure or process “is
+the mechanism” of a phenomenon. But this language hides the fact that
+mechanistic explanations are almost always tied to a level of description.</p>
+
+<p>A rotor is a mechanism only relative to a scale at which it can be represented
+and at which its presence changes the effective causal architecture of the
+system. Below that scale, it may dissolve into local excitation and recovery
+dynamics. Above that scale, it may disappear into a coarse global descriptor
+that no longer preserves its causal structure.</p>
+
+<p>This is not a weakness of the rotor concept. It is a more precise way of
+understanding it.</p>
+
+<p>In complex systems, the same physical process can appear as microscopic
+interaction, mesoscopic organization, or macroscopic order parameter depending
+on the observational scale. The causal role of that process is not guaranteed
+to be invariant under coarse-graining. A mechanism may be real, but only within
+a finite range of scales.</p>
+
+<p>This is also why information theory is useful here. It provides a way to ask
+whether a given scale of description carries causal information, rather than
+assuming that higher resolution is always better or that macroscopic patterns
+are automatically explanatory.</p>
+
+<hr />
+
+<h2 id="clinical-implications-rotor-ablation-and-the-missing-variable-of-scale">Clinical implications: rotor ablation and the missing variable of scale</h2>
+
+<p>The clinical motivation for this work comes from atrial fibrillation therapy.</p>
+
+<p>Successful arrhythmia treatment requires targeting the mechanism that
+maintains the arrhythmia, not merely the events that trigger it. Pulmonary vein
+isolation has been successful in many patients because pulmonary veins are
+important sources of triggers. But persistent atrial fibrillation often
+involves a more distributed substrate, and recurrence remains common.</p>
+
+<p>Rotor-guided ablation was motivated by the idea that localized sources or
+rotors maintain fibrillation. If those sources could be identified and
+eliminated, the arrhythmia might terminate. But clinical results have been
+inconsistent.</p>
+
+<p>The analysis in this paper suggests one possible reason: clinical mapping and
+ablation may not explicitly account for the causal scale of the mechanism. A
+rotor may be causally meaningful only at a particular spatiotemporal scale. If
+the mapping system observes at the wrong scale, the inferred rotor may be
+unstable, incomplete, or causally misleading. Conversely, if ablation changes
+the tissue at a scale that does not correspond to the rotor’s causal scale, the
+intervention may fail even if the rotor was correctly identified in a visual or
+geometric sense.</p>
+
+<p>This does not mean that rotor ablation is invalid. It means that the relevant
+endpoint may not simply be the visual elimination of rotor-like activity. A
+more principled endpoint might involve changes in the causal architecture of
+the tissue: whether the intervention reduces the effective information
+supporting fibrillatory dynamics, disrupts the scale at which pathological
+organization is maintained, or changes the communication topology of the
+excitable medium.</p>
+
+<p>This is especially relevant for ablation strategies that segment the atria
+through linear lesions, posterior wall isolation, or other substrate-modifying
+approaches. These interventions change the topology of electrical
+communication. In doing so, they likely alter the causal architecture of the
+atrium. The question is whether such changes move the system away from the
+scale regime that supports fibrillation.</p>
+
+<p>A future clinical version of this framework would not merely map activation.
+It would estimate patient-specific multiscale causal structure from
+multi-electrode recordings and ask how that structure changes during
+intervention.</p>
+
+<hr />
+
+<h2 id="relevance-beyond-the-heart-waves-oscillations-and-causal-scales-in-neural-systems">Relevance beyond the heart: waves, oscillations, and causal scales in neural systems</h2>
+
+<p>Although the paper is about cardiac rotors, the underlying question is much
+broader.</p>
+
+<p>Many neurophysiological phenomena have the same conceptual structure. They
+are emergent patterns in excitable or active media, and they are observed
+through measurements that impose a particular scale. Examples include cortical
+traveling waves, seizure waves, sleep slow oscillations, spindle propagation,
+phase-amplitude organization, and large-scale synchrony.</p>
+
+<p>In each case, one can ask:</p>
+
+<ul>
+  <li>Is the observed macroscopic pattern merely descriptive?</li>
+  <li>Does it constrain local activity?</li>
+  <li>At what scale does it have maximal causal information?</li>
+  <li>Does coarse-graining reveal the relevant collective variable, or erase it?</li>
+  <li>Is the measurement scale aligned with the causal scale of the phenomenon?</li>
+</ul>
+
+<p>For example, a cortical traveling wave observed in LFP or ECoG may organize
+local spiking activity, but that causal relationship may depend on spatial
+sampling, temporal bandwidth, laminar depth, and the scale of the neural
+population being analyzed. Similarly, seizure dynamics may involve spirals,
+sources, sinks, and traveling fronts whose causal relevance changes with
+measurement scale.</p>
+
+<p>The broader lesson is that physiological mechanisms should be studied as
+scale-dependent causal architectures, not merely as patterns detected in data.</p>
+
+<hr />
+
+<h2 id="what-this-paper-does-not-claim">What this paper does not claim</h2>
+
+<p>It is important to be precise about the limitations.</p>
+
+<p>The model used here is a simplified two-dimensional homogeneous and isotropic
+excitable medium. Real atrial tissue has anisotropy, fiber structure,
+heterogeneous conduction, fibrosis, curvature, wall thickness, variable
+refractoriness, and patient-specific anatomy. Those factors will almost
+certainly affect the causal architecture.</p>
+
+<p>The point of the model was not to reproduce all clinical details of atrial
+fibrillation. The point was to isolate a fundamental question: even in a clean
+excitable medium where rotors can be clearly defined, is the causal status of
+the rotor invariant across scale?</p>
+
+<p>The answer was no.</p>
+
+<p>That negative answer is valuable precisely because it appears in a simplified
+system. If scale-dependence is already present in an idealized model, it is
+unlikely to disappear in the more complex biological heart.</p>
+
+<hr />
+
+<h2 id="the-main-lesson">The main lesson</h2>
+
+<p>The paper argues for a scale-sensitive view of mechanism in excitable media.</p>
+
+<p>Rotors are not dismissed. They are not declared irrelevant. Instead, they are
+placed within a causal hierarchy. They are emergent structures whose causal
+power is maximal only over a finite range of spatiotemporal scales.</p>
+
+<p>This changes how one should think about both theory and intervention. The
+question is not whether the microscopic or macroscopic description is the
+“true” one. The question is which scale carries the most causal information
+for the phenomenon of interest.</p>
+
+<p>For cardiac fibrillation, that means that rotor-based mechanisms should be
+understood through the scale at which they organize spiral-wave dynamics. For
+clinical electrophysiology, it means that mapping and ablation should
+eventually be evaluated not only by anatomical or visual criteria, but by how
+they alter the multiscale causal architecture of the tissue. For complex
+systems and neurophysiology, it provides a general lesson: emergent patterns
+may be real mechanisms, but their causal power is not necessarily scale-free.</p>
+
+<p>A rotor is therefore not simply a thing in the heart. It is a scale-dependent
+causal object in an excitable medium.</p>
+
+<p>That, in the end, is the central message of the paper.</p>
+
+  </section>
+
+  
+  <section class="paper__section">
+    <h2>The room this opens</h2>
+    <div class="linkbar">
+      <a href="/papers/Causal-rotor-cardiac/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="20" x2="12" y2="12"/><line x1="12" y1="12" x2="21" y2="4"/><line x1="12" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="21" y2="20"/></svg>
+        Follow this path into the Maze
+      </a>
+    </div>
+  </section>
+  
+</article>
+
+      <footer class="foot">
+  <span>© 2026 · Nima Dehghani</span>
+  <span>
+    <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    ·
+    <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+  </span>
+</footer>
+
+    </main>
+  </div>
+
+  <script src="/assets/js/quotes.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
