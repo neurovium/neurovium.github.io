@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ead7be">
+<title>When Does a Physical System Compute? · Nima Dehghani</title>
+<meta name="description" content="Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<link type="application/atom+xml" rel="alternate" href="https://neurovium.github.io/feed.xml" title="Nima Dehghani" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>When Does a Physical System Compute? | Nima Dehghani</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="When Does a Physical System Compute?" />
+<meta name="author" content="Nima Dehghani" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Companion post to: A category-theoretic perspective on physical computation, biological computation, and system compositionality Nima Dehghani, Gianluca Caterina Journal of Physics: Complexity . Volume 5, Number 3 DOI: https://doi.org/10.1088/2632-072X/ad6051" />
+<meta property="og:description" content="Companion post to: A category-theoretic perspective on physical computation, biological computation, and system compositionality Nima Dehghani, Gianluca Caterina Journal of Physics: Complexity . Volume 5, Number 3 DOI: https://doi.org/10.1088/2632-072X/ad6051" />
+<link rel="canonical" href="https://neurovium.github.io/posts/pblog-Catcomp/" />
+<meta property="og:url" content="https://neurovium.github.io/posts/pblog-Catcomp/" />
+<meta property="og:site_name" content="Nima Dehghani" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-07-24T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="When Does a Physical System Compute?" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Nima Dehghani"},"dateModified":"2024-07-24T00:00:00+00:00","datePublished":"2024-07-24T00:00:00+00:00","description":"Companion post to: A category-theoretic perspective on physical computation, biological computation, and system compositionality Nima Dehghani, Gianluca Caterina Journal of Physics: Complexity . Volume 5, Number 3 DOI: https://doi.org/10.1088/2632-072X/ad6051","headline":"When Does a Physical System Compute?","mainEntityOfPage":{"@type":"WebPage","@id":"https://neurovium.github.io/posts/pblog-Catcomp/"},"url":"https://neurovium.github.io/posts/pblog-Catcomp/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+  },
+  options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+</head>
+<body>
+  <header class="topbar">
+    <a href="/" class="topbar__brand">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"><line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/><line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/><line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/></g><circle cx="18" cy="20" r="2.2" fill="currentColor"/></svg>
+      Nima Dehghani
+    </a>
+    <button class="topbar__toggle" id="sidebar-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sidebar">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </header>
+
+  <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
+
+  <div class="app">
+    
+
+<aside class="side" id="sidebar" aria-label="Primary">
+  <a class="side__brand" href="/">
+    <svg class="glyph" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none">
+        <line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/>
+        <line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/>
+        <line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/>
+      </g>
+      <circle cx="18" cy="20" r="2.2" fill="currentColor"/>
+    </svg>
+    <span>
+      <span class="side__name">Nima Dehghani</span>
+      <span class="side__tag">@neurovium · MIT</span>
+    </span>
+  </a>
+
+  <nav class="side__nav" aria-label="Main navigation">
+    <a href="/" class="">Home</a>
+    <a href="/news/" class="">News<span class="side__pip" aria-label="new"></span></a>
+    <a href="/research/" class="">Research</a>
+    <a href="/papers/" class="">Paper Maze</a>
+    <a href="/garden/" class="">Idea Garden</a>
+    <a href="/blog/" class="">Blog</a>
+    <a href="/open-science/" class="">Open Science</a>
+    <a href="/about/" class="">About</a>
+  </nav>
+
+  <div class="side__social" aria-label="Social links">
+    <div class="side__social-row">
+      <a href="https://scholar.google.com/citations?user=acFMrVUAAAAJ&hl=en" title="Google Scholar" target="_blank" rel="noopener" aria-label="Google Scholar">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9zm6.82 7L12 12.72 5.18 9 12 5.28zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73z"/></svg>
+      </a>
+      <a href="mailto:nima.dehghani@mit.edu" title="Email" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/nimadehghani/" title="LinkedIn" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+    </div>
+    <div class="side__social-row">
+      <a href="https://github.com/neurovium" title="GitHub" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      </a>
+      <a href="https://twitter.com/neurovium" title="X" target="_blank" rel="noopener" aria-label="X">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://bsky.app/profile/neurovium.bsky.social" class="is-bsky" title="Bluesky" target="_blank" rel="noopener" aria-label="Bluesky">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.335 5.144c2.606 1.957 5.41 5.923 6.44 8.051.99-2.046 3.855-6.132 6.44-8.051 1.864-1.383 4.885-2.453 4.885 1.002 0 .69-.396 5.795-.629 6.624-.809 2.882-3.748 3.616-6.363 3.17 4.573.78 5.737 3.359 3.224 5.939-4.772 4.9-6.859-1.23-7.394-2.802-.534 1.572-2.622 7.702-7.394 2.802-2.513-2.58-1.349-5.16 3.224-5.939-2.615.446-5.554-.288-6.363-3.17-.233-.829-.629-5.934-.629-6.624 0-3.455 3.021-2.385 4.885-1.002z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="n4-set" aria-label="N⁴ : NeuroAI ⊃ N³">
+    <span class="n4-set__lbl">N&#8308;</span>
+    <div class="n4-set n4-set--ai">
+      <span class="n4-set__lbl">NeuroAI</span>
+      <div class="n4-set n4-set--n3">
+        <span class="n4-set__lbl">N&#179;</span>
+        <ul>
+          <li>NeuroPhysics</li>
+          <li>NeuroComputation</li>
+          <li>NeuroDynamics</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="side__foot">
+    <span>
+      <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+      ·
+      <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    </span>
+  </div>
+</aside>
+
+    <main class="main">
+      <article class="paper">
+  <div class="paper__crumb">
+    <a href="/blog/">← Blog</a>
+    <span style="color:var(--muted-soft);">·</span>
+    <span>Jul 24, 2024</span>
+  </div>
+
+  <h1>When Does a Physical System Compute?</h1>
+  
+  
+  <div class="paper__venue" style="margin-top:10px;">
+    <span>physical computation</span><span>biological computation</span><span>quantum computing</span><span>compositionality</span>
+  </div>
+  
+
+  <section class="paper__section prose" style="margin-top:28px;">
+    <p><em>Companion post to:</em><br />
+<strong>A category-theoretic perspective on physical computation, biological computation, and system compositionality</strong><br />
+Nima Dehghani, Gianluca Caterina
+<em>Journal of Physics: Complexity</em> . Volume 5, Number 3
+DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.1088/2632-072X/ad6051</code></p>
+
+<hr />
+
+<h1 id="when-does-a-physical-system-compute">When Does a Physical System Compute?</h1>
+
+<p>In classical computer science, the direction of thought is usually clear. We begin with an abstract notion of a computable function. We then define a model of computation, such as a Turing machine, lambda calculus, finite-state automata, process calculi, or other formally equivalent models. Finally, we build physical devices that implement those models. In that direction, the conceptual pipeline is relatively well behaved:</p>
+
+\[\text{computable function} \rightarrow \text{model of computation} \rightarrow \text{physical device}.\]
+
+<p>This is the direction that gave us digital computers, programming languages, and much of modern computational theory.</p>
+
+<p>But many of the most interesting questions in physical, biological, and unconventional computation go in the opposite direction. We are not always handed a clean abstract function and then asked to build a machine that computes it. Instead, we often begin with a physical system: a quantum device, a neural circuit, a biochemical signaling pathway, a cellular regulatory network, a bacterial colony, or a brain. We observe that the system has states, transitions, dynamics, information flow, constraints, and perhaps adaptive behavior. Then we ask:</p>
+
+<p><strong>Is this system computing?</strong></p>
+
+<p>That reverse direction is much harder:</p>
+
+\[\text{natural system} \rightarrow \text{physical operations} \rightarrow \text{mathematical abstraction}.\]
+
+<p>The difficulty is that natural systems change state all the time. Electrons move. Molecules interact. Cells signal. Brains evolve through high-dimensional neural trajectories. A rock rolling down a hill follows physical law. The Solar System evolves according to gravitational dynamics. But we do not want a definition of computation so weak that every physical state transition becomes a computation. If everything computes simply because it changes state, then computation has lost its explanatory power.</p>
+
+<p>This is the central motivation of our paper:</p>
+
+<p><strong>Physical computing: a category theoretic perspective on physical computation and system compositionality</strong><br />
+Nima Dehghani and Gianluca Caterina<br />
+<em>Journal of Physics: Complexity</em> 5, 035005, 2024<br />
+DOI: <code class="language-plaintext highlighter-rouge">10.1088/2632-072X/ad6051</code></p>
+
+<p>The paper develops a category-theoretic framework for physical computation. The goal is not to add another metaphor to the already crowded discussion of whether brains, bacteria, slime moulds, chemical waves, or quantum systems “compute.” The goal is to provide a formal way to ask when a physical process can be treated as a computation, under what constraints, and at what scale.</p>
+
+<h2 id="the-problem-with-saying-that-everything-computes">The problem with saying that everything computes</h2>
+
+<p>The history of physical computation is entangled with a persistent problem: <strong>pancomputationalism</strong>. In its broadest form, pancomputationalism is the view that every physical system computes, or at least that every physical system implements some computation. The reasoning often begins with the observation that physical systems have states and transitions. If we can map those physical states onto computational states, then perhaps the system implements the corresponding computation.</p>
+
+<p>This idea appears in different forms in debates about concrete computation. Hilary Putnam’s “simple mapping account,” for example, showed how dangerously permissive such mappings can become. If all that is required is a mapping between the states of a physical system and the states of an abstract automaton, then almost any sufficiently rich physical system can be interpreted as implementing almost any finite-state computation. A rock, under the right mapping, could be said to implement a finite-state automaton. A physical object moving through space could be said to compute its own trajectory. The Solar System could be said to compute the laws of motion.</p>
+
+<p>This is not a useful theory of computation. It may reveal something important about the danger of arbitrary mappings, but it does not tell us what distinguishes a physical computer from a physical system merely undergoing change.</p>
+
+<p>The issue becomes especially serious in biological and neural systems. In biology, it is tempting to describe almost every regulatory process as computation. Cells process signals. Bacteria integrate environmental cues. Neural circuits transform sensory inputs into motor outputs. Organisms maintain internal variables, regulate themselves, and respond to perturbations. But if “computation” simply means “information processing,” and if “information processing” simply means “a physical system changes in response to another physical system,” then the concept becomes too broad.</p>
+
+<p>A useful account of biological computation needs to be stricter. It must be able to say that some physical processes support computation, while others may involve signaling, regulation, causal coupling, or information transfer without thereby becoming computations in the relevant sense.</p>
+
+<h2 id="from-abstractionrepresentation-theory-to-categorical-structure">From abstraction/representation theory to categorical structure</h2>
+
+<p>A major starting point for our work is the Abstraction/Representation framework developed by Horsman, Stepney, Wagner, and Kendon. Their framework was motivated partly by quantum computation and unconventional computation. It asks: when does a physical system compute?</p>
+
+<p>Their answer is built around a “compute cycle.” A physical system evolves according to physical dynamics. At the same time, an abstract representation of that physical system evolves according to an abstract computational rule. A physical system computes when the physical evolution and the abstract evolution correspond in the right way. This correspondence can be drawn as a commuting diagram: one path evolves the physical system and then abstracts it; the other path abstracts it first and then evolves the abstraction. If the diagram commutes, the physical evolution can be used to predict the abstract evolution.</p>
+
+<p>This was an important conceptual step because it made explicit that physical computation involves a relationship between physical dynamics and abstract representation. A physical computer is not just a lump of matter. It is a system whose physical evolution is usable as the evolution of an abstract computation.</p>
+
+<p>However, the abstraction/representation framework also leaves open a difficult question: <strong>what constrains the mapping between the physical and abstract domains?</strong></p>
+
+<p>If the mapping is too loose, then the framework risks inheriting the same problem as simple mapping accounts. A mapping alone is not enough. We need a way to specify when a mapping preserves the relevant structure of the physical process and the abstract process. We need to know how computations compose, how representations relate to one another, how different physical systems can realize the same computation, and how nested systems can support computation across scales.</p>
+
+<p>This is where category theory becomes useful.</p>
+
+<h2 id="why-category-theory">Why category theory?</h2>
+
+<p>Category theory is often described as the mathematics of structure and compositionality. That description is accurate, but it can sound too general. In this context, the usefulness of category theory is quite concrete.</p>
+
+<p>Computation is not just about isolated states. It is about transformations between states, and transformations that can be composed. A program takes an input and produces an output. A physical process takes a physical system from one state to another. A computation may be refined, decomposed, implemented at different levels, or realized in multiple substrates. These are all relational and compositional notions.</p>
+
+<p>Category theory gives us a language for this.</p>
+
+<p>A category consists of objects and morphisms. Morphisms are arrows between objects. They can be composed. Each object has an identity morphism. These simple ingredients are powerful because they allow us to describe systems in terms of their structure-preserving transformations.</p>
+
+<p>In our framework, we define a category of physical processes and a category of abstract processes.</p>
+
+<p>The physical category, which we call <code class="language-plaintext highlighter-rouge">PhysProc</code>, has physical systems as objects. Its morphisms are physical processes that transform one physical system or state into another. These processes take finite time and can be composed sequentially.</p>
+
+<p>The abstract category, which we call <code class="language-plaintext highlighter-rouge">AbsProc</code>, or more concretely <code class="language-plaintext highlighter-rouge">Comp</code> in the paper, contains abstract computational objects. In a pragmatic version, the objects may be data types such as Booleans, integers, reals, or other formal objects. The morphisms are programs or abstract operations that transform inputs into outputs.</p>
+
+<p>The key move is this:</p>
+
+<p><strong>A physical computation is not an arbitrary mapping between physical states and abstract states. It is a structured functorial relationship between a category of physical processes and a category of abstract processes.</strong></p>
+
+<p>A functor maps objects to objects and morphisms to morphisms while preserving composition and identity. This is crucial. It means that the physical-to-abstract relationship must preserve the structure of processes, not merely assign labels to states.</p>
+
+<p>If a physical process takes (p_1) to (p_2), and if those physical states are represented abstractly as (c_1) and (c_2), then the abstract transition from (c_1) to (c_2) must correspond to the physical transition. The mapping has to respect the dynamics. It must preserve the process structure.</p>
+
+<p>This is what prevents arbitrary reinterpretation. A functorial account asks not only whether we can associate physical states with computational states, but whether the transitions, compositions, and process structure are preserved.</p>
+
+<h2 id="physical-computation-as-a-pair-of-functors">Physical computation as a pair of functors</h2>
+
+<p>In the paper, we formulate physical computation using functors between physical and abstract process categories. Schematically, one functor maps physical processes into abstract processes:</p>
+
+\[\mathcal{R}_T : \textbf{PhysProc} \rightarrow \textbf{AbsProc}.\]
+
+<p>This is the abstraction or representation direction. It tells us how a physical system, under a theory (T), is represented as an abstract computational process.</p>
+
+<p>But physical computation also requires a way of relating abstract processes back to physical processes. In the strict version, this can be understood through an inverse-like relationship, where the abstract process and physical process are aligned strongly enough that the physical system can serve as a computer for that abstraction.</p>
+
+<p>In a more flexible version, this relationship can be relaxed using adjunctions. This matters because physical computation often does not involve exact identity between levels. Different physical devices can implement the same abstract computation. A silicon circuit, a quantum device, a mechanical billiard-ball computer, and perhaps a biological circuit can all instantiate related computational structures without having identical physical states.</p>
+
+<p>Thus, the categorical view allows us to distinguish between several levels of physical-computational relationship. Some systems may support a strict equivalence between physical and abstract process structure. Others may support a looser but still structured relationship through adjoint functors. What matters is that the relationship is not arbitrary. It is constrained by the morphisms of the physical system and the morphisms of the abstract process.</p>
+
+<p>This also gives us a way to talk about the “amount” or “type” of computation a physical system can support. The computational capacity of a physical system is related to the image of the abstraction functor. A system with rich controllable dynamics, stable distinguishable states, and composable operations can support a richer abstract process structure. A system without such structure may undergo physical evolution without being a computer in the relevant sense.</p>
+
+<h2 id="computation-is-not-just-representation">Computation is not just representation</h2>
+
+<p>One important implication of the framework is that computation should not be reduced to representation alone. A representation is not enough. The relation between physical and abstract systems has to preserve the right structure.</p>
+
+<p>This is where the categorical approach differs from weak mapping accounts. In weak mapping accounts, one can often invent a mapping after the fact. The mapping may associate physical states with computational states, but it does not necessarily preserve the causal and counterfactual structure of the physical system. It does not necessarily respect what the system could have done under different inputs, boundary conditions, or perturbations.</p>
+
+<p>In the functorial framework, the morphisms matter. The physical transitions themselves are part of the structure being mapped. This means that causal and counterfactual constraints are not external decorations added later to rescue the theory. They are naturally tied to the preservation of process structure.</p>
+
+<p>If a physical system can move from (p_1) to (p_2), and this transition corresponds to an abstract transition from (c_1) to (c_2), then the computation depends on that physical transition being permissible under the system’s dynamics. Likewise, if alternative physical transitions are possible under alternative conditions, the abstract process must respect those alternatives if it is to capture the computation performed by the system.</p>
+
+<p>This matters for physical computing generally, and it matters especially for biological systems. A biological process may be meaningful, regulated, adaptive, and causally rich without necessarily constituting a computation under a given abstraction. The question is not whether we can describe it computationally after the fact. The question is whether the process structure of the biological system maps functorially onto an abstract computational process.</p>
+
+<h2 id="natural-transformations-refinement-and-change-of-representation">Natural transformations: refinement and change of representation</h2>
+
+<p>Once computation is understood functorially, we can ask a second-order question: how do different representations of the same physical computation relate to each other?</p>
+
+<p>This is where natural transformations enter.</p>
+
+<p>A natural transformation is a morphism between functors. If functors are structure-preserving maps between categories, then natural transformations are structure-preserving maps between such maps. They are sometimes described as “relations between relations,” which is exactly what we need when thinking about computational refinement.</p>
+
+<p>Consider a simple example: addition. A physical device may implement addition at the binary level. But a user may think in decimal. Another representation may use octal. These are different abstract representations of related computational structure. The device’s physical dynamics may be binary, while the intended high-level operation is decimal addition. The relationship between these abstraction levels can be described using natural transformations.</p>
+
+<p>This gives a formal account of computational refinement. A computation can be represented at one level, then refined into another representation, and the relationship between those levels can be expressed categorically. This is not merely a software engineering convenience. It is a way of describing how physical processes, low-level operations, and high-level computations remain coherently related.</p>
+
+<p>For biological and neural systems, this is particularly important. A neural circuit can be described at many levels: ion channels, synapses, dendritic compartments, spiking dynamics, population trajectories, behavior, and perhaps cognitive variables. These levels are not interchangeable. But they may be related by structured transformations. A categorical framework gives us a way to ask when such cross-level descriptions preserve computational structure and when they are merely descriptive projections.</p>
+
+<h2 id="multiple-realizability-and-adjunctions">Multiple realizability and adjunctions</h2>
+
+<p>A central idea in philosophy of mind, computational neuroscience, and cognitive science is multiple realizability. The same abstract function can be implemented in different physical substrates. A computation may be realized in silicon, in a mechanical device, in a quantum system, or perhaps in a biological system.</p>
+
+<p>David Marr’s tri-level framework made this idea familiar in neuroscience: one can distinguish the computational level, the algorithmic or representational level, and the implementational level. But the mathematical relationship between these levels is often left informal. We say that the same computation can be implemented in different ways, but what exactly does that mean?</p>
+
+<p>In our framework, adjoint pairs provide a way to formalize this idea. Rather than requiring a strict identity between abstract and physical process categories, we can allow a structured relationship in which mappings back and forth preserve the relevant computational organization in a weaker, but still disciplined, way.</p>
+
+<p>This is important because different physical systems rarely share identical state spaces. A transistor circuit, a quantum dot system, and a neural circuit do not have the same physical degrees of freedom. Yet they may support related abstract processes. Adjunctions allow us to describe this without collapsing all physical details into a vague claim of “implementation.”</p>
+
+<p>This also clarifies what medium independence can and cannot mean. Computation is often said to be medium-independent, but this phrase is easy to misuse. It does not mean that the physical medium is irrelevant. It means that the same abstract computational structure may be realizable in different media, provided that each medium has the appropriate physical degrees of freedom, controllable operations, and read/write structure to support the relevant abstract process.</p>
+
+<p>The medium matters because it determines which physical morphisms are available. It determines what can be written, transformed, stabilized, coupled, measured, and read out. The abstract computation may be multiply realizable, but each realization is constrained by physical dynamics.</p>
+
+<h2 id="scale-matters">Scale matters</h2>
+
+<p>The categorical framework also makes clear that physical computation is scale-dependent.</p>
+
+<p>Consider quantum computation. An isolated electron spin is not, by itself, a computer. It has physical degrees of freedom, but computation requires more than the existence of distinguishable physical states. The spin must be embedded within a larger architecture that allows preparation, controlled evolution, coupling, measurement, and interpretation. In a spin qubit system, the relevant physical degrees of freedom become computational only within a write-control-read structure that supports abstract operations.</p>
+
+<p>The same point applies to quantum-dot cellular automata. Individual quantum dots have physical properties. But the computational system emerges from the designed arrangement, interactions, boundary conditions, and input/output structure. The computation is not simply “inside” the quantum dot as a metaphysical property. It is supported by a structured physical process that maps onto an abstract process.</p>
+
+<p>This is also true in biology. A molecule binding to another molecule is a physical event. A signaling pathway propagating a state change is a physical and biochemical process. A gene regulatory network stabilizing a cell fate is a dynamical system. Whether any of these are computations depends on the scale of description, the available morphisms, the compositional structure, and the abstraction under which the physical process maps to an abstract process.</p>
+
+<p>This is why the question “does the brain compute?” is too coarse. A better question is:</p>
+
+<p><strong>Which physical processes in the brain, at which scales, under which abstractions, and with which compositional structure, constitute computations?</strong></p>
+
+<p>This reframing avoids both extremes. It avoids the simplistic claim that the brain is “just a computer.” It also avoids the equally unhelpful claim that biological systems are too embodied, continuous, or material to be understood computationally. The categorical view allows us to examine specific candidate computations in neural and biological systems with formal precision.</p>
+
+<h2 id="nested-composition-and-biological-systems">Nested composition and biological systems</h2>
+
+<p>Biological systems are not flat. They are nested, modular, and multiscale. Molecular interactions compose into pathways. Pathways compose into regulatory networks. Cells compose into tissues. Neural circuits compose into larger circuits and brain-wide dynamics. Organisms interact with environments. Each level has its own variables, constraints, and characteristic timescales.</p>
+
+<p>The paper introduces nested composition as a way to think about such systems. The idea is that an abstraction of one physical process can itself become part of another physical process. A physical system (P) may have state transitions that map to an abstract process. That abstracted process may then be coupled to another physical system (P’), whose own state transitions are mapped into another abstraction, and so on.</p>
+
+<p>This is not just hierarchy in the ordinary sense. It is compositional nesting across physical and abstract domains. The abstraction of one physical process can feed into the dynamics of another. Linked open dynamical systems with shared variables can therefore be understood as nested compositional structures.</p>
+
+<p>This is highly relevant to systems biology. Biological computation, if it exists in a given case, is unlikely to be localized to a single molecular event. It is more likely to arise from structured interactions among components, constraints, feedback loops, and readout mechanisms across scales. Category theory gives us a formal language for asking how these components compose.</p>
+
+<p>It also helps distinguish computation from information transfer. Biological systems constantly transfer information in a broad physical sense. But not every transfer of information is computation. For a biological process to count as computation under this framework, the relevant physical transitions must map coherently into an abstract process category. The system must support more than correlation, signaling, or causal influence. It must support structured, composable operations.</p>
+
+<h2 id="implications-for-computational-neuroscience">Implications for computational neuroscience</h2>
+
+<p>Computational neuroscience often uses computational language at multiple levels. We speak of neurons encoding variables, circuits implementing algorithms, cortical areas performing inference, populations representing latent states, synapses storing information, and brains computing predictions. Some of this language is productive. Some of it is metaphorical. Some of it may be misleading.</p>
+
+<p>The framework in this paper is not meant to abolish computational language in neuroscience. Rather, it gives us a way to make that language more precise.</p>
+
+<p>For a neural system, we can ask:</p>
+
+<p>What are the relevant physical objects?<br />
+Are they ion channels, neurons, synapses, local field potentials, cell assemblies, population trajectories, or brain regions?</p>
+
+<p>What are the morphisms?<br />
+Are they spike transitions, synaptic updates, dynamical flows, network state transitions, behavioral transformations, or experimentally controlled input-output relations?</p>
+
+<p>What is the abstraction functor?<br />
+How are physical states mapped into abstract states? What structure does that mapping preserve?</p>
+
+<p>What counts as composition?<br />
+Can the relevant operations be composed in a way that supports an abstract computational process?</p>
+
+<p>What are the causal and counterfactual constraints?<br />
+Would the system support the same abstract transition under relevant perturbations, inputs, or boundary conditions?</p>
+
+<p>These questions push us beyond loose statements such as “the cortex computes prediction error” or “the brain performs Bayesian inference.” Such statements may be useful hypotheses, but the categorical view asks what physical process category is being mapped into what abstract process category, and whether the mapping preserves the relevant dynamics.</p>
+
+<p>This is especially important in modern neuroscience, where high-dimensional neural data can often be described by many different abstract models. The same neural population activity might be interpreted as encoding, decoding, inference, control, attractor dynamics, dynamical systems evolution, or manifold traversal. A categorical framework asks how these descriptions relate. Are they refinements of one another? Are they different abstraction functors? Are there natural transformations between them? Do they preserve the same process structure, or are they merely alternative descriptions imposed after the fact?</p>
+
+<p>That is a much sharper way to discuss computation in the brain.</p>
+
+<h2 id="implications-for-unconventional-and-quantum-computing">Implications for unconventional and quantum computing</h2>
+
+<p>The same framework also applies to unconventional computing and quantum computing.</p>
+
+<p>In unconventional computing, one often uses physical processes directly: chemical waves, slime mould growth, DNA interactions, mechanical collisions, memristive materials, neuromorphic substrates, or quantum systems. These systems are interesting precisely because they do not always resemble classical digital computers. They may be continuous, stochastic, embodied, spatially extended, or strongly substrate-dependent.</p>
+
+<p>The categorical approach does not require them to look like classical computers. It does not demand that every physical computer be a digital machine. Instead, it asks whether the physical process structure can be mapped into an abstract process category in a way that preserves the relevant operations.</p>
+
+<p>This is a useful standard. It allows us to take unconventional computing seriously without turning every interesting physical process into a computer. It also makes clear that the physical substrate is not merely an implementation detail. In quantum computation, for example, the available operations depend on the structure of the physical system: superposition, entanglement, unitary evolution, measurement, decoherence, and control constraints. The abstract computational power of the system is inseparable from the physical morphisms it supports.</p>
+
+<p>Thus, the framework is broad enough to include quantum and unconventional systems, but strict enough to avoid the claim that all physical systems compute merely by evolving.</p>
+
+<h2 id="what-the-framework-rules-out">What the framework rules out</h2>
+
+<p>One of the strengths of a good scientific framework is not only what it explains, but what it refuses to explain too easily. A theory that can be modified to fit any observation is weak. A useful theory should be hard to vary. It should prevent certain bad explanations.</p>
+
+<p>The categorical framework rules out the idea that arbitrary mapping is sufficient for computation. It rules out the idea that any physical state transition is automatically computational. It rules out the idea that information transfer and computation are identical. It rules out the idea that medium independence means substrate irrelevance.</p>
+
+<p>It also rules out a common confusion in modeling. A model of a physical system may compute predictions about that system. But the physical system itself is not thereby computing the model. A simulated projectile computes a trajectory in the model. The actual projectile does not compute all possible theories of its own motion simply by moving through space. The physical system has dynamics; the model has a computational structure. Whether there is a physical computation depends on a constrained relationship between physical and abstract process categories.</p>
+
+<p>This distinction is essential for avoiding pancomputationalism.</p>
+
+<p>By contrast, consider a billiard-ball computer. In that case, the physical system is deliberately constrained so that collisions of idealized balls implement logical operations. The physical dynamics are organized so that the system’s state transitions correspond to abstract computational operations. The mapping is not arbitrary. It is built into the device’s structure, its boundary conditions, and its read/write interpretation. That is the kind of case where the categorical framework can describe physical computation clearly.</p>
+
+<h2 id="toward-a-more-precise-theory-of-biological-computation">Toward a more precise theory of biological computation</h2>
+
+<p>The long-term motivation of this work is not only philosophical. It is also scientific.</p>
+
+<p>Biological systems are full of organized dynamics. They regulate, adapt, signal, remember, differentiate, synchronize, oscillate, and respond to perturbations. In computational neuroscience and systems biology, we often want to know whether such systems are computing, and if so, what kind of computation they perform.</p>
+
+<p>But the answer cannot be obtained by metaphor. It requires a formal account of when physical dynamics support abstract operations.</p>
+
+<p>The category-theoretic framework developed in the paper is a step toward such an account. It gives us a way to examine biological systems without either reducing them prematurely to digital computers or exempting them from computational analysis altogether. It allows us to ask whether a given biological process has the compositional, causal, counterfactual, and representational structure required for computation.</p>
+
+<p>This may be particularly useful for studying neural circuits, cellular regulatory systems, developmental processes, and multiscale biological organization. These systems are not merely collections of components. They are compositional physical systems with nested dynamics. Category theory is well suited to describing such systems because it treats relations, transformations, and composition as primary.</p>
+
+<p>In this sense, the framework may help move the discussion from “is life computation?” or “is the brain a computer?” toward more precise questions:</p>
+
+<p>Which biological processes instantiate computations?<br />
+Which abstractions preserve their physical process structure?<br />
+How do computational descriptions at different biological scales relate?<br />
+When are two biological implementations computationally equivalent?<br />
+When is a computational description merely a useful model, and when is it physically instantiated by the system?</p>
+
+<p>These are the questions that a mature theory of biological computation must answer.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Computation is physical, but not every physical process is computation.</p>
+
+<p>That sentence captures the central tension of the paper. On one hand, every real computation must be physically instantiated. There is no computation without some physical system undergoing state transitions. On the other hand, physical state transition alone is not enough. A physical system computes only when its dynamics can be mapped, in a constrained and structure-preserving way, to an abstract process.</p>
+
+<p>The category-theoretic framework gives us a language for that constraint. By defining physical and abstract process categories, using functors to relate them, natural transformations to describe refinement, and adjunctions to formalize multiple realizability, we obtain a more precise account of physical computation.</p>
+
+<p>This matters for foundations of computation. It matters for quantum and unconventional computing. It matters for systems biology. And it matters for computational neuroscience, where the language of computation is powerful but often under-constrained.</p>
+
+<p>The goal is not to decide once and for all whether “the brain is a computer,” whether “cells compute,” or whether “the universe computes.” Those questions are too broad. The better goal is to develop a formal framework that tells us what must be true for a physical system, or part of a physical system, to count as computing.</p>
+
+<p>That is the direction this paper takes: away from computation as metaphor, and toward computation as structured physical process.</p>
+
+  </section>
+
+  
+  <section class="paper__section">
+    <h2>The room this opens</h2>
+    <div class="linkbar">
+      <a href="/papers/Catcomp/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="20" x2="12" y2="12"/><line x1="12" y1="12" x2="21" y2="4"/><line x1="12" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="21" y2="20"/></svg>
+        Follow this path into the Maze
+      </a>
+    </div>
+  </section>
+  
+</article>
+
+      <footer class="foot">
+  <span>© 2026 · Nima Dehghani</span>
+  <span>
+    <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    ·
+    <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+  </span>
+</footer>
+
+    </main>
+  </div>
+
+  <script src="/assets/js/quotes.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

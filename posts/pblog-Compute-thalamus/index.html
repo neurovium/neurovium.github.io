@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ead7be">
+<title>Beyond the Relay: A Computational Perspective on the Thalamocortical Cognitive Engine · Nima Dehghani</title>
+<meta name="description" content="Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<link type="application/atom+xml" rel="alternate" href="https://neurovium.github.io/feed.xml" title="Nima Dehghani" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Beyond the Relay: A Computational Perspective on the Thalamocortical Cognitive Engine | Nima Dehghani</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Beyond the Relay: A Computational Perspective on the Thalamocortical Cognitive Engine" />
+<meta name="author" content="Nima Dehghani" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Companion post to: *A Computational Perspective of the Role of the Thalamus in Cognition ** Nima Dehghani, Ralf D. Wimmer *Neural Computation . (2019) 31 (7): 1380–1418. DOI: https://doi.org/10.1162/neco_a_01197" />
+<meta property="og:description" content="Companion post to: *A Computational Perspective of the Role of the Thalamus in Cognition ** Nima Dehghani, Ralf D. Wimmer *Neural Computation . (2019) 31 (7): 1380–1418. DOI: https://doi.org/10.1162/neco_a_01197" />
+<link rel="canonical" href="https://neurovium.github.io/posts/pblog-Compute-thalamus/" />
+<meta property="og:url" content="https://neurovium.github.io/posts/pblog-Compute-thalamus/" />
+<meta property="og:site_name" content="Nima Dehghani" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-07-01T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Beyond the Relay: A Computational Perspective on the Thalamocortical Cognitive Engine" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Nima Dehghani"},"dateModified":"2019-07-01T00:00:00+00:00","datePublished":"2019-07-01T00:00:00+00:00","description":"Companion post to: *A Computational Perspective of the Role of the Thalamus in Cognition ** Nima Dehghani, Ralf D. Wimmer *Neural Computation . (2019) 31 (7): 1380–1418. DOI: https://doi.org/10.1162/neco_a_01197","headline":"Beyond the Relay: A Computational Perspective on the Thalamocortical Cognitive Engine","mainEntityOfPage":{"@type":"WebPage","@id":"https://neurovium.github.io/posts/pblog-Compute-thalamus/"},"url":"https://neurovium.github.io/posts/pblog-Compute-thalamus/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+  },
+  options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+</head>
+<body>
+  <header class="topbar">
+    <a href="/" class="topbar__brand">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"><line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/><line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/><line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/></g><circle cx="18" cy="20" r="2.2" fill="currentColor"/></svg>
+      Nima Dehghani
+    </a>
+    <button class="topbar__toggle" id="sidebar-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sidebar">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </header>
+
+  <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
+
+  <div class="app">
+    
+
+<aside class="side" id="sidebar" aria-label="Primary">
+  <a class="side__brand" href="/">
+    <svg class="glyph" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none">
+        <line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/>
+        <line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/>
+        <line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/>
+      </g>
+      <circle cx="18" cy="20" r="2.2" fill="currentColor"/>
+    </svg>
+    <span>
+      <span class="side__name">Nima Dehghani</span>
+      <span class="side__tag">@neurovium · MIT</span>
+    </span>
+  </a>
+
+  <nav class="side__nav" aria-label="Main navigation">
+    <a href="/" class="">Home</a>
+    <a href="/news/" class="">News<span class="side__pip" aria-label="new"></span></a>
+    <a href="/research/" class="">Research</a>
+    <a href="/papers/" class="">Paper Maze</a>
+    <a href="/garden/" class="">Idea Garden</a>
+    <a href="/blog/" class="">Blog</a>
+    <a href="/open-science/" class="">Open Science</a>
+    <a href="/about/" class="">About</a>
+  </nav>
+
+  <div class="side__social" aria-label="Social links">
+    <div class="side__social-row">
+      <a href="https://scholar.google.com/citations?user=acFMrVUAAAAJ&hl=en" title="Google Scholar" target="_blank" rel="noopener" aria-label="Google Scholar">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9zm6.82 7L12 12.72 5.18 9 12 5.28zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73z"/></svg>
+      </a>
+      <a href="mailto:nima.dehghani@mit.edu" title="Email" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/nimadehghani/" title="LinkedIn" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+    </div>
+    <div class="side__social-row">
+      <a href="https://github.com/neurovium" title="GitHub" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      </a>
+      <a href="https://twitter.com/neurovium" title="X" target="_blank" rel="noopener" aria-label="X">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://bsky.app/profile/neurovium.bsky.social" class="is-bsky" title="Bluesky" target="_blank" rel="noopener" aria-label="Bluesky">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.335 5.144c2.606 1.957 5.41 5.923 6.44 8.051.99-2.046 3.855-6.132 6.44-8.051 1.864-1.383 4.885-2.453 4.885 1.002 0 .69-.396 5.795-.629 6.624-.809 2.882-3.748 3.616-6.363 3.17 4.573.78 5.737 3.359 3.224 5.939-4.772 4.9-6.859-1.23-7.394-2.802-.534 1.572-2.622 7.702-7.394 2.802-2.513-2.58-1.349-5.16 3.224-5.939-2.615.446-5.554-.288-6.363-3.17-.233-.829-.629-5.934-.629-6.624 0-3.455 3.021-2.385 4.885-1.002z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="n4-set" aria-label="N⁴ : NeuroAI ⊃ N³">
+    <span class="n4-set__lbl">N&#8308;</span>
+    <div class="n4-set n4-set--ai">
+      <span class="n4-set__lbl">NeuroAI</span>
+      <div class="n4-set n4-set--n3">
+        <span class="n4-set__lbl">N&#179;</span>
+        <ul>
+          <li>NeuroPhysics</li>
+          <li>NeuroComputation</li>
+          <li>NeuroDynamics</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="side__foot">
+    <span>
+      <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+      ·
+      <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    </span>
+  </div>
+</aside>
+
+    <main class="main">
+      <article class="paper">
+  <div class="paper__crumb">
+    <a href="/blog/">← Blog</a>
+    <span style="color:var(--muted-soft);">·</span>
+    <span>Jul 1, 2019</span>
+  </div>
+
+  <h1>Beyond the Relay: A Computational Perspective on the Thalamocortical Cognitive Engine</h1>
+  <div class="paper__subtitle"></div>
+  
+
+  <section class="paper__section prose" style="margin-top:28px;">
+    <p><em>Companion post to:</em><br />
+<em>*A Computational Perspective of the Role of the Thalamus in Cognition **<br />
+Nima Dehghani, Ralf D. Wimmer
+*Neural Computation</em> . (2019) 31 (7): 1380–1418.
+DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.1162/neco_a_01197</code></p>
+
+<hr />
+<h1 id="beyond-the-relay-a-computational-perspective-on-the-thalamocortical-cognitive-engine">Beyond the Relay: A Computational Perspective on the Thalamocortical Cognitive Engine</h1>
+
+<p>The thalamus has often been introduced to students of neuroscience as a relay station: a structure that receives sensory input and passes it to cortex, where the real work of perception and cognition begins. This picture is not simply a pedagogical simplification. It has deeply shaped how neuroscientists, cognitive scientists, and even artificial intelligence researchers have imagined the architecture of intelligent systems. In this view, cognition is primarily cortical. The thalamus sits at the entrance to the hierarchy, while cortex transforms signals into increasingly abstract representations.</p>
+
+<p>This view has historical reasons. The lateral geniculate nucleus (LGN), which receives retinal input and projects to primary visual cortex, provided one of the clearest examples of thalamic function. In the classical visual system, sensory information appears to move from retina to LGN to V1 and then through a hierarchy of cortical areas. This picture fit naturally with the broader idea of hierarchical feature construction: simple features become more complex features, and eventually perceptual or cognitive categories emerge.</p>
+
+<p>A similar logic underlies much of modern deep learning. Convolutional neural networks, for example, construct increasingly complex feature representations across successive layers. Early layers extract local edges or textures; deeper layers combine those features into motifs, objects, and task-relevant representations. This has been an enormously productive framework, both in neuroscience and in machine learning. But it is not sufficient as a general theory of cognition.</p>
+
+<p>Cognition is not merely hierarchical feature enrichment. It requires context. It requires flexible switching between rules. It requires memory over recent history, but not unlimited memory. It requires deciding which variables matter now, which cortical subnetworks should be engaged, and when further computation is no longer worth its cost. A static feedforward hierarchy, even a very deep one, does not naturally solve these problems. Nor does a purely cortico-centric recurrent model fully explain how distributed cortical computations are coordinated, stabilized, and reconfigured in time.</p>
+
+<p>In our paper, <strong>“A computational perspective of the role of Thalamus in cognition,”</strong> we argue that the thalamus should not be understood only as a relay device. Instead, the thalamus and cortex jointly form a distributed cognitive computing system. Some thalamic nuclei do relay information in a relatively faithful and topographic manner. But other thalamic structures, especially higher-order nuclei such as the mediodorsal thalamus (MD) and pulvinar, are better understood as modulatory computational structures. They do not simply pass information forward. They help select, bias, route, and stabilize cortical computations.</p>
+
+<p>The central claim is that cognition is not implemented by cortex alone. It emerges from <strong>cortico-thalamo-cortical loops</strong> in which the thalamus acts as a dynamic contextual modulator of cortical computation.</p>
+
+<hr />
+
+<h2 id="1-why-the-relay-model-was-plausible--and-why-it-is-incomplete">1. Why the relay model was plausible — and why it is incomplete</h2>
+
+<p>The relay model did not arise out of nowhere. In early sensory systems, especially the visual system, it captured something real. Retinal ganglion cells project to the LGN, and LGN neurons project topographically to V1. This architecture looks like a structured transmission channel. The receptive fields of LGN neurons resemble those of retinal inputs, and much of the transformation associated with visual feature extraction occurs downstream in cortex.</p>
+
+<p>From this perspective, the thalamus seemed like an input stage. Cortex, particularly the neocortex, was treated as the primary site of representation and computation. Higher cognition was then imagined as the progressive enrichment of sensory representations through increasingly abstract cortical areas.</p>
+
+<p>But the anatomy of the thalamus does not support a uniform relay interpretation. The LGN is not a template for the entire thalamus. Many thalamic nuclei do not receive their dominant input from the sensory periphery. In fact, much of the input to thalamic relay structures comes not from sensory organs but from cortex, basal ganglia, brainstem, and other sources. Some thalamic territories receive strong cortical input and project broadly back to cortex. Their projection patterns are not suited for precise point-to-point relay.</p>
+
+<p>This difference matters computationally. If a thalamic nucleus receives convergent cortical input and sends diffuse projections to superficial cortical layers, then its function is unlikely to be simple transmission of a sensory message. Such a structure is better positioned to modify the state of cortical networks. It can regulate gain, influence recurrence, adjust synchrony, reshape effective connectivity, and help determine which cortical representations become behaviorally relevant.</p>
+
+<p>The important point is not that the thalamus never relays information. It clearly does. The point is that “relay” is only one thalamic mode. A general theory of thalamic function must distinguish between different thalamic architectures and the different computational roles they enable.</p>
+
+<hr />
+
+<h2 id="2-thalamic-diversity-as-computational-diversity">2. Thalamic diversity as computational diversity</h2>
+
+<p>The thalamus is often discussed as a single structure, but computationally it is more useful to think of it as a family of circuit motifs. These motifs differ in their inputs, outputs, intrinsic cellular properties, inhibitory control, and cortical targets.</p>
+
+<p>A relay-like nucleus such as the LGN has relatively focal and topographic projections to primary sensory cortex. This architecture supports high-fidelity transmission and gain regulation. It is appropriate when the computational problem is to preserve structured sensory information while controlling its flow into cortex.</p>
+
+<p>Higher-order nuclei such as MD and pulvinar are different. They receive strong cortical and subcortical inputs, often convergent in nature, and project broadly to cortical areas. MD, for example, has dense reciprocal interactions with prefrontal cortex. It projects not only to layer I but also to layer III, and it contacts both excitatory and inhibitory cortical neurons. These projections are not designed merely to deliver a sensory variable. They are positioned to influence the operating regime of cortical circuits.</p>
+
+<p>This is where the anatomical distinction becomes computational. Cortex contains recurrent networks capable of maintaining activity, generating attractor-like dynamics, and supporting mixed selectivity. But recurrent networks require control. They need to be placed into the right dynamical regime. They need to switch between task contexts. They need to avoid pathological persistence, irrelevant attractors, or excessive energetic cost. A structure such as MD is anatomically well placed to provide this kind of modulation.</p>
+
+<p>In this view, thalamic nuclei are not passive input channels. They are part of the control architecture of cognition.</p>
+
+<hr />
+
+<h2 id="3-the-mediodorsal-thalamus-and-prefrontal-computation">3. The mediodorsal thalamus and prefrontal computation</h2>
+
+<p>The interaction between MD and prefrontal cortex provides one of the clearest examples of thalamic involvement in cognition. Prefrontal cortex is often modeled as a recurrent system capable of maintaining task rules, contextual information, and working memory states. But experimental work has shown that prefrontal persistent activity cannot be fully understood without MD.</p>
+
+<p>In attentional control and working memory tasks, PFC neurons can maintain rule-selective activity during a delay. MD neurons may not always show the same categorical rule selectivity, but perturbing MD strongly affects the maintenance of rule-specific PFC activity. Inhibiting MD reduces the ability of PFC populations to sustain the relevant representation. Activating MD can enhance prefrontal activity and strengthen the functional connectivity among PFC neurons.</p>
+
+<p>This suggests a role for MD that is different from representing the task variable directly. MD may instead regulate the effective recurrent connectivity of PFC. It can help determine whether a prefrontal representation remains stable, whether it decays, or whether the system switches to a different state. In computational terms, MD can act as a contextual modulator of a cortical recurrent network.</p>
+
+<p>This is not a small adjustment to a cortico-centric theory. It changes the architecture. If MD is necessary for sustaining or reconfiguring PFC representations, then cognitive computation cannot be localized solely within cortex. The relevant computational unit is the <strong>MD-PFC loop</strong>.</p>
+
+<p>The thalamus, in this case, does not merely send an input to cortex. It participates in maintaining the conditions under which cortical computation remains meaningful.</p>
+
+<hr />
+
+<h2 id="4-thalamus-as-an-active-blackboard">4. Thalamus as an active blackboard</h2>
+
+<p>One useful analogy is the <strong>blackboard architecture</strong> from classical artificial intelligence. In a blackboard system, multiple specialist modules read from and write to a common workspace. Each module contributes partial solutions, and the shared workspace is iteratively updated until a useful solution emerges.</p>
+
+<p>The thalamocortical system resembles such an architecture, but with an important difference: the biological “blackboard” is not passive. The thalamus does not merely store symbols written by cortical modules. It transforms, filters, gates, and redistributes activity back to cortex.</p>
+
+<p>A simplified computational picture is as follows:</p>
+
+<ol>
+  <li>Cortical modules process incoming information in parallel.</li>
+  <li>Their outputs are communicated back to thalamus through cortico-thalamic projections.</li>
+  <li>Thalamus integrates these signals with sensory and subcortical input.</li>
+  <li>Thalamic output then modifies the state of cortical networks.</li>
+  <li>The next cortical computation occurs under a changed context.</li>
+</ol>
+
+<p>This loop allows cognition to proceed as an iterative process. Cortical assemblies do not compute in isolation. Their current state influences thalamic output, and thalamic output in turn shapes which cortical assemblies are recruited next.</p>
+
+<p>This can be described as a <strong>read/write medium</strong> for cortical parallel processing. Cortex writes the partial results of computation to thalamus. Thalamus reads these results, combines them with ongoing context, and writes back a modulatory signal that reshapes cortical dynamics.</p>
+
+<p>The blackboard analogy is especially useful because it avoids treating cognition as a single serial pipeline. Instead, cognition becomes a distributed, parallel, iterative process. Multiple cortical processors contribute partial interpretations, while thalamus helps coordinate the global state of the system.</p>
+
+<p>But unlike engineered blackboard systems, the thalamic blackboard is dynamical, embodied, biophysical, and metabolically constrained. It does not simply accumulate information. It regulates the cost and timing of computation.</p>
+
+<hr />
+
+<h2 id="5-the-thalamocortical-system-as-a-contextual-computing-architecture">5. The thalamocortical system as a contextual computing architecture</h2>
+
+<p>Context is one of the central difficulties in both neuroscience and artificial intelligence. The same sensory cue can imply different actions depending on task rule, behavioral state, reward history, internal goals, or environmental conditions. A tone may mean “attend to vision” in one context and “attend to audition” in another. A visual stimulus may require approach, avoidance, or no action depending on the current rule.</p>
+
+<p>A feedforward network can classify inputs, but contextual cognition requires more than classification. It requires a system in which the mapping from input to output can be dynamically reconfigured.</p>
+
+<p>Recurrent neural networks provide one solution. A recurrent network can maintain memory of prior states and use those states to influence present computation. Reservoir computing provides a related framework: a recurrent dynamical system maps inputs into a high-dimensional state space, and a readout extracts task-relevant outputs. Such systems have useful properties: separation of inputs, fading memory, and nonlinear expansion of state space.</p>
+
+<p>The PFC has often been interpreted in this spirit. It is recurrent, high-dimensional, and capable of mixed selectivity. But recurrence alone is not enough. A reservoir needs to be driven, biased, and controlled. Otherwise, it may settle into irrelevant dynamics, fail to switch when the context changes, or become metabolically inefficient.</p>
+
+<p>This is where MD-like thalamus becomes computationally interesting. MD can modulate the recurrent dynamics of PFC without simply being another recurrent cortical module. Because the thalamus lacks local excitatory recurrence, it can provide a different kind of control signal. It can influence cortical dynamics without itself becoming another cortical attractor network.</p>
+
+<p>In this interpretation, cortex provides the high-dimensional recurrent substrate, while thalamus helps regulate which regions of that dynamical space are explored. MD can help select cortical subnetworks, modulate gain, alter inhibitory tone, and bias the emergence of particular attractor states.</p>
+
+<p>Thus, the thalamocortical system is not just an RNN. It is closer to a <strong>controlled recurrent dynamical system</strong>, where the control structure is itself biological and adaptive.</p>
+
+<hr />
+
+<h2 id="6-phase-synchrony-and-temporal-binding">6. Phase, synchrony, and temporal binding</h2>
+
+<p>Cognition unfolds in time. A system that performs contextual computation must bind current input to recent history. It must retain enough past information to interpret the present, but it must not be dominated by irrelevant remote history. This is the classical problem of memory in dynamical systems: too little memory prevents context dependence; too much memory prevents flexibility.</p>
+
+<p>Thalamocortical loops provide a plausible architecture for this balance. MD-PFC interactions are not only anatomical but dynamical. They involve synchrony, oscillatory coordination, and state-dependent modulation. In particular, thalamic interactions with cortex can be phase-dependent, and thalamic cellular mechanisms such as T-type calcium channels can support transitions between firing modes and synchronization regimes.</p>
+
+<p>The computational significance is that thalamus may help coordinate when cortical assemblies become excitable, when they communicate, and when they are functionally coupled. Rather than simply adding input current to cortex, thalamic output can regulate the timing and gain of cortical interactions.</p>
+
+<p>This suggests a view of thalamus as a kind of phase-sensitive modulator. It helps bind cortical processing across time by regulating the dynamical conditions under which cortical recurrence operates.</p>
+
+<p>In artificial systems, timing is often treated as an implementation detail. In biological systems, timing is part of the computation. Synchrony, phase, gain, inhibition, and recurrence are not separate from cognition. They are among the mechanisms through which cognitive variables become dynamically organized.</p>
+
+<p>The thalamus is therefore not only a structural hub. It is a temporal regulator of cortical computation.</p>
+
+<hr />
+
+<h2 id="7-information-cost-and-the-need-for-biological-optimization">7. Information, cost, and the need for biological optimization</h2>
+
+<p>A purely computational theory of cognition is incomplete if it ignores biological cost. Brains are not idealized computers with unlimited time, energy, and memory. Neural computation is metabolically expensive. Spiking, synaptic transmission, long-range communication, and recurrent activity all consume energy. A cognitive system must therefore solve problems under constraints.</p>
+
+<p>This leads to a central argument of the paper: cognition requires a tradeoff between <strong>information gain</strong> and <strong>computational cost</strong>.</p>
+
+<p>The brain cannot maximize information at any cost. Recruiting more neurons, sustaining more activity, or running longer recurrent computations may improve accuracy, but only up to a point. Beyond that point, the metabolic and temporal costs become prohibitive. Conversely, minimizing cost alone is not useful if the computation becomes too weak, too slow, or too inaccurate to guide behavior.</p>
+
+<p>Biological cognition must therefore implement something like:</p>
+
+\[\text{maximize information gain}\]
+
+<p>while also controlling:</p>
+
+\[\text{metabolic cost} + \text{time cost}.\]
+
+<p>This is not a single-objective optimization problem. There is no unique optimum that maximizes everything simultaneously. Instead, the system faces a multi-objective optimization problem. Improving one objective often worsens another.</p>
+
+<p>The appropriate concept here is a <strong>Pareto frontier</strong>. A point on the Pareto frontier is efficient in the sense that one objective cannot be improved without worsening another. In the thalamocortical case, the relevant tradeoff is between computational effectiveness and computational economy.</p>
+
+<p>In the paper, we formalize this by considering information and cost as functions of thalamic and cortical activity. If (f_{\mathrm{Th}}) denotes thalamic activity and (f_{\mathrm{Cx}}) denotes cortical activity, then information and cost can be mapped into a joint functional space:</p>
+
+\[I = I(f_{\mathrm{Th}}, f_{\mathrm{Cx}})\]
+
+\[C = C(f_{\mathrm{Th}}, f_{\mathrm{Cx}}).\]
+
+<p>The goal is not simply to maximize (I) or minimize (C), but to dynamically regulate the system so that its operations remain near an efficient tradeoff surface:</p>
+
+\[\mathcal{P} = \left\{ (I, C) : \text{no other feasible state improves both information and cost} \right\}.\]
+
+<p>The thalamocortical loop provides a biological mechanism for moving through this space. Cortex performs high-dimensional recurrent computation. Thalamus receives information about cortical state, integrates it with ongoing input and context, and modulates cortical dynamics in return. Through this iterative process, the system can adjust how much computation is performed, which assemblies are recruited, and when a computation should be terminated or updated.</p>
+
+<p>The phrase “just enough, just in time” captures this principle. The system does not need a perfect representation of the world. It needs a sufficiently informative representation at the right time and at an acceptable cost.</p>
+
+<hr />
+
+<h2 id="8-why-cortex-alone-is-not-enough">8. Why cortex alone is not enough</h2>
+
+<p>One might ask why cortex could not solve this problem by itself. After all, cortex is recurrent, distributed, and richly interconnected. Why introduce thalamus as a computational partner?</p>
+
+<p>The answer is that cortex alone may be too unconstrained. A large recurrent cortical system has enormous dynamical capacity, but that capacity needs regulation. Without a mechanism for selecting, stabilizing, and terminating cortical computations, the system risks either excessive persistence or unstable switching. It may also consume too much energy if large cortical populations are recruited unnecessarily.</p>
+
+<p>The thalamus offers a complementary architecture. It lacks local excitatory recurrence, but it is reciprocally connected with cortex. This makes it well suited to act as a modulatory control structure rather than another recurrent processing layer. It can monitor cortical outputs, receive contextual and subcortical signals, and influence cortical effective connectivity.</p>
+
+<p>In this sense, thalamus helps prevent the cortical system from merely wandering through its own state space. It can bias cortical dynamics toward task-relevant regions, regulate the interaction between cortical assemblies, and help maintain an efficient balance between stability and flexibility.</p>
+
+<p>This is a key distinction from the purely cortico-centric view. The thalamus is not added as an extra node in an already complete cortical model. It changes the computational nature of the model.</p>
+
+<hr />
+
+<h2 id="9-implications-for-ai-and-machine-learning">9. Implications for AI and machine learning</h2>
+
+<p>The thalamocortical perspective has consequences beyond neuroscience. Many current AI systems are powerful pattern recognition systems. They can classify, predict, generate, and optimize at scales that would have seemed impossible only a decade ago. But they often remain weak in the kinds of flexible contextual control that biological cognition performs continuously.</p>
+
+<p>Several lessons from thalamocortical computation are relevant for AI and ML.</p>
+
+<p>First, cognition may require architectures that separate <strong>representation</strong> from <strong>contextual control</strong>. Cortex-like recurrent modules may generate rich state spaces, but a separate modulatory system may be needed to select and reshape those states according to task context.</p>
+
+<p>Second, biological computation suggests that memory should be dynamically regulated. A system should not simply remember everything or rely on fixed context windows. It should control which aspects of recent history remain active and which are allowed to decay. The fading-memory property of reservoir computing is useful here, but thalamic modulation suggests a more active form of memory control.</p>
+
+<p>Third, the thalamocortical loop suggests a form of adaptive routing. Rather than routing information through a fixed feedforward pathway, the system can dynamically select cortical subnetworks based on context. This has obvious relevance for mixture-of-experts models, modular neural networks, attention mechanisms, and dynamically gated architectures.</p>
+
+<p>Fourth, the information/cost tradeoff is not optional. Biological intelligence is energy-limited and time-limited. Artificial systems increasingly face analogous constraints: compute budgets, latency, memory, communication costs, and energy consumption. A cognitive architecture that explicitly regulates the tradeoff between information gain and computational cost may be more robust and scalable than one that simply increases model size.</p>
+
+<p>Finally, the thalamocortical view suggests that intelligence may require not only larger models but better control over dynamical regimes. The question is not only what a network represents, but how it changes its operating mode when the context changes.</p>
+
+<hr />
+
+<h2 id="10-implications-for-computational-neuroscience">10. Implications for computational neuroscience</h2>
+
+<p>For computational neuroscience, the thalamocortical perspective encourages a shift in modeling strategy. Instead of treating thalamus as an input source to cortical models, we should model thalamus and cortex as a coupled dynamical system.</p>
+
+<p>This means asking questions such as:</p>
+
+<ul>
+  <li>How does MD activity change the effective connectivity of PFC populations?</li>
+  <li>How do thalamic projections regulate cortical attractor dynamics?</li>
+  <li>How does thalamocortical synchrony relate to task context and rule switching?</li>
+  <li>How do different thalamic nuclei implement different computational motifs?</li>
+  <li>How does the system trade off accuracy, speed, and metabolic cost?</li>
+  <li>What distinguishes relay-like thalamic computation from modulatory thalamic computation?</li>
+</ul>
+
+<p>These questions require simultaneous measurements of thalamic and cortical activity during behavior. They also require perturbation experiments that distinguish between relay, gain control, contextual modulation, and state selection. Anatomical specificity matters: LGN, pulvinar, MD, POm, and other nuclei should not be collapsed into a single generic thalamic node.</p>
+
+<p>The modeling challenge is equally important. We need models in which thalamus is not merely an input layer. It should be represented as a structure that modifies cortical dynamics, participates in recurrent loops, and contributes to optimization under biological constraints.</p>
+
+<p>A useful computational model of thalamocortical cognition should therefore combine:</p>
+
+\[\text{cortical recurrence}\]
+
+\[\text{thalamic contextual modulation}\]
+
+\[\text{phase- and synchrony-dependent coupling}\]
+
+\[\text{energy/time constraints}\]
+
+\[\text{task-dependent state selection}.\]
+
+<p>Such models would be more biologically realistic than purely cortical RNNs and more cognitively relevant than feedforward sensory hierarchies.</p>
+
+<hr />
+
+<h2 id="11-clinical-relevance-when-modulation-fails">11. Clinical relevance: when modulation fails</h2>
+
+<p>The thalamocortical view also helps interpret cognitive dysfunction. If higher-order thalamus regulates cortical state, then disruption of thalamocortical loops should impair cognition even if primary cortical circuits remain partly intact.</p>
+
+<p>This is consistent with observations involving MD-PFC dysfunction in neuropsychiatric and neurodevelopmental disorders. Disrupted thalamocortical connectivity, altered MD volume, abnormal synchrony, and impaired prefrontal inhibitory regulation have all been implicated in conditions such as schizophrenia. From the perspective developed here, these are not secondary details. They strike at the architecture required for contextual cognition.</p>
+
+<p>If MD helps regulate prefrontal recurrence, then MD dysfunction could produce deficits in working memory, flexible rule switching, and context-dependent behavior. If thalamic modulation of inhibitory tone is disrupted, cortical networks may become unstable, overly synchronized, insufficiently selective, or metabolically inefficient.</p>
+
+<p>This suggests that some cognitive disorders may be fruitfully understood as disorders of thalamocortical regulation rather than purely cortical computation. The relevant pathology may lie not only in local cortical processing but in the failure of the loop that selects and stabilizes cortical states.</p>
+
+<hr />
+
+<h2 id="12-from-relay-to-regulator">12. From relay to regulator</h2>
+
+<p>The thalamus is not one thing computationally. Some thalamic circuits relay information. Others modulate cortical state. Still others may combine relay, gating, synchronization, and contextual control. The mistake is to generalize from one motif to the entire structure.</p>
+
+<p>The broader point is that cognition requires more than representation. It requires regulation of representation. It requires a mechanism for determining which cortical states matter, how long they should persist, when they should change, and how much metabolic cost should be spent maintaining them.</p>
+
+<p>The thalamus is anatomically and dynamically positioned to contribute to this regulatory role. In particular, MD-like nuclei may serve as read/write structures for cortical processing, contextual modulators of recurrent dynamics, and participants in information/cost optimization.</p>
+
+<p>This leads to a reframing of the cognitive engine. The computational unit is not cortex alone. It is the <strong>thalamo-cortical system</strong>.</p>
+
+<hr />
+
+<h2 id="13-concluding-perspective">13. Concluding perspective</h2>
+
+<p>The cortico-centric view of cognition was productive, but it is incomplete. It captured the importance of hierarchical cortical processing, but it underestimated the role of thalamus in coordinating, modulating, and optimizing cortical computation.</p>
+
+<p>The thalamus should not be seen merely as a sensory gateway. It is part of the machinery that makes cortical cognition flexible. It helps determine how cortical recurrent networks are configured, how task context reshapes computation, how parallel cortical modules communicate through shared loops, and how the brain balances information gain against biological cost.</p>
+
+<p>For systems neuroscience, this means that thalamocortical loops should be treated as core components of cognitive computation. For computational neuroscience, it means that models of cognition should include thalamic modulation as more than an input term. For AI and machine learning, it suggests that future cognitive architectures may need explicit mechanisms for contextual control, dynamic routing, and cost-aware computation.</p>
+
+<p>Cognition is not simply the transformation of sensory input into cortical representation. It is an ongoing, iterative, metabolically constrained process in which cortex and thalamus jointly regulate the state of the system.</p>
+
+<p>The thalamus is not just a relay.</p>
+
+<p>It is part of the computational engine.</p>
+
+  </section>
+
+  
+  <section class="paper__section">
+    <h2>The room this opens</h2>
+    <div class="linkbar">
+      <a href="/papers/Compute-thalamus/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="20" x2="12" y2="12"/><line x1="12" y1="12" x2="21" y2="4"/><line x1="12" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="21" y2="20"/></svg>
+        Follow this path into the Maze
+      </a>
+    </div>
+  </section>
+  
+</article>
+
+      <footer class="foot">
+  <span>© 2026 · Nima Dehghani</span>
+  <span>
+    <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    ·
+    <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+  </span>
+</footer>
+
+    </main>
+  </div>
+
+  <script src="/assets/js/quotes.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
