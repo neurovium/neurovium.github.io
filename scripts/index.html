@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#ead7be">
-<title>News · Nima Dehghani</title>
-<meta name="description" content="Updates, talks, threads. Short-form text supports markdown and LaTeX; embeds pull from X & Bluesky; links point back to longer posts.">
+<title>scripts · Nima Dehghani</title>
+<meta name="description" content="Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,21 +14,21 @@
 
 <link type="application/atom+xml" rel="alternate" href="https://neurovium.github.io/feed.xml" title="Nima Dehghani" />
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>News | Nima Dehghani</title>
+<title>scripts | Nima Dehghani</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="News" />
+<meta property="og:title" content="scripts" />
 <meta name="author" content="Nima Dehghani" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Updates, talks, threads. Short-form text supports markdown and LaTeX; embeds pull from X &amp; Bluesky; links point back to longer posts." />
-<meta property="og:description" content="Updates, talks, threads. Short-form text supports markdown and LaTeX; embeds pull from X &amp; Bluesky; links point back to longer posts." />
-<link rel="canonical" href="https://neurovium.github.io/news/" />
-<meta property="og:url" content="https://neurovium.github.io/news/" />
+<meta name="description" content="Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics" />
+<meta property="og:description" content="Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics" />
+<link rel="canonical" href="https://neurovium.github.io/scripts/" />
+<meta property="og:url" content="https://neurovium.github.io/scripts/" />
 <meta property="og:site_name" content="Nima Dehghani" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="News" />
+<meta property="twitter:title" content="scripts" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Nima Dehghani"},"description":"Updates, talks, threads. Short-form text supports markdown and LaTeX; embeds pull from X &amp; Bluesky; links point back to longer posts.","headline":"News","url":"https://neurovium.github.io/news/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Nima Dehghani"},"description":"Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics","headline":"scripts","url":"https://neurovium.github.io/scripts/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -73,7 +73,7 @@
 
   <nav class="side__nav" aria-label="Main navigation">
     <a href="/" class="">Home</a>
-    <a href="/news/" class="is-active">News<span class="side__pip" aria-label="new"></span></a>
+    <a href="/news/" class="">News<span class="side__pip" aria-label="new"></span></a>
     <a href="/research/" class="">Research</a>
     <a href="/papers/" class="">Paper Maze</a>
     <a href="/garden/" class="">Idea Garden</a>
@@ -132,101 +132,78 @@
 </aside>
 
     <main class="main">
-      <header class="page-head">
-  <div class="page-head__kicker is-fork">&#8997; News · short-form feed</div>
-  <h1>What&rsquo;s new.</h1>
-  <p>Updates, talks, threads. Text supports markdown and LaTeX; embeds pull from X &amp; Bluesky; links point back to longer posts.</p>
-</header>
+      <h1 id="scripts">scripts</h1>
 
-<div class="news-feed">
-  
-  
-    
-    
-      <article class="news news--text reveal">
-        <header class="news__head">
-          <span class="news__kicker">Update</span>
-          <time>May 12, 2026</time>
-        </header>
-        <h3>Lab notebook · why depth is RG flow, in two paragraphs</h3>
-        <div class="news__body" data-raw="Each layer of a plain MLP integrates out short-distance degrees of freedom in input space. The mutual information $I(X; T_\ell)$ at layer $\ell$ follows a *renormalisation-group* trajectory — the same monotonicity (Data Processing Inequality) as block-spin RG.
+<p>Local-only tooling. Nothing here runs on GitHub Pages.</p>
 
-Writing it up; preprint by July.
-">
-          <p>Each layer of a plain MLP integrates out short-distance degrees of freedom in input space. The mutual information $I(X; T_\ell)$ at layer $\ell$ follows a <em>renormalisation-group</em> trajectory — the same monotonicity (Data Processing Inequality) as block-spin RG.</p>
+<h2 id="build_garden_graphpy"><code class="language-plaintext highlighter-rouge">build_garden_graph.py</code></h2>
 
-<p>Writing it up; preprint by July.</p>
+<p>Generates <code class="language-plaintext highlighter-rouge">assets/data/garden-graph.json</code>, the knowledge graph powering the
+interactive Idea Garden at <code class="language-plaintext highlighter-rouge">/garden/</code>.</p>
 
-        </div>
-      </article>
-    
-  
-    
-    
-      
-      <article class="news news--embed reveal is-x">
-        <header class="news__head">
-          <span class="news__kicker">
-            
-              <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-              X · @neurovium
-            
-          </span>
-          <time>Apr 29, 2026</time>
-        </header>
-        <p class="news__body">New preprint up: "Depth as Successive Coarse-Graining in Plain MLPs." The information-bottleneck profile across layers is, formally, an RG flow. Code + figures linked.</p>
-        <span class="news__perma">View on x.com →</span>
-      </article>
-    
-  
-    
-    
-      <a class="news news--link reveal" href="#">
-        <header class="news__head">
-          <span class="news__kicker">Link</span>
-          <time>Apr 15, 2026</time>
-        </header>
-        <h3>Talk · MIT BCS Colloquium — Depth-as-RG</h3>
-        <p class="news__sub">Slides + recording available.</p>
-        <span class="news__cta">Open <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-      </a>
-    
-  
-    
-    
-      
-      <article class="news news--embed reveal is-x">
-        <header class="news__head">
-          <span class="news__kicker">
-            
-              <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-              X · @nima.neurovium.ai
-            
-          </span>
-          <time>Mar 22, 2026</time>
-        </header>
-        <p class="news__body">Spent the morning re-reading Cajal's monograph. The dendritic field of a Purkinje cell is a beautifully asymmetric receptive volume — and the spines are the first published evidence that learning needs surface area.</p>
-        <span class="news__perma">View on x.com →</span>
-      </article>
-    
-  
-    
-    
-      <article class="news news--text reveal">
-        <header class="news__head">
-          <span class="news__kicker">Update</span>
-          <time>Feb 8, 2026</time>
-        </header>
-        <h3>Re-analysing the spindle archive</h3>
-        <div class="news__body" data-raw="Re-analysing the 2010 *Journal of Neurophysiology* dataset with modern source-localisation. Same result holds: the spindle is several spindles thinking at once.
-">
-          <p>Re-analysing the 2010 <em>Journal of Neurophysiology</em> dataset with modern source-localisation. Same result holds: the spindle is several spindles thinking at once.</p>
+<h3 id="when-to-run">When to run</h3>
 
-        </div>
-      </article>
-    
-  
-</div>
+<p>Re-run whenever any of the following change:</p>
+
+<ul>
+  <li>a paper in <code class="language-plaintext highlighter-rouge">_papers/</code> (added, deleted, or its <code class="language-plaintext highlighter-rouge">title</code>, <code class="language-plaintext highlighter-rouge">tags</code>,
+<code class="language-plaintext highlighter-rouge">description</code>, or abstract body edited)</li>
+  <li><code class="language-plaintext highlighter-rouge">_data/concepts.yml</code></li>
+</ul>
+
+<p>The output JSON is checked in. Forgetting to re-run is harmless — the Garden
+will simply not reflect the new paper until the JSON is regenerated and
+committed.</p>
+
+<h3 id="how-to-run">How to run</h3>
+
+<p>From the repository root:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python scripts/build_garden_graph.py
+</code></pre></div></div>
+
+<p>Output, on success:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wrote assets/data/garden-graph.json: 24 papers, 71 concepts, 312 edges (TF-IDF mode)
+</code></pre></div></div>
+
+<p>The script is deterministic — running it twice with no source changes
+produces a byte-identical JSON.</p>
+
+<h3 id="dependencies">Dependencies</h3>
+
+<ul>
+  <li>Python 3.9+</li>
+  <li><code class="language-plaintext highlighter-rouge">pyyaml</code> (required)</li>
+  <li><code class="language-plaintext highlighter-rouge">scikit-learn</code> (optional; enables TF-IDF mining of paper abstracts).
+Without it, the script falls back to plain substring matching, which still
+works but produces fewer mined edges.</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>pyyaml scikit-learn
+</code></pre></div></div>
+
+<h3 id="what-it-does">What it does</h3>
+
+<ol>
+  <li>Parses every <code class="language-plaintext highlighter-rouge">_papers/*.md</code> front matter and body. Files with malformed
+YAML are skipped with a warning, not a hard fail.</li>
+  <li>Reads <code class="language-plaintext highlighter-rouge">_data/concepts.yml</code> (the curated layer).</li>
+  <li>Builds a bipartite graph:
+    <ul>
+      <li><strong>paper nodes</strong> (one per paper) and <strong>concept nodes</strong> (curated concepts
+        <ul>
+          <li>every distinct <code class="language-plaintext highlighter-rouge">tags:</code> value, canonicalized via a small alias map).</li>
+        </ul>
+      </li>
+      <li><strong>edges</strong>: explicit paper↔concept from <code class="language-plaintext highlighter-rouge">tags:</code> and curated <code class="language-plaintext highlighter-rouge">papers:</code>
+lists (weight 1.0); mined paper↔concept from TF-IDF over title +
+description + abstract (weight 0.6); concept↔concept Jaccard
+cooccurrence when two concepts share ≥ 2 papers (weight = Jaccard).</li>
+    </ul>
+  </li>
+  <li>Writes <code class="language-plaintext highlighter-rouge">assets/data/garden-graph.json</code> with sorted, stable output.</li>
+</ol>
 
       <footer class="foot">
   <span>© 2026 · Nima Dehghani</span>

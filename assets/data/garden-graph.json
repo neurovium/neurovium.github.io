@@ -1,0 +1,3184 @@
+{
+  "meta": {
+    "paper_count": 22,
+    "concept_count": 97,
+    "edge_count": 324,
+    "tfidf": true
+  },
+  "nodes": [
+    {
+      "id": "CRX",
+      "kind": "paper",
+      "title": "Compression, Regularity, Randomness and Emergent Structure: Rethinking Physical Complexity in the Data-Driven Era",
+      "year": 2025,
+      "url": "/papers/CRX/",
+      "wash": "--wash-plum",
+      "tags": [
+        "Physics-Informed AI",
+        "Complexity",
+        "Symbolic Regression",
+        "Automated Scientific Discovery",
+        "Data-Driven Modeling"
+      ]
+    },
+    {
+      "id": "avalanche-spklfp",
+      "kind": "paper",
+      "title": "Avalanche Analysis from Multielectrode Ensemble Recordings in Cat, Monkey, and Human Cerebral Cortex during Wakefulness and Sleep",
+      "year": 2012,
+      "url": "/papers/Avalanche-spikeLfp/",
+      "wash": "--wash-plum",
+      "tags": [
+        "Multielectrode Arrays (MEA)",
+        "Statistical Physics",
+        "LFP",
+        "Spike",
+        "Self-Organized Criticality (SOC)",
+        "Sleep-Wake Dynamics",
+        "Slow-Wave Sleep (SWS)"
+      ]
+    },
+    {
+      "id": "betagamma-sleep",
+      "kind": "paper",
+      "title": "High-frequency oscillations in human and monkey neocortex during the wake–sleep cycle",
+      "year": 2016,
+      "url": "/papers/BetaGamma-wakeSleep/",
+      "wash": "--wash-plum",
+      "tags": [
+        "Multielectrode Arrays (MEA)",
+        "Spike",
+        "Excitation-Inhibition (E/I) Balance",
+        "Sleep-Wake Dynamics",
+        "Slow-Wave Sleep (SWS)",
+        "Rhythm",
+        "Oscillation",
+        "Wave"
+      ]
+    },
+    {
+      "id": "catcomp",
+      "kind": "paper",
+      "title": "Physical computing: a category theoretic perspective on physical computation and system compositionality",
+      "year": 2024,
+      "url": "/papers/Catcomp/",
+      "wash": "--wash-plum",
+      "tags": [
+        "Compositionality",
+        "Category Theory",
+        "Physical Computing",
+        "Non-Classical Computing"
+      ]
+    },
+    {
+      "id": "causal-rotor",
+      "kind": "paper",
+      "title": "Causal Scale of Rotors in a Cardiac System",
+      "year": 2018,
+      "url": "/papers/Causal-rotor-cardiac/",
+      "wash": "--wash-plum",
+      "tags": [
+        "Wave",
+        "Excitable Medium",
+        "Spatiotemporal",
+        "Dynamics",
+        "Causality",
+        "Information Theory"
+      ]
+    },
+    {
+      "id": "cell-hilbert",
+      "kind": "paper",
+      "title": "Systematizing cellular complexity: A Hilbertian approach to biological problems",
+      "year": 2024,
+      "url": "/papers/Cell-hilbert/",
+      "wash": "--wash-plum",
+      "tags": [
+        "Compositionality",
+        "Systems Biology",
+        "Noise",
+        "Emergence",
+        "Multiscale",
+        "Adaptability",
+        "Robustness"
+      ]
+    },
+    {
+      "id": "compute-thalamus",
+      "kind": "paper",
+      "title": "A Computational Perspective of the Role of the Thalamus in Cognition",
+      "year": 2019,
+      "url": "/papers/Compute-thalamus/",
+      "wash": "--wash-plum",
+      "tags": [
+        "Dynamic Gating",
+        "Emergent Computation",
+        "Thalamus",
+        "Modulation",
+        "Energetic Efficiency",
+        "Network",
+        "Optimization"
+      ]
+    },
+    {
+      "id": "control-net",
+      "kind": "paper",
+      "title": "Theoretical Principles of Multiscale Spatiotemporal Control of Neuronal Networks: A Complex Systems Perspective",
+      "year": 2018,
+      "url": "/papers/Theory-control-net/",
+      "wash": "--wash-plum",
+      "tags": [
+        "Spatiotemporal",
+        "Dynamics",
+        "Control",
+        "Emergence",
+        "Network",
+        "Information Theory",
+        "Multiscale"
+      ]
+    },
+    {
+      "id": "depth-coarse-graining",
+      "kind": "paper",
+      "title": "Depth as Successive Coarse-Graining in Plain MLPs",
+      "year": 2025,
+      "url": "/papers/depth-coarse-graining/",
+      "wash": "--wash-slate",
+      "tags": [
+        "Renormalization Group",
+        "Deep Learning",
+        "Information Theory",
+        "Coarse-Graining",
+        "Neural Networks",
+        "Statistical Physics"
+      ]
+    },
+    {
+      "id": "dynamic-balance",
+      "kind": "paper",
+      "title": "Dynamic Balance of Excitation and Inhibition in Human and Monkey Neocortex",
+      "year": 2017,
+      "url": "/papers/Dynamic-balance/",
+      "wash": "--wash-plum",
+      "tags": [
+        "Multielectrode Arrays (MEA)",
+        "Spike",
+        "Excitation-Inhibition (E/I) Balance",
+        "Sleep-Wake Dynamics",
+        "Slow-Wave Sleep (SWS)",
+        "Multiscale",
+        "Population Dynamics",
+        "Seizure"
+      ]
+    },
+    {
+      "id": "forward-ieeg",
+      "kind": "paper",
+      "title": "Experimental validation of the influence of white matter anisotropy on the intracranial EEG forward solution",
+      "year": 2010,
+      "url": "/papers/Forward-ieegeeg/",
+      "wash": "--wash-plum",
+      "tags": [
+        "Brain Mapping",
+        "Diffusion Tensor Imaging",
+        "Evoked potentials",
+        "MEG",
+        "EEG",
+        "Forward Model",
+        "Neuroanatomy",
+        "Einite Element Model"
+      ]
+    },
+    {
+      "id": "hypercapnia-depression",
+      "kind": "paper",
+      "title": "Depression of cortical activity in humans by mild hypercapnia",
+      "year": 2012,
+      "url": "/papers/Hypercapnia-corticalActivity/",
+      "wash": "--wash-plum",
+      "tags": [
+        "Cerebral Blood Flow",
+        "Cerebral Metabolic Rate",
+        "BOLD Response",
+        "fMRI",
+        "MEG"
+      ]
+    },
+    {
+      "id": "ising-ei",
+      "kind": "paper",
+      "title": "Ensemble inhibition and excitation in the human cortex: An Ising-model analysis with uncertainties",
+      "year": 2019,
+      "url": "/papers/Ising-EI/",
+      "wash": "--wash-plum",
+      "tags": [
+        "Collective Dynamics",
+        "Ising Model",
+        "Sampling",
+        "Inhibition",
+        "Excitation",
+        "Network",
+        "Statistical Physics"
+      ]
+    },
+    {
+      "id": "k-complex",
+      "kind": "paper",
+      "title": "The Human K-Complex as an Isolated Cortical \"Down-State\"",
+      "year": 2009,
+      "url": "/papers/K-complex/",
+      "wash": "--wash-plum",
+      "tags": [
+        "Sleep",
+        "Graphoelement",
+        "Slow-Wave",
+        "Spindle",
+        "Multiunit Activity",
+        "LFP"
+      ]
+    },
+    {
+      "id": "meg-spectra",
+      "kind": "paper",
+      "title": "Comparative power spectral analysis of simultaneous electroencephalographic and magnetoencephalographic recordings in humans suggests non-resistive extracellular media",
+      "year": 2025,
+      "url": "/papers/MEGEEG-spectra-scaling/",
+      "wash": "--wash-plum",
+      "tags": [
+        "Electromagnetism",
+        "Scaling",
+        "EEG",
+        "MEG",
+        "Resistive-Medium",
+        "Noise"
+      ]
+    },
+    {
+      "id": "odin",
+      "kind": "paper",
+      "title": "Open Data In Neurophysiology: Advancements, Solutions & Challenges",
+      "year": 2025,
+      "url": "/papers/Odin/",
+      "wash": "--wash-plum",
+      "tags": []
+    },
+    {
+      "id": "spatiotemporal-ei",
+      "kind": "paper",
+      "title": "Spatiotemporal dynamics of neocortical excitation and inhibition during human sleep",
+      "year": 2012,
+      "url": "/papers/Spatiotemporal-dynamics-EI/",
+      "wash": "--wash-plum",
+      "tags": [
+        "Multielectrode Arrays (MEA)",
+        "Spike",
+        "Excitation-Inhibition (E/I) Balance",
+        "Sleep-Wake Dynamics",
+        "Slow-Wave Sleep (SWS)"
+      ]
+    },
+    {
+      "id": "spindle-async",
+      "kind": "paper",
+      "title": "Magnetoencephalography Demonstrates Multiple Asynchronous Generators During Human Sleep Spindles",
+      "year": 2010,
+      "url": "/papers/Spindle-cortical-generators/",
+      "wash": "--wash-slate",
+      "tags": [
+        "Spindle",
+        "Sleep",
+        "Oscillation",
+        "Synchrony",
+        "MEG",
+        "EEG"
+      ]
+    },
+    {
+      "id": "spindle-divergent",
+      "kind": "paper",
+      "title": "Divergent Cortical Generators of Sleep Spindles",
+      "year": 2010,
+      "url": "/papers/Spindle-divergent-generator/",
+      "wash": "--wash-teal",
+      "tags": [
+        "Spindle",
+        "Thalamocortical",
+        "Oscillation",
+        "Statistical Parametric Mapping",
+        "Source Localization",
+        "MEG",
+        "EEG",
+        "Sleep"
+      ]
+    },
+    {
+      "id": "spindle-emergence",
+      "kind": "paper",
+      "title": "Emergence of synchronous EEG spindles from asynchronous MEG spindles",
+      "year": 2011,
+      "url": "/papers/Spindle-MEG-EEG-Async/",
+      "wash": "--wash-oxblood",
+      "tags": [
+        "Spindle",
+        "Thalamocortical",
+        "Oscillation",
+        "Synchrony",
+        "Sleep",
+        "MEG",
+        "EEG"
+      ]
+    },
+    {
+      "id": "spindle-topo",
+      "kind": "paper",
+      "title": "Topographical frequency dynamics within EEG and MEG sleep spindles",
+      "year": 2021,
+      "url": "/papers/Spindle-topo-frq/",
+      "wash": "--wash-dust",
+      "tags": [
+        "Spindle",
+        "Synchrony",
+        "MEG",
+        "EEG",
+        "Cortex",
+        "Thalamus",
+        "Inverse solution",
+        "Oscillation"
+      ]
+    },
+    {
+      "id": "symmetry-edge",
+      "kind": "paper",
+      "title": "Symmetry’s Edge in Cortical Dynamics Multiscale Dynamics of Ensemble Excitation and Inhibition",
+      "year": 2025,
+      "url": "/papers/Symmetry-edge-cortex/",
+      "wash": "--wash-plum",
+      "tags": [
+        "Invariances",
+        "Collective Dynamics",
+        "Multiscale",
+        "Emergence",
+        "Symmetry Breaking"
+      ]
+    },
+    {
+      "id": "Adaptability",
+      "kind": "concept",
+      "name": "Adaptability",
+      "wash": "--wash-plum",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Automated Scientific Discovery",
+      "kind": "concept",
+      "name": "Automated Scientific Discovery",
+      "wash": "--wash-plum",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "BOLD Response",
+      "kind": "concept",
+      "name": "BOLD Response",
+      "wash": "--wash-teal",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Brain Mapping",
+      "kind": "concept",
+      "name": "Brain Mapping",
+      "wash": "--wash-amber",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Category Theory",
+      "kind": "concept",
+      "name": "Category Theory",
+      "wash": "--wash-oxblood",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Causality",
+      "kind": "concept",
+      "name": "Causality",
+      "wash": "--wash-slate",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Cerebral Blood Flow",
+      "kind": "concept",
+      "name": "Cerebral Blood Flow",
+      "wash": "--wash-slate",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Cerebral Metabolic Rate",
+      "kind": "concept",
+      "name": "Cerebral Metabolic Rate",
+      "wash": "--wash-teal",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "coarse-graining",
+      "kind": "concept",
+      "name": "coarse-graining",
+      "wash": "--wash-slate",
+      "blurb": "Any operation that throws away short-scale degrees of freedom while preserving long-scale ones. Each MLP layer is, we claim, an instance.",
+      "curated": true,
+      "weight": 1
+    },
+    {
+      "id": "Coarse-Graining",
+      "kind": "concept",
+      "name": "Coarse-Graining",
+      "wash": "--wash-teal",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Collective Dynamics",
+      "kind": "concept",
+      "name": "Collective Dynamics",
+      "wash": "--wash-oxblood",
+      "blurb": "",
+      "curated": false,
+      "weight": 2
+    },
+    {
+      "id": "Complexity",
+      "kind": "concept",
+      "name": "Complexity",
+      "wash": "--wash-oxblood",
+      "blurb": "",
+      "curated": false,
+      "weight": 3
+    },
+    {
+      "id": "Compositionality",
+      "kind": "concept",
+      "name": "Compositionality",
+      "wash": "--wash-plum",
+      "blurb": "",
+      "curated": false,
+      "weight": 2
+    },
+    {
+      "id": "Control",
+      "kind": "concept",
+      "name": "Control",
+      "wash": "--wash-dust",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Cortex",
+      "kind": "concept",
+      "name": "Cortex",
+      "wash": "--wash-slate",
+      "blurb": "",
+      "curated": false,
+      "weight": 6
+    },
+    {
+      "id": "cortical down-state",
+      "kind": "concept",
+      "name": "cortical down-state",
+      "wash": "--wash-plum",
+      "blurb": "A brief, profound silence of neuronal firing — the negative half of the cortical slow oscillation. In humans it appears, isolated, as the K-complex.",
+      "curated": true,
+      "weight": 1
+    },
+    {
+      "id": "Data-Driven Modeling",
+      "kind": "concept",
+      "name": "Data-Driven Modeling",
+      "wash": "--wash-teal",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Deep Learning",
+      "kind": "concept",
+      "name": "Deep Learning",
+      "wash": "--wash-plum",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "dendritic current",
+      "kind": "concept",
+      "name": "dendritic current",
+      "wash": "--wash-plum",
+      "blurb": "The transmembrane current along the dendritic tree that is the dominant source of extracellular field potentials.",
+      "curated": true,
+      "weight": 2
+    },
+    {
+      "id": "Diffusion Tensor Imaging",
+      "kind": "concept",
+      "name": "Diffusion Tensor Imaging",
+      "wash": "--wash-slate",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "distributed source modelling",
+      "kind": "concept",
+      "name": "distributed source modelling",
+      "wash": "--wash-teal",
+      "blurb": "An inverse-problem method that places thousands of dipoles on the cortical surface and lets the data choose which fire.",
+      "curated": true,
+      "weight": 1
+    },
+    {
+      "id": "down-state",
+      "kind": "concept",
+      "name": "down-state",
+      "wash": "--wash-plum",
+      "blurb": "See cortical down-state. The label preferred when describing the slow oscillation in animal preparations.",
+      "curated": true,
+      "weight": 1
+    },
+    {
+      "id": "Dynamic Gating",
+      "kind": "concept",
+      "name": "Dynamic Gating",
+      "wash": "--wash-amber",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Dynamics",
+      "kind": "concept",
+      "name": "Dynamics",
+      "wash": "--wash-dust",
+      "blurb": "",
+      "curated": false,
+      "weight": 5
+    },
+    {
+      "id": "EEG",
+      "kind": "concept",
+      "name": "EEG",
+      "wash": "--wash-amber",
+      "blurb": "",
+      "curated": false,
+      "weight": 7
+    },
+    {
+      "id": "EEG/MEG asynchrony",
+      "kind": "concept",
+      "name": "EEG/MEG asynchrony",
+      "wash": "--wash-slate",
+      "blurb": "The disagreement between EEG and MEG over whether a spindle is synchronous — informative, not noise.",
+      "curated": true,
+      "weight": 1
+    },
+    {
+      "id": "Einite Element Model",
+      "kind": "concept",
+      "name": "Einite Element Model",
+      "wash": "--wash-dust",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Electromagnetism",
+      "kind": "concept",
+      "name": "Electromagnetism",
+      "wash": "--wash-dust",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Emergence",
+      "kind": "concept",
+      "name": "Emergence",
+      "wash": "--wash-oxblood",
+      "blurb": "",
+      "curated": false,
+      "weight": 5
+    },
+    {
+      "id": "Emergent Computation",
+      "kind": "concept",
+      "name": "Emergent Computation",
+      "wash": "--wash-rust",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Energetic Efficiency",
+      "kind": "concept",
+      "name": "Energetic Efficiency",
+      "wash": "--wash-slate",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Evoked potentials",
+      "kind": "concept",
+      "name": "Evoked potentials",
+      "wash": "--wash-slate",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Excitable Medium",
+      "kind": "concept",
+      "name": "Excitable Medium",
+      "wash": "--wash-slate",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Excitation",
+      "kind": "concept",
+      "name": "Excitation",
+      "wash": "--wash-teal",
+      "blurb": "",
+      "curated": false,
+      "weight": 5
+    },
+    {
+      "id": "Excitation-Inhibition (E/I) Balance",
+      "kind": "concept",
+      "name": "Excitation-Inhibition (E/I) Balance",
+      "wash": "--wash-dust",
+      "blurb": "",
+      "curated": false,
+      "weight": 3
+    },
+    {
+      "id": "fMRI",
+      "kind": "concept",
+      "name": "fMRI",
+      "wash": "--wash-plum",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "focal asynchronous oscillation",
+      "kind": "concept",
+      "name": "focal asynchronous oscillation",
+      "wash": "--wash-slate",
+      "blurb": "A spindle observed in MEG but not yet in EEG — a single cortical patch oscillating before global recruitment.",
+      "curated": true,
+      "weight": 3
+    },
+    {
+      "id": "Forward Model",
+      "kind": "concept",
+      "name": "Forward Model",
+      "wash": "--wash-teal",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Graphoelement",
+      "kind": "concept",
+      "name": "Graphoelement",
+      "wash": "--wash-rust",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Information Theory",
+      "kind": "concept",
+      "name": "Information Theory",
+      "wash": "--wash-dust",
+      "blurb": "",
+      "curated": false,
+      "weight": 3
+    },
+    {
+      "id": "information-bottleneck",
+      "kind": "concept",
+      "name": "information-bottleneck",
+      "wash": "--wash-slate",
+      "blurb": "A formalism that describes the compression-relevance trade-off across layers of a deep network.",
+      "curated": true,
+      "weight": 1
+    },
+    {
+      "id": "Inhibition",
+      "kind": "concept",
+      "name": "Inhibition",
+      "wash": "--wash-plum",
+      "blurb": "",
+      "curated": false,
+      "weight": 4
+    },
+    {
+      "id": "Invariances",
+      "kind": "concept",
+      "name": "Invariances",
+      "wash": "--wash-dust",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Inverse solution",
+      "kind": "concept",
+      "name": "Inverse solution",
+      "wash": "--wash-rust",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Ising Model",
+      "kind": "concept",
+      "name": "Ising Model",
+      "wash": "--wash-oxblood",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "LFP",
+      "kind": "concept",
+      "name": "LFP",
+      "wash": "--wash-teal",
+      "blurb": "",
+      "curated": false,
+      "weight": 2
+    },
+    {
+      "id": "MEG",
+      "kind": "concept",
+      "name": "MEG",
+      "wash": "--wash-amber",
+      "blurb": "",
+      "curated": false,
+      "weight": 7
+    },
+    {
+      "id": "Modulation",
+      "kind": "concept",
+      "name": "Modulation",
+      "wash": "--wash-teal",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Multielectrode Arrays (MEA)",
+      "kind": "concept",
+      "name": "Multielectrode Arrays (MEA)",
+      "wash": "--wash-oxblood",
+      "blurb": "",
+      "curated": false,
+      "weight": 4
+    },
+    {
+      "id": "Multiscale",
+      "kind": "concept",
+      "name": "Multiscale",
+      "wash": "--wash-slate",
+      "blurb": "",
+      "curated": false,
+      "weight": 4
+    },
+    {
+      "id": "Multiunit Activity",
+      "kind": "concept",
+      "name": "Multiunit Activity",
+      "wash": "--wash-dust",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "multiunit firing",
+      "kind": "concept",
+      "name": "multiunit firing",
+      "wash": "--wash-plum",
+      "blurb": "The pooled spiking activity of many neurons recorded at a single electrode. Goes to zero during a down-state.",
+      "curated": true,
+      "weight": 1
+    },
+    {
+      "id": "Network",
+      "kind": "concept",
+      "name": "Network",
+      "wash": "--wash-slate",
+      "blurb": "",
+      "curated": false,
+      "weight": 5
+    },
+    {
+      "id": "Neural Networks",
+      "kind": "concept",
+      "name": "Neural Networks",
+      "wash": "--wash-slate",
+      "blurb": "",
+      "curated": false,
+      "weight": 2
+    },
+    {
+      "id": "Neuroanatomy",
+      "kind": "concept",
+      "name": "Neuroanatomy",
+      "wash": "--wash-amber",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Noise",
+      "kind": "concept",
+      "name": "Noise",
+      "wash": "--wash-rust",
+      "blurb": "",
+      "curated": false,
+      "weight": 5
+    },
+    {
+      "id": "Non-Classical Computing",
+      "kind": "concept",
+      "name": "Non-Classical Computing",
+      "wash": "--wash-teal",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "non-resistive extracellular medium",
+      "kind": "concept",
+      "name": "non-resistive extracellular medium",
+      "wash": "--wash-plum",
+      "blurb": "A medium whose impedance varies with frequency. Implies most forward models are systematically biased.",
+      "curated": true,
+      "weight": 1
+    },
+    {
+      "id": "Optimization",
+      "kind": "concept",
+      "name": "Optimization",
+      "wash": "--wash-oxblood",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Oscillation",
+      "kind": "concept",
+      "name": "Oscillation",
+      "wash": "--wash-amber",
+      "blurb": "",
+      "curated": false,
+      "weight": 5
+    },
+    {
+      "id": "Physical Computing",
+      "kind": "concept",
+      "name": "Physical Computing",
+      "wash": "--wash-dust",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Physics-Informed AI",
+      "kind": "concept",
+      "name": "Physics-Informed AI",
+      "wash": "--wash-dust",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Population Dynamics",
+      "kind": "concept",
+      "name": "Population Dynamics",
+      "wash": "--wash-teal",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "purely resistive",
+      "kind": "concept",
+      "name": "purely resistive",
+      "wash": "--wash-plum",
+      "blurb": "An extracellular medium whose impedance is the same at every frequency. The standard simplifying assumption — and, we argue, wrong.",
+      "curated": true,
+      "weight": 1
+    },
+    {
+      "id": "recruitment time",
+      "kind": "concept",
+      "name": "recruitment time",
+      "wash": "--wash-oxblood",
+      "blurb": "The ~200 ms latency between a focal MEG spindle and its global EEG counterpart — the time the cortex takes to ignite.",
+      "curated": true,
+      "weight": 1
+    },
+    {
+      "id": "renormalisation-group",
+      "kind": "concept",
+      "name": "renormalisation-group",
+      "wash": "--wash-slate",
+      "blurb": "A flow through theory space that integrates out short-distance physics to reveal effective long-distance behaviour. The mathematical heart of the depth-as-coarse-graining proposal.",
+      "curated": true,
+      "weight": 1
+    },
+    {
+      "id": "Renormalization Group",
+      "kind": "concept",
+      "name": "Renormalization Group",
+      "wash": "--wash-rust",
+      "blurb": "",
+      "curated": false,
+      "weight": 2
+    },
+    {
+      "id": "Resistive-Medium",
+      "kind": "concept",
+      "name": "Resistive-Medium",
+      "wash": "--wash-slate",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "RG flow",
+      "kind": "concept",
+      "name": "RG flow",
+      "wash": "--wash-slate",
+      "blurb": "The trajectory of an effective theory under successive coarse-grainings.",
+      "curated": true,
+      "weight": 1
+    },
+    {
+      "id": "Rhythm",
+      "kind": "concept",
+      "name": "Rhythm",
+      "wash": "--wash-plum",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Robustness",
+      "kind": "concept",
+      "name": "Robustness",
+      "wash": "--wash-teal",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Sampling",
+      "kind": "concept",
+      "name": "Sampling",
+      "wash": "--wash-plum",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Scaling",
+      "kind": "concept",
+      "name": "Scaling",
+      "wash": "--wash-dust",
+      "blurb": "",
+      "curated": false,
+      "weight": 3
+    },
+    {
+      "id": "Seizure",
+      "kind": "concept",
+      "name": "Seizure",
+      "wash": "--wash-oxblood",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Self-Organized Criticality (SOC)",
+      "kind": "concept",
+      "name": "Self-Organized Criticality (SOC)",
+      "wash": "--wash-amber",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Sleep",
+      "kind": "concept",
+      "name": "Sleep",
+      "wash": "--wash-oxblood",
+      "blurb": "",
+      "curated": false,
+      "weight": 11
+    },
+    {
+      "id": "Sleep-Wake Dynamics",
+      "kind": "concept",
+      "name": "Sleep-Wake Dynamics",
+      "wash": "--wash-amber",
+      "blurb": "",
+      "curated": false,
+      "weight": 4
+    },
+    {
+      "id": "Slow-Wave",
+      "kind": "concept",
+      "name": "Slow-Wave",
+      "wash": "--wash-plum",
+      "blurb": "",
+      "curated": false,
+      "weight": 2
+    },
+    {
+      "id": "Slow-Wave Sleep (SWS)",
+      "kind": "concept",
+      "name": "Slow-Wave Sleep (SWS)",
+      "wash": "--wash-plum",
+      "blurb": "",
+      "curated": false,
+      "weight": 4
+    },
+    {
+      "id": "Source Localization",
+      "kind": "concept",
+      "name": "Source Localization",
+      "wash": "--wash-plum",
+      "blurb": "",
+      "curated": false,
+      "weight": 2
+    },
+    {
+      "id": "spatially-propagating oscillator",
+      "kind": "concept",
+      "name": "spatially-propagating oscillator",
+      "wash": "--wash-dust",
+      "blurb": "A model in which spindle frequency is set by local cortical properties that vary in space, not by a single thalamic clock.",
+      "curated": true,
+      "weight": 1
+    },
+    {
+      "id": "Spatiotemporal",
+      "kind": "concept",
+      "name": "Spatiotemporal",
+      "wash": "--wash-plum",
+      "blurb": "",
+      "curated": false,
+      "weight": 2
+    },
+    {
+      "id": "Spike",
+      "kind": "concept",
+      "name": "Spike",
+      "wash": "--wash-oxblood",
+      "blurb": "",
+      "curated": false,
+      "weight": 4
+    },
+    {
+      "id": "Spindle",
+      "kind": "concept",
+      "name": "Spindle",
+      "wash": "--wash-slate",
+      "blurb": "",
+      "curated": false,
+      "weight": 5
+    },
+    {
+      "id": "Statistical Parametric Mapping",
+      "kind": "concept",
+      "name": "Statistical Parametric Mapping",
+      "wash": "--wash-amber",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Statistical Physics",
+      "kind": "concept",
+      "name": "Statistical Physics",
+      "wash": "--wash-oxblood",
+      "blurb": "",
+      "curated": false,
+      "weight": 3
+    },
+    {
+      "id": "Symbolic Regression",
+      "kind": "concept",
+      "name": "Symbolic Regression",
+      "wash": "--wash-dust",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Symmetry Breaking",
+      "kind": "concept",
+      "name": "Symmetry Breaking",
+      "wash": "--wash-oxblood",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "synchronous wave",
+      "kind": "concept",
+      "name": "synchronous wave",
+      "wash": "--wash-oxblood",
+      "blurb": "The global, EEG-visible appearance of a spindle once enough cortical territory has been recruited.",
+      "curated": true,
+      "weight": 1
+    },
+    {
+      "id": "Synchrony",
+      "kind": "concept",
+      "name": "Synchrony",
+      "wash": "--wash-amber",
+      "blurb": "",
+      "curated": false,
+      "weight": 5
+    },
+    {
+      "id": "Systems Biology",
+      "kind": "concept",
+      "name": "Systems Biology",
+      "wash": "--wash-oxblood",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Thalamocortical",
+      "kind": "concept",
+      "name": "Thalamocortical",
+      "wash": "--wash-oxblood",
+      "blurb": "",
+      "curated": false,
+      "weight": 3
+    },
+    {
+      "id": "thalamocortical core",
+      "kind": "concept",
+      "name": "thalamocortical core",
+      "wash": "--wash-slate",
+      "blurb": "The focally-projecting thalamocortical system that writes specific content into a single cortical patch.",
+      "curated": true,
+      "weight": 2
+    },
+    {
+      "id": "thalamocortical matrix",
+      "kind": "concept",
+      "name": "thalamocortical matrix",
+      "wash": "--wash-slate",
+      "blurb": "The diffusely-projecting thalamocortical system that synchronises broad cortical territory.",
+      "curated": true,
+      "weight": 2
+    },
+    {
+      "id": "Thalamus",
+      "kind": "concept",
+      "name": "Thalamus",
+      "wash": "--wash-teal",
+      "blurb": "",
+      "curated": false,
+      "weight": 3
+    },
+    {
+      "id": "travelling frequency front",
+      "kind": "concept",
+      "name": "travelling frequency front",
+      "wash": "--wash-dust",
+      "blurb": "A spindle whose central frequency drifts spatially across the cortex over its lifetime.",
+      "curated": true,
+      "weight": 1
+    },
+    {
+      "id": "Wave",
+      "kind": "concept",
+      "name": "Wave",
+      "wash": "--wash-slate",
+      "blurb": "",
+      "curated": false,
+      "weight": 2
+    }
+  ],
+  "links": [
+    {
+      "source": "Collective Dynamics",
+      "target": "Excitation",
+      "weight": 0.4,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Collective Dynamics",
+      "target": "Inhibition",
+      "weight": 0.5,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Complexity",
+      "target": "Emergence",
+      "weight": 0.3333,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Complexity",
+      "target": "Noise",
+      "weight": 0.3333,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Cortex",
+      "target": "EEG",
+      "weight": 0.3,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Cortex",
+      "target": "MEG",
+      "weight": 0.3,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Cortex",
+      "target": "Network",
+      "weight": 0.2222,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Cortex",
+      "target": "Oscillation",
+      "weight": 0.375,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Cortex",
+      "target": "Sleep",
+      "weight": 0.4167,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Cortex",
+      "target": "Spindle",
+      "weight": 0.375,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Cortex",
+      "target": "Statistical Physics",
+      "weight": 0.2857,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Cortex",
+      "target": "Synchrony",
+      "weight": 0.5714,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Cortex",
+      "target": "Thalamocortical",
+      "weight": 0.2857,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Cortex",
+      "target": "Thalamus",
+      "weight": 0.2857,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Cortex",
+      "target": "focal asynchronous oscillation",
+      "weight": 0.2857,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Dynamics",
+      "target": "Emergence",
+      "weight": 0.6667,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Dynamics",
+      "target": "Excitation",
+      "weight": 0.25,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Dynamics",
+      "target": "Information Theory",
+      "weight": 0.3333,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Dynamics",
+      "target": "Multiscale",
+      "weight": 0.5,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Dynamics",
+      "target": "Spatiotemporal",
+      "weight": 0.4,
+      "kind": "cooccur"
+    },
+    {
+      "source": "EEG",
+      "target": "MEG",
+      "weight": 0.75,
+      "kind": "cooccur"
+    },
+    {
+      "source": "EEG",
+      "target": "Noise",
+      "weight": 0.2,
+      "kind": "cooccur"
+    },
+    {
+      "source": "EEG",
+      "target": "Oscillation",
+      "weight": 0.5,
+      "kind": "cooccur"
+    },
+    {
+      "source": "EEG",
+      "target": "Scaling",
+      "weight": 0.25,
+      "kind": "cooccur"
+    },
+    {
+      "source": "EEG",
+      "target": "Sleep",
+      "weight": 0.3846,
+      "kind": "cooccur"
+    },
+    {
+      "source": "EEG",
+      "target": "Source Localization",
+      "weight": 0.2857,
+      "kind": "cooccur"
+    },
+    {
+      "source": "EEG",
+      "target": "Spindle",
+      "weight": 0.7143,
+      "kind": "cooccur"
+    },
+    {
+      "source": "EEG",
+      "target": "Synchrony",
+      "weight": 0.5,
+      "kind": "cooccur"
+    },
+    {
+      "source": "EEG",
+      "target": "Thalamocortical",
+      "weight": 0.4286,
+      "kind": "cooccur"
+    },
+    {
+      "source": "EEG",
+      "target": "Thalamus",
+      "weight": 0.25,
+      "kind": "cooccur"
+    },
+    {
+      "source": "EEG",
+      "target": "dendritic current",
+      "weight": 0.2857,
+      "kind": "cooccur"
+    },
+    {
+      "source": "EEG",
+      "target": "focal asynchronous oscillation",
+      "weight": 0.4286,
+      "kind": "cooccur"
+    },
+    {
+      "source": "EEG",
+      "target": "thalamocortical core",
+      "weight": 0.2857,
+      "kind": "cooccur"
+    },
+    {
+      "source": "EEG",
+      "target": "thalamocortical matrix",
+      "weight": 0.2857,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Emergence",
+      "target": "Excitation",
+      "weight": 0.25,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Emergence",
+      "target": "Information Theory",
+      "weight": 0.3333,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Emergence",
+      "target": "Multiscale",
+      "weight": 0.5,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Emergence",
+      "target": "Noise",
+      "weight": 0.25,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Emergence",
+      "target": "Spatiotemporal",
+      "weight": 0.4,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Excitation",
+      "target": "Excitation-Inhibition (E/I) Balance",
+      "weight": 0.3333,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Excitation",
+      "target": "Inhibition",
+      "weight": 0.5,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Excitation",
+      "target": "Multielectrode Arrays (MEA)",
+      "weight": 0.2857,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Excitation",
+      "target": "Multiscale",
+      "weight": 0.2857,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Excitation",
+      "target": "Network",
+      "weight": 0.25,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Excitation",
+      "target": "Sleep",
+      "weight": 0.2308,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Excitation",
+      "target": "Sleep-Wake Dynamics",
+      "weight": 0.2857,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Excitation",
+      "target": "Slow-Wave Sleep (SWS)",
+      "weight": 0.2857,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Excitation",
+      "target": "Spike",
+      "weight": 0.2857,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Excitation-Inhibition (E/I) Balance",
+      "target": "Inhibition",
+      "weight": 0.4,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Excitation-Inhibition (E/I) Balance",
+      "target": "Multielectrode Arrays (MEA)",
+      "weight": 0.75,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Excitation-Inhibition (E/I) Balance",
+      "target": "Sleep",
+      "weight": 0.2727,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Excitation-Inhibition (E/I) Balance",
+      "target": "Sleep-Wake Dynamics",
+      "weight": 0.75,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Excitation-Inhibition (E/I) Balance",
+      "target": "Slow-Wave Sleep (SWS)",
+      "weight": 0.75,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Excitation-Inhibition (E/I) Balance",
+      "target": "Spike",
+      "weight": 0.75,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Information Theory",
+      "target": "Renormalization Group",
+      "weight": 0.6667,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Information Theory",
+      "target": "Spatiotemporal",
+      "weight": 0.6667,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Inhibition",
+      "target": "Multielectrode Arrays (MEA)",
+      "weight": 0.3333,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Inhibition",
+      "target": "Sleep",
+      "weight": 0.25,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Inhibition",
+      "target": "Sleep-Wake Dynamics",
+      "weight": 0.3333,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Inhibition",
+      "target": "Slow-Wave Sleep (SWS)",
+      "weight": 0.3333,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Inhibition",
+      "target": "Spike",
+      "weight": 0.3333,
+      "kind": "cooccur"
+    },
+    {
+      "source": "LFP",
+      "target": "Sleep",
+      "weight": 0.1818,
+      "kind": "cooccur"
+    },
+    {
+      "source": "MEG",
+      "target": "Noise",
+      "weight": 0.2,
+      "kind": "cooccur"
+    },
+    {
+      "source": "MEG",
+      "target": "Oscillation",
+      "weight": 0.5,
+      "kind": "cooccur"
+    },
+    {
+      "source": "MEG",
+      "target": "Scaling",
+      "weight": 0.25,
+      "kind": "cooccur"
+    },
+    {
+      "source": "MEG",
+      "target": "Sleep",
+      "weight": 0.3846,
+      "kind": "cooccur"
+    },
+    {
+      "source": "MEG",
+      "target": "Source Localization",
+      "weight": 0.2857,
+      "kind": "cooccur"
+    },
+    {
+      "source": "MEG",
+      "target": "Spindle",
+      "weight": 0.5,
+      "kind": "cooccur"
+    },
+    {
+      "source": "MEG",
+      "target": "Synchrony",
+      "weight": 0.5,
+      "kind": "cooccur"
+    },
+    {
+      "source": "MEG",
+      "target": "Thalamocortical",
+      "weight": 0.4286,
+      "kind": "cooccur"
+    },
+    {
+      "source": "MEG",
+      "target": "Thalamus",
+      "weight": 0.25,
+      "kind": "cooccur"
+    },
+    {
+      "source": "MEG",
+      "target": "focal asynchronous oscillation",
+      "weight": 0.4286,
+      "kind": "cooccur"
+    },
+    {
+      "source": "MEG",
+      "target": "thalamocortical core",
+      "weight": 0.2857,
+      "kind": "cooccur"
+    },
+    {
+      "source": "MEG",
+      "target": "thalamocortical matrix",
+      "weight": 0.2857,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Multielectrode Arrays (MEA)",
+      "target": "Sleep",
+      "weight": 0.3636,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Multielectrode Arrays (MEA)",
+      "target": "Sleep-Wake Dynamics",
+      "weight": 1.0,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Multielectrode Arrays (MEA)",
+      "target": "Slow-Wave Sleep (SWS)",
+      "weight": 1.0,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Multielectrode Arrays (MEA)",
+      "target": "Spike",
+      "weight": 1.0,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Multiscale",
+      "target": "Network",
+      "weight": 0.2857,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Network",
+      "target": "Sleep",
+      "weight": 0.2308,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Neural Networks",
+      "target": "Noise",
+      "weight": 0.4,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Noise",
+      "target": "Source Localization",
+      "weight": 0.4,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Oscillation",
+      "target": "Sleep",
+      "weight": 0.4545,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Oscillation",
+      "target": "Spindle",
+      "weight": 0.6667,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Oscillation",
+      "target": "Synchrony",
+      "weight": 0.6667,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Oscillation",
+      "target": "Thalamocortical",
+      "weight": 0.6,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Oscillation",
+      "target": "Thalamus",
+      "weight": 0.3333,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Oscillation",
+      "target": "focal asynchronous oscillation",
+      "weight": 0.6,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Oscillation",
+      "target": "thalamocortical core",
+      "weight": 0.4,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Oscillation",
+      "target": "thalamocortical matrix",
+      "weight": 0.4,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Sleep",
+      "target": "Sleep-Wake Dynamics",
+      "weight": 0.3636,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Sleep",
+      "target": "Slow-Wave",
+      "weight": 0.1818,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Sleep",
+      "target": "Slow-Wave Sleep (SWS)",
+      "weight": 0.3636,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Sleep",
+      "target": "Spike",
+      "weight": 0.3636,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Sleep",
+      "target": "Spindle",
+      "weight": 0.4545,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Sleep",
+      "target": "Statistical Physics",
+      "weight": 0.1667,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Sleep",
+      "target": "Synchrony",
+      "weight": 0.4545,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Sleep",
+      "target": "Thalamocortical",
+      "weight": 0.2727,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Sleep",
+      "target": "Thalamus",
+      "weight": 0.1667,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Sleep",
+      "target": "focal asynchronous oscillation",
+      "weight": 0.2727,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Sleep",
+      "target": "thalamocortical core",
+      "weight": 0.1818,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Sleep",
+      "target": "thalamocortical matrix",
+      "weight": 0.1818,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Sleep-Wake Dynamics",
+      "target": "Slow-Wave Sleep (SWS)",
+      "weight": 1.0,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Sleep-Wake Dynamics",
+      "target": "Spike",
+      "weight": 1.0,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Slow-Wave Sleep (SWS)",
+      "target": "Spike",
+      "weight": 1.0,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Spindle",
+      "target": "Synchrony",
+      "weight": 0.6667,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Spindle",
+      "target": "Thalamocortical",
+      "weight": 0.6,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Spindle",
+      "target": "Thalamus",
+      "weight": 0.3333,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Spindle",
+      "target": "focal asynchronous oscillation",
+      "weight": 0.6,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Spindle",
+      "target": "thalamocortical core",
+      "weight": 0.4,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Spindle",
+      "target": "thalamocortical matrix",
+      "weight": 0.4,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Synchrony",
+      "target": "Thalamocortical",
+      "weight": 0.6,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Synchrony",
+      "target": "Thalamus",
+      "weight": 0.3333,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Synchrony",
+      "target": "focal asynchronous oscillation",
+      "weight": 0.6,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Synchrony",
+      "target": "thalamocortical core",
+      "weight": 0.4,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Synchrony",
+      "target": "thalamocortical matrix",
+      "weight": 0.4,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Thalamocortical",
+      "target": "focal asynchronous oscillation",
+      "weight": 1.0,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Thalamocortical",
+      "target": "thalamocortical core",
+      "weight": 0.6667,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Thalamocortical",
+      "target": "thalamocortical matrix",
+      "weight": 0.6667,
+      "kind": "cooccur"
+    },
+    {
+      "source": "focal asynchronous oscillation",
+      "target": "thalamocortical core",
+      "weight": 0.6667,
+      "kind": "cooccur"
+    },
+    {
+      "source": "focal asynchronous oscillation",
+      "target": "thalamocortical matrix",
+      "weight": 0.6667,
+      "kind": "cooccur"
+    },
+    {
+      "source": "thalamocortical core",
+      "target": "thalamocortical matrix",
+      "weight": 1.0,
+      "kind": "cooccur"
+    },
+    {
+      "source": "CRX",
+      "target": "Automated Scientific Discovery",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "CRX",
+      "target": "Complexity",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "CRX",
+      "target": "Data-Driven Modeling",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "CRX",
+      "target": "Physics-Informed AI",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "CRX",
+      "target": "Symbolic Regression",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "avalanche-spklfp",
+      "target": "LFP",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "avalanche-spklfp",
+      "target": "Multielectrode Arrays (MEA)",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "avalanche-spklfp",
+      "target": "Self-Organized Criticality (SOC)",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "avalanche-spklfp",
+      "target": "Sleep-Wake Dynamics",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "avalanche-spklfp",
+      "target": "Slow-Wave Sleep (SWS)",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "avalanche-spklfp",
+      "target": "Spike",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "avalanche-spklfp",
+      "target": "Statistical Physics",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "betagamma-sleep",
+      "target": "Excitation-Inhibition (E/I) Balance",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "betagamma-sleep",
+      "target": "Multielectrode Arrays (MEA)",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "betagamma-sleep",
+      "target": "Oscillation",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "betagamma-sleep",
+      "target": "Rhythm",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "betagamma-sleep",
+      "target": "Sleep-Wake Dynamics",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "betagamma-sleep",
+      "target": "Slow-Wave Sleep (SWS)",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "betagamma-sleep",
+      "target": "Spike",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "betagamma-sleep",
+      "target": "Wave",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "catcomp",
+      "target": "Category Theory",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "catcomp",
+      "target": "Compositionality",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "catcomp",
+      "target": "Non-Classical Computing",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "catcomp",
+      "target": "Physical Computing",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "causal-rotor",
+      "target": "Causality",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "causal-rotor",
+      "target": "Dynamics",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "causal-rotor",
+      "target": "Excitable Medium",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "causal-rotor",
+      "target": "Information Theory",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "causal-rotor",
+      "target": "Spatiotemporal",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "causal-rotor",
+      "target": "Wave",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "cell-hilbert",
+      "target": "Adaptability",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "cell-hilbert",
+      "target": "Compositionality",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "cell-hilbert",
+      "target": "Emergence",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "cell-hilbert",
+      "target": "Multiscale",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "cell-hilbert",
+      "target": "Noise",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "cell-hilbert",
+      "target": "Robustness",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "cell-hilbert",
+      "target": "Systems Biology",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "compute-thalamus",
+      "target": "Dynamic Gating",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "compute-thalamus",
+      "target": "Emergent Computation",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "compute-thalamus",
+      "target": "Energetic Efficiency",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "compute-thalamus",
+      "target": "Modulation",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "compute-thalamus",
+      "target": "Network",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "compute-thalamus",
+      "target": "Optimization",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "compute-thalamus",
+      "target": "Thalamus",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "control-net",
+      "target": "Control",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "control-net",
+      "target": "Dynamics",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "control-net",
+      "target": "Emergence",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "control-net",
+      "target": "Information Theory",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "control-net",
+      "target": "Multiscale",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "control-net",
+      "target": "Network",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "control-net",
+      "target": "Spatiotemporal",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "depth-coarse-graining",
+      "target": "Coarse-Graining",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "depth-coarse-graining",
+      "target": "Deep Learning",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "depth-coarse-graining",
+      "target": "Information Theory",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "depth-coarse-graining",
+      "target": "Neural Networks",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "depth-coarse-graining",
+      "target": "RG flow",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "depth-coarse-graining",
+      "target": "Renormalization Group",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "depth-coarse-graining",
+      "target": "Statistical Physics",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "depth-coarse-graining",
+      "target": "coarse-graining",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "depth-coarse-graining",
+      "target": "information-bottleneck",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "depth-coarse-graining",
+      "target": "renormalisation-group",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "dynamic-balance",
+      "target": "Excitation-Inhibition (E/I) Balance",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "dynamic-balance",
+      "target": "Multielectrode Arrays (MEA)",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "dynamic-balance",
+      "target": "Multiscale",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "dynamic-balance",
+      "target": "Population Dynamics",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "dynamic-balance",
+      "target": "Seizure",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "dynamic-balance",
+      "target": "Sleep-Wake Dynamics",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "dynamic-balance",
+      "target": "Slow-Wave Sleep (SWS)",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "dynamic-balance",
+      "target": "Spike",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "forward-ieeg",
+      "target": "Brain Mapping",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "forward-ieeg",
+      "target": "Diffusion Tensor Imaging",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "forward-ieeg",
+      "target": "EEG",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "forward-ieeg",
+      "target": "Einite Element Model",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "forward-ieeg",
+      "target": "Evoked potentials",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "forward-ieeg",
+      "target": "Forward Model",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "forward-ieeg",
+      "target": "MEG",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "forward-ieeg",
+      "target": "Neuroanatomy",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "hypercapnia-depression",
+      "target": "BOLD Response",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "hypercapnia-depression",
+      "target": "Cerebral Blood Flow",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "hypercapnia-depression",
+      "target": "Cerebral Metabolic Rate",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "hypercapnia-depression",
+      "target": "MEG",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "hypercapnia-depression",
+      "target": "fMRI",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "ising-ei",
+      "target": "Collective Dynamics",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "ising-ei",
+      "target": "Excitation",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "ising-ei",
+      "target": "Inhibition",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "ising-ei",
+      "target": "Ising Model",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "ising-ei",
+      "target": "Network",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "ising-ei",
+      "target": "Sampling",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "ising-ei",
+      "target": "Statistical Physics",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "k-complex",
+      "target": "Graphoelement",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "k-complex",
+      "target": "LFP",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "k-complex",
+      "target": "Multiunit Activity",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "k-complex",
+      "target": "Sleep",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "k-complex",
+      "target": "Slow-Wave",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "k-complex",
+      "target": "Spindle",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "k-complex",
+      "target": "cortical down-state",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "k-complex",
+      "target": "dendritic current",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "k-complex",
+      "target": "down-state",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "k-complex",
+      "target": "multiunit firing",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "meg-spectra",
+      "target": "EEG",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "meg-spectra",
+      "target": "Electromagnetism",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "meg-spectra",
+      "target": "MEG",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "meg-spectra",
+      "target": "Noise",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "meg-spectra",
+      "target": "Resistive-Medium",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "meg-spectra",
+      "target": "Scaling",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "meg-spectra",
+      "target": "dendritic current",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "meg-spectra",
+      "target": "non-resistive extracellular medium",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "meg-spectra",
+      "target": "purely resistive",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spatiotemporal-ei",
+      "target": "Excitation-Inhibition (E/I) Balance",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spatiotemporal-ei",
+      "target": "Multielectrode Arrays (MEA)",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spatiotemporal-ei",
+      "target": "Sleep-Wake Dynamics",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spatiotemporal-ei",
+      "target": "Slow-Wave Sleep (SWS)",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spatiotemporal-ei",
+      "target": "Spike",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-async",
+      "target": "EEG",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-async",
+      "target": "EEG/MEG asynchrony",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-async",
+      "target": "MEG",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-async",
+      "target": "Oscillation",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-async",
+      "target": "Sleep",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-async",
+      "target": "Spindle",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-async",
+      "target": "Synchrony",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-async",
+      "target": "focal asynchronous oscillation",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-async",
+      "target": "thalamocortical core",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-async",
+      "target": "thalamocortical matrix",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-divergent",
+      "target": "EEG",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-divergent",
+      "target": "MEG",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-divergent",
+      "target": "Oscillation",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-divergent",
+      "target": "Sleep",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-divergent",
+      "target": "Source Localization",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-divergent",
+      "target": "Spindle",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-divergent",
+      "target": "Statistical Parametric Mapping",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-divergent",
+      "target": "Thalamocortical",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-divergent",
+      "target": "distributed source modelling",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-divergent",
+      "target": "focal asynchronous oscillation",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-divergent",
+      "target": "thalamocortical core",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-divergent",
+      "target": "thalamocortical matrix",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-emergence",
+      "target": "EEG",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-emergence",
+      "target": "MEG",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-emergence",
+      "target": "Oscillation",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-emergence",
+      "target": "Sleep",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-emergence",
+      "target": "Spindle",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-emergence",
+      "target": "Synchrony",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-emergence",
+      "target": "Thalamocortical",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-emergence",
+      "target": "focal asynchronous oscillation",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-emergence",
+      "target": "recruitment time",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-emergence",
+      "target": "synchronous wave",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-topo",
+      "target": "Cortex",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-topo",
+      "target": "EEG",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-topo",
+      "target": "Inverse solution",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-topo",
+      "target": "MEG",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-topo",
+      "target": "Oscillation",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-topo",
+      "target": "Spindle",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-topo",
+      "target": "Synchrony",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-topo",
+      "target": "Thalamus",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-topo",
+      "target": "spatially-propagating oscillator",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "spindle-topo",
+      "target": "travelling frequency front",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "symmetry-edge",
+      "target": "Collective Dynamics",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "symmetry-edge",
+      "target": "Emergence",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "symmetry-edge",
+      "target": "Invariances",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "symmetry-edge",
+      "target": "Multiscale",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "symmetry-edge",
+      "target": "Symmetry Breaking",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "CRX",
+      "target": "Emergence",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "CRX",
+      "target": "Neural Networks",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "CRX",
+      "target": "Noise",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "avalanche-spklfp",
+      "target": "Cortex",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "avalanche-spklfp",
+      "target": "Scaling",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "avalanche-spklfp",
+      "target": "Sleep",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "betagamma-sleep",
+      "target": "Inhibition",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "betagamma-sleep",
+      "target": "Sleep",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "betagamma-sleep",
+      "target": "Slow-Wave",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "causal-rotor",
+      "target": "Emergence",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "causal-rotor",
+      "target": "Excitation",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "causal-rotor",
+      "target": "Renormalization Group",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "cell-hilbert",
+      "target": "Complexity",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "cell-hilbert",
+      "target": "Dynamics",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "compute-thalamus",
+      "target": "Cortex",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "depth-coarse-graining",
+      "target": "Noise",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "dynamic-balance",
+      "target": "Excitation",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "dynamic-balance",
+      "target": "Network",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "dynamic-balance",
+      "target": "Sleep",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "forward-ieeg",
+      "target": "Complexity",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "forward-ieeg",
+      "target": "Scaling",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "hypercapnia-depression",
+      "target": "Sleep",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "ising-ei",
+      "target": "Cortex",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "ising-ei",
+      "target": "Sleep",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "ising-ei",
+      "target": "Synchrony",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "k-complex",
+      "target": "EEG",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "k-complex",
+      "target": "Network",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "meg-spectra",
+      "target": "Source Localization",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "spatiotemporal-ei",
+      "target": "Excitation",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "spatiotemporal-ei",
+      "target": "Inhibition",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "spatiotemporal-ei",
+      "target": "Sleep",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "spindle-async",
+      "target": "Thalamocortical",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "spindle-async",
+      "target": "Thalamus",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "spindle-divergent",
+      "target": "Cortex",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "spindle-divergent",
+      "target": "Noise",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "spindle-divergent",
+      "target": "Synchrony",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "spindle-emergence",
+      "target": "Cortex",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "spindle-topo",
+      "target": "Dynamics",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "spindle-topo",
+      "target": "Sleep",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "symmetry-edge",
+      "target": "Dynamics",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "symmetry-edge",
+      "target": "Excitation",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "symmetry-edge",
+      "target": "Inhibition",
+      "weight": 0.6,
+      "kind": "mined"
+    }
+  ]
+}

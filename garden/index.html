@@ -36,6 +36,10 @@
 
 
 
+
+<script defer src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js" crossorigin="anonymous"></script>
+
+
 </head>
 <body>
   <header class="topbar">
@@ -131,9 +135,9 @@
 
     <main class="main">
       <header class="page-head">
-  <div class="page-head__kicker is-fork">&#8997; The Garden · concept cloud</div>
+  <div class="page-head__kicker is-fork">&#8997; The Garden · knowledge graph</div>
   <h1 class="is-italic">Wander semantically.</h1>
-  <p>Same archive. Different door. The rooms below dim when you focus a single concept, lighting only the corridors that hold it. Click a concept to open its fork.</p>
+  <p>Same archive. Different door. Concepts are larger orbs; papers are smaller satellites. Drag a node, pinch or scroll to zoom, drag the background to pan. Click a concept to open its fork; click a paper to enter the room.</p>
 </header>
 
 <section class="garden" id="garden">
@@ -143,9 +147,18 @@
     <div class="garden__orb" style="left:30%;bottom:-120px;background:radial-gradient(circle, var(--wash-teal) 0%, transparent 65%);"></div>
   </div>
 
-  <p class="garden__lead">19 concepts wander between the rooms. Hover any word to see which rooms it touches; click to open its fork.</p>
+  <p class="garden__lead">19 curated concepts plus tag-mined neighbours wander between the rooms. Hover any node to see the corridors it touches.</p>
 
-  <div class="garden__cloud" id="garden-cloud">
+  <div class="garden__graph-wrap">
+    <div class="garden__graph-caption" aria-hidden="true">Drag · scroll/pinch to zoom · tap to open</div>
+    <svg id="garden-graph" class="garden__graph" role="img" aria-label="Knowledge graph of concepts and rooms"></svg>
+    <noscript>
+      <p class="garden__fallback">The interactive graph requires JavaScript. The static cloud below lists every curated concept.</p>
+    </noscript>
+  </div>
+
+  <!-- Static fallback cloud — visible only if the graph fails to load. -->
+  <div class="garden__cloud" id="garden-cloud" hidden>
     <button class="garden__word fork-link-trigger" style="font-size:22px;" data-fork="cortical down-state" data-rooms="">cortical down-state</button>
     <button class="garden__word fork-link-trigger" style="font-size:22px;" data-fork="multiunit firing" data-rooms="">multiunit firing</button>
     <button class="garden__word fork-link-trigger" style="font-size:28px;" data-fork="dendritic current" data-rooms="">dendritic current</button>
@@ -768,31 +781,315 @@
 
 <script>
 (function () {
-  var cloud = document.getElementById('garden-cloud');
+  var GRAPH_URL = "/assets/data/garden-graph.json";
+  var svgEl = document.getElementById('garden-graph');
+  var cloudEl = document.getElementById('garden-cloud');
   var roomsWrap = document.getElementById('garden-rooms');
-  if (!cloud || !roomsWrap) return;
+  if (!svgEl || !roomsWrap) return;
+
   var cards = Array.from(roomsWrap.querySelectorAll('.card'));
-  var hrefById = {};
-  // map data-rooms ids to cards by matching the card's href to concepts json
-  var data = JSON.parse(document.getElementById('concepts-data').textContent || '{}');
-  function litFor(concept) {
-    var c = data[concept];
-    if (!c) return null;
-    return c.rooms.map(function (r) { return r.url; });
-  }
+  var conceptsJson = {};
+  try { conceptsJson = JSON.parse(document.getElementById('concepts-data').textContent || '{}'); }
+  catch (e) { conceptsJson = {}; }
+
+  // Existing room-card dim behaviour, reused on graph hover.
   function dim(concept) {
-    var lit = concept ? litFor(concept) : null;
+    var lit = null;
+    if (concept && conceptsJson[concept]) {
+      lit = conceptsJson[concept].rooms.map(function (r) { return r.url; });
+    }
     cards.forEach(function (card) {
       var on = !lit || lit.indexOf(card.getAttribute('href')) !== -1;
       card.classList.toggle('is-dim', !on);
     });
   }
-  cloud.querySelectorAll('.garden__word').forEach(function (w) {
-    w.addEventListener('mouseenter', function () { dim(w.dataset.fork); w.classList.add('is-active'); });
-    w.addEventListener('mouseleave', function () { dim(null); w.classList.remove('is-active'); });
-    w.addEventListener('focus', function () { dim(w.dataset.fork); });
-    w.addEventListener('blur', function () { dim(null); });
+
+  // Reuse the existing fork-panel handler (main.js) by dispatching a click on
+  // a hidden element that carries the concept name in data-fork.
+  function openFork(name) {
+    var ghost = document.createElement('button');
+    ghost.type = 'button';
+    ghost.style.position = 'absolute';
+    ghost.style.opacity = '0';
+    ghost.style.pointerEvents = 'none';
+    ghost.className = 'fork-link-trigger';
+    ghost.setAttribute('data-fork', name);
+    document.body.appendChild(ghost);
+    ghost.click();
+    setTimeout(function () { ghost.remove(); }, 0);
+  }
+
+  function fallback() {
+    if (cloudEl) cloudEl.hidden = false;
+    if (svgEl && svgEl.parentNode) svgEl.parentNode.removeChild(svgEl);
+    // Wire the static cloud's hover-dim if we fall back.
+    if (!cloudEl) return;
+    cloudEl.querySelectorAll('.garden__word').forEach(function (w) {
+      w.addEventListener('mouseenter', function () { dim(w.dataset.fork); w.classList.add('is-active'); });
+      w.addEventListener('mouseleave', function () { dim(null); w.classList.remove('is-active'); });
+    });
+  }
+
+  function waitForD3(then, timeoutMs) {
+    var t0 = Date.now();
+    (function poll() {
+      if (window.d3 && window.d3.select) { then(); return; }
+      if (Date.now() - t0 > timeoutMs) { fallback(); return; }
+      setTimeout(poll, 80);
+    })();
+  }
+
+  fetch(GRAPH_URL).then(function (r) {
+    if (!r.ok) throw new Error('graph fetch failed: ' + r.status);
+    return r.json();
+  }).then(function (graph) {
+    waitForD3(function () { render(graph); }, 6000);
+  }).catch(function (e) {
+    console.warn('Garden graph: falling back.', e);
+    fallback();
   });
+
+  function render(graph) {
+    var d3 = window.d3;
+    var nodes = graph.nodes.map(function (n) { return Object.assign({}, n); });
+    var links = graph.links.map(function (l) { return { source: l.source, target: l.target, weight: l.weight, kind: l.kind }; });
+
+    var byId = {};
+    nodes.forEach(function (n) { byId[n.id] = n; });
+
+    // Drop links whose endpoints aren't in the node set (defensive).
+    links = links.filter(function (l) { return byId[l.source] && byId[l.target]; });
+
+    // Build neighbour index for hover dimming.
+    var neighbours = {};
+    nodes.forEach(function (n) { neighbours[n.id] = new Set([n.id]); });
+    links.forEach(function (l) {
+      neighbours[l.source].add(l.target);
+      neighbours[l.target].add(l.source);
+    });
+
+    var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var isMobile = window.matchMedia('(max-width: 760px)').matches;
+
+    var width = svgEl.clientWidth || 800;
+    var height = isMobile ? Math.round(window.innerHeight * 0.55)
+                          : Math.min(820, Math.round(window.innerHeight * 0.7));
+    svgEl.setAttribute('viewBox', '0 0 ' + width + ' ' + height);
+    svgEl.style.height = height + 'px';
+
+    var svg = d3.select(svgEl);
+    svg.selectAll('*').remove();
+
+    var defs = svg.append('defs');
+    var washTokens = {};
+    nodes.forEach(function (n) { if (n.wash) washTokens[n.wash] = true; });
+    Object.keys(washTokens).forEach(function (tok) {
+      var safe = tok.replace(/[^a-z0-9]/gi, '');
+      var grad = defs.append('radialGradient')
+        .attr('id', 'wash-' + safe)
+        .attr('cx', '50%').attr('cy', '50%').attr('r', '50%');
+      grad.append('stop').attr('offset', '0%')
+        .attr('stop-color', 'var(' + tok + ')').attr('stop-opacity', 0.85);
+      grad.append('stop').attr('offset', '70%')
+        .attr('stop-color', 'var(' + tok + ')').attr('stop-opacity', 0.22);
+      grad.append('stop').attr('offset', '100%')
+        .attr('stop-color', 'var(' + tok + ')').attr('stop-opacity', 0);
+    });
+
+    var rootG = svg.append('g').attr('class', 'gg-root');
+
+    var linkG = rootG.append('g').attr('class', 'gg-links');
+    var nodeG = rootG.append('g').attr('class', 'gg-nodes');
+
+    function washUrl(tok) {
+      return 'url(#wash-' + (tok || '--wash-slate').replace(/[^a-z0-9]/gi, '') + ')';
+    }
+    function radius(n) {
+      if (n.kind === 'paper') return isMobile ? 4 : 5;
+      var w = n.weight || 1;
+      var r = 12 + Math.sqrt(w) * 7;
+      if (isMobile) r *= 0.85;
+      return Math.max(12, Math.min(38, r));
+    }
+
+    var linkSel = linkG.selectAll('line')
+      .data(links)
+      .enter().append('line')
+      .attr('class', function (l) {
+        return 'glink glink--' + l.kind;
+      })
+      .attr('stroke-width', function (l) {
+        return Math.max(0.6, Math.min(2.4, l.weight * 1.4));
+      });
+
+    var nodeSel = nodeG.selectAll('g.gnode')
+      .data(nodes, function (n) { return n.id; })
+      .enter().append('g')
+      .attr('class', function (n) {
+        var cls = 'gnode gnode--' + n.kind;
+        if (n.kind === 'concept' && n.curated) cls += ' gnode--curated';
+        return cls;
+      })
+      .attr('tabindex', 0)
+      .attr('role', 'button')
+      .attr('aria-label', function (n) { return (n.kind === 'paper' ? 'Paper: ' : 'Concept: ') + (n.title || n.name); });
+
+    // Concept halo (radial wash)
+    nodeSel.filter(function (n) { return n.kind === 'concept'; })
+      .append('circle')
+      .attr('class', 'gnode__halo')
+      .attr('r', function (n) { return radius(n) + 8; })
+      .attr('fill', function (n) { return washUrl(n.wash); })
+      .attr('pointer-events', 'none');
+
+    // Concept core circle
+    nodeSel.filter(function (n) { return n.kind === 'concept'; })
+      .append('circle')
+      .attr('class', 'gnode__core')
+      .attr('r', function (n) { return radius(n); })
+      .attr('fill', 'var(--paper)')
+      .attr('stroke', function (n) { return n.curated ? 'var(--ink-soft)' : 'var(--hairline-strong)'; })
+      .attr('stroke-width', function (n) { return n.curated ? 1.1 : 0.9; });
+
+    // Paper node halo
+    nodeSel.filter(function (n) { return n.kind === 'paper'; })
+      .append('circle')
+      .attr('class', 'gnode__paper-halo')
+      .attr('r', function (n) { return radius(n) + 5; })
+      .attr('fill', function (n) { return washUrl(n.wash); })
+      .attr('pointer-events', 'none');
+
+    // Paper node core
+    nodeSel.filter(function (n) { return n.kind === 'paper'; })
+      .append('circle')
+      .attr('class', 'gnode__paper-core')
+      .attr('r', function (n) { return radius(n); })
+      .attr('fill', 'var(--ink)');
+
+    // Labels
+    nodeSel.append('text')
+      .attr('class', function (n) { return 'glabel glabel--' + n.kind; })
+      .attr('text-anchor', 'middle')
+      .attr('dy', function (n) { return radius(n) + (n.kind === 'concept' ? 18 : 12); })
+      .text(function (n) {
+        if (n.kind === 'concept') return n.name;
+        var t = n.title || '';
+        return t.length > 56 ? t.slice(0, 54) + '…' : t;
+      });
+
+    // Force simulation
+    var sim = d3.forceSimulation(nodes)
+      .force('link', d3.forceLink(links)
+        .id(function (n) { return n.id; })
+        .distance(function (l) {
+          var base = l.kind === 'cooccur' ? 90 : 70;
+          return base / Math.max(0.4, l.weight);
+        })
+        .strength(function (l) { return l.kind === 'cooccur' ? 0.18 : 0.5; })
+      )
+      .force('charge', d3.forceManyBody().strength(isMobile ? -140 : -210))
+      .force('center', d3.forceCenter(width / 2, height / 2))
+      .force('collide', d3.forceCollide().radius(function (n) { return radius(n) + 10; }).strength(0.9));
+
+    if (reducedMotion) {
+      // Run a deterministic number of ticks, no animated transitions.
+      for (var i = 0; i < 200; i++) sim.tick();
+      sim.stop();
+      ticked();
+    } else {
+      sim.alpha(0.9).alphaDecay(0.035).on('tick', ticked);
+      setTimeout(function () { sim.alphaTarget(0).stop(); }, 2400);
+    }
+
+    function ticked() {
+      linkSel
+        .attr('x1', function (l) { return l.source.x; })
+        .attr('y1', function (l) { return l.source.y; })
+        .attr('x2', function (l) { return l.target.x; })
+        .attr('y2', function (l) { return l.target.y; });
+      nodeSel.attr('transform', function (n) {
+        return 'translate(' + n.x + ',' + n.y + ')';
+      });
+    }
+
+    // Drag
+    var drag = d3.drag()
+      .on('start', function (event, d) {
+        if (!event.active) sim.alphaTarget(0.25).restart();
+        d.fx = d.x; d.fy = d.y;
+      })
+      .on('drag', function (event, d) {
+        d.fx = event.x; d.fy = event.y;
+      })
+      .on('end', function (event, d) {
+        if (!event.active) sim.alphaTarget(0);
+        // Release pin so layout can rebalance after drag.
+        d.fx = null; d.fy = null;
+      });
+    nodeSel.call(drag);
+
+    // Zoom + pan
+    var zoom = d3.zoom()
+      .scaleExtent([0.4, 4])
+      .on('zoom', function (event) {
+        rootG.attr('transform', event.transform);
+      });
+    svg.call(zoom);
+
+    // Hover dimming (graph + room cards)
+    function focus(id) {
+      var keep = neighbours[id] || new Set([id]);
+      nodeSel.classed('is-dim', function (n) { return !keep.has(n.id); });
+      linkSel.classed('is-dim', function (l) {
+        return !(keep.has(l.source.id) && keep.has(l.target.id));
+      });
+      nodeSel.classed('is-focus', function (n) { return n.id === id; });
+      var node = byId[id];
+      if (node && node.kind === 'concept') dim(node.name);
+      else dim(null);
+    }
+    function unfocus() {
+      nodeSel.classed('is-dim', false).classed('is-focus', false);
+      linkSel.classed('is-dim', false);
+      dim(null);
+    }
+    nodeSel
+      .on('mouseenter', function (event, d) { focus(d.id); })
+      .on('mouseleave', unfocus)
+      .on('focus', function (event, d) { focus(d.id); })
+      .on('blur', unfocus);
+
+    // Click semantics
+    nodeSel.on('click', function (event, d) {
+      event.stopPropagation();
+      if (d.kind === 'paper') {
+        window.location.href = d.url;
+      } else {
+        openFork(d.name);
+      }
+    });
+    nodeSel.on('keydown', function (event, d) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        if (d.kind === 'paper') window.location.href = d.url;
+        else openFork(d.name);
+      }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') unfocus();
+    });
+
+    // Re-center on resize.
+    window.addEventListener('resize', function () {
+      var w = svgEl.clientWidth || width;
+      var h = isMobile ? Math.round(window.innerHeight * 0.55)
+                       : Math.min(820, Math.round(window.innerHeight * 0.7));
+      svgEl.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
+      svgEl.style.height = h + 'px';
+      sim.force('center', d3.forceCenter(w / 2, h / 2));
+      if (!reducedMotion) sim.alpha(0.4).restart();
+    });
+  }
 })();
 </script>
 
