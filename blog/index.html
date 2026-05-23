@@ -137,7 +137,14 @@
 </header>
 
 
-<div class="card-grid">
+<div class="view-controls view-controls--solo">
+  <div class="view-toggle" role="tablist" aria-label="Switch view">
+    <button type="button" class="is-active" data-view="cards" role="tab" aria-selected="true">Cards</button>
+    <button type="button" data-view="list" role="tab" aria-selected="false">List</button>
+  </div>
+</div>
+
+<div class="card-grid" id="posts-grid">
   
     <a class="card card--compact reveal" href="/posts/pblog-Cell-hilbert/">
       <div class="card__body">
@@ -323,6 +330,302 @@
     </a>
   
 </div>
+
+<ul class="blog-list" id="posts-list" hidden>
+  
+    
+    
+    <li class="list-row list-row--post">
+      <div class="list-row__main">
+        <a class="list-row__title" href="/posts/pblog-Cell-hilbert/">Systematizing Cellular Complexity: Toward a Hilbertian Program for Biology</a>
+        <div class="list-row__pub">
+          <span class="list-row__date">2024 · Nov 5</span>
+        </div>
+        
+          <a class="list-row__pblog" href="/papers/Cell-hilbert/">
+            <span class="list-row__pblog-mark">&#8599;</span>
+            <span class="list-row__pblog-kicker">Room</span>
+            <span class="list-row__pblog-title">Systematizing cellular complexity: A Hilbertian approach to biological problems</span>
+          </a>
+        
+      </div>
+    </li>
+  
+    
+    
+    <li class="list-row list-row--post">
+      <div class="list-row__main">
+        <a class="list-row__title" href="/posts/pblog-Catcomp/">When Does a Physical System Compute?</a>
+        <div class="list-row__pub">
+          <span class="list-row__date">2024 · Jul 24</span>
+        </div>
+        
+          <a class="list-row__pblog" href="/papers/Catcomp/">
+            <span class="list-row__pblog-mark">&#8599;</span>
+            <span class="list-row__pblog-kicker">Room</span>
+            <span class="list-row__pblog-title">Physical computing: a category theoretic perspective on physical computation and system compositionality</span>
+          </a>
+        
+      </div>
+    </li>
+  
+    
+    
+    <li class="list-row list-row--post">
+      <div class="list-row__main">
+        <a class="list-row__title" href="/posts/pblog-Compute-thalamus/">Beyond the Relay: A Computational Perspective on the Thalamocortical Cognitive Engine</a>
+        <div class="list-row__pub">
+          <span class="list-row__date">2019 · Jul 1</span>
+        </div>
+        
+          <a class="list-row__pblog" href="/papers/Compute-thalamus/">
+            <span class="list-row__pblog-mark">&#8599;</span>
+            <span class="list-row__pblog-kicker">Room</span>
+            <span class="list-row__pblog-title">A Computational Perspective of the Role of the Thalamus in Cognition</span>
+          </a>
+        
+      </div>
+    </li>
+  
+    
+    
+    <li class="list-row list-row--post">
+      <div class="list-row__main">
+        <a class="list-row__title" href="/posts/pblog-Ising-EI/">Collective Dynamics of Excitation and Inhibition: An Ising Model Approach</a>
+        <div class="list-row__pub">
+          <span class="list-row__date">2019 · Mar 7</span>
+        </div>
+        
+          <a class="list-row__pblog" href="/papers/Ising-EI/">
+            <span class="list-row__pblog-mark">&#8599;</span>
+            <span class="list-row__pblog-kicker">Room</span>
+            <span class="list-row__pblog-title">Ensemble inhibition and excitation in the human cortex: An Ising-model analysis with uncertainties</span>
+          </a>
+        
+      </div>
+    </li>
+  
+    
+    
+    <li class="list-row list-row--post">
+      <div class="list-row__main">
+        <a class="list-row__title" href="/posts/pblog-Causal-roto-cardiac/">Causal Scale of Rotors in a Cardiac System</a>
+        <div class="list-row__pub">
+          <span class="list-row__date">2018 · Sep 4</span>
+        </div>
+        
+          <a class="list-row__pblog" href="/papers/Causal-rotor-cardiac/">
+            <span class="list-row__pblog-mark">&#8599;</span>
+            <span class="list-row__pblog-kicker">Room</span>
+            <span class="list-row__pblog-title">Causal Scale of Rotors in a Cardiac System</span>
+          </a>
+        
+      </div>
+    </li>
+  
+    
+    
+    <li class="list-row list-row--post">
+      <div class="list-row__main">
+        <a class="list-row__title" href="/posts/pblog-Theory-control-net/">Theoretical Principles of Multiscale Spatiotemporal Control of Neuronal Networks: A Complex Systems Perspective</a>
+        <div class="list-row__pub">
+          <span class="list-row__date">2018 · Jan 1</span>
+        </div>
+        
+          <a class="list-row__pblog" href="/papers/Theory-control-net/">
+            <span class="list-row__pblog-mark">&#8599;</span>
+            <span class="list-row__pblog-kicker">Room</span>
+            <span class="list-row__pblog-title">Theoretical Principles of Multiscale Spatiotemporal Control of Neuronal Networks: A Complex Systems Perspective</span>
+          </a>
+        
+      </div>
+    </li>
+  
+    
+    
+    <li class="list-row list-row--post">
+      <div class="list-row__main">
+        <a class="list-row__title" href="/posts/pblog-Avalanche-spikeLfp/">Revisiting the Critical Brain: Neuronal Avalanches, Power Laws, and the Statistical Structure of In Vivo Cortex</a>
+        <div class="list-row__pub">
+          <span class="list-row__date">2012 · Aug 12</span>
+        </div>
+        
+          <a class="list-row__pblog" href="/papers/Avalanche-spikeLfp/">
+            <span class="list-row__pblog-mark">&#8599;</span>
+            <span class="list-row__pblog-kicker">Room</span>
+            <span class="list-row__pblog-title">Avalanche Analysis from Multielectrode Ensemble Recordings in Cat, Monkey, and Human Cerebral Cortex during Wakefulness and Sleep</span>
+          </a>
+        
+      </div>
+    </li>
+  
+    
+    
+    <li class="list-row list-row--post">
+      <div class="list-row__main">
+        <a class="list-row__title" href="/posts/pblog-MEG-EEG-Async/">The Hidden Topography of Sleep Spindles: From Asynchronous MEG Generators to Synchronous EEG Events</a>
+        <div class="list-row__pub">
+          <span class="list-row__date">2011 · Jul 2</span>
+        </div>
+        
+          <a class="list-row__pblog" href="/papers/Spindle-MEG-EEG-Async/">
+            <span class="list-row__pblog-mark">&#8599;</span>
+            <span class="list-row__pblog-kicker">Room</span>
+            <span class="list-row__pblog-title">Emergence of synchronous EEG spindles from asynchronous MEG spindles</span>
+          </a>
+        
+      </div>
+    </li>
+  
+    
+    
+    <li class="list-row list-row--post">
+      <div class="list-row__main">
+        <a class="list-row__title" href="/posts/pblog-Spindle-topo-frq/">Spatio-Spectro-Temporal Dynamics of Sleep Spindles</a>
+        <div class="list-row__pub">
+          <span class="list-row__date">2011 · Feb 1</span>
+        </div>
+        
+          <a class="list-row__pblog" href="/papers/Spindle-topo-frq/">
+            <span class="list-row__pblog-mark">&#8599;</span>
+            <span class="list-row__pblog-kicker">Room</span>
+            <span class="list-row__pblog-title">Topographical frequency dynamics within EEG and MEG sleep spindles</span>
+          </a>
+        
+      </div>
+    </li>
+  
+    
+    
+    <li class="list-row list-row--post">
+      <div class="list-row__main">
+        <a class="list-row__title" href="/posts/pblog-MEGEEG-spectra-scaling/">Electromagnetic scaling in the brain: EEG, MEG, and the resistive-medium assumption</a>
+        <div class="list-row__pub">
+          <span class="list-row__date">2010 · Aug 1</span>
+        </div>
+        
+          <a class="list-row__pblog" href="/papers/MEGEEG-spectra-scaling/">
+            <span class="list-row__pblog-mark">&#8599;</span>
+            <span class="list-row__pblog-kicker">Room</span>
+            <span class="list-row__pblog-title">Comparative power spectral analysis of simultaneous electroencephalographic and magnetoencephalographic recordings in humans suggests non-resistive extracellular media</span>
+          </a>
+        
+      </div>
+    </li>
+  
+    
+    
+    <li class="list-row list-row--post">
+      <div class="list-row__main">
+        <a class="list-row__title" href="/posts/pblog-divergent-generator/">Divergent Cortical Generators of MEG and EEG during Human Sleep Spindles</a>
+        <div class="list-row__pub">
+          <span class="list-row__date">2010 · Jul 10</span>
+        </div>
+        
+          <a class="list-row__pblog" href="/papers/Spindle-divergent-generator/">
+            <span class="list-row__pblog-mark">&#8599;</span>
+            <span class="list-row__pblog-kicker">Room</span>
+            <span class="list-row__pblog-title">Divergent Cortical Generators of Sleep Spindles</span>
+          </a>
+        
+      </div>
+    </li>
+  
+    
+    
+    <li class="list-row list-row--post">
+      <div class="list-row__main">
+        <a class="list-row__title" href="/posts/pblog-Forward-ieegeeg/">Electromagnetic scaling in the brain: EEG, MEG, and the resistive-medium assumption</a>
+        <div class="list-row__pub">
+          <span class="list-row__date">2010 · Jul 10</span>
+        </div>
+        
+          <a class="list-row__pblog" href="/papers/Forward-ieegeeg/">
+            <span class="list-row__pblog-mark">&#8599;</span>
+            <span class="list-row__pblog-kicker">Room</span>
+            <span class="list-row__pblog-title">Experimental validation of the influence of white matter anisotropy on the intracranial EEG forward solution</span>
+          </a>
+        
+      </div>
+    </li>
+  
+    
+    
+    <li class="list-row list-row--post">
+      <div class="list-row__main">
+        <a class="list-row__title" href="/posts/pblog-Spindle-cortical-generator/">Re-evaluating Thalamocortical Synchrony: Multiple Asynchronous Generators of Human Sleep Spindles</a>
+        <div class="list-row__pub">
+          <span class="list-row__date">2010 · Jul 1</span>
+        </div>
+        
+          <a class="list-row__pblog" href="/papers/Spindle-cortical-generators/">
+            <span class="list-row__pblog-mark">&#8599;</span>
+            <span class="list-row__pblog-kicker">Room</span>
+            <span class="list-row__pblog-title">Magnetoencephalography Demonstrates Multiple Asynchronous Generators During Human Sleep Spindles</span>
+          </a>
+        
+      </div>
+    </li>
+  
+    
+    
+    <li class="list-row list-row--post">
+      <div class="list-row__main">
+        <a class="list-row__title" href="/posts/pblog-Odin/">Open Data in Neurophysiology: From Data Sharing to Scientific Infrastructure</a>
+        <div class="list-row__pub">
+          <span class="list-row__date">2010 · Jan 10</span>
+        </div>
+        
+          <a class="list-row__pblog" href="/papers/Odin/">
+            <span class="list-row__pblog-mark">&#8599;</span>
+            <span class="list-row__pblog-kicker">Room</span>
+            <span class="list-row__pblog-title">Open Data In Neurophysiology: Advancements, Solutions & Challenges</span>
+          </a>
+        
+      </div>
+    </li>
+  
+    
+    
+    <li class="list-row list-row--post">
+      <div class="list-row__main">
+        <a class="list-row__title" href="/posts/pblog-K-complex/">The Human K-Complex as an Isolated Cortical Down-State</a>
+        <div class="list-row__pub">
+          <span class="list-row__date">2009 · Apr 24</span>
+        </div>
+        
+          <a class="list-row__pblog" href="/papers/K-complex/">
+            <span class="list-row__pblog-mark">&#8599;</span>
+            <span class="list-row__pblog-kicker">Room</span>
+            <span class="list-row__pblog-title">The Human K-Complex as an Isolated Cortical "Down-State"</span>
+          </a>
+        
+      </div>
+    </li>
+  
+</ul>
+
+<script>
+(function () {
+  const grid = document.getElementById('posts-grid');
+  const list = document.getElementById('posts-list');
+  const viewToggle = document.querySelector('.view-toggle');
+  if (!grid || !list || !viewToggle) return;
+  viewToggle.addEventListener('click', (e) => {
+    const btn = e.target.closest('button');
+    if (!btn) return;
+    const view = btn.dataset.view;
+    const isList = view === 'list';
+    grid.hidden = isList;
+    list.hidden = !isList;
+    viewToggle.querySelectorAll('button').forEach(b => {
+      const on = b.dataset.view === view;
+      b.classList.toggle('is-active', on);
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+  });
+})();
+</script>
 
 
       <footer class="foot">

@@ -48,6 +48,46 @@
   });
 
   /* ---------------------------------------------------------------
+     Image protection — deter casual right-click / drag save on
+     brand, logo, icon, and profile imagery. Does NOT prevent
+     determined copying (devtools, network tab, view-source).
+     --------------------------------------------------------------- */
+  var PROTECTED_PATHS = ['/img/brand/', '/img/logo/', '/img/icons/', '/img/profile/'];
+  function isProtectedImg(el) {
+    if (!el || el.tagName !== 'IMG') return false;
+    if (el.closest('.protected-img') || el.classList.contains('protected-img')) return true;
+    var src = el.getAttribute('src') || el.currentSrc || '';
+    for (var i = 0; i < PROTECTED_PATHS.length; i++) {
+      if (src.indexOf(PROTECTED_PATHS[i]) !== -1) return true;
+    }
+    return false;
+  }
+  document.addEventListener('contextmenu', function (e) {
+    if (isProtectedImg(e.target)) e.preventDefault();
+  });
+  document.addEventListener('dragstart', function (e) {
+    if (isProtectedImg(e.target)) e.preventDefault();
+  });
+  function shouldWatermark(img) {
+    var src = (img.getAttribute('src') || img.currentSrc || '').toLowerCase();
+    if (/(mark|glyph|merge)\.(svg|png|jpe?g|webp)(\?|$)/.test(src)) return false;
+    if (img.closest('.no-watermark') || img.classList.contains('no-watermark')) return false;
+    return true;
+  }
+  document.querySelectorAll('img').forEach(function (img) {
+    if (!isProtectedImg(img)) return;
+    img.classList.add('protected-img');
+    img.setAttribute('draggable', 'false');
+    if (!shouldWatermark(img)) return;
+    if (img.closest('.protected-img-wm')) return;
+    var wrap = document.createElement('span');
+    wrap.className = 'protected-img-wm';
+    var parent = img.parentNode;
+    parent.insertBefore(wrap, img);
+    wrap.appendChild(img);
+  });
+
+  /* ---------------------------------------------------------------
      KaTeX — render anything with [data-katex] and the hero equation.
      KaTeX is loaded `defer`, so poll until window.katex exists.
      --------------------------------------------------------------- */

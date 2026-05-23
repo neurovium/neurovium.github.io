@@ -516,6 +516,144 @@ code, pre, kbd { font-family: var(--mono); font-size: 14px; }
 .tag-filter button:hover, .filter button:hover { color: var(--ink); border-color: var(--ink); }
 .tag-filter button.is-active, .filter button.is-active { background: var(--ink); color: var(--on-ink); border-color: var(--ink); }
 
+/* =====================================================================
+   View controls — Cards / List toggle + list rows
+   ===================================================================== */
+
+.view-controls {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 18px; flex-wrap: wrap;
+}
+.view-controls .tag-filter, .view-controls .filter {
+  flex: 1 1 auto; min-width: 0; margin-bottom: 0; padding-bottom: 22px;
+}
+.view-controls--solo { justify-content: flex-end; margin: 4px 0 28px; padding-bottom: 22px; border-bottom: 1px solid var(--hairline); }
+
+.view-toggle {
+  flex: 0 0 auto;
+  display: inline-flex; align-items: stretch; padding: 4px;
+  border-radius: 9999px; border: 1px solid #c9b48f;
+  background: linear-gradient(to bottom, #faf3e4 0%, #ecdcbc 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.9), inset 0 -1px 0 rgba(122,75,30,0.10),
+    0 1px 0 #c9b48f, 0 3px 0 -1px #ecdcbc, 0 5px 0 -2px #c9b48f,
+    0 8px 18px -4px rgba(74,46,24,0.22), 0 2px 4px rgba(74,46,24,0.06);
+}
+.view-toggle button {
+  appearance: none; cursor: pointer; border: 0; background: transparent;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--body); padding: 8px 18px; border-radius: 9999px;
+  transition: color 0.18s, background 0.18s, box-shadow 0.18s;
+}
+.view-toggle button:hover { color: var(--ink); }
+.view-toggle button.is-active {
+  background: linear-gradient(to bottom, #2a2620 0%, #1a1814 100%);
+  color: var(--on-ink);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.20), inset 0 -1px 0 rgba(0,0,0,0.35),
+    0 1px 2px rgba(0,0,0,0.25);
+}
+
+.paper-list, .blog-list {
+  list-style: none; padding: 0; margin: 0 0 32px;
+  display: flex; flex-direction: column;
+  border-top: 1px solid var(--hairline);
+}
+.list-row {
+  position: relative;
+  display: grid; grid-template-columns: 1fr auto;
+  align-items: start; gap: 18px;
+  padding: 18px 20px 18px 22px;
+  border-bottom: 1px solid var(--hairline);
+  background: transparent;
+  transition: background 0.2s var(--ease);
+}
+.list-row::before {
+  content: ""; position: absolute; left: 0; top: 14px; bottom: 14px;
+  width: 3px; border-radius: 2px;
+  background: var(--wash-color, var(--wash-slate));
+  opacity: 0; transition: opacity 0.2s var(--ease);
+}
+.list-row:hover { background: var(--paper); }
+.list-row:hover::before { opacity: 0.6; }
+.list-row.is-hidden { display: none; }
+
+.list-row__main { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.list-row__title {
+  font-family: var(--serif); font-weight: 300; font-size: 19px;
+  line-height: 1.25; letter-spacing: -0.2px; color: var(--ink);
+  text-decoration: none;
+}
+.list-row__title:hover { color: var(--fork); }
+.list-row__authors { font-family: var(--sans); font-size: 13px; color: var(--body); letter-spacing: 0.1px; }
+.list-row__pub {
+  display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+  margin-top: 2px;
+}
+.list-row__venue {
+  font-family: var(--serif); font-style: italic; font-weight: 300;
+  font-size: 14px; color: var(--ink-soft); letter-spacing: -0.1px;
+}
+.list-row__year, .list-row__date {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--muted);
+}
+.list-row__pblog {
+  margin-top: 8px;
+  display: inline-flex; align-items: baseline; gap: 8px;
+  font-family: var(--sans); font-size: 13px;
+  color: var(--ink-soft); text-decoration: none;
+  width: max-content;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: color 0.18s, border-color 0.18s;
+}
+.list-row__pblog:hover { color: var(--fork); border-bottom-color: var(--fork); }
+.list-row__pblog-mark { color: var(--fork); font-size: 14px; }
+.list-row__pblog-kicker {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--muted);
+}
+.list-row__pblog-title {
+  font-family: var(--serif); font-style: italic; font-weight: 300;
+  font-size: 14px; color: inherit;
+}
+
+.list-row__actions {
+  display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.list-row__action {
+  appearance: none; cursor: pointer; border: 0; background: transparent;
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--ink);
+  padding: 4px 2px 5px; margin: 0 4px;
+  border-bottom: 1px solid var(--action-wash, var(--wash-slate));
+  text-decoration: none;
+  transition: border-bottom-width 0.18s, color 0.18s, transform 0.12s;
+}
+.list-row__action:hover {
+  color: var(--ink); transform: translateY(-1px);
+  padding-bottom: 4px;
+  border-bottom-width: 2px;
+}
+.list-row__action:active { transform: translateY(0); }
+.list-row__action--doi  { --action-wash: var(--wash-slate); }
+.list-row__action--pdf  { --action-wash: var(--wash-teal); }
+.list-row__action--bib  { --action-wash: var(--fork); }
+.list-row__action--code { --action-wash: var(--wash-plum); }
+
+@media (max-width: 640px) {
+  .list-row { grid-template-columns: 1fr; gap: 10px; padding: 16px 14px 16px 18px; }
+  .list-row__actions { justify-content: flex-start; }
+  .view-controls { flex-direction: column; align-items: stretch; }
+  .view-toggle { align-self: flex-end; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .list-row, .list-row::before, .list-row__action, .view-toggle button { transition: none; }
+}
+
 .tag {
   font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em;
   text-transform: uppercase; padding: 4px 10px; border-radius: 9999px;
@@ -975,3 +1113,42 @@ a.tag:hover { color: var(--fork); border-color: var(--fork-soft); }
   *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* =====================================================================
+   Image protection — deter casual save/drag on brand assets.
+   Pairs with the contextmenu/dragstart guards in main.js.
+   ===================================================================== */
+.protected-img {
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: auto;
+}
+
+/* Watermark — sits as a corner overlay on photographic/illustrative
+   protected images. The brand mark itself is skipped (see main.js). */
+.protected-img-wm {
+  position: relative; display: inline-block; max-width: 100%; line-height: 0;
+}
+.protected-img-wm > img { display: block; max-width: 100%; height: auto; }
+.protected-img-wm::after,
+.about-photo::after {
+  content: ""; position: absolute;
+  right: 12px; bottom: 12px;
+  width: 22%; min-width: 64px; max-width: 140px;
+  aspect-ratio: 1 / 1;
+  background-image: url('/assets/img/logo/neurovium-mark.svg');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: contain;
+  opacity: 0.28;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+.about-photo { position: relative; }
+.about-photo::after { right: 10px; bottom: 10px; width: 28%; max-width: 110px; }
+@media (prefers-reduced-motion: no-preference) {
+  .protected-img-wm::after { transition: opacity 0.3s ease; }
+}
+
