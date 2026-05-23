@@ -139,14 +139,22 @@
 </header>
 
 <div class="view-controls">
-  <div class="tag-filter filter" id="tag-filter" role="toolbar" aria-label="Filter papers by concept">
-    <button type="button" class="is-active" data-tag="__all__">All</button>
+  <div class="concept-filter" id="concept-filter">
+    <div class="concept-filter__input" id="concept-filter-input" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-owns="concept-filter-panel">
+      <input class="concept-filter__field" id="concept-filter-field" type="text" placeholder="Filter by concept…" autocomplete="off" aria-label="Filter papers by concept">
+      <svg class="concept-filter__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="concept-filter__chips" id="concept-filter-chips" aria-live="polite"></div>
+    <div class="concept-filter__status" id="concept-filter-status"></div>
+    <button type="button" class="concept-filter__clear" id="concept-filter-clear" hidden>Clear</button>
+    <div class="concept-filter__panel" id="concept-filter-panel" role="listbox" aria-label="Concepts" hidden></div>
   </div>
   <div class="view-toggle" role="tablist" aria-label="Switch view">
     <button type="button" class="is-active" data-view="cards" role="tab" aria-selected="true">Cards</button>
     <button type="button" data-view="list" role="tab" aria-selected="false">List</button>
   </div>
 </div>
+<div class="concept-filter__backdrop" id="concept-filter-backdrop" hidden></div>
 
 
 
@@ -1776,29 +1784,103 @@ eprint = {https://www.science.org/doi/pdf/10.1126/science.1169626},
 (function () {
   const grid = document.getElementById('papers-grid');
   const list = document.getElementById('papers-list');
-  const filterBar = document.getElementById('tag-filter');
   const viewToggle = document.querySelector('.view-toggle');
   const empty = document.getElementById('papers-empty');
-  if (!grid || !filterBar) return;
+  const filter = document.getElementById('concept-filter');
+  const filterField = document.getElementById('concept-filter-field');
+  const filterInput = document.getElementById('concept-filter-input');
+  const chipsEl = document.getElementById('concept-filter-chips');
+  const statusEl = document.getElementById('concept-filter-status');
+  const clearEl = document.getElementById('concept-filter-clear');
+  const panelEl = document.getElementById('concept-filter-panel');
+  const backdropEl = document.getElementById('concept-filter-backdrop');
+  if (!grid || !filter) return;
 
   const cards = Array.from(grid.querySelectorAll('.card'));
   const rows = list ? Array.from(list.querySelectorAll('.list-row')) : [];
-  const tagSet = new Set();
-  cards.forEach(c => (c.dataset.tags || '').split(',').forEach(t => {
-    const tag = t.trim();
-    if (tag) tagSet.add(tag);
-  }));
+  const totalCards = cards.length;
 
-  const tags = Array.from(tagSet).sort();
-  tags.forEach(tag => {
-    const b = document.createElement('button');
-    b.type = 'button';
-    b.dataset.tag = tag;
-    b.textContent = tag;
-    filterBar.appendChild(b);
+  // Build the tag vocabulary with per-tag counts (from card data-tags).
+  const tagCounts = new Map();
+  cards.forEach(c => {
+    const seen = new Set();
+    (c.dataset.tags || '').split(',').forEach(t => {
+      const tag = t.trim();
+      if (!tag || seen.has(tag)) return;
+      seen.add(tag);
+      tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+    });
+  });
+  const tagSet = new Set(tagCounts.keys());
+  const tagsSorted = Array.from(tagCounts.entries()).sort((a, b) => {
+    if (b[1] !== a[1]) return b[1] - a[1];
+    return a[0].localeCompare(b[0]);
   });
 
   const active = new Set();
+  let focusedIdx = -1;
+  let currentQuery = '';
+
+  function matchesQuery(tag, q) {
+    if (!q) return true;
+    return tag.toLowerCase().indexOf(q.toLowerCase()) !== -1;
+  }
+
+  function renderPanel() {
+    panelEl.innerHTML = '';
+    const q = currentQuery.trim();
+    let shown = 0;
+    tagsSorted.forEach(([tag, count]) => {
+      if (!matchesQuery(tag, q)) return;
+      const opt = document.createElement('div');
+      opt.className = 'concept-filter__option';
+      if (active.has(tag)) opt.classList.add('is-checked');
+      opt.setAttribute('role', 'option');
+      opt.setAttribute('aria-selected', active.has(tag) ? 'true' : 'false');
+      opt.dataset.tag = tag;
+      opt.tabIndex = -1;
+      opt.innerHTML =
+        '<span class="concept-filter__option-mark" aria-hidden="true"></span>' +
+        '<span class="concept-filter__option-name"></span>' +
+        '<span class="concept-filter__count"></span>';
+      opt.querySelector('.concept-filter__option-name').textContent = tag;
+      opt.querySelector('.concept-filter__count').textContent = '· ' + count;
+      panelEl.appendChild(opt);
+      shown++;
+    });
+    if (shown === 0) {
+      const empty = document.createElement('div');
+      empty.className = 'concept-filter__empty';
+      empty.textContent = q ? ('No concept matches "' + q + '"') : 'No concepts available';
+      panelEl.appendChild(empty);
+    }
+    focusedIdx = -1;
+  }
+
+  function renderChips() {
+    chipsEl.innerHTML = '';
+    Array.from(active).sort().forEach(tag => {
+      const chip = document.createElement('span');
+      chip.className = 'concept-filter__chip';
+      chip.dataset.tag = tag;
+      chip.innerHTML =
+        '<span class="concept-filter__chip-label"></span>' +
+        '<button type="button" class="concept-filter__chip-close" aria-label="Remove filter">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>' +
+        '</button>';
+      chip.querySelector('.concept-filter__chip-label').textContent = tag;
+      chipsEl.appendChild(chip);
+    });
+    clearEl.hidden = active.size === 0;
+  }
+
+  function updateStatus(visible) {
+    if (active.size === 0) {
+      statusEl.textContent = 'All ' + totalCards + ' rooms';
+    } else {
+      statusEl.textContent = visible + ' of ' + totalCards + ' rooms';
+    }
+  }
 
   function apply() {
     const all = active.size === 0;
@@ -1816,28 +1898,120 @@ eprint = {https://www.science.org/doi/pdf/10.1126/science.1169626},
       row.classList.toggle('is-hidden', !matches(row));
     });
     empty.style.display = visible === 0 ? 'block' : 'none';
-
-    filterBar.querySelectorAll('button').forEach(btn => {
-      const t = btn.dataset.tag;
-      const on = t === '__all__' ? all : active.has(t);
-      btn.classList.toggle('is-active', on);
-    });
+    renderChips();
+    updateStatus(visible);
   }
 
+  // Panel open/close
+  function openPanel() {
+    if (!panelEl.hidden) return;
+    renderPanel();
+    panelEl.hidden = false;
+    filter.classList.add('is-open');
+    filterInput.setAttribute('aria-expanded', 'true');
+    if (window.matchMedia('(max-width: 480px)').matches) {
+      backdropEl.hidden = false;
+      document.body.style.overflow = 'hidden';
+    }
+  }
+  function closePanel() {
+    if (panelEl.hidden) return;
+    panelEl.hidden = true;
+    filter.classList.remove('is-open');
+    filterInput.setAttribute('aria-expanded', 'false');
+    backdropEl.hidden = true;
+    document.body.style.overflow = '';
+    focusedIdx = -1;
+  }
+
+  function toggleTag(tag) {
+    if (active.has(tag)) active.delete(tag);
+    else active.add(tag);
+    apply();
+    // Re-render panel so the checked dot updates.
+    renderPanel();
+  }
+
+  // URL deeplink
   const params = new URLSearchParams(location.search);
   const initial = (params.get('tags') || params.get('tag') || '').split(',').map(s => s.trim()).filter(Boolean);
   initial.forEach(t => { if (tagSet.has(t)) active.add(t); });
 
-  filterBar.addEventListener('click', (e) => {
-    const btn = e.target.closest('button');
-    if (!btn) return;
-    const t = btn.dataset.tag;
-    if (t === '__all__') {
-      active.clear();
-    } else {
-      if (active.has(t)) active.delete(t); else active.add(t);
+  // Wire input
+  filterField.addEventListener('focus', openPanel);
+  filterField.addEventListener('click', openPanel);
+  filterField.addEventListener('input', (e) => {
+    currentQuery = e.target.value;
+    openPanel();
+    renderPanel();
+  });
+  filterField.addEventListener('keydown', (e) => {
+    const opts = Array.from(panelEl.querySelectorAll('.concept-filter__option'));
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (panelEl.hidden) { openPanel(); return; }
+      focusedIdx = Math.min(opts.length - 1, focusedIdx + 1);
+      updateOptionFocus(opts);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      focusedIdx = Math.max(0, focusedIdx - 1);
+      updateOptionFocus(opts);
+    } else if (e.key === 'Enter') {
+      if (focusedIdx >= 0 && opts[focusedIdx]) {
+        e.preventDefault();
+        toggleTag(opts[focusedIdx].dataset.tag);
+      }
+    } else if (e.key === 'Escape') {
+      closePanel();
+      filterField.blur();
     }
+  });
+  function updateOptionFocus(opts) {
+    opts.forEach((o, i) => o.classList.toggle('is-focused', i === focusedIdx));
+    if (focusedIdx >= 0 && opts[focusedIdx]) {
+      opts[focusedIdx].scrollIntoView({ block: 'nearest' });
+    }
+  }
+
+  // Panel option clicks
+  panelEl.addEventListener('mousedown', (e) => {
+    // Use mousedown so the input doesn't blur before we handle it.
+    const opt = e.target.closest('.concept-filter__option');
+    if (!opt) return;
+    e.preventDefault();
+    toggleTag(opt.dataset.tag);
+    filterField.focus();
+  });
+
+  // Chip × clicks
+  chipsEl.addEventListener('click', (e) => {
+    const chip = e.target.closest('.concept-filter__chip');
+    const close = e.target.closest('.concept-filter__chip-close');
+    if (!chip || !close) return;
+    active.delete(chip.dataset.tag);
     apply();
+    if (!panelEl.hidden) renderPanel();
+  });
+
+  // Clear all
+  clearEl.addEventListener('click', () => {
+    active.clear();
+    apply();
+    if (!panelEl.hidden) renderPanel();
+    filterField.focus();
+  });
+
+  // Close on outside click
+  document.addEventListener('mousedown', (e) => {
+    if (panelEl.hidden) return;
+    if (filter.contains(e.target)) return;
+    closePanel();
+  });
+  backdropEl.addEventListener('click', closePanel);
+
+  // Close on Escape from anywhere in the filter
+  filter.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') { closePanel(); filterField.focus(); }
   });
 
   if (viewToggle && list) {
