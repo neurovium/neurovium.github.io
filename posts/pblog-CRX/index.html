@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ead7be">
+<title>Rethinking Physical Complexity in the Data-Driven Era · Nima Dehghani</title>
+<meta name="description" content="Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<link type="application/atom+xml" rel="alternate" href="https://neurovium.github.io/feed.xml" title="Nima Dehghani" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Rethinking Physical Complexity in the Data-Driven Era | Nima Dehghani</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Rethinking Physical Complexity in the Data-Driven Era" />
+<meta name="author" content="Nima Dehghani" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Companion post to: Compression, Regularity, Randomness and Emergent Structure: Rethinking Physical Complexity in the Data-Driven Era Nima Dehghani arXiv . 2505.07222 (2025) DOI: https://doi.org/10.48550/arXiv.2505.07222" />
+<meta property="og:description" content="Companion post to: Compression, Regularity, Randomness and Emergent Structure: Rethinking Physical Complexity in the Data-Driven Era Nima Dehghani arXiv . 2505.07222 (2025) DOI: https://doi.org/10.48550/arXiv.2505.07222" />
+<link rel="canonical" href="https://neurovium.github.io/posts/pblog-CRX/" />
+<meta property="og:url" content="https://neurovium.github.io/posts/pblog-CRX/" />
+<meta property="og:site_name" content="Nima Dehghani" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-05-12T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Rethinking Physical Complexity in the Data-Driven Era" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Nima Dehghani"},"dateModified":"2025-05-12T00:00:00+00:00","datePublished":"2025-05-12T00:00:00+00:00","description":"Companion post to: Compression, Regularity, Randomness and Emergent Structure: Rethinking Physical Complexity in the Data-Driven Era Nima Dehghani arXiv . 2505.07222 (2025) DOI: https://doi.org/10.48550/arXiv.2505.07222","headline":"Rethinking Physical Complexity in the Data-Driven Era","mainEntityOfPage":{"@type":"WebPage","@id":"https://neurovium.github.io/posts/pblog-CRX/"},"url":"https://neurovium.github.io/posts/pblog-CRX/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+  },
+  options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+
+</head>
+<body>
+  <header class="topbar">
+    <a href="/" class="topbar__brand">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"><line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/><line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/><line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/></g><circle cx="18" cy="20" r="2.2" fill="currentColor"/></svg>
+      Nima Dehghani
+    </a>
+    <button class="topbar__toggle" id="sidebar-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sidebar">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </header>
+
+  <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
+
+  <div class="app">
+    
+
+<aside class="side" id="sidebar" aria-label="Primary">
+  <a class="side__brand" href="/">
+    <svg class="glyph" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none">
+        <line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/>
+        <line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/>
+        <line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/>
+      </g>
+      <circle cx="18" cy="20" r="2.2" fill="currentColor"/>
+    </svg>
+    <span>
+      <span class="side__name">Nima Dehghani</span>
+      <span class="side__tag">@neurovium · MIT</span>
+    </span>
+  </a>
+
+  <nav class="side__nav" aria-label="Main navigation">
+    <a href="/" class="">Home</a>
+    <a href="/news/" class="">News<span class="side__pip" aria-label="new"></span></a>
+    <a href="/research/" class="">Research</a>
+    <a href="/papers/" class="">Paper Maze</a>
+    <a href="/garden/" class="">Idea Garden</a>
+    <a href="/blog/" class="">Blog</a>
+    <a href="/open-science/" class="">Open Science</a>
+    <a href="/about/" class="">About</a>
+    <a href="/neurovium-decoded/" class="">Neurovium Decoded</a>
+  </nav>
+
+  <div class="side__social" aria-label="Social links">
+    <div class="side__social-row">
+      <a href="https://scholar.google.com/citations?user=acFMrVUAAAAJ&hl=en" title="Google Scholar" target="_blank" rel="noopener" aria-label="Google Scholar">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9zm6.82 7L12 12.72 5.18 9 12 5.28zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73z"/></svg>
+      </a>
+      <a href="mailto:nima.dehghani@mit.edu" title="Email" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/nimadehghani/" title="LinkedIn" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+    </div>
+    <div class="side__social-row">
+      <a href="https://github.com/neurovium" title="GitHub" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      </a>
+      <a href="https://twitter.com/neurovium" title="X" target="_blank" rel="noopener" aria-label="X">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://bsky.app/profile/neurovium.bsky.social" class="is-bsky" title="Bluesky" target="_blank" rel="noopener" aria-label="Bluesky">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.335 5.144c2.606 1.957 5.41 5.923 6.44 8.051.99-2.046 3.855-6.132 6.44-8.051 1.864-1.383 4.885-2.453 4.885 1.002 0 .69-.396 5.795-.629 6.624-.809 2.882-3.748 3.616-6.363 3.17 4.573.78 5.737 3.359 3.224 5.939-4.772 4.9-6.859-1.23-7.394-2.802-.534 1.572-2.622 7.702-7.394 2.802-2.513-2.58-1.349-5.16 3.224-5.939-2.615.446-5.554-.288-6.363-3.17-.233-.829-.629-5.934-.629-6.624 0-3.455 3.021-2.385 4.885-1.002z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="n4-set" aria-label="N⁴ : NeuroAI ⊃ N³">
+    <span class="n4-set__lbl">N&#8308;</span>
+    <div class="n4-set n4-set--ai">
+      <span class="n4-set__lbl">NeuroAI</span>
+      <div class="n4-set n4-set--n3">
+        <span class="n4-set__lbl">N&#179;</span>
+        <ul>
+          <li>NeuroPhysics</li>
+          <li>NeuroComputation</li>
+          <li>NeuroDynamics</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="side__foot">
+    <span>
+      <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+      ·
+      <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    </span>
+  </div>
+</aside>
+
+    <main class="main">
+      <article class="paper">
+  <div class="paper__crumb">
+    <a href="/blog/">← Blog</a>
+    <span style="color:var(--muted-soft);">·</span>
+    <span>May 12, 2025</span>
+  </div>
+
+  <h1>Rethinking Physical Complexity in the Data-Driven Era</h1>
+  <div class="paper__subtitle">Compression, Regularity, Randomness, and the Role of Machine Learning</div>
+  
+  <div class="paper__venue" style="margin-top:10px;">
+    <span>Data-Driven Modeling</span><span>AI</span><span>Complexity</span><span>Compression</span><span>Randomness</span><span>Regularity</span>
+  </div>
+  
+
+  
+  <div class="linkbar" style="margin-top:24px;">
+    <a href="/papers/CRX/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="20" x2="12" y2="12"/><line x1="12" y1="12" x2="21" y2="4"/><line x1="12" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="21" y2="20"/></svg>
+      Follow this path into the Maze
+    </a>
+  </div>
+  
+
+  <section class="paper__section prose" style="margin-top:28px;">
+    <p><em>Companion post to:</em><br />
+<strong>Compression, Regularity, Randomness and Emergent Structure: Rethinking Physical Complexity in the Data-Driven Era</strong><br />
+Nima Dehghani
+<em>arXiv</em> . 2505.07222 (2025)
+DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.48550/arXiv.2505.07222</code></p>
+
+<hr />
+
+<h1 id="rethinking-physical-complexity-in-the-data-driven-era">Rethinking Physical Complexity in the Data-Driven Era</h1>
+<h2 id="compression-regularity-randomness-and-the-role-of-machine-learning">Compression, Regularity, Randomness, and the Role of Machine Learning</h2>
+
+<p>Across physics, complex systems, computational neuroscience, and machine learning, we often face the same basic problem: we observe a system through data, and we want to know whether the data contain structure.</p>
+
+<p>But “structure” is not a simple word.</p>
+
+<p>A system may be predictable but trivial, like a pure sine wave. It may be unpredictable but structurally uninteresting, like idealized white noise. Or it may sit somewhere in between: partly regular, partly noisy, partly compressible, partly surprising. Many of the systems that matter scientifically—turbulent flows, biological networks, neural population activity, non-equilibrium physical systems, evolving ecosystems, and trained neural networks—live in precisely this intermediate regime.</p>
+
+<p>This is the regime we usually call <strong>complex</strong>.</p>
+
+<p>In our paper, <em>Compression, Regularity, Randomness and Emergent Structure: Rethinking Physical Complexity in the Data-Driven Era</em>, we revisit the foundations of complexity measurement from a contemporary data-driven perspective. The goal is not simply to review existing measures. There are already many excellent reviews of entropy, algorithmic complexity, information flow, and dynamical systems metrics. Instead, the goal is to ask a more structural question:</p>
+
+<p><strong>What are these measures actually measuring?</strong></p>
+
+<p>More specifically:</p>
+
+<ul>
+  <li>Are they measuring randomness?</li>
+  <li>Are they measuring regularity?</li>
+  <li>Are they measuring complexity?</li>
+  <li>Are they computationally accessible?</li>
+  <li>And how do modern machine-learning methods approximate the classical ideals that complexity theory often defines but cannot compute?</li>
+</ul>
+
+<p>The central claim of the paper is that many classical and modern approaches can be organized around three interrelated but distinct axes:</p>
+
+<ol>
+  <li><strong>regularity</strong>,</li>
+  <li><strong>randomness</strong>, and</li>
+  <li><strong>complexity</strong>.</li>
+</ol>
+
+<p>This may sound simple, but it changes how we interpret many familiar measures.</p>
+
+<hr />
+
+<h2 id="complexity-is-not-just-between-order-and-disorder">Complexity is not just “between order and disorder”</h2>
+
+<p>A common intuition in complexity science is that complexity lies somewhere between perfect order and complete randomness. This intuition is useful, but it can also be misleading if interpreted too literally.</p>
+
+<p>Perfect order is not complex. A crystal lattice, a repeated string, or a sinusoidal oscillation can be highly regular and easily described. Complete randomness is also not complex in the structural sense. A sequence of independent fair coin flips has maximal unpredictability, but it does not contain rich organization. It is incompressible, but not meaningful.</p>
+
+<p>Complexity is different. It involves structure that is not trivial, regularity that is not simply periodic, and randomness that does not fully erase organization.</p>
+
+<p>A useful way to think about this is that <strong>regularity and randomness are not strict opposites</strong>. They can coexist. A system may be locally unpredictable but globally structured. A chaotic attractor may generate trajectories that are difficult to predict point-by-point, while still occupying a highly organized region of state space. Neural population activity may appear noisy at the level of single units or electrodes, while still expressing low-dimensional modes, metastable states, or structured collective dynamics.</p>
+
+<p>This is why a single entropy value rarely tells the full story. High entropy may indicate genuine randomness, but it may also reflect hidden structure that the chosen representation fails to capture. Low entropy may indicate regularity, but not necessarily complexity. The key is to distinguish between <strong>unpredictability</strong>, <strong>compressible structure</strong>, and <strong>nontrivial organization</strong>.</p>
+
+<hr />
+
+<h2 id="the-three-axes-regularity-randomness-complexity">The three axes: regularity, randomness, complexity</h2>
+
+<p>The paper organizes the landscape around three axes.</p>
+
+<h3 id="randomness">Randomness</h3>
+
+<p>Randomness refers to unpredictability, irreducibility, or the absence of identifiable pattern. In statistical information theory, randomness is often associated with entropy. A probability distribution with many equally likely outcomes has high Shannon entropy. A time series whose future remains uncertain even given its past has a high entropy rate.</p>
+
+<p>At the algorithmic level, randomness has a deeper meaning. A string is algorithmically random if there is no shorter program that generates it. Its shortest description is essentially the string itself. This is the intuition behind Kolmogorov complexity.</p>
+
+<p>But these two notions are not identical. A sequence can appear statistically random under one description while still being generated by a compact deterministic rule. This distinction matters enormously in empirical science, because our measurements are always filtered through a choice of representation, scale, and coarse-graining.</p>
+
+<h3 id="regularity">Regularity</h3>
+
+<p>Regularity refers to predictable, recurring, or compressible structure. A system has regularity when there are patterns that can be used to summarize or predict it. These patterns may be periodicities, symmetries, conservation laws, low-dimensional manifolds, attractor geometry, causal states, motifs, or governing equations.</p>
+
+<p>Regularity is what makes modeling possible. If a dataset has no regularity, there is nothing to learn except its raw realization. If it has regularity, then a model can compress it.</p>
+
+<p>In this sense, regularity is tightly connected to scientific explanation. A good physical theory is a compression of many observations into a compact generative structure. Newton’s laws, Maxwell’s equations, the Navier-Stokes equations, statistical mechanics, and modern effective theories all operate by compressing observed phenomena into mathematical structures with predictive power.</p>
+
+<h3 id="complexity">Complexity</h3>
+
+<p>Complexity arises when regularity and randomness interact nontrivially. A complex system is not merely random, but it is also not simply ordered. Its structure may be distributed across scales. It may require memory to predict. It may exhibit emergent macrostates, collective modes, nonlinear interactions, or synergistic dependencies among components.</p>
+
+<p>This is why complexity should not be equated with entropy. Entropy measures uncertainty. Complexity concerns the organization of structure under uncertainty.</p>
+
+<p>A perfectly regular system can have low entropy and low complexity. A purely random system can have high entropy and low structural complexity. A complex system often lives in the middle: it contains enough regularity to be modeled, but enough variability, hierarchy, or nonlinear interaction to make the model nontrivial.</p>
+
+<hr />
+
+<h2 id="compression-as-the-organizing-principle">Compression as the organizing principle</h2>
+
+<p>The paper uses <strong>compression</strong> as a unifying lens.</p>
+
+<p>Compression gives an operational meaning to all three axes:</p>
+
+<ul>
+  <li>
+    <p><strong>Regularity enables compression.</strong><br />
+If data contain recurring patterns, symmetries, or low-dimensional structure, they can be described more compactly than by listing every observation.</p>
+  </li>
+  <li>
+    <p><strong>Randomness resists compression.</strong><br />
+A truly random sequence has no shorter description than itself.</p>
+  </li>
+  <li>
+    <p><strong>Complexity corresponds to nontrivial compression.</strong><br />
+A complex system is compressible, but not trivially so. Its compressed description may require a sophisticated model, a long computation, or a hierarchy of representations.</p>
+  </li>
+</ul>
+
+<p>This compression-based view links classical information theory, algorithmic complexity, statistical mechanics, and modern machine learning.</p>
+
+<p>In algorithmic information theory, the Kolmogorov complexity of an object is the length of the shortest program that generates it. In minimum description length approaches, the best model is the one that balances model complexity against the cost of encoding the data given the model. In physics, a successful theory compresses observations into laws, symmetries, and state variables. In machine learning, latent-variable models compress high-dimensional data into lower-dimensional representations that preserve what is useful for reconstruction, prediction, or generation.</p>
+
+<p>The language changes across fields, but the underlying question is similar:</p>
+
+<p><strong>What is the shortest, most structured, most useful description of the data?</strong></p>
+
+<hr />
+
+<h2 id="a-taxonomy-of-measures">A taxonomy of measures</h2>
+
+<p>The paper groups complexity-related measures into three broad families: statistical, algorithmic, and dynamical.</p>
+
+<p>Each family captures a different aspect of the regularity-randomness-complexity landscape.</p>
+
+<hr />
+
+<h2 id="1-statistical-measures-uncertainty-and-apparent-disorder">1. Statistical measures: uncertainty and apparent disorder</h2>
+
+<p>Statistical entropy measures quantify uncertainty in observed outcomes. Shannon entropy is the canonical example. Rényi and Tsallis entropies generalize this idea by changing sensitivity to rare or common events, heavy tails, or non-extensive behavior. Approximate entropy, sample entropy, and permutation entropy adapt entropy-like reasoning to time series, especially in physiological and dynamical settings.</p>
+
+<p>These measures are powerful because they are usually computable. They can be applied to empirical data with relatively modest assumptions. This is why entropy-based metrics are widely used in neuroscience, physiology, finance, climate science, and complex systems analysis.</p>
+
+<p>But statistical entropy measures have a limitation: they primarily quantify unpredictability. They do not necessarily detect deep structure.</p>
+
+<p>A high-entropy signal may be genuinely random, or it may contain structure that is invisible to the chosen statistic. A low-entropy signal may be predictable, but not complex. Entropy is therefore essential, but incomplete.</p>
+
+<p>This matters in computational neuroscience. Neural signals often look noisy, variable, and high-dimensional. Entropy-based measures can quantify aspects of this variability, but they may miss structured population dynamics, latent trajectories, coordination across areas, or task-dependent low-dimensional manifolds. The same issue appears in statistical physics and complex systems: macroscopic order may be hidden beneath microscopic fluctuations.</p>
+
+<p>Statistical measures are therefore best understood as measures of <strong>uncertainty</strong>, not as complete measures of complexity.</p>
+
+<hr />
+
+<h2 id="2-algorithmic-measures-structure-description-length-and-depth">2. Algorithmic measures: structure, description length, and depth</h2>
+
+<p>Algorithmic measures move from probability distributions to descriptions.</p>
+
+<p>The central object here is Kolmogorov complexity: the length of the shortest program that generates a string or dataset. If a sequence can be generated by a short program, it has low Kolmogorov complexity. If no shorter description exists, it is algorithmically random.</p>
+
+<p>This gives a profound definition of randomness and regularity. But it also introduces a major problem: Kolmogorov complexity is uncomputable in general.</p>
+
+<p>Other algorithmic measures refine this picture.</p>
+
+<p><strong>Effective complexity</strong>, introduced by Gell-Mann and Lloyd, aims to isolate the complexity of the regularities in a system rather than counting randomness itself. A random string may have high Kolmogorov complexity, but low effective complexity, because it lacks meaningful structure. Effective complexity asks: how complex is the structured part?</p>
+
+<p><strong>Logical depth</strong>, introduced by Bennett, measures the computational effort required to unfold an object from its compressed description. This captures the intuition that complex objects are not merely compressible; they may require a long generative history. A random string is shallow because it is just printed directly. A trivial string is shallow because it is generated easily. A deep object is one whose compact description requires substantial computation to produce the observed structure.</p>
+
+<p><strong>Statistical complexity</strong>, from computational mechanics, measures the amount of information stored in the causal states of a process—the minimal predictive memory needed to optimally forecast its future. This is especially important for dynamical systems, because it links complexity to prediction.</p>
+
+<p>These measures are conceptually powerful because they distinguish structure from noise. But they are also difficult or impossible to compute exactly. This is the central tension of classical complexity theory:</p>
+
+<p><strong>The measures that most deeply capture structure are often the least accessible in practice.</strong></p>
+
+<hr />
+
+<h2 id="3-dynamical-information-measures-storage-transfer-and-modification">3. Dynamical information measures: storage, transfer, and modification</h2>
+
+<p>Many empirical systems are not static objects. They evolve. Their complexity lies not only in what is present at one time, but in how information is stored, transmitted, transformed, and generated over time.</p>
+
+<p>Dynamical information measures address this.</p>
+
+<p><strong>Entropy rate</strong> measures the uncertainty of a process after accounting for its past. A low entropy rate indicates strong temporal regularity; a high entropy rate indicates persistent unpredictability.</p>
+
+<p><strong>Transfer entropy</strong> measures directed information flow from one process to another. It asks whether knowing the past of process (X) improves prediction of the future of process (Y), beyond what (Y)’s own past already provides. This has made transfer entropy influential in neuroscience, where researchers often want to infer directed functional interactions among brain regions or neural populations.</p>
+
+<p><strong>Active information storage</strong> measures how much of a system’s future is predictable from its own past. This is a measure of memory.</p>
+
+<p><strong>Information modification</strong> and related ideas from partial information decomposition attempt to quantify something even subtler: the emergence of new information through synergistic interactions among multiple sources. This is especially relevant for biological and neural systems, where collective computation may not be reducible to pairwise interactions.</p>
+
+<p>These dynamical measures are important because complexity is often temporal. In cortical dynamics, for example, the relevant structure may not be visible in a static snapshot. It may appear in transitions between states, traveling waves, metastable assemblies, feedback loops, cross-frequency interactions, or context-dependent information flow.</p>
+
+<p>Dynamical measures therefore occupy a crucial region of the landscape: they connect randomness, regularity, and complexity to time.</p>
+
+<hr />
+
+<h2 id="the-computability-bottleneck">The computability bottleneck</h2>
+
+<p>Once these measures are placed side by side, a pattern emerges.</p>
+
+<p>The easiest measures to compute are often the shallowest conceptually. Shannon entropy, permutation entropy, and related statistics can be estimated directly from data, although with the usual finite-sample and estimator issues.</p>
+
+<p>The deepest measures—Kolmogorov complexity, logical depth, sophistication, and effective complexity—are either formally uncomputable or practically inaccessible without strong assumptions.</p>
+
+<p>This gives rise to a depth-accessibility tradeoff:</p>
+
+<ul>
+  <li>Shallow measures are easy to compute but may miss structure.</li>
+  <li>Deep measures capture structure more faithfully but are often uncomputable.</li>
+  <li>Intermediate measures require modeling assumptions, estimators, or approximations.</li>
+</ul>
+
+<p>This is not just a technical inconvenience. It is a foundational issue. Complexity science has often defined its most powerful concepts in idealized mathematical terms, while empirical science requires finite data, noisy measurements, limited samples, and imperfect models.</p>
+
+<p>The practical question becomes:</p>
+
+<p><strong>If the ideal measure is uncomputable, what kind of approximation is scientifically useful?</strong></p>
+
+<p>This is where modern machine learning enters the story.</p>
+
+<hr />
+
+<h2 id="machine-learning-as-an-approximation-to-classical-complexity-ideals">Machine learning as an approximation to classical complexity ideals</h2>
+
+<p>Modern machine learning does not solve the uncomputability of Kolmogorov complexity. A neural network does not magically compute the shortest possible program for a dataset.</p>
+
+<p>But machine learning does something operationally important. It approximates many of the goals that classical complexity measures formalize.</p>
+
+<p>Deep learning models search for compressed representations. They identify latent variables. They discard irrelevant variability. They learn predictive structure. They can impose physical constraints. They can discover approximate governing equations. They can generate new samples from learned distributions.</p>
+
+<p>In other words, many modern data-driven methods act as <strong>pragmatic surrogates</strong> for uncomputable or inaccessible complexity measures.</p>
+
+<p>They do not compute the classical quantities exactly. But they approximate their operational roles.</p>
+
+<hr />
+
+<h2 id="autoencoders-and-vaes-compression-in-latent-space">Autoencoders and VAEs: compression in latent space</h2>
+
+<p>Autoencoders provide the simplest example.</p>
+
+<p>An autoencoder maps high-dimensional data (x) into a lower-dimensional latent representation (z), and then reconstructs (x) from (z). The bottleneck forces the model to preserve information that is useful for reconstruction while discarding irrelevant variation.</p>
+
+<p>This is a practical form of compression.</p>
+
+<p>Variational autoencoders extend this idea by introducing a probabilistic latent space and a regularized objective. The VAE balances reconstruction accuracy against the complexity or entropy of the latent representation. This is not identical to minimum description length or Kolmogorov complexity, but it is strongly related in spirit: the model seeks a compact latent code that captures the generative structure of the data.</p>
+
+<p>For complex physical or biological systems, this matters because the latent space may reveal macroscopic variables that are not obvious in the raw measurements.</p>
+
+<p>In computational neuroscience, for example, latent-variable models have become central for interpreting population activity. High-dimensional neural recordings often contain lower-dimensional trajectories related to movement, perception, attention, internal state, or task structure. The latent model compresses neural activity into coordinates that may better reflect the underlying dynamical organization.</p>
+
+<p>From the perspective of complexity theory, this is not merely dimensionality reduction. It is an attempt to separate regularity from noise.</p>
+
+<hr />
+
+<h2 id="latent-odes-koopman-models-and-dynamical-regularity">Latent ODEs, Koopman models, and dynamical regularity</h2>
+
+<p>For time-evolving systems, static compression is not enough. We want latent variables that evolve according to structured dynamics.</p>
+
+<p>Latent ODEs model trajectories in a continuous-time latent space. Rather than treating observations as independent samples, they learn a dynamical system whose latent state evolves over time. This is especially relevant for irregularly sampled biological, physical, or clinical data.</p>
+
+<p>Koopman autoencoders pursue a related but distinct idea: they seek latent coordinates in which nonlinear dynamics become approximately linear. This connects deep learning to classical dynamical systems theory. The hope is that a complex nonlinear system may become simpler when viewed in the right coordinates.</p>
+
+<p>Both approaches approximate the same broad objective: find a compressed representation in which temporal evolution becomes more predictable.</p>
+
+<p>In the language of the paper, they are operational approximations to dynamical regularity. They reduce entropy rate in the learned representation. They preserve predictive information. They seek a latent space in which complexity becomes organized enough to model.</p>
+
+<hr />
+
+<h2 id="symbolic-regression-and-the-search-for-compact-laws">Symbolic regression and the search for compact laws</h2>
+
+<p>Another important class of methods is symbolic regression.</p>
+
+<p>Methods such as SINDy, AI Feynman, and related approaches search for explicit equations that describe observed dynamics. Rather than learning a black-box mapping, they attempt to recover compact symbolic rules.</p>
+
+<p>This has a direct connection to compression. A symbolic equation is a short description. If a system’s behavior can be generated by a compact equation, then the equation is a compressed representation of the data.</p>
+
+<p>Symbolic regression therefore approximates a central scientific ideal: the discovery of governing laws.</p>
+
+<p>It also resonates with logical depth. A short equation may unfold into rich, complex behavior over time. The complexity is not in the length of the equation alone, but in the computational unfolding of that equation into trajectories, patterns, bifurcations, or emergent structures.</p>
+
+<p>This is one reason symbolic regression is so attractive for physics and complex systems. It does not merely predict; it offers a candidate compressed explanation.</p>
+
+<hr />
+
+<h2 id="physics-informed-neural-networks-constraining-the-search-for-structure">Physics-informed neural networks: constraining the search for structure</h2>
+
+<p>Unconstrained neural networks are powerful function approximators, but they can also learn the wrong structure. They may fit noise, exploit shortcuts, or produce representations that are predictive but physically meaningless.</p>
+
+<p>Physics-informed neural networks address this by embedding physical constraints directly into the learning objective. Differential equations, conservation laws, boundary conditions, symmetries, or known operators can be included in the loss function.</p>
+
+<p>This changes the nature of learning. The model is no longer searching over arbitrary functions. It is searching within a space constrained by physical regularity.</p>
+
+<p>In the language of effective complexity, this is crucial. Effective complexity is about the structured regularities of a system, not the accidental details or noise. PINNs and related physics-informed models attempt to bias learning toward those regularities.</p>
+
+<p>This is also a broader lesson for AI in science. Predictive accuracy is not enough. Scientific models must learn the right compression: a representation that captures the relevant structure of the system, not merely a curve-fitting shortcut.</p>
+
+<hr />
+
+<h2 id="latent-spaces-as-operational-arenas-for-complexity">Latent spaces as operational arenas for complexity</h2>
+
+<p>One of the main arguments of the paper is that latent spaces should not be viewed merely as engineering devices.</p>
+
+<p>A latent space is an arena in which a learning system negotiates among regularity, randomness, and complexity.</p>
+
+<p>In a good latent representation:</p>
+
+<ul>
+  <li>regularities are compressed,</li>
+  <li>irrelevant variability is discarded or marginalized,</li>
+  <li>uncertainty is represented,</li>
+  <li>dynamics become more predictable,</li>
+  <li>structure becomes easier to manipulate, interpret, or generate.</li>
+</ul>
+
+<p>This makes latent spaces operational approximations to classical complexity-theoretic ideals.</p>
+
+<p>Classical theory asks: what is the shortest description, the meaningful structure, the predictive state, the computational unfolding, the non-random regularity?</p>
+
+<p>Modern machine learning asks similar questions in a different language: what latent representation minimizes reconstruction loss, maximizes predictive likelihood, respects physical constraints, separates generative factors, or supports downstream generalization?</p>
+
+<p>The connection is not exact, but it is deep.</p>
+
+<p>Latent spaces are where compression, regularity extraction, and complexity management become computationally actionable.</p>
+
+<hr />
+
+<h2 id="why-this-matters-for-computational-neuroscience">Why this matters for computational neuroscience</h2>
+
+<p>The computational neuroscience audience has a special stake in this discussion.</p>
+
+<p>Neural data are high-dimensional, noisy, nonstationary, multiscale, and dynamical. They are also structured. The brain is not a white-noise generator. Nor is it a simple clock. It is a system in which microscopic variability and macroscopic organization coexist.</p>
+
+<p>This makes neuroscience a natural domain for the regularity-randomness-complexity framework.</p>
+
+<p>Entropy-based measures can quantify variability in spike trains, LFPs, EEG, ECoG, calcium imaging, or behavioral signals. Dynamical measures can probe information flow, memory, and directed interactions. Algorithmic and compression-based perspectives can help distinguish meaningful structure from noise. Latent dynamical models can reveal low-dimensional trajectories and state-space organization.</p>
+
+<p>But the framework also warns against overinterpretation.</p>
+
+<p>A neural signal with high entropy is not necessarily “more complex.” A low-dimensional latent trajectory is not automatically the true underlying computation. A good reconstruction does not guarantee a physically or biologically meaningful representation. A learned model may compress the data in a way that is useful for prediction but misaligned with the mechanisms we care about.</p>
+
+<p>This is why complexity measures and machine-learning models should be treated as part of a broader inferential strategy. They require validation, surrogate controls, synthetic benchmarks, perturbation tests, and domain-specific interpretation.</p>
+
+<p>The goal is not to assign a single complexity number to the brain. The goal is to understand which aspects of neural activity are regular, which are random or effectively unpredictable, and which reflect nontrivial dynamical organization.</p>
+
+<hr />
+
+<h2 id="why-this-matters-for-physics-and-complex-systems">Why this matters for physics and complex systems</h2>
+
+<p>For physicists and complex-systems researchers, the key point is that modern data-driven methods are not separate from the classical questions of complexity science. They are increasingly becoming practical tools for approximating them.</p>
+
+<p>Physics has always relied on compression. A law of nature is a compression of empirical regularity. A state variable is a coarse-grained representation. A phase diagram is a compressed map of possible regimes. A renormalization-group flow organizes behavior across scales.</p>
+
+<p>Machine learning now adds a new layer to this tradition. It can search for latent variables, discover approximate symmetries, model high-dimensional dynamics, and identify compact representations in regimes where hand-derived theory is difficult.</p>
+
+<p>But the success of these methods should be interpreted through the lens of complexity. What kind of structure has the model learned? What has it discarded? What regularities are imposed by the architecture? What randomness is modeled explicitly? What is merely absorbed into latent noise? What is the computational cost of unfolding the representation back into observed behavior?</p>
+
+<p>These are not secondary questions. They determine whether a learned model is scientifically meaningful.</p>
+
+<hr />
+
+<h2 id="the-limits-of-neural-proxies">The limits of neural proxies</h2>
+
+<p>It is important to be clear: machine learning does not eliminate the foundational problems.</p>
+
+<p>Autoencoders may learn compressed representations, but not necessarily minimal or interpretable ones. VAEs impose priors that may oversmooth rare events or distort multimodal structure. Latent ODEs may impose smooth dynamics where the true system has abrupt transitions. Koopman models may find useful linear embeddings without identifying the mechanistic variables of interest. PINNs may enforce the wrong physics if the assumed equations are incomplete.</p>
+
+<p>Every proxy has an inductive bias.</p>
+
+<p>This is why the paper argues for a pluralistic and operational view. There is no universal complexity measure that works for every system, scale, and scientific question. The right measure depends on the data, the domain, the coarse-graining, the available prior knowledge, and the purpose of the analysis.</p>
+
+<p>For some questions, entropy is enough. For others, one needs dynamical information flow. For others, compression-based proxies, symbolic regression, or physics-informed latent models are more appropriate.</p>
+
+<p>The practical question is not “what is the complexity of this system?” in the abstract.</p>
+
+<p>The better question is:</p>
+
+<p><strong>Which form of regularity, randomness, or complexity is relevant to the scientific problem at hand, and what approximation can capture it with known biases?</strong></p>
+
+<hr />
+
+<h2 id="toward-operational-complexity">Toward operational complexity</h2>
+
+<p>The broader motivation of the paper is to move from abstract complexity to <strong>operational complexity</strong>.</p>
+
+<p>Operational complexity means that we do not merely define ideal quantities. We ask how they can be approximated, estimated, learned, validated, and used in real scientific workflows.</p>
+
+<p>This requires connecting several traditions:</p>
+
+<ul>
+  <li>statistical mechanics and coarse-graining,</li>
+  <li>algorithmic information theory,</li>
+  <li>computational mechanics,</li>
+  <li>nonlinear dynamics,</li>
+  <li>information theory,</li>
+  <li>representation learning,</li>
+  <li>physics-informed machine learning,</li>
+  <li>computational neuroscience,</li>
+  <li>and AI-guided scientific discovery.</li>
+</ul>
+
+<p>The common thread is compression: the search for structured descriptions that preserve what matters.</p>
+
+<p>In the data-driven era, complexity science is no longer only about defining measures. It is also about building models that can discover the right representations from data.</p>
+
+<hr />
+
+<h2 id="outlook">Outlook</h2>
+
+<p>The next generation of scientific machine learning should not only optimize predictive accuracy. It should explicitly incorporate ideas from complexity theory:</p>
+
+<ul>
+  <li>compression,</li>
+  <li>regularity extraction,</li>
+  <li>uncertainty modeling,</li>
+  <li>coarse-graining,</li>
+  <li>dynamical structure,</li>
+  <li>symbolic representation,</li>
+  <li>and the separation of meaningful structure from noise.</li>
+</ul>
+
+<p>For AI applied to physical and biological systems, this means building models that do more than fit data. They should reveal structure, respect constraints, expose latent variables, support interpretation, and generalize across regimes.</p>
+
+<p>For complexity science, machine learning offers a new operational toolkit. It cannot compute the uncomputable, but it can approximate some of the goals that motivated those ideal measures in the first place.</p>
+
+<p>This is the central message of the paper: classical complexity theory and modern machine learning are not separate conversations. They are converging on the same problem from different directions.</p>
+
+<p>Classical theory asks what complexity is.</p>
+
+<p>Machine learning asks how structure can be learned from data.</p>
+
+<p>The data-driven era forces us to bring these questions together.</p>
+
+  </section>
+
+  
+  <section class="paper__section">
+    <h2>The room this opens</h2>
+    <div class="linkbar">
+      <a href="/papers/CRX/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="20" x2="12" y2="12"/><line x1="12" y1="12" x2="21" y2="4"/><line x1="12" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="21" y2="20"/></svg>
+        Follow this path into the Maze
+      </a>
+    </div>
+  </section>
+  
+</article>
+
+      <footer class="foot">
+  <span>© 2026 · Nima Dehghani</span>
+  <span>
+    <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    ·
+    <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+  </span>
+</footer>
+
+    </main>
+  </div>
+
+  <script src="/assets/js/quotes.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

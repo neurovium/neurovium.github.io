@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ead7be">
+<title>Multiscale evidence for self-organized cortical balance · Nima Dehghani</title>
+<meta name="description" content="Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<link type="application/atom+xml" rel="alternate" href="https://neurovium.github.io/feed.xml" title="Nima Dehghani" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Multiscale evidence for self-organized cortical balance | Nima Dehghani</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Multiscale evidence for self-organized cortical balance" />
+<meta name="author" content="Nima Dehghani" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Companion post to: Dynamic Balance of Excitation and Inhibition in Human and Monkey Neocortex Nima Dehghani, Adrien Peyrache, Bartosz Telenczuk, Michel Le Van Quyen, Eric Halgren, Sydney S. Cash, Nicholas G. Hatsopoulos and Alain Destexhe Scientific Reports . 6, 23176 (2016). DOI: https://doi.org/10.1038/srep23176" />
+<meta property="og:description" content="Companion post to: Dynamic Balance of Excitation and Inhibition in Human and Monkey Neocortex Nima Dehghani, Adrien Peyrache, Bartosz Telenczuk, Michel Le Van Quyen, Eric Halgren, Sydney S. Cash, Nicholas G. Hatsopoulos and Alain Destexhe Scientific Reports . 6, 23176 (2016). DOI: https://doi.org/10.1038/srep23176" />
+<link rel="canonical" href="https://neurovium.github.io/posts/pblog-Dynamic-balance-EI/" />
+<meta property="og:url" content="https://neurovium.github.io/posts/pblog-Dynamic-balance-EI/" />
+<meta property="og:site_name" content="Nima Dehghani" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-03-16T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Multiscale evidence for self-organized cortical balance" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Nima Dehghani"},"dateModified":"2016-03-16T00:00:00+00:00","datePublished":"2016-03-16T00:00:00+00:00","description":"Companion post to: Dynamic Balance of Excitation and Inhibition in Human and Monkey Neocortex Nima Dehghani, Adrien Peyrache, Bartosz Telenczuk, Michel Le Van Quyen, Eric Halgren, Sydney S. Cash, Nicholas G. Hatsopoulos and Alain Destexhe Scientific Reports . 6, 23176 (2016). DOI: https://doi.org/10.1038/srep23176","headline":"Multiscale evidence for self-organized cortical balance","mainEntityOfPage":{"@type":"WebPage","@id":"https://neurovium.github.io/posts/pblog-Dynamic-balance-EI/"},"url":"https://neurovium.github.io/posts/pblog-Dynamic-balance-EI/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+  },
+  options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+
+</head>
+<body>
+  <header class="topbar">
+    <a href="/" class="topbar__brand">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"><line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/><line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/><line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/></g><circle cx="18" cy="20" r="2.2" fill="currentColor"/></svg>
+      Nima Dehghani
+    </a>
+    <button class="topbar__toggle" id="sidebar-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sidebar">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </header>
+
+  <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
+
+  <div class="app">
+    
+
+<aside class="side" id="sidebar" aria-label="Primary">
+  <a class="side__brand" href="/">
+    <svg class="glyph" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none">
+        <line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/>
+        <line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/>
+        <line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/>
+      </g>
+      <circle cx="18" cy="20" r="2.2" fill="currentColor"/>
+    </svg>
+    <span>
+      <span class="side__name">Nima Dehghani</span>
+      <span class="side__tag">@neurovium · MIT</span>
+    </span>
+  </a>
+
+  <nav class="side__nav" aria-label="Main navigation">
+    <a href="/" class="">Home</a>
+    <a href="/news/" class="">News<span class="side__pip" aria-label="new"></span></a>
+    <a href="/research/" class="">Research</a>
+    <a href="/papers/" class="">Paper Maze</a>
+    <a href="/garden/" class="">Idea Garden</a>
+    <a href="/blog/" class="">Blog</a>
+    <a href="/open-science/" class="">Open Science</a>
+    <a href="/about/" class="">About</a>
+    <a href="/neurovium-decoded/" class="">Neurovium Decoded</a>
+  </nav>
+
+  <div class="side__social" aria-label="Social links">
+    <div class="side__social-row">
+      <a href="https://scholar.google.com/citations?user=acFMrVUAAAAJ&hl=en" title="Google Scholar" target="_blank" rel="noopener" aria-label="Google Scholar">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9zm6.82 7L12 12.72 5.18 9 12 5.28zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73z"/></svg>
+      </a>
+      <a href="mailto:nima.dehghani@mit.edu" title="Email" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/nimadehghani/" title="LinkedIn" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+    </div>
+    <div class="side__social-row">
+      <a href="https://github.com/neurovium" title="GitHub" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      </a>
+      <a href="https://twitter.com/neurovium" title="X" target="_blank" rel="noopener" aria-label="X">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://bsky.app/profile/neurovium.bsky.social" class="is-bsky" title="Bluesky" target="_blank" rel="noopener" aria-label="Bluesky">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.335 5.144c2.606 1.957 5.41 5.923 6.44 8.051.99-2.046 3.855-6.132 6.44-8.051 1.864-1.383 4.885-2.453 4.885 1.002 0 .69-.396 5.795-.629 6.624-.809 2.882-3.748 3.616-6.363 3.17 4.573.78 5.737 3.359 3.224 5.939-4.772 4.9-6.859-1.23-7.394-2.802-.534 1.572-2.622 7.702-7.394 2.802-2.513-2.58-1.349-5.16 3.224-5.939-2.615.446-5.554-.288-6.363-3.17-.233-.829-.629-5.934-.629-6.624 0-3.455 3.021-2.385 4.885-1.002z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="n4-set" aria-label="N⁴ : NeuroAI ⊃ N³">
+    <span class="n4-set__lbl">N&#8308;</span>
+    <div class="n4-set n4-set--ai">
+      <span class="n4-set__lbl">NeuroAI</span>
+      <div class="n4-set n4-set--n3">
+        <span class="n4-set__lbl">N&#179;</span>
+        <ul>
+          <li>NeuroPhysics</li>
+          <li>NeuroComputation</li>
+          <li>NeuroDynamics</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="side__foot">
+    <span>
+      <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+      ·
+      <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    </span>
+  </div>
+</aside>
+
+    <main class="main">
+      <article class="paper">
+  <div class="paper__crumb">
+    <a href="/blog/">← Blog</a>
+    <span style="color:var(--muted-soft);">·</span>
+    <span>Mar 16, 2016</span>
+  </div>
+
+  <h1>Multiscale evidence for self-organized cortical balance</h1>
+  <div class="paper__subtitle"></div>
+  
+  <div class="paper__venue" style="margin-top:10px;">
+    <span>complex systems</span><span>cortical dynamics</span><span>EI balance</span><span>asynchronous networks</span><span>seizures</span>
+  </div>
+  
+
+  
+  <div class="linkbar" style="margin-top:24px;">
+    <a href="/papers/Dynamic-balance-EI/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="20" x2="12" y2="12"/><line x1="12" y1="12" x2="21" y2="4"/><line x1="12" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="21" y2="20"/></svg>
+      Follow this path into the Maze
+    </a>
+  </div>
+  
+
+  <section class="paper__section prose" style="margin-top:28px;">
+    <p><em>Companion post to:</em><br />
+<strong>Dynamic Balance of Excitation and Inhibition in Human and Monkey Neocortex</strong><br />
+Nima Dehghani, Adrien Peyrache, Bartosz Telenczuk, Michel Le Van Quyen, Eric Halgren, Sydney S. Cash, Nicholas G. Hatsopoulos and Alain Destexhe<br />
+<em>Scientific Reports</em> . 6, 23176 (2016).
+DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.1038/srep23176</code></p>
+
+<hr />
+
+<h1 id="dynamic-balance-of-excitation-and-inhibition-in-human-and-monkey-neocortex">Dynamic Balance of Excitation and Inhibition in Human and Monkey Neocortex</h1>
+
+<p>A central idea in theoretical and computational neuroscience is that cortical networks operate in a regime where excitation and inhibition are not merely both present, but dynamically balanced. In this view, the cortex is not a system in which excitation acts and inhibition simply suppresses it after the fact. Rather, excitatory and inhibitory populations co-evolve, fluctuate together, and jointly shape the dynamical state of the network.</p>
+
+<p>This idea has deep roots in theoretical neuroscience and statistical physics. Balanced network theory showed that large recurrent networks of excitatory and inhibitory neurons can produce irregular, self-sustained activity without requiring finely tuned external input. Such networks can remain active, variable, and responsive while avoiding runaway excitation or complete quiescence. This is one reason why balanced excitation and inhibition has become a central concept in understanding cortical computation.</p>
+
+<p>But an important empirical question remained: does this kind of dynamic E/I balance exist in the neocortex of higher mammals, including humans?</p>
+
+<p>In our paper, <strong>Dynamic Balance of Excitation and Inhibition in Human and Monkey Neocortex</strong>, we addressed this question using dense multielectrode recordings from human and macaque cortex. The main result is that excitatory and inhibitory ensembles are dynamically balanced across the wake–sleep cycle in both human and monkey neocortex. This balance is not static. It is a multiscale dynamical relation: excitatory and inhibitory populations co-fluctuate over many temporal scales, with small and state-dependent deviations from perfect balance. The strongest deviations occur during slow-wave sleep, and the balance breaks down during epileptic seizures.</p>
+
+<p>The broader implication is that cortical E/I balance should be understood not simply as a ratio, or as a local cellular property, but as a collective dynamical regime of recurrent cortical networks.</p>
+
+<hr />
+
+<h2 id="from-cellular-ei-balance-to-population-level-dynamics">From cellular E/I balance to population-level dynamics</h2>
+
+<p>Excitation and inhibition can be discussed at several levels. At the synaptic level, one may ask whether excitatory and inhibitory conductances into a cell are balanced. At the circuit level, one may ask whether excitatory and inhibitory populations track one another. At the systems level, one may ask whether the cortex maintains a dynamically stable regime across behavioral and brain states.</p>
+
+<p>Our study focused on the population level. We asked whether the activity of putative excitatory and inhibitory neuronal ensembles in vivo is dynamically coordinated in human and monkey neocortex.</p>
+
+<p>This required a dataset in which many units could be recorded continuously and separated into putative excitatory and inhibitory classes. We used dense multielectrode array recordings from human temporal cortex and macaque motor/premotor cortex. In the human recordings, patients were implanted with Utah arrays as part of clinical monitoring for epilepsy. In the monkey recordings, similar array recordings were available during behavior and sleep.</p>
+
+<p>The units were classified as regular-spiking (RS) and fast-spiking (FS) neurons. RS neurons are commonly treated as putative excitatory cells, whereas FS neurons are commonly treated as putative inhibitory interneurons, especially parvalbumin-positive fast-spiking interneurons. The classification was based on spike waveform features, and in the human data this classification was further supported by functional interactions inferred from cross-correlograms.</p>
+
+<p>This point is important. The study was not simply correlating two arbitrary pools of neurons. It was examining the ensemble dynamics of two biologically meaningful populations: putative excitatory and inhibitory cells.</p>
+
+<hr />
+
+<h2 id="balance-is-not-a-fixed-firing-rate-ratio">Balance is not a fixed firing-rate ratio</h2>
+
+<p>One possible misunderstanding of E/I balance is to think of it as a fixed ratio of excitatory to inhibitory firing rates. That is not the relevant dynamical idea.</p>
+
+<p>The cortex is not balanced because every excitatory spike is matched by an inhibitory spike in a rigid arithmetic sense. Nor is it balanced because each cell maintains a constant firing rate throughout the recording. In fact, the data show that firing rates vary substantially across time, and cells that are highly active in one epoch are not necessarily the same cells that dominate in another.</p>
+
+<p>The relevant object is the <strong>ensemble activity</strong>. If we write the normalized ensemble activity of the excitatory and inhibitory populations as</p>
+
+\[E(t), \qquad I(t),\]
+
+<p>then the question becomes whether these two population-level time series co-fluctuate across time and scale. In an idealized balanced state, one might expect</p>
+
+\[E(t) \approx I(t),\]
+
+<p>after appropriate normalization. But real cortical activity is not expected to sit exactly on this equality. A more realistic picture is that the system fluctuates near a balance manifold, with transient departures that depend on state, scale, and pathology.</p>
+
+<p>This is the view that motivated the multiscale analysis.</p>
+
+<hr />
+
+<h2 id="a-multiscale-view-of-cortical-balance">A multiscale view of cortical balance</h2>
+
+<p>Cortical activity is not organized at a single time scale. Millisecond spiking, tens-of-milliseconds coordination, slow fluctuations, sleep rhythms, and seizure dynamics all occupy different temporal regimes. A meaningful analysis of E/I balance therefore cannot be restricted to one bin size or one arbitrary temporal resolution.</p>
+
+<p>We therefore coarse-grained the ensemble activity over 32 logarithmically spaced time scales, from fine temporal bins near the millisecond range to much coarser bins over seconds. At each scale, spikes from RS and FS populations were binned, normalized by the number of neurons in each class, and compared as ensemble fractions.</p>
+
+<p>This produces, for each temporal scale (s), two coarse-grained activity traces:</p>
+
+\[E_s(t), \qquad I_s(t).\]
+
+<p>The deviation from balance can then be represented as</p>
+
+\[\Delta_s(t) = E_s(t) - I_s(t),\]
+
+<p>or, after normalization, as a scale-dependent excursion away from the line or plane of symmetry between excitation and inhibition.</p>
+
+<p>The main observation is that excitatory and inhibitory ensembles mirror one another across many time scales. During wakefulness, REM sleep, light sleep, and slow-wave sleep, increases and decreases in excitatory ensemble activity are generally accompanied by corresponding changes in inhibitory ensemble activity. The balance is not perfect, but it is persistent.</p>
+
+<p>This is a key point for readers coming from statistical physics or complex systems. The result is not merely a correlation at one arbitrary resolution. It is a multiscale relation between two interacting components of a recurrent network. The cortex appears to maintain a dynamically balanced regime across temporal coarse-grainings.</p>
+
+<hr />
+
+<h2 id="state-dependent-deviations-why-slow-wave-sleep-matters">State-dependent deviations: why slow-wave sleep matters</h2>
+
+<p>Although E/I balance is present across the wake–sleep cycle, the deviations from perfect balance are not identical across states. The strongest deviations occur during slow-wave sleep.</p>
+
+<p>This makes sense from the perspective of cortical dynamics. Slow-wave sleep is associated with transitions between Up and Down states: periods of relative population activity alternating with periods of relative quiescence. These transitions reflect a form of bistable or metastable dynamics in recurrent cortical networks. During such transitions, the system is still broadly balanced, but the instantaneous relation between excitation and inhibition can deviate more strongly from the balance manifold.</p>
+
+<p>Thus, slow-wave sleep does not simply represent a failure of balance. Rather, it exposes the fact that balance is a dynamical constraint, not an algebraic identity. The cortical network can remain organized around E/I balance while still displaying state-dependent excursions away from the exact symmetry condition.</p>
+
+<p>For systems neuroscience, this is important because it connects E/I balance to brain state. For complex systems, it suggests that balance should be studied as a state-dependent collective regime, with deviations that may reveal the underlying attractor landscape or transition structure of the network.</p>
+
+<hr />
+
+<h2 id="zero-lag-co-fluctuation-and-the-question-of-self-organization">Zero-lag co-fluctuation and the question of self-organization</h2>
+
+<p>One of the most important results concerns the temporal lag between excitatory and inhibitory ensemble activity.</p>
+
+<p>If inhibitory activity were simply following excitation after a delay, one might expect the cross-correlation between excitatory and inhibitory populations to peak at a nonzero lag. Such a result would suggest a more feed-forward picture: excitation rises, inhibition follows, and the two populations are coordinated by delayed recruitment.</p>
+
+<p>Instead, the ensemble cross-correlation between RS and FS populations peaked near zero lag across multiple time scales. In other words, the two populations co-fluctuated essentially simultaneously at the ensemble level.</p>
+
+<p>This does not mean that all cellular or synaptic processes are instantaneous. At the level of conductances into individual neurons, excitation can precede inhibition by a few milliseconds. But at the level of population spiking, the excitatory and inhibitory ensembles fluctuate together without a systematic delay.</p>
+
+<p>This distinction between single-cell conductance timing and ensemble-level spiking coordination is central. It suggests that population E/I balance is not simply a delayed feedback correction. Rather, it is a property of the recurrent network state itself.</p>
+
+<hr />
+
+<h2 id="comparison-with-a-conductance-based-balanced-network-model">Comparison with a conductance-based balanced network model</h2>
+
+<p>To interpret the zero-lag ensemble relation, we compared the data with a conductance-based network model of excitatory and inhibitory integrate-and-fire neurons. The model was configured to produce self-sustained asynchronous irregular activity, a classical balanced-network regime.</p>
+
+<p>In the self-sustained model, activity is generated by recurrent interactions within the network. There is no need for a continuously structured external drive to impose the temporal relation between excitation and inhibition. In this regime, the excitatory and inhibitory populations show mirrored multiscale fluctuations, and the ensemble cross-correlation peaks at zero lag, as in the human data.</p>
+
+<p>We then compared this with an externally driven version of the network. In that case, recurrent collateral synaptic strengths were reduced, and noisy external input became the dominant source of activity. Under this externally driven condition, the ensemble correlation peak shifted away from zero lag.</p>
+
+<p>This comparison supports the interpretation that the E/I balance observed in the data is largely self-generated by local recurrent cortical dynamics. The result does not rule out external inputs, thalamocortical drive, or long-range interactions. The cortex is never an isolated system. But the temporal structure of the E/I relation is consistent with a recurrent network that internally sustains its balanced state.</p>
+
+<p>For physicists, this is perhaps the most interesting part of the paper. The balanced state is not just a biological detail. It is a nonequilibrium dynamical regime of an interacting many-body system. Excitatory and inhibitory populations act as coupled components whose collective fluctuations are constrained by recurrent network architecture.</p>
+
+<hr />
+
+<h2 id="balance-as-a-dynamical-symmetry">Balance as a dynamical symmetry</h2>
+
+<p>One useful way to think about the result is in terms of symmetry.</p>
+
+<p>If normalized excitation and inhibition are plotted against one another, perfect balance would correspond to a symmetry line or plane. Real data do not lie exactly on this line. Instead, the system fluctuates around it. The magnitude and structure of deviations from this symmetry provide information about the state of the network.</p>
+
+<p>In this sense, E/I balance is not a fixed point. It is closer to a dynamical symmetry of the ensemble activity. The system is allowed to fluctuate, but those fluctuations are organized around a relation between excitation and inhibition.</p>
+
+<p>This view also helps explain why multiscale analysis is useful. A system can appear balanced at one temporal resolution and less balanced at another. Alternatively, deviations may be brief at fine scales but disappear under coarse-graining. By examining multiple time scales, one can distinguish between transient microscopic deviations and larger-scale changes in the dynamical regime.</p>
+
+<p>This perspective naturally connects cortical E/I balance to concepts from statistical physics: coarse-graining, collective variables, symmetry, fluctuations, and state transitions.</p>
+
+<hr />
+
+<h2 id="seizures-breakdown-of-balance-is-not-simply-excess-excitation">Seizures: breakdown of balance is not simply excess excitation</h2>
+
+<p>The pathological case examined in the paper is epileptic seizure activity. A common simplified view of seizures is that they result from too much excitation or too little inhibition. While this intuition captures part of the story, it is too crude.</p>
+
+<p>The ensemble recordings show a more complex picture. During seizures, the multiscale balance between excitatory and inhibitory populations breaks down. But this breakdown is not simply a monotonic dominance of excitation. In some seizure epochs, inhibitory activity initially dominates. In others, some excitatory and inhibitory neurons increase firing, while others decrease or stop firing. The pathology is not merely a scalar increase in excitation. It is a disruption of the coordinated population-level relation between excitation and inhibition.</p>
+
+<p>This is an important conceptual shift. The pathological object is not simply (E/I &gt; 1) or (E/I &lt; 1). The pathological object is the loss of structured interdependence between the two ensembles across time and scale.</p>
+
+<p>In the seizure examples, the two populations may follow similar multiscale trends before seizure onset. Then, at seizure initiation, they become disengaged. Their fluctuations no longer maintain the coordinated structure seen during normal brain states. Later, the balance can re-emerge, but the recovery does not occur on a universal time scale. In some cases, the network returns relatively quickly to a balanced regime; in others, the imbalance persists even after the seizure has electrographically ended.</p>
+
+<p>This suggests that seizure termination and recovery of balanced ensemble dynamics are related but not identical. The end of the electrographic seizure does not necessarily imply immediate restoration of normal population-level E/I coordination.</p>
+
+<hr />
+
+<h2 id="why-this-matters-for-systems-neuroscience">Why this matters for systems neuroscience</h2>
+
+<p>For systems neuroscience, the paper provides evidence that E/I balance is a real, measurable property of ensemble activity in higher mammals. It is not only a concept inferred from intracellular recordings, slice physiology, or theoretical models. It can be observed directly in large-scale spike recordings from human and macaque neocortex.</p>
+
+<p>The result also emphasizes that brain state matters. Wakefulness, REM sleep, light sleep, and slow-wave sleep all preserve E/I balance, but they differ in the structure and magnitude of deviations from that balance. Slow-wave sleep, with its Up/Down-state dynamics, produces stronger departures from the ideal symmetry relation.</p>
+
+<p>This means that E/I balance should not be treated as a single number. It should be treated as a state-dependent dynamical property, measurable across temporal scales.</p>
+
+<hr />
+
+<h2 id="why-this-matters-for-computational-neuroscience">Why this matters for computational neuroscience</h2>
+
+<p>For computational neuroscience, the paper supports a view of cortical computation in which recurrent local networks generate a stable but flexible operating regime. Balanced networks are attractive because they can produce irregular activity, rapid responsiveness, decorrelation, and rich transient dynamics. These properties are useful for computation.</p>
+
+<p>The finding that human and monkey cortical ensembles exhibit multiscale E/I balance strengthens the biological relevance of these models. It also suggests that future models of cortical computation should not merely reproduce firing rates or pairwise correlations. They should reproduce the multiscale temporal relation between excitatory and inhibitory populations.</p>
+
+<p>A model that generates realistic cortical activity should be able to answer questions such as:</p>
+
+<ul>
+  <li>Do excitatory and inhibitory ensembles co-fluctuate across scales?</li>
+  <li>Does the E/I cross-correlation peak near zero lag at the population level?</li>
+  <li>Are deviations from balance state-dependent?</li>
+  <li>Does the model reproduce stronger balance deviations during slow-wave-like regimes?</li>
+  <li>Does pathological activity correspond to breakdown of the E/I relation rather than simply increased excitation?</li>
+</ul>
+
+<p>These are stronger constraints than fitting mean activity or power spectra alone.</p>
+
+<hr />
+
+<h2 id="why-this-matters-for-physics-and-complex-systems">Why this matters for physics and complex systems</h2>
+
+<p>For physicists interested in the cortex, this work frames E/I balance as a collective phenomenon in a recurrent, nonequilibrium system.</p>
+
+<p>The cortex is composed of many interacting units, but the relevant macroscopic variables are not always obvious. Here, the ensemble activities of putative excitatory and inhibitory populations act as coarse-grained variables:</p>
+
+\[E_s(t), \qquad I_s(t),\]
+
+<p>defined across temporal scales (s). Their relation reveals a macroscopic constraint on cortical dynamics.</p>
+
+<p>From this perspective, E/I balance resembles an emergent organizing principle. The system is not static. It fluctuates continuously. But those fluctuations are structured. Normal cortical states occupy a region near a balance manifold. Slow-wave sleep broadens the excursions from that manifold. Seizures correspond to a more dramatic breakdown of the coordinated relation.</p>
+
+<p>This connects naturally to several themes in complex systems:</p>
+
+<ol>
+  <li><strong>Coarse-graining:</strong> the E/I relation persists across temporal resolutions.</li>
+  <li><strong>Collective variables:</strong> population activity reveals structure not reducible to individual neurons.</li>
+  <li><strong>Self-organization:</strong> recurrent interactions generate zero-lag ensemble coordination.</li>
+  <li><strong>State transitions:</strong> sleep and seizures alter the geometry of deviations from balance.</li>
+  <li><strong>Pathological dynamics:</strong> disease can be viewed as loss of a collective dynamical constraint.</li>
+</ol>
+
+<p>The paper therefore provides not only a result about cortical inhibition, but also an example of how neural recordings can be studied using the language of statistical physics and dynamical systems.</p>
+
+<hr />
+
+<h2 id="a-note-on-interpretation-and-limitations">A note on interpretation and limitations</h2>
+
+<p>There are, of course, important qualifications. RS and FS classification is a powerful but imperfect proxy for excitatory and inhibitory identity. Not every broad-spiking neuron is excitatory, and not every inhibitory neuron is fast-spiking. The recordings sample a local cortical region through Utah arrays, rather than the entire cortical circuit. The human data come from patients implanted for epilepsy monitoring, although the normal-state analyses were performed outside seizure epochs. The seizure examples demonstrate multiscale breakdown of E/I balance, but they do not establish a causal mechanism for seizure generation.</p>
+
+<p>These limitations do not weaken the main conceptual result. Rather, they define the scope of the claim. The paper shows that, within the recorded cortical ensembles, putative excitatory and inhibitory populations exhibit robust, multiscale, state-dependent co-fluctuation in human and monkey neocortex, and that this relation breaks down during seizures.</p>
+
+<p>The result is empirical, but its interpretation is dynamical.</p>
+
+<hr />
+
+<h2 id="conclusion-cortical-balance-as-an-operating-regime">Conclusion: cortical balance as an operating regime</h2>
+
+<p>The main message of the paper is that E/I balance in the primate neocortex is not a static ratio and not merely a theoretical abstraction. It is a dynamic, multiscale population-level regime.</p>
+
+<p>In normal brain states, excitatory and inhibitory ensembles fluctuate together across temporal scales. In slow-wave sleep, the system remains balanced but shows stronger deviations, likely reflecting transitions through Up and Down states. In seizures, the coordinated E/I relation breaks down in a complex and multiscale manner. Comparison with conductance-based recurrent network models suggests that the normal balanced regime is largely self-organized by local recurrent connectivity.</p>
+
+<p>For neuroscience, this provides evidence that balanced activity is a fundamental feature of normal cortical operation in higher mammals. For computational neuroscience, it strengthens the relevance of recurrent balanced network models. For physics and complex systems, it offers a concrete example of an emergent dynamical constraint in a biological many-body system.</p>
+
+<p>The cortex appears to operate near balance not because it is quiet or static, but because recurrent excitation and inhibition continuously co-organize its fluctuations. That dynamic balance may be one of the conditions that allows cortical networks to remain simultaneously stable, variable, and computationally flexible.</p>
+
+  </section>
+
+  
+  <section class="paper__section">
+    <h2>The room this opens</h2>
+    <div class="linkbar">
+      <a href="/papers/Dynamic-balance-EI/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="20" x2="12" y2="12"/><line x1="12" y1="12" x2="21" y2="4"/><line x1="12" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="21" y2="20"/></svg>
+        Follow this path into the Maze
+      </a>
+    </div>
+  </section>
+  
+</article>
+
+      <footer class="foot">
+  <span>© 2026 · Nima Dehghani</span>
+  <span>
+    <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    ·
+    <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+  </span>
+</footer>
+
+    </main>
+  </div>
+
+  <script src="/assets/js/quotes.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

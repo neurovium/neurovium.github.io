@@ -1,4 +1,424 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://neurovium.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neurovium.github.io/" rel="alternate" type="text/html" /><updated>2026-05-23T17:21:24+00:00</updated><id>https://neurovium.github.io/feed.xml</id><title type="html">Nima Dehghani</title><subtitle>Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics</subtitle><author><name>Nima Dehghani</name></author><entry><title type="html">Systematizing Cellular Complexity: Toward a Hilbertian Program for Biology</title><link href="https://neurovium.github.io/posts/pblog-Cell-hilbert/" rel="alternate" type="text/html" title="Systematizing Cellular Complexity: Toward a Hilbertian Program for Biology" /><published>2024-11-05T00:00:00+00:00</published><updated>2024-11-05T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-Cell-hilbert</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-Cell-hilbert/"><![CDATA[<p><em>Companion post to:</em><br />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://neurovium.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neurovium.github.io/" rel="alternate" type="text/html" /><updated>2026-05-23T17:48:37+00:00</updated><id>https://neurovium.github.io/feed.xml</id><title type="html">Nima Dehghani</title><subtitle>Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics</subtitle><author><name>Nima Dehghani</name></author><entry><title type="html">Rethinking Physical Complexity in the Data-Driven Era</title><link href="https://neurovium.github.io/posts/pblog-CRX/" rel="alternate" type="text/html" title="Rethinking Physical Complexity in the Data-Driven Era" /><published>2025-05-12T00:00:00+00:00</published><updated>2025-05-12T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-CRX</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-CRX/"><![CDATA[<p><em>Companion post to:</em><br />
+<strong>Compression, Regularity, Randomness and Emergent Structure: Rethinking Physical Complexity in the Data-Driven Era</strong><br />
+Nima Dehghani
+<em>arXiv</em> . 2505.07222 (2025)
+DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.48550/arXiv.2505.07222</code></p>
+
+<hr />
+
+<h1 id="rethinking-physical-complexity-in-the-data-driven-era">Rethinking Physical Complexity in the Data-Driven Era</h1>
+<h2 id="compression-regularity-randomness-and-the-role-of-machine-learning">Compression, Regularity, Randomness, and the Role of Machine Learning</h2>
+
+<p>Across physics, complex systems, computational neuroscience, and machine learning, we often face the same basic problem: we observe a system through data, and we want to know whether the data contain structure.</p>
+
+<p>But “structure” is not a simple word.</p>
+
+<p>A system may be predictable but trivial, like a pure sine wave. It may be unpredictable but structurally uninteresting, like idealized white noise. Or it may sit somewhere in between: partly regular, partly noisy, partly compressible, partly surprising. Many of the systems that matter scientifically—turbulent flows, biological networks, neural population activity, non-equilibrium physical systems, evolving ecosystems, and trained neural networks—live in precisely this intermediate regime.</p>
+
+<p>This is the regime we usually call <strong>complex</strong>.</p>
+
+<p>In our paper, <em>Compression, Regularity, Randomness and Emergent Structure: Rethinking Physical Complexity in the Data-Driven Era</em>, we revisit the foundations of complexity measurement from a contemporary data-driven perspective. The goal is not simply to review existing measures. There are already many excellent reviews of entropy, algorithmic complexity, information flow, and dynamical systems metrics. Instead, the goal is to ask a more structural question:</p>
+
+<p><strong>What are these measures actually measuring?</strong></p>
+
+<p>More specifically:</p>
+
+<ul>
+  <li>Are they measuring randomness?</li>
+  <li>Are they measuring regularity?</li>
+  <li>Are they measuring complexity?</li>
+  <li>Are they computationally accessible?</li>
+  <li>And how do modern machine-learning methods approximate the classical ideals that complexity theory often defines but cannot compute?</li>
+</ul>
+
+<p>The central claim of the paper is that many classical and modern approaches can be organized around three interrelated but distinct axes:</p>
+
+<ol>
+  <li><strong>regularity</strong>,</li>
+  <li><strong>randomness</strong>, and</li>
+  <li><strong>complexity</strong>.</li>
+</ol>
+
+<p>This may sound simple, but it changes how we interpret many familiar measures.</p>
+
+<hr />
+
+<h2 id="complexity-is-not-just-between-order-and-disorder">Complexity is not just “between order and disorder”</h2>
+
+<p>A common intuition in complexity science is that complexity lies somewhere between perfect order and complete randomness. This intuition is useful, but it can also be misleading if interpreted too literally.</p>
+
+<p>Perfect order is not complex. A crystal lattice, a repeated string, or a sinusoidal oscillation can be highly regular and easily described. Complete randomness is also not complex in the structural sense. A sequence of independent fair coin flips has maximal unpredictability, but it does not contain rich organization. It is incompressible, but not meaningful.</p>
+
+<p>Complexity is different. It involves structure that is not trivial, regularity that is not simply periodic, and randomness that does not fully erase organization.</p>
+
+<p>A useful way to think about this is that <strong>regularity and randomness are not strict opposites</strong>. They can coexist. A system may be locally unpredictable but globally structured. A chaotic attractor may generate trajectories that are difficult to predict point-by-point, while still occupying a highly organized region of state space. Neural population activity may appear noisy at the level of single units or electrodes, while still expressing low-dimensional modes, metastable states, or structured collective dynamics.</p>
+
+<p>This is why a single entropy value rarely tells the full story. High entropy may indicate genuine randomness, but it may also reflect hidden structure that the chosen representation fails to capture. Low entropy may indicate regularity, but not necessarily complexity. The key is to distinguish between <strong>unpredictability</strong>, <strong>compressible structure</strong>, and <strong>nontrivial organization</strong>.</p>
+
+<hr />
+
+<h2 id="the-three-axes-regularity-randomness-complexity">The three axes: regularity, randomness, complexity</h2>
+
+<p>The paper organizes the landscape around three axes.</p>
+
+<h3 id="randomness">Randomness</h3>
+
+<p>Randomness refers to unpredictability, irreducibility, or the absence of identifiable pattern. In statistical information theory, randomness is often associated with entropy. A probability distribution with many equally likely outcomes has high Shannon entropy. A time series whose future remains uncertain even given its past has a high entropy rate.</p>
+
+<p>At the algorithmic level, randomness has a deeper meaning. A string is algorithmically random if there is no shorter program that generates it. Its shortest description is essentially the string itself. This is the intuition behind Kolmogorov complexity.</p>
+
+<p>But these two notions are not identical. A sequence can appear statistically random under one description while still being generated by a compact deterministic rule. This distinction matters enormously in empirical science, because our measurements are always filtered through a choice of representation, scale, and coarse-graining.</p>
+
+<h3 id="regularity">Regularity</h3>
+
+<p>Regularity refers to predictable, recurring, or compressible structure. A system has regularity when there are patterns that can be used to summarize or predict it. These patterns may be periodicities, symmetries, conservation laws, low-dimensional manifolds, attractor geometry, causal states, motifs, or governing equations.</p>
+
+<p>Regularity is what makes modeling possible. If a dataset has no regularity, there is nothing to learn except its raw realization. If it has regularity, then a model can compress it.</p>
+
+<p>In this sense, regularity is tightly connected to scientific explanation. A good physical theory is a compression of many observations into a compact generative structure. Newton’s laws, Maxwell’s equations, the Navier-Stokes equations, statistical mechanics, and modern effective theories all operate by compressing observed phenomena into mathematical structures with predictive power.</p>
+
+<h3 id="complexity">Complexity</h3>
+
+<p>Complexity arises when regularity and randomness interact nontrivially. A complex system is not merely random, but it is also not simply ordered. Its structure may be distributed across scales. It may require memory to predict. It may exhibit emergent macrostates, collective modes, nonlinear interactions, or synergistic dependencies among components.</p>
+
+<p>This is why complexity should not be equated with entropy. Entropy measures uncertainty. Complexity concerns the organization of structure under uncertainty.</p>
+
+<p>A perfectly regular system can have low entropy and low complexity. A purely random system can have high entropy and low structural complexity. A complex system often lives in the middle: it contains enough regularity to be modeled, but enough variability, hierarchy, or nonlinear interaction to make the model nontrivial.</p>
+
+<hr />
+
+<h2 id="compression-as-the-organizing-principle">Compression as the organizing principle</h2>
+
+<p>The paper uses <strong>compression</strong> as a unifying lens.</p>
+
+<p>Compression gives an operational meaning to all three axes:</p>
+
+<ul>
+  <li>
+    <p><strong>Regularity enables compression.</strong><br />
+If data contain recurring patterns, symmetries, or low-dimensional structure, they can be described more compactly than by listing every observation.</p>
+  </li>
+  <li>
+    <p><strong>Randomness resists compression.</strong><br />
+A truly random sequence has no shorter description than itself.</p>
+  </li>
+  <li>
+    <p><strong>Complexity corresponds to nontrivial compression.</strong><br />
+A complex system is compressible, but not trivially so. Its compressed description may require a sophisticated model, a long computation, or a hierarchy of representations.</p>
+  </li>
+</ul>
+
+<p>This compression-based view links classical information theory, algorithmic complexity, statistical mechanics, and modern machine learning.</p>
+
+<p>In algorithmic information theory, the Kolmogorov complexity of an object is the length of the shortest program that generates it. In minimum description length approaches, the best model is the one that balances model complexity against the cost of encoding the data given the model. In physics, a successful theory compresses observations into laws, symmetries, and state variables. In machine learning, latent-variable models compress high-dimensional data into lower-dimensional representations that preserve what is useful for reconstruction, prediction, or generation.</p>
+
+<p>The language changes across fields, but the underlying question is similar:</p>
+
+<p><strong>What is the shortest, most structured, most useful description of the data?</strong></p>
+
+<hr />
+
+<h2 id="a-taxonomy-of-measures">A taxonomy of measures</h2>
+
+<p>The paper groups complexity-related measures into three broad families: statistical, algorithmic, and dynamical.</p>
+
+<p>Each family captures a different aspect of the regularity-randomness-complexity landscape.</p>
+
+<hr />
+
+<h2 id="1-statistical-measures-uncertainty-and-apparent-disorder">1. Statistical measures: uncertainty and apparent disorder</h2>
+
+<p>Statistical entropy measures quantify uncertainty in observed outcomes. Shannon entropy is the canonical example. Rényi and Tsallis entropies generalize this idea by changing sensitivity to rare or common events, heavy tails, or non-extensive behavior. Approximate entropy, sample entropy, and permutation entropy adapt entropy-like reasoning to time series, especially in physiological and dynamical settings.</p>
+
+<p>These measures are powerful because they are usually computable. They can be applied to empirical data with relatively modest assumptions. This is why entropy-based metrics are widely used in neuroscience, physiology, finance, climate science, and complex systems analysis.</p>
+
+<p>But statistical entropy measures have a limitation: they primarily quantify unpredictability. They do not necessarily detect deep structure.</p>
+
+<p>A high-entropy signal may be genuinely random, or it may contain structure that is invisible to the chosen statistic. A low-entropy signal may be predictable, but not complex. Entropy is therefore essential, but incomplete.</p>
+
+<p>This matters in computational neuroscience. Neural signals often look noisy, variable, and high-dimensional. Entropy-based measures can quantify aspects of this variability, but they may miss structured population dynamics, latent trajectories, coordination across areas, or task-dependent low-dimensional manifolds. The same issue appears in statistical physics and complex systems: macroscopic order may be hidden beneath microscopic fluctuations.</p>
+
+<p>Statistical measures are therefore best understood as measures of <strong>uncertainty</strong>, not as complete measures of complexity.</p>
+
+<hr />
+
+<h2 id="2-algorithmic-measures-structure-description-length-and-depth">2. Algorithmic measures: structure, description length, and depth</h2>
+
+<p>Algorithmic measures move from probability distributions to descriptions.</p>
+
+<p>The central object here is Kolmogorov complexity: the length of the shortest program that generates a string or dataset. If a sequence can be generated by a short program, it has low Kolmogorov complexity. If no shorter description exists, it is algorithmically random.</p>
+
+<p>This gives a profound definition of randomness and regularity. But it also introduces a major problem: Kolmogorov complexity is uncomputable in general.</p>
+
+<p>Other algorithmic measures refine this picture.</p>
+
+<p><strong>Effective complexity</strong>, introduced by Gell-Mann and Lloyd, aims to isolate the complexity of the regularities in a system rather than counting randomness itself. A random string may have high Kolmogorov complexity, but low effective complexity, because it lacks meaningful structure. Effective complexity asks: how complex is the structured part?</p>
+
+<p><strong>Logical depth</strong>, introduced by Bennett, measures the computational effort required to unfold an object from its compressed description. This captures the intuition that complex objects are not merely compressible; they may require a long generative history. A random string is shallow because it is just printed directly. A trivial string is shallow because it is generated easily. A deep object is one whose compact description requires substantial computation to produce the observed structure.</p>
+
+<p><strong>Statistical complexity</strong>, from computational mechanics, measures the amount of information stored in the causal states of a process—the minimal predictive memory needed to optimally forecast its future. This is especially important for dynamical systems, because it links complexity to prediction.</p>
+
+<p>These measures are conceptually powerful because they distinguish structure from noise. But they are also difficult or impossible to compute exactly. This is the central tension of classical complexity theory:</p>
+
+<p><strong>The measures that most deeply capture structure are often the least accessible in practice.</strong></p>
+
+<hr />
+
+<h2 id="3-dynamical-information-measures-storage-transfer-and-modification">3. Dynamical information measures: storage, transfer, and modification</h2>
+
+<p>Many empirical systems are not static objects. They evolve. Their complexity lies not only in what is present at one time, but in how information is stored, transmitted, transformed, and generated over time.</p>
+
+<p>Dynamical information measures address this.</p>
+
+<p><strong>Entropy rate</strong> measures the uncertainty of a process after accounting for its past. A low entropy rate indicates strong temporal regularity; a high entropy rate indicates persistent unpredictability.</p>
+
+<p><strong>Transfer entropy</strong> measures directed information flow from one process to another. It asks whether knowing the past of process (X) improves prediction of the future of process (Y), beyond what (Y)’s own past already provides. This has made transfer entropy influential in neuroscience, where researchers often want to infer directed functional interactions among brain regions or neural populations.</p>
+
+<p><strong>Active information storage</strong> measures how much of a system’s future is predictable from its own past. This is a measure of memory.</p>
+
+<p><strong>Information modification</strong> and related ideas from partial information decomposition attempt to quantify something even subtler: the emergence of new information through synergistic interactions among multiple sources. This is especially relevant for biological and neural systems, where collective computation may not be reducible to pairwise interactions.</p>
+
+<p>These dynamical measures are important because complexity is often temporal. In cortical dynamics, for example, the relevant structure may not be visible in a static snapshot. It may appear in transitions between states, traveling waves, metastable assemblies, feedback loops, cross-frequency interactions, or context-dependent information flow.</p>
+
+<p>Dynamical measures therefore occupy a crucial region of the landscape: they connect randomness, regularity, and complexity to time.</p>
+
+<hr />
+
+<h2 id="the-computability-bottleneck">The computability bottleneck</h2>
+
+<p>Once these measures are placed side by side, a pattern emerges.</p>
+
+<p>The easiest measures to compute are often the shallowest conceptually. Shannon entropy, permutation entropy, and related statistics can be estimated directly from data, although with the usual finite-sample and estimator issues.</p>
+
+<p>The deepest measures—Kolmogorov complexity, logical depth, sophistication, and effective complexity—are either formally uncomputable or practically inaccessible without strong assumptions.</p>
+
+<p>This gives rise to a depth-accessibility tradeoff:</p>
+
+<ul>
+  <li>Shallow measures are easy to compute but may miss structure.</li>
+  <li>Deep measures capture structure more faithfully but are often uncomputable.</li>
+  <li>Intermediate measures require modeling assumptions, estimators, or approximations.</li>
+</ul>
+
+<p>This is not just a technical inconvenience. It is a foundational issue. Complexity science has often defined its most powerful concepts in idealized mathematical terms, while empirical science requires finite data, noisy measurements, limited samples, and imperfect models.</p>
+
+<p>The practical question becomes:</p>
+
+<p><strong>If the ideal measure is uncomputable, what kind of approximation is scientifically useful?</strong></p>
+
+<p>This is where modern machine learning enters the story.</p>
+
+<hr />
+
+<h2 id="machine-learning-as-an-approximation-to-classical-complexity-ideals">Machine learning as an approximation to classical complexity ideals</h2>
+
+<p>Modern machine learning does not solve the uncomputability of Kolmogorov complexity. A neural network does not magically compute the shortest possible program for a dataset.</p>
+
+<p>But machine learning does something operationally important. It approximates many of the goals that classical complexity measures formalize.</p>
+
+<p>Deep learning models search for compressed representations. They identify latent variables. They discard irrelevant variability. They learn predictive structure. They can impose physical constraints. They can discover approximate governing equations. They can generate new samples from learned distributions.</p>
+
+<p>In other words, many modern data-driven methods act as <strong>pragmatic surrogates</strong> for uncomputable or inaccessible complexity measures.</p>
+
+<p>They do not compute the classical quantities exactly. But they approximate their operational roles.</p>
+
+<hr />
+
+<h2 id="autoencoders-and-vaes-compression-in-latent-space">Autoencoders and VAEs: compression in latent space</h2>
+
+<p>Autoencoders provide the simplest example.</p>
+
+<p>An autoencoder maps high-dimensional data (x) into a lower-dimensional latent representation (z), and then reconstructs (x) from (z). The bottleneck forces the model to preserve information that is useful for reconstruction while discarding irrelevant variation.</p>
+
+<p>This is a practical form of compression.</p>
+
+<p>Variational autoencoders extend this idea by introducing a probabilistic latent space and a regularized objective. The VAE balances reconstruction accuracy against the complexity or entropy of the latent representation. This is not identical to minimum description length or Kolmogorov complexity, but it is strongly related in spirit: the model seeks a compact latent code that captures the generative structure of the data.</p>
+
+<p>For complex physical or biological systems, this matters because the latent space may reveal macroscopic variables that are not obvious in the raw measurements.</p>
+
+<p>In computational neuroscience, for example, latent-variable models have become central for interpreting population activity. High-dimensional neural recordings often contain lower-dimensional trajectories related to movement, perception, attention, internal state, or task structure. The latent model compresses neural activity into coordinates that may better reflect the underlying dynamical organization.</p>
+
+<p>From the perspective of complexity theory, this is not merely dimensionality reduction. It is an attempt to separate regularity from noise.</p>
+
+<hr />
+
+<h2 id="latent-odes-koopman-models-and-dynamical-regularity">Latent ODEs, Koopman models, and dynamical regularity</h2>
+
+<p>For time-evolving systems, static compression is not enough. We want latent variables that evolve according to structured dynamics.</p>
+
+<p>Latent ODEs model trajectories in a continuous-time latent space. Rather than treating observations as independent samples, they learn a dynamical system whose latent state evolves over time. This is especially relevant for irregularly sampled biological, physical, or clinical data.</p>
+
+<p>Koopman autoencoders pursue a related but distinct idea: they seek latent coordinates in which nonlinear dynamics become approximately linear. This connects deep learning to classical dynamical systems theory. The hope is that a complex nonlinear system may become simpler when viewed in the right coordinates.</p>
+
+<p>Both approaches approximate the same broad objective: find a compressed representation in which temporal evolution becomes more predictable.</p>
+
+<p>In the language of the paper, they are operational approximations to dynamical regularity. They reduce entropy rate in the learned representation. They preserve predictive information. They seek a latent space in which complexity becomes organized enough to model.</p>
+
+<hr />
+
+<h2 id="symbolic-regression-and-the-search-for-compact-laws">Symbolic regression and the search for compact laws</h2>
+
+<p>Another important class of methods is symbolic regression.</p>
+
+<p>Methods such as SINDy, AI Feynman, and related approaches search for explicit equations that describe observed dynamics. Rather than learning a black-box mapping, they attempt to recover compact symbolic rules.</p>
+
+<p>This has a direct connection to compression. A symbolic equation is a short description. If a system’s behavior can be generated by a compact equation, then the equation is a compressed representation of the data.</p>
+
+<p>Symbolic regression therefore approximates a central scientific ideal: the discovery of governing laws.</p>
+
+<p>It also resonates with logical depth. A short equation may unfold into rich, complex behavior over time. The complexity is not in the length of the equation alone, but in the computational unfolding of that equation into trajectories, patterns, bifurcations, or emergent structures.</p>
+
+<p>This is one reason symbolic regression is so attractive for physics and complex systems. It does not merely predict; it offers a candidate compressed explanation.</p>
+
+<hr />
+
+<h2 id="physics-informed-neural-networks-constraining-the-search-for-structure">Physics-informed neural networks: constraining the search for structure</h2>
+
+<p>Unconstrained neural networks are powerful function approximators, but they can also learn the wrong structure. They may fit noise, exploit shortcuts, or produce representations that are predictive but physically meaningless.</p>
+
+<p>Physics-informed neural networks address this by embedding physical constraints directly into the learning objective. Differential equations, conservation laws, boundary conditions, symmetries, or known operators can be included in the loss function.</p>
+
+<p>This changes the nature of learning. The model is no longer searching over arbitrary functions. It is searching within a space constrained by physical regularity.</p>
+
+<p>In the language of effective complexity, this is crucial. Effective complexity is about the structured regularities of a system, not the accidental details or noise. PINNs and related physics-informed models attempt to bias learning toward those regularities.</p>
+
+<p>This is also a broader lesson for AI in science. Predictive accuracy is not enough. Scientific models must learn the right compression: a representation that captures the relevant structure of the system, not merely a curve-fitting shortcut.</p>
+
+<hr />
+
+<h2 id="latent-spaces-as-operational-arenas-for-complexity">Latent spaces as operational arenas for complexity</h2>
+
+<p>One of the main arguments of the paper is that latent spaces should not be viewed merely as engineering devices.</p>
+
+<p>A latent space is an arena in which a learning system negotiates among regularity, randomness, and complexity.</p>
+
+<p>In a good latent representation:</p>
+
+<ul>
+  <li>regularities are compressed,</li>
+  <li>irrelevant variability is discarded or marginalized,</li>
+  <li>uncertainty is represented,</li>
+  <li>dynamics become more predictable,</li>
+  <li>structure becomes easier to manipulate, interpret, or generate.</li>
+</ul>
+
+<p>This makes latent spaces operational approximations to classical complexity-theoretic ideals.</p>
+
+<p>Classical theory asks: what is the shortest description, the meaningful structure, the predictive state, the computational unfolding, the non-random regularity?</p>
+
+<p>Modern machine learning asks similar questions in a different language: what latent representation minimizes reconstruction loss, maximizes predictive likelihood, respects physical constraints, separates generative factors, or supports downstream generalization?</p>
+
+<p>The connection is not exact, but it is deep.</p>
+
+<p>Latent spaces are where compression, regularity extraction, and complexity management become computationally actionable.</p>
+
+<hr />
+
+<h2 id="why-this-matters-for-computational-neuroscience">Why this matters for computational neuroscience</h2>
+
+<p>The computational neuroscience audience has a special stake in this discussion.</p>
+
+<p>Neural data are high-dimensional, noisy, nonstationary, multiscale, and dynamical. They are also structured. The brain is not a white-noise generator. Nor is it a simple clock. It is a system in which microscopic variability and macroscopic organization coexist.</p>
+
+<p>This makes neuroscience a natural domain for the regularity-randomness-complexity framework.</p>
+
+<p>Entropy-based measures can quantify variability in spike trains, LFPs, EEG, ECoG, calcium imaging, or behavioral signals. Dynamical measures can probe information flow, memory, and directed interactions. Algorithmic and compression-based perspectives can help distinguish meaningful structure from noise. Latent dynamical models can reveal low-dimensional trajectories and state-space organization.</p>
+
+<p>But the framework also warns against overinterpretation.</p>
+
+<p>A neural signal with high entropy is not necessarily “more complex.” A low-dimensional latent trajectory is not automatically the true underlying computation. A good reconstruction does not guarantee a physically or biologically meaningful representation. A learned model may compress the data in a way that is useful for prediction but misaligned with the mechanisms we care about.</p>
+
+<p>This is why complexity measures and machine-learning models should be treated as part of a broader inferential strategy. They require validation, surrogate controls, synthetic benchmarks, perturbation tests, and domain-specific interpretation.</p>
+
+<p>The goal is not to assign a single complexity number to the brain. The goal is to understand which aspects of neural activity are regular, which are random or effectively unpredictable, and which reflect nontrivial dynamical organization.</p>
+
+<hr />
+
+<h2 id="why-this-matters-for-physics-and-complex-systems">Why this matters for physics and complex systems</h2>
+
+<p>For physicists and complex-systems researchers, the key point is that modern data-driven methods are not separate from the classical questions of complexity science. They are increasingly becoming practical tools for approximating them.</p>
+
+<p>Physics has always relied on compression. A law of nature is a compression of empirical regularity. A state variable is a coarse-grained representation. A phase diagram is a compressed map of possible regimes. A renormalization-group flow organizes behavior across scales.</p>
+
+<p>Machine learning now adds a new layer to this tradition. It can search for latent variables, discover approximate symmetries, model high-dimensional dynamics, and identify compact representations in regimes where hand-derived theory is difficult.</p>
+
+<p>But the success of these methods should be interpreted through the lens of complexity. What kind of structure has the model learned? What has it discarded? What regularities are imposed by the architecture? What randomness is modeled explicitly? What is merely absorbed into latent noise? What is the computational cost of unfolding the representation back into observed behavior?</p>
+
+<p>These are not secondary questions. They determine whether a learned model is scientifically meaningful.</p>
+
+<hr />
+
+<h2 id="the-limits-of-neural-proxies">The limits of neural proxies</h2>
+
+<p>It is important to be clear: machine learning does not eliminate the foundational problems.</p>
+
+<p>Autoencoders may learn compressed representations, but not necessarily minimal or interpretable ones. VAEs impose priors that may oversmooth rare events or distort multimodal structure. Latent ODEs may impose smooth dynamics where the true system has abrupt transitions. Koopman models may find useful linear embeddings without identifying the mechanistic variables of interest. PINNs may enforce the wrong physics if the assumed equations are incomplete.</p>
+
+<p>Every proxy has an inductive bias.</p>
+
+<p>This is why the paper argues for a pluralistic and operational view. There is no universal complexity measure that works for every system, scale, and scientific question. The right measure depends on the data, the domain, the coarse-graining, the available prior knowledge, and the purpose of the analysis.</p>
+
+<p>For some questions, entropy is enough. For others, one needs dynamical information flow. For others, compression-based proxies, symbolic regression, or physics-informed latent models are more appropriate.</p>
+
+<p>The practical question is not “what is the complexity of this system?” in the abstract.</p>
+
+<p>The better question is:</p>
+
+<p><strong>Which form of regularity, randomness, or complexity is relevant to the scientific problem at hand, and what approximation can capture it with known biases?</strong></p>
+
+<hr />
+
+<h2 id="toward-operational-complexity">Toward operational complexity</h2>
+
+<p>The broader motivation of the paper is to move from abstract complexity to <strong>operational complexity</strong>.</p>
+
+<p>Operational complexity means that we do not merely define ideal quantities. We ask how they can be approximated, estimated, learned, validated, and used in real scientific workflows.</p>
+
+<p>This requires connecting several traditions:</p>
+
+<ul>
+  <li>statistical mechanics and coarse-graining,</li>
+  <li>algorithmic information theory,</li>
+  <li>computational mechanics,</li>
+  <li>nonlinear dynamics,</li>
+  <li>information theory,</li>
+  <li>representation learning,</li>
+  <li>physics-informed machine learning,</li>
+  <li>computational neuroscience,</li>
+  <li>and AI-guided scientific discovery.</li>
+</ul>
+
+<p>The common thread is compression: the search for structured descriptions that preserve what matters.</p>
+
+<p>In the data-driven era, complexity science is no longer only about defining measures. It is also about building models that can discover the right representations from data.</p>
+
+<hr />
+
+<h2 id="outlook">Outlook</h2>
+
+<p>The next generation of scientific machine learning should not only optimize predictive accuracy. It should explicitly incorporate ideas from complexity theory:</p>
+
+<ul>
+  <li>compression,</li>
+  <li>regularity extraction,</li>
+  <li>uncertainty modeling,</li>
+  <li>coarse-graining,</li>
+  <li>dynamical structure,</li>
+  <li>symbolic representation,</li>
+  <li>and the separation of meaningful structure from noise.</li>
+</ul>
+
+<p>For AI applied to physical and biological systems, this means building models that do more than fit data. They should reveal structure, respect constraints, expose latent variables, support interpretation, and generalize across regimes.</p>
+
+<p>For complexity science, machine learning offers a new operational toolkit. It cannot compute the uncomputable, but it can approximate some of the goals that motivated those ideal measures in the first place.</p>
+
+<p>This is the central message of the paper: classical complexity theory and modern machine learning are not separate conversations. They are converging on the same problem from different directions.</p>
+
+<p>Classical theory asks what complexity is.</p>
+
+<p>Machine learning asks how structure can be learned from data.</p>
+
+<p>The data-driven era forces us to bring these questions together.</p>]]></content><author><name>Nima Dehghani</name></author><category term="Data-Driven Modeling" /><category term="AI" /><category term="Complexity" /><category term="Compression" /><category term="Randomness" /><category term="Regularity" /><summary type="html"><![CDATA[Companion post to: Compression, Regularity, Randomness and Emergent Structure: Rethinking Physical Complexity in the Data-Driven Era Nima Dehghani arXiv . 2505.07222 (2025) DOI: https://doi.org/10.48550/arXiv.2505.07222]]></summary></entry><entry><title type="html">Systematizing Cellular Complexity: Toward a Hilbertian Program for Biology</title><link href="https://neurovium.github.io/posts/pblog-Cell-hilbert/" rel="alternate" type="text/html" title="Systematizing Cellular Complexity: Toward a Hilbertian Program for Biology" /><published>2024-11-05T00:00:00+00:00</published><updated>2024-11-05T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-Cell-hilbert</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-Cell-hilbert/"><![CDATA[<p><em>Companion post to:</em><br />
 <strong>Systematizing Cellular Complexity: Toward a Hilbertian Program for Biology</strong><br />
 Nima Dehghani
 <em>Plos Complex Systems</em> . PLOS Complex Syst 1(3): e0000013
@@ -403,7 +823,7 @@ When is a computational description merely a useful model, and when is it physic
 
 <p>The goal is not to decide once and for all whether “the brain is a computer,” whether “cells compute,” or whether “the universe computes.” Those questions are too broad. The better goal is to develop a formal framework that tells us what must be true for a physical system, or part of a physical system, to count as computing.</p>
 
-<p>That is the direction this paper takes: away from computation as metaphor, and toward computation as structured physical process.</p>]]></content><author><name>Nima Dehghani</name></author><category term="physical computation" /><category term="biological computation" /><category term="quantum computing" /><category term="compositionality" /><summary type="html"><![CDATA[Companion post to: A category-theoretic perspective on physical computation, biological computation, and system compositionality Nima Dehghani, Gianluca Caterina Journal of Physics: Complexity . Volume 5, Number 3 DOI: https://doi.org/10.1088/2632-072X/ad6051]]></summary></entry><entry><title type="html">Beyond the Relay: A Computational Perspective on the Thalamocortical Cognitive Engine</title><link href="https://neurovium.github.io/posts/pblog-Compute-thalamus/" rel="alternate" type="text/html" title="Beyond the Relay: A Computational Perspective on the Thalamocortical Cognitive Engine" /><published>2019-07-01T00:00:00+00:00</published><updated>2019-07-01T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-Compute.-thalamus</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-Compute-thalamus/"><![CDATA[<p><em>Companion post to:</em><br />
+<p>That is the direction this paper takes: away from computation as metaphor, and toward computation as structured physical process.</p>]]></content><author><name>Nima Dehghani</name></author><category term="physical computation" /><category term="biological computation" /><category term="quantum computing" /><category term="compositionality" /><summary type="html"><![CDATA[Companion post to: A category-theoretic perspective on physical computation, biological computation, and system compositionality Nima Dehghani, Gianluca Caterina Journal of Physics: Complexity . Volume 5, Number 3 DOI: https://doi.org/10.1088/2632-072X/ad6051]]></summary></entry><entry><title type="html">Beyond the Relay: A Computational Perspective on the Thalamocortical Cognitive Engine</title><link href="https://neurovium.github.io/posts/pblog-Compute-thalamus/" rel="alternate" type="text/html" title="Beyond the Relay: A Computational Perspective on the Thalamocortical Cognitive Engine" /><published>2019-07-01T00:00:00+00:00</published><updated>2019-07-01T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-Compute-thalamus</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-Compute-thalamus/"><![CDATA[<p><em>Companion post to:</em><br />
 <em>*A Computational Perspective of the Role of the Thalamus in Cognition **<br />
 Nima Dehghani, Ralf D. Wimmer
 *Neural Computation</em> . (2019) 31 (7): 1380–1418.
@@ -1798,7 +2218,227 @@ DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.3389/
 
 <p>Only then can stimulation move from empirical intervention toward principled control.</p>
 
-<hr />]]></content><author><name>Nima Dehghani</name></author><summary type="html"><![CDATA[Companion post to: Theoretical Principles of Multiscale Spatiotemporal Control of Neuronal Networks: A Complex Systems Perspective Nima Dehghani Frontiers in Computational Neuroscience 29, pages 371–387, (2010) DOI: https://doi.org/10.3389/fncom.2018.00081]]></summary></entry><entry><title type="html">Revisiting the Critical Brain: Neuronal Avalanches, Power Laws, and the Statistical Structure of In Vivo Cortex</title><link href="https://neurovium.github.io/posts/pblog-Avalanche-spikeLfp/" rel="alternate" type="text/html" title="Revisiting the Critical Brain: Neuronal Avalanches, Power Laws, and the Statistical Structure of In Vivo Cortex" /><published>2012-08-12T00:00:00+00:00</published><updated>2012-08-12T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-Avalanche-spikeLfp</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-Avalanche-spikeLfp/"><![CDATA[<p><em>Companion post to:</em><br />
+<hr />]]></content><author><name>Nima Dehghani</name></author><summary type="html"><![CDATA[Companion post to: Theoretical Principles of Multiscale Spatiotemporal Control of Neuronal Networks: A Complex Systems Perspective Nima Dehghani Frontiers in Computational Neuroscience 29, pages 371–387, (2010) DOI: https://doi.org/10.3389/fncom.2018.00081]]></summary></entry><entry><title type="html">Multiscale evidence for self-organized cortical balance</title><link href="https://neurovium.github.io/posts/pblog-Dynamic-balance-EI/" rel="alternate" type="text/html" title="Multiscale evidence for self-organized cortical balance" /><published>2016-03-16T00:00:00+00:00</published><updated>2016-03-16T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-Dynamic-balance-EI</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-Dynamic-balance-EI/"><![CDATA[<p><em>Companion post to:</em><br />
+<strong>Dynamic Balance of Excitation and Inhibition in Human and Monkey Neocortex</strong><br />
+Nima Dehghani, Adrien Peyrache, Bartosz Telenczuk, Michel Le Van Quyen, Eric Halgren, Sydney S. Cash, Nicholas G. Hatsopoulos and Alain Destexhe<br />
+<em>Scientific Reports</em> . 6, 23176 (2016).
+DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.1038/srep23176</code></p>
+
+<hr />
+
+<h1 id="dynamic-balance-of-excitation-and-inhibition-in-human-and-monkey-neocortex">Dynamic Balance of Excitation and Inhibition in Human and Monkey Neocortex</h1>
+
+<p>A central idea in theoretical and computational neuroscience is that cortical networks operate in a regime where excitation and inhibition are not merely both present, but dynamically balanced. In this view, the cortex is not a system in which excitation acts and inhibition simply suppresses it after the fact. Rather, excitatory and inhibitory populations co-evolve, fluctuate together, and jointly shape the dynamical state of the network.</p>
+
+<p>This idea has deep roots in theoretical neuroscience and statistical physics. Balanced network theory showed that large recurrent networks of excitatory and inhibitory neurons can produce irregular, self-sustained activity without requiring finely tuned external input. Such networks can remain active, variable, and responsive while avoiding runaway excitation or complete quiescence. This is one reason why balanced excitation and inhibition has become a central concept in understanding cortical computation.</p>
+
+<p>But an important empirical question remained: does this kind of dynamic E/I balance exist in the neocortex of higher mammals, including humans?</p>
+
+<p>In our paper, <strong>Dynamic Balance of Excitation and Inhibition in Human and Monkey Neocortex</strong>, we addressed this question using dense multielectrode recordings from human and macaque cortex. The main result is that excitatory and inhibitory ensembles are dynamically balanced across the wake–sleep cycle in both human and monkey neocortex. This balance is not static. It is a multiscale dynamical relation: excitatory and inhibitory populations co-fluctuate over many temporal scales, with small and state-dependent deviations from perfect balance. The strongest deviations occur during slow-wave sleep, and the balance breaks down during epileptic seizures.</p>
+
+<p>The broader implication is that cortical E/I balance should be understood not simply as a ratio, or as a local cellular property, but as a collective dynamical regime of recurrent cortical networks.</p>
+
+<hr />
+
+<h2 id="from-cellular-ei-balance-to-population-level-dynamics">From cellular E/I balance to population-level dynamics</h2>
+
+<p>Excitation and inhibition can be discussed at several levels. At the synaptic level, one may ask whether excitatory and inhibitory conductances into a cell are balanced. At the circuit level, one may ask whether excitatory and inhibitory populations track one another. At the systems level, one may ask whether the cortex maintains a dynamically stable regime across behavioral and brain states.</p>
+
+<p>Our study focused on the population level. We asked whether the activity of putative excitatory and inhibitory neuronal ensembles in vivo is dynamically coordinated in human and monkey neocortex.</p>
+
+<p>This required a dataset in which many units could be recorded continuously and separated into putative excitatory and inhibitory classes. We used dense multielectrode array recordings from human temporal cortex and macaque motor/premotor cortex. In the human recordings, patients were implanted with Utah arrays as part of clinical monitoring for epilepsy. In the monkey recordings, similar array recordings were available during behavior and sleep.</p>
+
+<p>The units were classified as regular-spiking (RS) and fast-spiking (FS) neurons. RS neurons are commonly treated as putative excitatory cells, whereas FS neurons are commonly treated as putative inhibitory interneurons, especially parvalbumin-positive fast-spiking interneurons. The classification was based on spike waveform features, and in the human data this classification was further supported by functional interactions inferred from cross-correlograms.</p>
+
+<p>This point is important. The study was not simply correlating two arbitrary pools of neurons. It was examining the ensemble dynamics of two biologically meaningful populations: putative excitatory and inhibitory cells.</p>
+
+<hr />
+
+<h2 id="balance-is-not-a-fixed-firing-rate-ratio">Balance is not a fixed firing-rate ratio</h2>
+
+<p>One possible misunderstanding of E/I balance is to think of it as a fixed ratio of excitatory to inhibitory firing rates. That is not the relevant dynamical idea.</p>
+
+<p>The cortex is not balanced because every excitatory spike is matched by an inhibitory spike in a rigid arithmetic sense. Nor is it balanced because each cell maintains a constant firing rate throughout the recording. In fact, the data show that firing rates vary substantially across time, and cells that are highly active in one epoch are not necessarily the same cells that dominate in another.</p>
+
+<p>The relevant object is the <strong>ensemble activity</strong>. If we write the normalized ensemble activity of the excitatory and inhibitory populations as</p>
+
+\[E(t), \qquad I(t),\]
+
+<p>then the question becomes whether these two population-level time series co-fluctuate across time and scale. In an idealized balanced state, one might expect</p>
+
+\[E(t) \approx I(t),\]
+
+<p>after appropriate normalization. But real cortical activity is not expected to sit exactly on this equality. A more realistic picture is that the system fluctuates near a balance manifold, with transient departures that depend on state, scale, and pathology.</p>
+
+<p>This is the view that motivated the multiscale analysis.</p>
+
+<hr />
+
+<h2 id="a-multiscale-view-of-cortical-balance">A multiscale view of cortical balance</h2>
+
+<p>Cortical activity is not organized at a single time scale. Millisecond spiking, tens-of-milliseconds coordination, slow fluctuations, sleep rhythms, and seizure dynamics all occupy different temporal regimes. A meaningful analysis of E/I balance therefore cannot be restricted to one bin size or one arbitrary temporal resolution.</p>
+
+<p>We therefore coarse-grained the ensemble activity over 32 logarithmically spaced time scales, from fine temporal bins near the millisecond range to much coarser bins over seconds. At each scale, spikes from RS and FS populations were binned, normalized by the number of neurons in each class, and compared as ensemble fractions.</p>
+
+<p>This produces, for each temporal scale (s), two coarse-grained activity traces:</p>
+
+\[E_s(t), \qquad I_s(t).\]
+
+<p>The deviation from balance can then be represented as</p>
+
+\[\Delta_s(t) = E_s(t) - I_s(t),\]
+
+<p>or, after normalization, as a scale-dependent excursion away from the line or plane of symmetry between excitation and inhibition.</p>
+
+<p>The main observation is that excitatory and inhibitory ensembles mirror one another across many time scales. During wakefulness, REM sleep, light sleep, and slow-wave sleep, increases and decreases in excitatory ensemble activity are generally accompanied by corresponding changes in inhibitory ensemble activity. The balance is not perfect, but it is persistent.</p>
+
+<p>This is a key point for readers coming from statistical physics or complex systems. The result is not merely a correlation at one arbitrary resolution. It is a multiscale relation between two interacting components of a recurrent network. The cortex appears to maintain a dynamically balanced regime across temporal coarse-grainings.</p>
+
+<hr />
+
+<h2 id="state-dependent-deviations-why-slow-wave-sleep-matters">State-dependent deviations: why slow-wave sleep matters</h2>
+
+<p>Although E/I balance is present across the wake–sleep cycle, the deviations from perfect balance are not identical across states. The strongest deviations occur during slow-wave sleep.</p>
+
+<p>This makes sense from the perspective of cortical dynamics. Slow-wave sleep is associated with transitions between Up and Down states: periods of relative population activity alternating with periods of relative quiescence. These transitions reflect a form of bistable or metastable dynamics in recurrent cortical networks. During such transitions, the system is still broadly balanced, but the instantaneous relation between excitation and inhibition can deviate more strongly from the balance manifold.</p>
+
+<p>Thus, slow-wave sleep does not simply represent a failure of balance. Rather, it exposes the fact that balance is a dynamical constraint, not an algebraic identity. The cortical network can remain organized around E/I balance while still displaying state-dependent excursions away from the exact symmetry condition.</p>
+
+<p>For systems neuroscience, this is important because it connects E/I balance to brain state. For complex systems, it suggests that balance should be studied as a state-dependent collective regime, with deviations that may reveal the underlying attractor landscape or transition structure of the network.</p>
+
+<hr />
+
+<h2 id="zero-lag-co-fluctuation-and-the-question-of-self-organization">Zero-lag co-fluctuation and the question of self-organization</h2>
+
+<p>One of the most important results concerns the temporal lag between excitatory and inhibitory ensemble activity.</p>
+
+<p>If inhibitory activity were simply following excitation after a delay, one might expect the cross-correlation between excitatory and inhibitory populations to peak at a nonzero lag. Such a result would suggest a more feed-forward picture: excitation rises, inhibition follows, and the two populations are coordinated by delayed recruitment.</p>
+
+<p>Instead, the ensemble cross-correlation between RS and FS populations peaked near zero lag across multiple time scales. In other words, the two populations co-fluctuated essentially simultaneously at the ensemble level.</p>
+
+<p>This does not mean that all cellular or synaptic processes are instantaneous. At the level of conductances into individual neurons, excitation can precede inhibition by a few milliseconds. But at the level of population spiking, the excitatory and inhibitory ensembles fluctuate together without a systematic delay.</p>
+
+<p>This distinction between single-cell conductance timing and ensemble-level spiking coordination is central. It suggests that population E/I balance is not simply a delayed feedback correction. Rather, it is a property of the recurrent network state itself.</p>
+
+<hr />
+
+<h2 id="comparison-with-a-conductance-based-balanced-network-model">Comparison with a conductance-based balanced network model</h2>
+
+<p>To interpret the zero-lag ensemble relation, we compared the data with a conductance-based network model of excitatory and inhibitory integrate-and-fire neurons. The model was configured to produce self-sustained asynchronous irregular activity, a classical balanced-network regime.</p>
+
+<p>In the self-sustained model, activity is generated by recurrent interactions within the network. There is no need for a continuously structured external drive to impose the temporal relation between excitation and inhibition. In this regime, the excitatory and inhibitory populations show mirrored multiscale fluctuations, and the ensemble cross-correlation peaks at zero lag, as in the human data.</p>
+
+<p>We then compared this with an externally driven version of the network. In that case, recurrent collateral synaptic strengths were reduced, and noisy external input became the dominant source of activity. Under this externally driven condition, the ensemble correlation peak shifted away from zero lag.</p>
+
+<p>This comparison supports the interpretation that the E/I balance observed in the data is largely self-generated by local recurrent cortical dynamics. The result does not rule out external inputs, thalamocortical drive, or long-range interactions. The cortex is never an isolated system. But the temporal structure of the E/I relation is consistent with a recurrent network that internally sustains its balanced state.</p>
+
+<p>For physicists, this is perhaps the most interesting part of the paper. The balanced state is not just a biological detail. It is a nonequilibrium dynamical regime of an interacting many-body system. Excitatory and inhibitory populations act as coupled components whose collective fluctuations are constrained by recurrent network architecture.</p>
+
+<hr />
+
+<h2 id="balance-as-a-dynamical-symmetry">Balance as a dynamical symmetry</h2>
+
+<p>One useful way to think about the result is in terms of symmetry.</p>
+
+<p>If normalized excitation and inhibition are plotted against one another, perfect balance would correspond to a symmetry line or plane. Real data do not lie exactly on this line. Instead, the system fluctuates around it. The magnitude and structure of deviations from this symmetry provide information about the state of the network.</p>
+
+<p>In this sense, E/I balance is not a fixed point. It is closer to a dynamical symmetry of the ensemble activity. The system is allowed to fluctuate, but those fluctuations are organized around a relation between excitation and inhibition.</p>
+
+<p>This view also helps explain why multiscale analysis is useful. A system can appear balanced at one temporal resolution and less balanced at another. Alternatively, deviations may be brief at fine scales but disappear under coarse-graining. By examining multiple time scales, one can distinguish between transient microscopic deviations and larger-scale changes in the dynamical regime.</p>
+
+<p>This perspective naturally connects cortical E/I balance to concepts from statistical physics: coarse-graining, collective variables, symmetry, fluctuations, and state transitions.</p>
+
+<hr />
+
+<h2 id="seizures-breakdown-of-balance-is-not-simply-excess-excitation">Seizures: breakdown of balance is not simply excess excitation</h2>
+
+<p>The pathological case examined in the paper is epileptic seizure activity. A common simplified view of seizures is that they result from too much excitation or too little inhibition. While this intuition captures part of the story, it is too crude.</p>
+
+<p>The ensemble recordings show a more complex picture. During seizures, the multiscale balance between excitatory and inhibitory populations breaks down. But this breakdown is not simply a monotonic dominance of excitation. In some seizure epochs, inhibitory activity initially dominates. In others, some excitatory and inhibitory neurons increase firing, while others decrease or stop firing. The pathology is not merely a scalar increase in excitation. It is a disruption of the coordinated population-level relation between excitation and inhibition.</p>
+
+<p>This is an important conceptual shift. The pathological object is not simply (E/I &gt; 1) or (E/I &lt; 1). The pathological object is the loss of structured interdependence between the two ensembles across time and scale.</p>
+
+<p>In the seizure examples, the two populations may follow similar multiscale trends before seizure onset. Then, at seizure initiation, they become disengaged. Their fluctuations no longer maintain the coordinated structure seen during normal brain states. Later, the balance can re-emerge, but the recovery does not occur on a universal time scale. In some cases, the network returns relatively quickly to a balanced regime; in others, the imbalance persists even after the seizure has electrographically ended.</p>
+
+<p>This suggests that seizure termination and recovery of balanced ensemble dynamics are related but not identical. The end of the electrographic seizure does not necessarily imply immediate restoration of normal population-level E/I coordination.</p>
+
+<hr />
+
+<h2 id="why-this-matters-for-systems-neuroscience">Why this matters for systems neuroscience</h2>
+
+<p>For systems neuroscience, the paper provides evidence that E/I balance is a real, measurable property of ensemble activity in higher mammals. It is not only a concept inferred from intracellular recordings, slice physiology, or theoretical models. It can be observed directly in large-scale spike recordings from human and macaque neocortex.</p>
+
+<p>The result also emphasizes that brain state matters. Wakefulness, REM sleep, light sleep, and slow-wave sleep all preserve E/I balance, but they differ in the structure and magnitude of deviations from that balance. Slow-wave sleep, with its Up/Down-state dynamics, produces stronger departures from the ideal symmetry relation.</p>
+
+<p>This means that E/I balance should not be treated as a single number. It should be treated as a state-dependent dynamical property, measurable across temporal scales.</p>
+
+<hr />
+
+<h2 id="why-this-matters-for-computational-neuroscience">Why this matters for computational neuroscience</h2>
+
+<p>For computational neuroscience, the paper supports a view of cortical computation in which recurrent local networks generate a stable but flexible operating regime. Balanced networks are attractive because they can produce irregular activity, rapid responsiveness, decorrelation, and rich transient dynamics. These properties are useful for computation.</p>
+
+<p>The finding that human and monkey cortical ensembles exhibit multiscale E/I balance strengthens the biological relevance of these models. It also suggests that future models of cortical computation should not merely reproduce firing rates or pairwise correlations. They should reproduce the multiscale temporal relation between excitatory and inhibitory populations.</p>
+
+<p>A model that generates realistic cortical activity should be able to answer questions such as:</p>
+
+<ul>
+  <li>Do excitatory and inhibitory ensembles co-fluctuate across scales?</li>
+  <li>Does the E/I cross-correlation peak near zero lag at the population level?</li>
+  <li>Are deviations from balance state-dependent?</li>
+  <li>Does the model reproduce stronger balance deviations during slow-wave-like regimes?</li>
+  <li>Does pathological activity correspond to breakdown of the E/I relation rather than simply increased excitation?</li>
+</ul>
+
+<p>These are stronger constraints than fitting mean activity or power spectra alone.</p>
+
+<hr />
+
+<h2 id="why-this-matters-for-physics-and-complex-systems">Why this matters for physics and complex systems</h2>
+
+<p>For physicists interested in the cortex, this work frames E/I balance as a collective phenomenon in a recurrent, nonequilibrium system.</p>
+
+<p>The cortex is composed of many interacting units, but the relevant macroscopic variables are not always obvious. Here, the ensemble activities of putative excitatory and inhibitory populations act as coarse-grained variables:</p>
+
+\[E_s(t), \qquad I_s(t),\]
+
+<p>defined across temporal scales (s). Their relation reveals a macroscopic constraint on cortical dynamics.</p>
+
+<p>From this perspective, E/I balance resembles an emergent organizing principle. The system is not static. It fluctuates continuously. But those fluctuations are structured. Normal cortical states occupy a region near a balance manifold. Slow-wave sleep broadens the excursions from that manifold. Seizures correspond to a more dramatic breakdown of the coordinated relation.</p>
+
+<p>This connects naturally to several themes in complex systems:</p>
+
+<ol>
+  <li><strong>Coarse-graining:</strong> the E/I relation persists across temporal resolutions.</li>
+  <li><strong>Collective variables:</strong> population activity reveals structure not reducible to individual neurons.</li>
+  <li><strong>Self-organization:</strong> recurrent interactions generate zero-lag ensemble coordination.</li>
+  <li><strong>State transitions:</strong> sleep and seizures alter the geometry of deviations from balance.</li>
+  <li><strong>Pathological dynamics:</strong> disease can be viewed as loss of a collective dynamical constraint.</li>
+</ol>
+
+<p>The paper therefore provides not only a result about cortical inhibition, but also an example of how neural recordings can be studied using the language of statistical physics and dynamical systems.</p>
+
+<hr />
+
+<h2 id="a-note-on-interpretation-and-limitations">A note on interpretation and limitations</h2>
+
+<p>There are, of course, important qualifications. RS and FS classification is a powerful but imperfect proxy for excitatory and inhibitory identity. Not every broad-spiking neuron is excitatory, and not every inhibitory neuron is fast-spiking. The recordings sample a local cortical region through Utah arrays, rather than the entire cortical circuit. The human data come from patients implanted for epilepsy monitoring, although the normal-state analyses were performed outside seizure epochs. The seizure examples demonstrate multiscale breakdown of E/I balance, but they do not establish a causal mechanism for seizure generation.</p>
+
+<p>These limitations do not weaken the main conceptual result. Rather, they define the scope of the claim. The paper shows that, within the recorded cortical ensembles, putative excitatory and inhibitory populations exhibit robust, multiscale, state-dependent co-fluctuation in human and monkey neocortex, and that this relation breaks down during seizures.</p>
+
+<p>The result is empirical, but its interpretation is dynamical.</p>
+
+<hr />
+
+<h2 id="conclusion-cortical-balance-as-an-operating-regime">Conclusion: cortical balance as an operating regime</h2>
+
+<p>The main message of the paper is that E/I balance in the primate neocortex is not a static ratio and not merely a theoretical abstraction. It is a dynamic, multiscale population-level regime.</p>
+
+<p>In normal brain states, excitatory and inhibitory ensembles fluctuate together across temporal scales. In slow-wave sleep, the system remains balanced but shows stronger deviations, likely reflecting transitions through Up and Down states. In seizures, the coordinated E/I relation breaks down in a complex and multiscale manner. Comparison with conductance-based recurrent network models suggests that the normal balanced regime is largely self-organized by local recurrent connectivity.</p>
+
+<p>For neuroscience, this provides evidence that balanced activity is a fundamental feature of normal cortical operation in higher mammals. For computational neuroscience, it strengthens the relevance of recurrent balanced network models. For physics and complex systems, it offers a concrete example of an emergent dynamical constraint in a biological many-body system.</p>
+
+<p>The cortex appears to operate near balance not because it is quiet or static, but because recurrent excitation and inhibition continuously co-organize its fluctuations. That dynamic balance may be one of the conditions that allows cortical networks to remain simultaneously stable, variable, and computationally flexible.</p>]]></content><author><name>Nima Dehghani</name></author><category term="complex systems" /><category term="cortical dynamics" /><category term="EI balance" /><category term="asynchronous networks" /><category term="seizures" /><summary type="html"><![CDATA[Companion post to: Dynamic Balance of Excitation and Inhibition in Human and Monkey Neocortex Nima Dehghani, Adrien Peyrache, Bartosz Telenczuk, Michel Le Van Quyen, Eric Halgren, Sydney S. Cash, Nicholas G. Hatsopoulos and Alain Destexhe Scientific Reports . 6, 23176 (2016). DOI: https://doi.org/10.1038/srep23176]]></summary></entry><entry><title type="html">Revisiting the Critical Brain: Neuronal Avalanches, Power Laws, and the Statistical Structure of In Vivo Cortex</title><link href="https://neurovium.github.io/posts/pblog-Avalanche-spikeLfp/" rel="alternate" type="text/html" title="Revisiting the Critical Brain: Neuronal Avalanches, Power Laws, and the Statistical Structure of In Vivo Cortex" /><published>2012-08-12T00:00:00+00:00</published><updated>2012-08-12T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-Avalanche-spikeLfp</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-Avalanche-spikeLfp/"><![CDATA[<p><em>Companion post to:</em><br />
 <strong>Avalanche Analysis from Multielectrode Ensemble Recordings in Cat, Monkey, and Human Cerebral Cortex during Wakefulness and Sleep</strong><br />
 Dehghani, Nima  and Hatsopoulos, Nicholas G. and Haga, Zach D. and Parker, Rebecca  and Greger, Bradley  and Halgren, Eric  and Cash, Sydney S. and Destexhe, Alain
 <em>Frontiers in Physiology</em> Volume 3 - 2012
@@ -1982,824 +2622,266 @@ DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.3389/
 
 <p>The data point instead toward stochastic, multi-exponential, and possibly metastable dynamics. This does not make the cortex less interesting as a physical system. On the contrary, it suggests that the foundations of neural computation may lie not in a single universal critical law, but in the structured interaction of multiple dynamical processes across scales.</p>
 
-<p>For neuroscience, this means that we should continue to study collective cortical dynamics with the tools of statistical physics, but with stricter statistical standards and closer attention to physiology. For physics, it means that the brain remains a rich non-equilibrium system, but one whose complexity may not reduce to canonical self-organized criticality. For theories of neural computation, it suggests that the essential object is not a power law, but the evolving dynamical organization of the living cortex.</p>]]></content><author><name>Nima Dehghani</name></author><category term="iEEG" /><category term="EEG" /><category term="forward-modeling" /><category term="FEM" /><category term="anisotropy" /><category term="DTI" /><category term="source-localization" /><category term="epilepsy" /><category term="volume-conduction" /><summary type="html"><![CDATA[Companion post to: Avalanche Analysis from Multielectrode Ensemble Recordings in Cat, Monkey, and Human Cerebral Cortex during Wakefulness and Sleep Dehghani, Nima and Hatsopoulos, Nicholas G. and Haga, Zach D. and Parker, Rebecca and Greger, Bradley and Halgren, Eric and Cash, Sydney S. and Destexhe, Alain Frontiers in Physiology Volume 3 - 2012 DOI: https://doi.org/10.3389/fphys.2012.00302]]></summary></entry><entry><title type="html">The Hidden Topography of Sleep Spindles: From Asynchronous MEG Generators to Synchronous EEG Events</title><link href="https://neurovium.github.io/posts/pblog-MEG-EEG-Async/" rel="alternate" type="text/html" title="The Hidden Topography of Sleep Spindles: From Asynchronous MEG Generators to Synchronous EEG Events" /><published>2011-07-02T00:00:00+00:00</published><updated>2011-07-02T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-Spindle-MEG-EEG-Async</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-MEG-EEG-Async/"><![CDATA[<p><em>Companion post to:</em><br />
-<strong>Emergence of synchronous EEG spindles from asynchronous MEG spindles</strong><br />
-Dehghani, Nima and Cash, Sydney S. and Halgren, Eric <br />
-<em>Human Brain Mapping</em> Volume32, Issue12, December 2011, Pages 2217-2227 
-DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.1002/hbm.21183</code></p>
+<p>For neuroscience, this means that we should continue to study collective cortical dynamics with the tools of statistical physics, but with stricter statistical standards and closer attention to physiology. For physics, it means that the brain remains a rich non-equilibrium system, but one whose complexity may not reduce to canonical self-organized criticality. For theories of neural computation, it suggests that the essential object is not a power law, but the evolving dynamical organization of the living cortex.</p>]]></content><author><name>Nima Dehghani</name></author><category term="iEEG" /><category term="EEG" /><category term="forward-modeling" /><category term="FEM" /><category term="anisotropy" /><category term="DTI" /><category term="source-localization" /><category term="epilepsy" /><category term="volume-conduction" /><summary type="html"><![CDATA[Companion post to: Avalanche Analysis from Multielectrode Ensemble Recordings in Cat, Monkey, and Human Cerebral Cortex during Wakefulness and Sleep Dehghani, Nima and Hatsopoulos, Nicholas G. and Haga, Zach D. and Parker, Rebecca and Greger, Bradley and Halgren, Eric and Cash, Sydney S. and Destexhe, Alain Frontiers in Physiology Volume 3 - 2012 DOI: https://doi.org/10.3389/fphys.2012.00302]]></summary></entry><entry><title type="html">Local Excitation, Broad Inhibition: Spatiotemporal Dynamics of Cortical Microcircuits during Sleep</title><link href="https://neurovium.github.io/posts/pblog-Spatiotemporal-dynamics-EI/" rel="alternate" type="text/html" title="Local Excitation, Broad Inhibition: Spatiotemporal Dynamics of Cortical Microcircuits during Sleep" /><published>2012-01-17T00:00:00+00:00</published><updated>2012-01-17T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-Spatiotemporal-dynamics-EI</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-Spatiotemporal-dynamics-EI/"><![CDATA[<p><em>Companion post to:</em><br />
+<strong>Spatiotemporal dynamics of neocortical excitation and inhibition during human sleep</strong><br />
+Adrien Peyrache  and Nima Dehghani  and Emad N. Eskandar  and Joseph R. Madsen  and William S. Anderson  and Jacob A. Donoghue  and Leigh R. Hochberg  and Eric Halgren  and Sydney S. Cash  and Alain Destexhe 
+<em>PNAS</em> . 109 (5) 1731-1736
+DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.1073/pnas.1109895109</code></p>
 
 <hr />
-<p>Sleep spindles occupy a special place in systems neuroscience. They are among the most recognizable oscillatory signatures of non-REM sleep, appearing as transient bursts of approximately (10)–(15\,\mathrm{Hz}) activity, typically lasting (0.5)–(2\,\mathrm{s}), and most prominently associated with Stage 2 sleep. They have been studied as markers of thalamocortical physiology, sleep architecture, memory consolidation, and large-scale neural synchrony. But they also pose a more basic question: when we observe a spindle at the scalp, what exactly is the spatial and dynamical organization of the neural activity that produced it?</p>
 
-<p>For a long time, the dominant picture was that sleep spindles reflect a broadly synchronous thalamocortical event. Classical animal physiology, intracellular studies, computational models, and scalp EEG observations all contributed to this view. In scalp EEG, spindles often appear nearly simultaneous across many electrodes, suggesting a large-scale coordinated oscillation distributed across the cortical mantle. This has made the spindle a natural model for studying how the thalamus and cortex generate coherent rhythms over large spatial scales.</p>
+<h1 id="local-excitation-broad-inhibition-spatiotemporal-dynamics-of-human-cortical-microcircuits-during-sleep">Local Excitation, Broad Inhibition: Spatiotemporal Dynamics of Human Cortical Microcircuits during Sleep</h1>
 
-<p>In our paper, <strong>“Emergence of Synchronous EEG Spindles From Asynchronous MEG Spindles,”</strong> we asked whether this apparent macroscopic synchrony is the whole story. The central idea was simple but powerful: if spindles are truly globally synchronous events, then simultaneous high-density EEG and MEG should largely reveal the same spindle events, modulo the known differences in sensitivity between the two modalities. Instead, we found a striking dissociation. Many spindles that are clearly visible in MEG gradiometers are absent from referential EEG, whereas the reverse case is rare. This asymmetry suggests that the “global” EEG spindle may not be the primitive event. Rather, it may emerge from a more local, spatially structured, and partially asynchronous process that is better captured by MEG.</p>
+<p>A central problem in systems and computational neuroscience is to understand how local cortical microcircuits give rise to large-scale brain states. We often speak about cortical dynamics in terms of excitation and inhibition, local assemblies, population synchrony, and state-dependent changes in correlation structure. But in the human neocortex, direct access to these principles at the single-unit level is rare.</p>
 
-<p>This paper is therefore not only about sleep spindles. It is also about the physics of observation in human neurophysiology. EEG and MEG are often treated as complementary windows onto the same underlying brain activity. That is true at one level: both ultimately reflect currents generated by organized postsynaptic activity, especially in cortical pyramidal neurons. But the two modalities do not see the same sources with the same spatial weighting, and they do not respond equally to focal versus distributed generators. In this study, those differences become a tool. The dissociation between EEG and MEG spindles reveals hidden structure in the spindle-generating system itself.</p>
+<p>Most of what we know about the cell-type-specific organization of cortical activity comes from animal preparations. Rodent and non-human primate studies have shaped our understanding of pyramidal cells, interneurons, balanced excitation and inhibition, sparse connectivity, and the spatial scale of cortical correlations. Human data, by contrast, often come from macroscopic signals: EEG, MEG, ECoG, LFP, or imaging. These signals are invaluable, but they average over many neurons and many circuit elements. They do not directly reveal how putative excitatory and inhibitory neurons interact across space and time.</p>
 
-<h2 id="the-classical-problem-are-spindles-globally-synchronous">The classical problem: are spindles globally synchronous?</h2>
+<p>In this paper, <strong>“Spatiotemporal dynamics of neocortical excitation and inhibition during human sleep,”</strong> we used high-density intracortical recordings from human temporal cortex to examine precisely this question. The recordings were obtained with a 96-channel NeuroPort microelectrode array, implanted in patients undergoing clinical monitoring. This gave us simultaneous access to local field potentials and extracellular single-unit activity across a two-dimensional cortical patch of approximately (4 \times 4) mm.</p>
 
-<p>Sleep spindles are generated through thalamocortical interactions involving the thalamic reticular nucleus, thalamocortical relay cells, corticothalamic feedback, and cortical populations. The standard physiological picture emphasizes reciprocal interactions between inhibitory thalamic reticular neurons and bursting thalamocortical neurons. These interactions can generate rhythmic activity in the spindle frequency range, and corticothalamic loops help coordinate and sustain the oscillation.</p>
-
-<p>A key question is whether this rhythm is generated as a single, coherent, large-scale event or as a set of local events that can sometimes become synchronized. Animal studies have supported both views. Some experiments suggested propagation from focal onset zones, whereas others emphasized widespread synchrony across thalamic and cortical sites. In human scalp EEG, spindles frequently appear as broadly coherent events, reinforcing the impression of a large-scale synchronous generator.</p>
-
-<p>But scalp EEG is not a neutral observer of spatial synchrony. A referential EEG channel has a large leadfield. It integrates activity over broad cortical regions, and its signal is strongly shaped by the volume conduction properties of the head. Thus, high apparent synchrony in EEG can arise not only from perfect physiological synchrony, but also from spatial integration by the measurement system. If a distributed source is even moderately coherent over a large region, EEG may emphasize its common component. Conversely, focal or partially asynchronous generators may be difficult to isolate in referential EEG because they are mixed with other sources within the same large leadfield.</p>
-
-<p>MEG planar gradiometers have a different sensitivity profile. They are more focal. They are less affected by skull and scalp conductivity. They are sensitive primarily to tangential intracellular currents, and they strongly attenuate spatially broad or distant sources. This makes MEG gradiometers less suited to detecting a perfectly diffuse synchronous field, but better suited to detecting local sources with favorable geometry.</p>
-
-<p>The question, then, is not simply whether EEG and MEG detect spindles. The deeper question is:</p>
-
-\[\text{Which spatial scales of spindle generation are made visible by each modality?}\]
-
-<p>Our study used simultaneous high-density EEG and MEG to examine this question directly.</p>
-
-<h2 id="simultaneous-eeg-and-meg-as-a-biophysical-perturbation-of-the-measurement-problem">Simultaneous EEG and MEG as a biophysical perturbation of the measurement problem</h2>
-
-<p>We recorded natural sleep from healthy adults using simultaneous 60-channel EEG and 306-channel MEG. The MEG system included magnetometers and two orthogonal planar gradiometers at each sensor location, but the main analyses focused on the gradiometers because of their focal sensitivity. Sleep staging identified Stage 2 non-REM periods, and spindle-rich epochs were analyzed.</p>
-
-<p>The essential methodological point was that spindle detection was performed objectively and separately in EEG and MEG. We did not begin by assuming that an EEG spindle and an MEG spindle were the same event. Instead, we computed sequential power spectral density in the spindle band and asked when each modality independently showed spindle-frequency power peaks.</p>
-
-<p>For each channel, spindle-band power was estimated in the (7)–(15\,\mathrm{Hz}) range using sliding (500\,\mathrm{ms}) windows advanced in (100\,\mathrm{ms}) steps. In schematic form, if (x_i(t)) is the signal recorded at channel (i), then for a window centered at time (\tau), the spindle-band power can be written as</p>
-
-\[P_i(\tau)
-=
-\int_{7\,\mathrm{Hz}}^{15\,\mathrm{Hz}}
-\left|
-\mathcal{F}\{x_i(t)w(t-\tau)\}(f)
-\right|^2
-\,df,\]
-
-<p>where (w(t-\tau)) is the analysis window. The resulting time series (P_i(\tau)) gives a channel-wise measure of spindle-frequency power over time.</p>
-
-<p>The detection algorithm then identified periods where spindle-band power rose above baseline across a sufficient number of channels. Importantly, EEG and MEG detections were performed independently. Once peaks were detected in each modality, we classified events according to whether a MEG spindle had a corresponding EEG spindle within a specified temporal tolerance.</p>
-
-<p>This led to three conceptual categories:</p>
-
-<ul>
-  <li><strong>ME spindles</strong>: spindles detected in both MEG and EEG.</li>
-  <li><strong>Mo spindles</strong>: spindles detected in MEG only.</li>
-  <li><strong>EEG-only spindles</strong>: spindles detected in EEG without corresponding MEG involvement.</li>
-</ul>
-
-<p>The last category was rare. The important contrast was between MEG-only spindles and combined MEG+EEG spindles.</p>
-
-<h2 id="the-main-empirical-dissociation">The main empirical dissociation</h2>
-
-<p>The result was striking. About half of the MEG spindles did not have a corresponding EEG spindle. In contrast, most EEG spindles did have a corresponding MEG spindle. Quantitatively, when allowing a (500\,\mathrm{ms}) temporal window for co-occurrence, the probability that an MEG spindle occurred given an EEG spindle was high, approximately</p>
-
-\[P(\mathrm{MEG}\mid \mathrm{EEG}) \approx 0.85,\]
-
-<p>whereas the probability that an EEG spindle occurred given a MEG spindle was much lower,</p>
-
-\[P(\mathrm{EEG}\mid \mathrm{MEG}) \approx 0.47.\]
-
-<p>Thus, EEG spindles were usually accompanied by MEG spindles, but MEG spindles were often not accompanied by EEG spindles.</p>
-
-<p>This asymmetry is crucial. If EEG and MEG were simply noisy measurements of the same globally synchronous generator, one would expect a more symmetric relationship. Instead, the results suggest a hierarchical or recruitment-like process: the neural substrate visible to MEG can be active without producing a detectable referential EEG spindle, but when a referential EEG spindle appears, the MEG-visible substrate is usually already involved.</p>
-
-<p>The temporal structure reinforced this interpretation. During spindles detected in both modalities, MEG spindle-band power began earlier than EEG spindle-band power and persisted longer. Depending on the amplitude threshold used to define onset and offset, MEG led EEG by roughly (100)–(190\,\mathrm{ms}) on the rising phase and outlasted EEG by roughly (140)–(310\,\mathrm{ms}) on the falling phase. Since a spindle cycle at (12\,\mathrm{Hz}) lasts about (83\,\mathrm{ms}), these delays correspond to approximately one to several oscillatory cycles.</p>
-
-<p>This timing argues against the idea that EEG and MEG are merely detecting the same event with slightly different noise levels. Instead, the MEG-visible activity appears first. In some cases, it remains local or fragmented and never becomes visible in referential EEG. In other cases, it recruits a broader cortical or thalamocortical substrate, eventually producing the large-scale synchronous event recorded by EEG.</p>
-
-<h2 id="why-amplitude-alone-cannot-explain-the-eeg-spindle">Why amplitude alone cannot explain the EEG spindle</h2>
-
-<p>A simple explanation would be that MEG-only spindles are just weaker versions of MEG+EEG spindles. Perhaps the same generator becomes larger, and once its amplitude crosses a threshold, it becomes visible in EEG. This explanation is plausible, but the data argue against it.</p>
-
-<p>When we compared MEG-only spindles to MEG+EEG spindles, MEG amplitude increased only modestly. Depending on the exact measure and channel subset, the increase was on the order of roughly (10)–(20\%). By contrast, EEG amplitude increased by approximately (55\%). The MEG amplitude change was therefore too small to explain the much larger increase in EEG power.</p>
-
-<p>A second possibility is that the MEG sources become more coherent. If many local generators oscillate with better phase alignment, then even without large amplitude increases at individual sites, their combined field might become visible in EEG. To test this, we estimated coherence between MEG gradiometer channels using Capon’s nonparametric spectral estimation, also known as the minimum variance distortionless response (MVDR). In broad terms, coherence between two channels (i) and (j) at frequency (f) can be expressed as</p>
-
-\[C_{ij}(f)
-=
-\frac{|S_{ij}(f)|^2}{S_{ii}(f)S_{jj}(f)},\]
-
-<p>where (S_{ij}(f)) is the cross-spectral density and (S_{ii}(f)), (S_{jj}(f)) are autospectral densities. MVDR provides a spectral estimate that can be useful when distinguishing contributions from nearby frequencies.</p>
-
-<p>Again, the result was not consistent with a simple coherence-threshold explanation. MEG coherence increased only slightly from MEG-only to MEG+EEG spindles, on the order of about (1\%) in the relevant comparisons. Such a small change cannot plausibly explain the much larger EEG amplitude increase.</p>
-
-<p>The more informative difference was spatial recruitment.</p>
-
-<h2 id="spatial-recruitment-and-the-emergence-of-the-eeg-spindle">Spatial recruitment and the emergence of the EEG spindle</h2>
-
-<p>The strongest distinction between MEG-only and MEG+EEG spindles was not local amplitude or pairwise coherence, but the number and distribution of MEG channels involved. During MEG+EEG spindles, the fraction of active MEG gradiometer channels increased substantially relative to MEG-only spindles. In the paper, the average fraction of participating gradiometer channels was approximately (20.9\%) for MEG+EEG spindles compared with (12.6\%) for MEG-only spindles, corresponding to an increase of about (66\%).</p>
-
-<p>This suggests that a referential EEG spindle emerges when the spindle-generating activity spreads over a sufficiently large spatial extent. The EEG spindle is not simply the same focal generator becoming louder. It is the macroscopic signature of broader cortical recruitment.</p>
-
-<p>The topography of this recruitment was also meaningful. MEG+EEG spindles showed relatively greater power over anterior and midline/frontocentral regions compared with MEG-only spindles. This does not mean that spindles are exclusively frontal. Rather, it suggests that recruitment of frontal or frontocentral cortical territories may play a special role in the transition from a focal or fragmented MEG-visible event to a distributed EEG-visible event.</p>
-
-<p>This is important because prefrontal regions have strong anatomical relationships with thalamic circuitry involved in synchronizing thalamocortical activity. The thalamic reticular nucleus and thalamocortical projection systems provide plausible routes through which local spindle activity could recruit broader domains. Thus, the topography is not merely a measurement detail. It points toward a physiological mechanism.</p>
-
-<p>The picture that emerges is one of spatial growth. A spindle may begin as a local oscillatory event, visible to MEG because the gradiometer leadfield is small and focal. If that event remains local, it appears as a MEG-only spindle. If it recruits additional cortical and thalamocortical domains, especially frontocentral regions, it may reach a critical spatial extent and become visible as a referential EEG spindle.</p>
-
-<h2 id="the-physics-of-why-meg-can-see-what-eeg-misses">The physics of why MEG can see what EEG misses</h2>
-
-<p>At first glance, the existence of MEG-only spindles may seem counterintuitive. EEG has large leadfields and integrates over broad regions. Should it not detect any source that MEG detects?</p>
-
-<p>The answer lies in signal-to-noise ratio and spatial mixing. A large leadfield is not always an advantage. If a focal spindle generator lies within the compact leadfield of a MEG gradiometer, that gradiometer may record it with high signal-to-noise ratio. But the same focal generator contributes only a small fraction of the signal at a referential EEG electrode, whose leadfield includes many other cortical sources. In EEG, the focal spindle can be diluted by unrelated activity. It is not necessarily absent from the EEG forward model; rather, it may be invisible relative to the background mixture.</p>
-
-<p>This is a general lesson for neuroimaging and source modeling. Visibility is not identical to existence. A source can be physically present but effectively undetectable in a modality if its contribution is small relative to the modality’s spatial integration and noise structure.</p>
-
-<p>The leadfield relation can be written schematically as</p>
-
-\[\mathbf{y}(t) = \mathbf{L}\mathbf{j}(t) + \boldsymbol{\varepsilon}(t),\]
-
-<p>where (\mathbf{y}(t)) is the sensor measurement, (\mathbf{j}(t)) is the distribution of neural current sources, (\mathbf{L}) is the leadfield operator, and (\boldsymbol{\varepsilon}(t)) captures noise and unmodeled activity. EEG and MEG differ in (\mathbf{L}). Their leadfields weight source orientation, spatial extent, conductivity structure, and distance differently.</p>
-
-<p>For referential EEG, (\mathbf{L}<em>{\mathrm{EEG}}) is broad and strongly shaped by volume conduction through CSF, skull, and scalp. For MEG planar gradiometers, (\mathbf{L}</em>{\mathrm{MEG}}) is more focal and primarily sensitive to tangential currents. A focal source may therefore yield a large component in a local MEG gradiometer but only a weak component in referential EEG. Conversely, a spatially distributed synchronous source may sum effectively in EEG but partially cancel in MEG, especially if currents on opposing sulcal banks have opposite orientations.</p>
-
-<p>This is why the MEG-only spindle is not paradoxical. It is a natural consequence of source geometry, leadfield size, and spatial integration.</p>
-
-<h2 id="eeg-synchrony-is-not-necessarily-microscopic-synchrony">EEG synchrony is not necessarily microscopic synchrony</h2>
-
-<p>One of the deeper implications of the study concerns the interpretation of synchrony. In scalp EEG, spindles often appear highly synchronous across electrodes. In our data, the average pairwise correlation across EEG channels during the analyzed epochs was much higher than the corresponding pairwise correlation across MEG gradiometer channels. EEG channels were strongly correlated; MEG gradiometer channels were much less so.</p>
-
-<p>This does not mean that EEG is wrong. It means that EEG emphasizes a different component of the underlying activity. Referential EEG is well suited to detecting distributed coherent fields. When a spindle becomes sufficiently widespread, EEG captures the common large-scale component. MEG gradiometers, by contrast, can reveal local heterogeneity within what appears from the scalp as a unified event.</p>
-
-<p>Thus, the scalp EEG spindle may be a macroscopic order parameter for a distributed thalamocortical process. It captures the emergence of large-scale coherence, but it does not necessarily reveal the local route by which that coherence emerged.</p>
-
-<p>A useful analogy comes from statistical physics. A macroscopic order parameter can indicate that a system has entered an organized phase, but it does not by itself specify the microscopic path to that phase. The EEG spindle may function similarly. It reports the presence of a large-scale coherent oscillatory state, while MEG reveals that this state can arise from initially local and asynchronous components.</p>
-
-<p>This perspective changes how one might model spindle generation. Instead of treating the spindle as a single globally synchronized oscillator, one can think of it as a spatially extended dynamical process in which local oscillatory domains interact, recruit one another, and sometimes cross a threshold into macroscopic coherence.</p>
-
-<h2 id="core-and-matrix-thalamocortical-systems">Core and matrix thalamocortical systems</h2>
-
-<p>The paper proposed a physiological interpretation based on the distinction between core and matrix thalamocortical systems. The core system consists of more specific thalamocortical projections, often associated with focal or topographically organized cortical targets. The matrix system consists of more diffuse thalamocortical projections, capable of influencing broad cortical territories.</p>
-
-<p>Under this framework, MEG gradiometers may be especially sensitive to focal, asynchronous spindles generated within core-like thalamocortical modules. Referential EEG, by contrast, may be especially sensitive to diffuse, synchronous activity generated through matrix-like thalamocortical recruitment.</p>
-
-<p>This gives a natural interpretation of the MEG-only and MEG+EEG distinction:</p>
-
-\[\text{MEG-only spindle}
-\quad \rightarrow \quad
-\text{local/focal thalamocortical event}\]
-
-\[\text{MEG+EEG spindle}
-\quad \rightarrow \quad
-\text{local event plus distributed recruitment}\]
-
-<p>The model does not require that EEG and MEG arise from completely separate biological rhythms. Rather, it suggests that they emphasize different regimes of the same spindle-generating system. A focal event can remain local and be visible only to MEG. Or it can recruit additional thalamocortical domains, become spatially extended, and appear in EEG.</p>
-
-<p>This is also consistent with the temporal finding that MEG begins before EEG in combined spindles. The focal event precedes the distributed event. The macroscopic EEG spindle emerges later, once the recruited network reaches sufficient spatial extent and coherence.</p>
-
-<h2 id="toward-a-source-modeling-view-of-spindle-emergence">Toward a source-modeling view of spindle emergence</h2>
-
-<p>The findings also have implications for source modeling. A common temptation in source analysis is to seek a single “generator” of an observed rhythm. But for spindles, this study suggests that the word generator may be misleading if it implies a single stable source. The source structure appears to be dynamic, spatially heterogeneous, and modality-dependent.</p>
-
-<p>A more appropriate source-modeling framework would treat the spindle as a time-evolving source distribution:</p>
-
-\[\mathbf{j}(t)
-=
-\sum_{k=1}^{K(t)}
-a_k(t)\,\phi_k(\mathbf{r})\,e^{i\theta_k(t)},\]
-
-<p>where (\phi_k(\mathbf{r})) represents the spatial pattern of a local generator or domain, (a_k(t)) its amplitude, (\theta_k(t)) its phase, and (K(t)) the number of participating domains at time (t). In a MEG-only spindle, (K(t)) may remain small, and the phases (\theta_k(t)) may not align sufficiently across space to generate a strong referential EEG signal. In a MEG+EEG spindle, more domains become active, their spatial distribution changes, and a sufficiently coherent distributed component emerges.</p>
-
-<p>This formulation makes clear why amplitude, coherence, and number of channels are not interchangeable. A large EEG spindle may require not merely stronger local sources, but a reconfiguration of the source distribution: more domains, different locations, and a stronger common component.</p>
-
-<p>It also suggests why inverse solutions are difficult. If EEG and MEG weight different components of the same evolving source field, then combining them requires careful attention to leadfield geometry, source extent, and the distinction between focal and distributed activity. A source model that explains MEG-only spindles may not automatically explain EEG spindles, and a model fit only to EEG may miss the asynchronous local structure that precedes the global event.</p>
-
-<h2 id="statistical-controls-and-the-interpretation-of-coincidence">Statistical controls and the interpretation of coincidence</h2>
-
-<p>The paper also addressed a basic statistical issue: if EEG and MEG spindles sometimes co-occur, how do we know that this co-occurrence is meaningful rather than a consequence of high spindle density during Stage 2 sleep?</p>
-
-<p>To address this, the study compared observed coincidence rates with rates obtained after randomizing inter-spindle intervals. The observed co-occurrence exceeded the randomized expectation, showing that EEG and MEG spindle timing is not independent. However, the relationship was far from deterministic. MEG and EEG spindles were statistically related, but MEG spindles often occurred without EEG expression.</p>
-
-<p>This matters because the result is not a simple dissociation. It is not that EEG and MEG detect unrelated phenomena. Rather, the relationship is asymmetric and probabilistic. MEG activity is often present when EEG spindles occur, but MEG activity does not guarantee EEG expression. This is precisely the structure one would expect from a recruitment process: local activity increases the probability of global expression, but global expression requires additional spatial and dynamical conditions.</p>
-
-<p>In this sense, the spindle is not best thought of as a binary event. It is a dynamical process with degrees of spatial recruitment, coherence, and modality visibility.</p>
-
-<h2 id="implications-for-sleep-neurophysiology">Implications for sleep neurophysiology</h2>
-
-<p>For sleep neurophysiology, the study suggests that the canonical EEG spindle is only one manifestation of a richer thalamocortical process. The EEG spindle may represent the subset of spindle events that successfully recruit enough cortex, with sufficient coherence and appropriate geometry, to become visible at the scalp.</p>
-
-<p>This has several implications.</p>
-
-<p>First, spindle counts based only on referential EEG may underestimate the number of focal spindle-like thalamocortical events. Many local events may be invisible to scalp EEG but detectable with MEG or intracranial recordings.</p>
-
-<p>Second, spindle synchrony should not be assumed from EEG coherence alone. High EEG coherence may reflect true large-scale synchrony, but it is also shaped by the large leadfields of referential EEG. MEG and intracranial data can reveal local asynchrony within the broader event.</p>
-
-<p>Third, different spindle subtypes may not merely differ in frequency, duration, or frontal/parietal dominance. They may differ in their degree of spatial recruitment and in the balance between focal and diffuse thalamocortical systems.</p>
-
-<p>Finally, the transition from MEG-only to MEG+EEG spindles may provide a useful experimental handle on the mechanisms by which local oscillations become global brain states. This transition is where the physics of measurement and the physiology of recruitment meet.</p>
-
-<h2 id="implications-for-oscillations-and-synchrony-more-broadly">Implications for oscillations and synchrony more broadly</h2>
-
-<p>Although this paper focuses on sleep spindles, the conceptual issue extends to many neural oscillations. Oscillatory synchrony is often inferred from sensor-level coherence, phase-locking, or amplitude correlation. But sensor-level synchrony is always filtered through the measurement apparatus. The spatial scale and orientation of the source, the conductivity structure of the head, and the leadfield properties of the modality all shape what appears synchronous.</p>
-
-<p>This is especially important when interpreting large-scale rhythms such as alpha, beta, gamma, slow oscillations, and pathological rhythms. A rhythm that appears global in EEG may have local structure that is not visible without MEG or intracranial recordings. Conversely, focal activity visible in MEG or ECoG may fail to produce a scalp signature unless it recruits a sufficiently large or appropriately oriented source distribution.</p>
-
-<p>The broader lesson is that synchrony is not a single-level concept. There is microscopic synchrony among neurons and local circuits; mesoscopic synchrony among cortical columns or areas; macroscopic synchrony visible in scalp fields; and measurement-induced synchrony arising from spatial mixing. These levels are related, but they are not identical.</p>
-
-<p>For this reason, the study of neural synchrony requires both physiology and physics. One needs models of thalamocortical dynamics, but also models of how those dynamics project to sensors.</p>
-
-<h2 id="conclusion-the-eeg-spindle-as-an-emergent-macroscopic-event">Conclusion: the EEG spindle as an emergent macroscopic event</h2>
-
-<p>The main message of the paper is that the familiar synchronous EEG spindle may emerge from a more local and asynchronous MEG-visible process. MEG gradiometers often detect focal spindle activity that does not appear in referential EEG. When EEG spindles do appear, they are usually accompanied by MEG activity, and that MEG activity begins earlier and ends later. The transition from MEG-only to MEG+EEG spindles is associated not primarily with a large increase in MEG amplitude or coherence, but with recruitment of more MEG channels and a shift toward frontocentral regions.</p>
-
-<p>This leads to a revised view of spindle generation. Rather than a single monolithic synchronous generator, the spindle-generating system may consist of local thalamocortical domains that can remain focal or recruit broader networks. MEG is sensitive to the focal components. EEG is sensitive to the distributed coherent state that sometimes emerges from them.</p>
-
-<p>In this view, the EEG spindle is not the beginning of the event. It is the macroscopic expression of a process already underway.</p>
-
-<p>That distinction matters. It changes how we interpret scalp synchrony, how we model thalamocortical oscillations, and how we think about the relationship between local circuit dynamics and global brain states during sleep. It also illustrates a general principle for neurophysiology: what we observe as a coherent brain rhythm is always the result of both neural dynamics and measurement physics. Understanding one without the other is incomplete.</p>]]></content><author><name>Nima Dehghani</name></author><category term="Spindle" /><category term="Thalamocortical" /><category term="Synchrony" /><category term="MEG" /><category term="EEG" /><summary type="html"><![CDATA[Companion post to: Emergence of synchronous EEG spindles from asynchronous MEG spindles Dehghani, Nima and Cash, Sydney S. and Halgren, Eric Human Brain Mapping Volume32, Issue12, December 2011, Pages 2217-2227 DOI: https://doi.org/10.1002/hbm.21183]]></summary></entry><entry><title type="html">Spatio-Spectro-Temporal Dynamics of Sleep Spindles</title><link href="https://neurovium.github.io/posts/pblog-Spindle-topo-frq/" rel="alternate" type="text/html" title="Spatio-Spectro-Temporal Dynamics of Sleep Spindles" /><published>2011-02-01T00:00:00+00:00</published><updated>2011-02-01T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-Spindle-topo-frq</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-Spindle-topo-frq/"><![CDATA[<p><em>Companion post to:</em><br />
-<strong>Topographical frequency dynamics within EEG and MEG sleep spindles</strong><br />
-Nima Dehghani, Sydney S. Cash, Eric Halgren<br />
-<em>Clinical Neurophysiology</em> Volume 122, Issue 2, February 2011, Pages 229-235 
-DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.1016/j.clinph.2010.06.018</code></p>
-
-<hr />
-
-<h1 id="spatio-spectro-temporal-dynamics-of-sleep-spindles">Spatio-Spectro-Temporal Dynamics of Sleep Spindles</h1>
-
-<p>Sleep spindles occupy a special place in systems neuroscience. They are among the most visible macroscopic signatures of thalamocortical coordination: brief, approximately one-second bursts of 10–16 Hz activity that recur during stage 2 non-REM sleep. They are large enough to be detected at the scalp, structured enough to be described as oscillatory events, and mechanistically constrained enough to be linked to thalamocortical circuit models. For that reason, spindles have long served as a bridge between cellular neurophysiology, whole-brain electrophysiology, and theories of sleep-dependent memory consolidation.</p>
-
-<p>Yet even a rhythm as canonical as the spindle is not a unitary object. The fact that it appears as a coherent burst in the EEG does not mean that it is generated by a single homogeneous oscillator. A spindle is better understood as a transient synchronization event: a short-lived regime in which distributed thalamocortical circuits become coordinated, but not necessarily in the same way, at the same frequency, or at the same time.</p>
-
-<p>This paper examined one particular aspect of that coordination: the joint evolution of <strong>frequency</strong>, <strong>topography</strong>, and <strong>time</strong> within individual human sleep spindles, measured simultaneously with high-density EEG and MEG.</p>
-
-<p>The question was simple, but physiologically important:</p>
+<p>The goal was not only to record neurons in human cortex, but to ask a more specific question:</p>
 
 <blockquote>
-  <p>Do sleep spindles merely have different frequencies at different scalp locations, or do these frequency-specific topographies evolve systematically over the lifetime of each spindle?</p>
+  <p>Can we separate putative excitatory and inhibitory neurons in human neocortex, validate that separation functionally, and then quantify how their interactions are organized across space, timescale, and sleep state?</p>
 </blockquote>
 
-<p>The answer is that many spindles show a structured spatio-spectro-temporal sequence. Higher-frequency spindle activity tends to dominate earlier in the event and is expressed more strongly over central/posterior regions. Lower-frequency activity becomes relatively stronger later in the event and is expressed more frontally. This pattern is prominent in EEG and detectable, though weaker, in MEG.</p>
+<p>The answer was yes. The resulting picture is one in which <strong>excitatory interactions are spatially local</strong>, with correlations decaying over approximately millimeter scales, while <strong>inhibitory interactions are spatially broad</strong>, remaining correlated across the full extent of the array. This distinction provides a useful window into the functional microarchitecture of human cortex and also suggests design principles that may matter for computational models and neuroAI.</p>
 
-<p>The implication is that a spindle is not simply a single rhythm whose frequency drifts over time. Rather, it appears to reflect the successive engagement of distributed thalamocortical circuits with different characteristic frequencies.</p>
+<hr />
 
-<h2 id="sleep-spindles-as-a-model-of-thalamocortical-synchrony">Sleep spindles as a model of thalamocortical synchrony</h2>
+<h2 id="why-study-human-cortical-microcircuits-during-sleep">Why study human cortical microcircuits during sleep?</h2>
 
-<p>Sleep spindles are generated through interactions between thalamic relay cells, the inhibitory nucleus reticularis thalami, and cortical targets. At the cellular and circuit levels, spindle oscillations have been studied extensively. Intrinsic membrane currents, recurrent inhibition, thalamocortical loops, and corticothalamic feedback all contribute to the waxing-and-waning structure of the spindle.</p>
+<p>Sleep is often treated as a global brain state, but it is also a privileged setting for studying intrinsic cortical dynamics. During sleep, especially non-rapid eye movement sleep, the cortex exhibits structured spontaneous activity: slow waves, transitions between active and silent periods, and changing degrees of synchronization across cortical space. These dynamics are not simply noise. They reveal organizing principles of the cortical network.</p>
 
-<p>This has made the spindle one of the clearest examples of a brain rhythm that can be discussed simultaneously at several levels:</p>
+<p>From a neurophysiological perspective, sleep provides a way to study cortical activity without the additional complexity of task structure, sensory drive, and overt behavior. This does not mean that sleep is “simple.” Rather, it means that the dynamics are dominated by endogenous circuit interactions and state-dependent modulation. If one wants to understand how local excitatory and inhibitory populations are coordinated in human cortex, sleep is a particularly useful regime.</p>
 
-<ul>
-  <li>as a cellular phenomenon involving conductances and rebound bursting;</li>
-  <li>as a thalamocortical circuit phenomenon involving relay and reticular interactions;</li>
-  <li>as a macroscopic electrophysiological phenomenon visible in EEG and MEG;</li>
-  <li>as a systems-level event implicated in sleep stability, sensory gating, and memory consolidation.</li>
-</ul>
+<p>From a computational perspective, sleep also raises a broader question: how does a recurrent cortical system maintain stability while permitting rich, structured dynamics? Balanced network theory has long emphasized that excitation and inhibition must be coordinated in a way that produces irregular but controlled activity. Sleep adds another layer: the same microcircuit is embedded in global state changes that alter correlation structure across timescales.</p>
 
-<p>From a physics perspective, the spindle is also a transient synchronization phenomenon. It is not a stationary oscillation continuing indefinitely, but a finite-duration coherent episode. Its amplitude grows, persists briefly, and decays. Its frequency content is structured. Its spatial expression is nonuniform. And, as this paper emphasizes, its spectral and spatial organization changes over time.</p>
+<p>This paper sits at that intersection: human single-unit neurophysiology, E/I circuit dynamics, spatial organization, and state-dependent cortical computation.</p>
 
-<p>The classical description of spindles already contains an important spatial clue: frontal spindles are generally slower than central or posterior spindles. This anterior–posterior frequency gradient has been reported for decades. However, a static spatial description is incomplete. If slower and faster spindle components are expressed at different locations, one must also ask whether these components are recruited simultaneously or sequentially.</p>
+<hr />
 
-<p>The central contribution of this paper was to treat the spindle not merely as a spatial map or a spectral peak, but as a <strong>spatio-spectro-temporal object</strong>.</p>
+<h2 id="the-experimental-window-high-density-human-intracortical-recordings">The experimental window: high-density human intracortical recordings</h2>
 
-<h2 id="experimental-and-analytical-frame">Experimental and analytical frame</h2>
+<p>The data came from three patients undergoing clinical monitoring for epilepsy. A NeuroPort array was implanted in the middle temporal gyrus, with 96 microelectrodes spaced (400\,\mu\mathrm{m}) apart. The array covered roughly (4 \times 4) mm of superficial cortex, primarily layers II/III. Recordings were obtained during natural overnight sleep, sampled at high frequency, and then spike-sorted to isolate single units.</p>
 
-<p>The study used simultaneous EEG and MEG recordings during stage 2 non-REM sleep in healthy human subjects. EEG was recorded from 60 channels, and MEG from a 306-channel whole-head system. MEG sensors included magnetometers and planar gradiometers, with the main MEG analyses focused on gradiometer recordings.</p>
+<p>This experimental setting has obvious caveats. The recordings were from patients with epilepsy, and the implantation site was determined by clinical constraints. The data come from a limited cortical region and from superficial layers. The classification of cell types is necessarily “putative,” since it is based on extracellular spike features and network interactions rather than direct intracellular or molecular identification.</p>
 
-<p>Spindles were selected from stage 2 sleep using standard electrophysiological criteria: approximately 10–15 Hz rhythmic events with a waxing-and-waning morphology, excluding events immediately preceding or following K-complexes. In total, 183 spindle discharges were analyzed.</p>
+<p>But the strength of the preparation is equally important: it provides rare access to many simultaneously recorded human cortical neurons across a two-dimensional cortical patch, with enough spatial structure to examine how neuronal interactions change with distance.</p>
 
-<p>For each spindle, spectral power was estimated using Morlet wavelets across the spindle-frequency range. The analysis then focused on two representative frequencies:</p>
+<p>That spatial structure is central. Without a dense array, one can study single neurons. With a dense two-dimensional array, one can begin to ask how neuronal interactions are embedded in cortical space.</p>
 
-\[f_{\mathrm{low}} = 12 \ \mathrm{Hz},\]
+<hr />
 
-\[f_{\mathrm{high}} = 14 \ \mathrm{Hz}.\]
+<h2 id="separating-putative-excitatory-and-inhibitory-cells">Separating putative excitatory and inhibitory cells</h2>
 
-<p>To examine temporal evolution within the spindle, each spindle was time-normalized and divided into early and late windows:</p>
+<p>A first step was to distinguish two major classes of neurons: regular-spiking cells and fast-spiking cells. In animal studies, regular-spiking extracellular waveforms are often associated with pyramidal neurons, while fast-spiking waveforms are associated with inhibitory interneurons. This distinction is not perfect, but it is widely used and can be strengthened by examining intrinsic firing properties and functional interactions.</p>
 
-\[T_{\mathrm{early}} = 25\%-45\% \ \text{of spindle duration},\]
+<p>The separation was based on spike waveform morphology, especially two features:</p>
 
-\[T_{\mathrm{late}} = 55\%-75\% \ \text{of spindle duration}.\]
+\[\text{half-peak width}\]
 
-<p>Thus, for each spindle and each sensor, one could ask how low-frequency and high-frequency power differed between early and late phases.</p>
+<p>and</p>
 
-<p>This design is important because it avoids treating the spindle as a single averaged event. Instead, it asks whether the relative dominance of 12 Hz and 14 Hz components changes over the event’s lifetime, and whether those changes are tied to scalp or sensor topography.</p>
+\[\text{valley-to-peak duration}.\]
 
-<p>The resulting object of analysis is not simply power as a function of frequency, $P(f)$, or power as a function of space, $P(x)$. It is closer to:</p>
+<p>These features formed two well-defined clusters. One cluster had broader waveforms and slower dynamics, corresponding to regular-spiking cells. The other had narrower waveforms and faster dynamics, corresponding to fast-spiking cells.</p>
 
-\[P(x,f,t),\]
+<p>Across the dataset, this yielded:</p>
 
-<p>where $x$ denotes sensor location, $f$ frequency, and $t$ time within the spindle. The biological question is whether this function has reproducible structure across events.</p>
+\[190 \ \text{regular-spiking cells}\]
 
-<h2 id="the-main-pattern-early-fast-and-late-slow-spindle-dynamics">The main pattern: early-fast and late-slow spindle dynamics</h2>
+<p>and</p>
 
-<p>The dominant EEG result was a structured transition from higher-frequency to lower-frequency spindle power over the course of the event.</p>
+\[46 \ \text{fast-spiking cells}.\]
 
-<p>Early in the spindle, high-frequency power around 14 Hz was stronger. This high-frequency component was expressed most prominently over central and more posterior midline regions. Later in the spindle, low-frequency power around 12 Hz became relatively stronger, with a more frontal midline distribution.</p>
+<p>This corresponds to an approximately (80\%/20\%) split, consistent with the broad anatomical expectation that excitatory pyramidal neurons are much more numerous than inhibitory interneurons in cortex.</p>
 
-<p>In compact form, the observed sequence can be described as:</p>
+<p>But the classification was not based on waveform alone. The two populations also differed in their firing properties. Fast-spiking cells fired at substantially higher rates, approximately five times higher on average than regular-spiking cells. Regular-spiking cells, in contrast, were much more likely to show bursting. About (64\%) of the regular-spiking cells showed bursty interspike interval structure, whereas only one fast-spiking cell did so.</p>
 
-\[\text{early spindle} \rightarrow \text{higher frequency, more central/posterior},\]
+<p>The firing-rate distributions were also broad and approximately log-normal. This matters because broad, heavy-tailed firing-rate distributions are a recurring feature of cortical networks and are compatible with theoretical pictures of sparse, balanced recurrent dynamics. The cortex is not a homogeneous population of units firing around a single typical rate. It is a heterogeneous dynamical system, with some cells firing rarely and others much more frequently.</p>
 
-\[\text{late spindle} \rightarrow \text{lower frequency, more frontal}.\]
+<p>This heterogeneity is not an inconvenience. It is part of the structure.</p>
 
-<p>This pattern is not merely an artifact of averaging. When individual spindle events were classified according to whether high-frequency power decreased and low-frequency power increased from early to late periods, 48% of EEG spindles showed the predicted early-fast / late-slow pattern. Under a null model in which the two changes are independent and unordered, the chance expectation is 25%. The observed proportion was therefore substantially above chance.</p>
+<hr />
 
-<p>This matters because it establishes that the pattern is not just a property of grand averages. It occurs in a large fraction of individual spindle discharges.</p>
+<h2 id="functional-validation-through-putative-monosynaptic-interactions">Functional validation through putative monosynaptic interactions</h2>
 
-<p>The result also refines the older observation that frontal spindles tend to be slower. The anterior–posterior frequency gradient is not simply a static property of sleep EEG. It is embedded in the temporal development of the spindle itself.</p>
+<p>Waveform-based classification becomes much more convincing when it aligns with functional connectivity. To test this, we examined cross-correlograms between pairs of neurons.</p>
 
-<p>The spindle begins with relatively stronger fast activity and ends with relatively stronger slow activity. Spatially, this corresponds to a shift in dominance from central/posterior to frontal components. Spectrally, it corresponds to a shift from 14 Hz dominance toward 12 Hz dominance. Dynamically, it suggests that the spindle is an evolving event rather than a stationary oscillation.</p>
+<p>The logic is standard in extracellular physiology. If cell A tends to fire shortly before cell B at a latency of a few milliseconds, producing a sharp positive peak in the cross-correlogram, this is consistent with a putative excitatory monosynaptic effect. Conversely, if firing of cell A is followed by a short-latency suppression of cell B, this is consistent with a putative inhibitory effect.</p>
 
-<h2 id="eeg-and-meg-reveal-different-aspects-of-the-spindle">EEG and MEG reveal different aspects of the spindle</h2>
+<p>The important result was that the sign of these putative monosynaptic effects matched the waveform classification. Cells classified as regular-spiking were associated with excitatory effects; cells classified as fast-spiking were associated with inhibitory effects. This does not turn extracellular waveform classification into molecular cell typing, but it provides strong convergent evidence that the two clusters correspond to putative pyramidal cells and interneurons.</p>
 
-<p>One of the most important parts of the paper is the comparison between EEG and MEG.</p>
+<p>The monosynaptic connectivity was sparse. Only a very small fraction of possible pairs showed significant short-latency effects. This is consistent with the known sparsity of local cortical connectivity and with the fact that cross-correlogram-based methods detect only a subset of actual anatomical connections. Many synapses will not be visible in suprathreshold spike correlations.</p>
 
-<p>The same early-fast / late-slow pattern was detectable in MEG, but it was weaker. In MEG gradiometers, 34% of spindles showed the predicted temporal evolution, again above the 25% chance level, but the effect size was smaller than in EEG.</p>
+<p>The detected monosynaptic interactions were also highly local. Most excitatory effects, and essentially all inhibitory effects, were confined to cells recorded on the same electrode. This emphasizes a key distinction that runs throughout the paper:</p>
 
-<p>The quantitative contrast is striking. In EEG, low-frequency power increased substantially from early to late in the spindle, while high-frequency power decreased. In MEG, the same direction of change was present, but much more attenuated.</p>
+<blockquote>
+  <p>Direct monosynaptic interactions are local, but correlated network dynamics can extend over larger spatial scales.</p>
+</blockquote>
 
-<p>This divergence is not a technical nuisance. It is physiologically informative.</p>
+<p>This distinction is important. Correlation is not the same as direct connectivity. A pair of neurons can be correlated because they are directly connected, because they share inputs, because they are embedded in a common assembly, or because they are entrained by a larger brain state. The paper therefore moves from monosynaptic interactions to a broader spatiotemporal analysis of population correlations.</p>
 
-<p>EEG and MEG do not measure identical aspects of neural current flow. EEG is sensitive to both radial and tangential current sources, but it is strongly shaped by volume conduction through brain tissue, cerebrospinal fluid, skull, and scalp. MEG is more selectively sensitive to tangential current sources and is less distorted by the skull, but its sensitivity profile differs from EEG. Therefore, the same neural event can appear differently in EEG and MEG, not only in amplitude but also in topography and apparent synchrony.</p>
+<hr />
 
-<p>In this study, EEG spindle power was strongest along the central midline, whereas MEG gradiometer power was more prominent over lateral and basal temporo-frontal regions. The difference does not by itself prove that EEG and MEG spindles arise from entirely separate sources. But combined with the spectral and temporal differences, it supports the view that the two modalities are sampling overlapping but non-identical aspects of the spindle-generating network.</p>
+<h2 id="measuring-spatiotemporal-interactions">Measuring spatiotemporal interactions</h2>
 
-<p>This is important for source modeling. A spindle seen in EEG should not be assumed to have a one-to-one counterpart in MEG, and vice versa. Even when EEG and MEG events occur in the same broad time window, their generators, sensitivity profiles, and spatial weighting may differ.</p>
+<p>To examine interactions across space and timescale, spike trains were binned at different temporal resolutions and pairwise correlations were computed between neurons. Conceptually, for neuron (i), one can define a binned spike count signal</p>
 
-<p>In this sense, the EEG–MEG comparison argues against an overly simplistic view of macroscopic sleep rhythms. The spindle is not a single cortical source projected differently into two sensors. It is more likely a distributed event involving multiple cortical generators, with EEG and MEG emphasizing different components of the underlying current geometry.</p>
+\[n_i(t; \Delta t),\]
 
-<h2 id="fixed-topographies-and-changing-amplitudes">Fixed topographies and changing amplitudes</h2>
+<p>where (\Delta t) is the bin size. Pairwise correlations can then be computed as a function of both temporal bin size and physical distance between electrodes.</p>
 
-<p>The most conceptually important result concerns the relationship between spatial topography and temporal change.</p>
+<p>Because firing rate can bias correlation estimates, the analysis normalized correlations by the geometric mean of the firing rates of each pair. Schematically, if (r_{ij}) is the correlation between cells (i) and (j), and (\nu_i,\nu_j) are their average firing rates, the normalized interaction measure can be thought of as depending on</p>
 
-<p>One possible interpretation of the early-fast / late-slow sequence is that a single thalamocortical oscillator changes its frequency over time. In such a model, the same circuit begins oscillating faster and gradually slows down. This could occur through changes in membrane potential, synaptic inhibition, intrinsic conductances, or network delays.</p>
+\[\frac{|r_{ij}|}{\sqrt{\nu_i \nu_j}}.\]
 
-<p>A second interpretation is that the spindle recruits multiple circuits with distinct characteristic frequencies. In that view, the high-frequency and low-frequency components arise from different circuit populations. The temporal evolution of the spindle reflects a change in the relative contribution of these populations, rather than a continuous slowing of one oscillator.</p>
+<p>The analysis also used a local version of correlation to reduce experiment-dependent covariation, such as slow drift or nonstationary changes across long recordings.</p>
 
-<p>The data favor the second interpretation.</p>
+<p>This part of the paper is important because it does not treat “correlation” as a single number. Correlation is measured across multiple timescales and then related to cortical distance. The result is a spatiotemporal map of interaction structure.</p>
 
-<p>The reason is that the topographies of the low-frequency and high-frequency components remained relatively stable over the course of the spindle. After normalizing for overall power differences between early and late periods, the spatial maps of high-minus-low frequency power were similar in the early and late windows. In other words, the relative spatial signature of each frequency component did not reorganize dramatically as the spindle evolved.</p>
+<hr />
 
-<p>This suggests that the circuits generating the different frequency components are spatially and physiologically distinct. What changes over the spindle is not primarily the location of the high- or low-frequency generator, but the relative amplitude of these components.</p>
+<h2 id="local-excitatory-correlations">Local excitatory correlations</h2>
 
-<p>In dynamical-systems language, the spindle appears less like a single oscillator undergoing a smooth parameter drift and more like a transient trajectory through a network of coupled oscillatory modules. Different modules have different preferred frequencies, and the macroscopic event reflects their sequential weighting.</p>
+<p>The strongest spatial result concerned excitatory-excitatory interactions. Pairwise correlations between putative pyramidal cells decreased with distance. When correlations were averaged over spatial bins, the distance dependence was well described by an exponential form:</p>
 
-<p>Schematically:</p>
+\[\rho_{EE}(d) = \beta + \kappa e^{-d/\lambda}.\]
 
-\[P(x,f,t) \approx A_{\mathrm{fast}}(t)\Phi_{\mathrm{fast}}(x,f)
-+
-A_{\mathrm{slow}}(t)\Phi_{\mathrm{slow}}(x,f),\]
+<p>Here, (d) is the distance between recording sites, (\beta) is a baseline correlation level, (\kappa) is the amplitude of the spatially modulated component, and (\lambda) is the spatial decay constant.</p>
 
-<p>where $\Phi_{\mathrm{fast}}$ and $\Phi_{\mathrm{slow}}$ are relatively stable spatial-frequency patterns, while $A_{\mathrm{fast}}(t)$ and $A_{\mathrm{slow}}(t)$ change over the course of the spindle.</p>
+<p>The key result was that</p>
 
-<p>In this picture, the spindle’s temporal evolution is produced by changing mixture weights over stable components. Early in the spindle,</p>
+\[\lambda \approx 1 \ \mathrm{mm}.\]
 
-\[A_{\mathrm{fast}}(t) &gt; A_{\mathrm{slow}}(t),\]
+<p>This is a meaningful scale. It is compatible with the spatial extent of local axonal arborization in superficial cortical layers and with classical ideas about columnar or hypercolumnar organization in human cortex. In other words, excitatory correlations were not spread uniformly over the array. They were organized around a local spatial scale.</p>
 
-<p>whereas later,</p>
+<p>The amplitude of the spatial modulation depended on the temporal bin size. At shorter timescales, local structure was more apparent. At longer timescales, correlations became more spatially uniform, partly because slow fluctuations raise the baseline level of correlation. However, when the exponential decay was present, its spatial scale remained close to the millimeter range.</p>
 
-\[A_{\mathrm{slow}}(t)\]
+<p>This is a crucial point. The strength of spatial modulation changes with timescale, but the characteristic spatial scale of excitatory correlation remains relatively stable. That suggests that the spatial organization is not merely an artifact of one chosen bin size. It reflects a structural or functional scale of the local excitatory network.</p>
 
-<p>becomes relatively larger.</p>
+<hr />
 
-<p>This is a useful way to think about the event because it separates two questions that are often conflated:</p>
+<h2 id="broad-inhibitory-correlations">Broad inhibitory correlations</h2>
+
+<p>The inhibitory-inhibitory correlations showed a very different pattern. Putative interneurons were correlated across the full extent of the array, without a clear decay over the (4) mm spatial range sampled.</p>
+
+<p>This does not mean that every interneuron is directly connected to every other interneuron. The monosynaptic analysis showed that direct detectable interactions were local and sparse. Instead, the broad inhibitory correlation likely reflects a combination of mechanisms: shared inputs, large-scale state modulation, long-range interneuronal coordination, and possibly subcortical drive, including thalamocortical influences.</p>
+
+<p>The important computational point is that the inhibitory population did not mirror the excitatory spatial organization. Excitation and inhibition were not simply two signed versions of the same graph. They had different spatial correlation structures.</p>
+
+<p>A compact summary of the result is:</p>
+
+\[\text{E--E correlations: local, distance-dependent, } \lambda \sim 1\,\mathrm{mm}.\]
+
+\[\text{I--I correlations: broad, distance-independent over the sampled range.}\]
+
+<p>This asymmetry has consequences for how we think about cortical computation. Excitatory neurons may form local coherent assemblies, while inhibitory neurons may participate in a broader regulatory network that coordinates activity across a larger spatial domain.</p>
+
+<hr />
+
+<h2 id="sleep-state-dependence">Sleep state dependence</h2>
+
+<p>The paper also examined whether the distance dependence of correlations changed across wake/drowsiness, light NREM sleep, and deep NREM sleep.</p>
+
+<p>For inhibitory pairs, the relationship between correlation and distance remained essentially flat across states. For excitatory pairs, the distance dependence was strongest during wake/drowsiness and light NREM sleep. During deep NREM sleep, the spatial relationship was reduced, though often still present or close to significant.</p>
+
+<p>This fits naturally with what is known about slow-wave sleep. Deep NREM sleep introduces large-scale entrainment through slow and delta oscillations. As slow fluctuations become more dominant, the cortex becomes more globally synchronized, and local spatial distinctions can be partially washed out. In the language of the exponential model, slow state-dependent fluctuations raise the baseline component (\beta), reducing the relative prominence of the local spatially modulated component (\kappa).</p>
+
+<p>This is another reason the result is interesting. The local excitatory structure is not independent of brain state. It is embedded in ongoing global dynamics. The same microcircuit can look more locally structured or more globally synchronized depending on the sleep state and timescale of analysis.</p>
+
+<hr />
+
+<h2 id="a-two-scale-picture-of-human-cortical-microcircuits">A two-scale picture of human cortical microcircuits</h2>
+
+<p>The main conceptual picture that emerges from the paper is a two-scale organization:</p>
 
 <ol>
-  <li>What are the spatially distributed circuits capable of producing spindle-frequency activity?</li>
-  <li>How are these circuits dynamically recruited over the course of an individual spindle?</li>
+  <li><strong>Local excitatory assemblies</strong>, organized over approximately millimeter scales.</li>
+  <li><strong>Broad inhibitory coordination</strong>, extending over several millimeters or more.</li>
 </ol>
 
-<p>The paper suggests that these questions cannot be answered by a static topographic or spectral analysis alone. They require a joint analysis of space, frequency, and time.</p>
+<p>This is not a complete theory of cortical computation, but it is a concrete empirical constraint. The cortex is not simply a uniform sheet of recurrently coupled neurons. Nor is it only a set of independent local modules. The data suggest a hybrid structure: local excitatory coherence embedded in broader inhibitory coordination.</p>
 
-<h2 id="synchrony-does-not-imply-homogeneity">Synchrony does not imply homogeneity</h2>
+<p>This picture resonates with several ideas in systems neuroscience. Local excitatory connectivity can support assemblies, feature-specific computation, and recurrent amplification. Broad inhibition can regulate gain, synchronize or desynchronize local populations, control timing, and prevent runaway excitation. The interaction between these two systems may be one way the cortex balances local specialization with global state control.</p>
 
-<p>A broader lesson of the study is that synchronization should not be equated with uniformity.</p>
+<p>It also resonates with balanced network theory. The observed ratio of firing rates between putative inhibitory and excitatory neurons, together with the relative proportions of the two populations, provides indirect support for the idea that inhibitory neurons compensate for their smaller numbers by firing at higher rates. The broad log-normal firing-rate distributions further suggest a sparse, heterogeneous operating regime rather than a homogeneous mean-field one.</p>
 
-<p>Sleep spindles are often described as synchronized thalamocortical oscillations. That description is correct, but incomplete. The word “synchrony” can easily suggest that a distributed network is doing the same thing everywhere. The results here show that this is not the case.</p>
+<p>At the same time, the paper does not claim to directly demonstrate balance in the intracellular conductance sense. That would require intracellular recordings. The evidence here is extracellular and population-level. It is therefore best viewed as a set of convergent signatures: waveform-based cell classes, functional monosynaptic validation, firing-rate asymmetry, broad firing-rate distributions, and distinct E–E versus I–I spatial correlation structure.</p>
 
-<p>The spindle is synchronized in the sense that a coherent macroscopic event is visible across the scalp. But within that event, there is structured heterogeneity:</p>
+<hr />
+
+<h2 id="why-this-matters-for-computational-neuroscience">Why this matters for computational neuroscience</h2>
+
+<p>For computational neuroscience, the paper provides several constraints that are easy to state but nontrivial to build into models.</p>
+
+<p>First, <strong>cell type matters</strong>. A recurrent cortical model that ignores the distinction between excitatory and inhibitory populations may reproduce some aggregate dynamics, but it will miss the different spatial organizations of these populations. Excitation and inhibition are not just positive and negative weights. They are embedded in different anatomical, physiological, and dynamical structures.</p>
+
+<p>Second, <strong>space matters</strong>. The millimeter-scale decay of excitatory correlations suggests that local recurrent excitation should not be modeled as spatially uniform. Distance-dependent connectivity, local assembly structure, and finite spatial correlation lengths are not details; they shape the effective computational units of cortex.</p>
+
+<p>Third, <strong>timescale matters</strong>. The apparent organization of the network depends on the temporal scale at which interactions are measured. Short timescales reveal local structure more sharply. Long timescales introduce global components that increase baseline correlations. A model that only matches correlations at one bin size may miss the actual spatiotemporal organization of the circuit.</p>
+
+<p>Fourth, <strong>state matters</strong>. The same cortical tissue expresses different correlation structures across wake/drowsiness, light NREM, and deep NREM sleep. Models of cortical computation should therefore not only reproduce task-evoked activity or stationary spontaneous activity. They should also explain how circuit interactions change with global state.</p>
+
+<p>A useful modeling target would be to build recurrent E/I networks in which local excitatory assemblies coexist with broad inhibitory coordination, and then test whether such networks reproduce the observed dependence of pairwise correlations on distance, timescale, and sleep state.</p>
+
+<hr />
+
+<h2 id="hints-for-neuroai">Hints for neuroAI</h2>
+
+<p>The neuroAI implications should be treated carefully. The goal is not to copy every biological detail into artificial networks. But this paper does suggest architectural principles that may be useful.</p>
+
+<p>Many artificial neural networks use relatively uniform computational operations across a layer. Convolutional networks impose local spatial structure, but they do not usually distinguish between local excitatory assembly formation and broader inhibitory state control. Transformers implement global interactions through attention, but their global mixing is not usually organized around biologically distinct excitatory and inhibitory populations. Recurrent neural networks can in principle express rich dynamics, but they often lack structured multiscale E/I organization.</p>
+
+<p>The cortical pattern suggested here is different:</p>
+
+\[\text{local recurrent excitation} + \text{broad inhibitory coordination}.\]
+
+<p>One neuroAI translation would be to design architectures in which local modules perform representational computation through recurrent excitatory-like interactions, while broader inhibitory-like mechanisms control gain, competition, routing, normalization, or state transitions.</p>
+
+<p>This could be implemented in many ways, depending on the model class:</p>
 
 <ul>
-  <li>different regions express different characteristic frequencies;</li>
-  <li>different frequency components have different topographies;</li>
-  <li>the relative contribution of these components changes over time;</li>
-  <li>EEG and MEG emphasize different aspects of the event.</li>
+  <li>In recurrent neural networks, one could impose distance-dependent excitatory connectivity while allowing inhibitory units to pool or regulate activity over larger spatial domains.</li>
+  <li>In spiking neural networks, burst-capable excitatory units could be embedded in locally recurrent assemblies, with inhibitory populations coordinating timing across modules.</li>
+  <li>In graph neural networks, excitatory and inhibitory edges could be assigned different spatial kernels and different update rules.</li>
+  <li>In attention-based systems, local attention-like mechanisms could be combined with broader suppressive or normalizing mechanisms that regulate context and prevent uncontrolled amplification.</li>
 </ul>
 
-<p>Thus, synchrony here is not a collapse into uniform global oscillation. It is coordinated heterogeneity. The system becomes organized, but not homogeneous.</p>
+<p>The most important point is not that inhibition should be added as a superficial negative weight. Rather, inhibition may be better thought of as a <strong>state-control system</strong>: a mechanism that regulates when local computations become synchronized, desynchronized, amplified, or suppressed.</p>
 
-<p>This distinction matters for systems neuroscience. Many brain rhythms are described by frequency bands: alpha, beta, gamma, delta, spindle, ripple. But the band label can obscure the internal structure of an event. A spindle is not merely “12–15 Hz power.” It is an evolving pattern of frequency-specific synchronization across thalamocortical circuits.</p>
+<p>The sleep-state dependence in the paper is especially relevant here. Biological networks do not operate with a fixed correlation structure. They move between regimes. For neuroAI, this suggests that useful recurrent systems may require mechanisms for state-dependent reconfiguration: the same local modules may need to operate differently depending on whether the system is in an exploratory, integrative, memory-consolidating, or task-engaged regime.</p>
 
-<p>For neurophysiology, this means that spectral power alone is insufficient. For source modeling, it means that a single equivalent generator may miss important distributed structure. For theoretical neuroscience, it means that the dynamics of coordination may be better described in terms of interacting modules than in terms of a single global oscillator.</p>
-
-<h2 id="possible-circuit-interpretation">Possible circuit interpretation</h2>
-
-<p>The spindle rhythm is generated through thalamocortical interactions, but the cortical expression of the spindle is spatially distributed. The early-fast / late-slow sequence suggests that posterior or central cortical modules may be engaged earlier, while frontal modules become more prominent later.</p>
-
-<p>This interpretation is compatible with several physiological considerations.</p>
-
-<p>First, thalamocortical circuits are not uniform. Different cortical territories interact with different thalamic nuclei and corticothalamic loops. These loops may differ in intrinsic time constants, conduction delays, inhibitory structure, and resonance properties. It is therefore plausible that different thalamocortical modules have different characteristic spindle frequencies.</p>
-
-<p>Second, the nucleus reticularis thalami provides a mechanism for coordinating activity across thalamic relay systems. Because reticular neurons receive corticothalamic input and provide inhibitory control over thalamic relay cells, they are well positioned to organize large-scale spindle synchronization. Prefrontal projections to the reticular nucleus may be especially relevant for the involvement of frontal circuits in later spindle phases.</p>
-
-<p>Third, the anterior slowing of spindles may reflect intrinsic differences in the circuits engaged by frontal cortex. Frontal thalamocortical loops may have slower characteristic dynamics than posterior or central loops. In that case, the observed frequency gradient would not be a superficial scalp phenomenon but a signature of circuit-level heterogeneity.</p>
-
-<p>The paper does not claim to identify the exact generators of the slow and fast components. But it narrows the physiological interpretation. Since the topographies remain stable while the amplitudes change, the temporal evolution is more consistent with successive engagement of different generators than with continuous frequency modulation of a single generator.</p>
-
-<h2 id="relation-to-memory-consolidation">Relation to memory consolidation</h2>
-
-<p>Sleep spindles have been repeatedly implicated in memory consolidation. They are associated with declarative memory performance, interact with hippocampal sharp-wave ripples, and occur during a brain state in which recent waking experience may be reorganized and stabilized.</p>
-
-<p>The spatio-spectro-temporal structure described in this paper adds an important systems-level dimension to that literature.</p>
-
-<p>If spindles were spatially uniform events, their role in memory consolidation might be framed simply as a global thalamocortical permissive state. But if spindles contain structured posterior-to-anterior dynamics, then they may provide a temporal scaffold for coordinating different cortical representations.</p>
-
-<p>One possible interpretation is that the early-fast posterior/central component reflects engagement of sensory or perceptual cortical systems, while the later-slow frontal component reflects subsequent recruitment of executive or integrative systems. This would be consistent with a broad picture in which memory consolidation involves not merely local reactivation, but the coordinated interaction of distributed cortical networks.</p>
-
-<p>In waking behavior, information often flows from sensory processing toward association and executive systems. During sleep, a spindle may provide a compressed temporal window in which related cortical systems are sequentially coordinated. In that sense, the spindle’s internal dynamics may be relevant to how hippocampal-cortical replay is integrated into broader cortical networks.</p>
-
-<p>This remains a hypothesis. The present paper did not directly measure memory traces or hippocampal ripples. But the observed posterior-to-anterior temporal structure provides a physiological motif that future studies can test in relation to replay, consolidation, and cortico-hippocampal communication.</p>
-
-<h2 id="why-the-result-matters-for-modeling">Why the result matters for modeling</h2>
-
-<p>For computational and physical modeling of brain rhythms, the result argues for models that go beyond a single oscillator or a single global order parameter.</p>
-
-<p>A minimal model of spindle generation must account for waxing-and-waning oscillatory activity. But a richer model must also account for:</p>
-
-\[\text{frequency-specific spatial structure},\]
-
-\[\text{time-varying recruitment of components},\]
-
-\[\text{modality-dependent measurement differences},\]
-
-\[\text{stable topographies with changing amplitudes}.\]
-
-<p>This points toward models of coupled thalamocortical modules, each with its own resonance properties and coupling architecture. The spindle would then be understood as a transient collective mode of a heterogeneous network.</p>
-
-<p>In such a model, different modules need not have identical natural frequencies. Coupling can coordinate them without erasing their differences. The event can be globally recognizable as a spindle while still containing structured internal diversity.</p>
-
-<p>This is a familiar theme in physics: macroscopic order can emerge from heterogeneous components without requiring microscopic uniformity. The coherence of the spindle does not imply that all participating circuits oscillate identically. Instead, coherence may arise through constrained coordination among components with different intrinsic dynamics.</p>
-
-<p>This perspective also helps explain why EEG and MEG do not show identical spindle dynamics. Each modality observes a different projection of the same underlying distributed process. The measured signal is a function not only of the neural dynamics but also of source geometry, tissue conductivity, and sensor sensitivity.</p>
-
-<p>Thus, the inverse problem is not merely a technical obstacle. It is part of the scientific interpretation. The measurement modality determines which aspects of the distributed oscillator are visible.</p>
-
-<h2 id="a-conceptual-summary">A conceptual summary</h2>
-
-<p>The core message of the paper can be stated as follows.</p>
-
-<p>Sleep spindles are not monolithic oscillatory bursts. They are structured events in which frequency, space, and time are coupled. In many spindles, faster activity is stronger earlier and more posterior/central, while slower activity becomes stronger later and more frontal. This sequence is robust in EEG and weaker but still detectable in MEG. The stability of frequency-specific topographies over time suggests that the spindle’s temporal evolution reflects the changing recruitment of distinct thalamocortical circuits rather than the smooth slowing of a single oscillator.</p>
-
-<p>This has several consequences.</p>
-
-<p>First, spindle frequency should not be treated as a single scalar property of an event. A spindle contains multiple frequency components whose relative expression changes over time.</p>
-
-<p>Second, spindle topography should not be treated as static. The spatial organization of spindle power is tied to the temporal evolution of the event.</p>
-
-<p>Third, EEG and MEG should be interpreted as complementary but non-identical views of spindle physiology. Their differences are informative, not merely inconvenient.</p>
-
-<p>Fourth, models of thalamocortical synchrony should allow for distributed modules with distinct characteristic frequencies and sequential recruitment.</p>
-
-<p>Finally, the role of spindles in memory consolidation may depend not only on their occurrence rate or amplitude, but also on their internal spatio-temporal organization.</p>
-
-<h2 id="closing-perspective">Closing perspective</h2>
-
-<p>Sleep spindles are often introduced as textbook rhythms: brief 10–16 Hz oscillations during stage 2 sleep. But the simplicity of that definition hides the richness of the phenomenon. A spindle is not only a rhythm; it is a coordinated event unfolding across frequency, cortical space, and time.</p>
-
-<p>The results of this paper show that the spindle’s internal structure is not random. In a substantial fraction of events, the spindle begins with a stronger fast component and ends with a stronger slow component. The corresponding topography moves from a more central/posterior fast dominance toward a more frontal slow dominance. This structure is especially clear in EEG and present more weakly in MEG.</p>
-
-<p>For neurophysiology, this emphasizes that macroscopic brain rhythms must be analyzed as evolving events, not only as spectral peaks. For systems neuroscience, it suggests that thalamocortical synchrony is organized through the sequential engagement of heterogeneous cortical modules. For physics-oriented approaches to brain dynamics, it provides an example of transient order in a distributed, nonuniform oscillatory system.</p>
-
-<p>The spindle, then, is not just a marker of sleep stage. It is a window into how the brain coordinates distributed circuits during a state in which external input is reduced, internal dynamics dominate, and memory-related reorganization may unfold. Its frequency structure, spatial organization, and temporal evolution together reveal a form of thalamocortical synchrony that is coordinated, heterogeneous, and dynamically ordered.</p>]]></content><author><name>Nima Dehghani</name></author><category term="Spindle" /><category term="MEG" /><category term="EEG" /><category term="Oscillation" /><category term="Cortex" /><summary type="html"><![CDATA[Companion post to: Topographical frequency dynamics within EEG and MEG sleep spindles Nima Dehghani, Sydney S. Cash, Eric Halgren Clinical Neurophysiology Volume 122, Issue 2, February 2011, Pages 229-235 DOI: https://doi.org/10.1016/j.clinph.2010.06.018]]></summary></entry><entry><title type="html">Electromagnetic scaling in the brain: EEG, MEG, and the resistive-medium assumption</title><link href="https://neurovium.github.io/posts/pblog-MEGEEG-spectra-scaling/" rel="alternate" type="text/html" title="Electromagnetic scaling in the brain: EEG, MEG, and the resistive-medium assumption" /><published>2010-08-01T00:00:00+00:00</published><updated>2010-08-01T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-Spindle-MEGEEG-spectra-scaling</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-MEGEEG-spectra-scaling/"><![CDATA[<p><em>Companion post to:</em><br />
-<strong>Comparative power spectral analysis of simultaneous electroencephalographic and magnetoencephalographic recordings in humans suggests non-resistive extracellular media</strong><br />
-Nima Dehghani, Claude Bédard, Sydney S. Cash, Eric Halgren, and Alain Destexhe<br />
-<em>Journal of Computational Neuroscience</em> 29, 405–421, 2010<br />
-DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.1007/s10827-010-0263-2</code></p>
+<p>In this sense, the paper points toward a richer form of biologically inspired architecture: not simply networks with E/I signs, but networks with <strong>different spatial scales for excitation and inhibition</strong>, and with <strong>state-dependent modulation of their interaction structure</strong>.</p>
 
 <hr />
 
-<h2 id="1-why-the-electrical-properties-of-brain-tissue-matter">1. Why the electrical properties of brain tissue matter</h2>
+<h2 id="limitations-and-caution">Limitations and caution</h2>
 
-<p>A large part of electrophysiology rests on a deceptively simple physical assumption: that the extracellular medium of the brain behaves, to a good approximation, as a resistive volume conductor.</p>
+<p>Several caveats are important.</p>
 
-<p>This assumption is embedded in many models of local field potentials, electroencephalography (EEG), magnetoencephalography (MEG), and source localization. If the medium is resistive, the relation between neural current sources and measured extracellular potentials is greatly simplified. The brain, cerebrospinal fluid, dura, skull, and scalp can be treated as conducting media with conductivities that may vary in space, but not in frequency. In that case, the mathematical problem reduces to a familiar form: currents generate electric potentials through equations closely related to Coulomb’s law and Poisson’s equation, and magnetic fields can be computed under the quasi-static approximation.</p>
+<p>The recordings were obtained from patients with epilepsy. Although the analyzed periods excluded overt seizures and epileptiform activity on the relevant electrodes, one cannot completely rule out disease-related changes in local circuitry.</p>
 
-<p>This is not merely a technical convenience. It shapes how we interpret measured signals. It affects how we build forward models, how we infer sources from EEG and MEG, how we interpret the power spectrum of field potentials, and how we connect microscopic current sources to macroscopic measurements.</p>
+<p>The recordings were from a limited cortical region, the middle temporal gyrus, and primarily from superficial layers. The results should not automatically be generalized to all cortical areas, all layers, or all behavioral states.</p>
 
-<p>But the resistive-medium assumption is not guaranteed by first principles. Biological tissue is not a homogeneous salt solution. It contains membranes, ionic concentration gradients, extracellular matrix, glial processes, tortuous extracellular spaces, interfaces between tissue compartments, and frequency-dependent polarization mechanisms. If these features introduce frequency-dependent impedance, then the extracellular medium is not purely resistive. In that case, the medium itself filters neural activity, and the measured spectrum is not simply the spectrum of neural sources projected through a static conductor.</p>
+<p>The classification into pyramidal cells and interneurons is putative. It is based on extracellular waveform features, firing properties, and functional interactions. This is strong evidence, but it is not the same as genetic, morphological, or intracellular identification.</p>
 
-<p>This paper was motivated by that problem.</p>
+<p>The spatial range of the array was also limited. The finding that inhibitory correlations remain broad over (4) mm does not tell us the full spatial extent of inhibitory coordination. It tells us that, within the sampled range, the I–I correlation structure does not show the same decay observed for E–E pairs.</p>
 
-<p>The central question was:</p>
+<p>Finally, correlations are not direct causal interactions. The paper combines cross-correlogram analysis with pairwise correlation analysis, but the broader spatial correlations likely reflect direct connections, shared inputs, state modulation, and polysynaptic interactions.</p>
 
-<blockquote>
-  <p>Can the macroscopic electromagnetic signals measured by EEG and MEG be reconciled with a purely resistive extracellular medium?</p>
-</blockquote>
-
-<p>Rather than directly measuring tissue impedance with externally injected currents, we took an indirect route. We asked what Maxwell’s equations imply for the frequency scaling of EEG and MEG if the medium is resistive, and then tested that prediction using simultaneous EEG and MEG recordings in humans.</p>
+<p>These caveats do not weaken the core result. They define its proper interpretation.</p>
 
 <hr />
 
-<h2 id="2-the-physical-issue-resistive-versus-non-resistive-media">2. The physical issue: resistive versus non-resistive media</h2>
+<h2 id="the-broader-message">The broader message</h2>
 
-<p>In a purely resistive medium, current density and electric field are related by Ohm’s law:</p>
+<p>The paper provides a rare view of human neocortical microcircuit dynamics at the level of putative excitatory and inhibitory neurons. Its central contribution is not only the separation of cell classes, but the demonstration that these classes participate in different spatial regimes of interaction.</p>
 
-\[\mathbf{j} = \sigma \mathbf{E},\]
+<p>Excitatory neurons form locally coherent structures, with correlations decaying over approximately (1) mm. Inhibitory neurons show broader correlation over the sampled cortical patch. These two scales coexist during sleep and are modulated by brain state.</p>
 
-<p>where $\sigma$ is the conductivity. If $\sigma$ does not depend on frequency, then the medium does not introduce frequency-dependent filtering. The geometry of the volume conductor may still matter, and the conductivity may differ across compartments, but the medium does not reshape the signal spectrum in a frequency-selective way.</p>
+<p>For systems neuroscience, this provides a concrete empirical picture of human cortical microarchitecture. For computational neuroscience, it gives modelers measurable constraints: firing-rate distributions, E/I asymmetry, sparse local monosynaptic interactions, distance-dependent excitatory correlations, broad inhibitory coordination, and state-dependent modulation. For neuroAI, it suggests that useful biologically inspired architectures may need more than generic recurrence or local connectivity. They may need distinct spatial and dynamical roles for excitation and inhibition.</p>
 
-<p>A more general linear medium is described by frequency-dependent electrical parameters. In Fourier space, one can write the admittance as</p>
+<p>The cortex appears to solve a difficult computational problem: how to maintain local specialization while preserving global coordination. This paper suggests one possible mechanism. Local excitatory assemblies provide spatially specific computation. Broad inhibitory dynamics provide large-scale regulation. Their interaction may be one of the organizing principles that allows human cortex to remain both structured and flexible across changing brain states.</p>
 
-\[\gamma_f = \sigma_f + i \omega \epsilon_f,\]
-
-<p>where $\sigma_f$ is the frequency-dependent conductivity, $\epsilon_f$ is the permittivity, and $\omega = 2\pi f$. If $\gamma_f$ depends on frequency, the medium is non-resistive. The extracellular space then acts as a filter whose effect depends on frequency.</p>
-
-<p>The distinction matters because EEG and MEG are not the same physical measurement. EEG measures electric potential differences at the scalp. MEG measures magnetic fields generated by neural currents. These two signals are related to the same underlying neural activity, but they couple differently to the electric and magnetic aspects of the field.</p>
-
-<p>If the medium is purely resistive, the low-frequency scaling of EEG and MEG should be constrained in a particular way. If the medium is non-resistive, this constraint can break.</p>
-
-<p>The paper turns this observation into a testable prediction.</p>
-
-<hr />
-
-<h2 id="3-from-maxwells-equations-to-a-spectral-prediction">3. From Maxwell’s equations to a spectral prediction</h2>
-
-<p>The starting point is Maxwell’s equations, written for a linear medium. In the frequency domain, the relevant quantities are the electric field $\mathbf{E}_f$, electric displacement $\mathbf{D}_f$, magnetic induction $\mathbf{B}_f$, magnetic field $\mathbf{H}_f$, and current density $\mathbf{j}_f$. For the low frequencies relevant to EEG and MEG, the quasi-static approximation is usually invoked. Under this approximation,</p>
-
-\[\nabla \times \mathbf{E}_f \approx 0,\]
-
-<p>so the electric field can be expressed as the gradient of a scalar potential:</p>
-
-\[\mathbf{E}_f = -\nabla V_f.\]
-
-<p>The current density contains the primary current sources generated by neurons, denoted $\mathbf{j}^p_f$, together with the current induced in the extracellular medium. The resulting equation for the electric potential can be written in the form</p>
-
-\[\nabla \cdot \left( \gamma_f \nabla V_f \right) = \nabla \cdot \mathbf{j}^p_f.\]
-
-<p>This equation is already enough to show why the resistive assumption is special. If $\gamma_f$ is frequency independent, the medium does not add its own spectral dependence. If $\gamma_f$ depends on frequency, then the extracellular medium contributes directly to the frequency dependence of the measured potential.</p>
-
-<p>For the magnetic field, the corresponding expression depends on the curl of the primary current density. In the resistive case, and under the quasi-static approximation, the magnetic induction can be expressed in a form analogous to the Ampère–Laplace law. Importantly, in a purely resistive medium, the magnetic induction depends on the primary currents but not on a frequency-dependent extracellular admittance.</p>
-
-<p>This gives the key prediction of the paper.</p>
-
-<p>If the medium is resistive, and if the spatial and frequency dependence of the primary current density factorize as</p>
-
-\[\mathbf{j}^p_f(\mathbf{x}) = \mathbf{j}^p_e(\mathbf{x}) F(f),\]
-
-<p>then the electric potential and magnetic induction should have the same frequency dependence at low frequencies.</p>
-
-<p>Equivalently:</p>
-
-<blockquote>
-  <p>Under the resistive-medium assumption, the low-frequency power spectral density of EEG and MEG should scale with the same exponent.</p>
-</blockquote>
-
-<p>This is not a claim that EEG and MEG should have the same amplitude, the same spatial topography, or the same sensitivity profile. They clearly do not. The claim is narrower and more physical: if the medium is resistive, the frequency scaling imposed by the underlying current sources should be shared by both modalities at low frequency.</p>
-
-<p>Thus, the comparison of EEG and MEG spectra becomes a test of the resistive-medium assumption.</p>
-
-<hr />
-
-<h2 id="4-why-simultaneous-eeg-and-meg-are-essential">4. Why simultaneous EEG and MEG are essential</h2>
-
-<p>Previous work had examined power-law scaling in EEG or MEG separately. But separate recordings cannot cleanly answer the question posed here, because the relevant prediction concerns the relative scaling of electric and magnetic signals generated by the same ongoing brain activity.</p>
-
-<p>For this reason, the study analyzed simultaneous EEG and MEG recordings from awake human subjects. The recordings were obtained during quiet wakefulness, with eyes open, in a desynchronized state. This state is important for the theoretical argument because the derivation assumes that current sources are weakly correlated. In desynchronized, high-conductance-like regimes, synaptic input is intense and relatively decorrelated, making the factorization assumption more plausible than it would be during strongly synchronized rhythms.</p>
-
-<p>The measurements included:</p>
-
-<ul>
-  <li>60 EEG channels;</li>
-  <li>306 MEG channels from a whole-head Neuromag system;</li>
-  <li>magnetometer and gradiometer recordings;</li>
-  <li>empty-room MEG recordings acquired before the human recordings.</li>
-</ul>
-
-<p>The analysis focused on the low-frequency range</p>
-
-\[0.1 \text{ Hz} \leq f \leq 10 \text{ Hz},\]
-
-<p>because this is the regime where the theoretical prediction is expected to apply most directly and where the quasi-static approximation is appropriate.</p>
-
-<hr />
-
-<h2 id="5-estimating-frequency-scaling-robustly">5. Estimating frequency scaling robustly</h2>
-
-<p>The quantity of interest was the scaling exponent of the power spectral density. If the PSD follows approximately</p>
-
-\[P(f) \sim \frac{1}{f^\alpha},\]
-
-<p>then the exponent $\alpha$ can be estimated from the slope of the spectrum in log-log coordinates:</p>
-
-\[\log P(f) \sim -\alpha \log f.\]
-
-<p>In practice, estimating this slope is not trivial. Biological spectra contain peaks, finite-size effects, low-frequency drifts, sensor noise, and deviations from exact power laws. A naive linear fit can be biased by spectral peaks, including residual alpha-band activity around 10 Hz.</p>
-
-<p>To address this, the paper used a B-spline-based procedure. The PSD was first smoothed using optimized knots, with greater resolution assigned to the low-frequency range. The scaling exponent was then estimated from a first-degree polynomial fit to the smoothed log-log spectrum over the relevant frequency interval.</p>
-
-<p>This procedure had two purposes. First, it provided an automated way to handle many channels across EEG and MEG. Second, it reduced the influence of local spectral irregularities while preserving the broad scaling behavior.</p>
-
-<p>The result was a spatial map of scaling exponents for EEG and MEG.</p>
-
-<hr />
-
-<h2 id="6-the-complication-meg-noise-and-empty-room-correction">6. The complication: MEG noise and empty-room correction</h2>
-
-<p>MEG is highly sensitive to environmental and instrumental noise. SQUID sensors can also introduce colored noise, including $1/f$-like structure. Therefore, a direct comparison of raw EEG and raw MEG spectra would be insufficient.</p>
-
-<p>The study therefore used empty-room recordings to characterize MEG noise. These empty-room recordings were acquired in the same shielded environment, with no subject present. The resulting spectra revealed that MEG noise itself can have strong low-frequency scaling. In some cases, the empty-room scaling resembled the raw MEG scaling.</p>
-
-<p>This made noise correction essential.</p>
-
-<p>Several correction methods were used, each corresponding to a different assumption about the nature of the noise.</p>
-
-<h3 id="exponent-subtraction">Exponent subtraction</h3>
-
-<p>One possibility is that the observed MEG scaling is largely caused by the frequency response of the sensors. In that case, one can subtract the scaling exponent estimated from the empty-room recording. This is a strong correction and, in practice, nearly abolishes the MEG scaling.</p>
-
-<h3 id="linear-multiband-spectral-subtraction">Linear multiband spectral subtraction</h3>
-
-<p>A second possibility is that the noise is additive and uncorrelated with the neural signal. The simplest version of this correction subtracts the empty-room power spectrum from the measured MEG spectrum in frequency bands.</p>
-
-<h3 id="nonlinear-multiband-spectral-subtraction">Nonlinear multiband spectral subtraction</h3>
-
-<p>Because MEG signal-to-noise ratio is frequency dependent and spatially variable across sensors, a more appropriate correction uses band-specific SNR estimates. This nonlinear correction accounts for the fact that low-frequency bands have higher SNR and larger sensor-to-sensor variability.</p>
-
-<h3 id="wiener-filtering">Wiener filtering</h3>
-
-<p>Wiener filtering provides another way to estimate the clean signal from the noisy measurement by minimizing mean-square error. In the frequency domain, the Wiener filter can be expressed in terms of signal and noise power.</p>
-
-<h3 id="partial-least-squares-regression">Partial least squares regression</h3>
-
-<p>Finally, partial least squares regression was used to identify spectral patterns in the MEG recordings that could be predicted from empty-room noise. The residual component was then interpreted as the part of the spectrum not explained by noise.</p>
-
-<p>The important point is that these methods do not all make the same assumptions. If the EEG–MEG spectral difference disappeared under one correction method but not another, the interpretation would be fragile. Instead, the opposite occurred.</p>
-
-<p>Across correction methods, the EEG–MEG difference persisted, and in several cases became stronger.</p>
-
-<hr />
-
-<h2 id="7-the-main-empirical-result-eeg-and-meg-do-not-scale-the-same-way">7. The main empirical result: EEG and MEG do not scale the same way</h2>
-
-<p>The central empirical finding is that EEG and MEG have different low-frequency scaling exponents.</p>
-
-<p>The EEG spectra showed scaling broadly in the range between</p>
-
-\[1/f
-\quad \text{and} \quad
-1/f^2,\]
-
-<p>with values close to $1/f$ especially along midline regions. Temporal and frontal regions tended to show somewhat larger exponents.</p>
-
-<p>MEG, however, showed a different pattern. Its scaling exponents were more spatially variable and had a distinct topographic organization. In particular, the MEG maps showed:</p>
-
-<ol>
-  <li>a frontal region with relatively high exponent values;</li>
-  <li>a central region where EEG and MEG exponents could appear closer in value;</li>
-  <li>a parietotemporal horseshoe-like region with lower MEG exponents and broader variability.</li>
-</ol>
-
-<p>This was not simply an amplitude difference. It was a difference in the frequency dependence of the two modalities.</p>
-
-<p>The distinction also persisted after noise correction. Nonlinear multiband spectral subtraction and Wiener filtering preserved the spatial structure of MEG scaling while increasing the difference from EEG. Partial least squares correction produced still lower MEG exponents. Exponent subtraction nearly eliminated MEG scaling, as expected under the strong assumption that the measured scaling was sensor-induced.</p>
-
-<p>Thus, the data did not support the prediction of a common EEG/MEG scaling exponent under a purely resistive medium.</p>
-
-<p>The conclusion is not that every detail of the observed spectra is explained. Rather, the conclusion is that the simplest resistive-volume-conductor picture fails a concrete spectral test.</p>
-
-<hr />
-
-<h2 id="8-why-this-argues-for-a-non-resistive-medium">8. Why this argues for a non-resistive medium</h2>
-
-<p>The theoretical prediction was straightforward:</p>
-
-<blockquote>
-  <p>If the extracellular medium is resistive, EEG and MEG should have the same low-frequency scaling exponent.</p>
-</blockquote>
-
-<p>The experimental observation was also clear:</p>
-
-<blockquote>
-  <p>EEG and MEG do not have the same low-frequency scaling exponent.</p>
-</blockquote>
-
-<p>This mismatch suggests that the macroscopic medium separating neural current sources from external sensors is not purely resistive. The relevant medium includes not only the immediate extracellular space around neurons, but also the intervening tissue layers through which the electric field is measured: cerebrospinal fluid, dura, skull, and scalp. However, the argument is not simply that one anatomical compartment must be responsible. The point is broader: the effective medium through which the measured fields propagate cannot be treated as a frequency-independent resistor.</p>
-
-<p>A non-resistive medium can introduce frequency-dependent filtering. In such a medium, electric potentials and magnetic fields need not inherit the same spectral dependence from the underlying current sources. This breaks the equality expected under the resistive assumption.</p>
-
-<p>One physically plausible mechanism is ionic diffusion. Diffusive effects can produce a Warburg-type impedance, whose frequency dependence is neither purely resistive nor purely capacitive. A Warburg impedance scales as</p>
-
-\[Z_W(\omega) \sim \frac{1}{\sqrt{\omega}},\]
-
-<p>and can contribute to $1/f$-like structure in power spectra. In this view, part of the spectral structure observed in EEG and local field potentials may reflect the filtering properties of the extracellular medium itself, not only the temporal statistics of neural sources.</p>
-
-<p>This does not imply that neural dynamics are irrelevant to $1/f$-like spectra. Rather, it means that the measured spectrum is a compound object. It reflects the interaction between source dynamics, tissue filtering, geometry, cancellation, sensor sensitivity, and noise. A power law in the recorded signal cannot be interpreted as a direct fingerprint of neuronal computation without accounting for the medium.</p>
-
-<hr />
-
-<h2 id="9-consequences-for-interpreting-1f-spectra-in-neuroscience">9. Consequences for interpreting $1/f$ spectra in neuroscience</h2>
-
-<p>Power-law spectra are often treated as signatures of intrinsic neural dynamics. They have been connected to scale-free activity, self-organized criticality, long-range temporal correlations, asynchronous network states, and broadband excitation/inhibition structure. These interpretations may be valuable, but they are incomplete if the recording medium itself contributes to the observed scaling.</p>
-
-<p>The paper therefore makes a methodological point that remains important:</p>
-
-<blockquote>
-  <p>The spectrum of an extracellular signal is not necessarily the spectrum of the neural source.</p>
-</blockquote>
-
-<p>This matters especially for low-frequency field potentials, where tissue filtering and volume conduction can be substantial. If the extracellular medium imposes a frequency-dependent transfer function, then the measured PSD can be written schematically as</p>
-
-\[P_{\mathrm{measured}}(f) = |H(f)|^2 P_{\mathrm{source}}(f),\]
-
-<p>where $H(f)$ is an effective transfer function of the medium, geometry, and measurement apparatus. A resistive medium corresponds to a much simpler case in which $H(f)$ does not introduce strong frequency dependence. A non-resistive medium does.</p>
-
-<p>This distinction is important for both physics and neuroscience.</p>
-
-<p>For physicists, it emphasizes that the brain’s electromagnetic signals should be treated as fields propagating through structured biological media, not as abstract time series detached from their measurement physics.</p>
-
-<p>For neuroscientists, it cautions against assigning all broadband spectral structure to network dynamics. Some portion of the observed scaling may arise from the physical path between neural current sources and sensors.</p>
-
-<hr />
-
-<h2 id="10-consequences-for-forward-models-and-inverse-source-localization">10. Consequences for forward models and inverse source localization</h2>
-
-<p>Most EEG and MEG forward models assume a resistive volume conductor. This assumption makes the inverse problem tractable. It allows one to construct lead fields that map candidate neural sources to sensor measurements under frequency-independent conductivity assumptions.</p>
-
-<p>If the effective medium is non-resistive, this framework may need to be generalized.</p>
-
-<p>The issue is especially relevant for EEG, because electric potentials are more directly affected by the conductive and dielectric properties of intervening tissue. MEG is often considered less sensitive to skull conductivity than EEG, but the present comparison shows that EEG and MEG may differ not only in spatial sensitivity but also in spectral filtering.</p>
-
-<p>A non-resistive forward model would need to include frequency-dependent admittances:</p>
-
-\[\gamma_f(\mathbf{x}) = \sigma_f(\mathbf{x}) + i\omega \epsilon_f(\mathbf{x}).\]
-
-<p>This would change the mapping from neural currents to measured potentials. It would also complicate the inverse problem, because source localization would become frequency dependent in a more fundamental way.</p>
-
-<p>The practical implication is not that all existing EEG/MEG models are invalid. Resistive models may still be useful approximations for many purposes. But the approximation has a domain of validity, and that domain should be tested rather than assumed.</p>
-
-<hr />
-
-<h2 id="11-geometry-cancellation-and-spatial-averaging">11. Geometry, cancellation, and spatial averaging</h2>
-
-<p>The paper also points to another important issue: EEG and MEG differ in their sensitivity to source geometry.</p>
-
-<p>Extended neural sources can produce partial cancellation. The amount of cancellation differs between EEG and MEG because electric and magnetic measurements respond differently to current orientation, spatial extent, and source configuration. MEG is especially sensitive to tangential currents, whereas EEG is sensitive to both radial and tangential components, although the details depend on head geometry and conductivity.</p>
-
-<p>Spatial averaging also differs between the modalities. EEG potentials are strongly affected by volume conduction and reference choices. MEG sensors measure magnetic fields outside the head and have different spatial sensitivity profiles. These differences can influence spectral scaling if the spatial organization of sources varies with frequency.</p>
-
-<p>Thus, the observed EEG–MEG spectral difference could reflect both non-resistive filtering and geometric effects. The paper does not claim that geometry is irrelevant. Instead, it argues that the resistive-medium prediction fails and that future models should incorporate both realistic electromagnetic tissue properties and realistic three-dimensional source geometry.</p>
-
-<p>The natural next step is a 3D forward model in which the source geometry, tissue compartments, and frequency-dependent impedances are explicitly varied. Such a model could test how much of the EEG–MEG spectral difference arises from non-resistive tissue properties, how much from source cancellation, and how much from spatial sensitivity differences.</p>
-
-<hr />
-
-<h2 id="12-relation-to-local-field-potentials">12. Relation to local field potentials</h2>
-
-<p>Although the paper analyzes scalp EEG and MEG, the question is closely related to local field potentials.</p>
-
-<p>LFPs are also extracellular signals. They are shaped by transmembrane currents, dendritic geometry, synaptic distributions, population correlations, and the electrical properties of the extracellular medium. If the medium is non-resistive at macroscopic scales, it is natural to ask whether similar filtering affects LFPs at mesoscopic and microscopic scales.</p>
-
-<p>Previous theoretical work suggested that extracellular space can act as a low-pass or frequency-dependent filter. Such filtering can generate $1/f$-like spectra even when the underlying current sources do not themselves have that exact scaling. The present EEG/MEG comparison provides an independent macroscopic argument pointing in the same direction.</p>
-
-<p>This matters for interpretation of broadband LFP power. A change in the LFP spectrum may reflect a change in neural dynamics, a change in the effective transfer properties of the medium, or both. In most experimental analyses, these factors are not separated.</p>
-
-<p>A mature theory of field potentials should therefore combine:</p>
-
-<ol>
-  <li>biophysical source models;</li>
-  <li>realistic dendritic and population geometry;</li>
-  <li>extracellular impedance;</li>
-  <li>tissue compartment structure;</li>
-  <li>measurement-specific sensor physics.</li>
-</ol>
-
-<p>The paper contributes to this broader program by showing that the resistive-medium simplification leaves a measurable spectral signature.</p>
-
-<hr />
-
-<h2 id="13-what-the-paper-does-not-claim">13. What the paper does not claim</h2>
-
-<p>It is useful to state the limits of the argument.</p>
-
-<p>First, the study does not claim that the extracellular medium is arbitrarily complex or that resistive models are never useful. It claims that the effective medium cannot be fully described as a frequency-independent resistor if one wants to explain the observed EEG–MEG spectral difference.</p>
-
-<p>Second, the study does not claim that all $1/f$-like structure in EEG is caused by tissue filtering. Neural source dynamics clearly matter. The claim is that the measured spectrum is shaped by both sources and medium, and that one cannot infer source dynamics from spectral scaling alone.</p>
-
-<p>Third, the sample size was modest. The strength of the paper lies less in large-population inference and more in the combination of a physical prediction with simultaneous EEG/MEG measurements and extensive noise correction.</p>
-
-<p>Fourth, very low frequencies may include non-neuronal contributions. This is a general challenge for scalp EEG. The paper discusses this issue and notes that invasive approaches could help isolate neural from non-neural contributions, though simultaneous invasive EEG and MEG would be technically difficult.</p>
-
-<p>Fifth, the paper does not fully solve the inverse problem for a non-resistive brain. It identifies a physical inconsistency in the resistive assumption and points toward the need for frequency-dependent forward models.</p>
-
-<p>These limitations are not weaknesses of the central argument. They define the next layer of the problem.</p>
-
-<hr />
-
-<h2 id="14-the-broader-message">14. The broader message</h2>
-
-<p>The central message of the paper is that the physics of the recording medium matters.</p>
-
-<p>EEG and MEG are often treated as complementary windows onto the same neural activity. That is true, but incomplete. They are also different physical observables. EEG measures electric potentials shaped by the conductive and dielectric properties of tissue. MEG measures magnetic fields generated by currents and filtered through a different physical pathway. If the brain and surrounding tissues were purely resistive, these two observables would share the same low-frequency scaling. They do not.</p>
-
-<p>This suggests that the extracellular/head medium is not a passive, frequency-independent conduit. It is part of the measurement process. It shapes what we observe.</p>
-
-<p>For neuroscience, this is a caution against overinterpreting spectra as direct neural signatures.</p>
-
-<p>For physics, it is an invitation to treat brain electrophysiology as a problem in biological electromagnetic media, not only as a problem in signal analysis.</p>
-
-<p>For computational neuroscience, it means that models of field potentials should not stop at the neural source. They must also model the path from source to sensor.</p>
-
-<hr />
-
-<h2 id="15-closing-perspective">15. Closing perspective</h2>
-
-<p>The resistive-medium approximation has been enormously useful. It has made EEG, MEG, and LFP modeling mathematically tractable and practically productive. But useful approximations can become hidden assumptions. When they do, they need to be tested.</p>
-
-<p>This paper tested one consequence of the resistive assumption: the predicted equality of low-frequency EEG and MEG scaling. The data did not support that prediction. EEG and MEG showed systematically different scaling exponents, and this difference persisted under multiple noise-correction strategies.</p>
-
-<p>The interpretation is that the effective extracellular/head medium is non-resistive. Its impedance is frequency dependent, potentially reflecting capacitive and diffusive processes such as Warburg-like behavior. This means that the measured spectrum of brain activity is shaped not only by neural dynamics but also by the physical medium through which those dynamics are observed.</p>
-
-<p>The result is not merely a technical point about EEG and MEG. It is a reminder that neural signals are physical signals. Their interpretation requires not only statistics and neurobiology, but also the physics of fields, media, and measurement.</p>]]></content><author><name>Nima Dehghani</name></author><category term="Electromagnetism" /><category term="Scaling" /><category term="EEG" /><category term="MEG" /><summary type="html"><![CDATA[Companion post to: Comparative power spectral analysis of simultaneous electroencephalographic and magnetoencephalographic recordings in humans suggests non-resistive extracellular media Nima Dehghani, Claude Bédard, Sydney S. Cash, Eric Halgren, and Alain Destexhe Journal of Computational Neuroscience 29, 405–421, 2010 DOI: https://doi.org/10.1007/s10827-010-0263-2]]></summary></entry></feed>
+<hr />]]></content><author><name>Nima Dehghani</name></author><summary type="html"><![CDATA[Companion post to: Spatiotemporal dynamics of neocortical excitation and inhibition during human sleep Adrien Peyrache and Nima Dehghani and Emad N. Eskandar and Joseph R. Madsen and William S. Anderson and Jacob A. Donoghue and Leigh R. Hochberg and Eric Halgren and Sydney S. Cash and Alain Destexhe PNAS . 109 (5) 1731-1736 DOI: https://doi.org/10.1073/pnas.1109895109]]></summary></entry></feed>

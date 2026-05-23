@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ead7be">
+<title>Local Excitation, Broad Inhibition: Spatiotemporal Dynamics of Cortical Microcircuits during Sleep · Nima Dehghani</title>
+<meta name="description" content="Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<link type="application/atom+xml" rel="alternate" href="https://neurovium.github.io/feed.xml" title="Nima Dehghani" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Local Excitation, Broad Inhibition: Spatiotemporal Dynamics of Cortical Microcircuits during Sleep | Nima Dehghani</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Local Excitation, Broad Inhibition: Spatiotemporal Dynamics of Cortical Microcircuits during Sleep" />
+<meta name="author" content="Nima Dehghani" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Companion post to: Spatiotemporal dynamics of neocortical excitation and inhibition during human sleep Adrien Peyrache and Nima Dehghani and Emad N. Eskandar and Joseph R. Madsen and William S. Anderson and Jacob A. Donoghue and Leigh R. Hochberg and Eric Halgren and Sydney S. Cash and Alain Destexhe PNAS . 109 (5) 1731-1736 DOI: https://doi.org/10.1073/pnas.1109895109" />
+<meta property="og:description" content="Companion post to: Spatiotemporal dynamics of neocortical excitation and inhibition during human sleep Adrien Peyrache and Nima Dehghani and Emad N. Eskandar and Joseph R. Madsen and William S. Anderson and Jacob A. Donoghue and Leigh R. Hochberg and Eric Halgren and Sydney S. Cash and Alain Destexhe PNAS . 109 (5) 1731-1736 DOI: https://doi.org/10.1073/pnas.1109895109" />
+<link rel="canonical" href="https://neurovium.github.io/posts/pblog-Spatiotemporal-dynamics-EI/" />
+<meta property="og:url" content="https://neurovium.github.io/posts/pblog-Spatiotemporal-dynamics-EI/" />
+<meta property="og:site_name" content="Nima Dehghani" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2012-01-17T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Local Excitation, Broad Inhibition: Spatiotemporal Dynamics of Cortical Microcircuits during Sleep" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Nima Dehghani"},"dateModified":"2012-01-17T00:00:00+00:00","datePublished":"2012-01-17T00:00:00+00:00","description":"Companion post to: Spatiotemporal dynamics of neocortical excitation and inhibition during human sleep Adrien Peyrache and Nima Dehghani and Emad N. Eskandar and Joseph R. Madsen and William S. Anderson and Jacob A. Donoghue and Leigh R. Hochberg and Eric Halgren and Sydney S. Cash and Alain Destexhe PNAS . 109 (5) 1731-1736 DOI: https://doi.org/10.1073/pnas.1109895109","headline":"Local Excitation, Broad Inhibition: Spatiotemporal Dynamics of Cortical Microcircuits during Sleep","mainEntityOfPage":{"@type":"WebPage","@id":"https://neurovium.github.io/posts/pblog-Spatiotemporal-dynamics-EI/"},"url":"https://neurovium.github.io/posts/pblog-Spatiotemporal-dynamics-EI/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+  },
+  options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+
+</head>
+<body>
+  <header class="topbar">
+    <a href="/" class="topbar__brand">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"><line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/><line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/><line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/></g><circle cx="18" cy="20" r="2.2" fill="currentColor"/></svg>
+      Nima Dehghani
+    </a>
+    <button class="topbar__toggle" id="sidebar-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sidebar">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </header>
+
+  <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
+
+  <div class="app">
+    
+
+<aside class="side" id="sidebar" aria-label="Primary">
+  <a class="side__brand" href="/">
+    <svg class="glyph" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none">
+        <line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/>
+        <line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/>
+        <line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/>
+      </g>
+      <circle cx="18" cy="20" r="2.2" fill="currentColor"/>
+    </svg>
+    <span>
+      <span class="side__name">Nima Dehghani</span>
+      <span class="side__tag">@neurovium · MIT</span>
+    </span>
+  </a>
+
+  <nav class="side__nav" aria-label="Main navigation">
+    <a href="/" class="">Home</a>
+    <a href="/news/" class="">News<span class="side__pip" aria-label="new"></span></a>
+    <a href="/research/" class="">Research</a>
+    <a href="/papers/" class="">Paper Maze</a>
+    <a href="/garden/" class="">Idea Garden</a>
+    <a href="/blog/" class="">Blog</a>
+    <a href="/open-science/" class="">Open Science</a>
+    <a href="/about/" class="">About</a>
+    <a href="/neurovium-decoded/" class="">Neurovium Decoded</a>
+  </nav>
+
+  <div class="side__social" aria-label="Social links">
+    <div class="side__social-row">
+      <a href="https://scholar.google.com/citations?user=acFMrVUAAAAJ&hl=en" title="Google Scholar" target="_blank" rel="noopener" aria-label="Google Scholar">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9zm6.82 7L12 12.72 5.18 9 12 5.28zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73z"/></svg>
+      </a>
+      <a href="mailto:nima.dehghani@mit.edu" title="Email" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/nimadehghani/" title="LinkedIn" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+    </div>
+    <div class="side__social-row">
+      <a href="https://github.com/neurovium" title="GitHub" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      </a>
+      <a href="https://twitter.com/neurovium" title="X" target="_blank" rel="noopener" aria-label="X">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://bsky.app/profile/neurovium.bsky.social" class="is-bsky" title="Bluesky" target="_blank" rel="noopener" aria-label="Bluesky">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.335 5.144c2.606 1.957 5.41 5.923 6.44 8.051.99-2.046 3.855-6.132 6.44-8.051 1.864-1.383 4.885-2.453 4.885 1.002 0 .69-.396 5.795-.629 6.624-.809 2.882-3.748 3.616-6.363 3.17 4.573.78 5.737 3.359 3.224 5.939-4.772 4.9-6.859-1.23-7.394-2.802-.534 1.572-2.622 7.702-7.394 2.802-2.513-2.58-1.349-5.16 3.224-5.939-2.615.446-5.554-.288-6.363-3.17-.233-.829-.629-5.934-.629-6.624 0-3.455 3.021-2.385 4.885-1.002z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="n4-set" aria-label="N⁴ : NeuroAI ⊃ N³">
+    <span class="n4-set__lbl">N&#8308;</span>
+    <div class="n4-set n4-set--ai">
+      <span class="n4-set__lbl">NeuroAI</span>
+      <div class="n4-set n4-set--n3">
+        <span class="n4-set__lbl">N&#179;</span>
+        <ul>
+          <li>NeuroPhysics</li>
+          <li>NeuroComputation</li>
+          <li>NeuroDynamics</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="side__foot">
+    <span>
+      <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+      ·
+      <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    </span>
+  </div>
+</aside>
+
+    <main class="main">
+      <article class="paper">
+  <div class="paper__crumb">
+    <a href="/blog/">← Blog</a>
+    <span style="color:var(--muted-soft);">·</span>
+    <span>Jan 17, 2012</span>
+  </div>
+
+  <h1>Local Excitation, Broad Inhibition: Spatiotemporal Dynamics of Cortical Microcircuits during Sleep</h1>
+  <div class="paper__subtitle"></div>
+  
+
+  
+  <div class="linkbar" style="margin-top:24px;">
+    <a href="/papers/Spatiotemporal-dynamics-EI/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="20" x2="12" y2="12"/><line x1="12" y1="12" x2="21" y2="4"/><line x1="12" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="21" y2="20"/></svg>
+      Follow this path into the Maze
+    </a>
+  </div>
+  
+
+  <section class="paper__section prose" style="margin-top:28px;">
+    <p><em>Companion post to:</em><br />
+<strong>Spatiotemporal dynamics of neocortical excitation and inhibition during human sleep</strong><br />
+Adrien Peyrache  and Nima Dehghani  and Emad N. Eskandar  and Joseph R. Madsen  and William S. Anderson  and Jacob A. Donoghue  and Leigh R. Hochberg  and Eric Halgren  and Sydney S. Cash  and Alain Destexhe 
+<em>PNAS</em> . 109 (5) 1731-1736
+DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.1073/pnas.1109895109</code></p>
+
+<hr />
+
+<h1 id="local-excitation-broad-inhibition-spatiotemporal-dynamics-of-human-cortical-microcircuits-during-sleep">Local Excitation, Broad Inhibition: Spatiotemporal Dynamics of Human Cortical Microcircuits during Sleep</h1>
+
+<p>A central problem in systems and computational neuroscience is to understand how local cortical microcircuits give rise to large-scale brain states. We often speak about cortical dynamics in terms of excitation and inhibition, local assemblies, population synchrony, and state-dependent changes in correlation structure. But in the human neocortex, direct access to these principles at the single-unit level is rare.</p>
+
+<p>Most of what we know about the cell-type-specific organization of cortical activity comes from animal preparations. Rodent and non-human primate studies have shaped our understanding of pyramidal cells, interneurons, balanced excitation and inhibition, sparse connectivity, and the spatial scale of cortical correlations. Human data, by contrast, often come from macroscopic signals: EEG, MEG, ECoG, LFP, or imaging. These signals are invaluable, but they average over many neurons and many circuit elements. They do not directly reveal how putative excitatory and inhibitory neurons interact across space and time.</p>
+
+<p>In this paper, <strong>“Spatiotemporal dynamics of neocortical excitation and inhibition during human sleep,”</strong> we used high-density intracortical recordings from human temporal cortex to examine precisely this question. The recordings were obtained with a 96-channel NeuroPort microelectrode array, implanted in patients undergoing clinical monitoring. This gave us simultaneous access to local field potentials and extracellular single-unit activity across a two-dimensional cortical patch of approximately (4 \times 4) mm.</p>
+
+<p>The goal was not only to record neurons in human cortex, but to ask a more specific question:</p>
+
+<blockquote>
+  <p>Can we separate putative excitatory and inhibitory neurons in human neocortex, validate that separation functionally, and then quantify how their interactions are organized across space, timescale, and sleep state?</p>
+</blockquote>
+
+<p>The answer was yes. The resulting picture is one in which <strong>excitatory interactions are spatially local</strong>, with correlations decaying over approximately millimeter scales, while <strong>inhibitory interactions are spatially broad</strong>, remaining correlated across the full extent of the array. This distinction provides a useful window into the functional microarchitecture of human cortex and also suggests design principles that may matter for computational models and neuroAI.</p>
+
+<hr />
+
+<h2 id="why-study-human-cortical-microcircuits-during-sleep">Why study human cortical microcircuits during sleep?</h2>
+
+<p>Sleep is often treated as a global brain state, but it is also a privileged setting for studying intrinsic cortical dynamics. During sleep, especially non-rapid eye movement sleep, the cortex exhibits structured spontaneous activity: slow waves, transitions between active and silent periods, and changing degrees of synchronization across cortical space. These dynamics are not simply noise. They reveal organizing principles of the cortical network.</p>
+
+<p>From a neurophysiological perspective, sleep provides a way to study cortical activity without the additional complexity of task structure, sensory drive, and overt behavior. This does not mean that sleep is “simple.” Rather, it means that the dynamics are dominated by endogenous circuit interactions and state-dependent modulation. If one wants to understand how local excitatory and inhibitory populations are coordinated in human cortex, sleep is a particularly useful regime.</p>
+
+<p>From a computational perspective, sleep also raises a broader question: how does a recurrent cortical system maintain stability while permitting rich, structured dynamics? Balanced network theory has long emphasized that excitation and inhibition must be coordinated in a way that produces irregular but controlled activity. Sleep adds another layer: the same microcircuit is embedded in global state changes that alter correlation structure across timescales.</p>
+
+<p>This paper sits at that intersection: human single-unit neurophysiology, E/I circuit dynamics, spatial organization, and state-dependent cortical computation.</p>
+
+<hr />
+
+<h2 id="the-experimental-window-high-density-human-intracortical-recordings">The experimental window: high-density human intracortical recordings</h2>
+
+<p>The data came from three patients undergoing clinical monitoring for epilepsy. A NeuroPort array was implanted in the middle temporal gyrus, with 96 microelectrodes spaced (400\,\mu\mathrm{m}) apart. The array covered roughly (4 \times 4) mm of superficial cortex, primarily layers II/III. Recordings were obtained during natural overnight sleep, sampled at high frequency, and then spike-sorted to isolate single units.</p>
+
+<p>This experimental setting has obvious caveats. The recordings were from patients with epilepsy, and the implantation site was determined by clinical constraints. The data come from a limited cortical region and from superficial layers. The classification of cell types is necessarily “putative,” since it is based on extracellular spike features and network interactions rather than direct intracellular or molecular identification.</p>
+
+<p>But the strength of the preparation is equally important: it provides rare access to many simultaneously recorded human cortical neurons across a two-dimensional cortical patch, with enough spatial structure to examine how neuronal interactions change with distance.</p>
+
+<p>That spatial structure is central. Without a dense array, one can study single neurons. With a dense two-dimensional array, one can begin to ask how neuronal interactions are embedded in cortical space.</p>
+
+<hr />
+
+<h2 id="separating-putative-excitatory-and-inhibitory-cells">Separating putative excitatory and inhibitory cells</h2>
+
+<p>A first step was to distinguish two major classes of neurons: regular-spiking cells and fast-spiking cells. In animal studies, regular-spiking extracellular waveforms are often associated with pyramidal neurons, while fast-spiking waveforms are associated with inhibitory interneurons. This distinction is not perfect, but it is widely used and can be strengthened by examining intrinsic firing properties and functional interactions.</p>
+
+<p>The separation was based on spike waveform morphology, especially two features:</p>
+
+\[\text{half-peak width}\]
+
+<p>and</p>
+
+\[\text{valley-to-peak duration}.\]
+
+<p>These features formed two well-defined clusters. One cluster had broader waveforms and slower dynamics, corresponding to regular-spiking cells. The other had narrower waveforms and faster dynamics, corresponding to fast-spiking cells.</p>
+
+<p>Across the dataset, this yielded:</p>
+
+\[190 \ \text{regular-spiking cells}\]
+
+<p>and</p>
+
+\[46 \ \text{fast-spiking cells}.\]
+
+<p>This corresponds to an approximately (80\%/20\%) split, consistent with the broad anatomical expectation that excitatory pyramidal neurons are much more numerous than inhibitory interneurons in cortex.</p>
+
+<p>But the classification was not based on waveform alone. The two populations also differed in their firing properties. Fast-spiking cells fired at substantially higher rates, approximately five times higher on average than regular-spiking cells. Regular-spiking cells, in contrast, were much more likely to show bursting. About (64\%) of the regular-spiking cells showed bursty interspike interval structure, whereas only one fast-spiking cell did so.</p>
+
+<p>The firing-rate distributions were also broad and approximately log-normal. This matters because broad, heavy-tailed firing-rate distributions are a recurring feature of cortical networks and are compatible with theoretical pictures of sparse, balanced recurrent dynamics. The cortex is not a homogeneous population of units firing around a single typical rate. It is a heterogeneous dynamical system, with some cells firing rarely and others much more frequently.</p>
+
+<p>This heterogeneity is not an inconvenience. It is part of the structure.</p>
+
+<hr />
+
+<h2 id="functional-validation-through-putative-monosynaptic-interactions">Functional validation through putative monosynaptic interactions</h2>
+
+<p>Waveform-based classification becomes much more convincing when it aligns with functional connectivity. To test this, we examined cross-correlograms between pairs of neurons.</p>
+
+<p>The logic is standard in extracellular physiology. If cell A tends to fire shortly before cell B at a latency of a few milliseconds, producing a sharp positive peak in the cross-correlogram, this is consistent with a putative excitatory monosynaptic effect. Conversely, if firing of cell A is followed by a short-latency suppression of cell B, this is consistent with a putative inhibitory effect.</p>
+
+<p>The important result was that the sign of these putative monosynaptic effects matched the waveform classification. Cells classified as regular-spiking were associated with excitatory effects; cells classified as fast-spiking were associated with inhibitory effects. This does not turn extracellular waveform classification into molecular cell typing, but it provides strong convergent evidence that the two clusters correspond to putative pyramidal cells and interneurons.</p>
+
+<p>The monosynaptic connectivity was sparse. Only a very small fraction of possible pairs showed significant short-latency effects. This is consistent with the known sparsity of local cortical connectivity and with the fact that cross-correlogram-based methods detect only a subset of actual anatomical connections. Many synapses will not be visible in suprathreshold spike correlations.</p>
+
+<p>The detected monosynaptic interactions were also highly local. Most excitatory effects, and essentially all inhibitory effects, were confined to cells recorded on the same electrode. This emphasizes a key distinction that runs throughout the paper:</p>
+
+<blockquote>
+  <p>Direct monosynaptic interactions are local, but correlated network dynamics can extend over larger spatial scales.</p>
+</blockquote>
+
+<p>This distinction is important. Correlation is not the same as direct connectivity. A pair of neurons can be correlated because they are directly connected, because they share inputs, because they are embedded in a common assembly, or because they are entrained by a larger brain state. The paper therefore moves from monosynaptic interactions to a broader spatiotemporal analysis of population correlations.</p>
+
+<hr />
+
+<h2 id="measuring-spatiotemporal-interactions">Measuring spatiotemporal interactions</h2>
+
+<p>To examine interactions across space and timescale, spike trains were binned at different temporal resolutions and pairwise correlations were computed between neurons. Conceptually, for neuron (i), one can define a binned spike count signal</p>
+
+\[n_i(t; \Delta t),\]
+
+<p>where (\Delta t) is the bin size. Pairwise correlations can then be computed as a function of both temporal bin size and physical distance between electrodes.</p>
+
+<p>Because firing rate can bias correlation estimates, the analysis normalized correlations by the geometric mean of the firing rates of each pair. Schematically, if (r_{ij}) is the correlation between cells (i) and (j), and (\nu_i,\nu_j) are their average firing rates, the normalized interaction measure can be thought of as depending on</p>
+
+\[\frac{|r_{ij}|}{\sqrt{\nu_i \nu_j}}.\]
+
+<p>The analysis also used a local version of correlation to reduce experiment-dependent covariation, such as slow drift or nonstationary changes across long recordings.</p>
+
+<p>This part of the paper is important because it does not treat “correlation” as a single number. Correlation is measured across multiple timescales and then related to cortical distance. The result is a spatiotemporal map of interaction structure.</p>
+
+<hr />
+
+<h2 id="local-excitatory-correlations">Local excitatory correlations</h2>
+
+<p>The strongest spatial result concerned excitatory-excitatory interactions. Pairwise correlations between putative pyramidal cells decreased with distance. When correlations were averaged over spatial bins, the distance dependence was well described by an exponential form:</p>
+
+\[\rho_{EE}(d) = \beta + \kappa e^{-d/\lambda}.\]
+
+<p>Here, (d) is the distance between recording sites, (\beta) is a baseline correlation level, (\kappa) is the amplitude of the spatially modulated component, and (\lambda) is the spatial decay constant.</p>
+
+<p>The key result was that</p>
+
+\[\lambda \approx 1 \ \mathrm{mm}.\]
+
+<p>This is a meaningful scale. It is compatible with the spatial extent of local axonal arborization in superficial cortical layers and with classical ideas about columnar or hypercolumnar organization in human cortex. In other words, excitatory correlations were not spread uniformly over the array. They were organized around a local spatial scale.</p>
+
+<p>The amplitude of the spatial modulation depended on the temporal bin size. At shorter timescales, local structure was more apparent. At longer timescales, correlations became more spatially uniform, partly because slow fluctuations raise the baseline level of correlation. However, when the exponential decay was present, its spatial scale remained close to the millimeter range.</p>
+
+<p>This is a crucial point. The strength of spatial modulation changes with timescale, but the characteristic spatial scale of excitatory correlation remains relatively stable. That suggests that the spatial organization is not merely an artifact of one chosen bin size. It reflects a structural or functional scale of the local excitatory network.</p>
+
+<hr />
+
+<h2 id="broad-inhibitory-correlations">Broad inhibitory correlations</h2>
+
+<p>The inhibitory-inhibitory correlations showed a very different pattern. Putative interneurons were correlated across the full extent of the array, without a clear decay over the (4) mm spatial range sampled.</p>
+
+<p>This does not mean that every interneuron is directly connected to every other interneuron. The monosynaptic analysis showed that direct detectable interactions were local and sparse. Instead, the broad inhibitory correlation likely reflects a combination of mechanisms: shared inputs, large-scale state modulation, long-range interneuronal coordination, and possibly subcortical drive, including thalamocortical influences.</p>
+
+<p>The important computational point is that the inhibitory population did not mirror the excitatory spatial organization. Excitation and inhibition were not simply two signed versions of the same graph. They had different spatial correlation structures.</p>
+
+<p>A compact summary of the result is:</p>
+
+\[\text{E--E correlations: local, distance-dependent, } \lambda \sim 1\,\mathrm{mm}.\]
+
+\[\text{I--I correlations: broad, distance-independent over the sampled range.}\]
+
+<p>This asymmetry has consequences for how we think about cortical computation. Excitatory neurons may form local coherent assemblies, while inhibitory neurons may participate in a broader regulatory network that coordinates activity across a larger spatial domain.</p>
+
+<hr />
+
+<h2 id="sleep-state-dependence">Sleep state dependence</h2>
+
+<p>The paper also examined whether the distance dependence of correlations changed across wake/drowsiness, light NREM sleep, and deep NREM sleep.</p>
+
+<p>For inhibitory pairs, the relationship between correlation and distance remained essentially flat across states. For excitatory pairs, the distance dependence was strongest during wake/drowsiness and light NREM sleep. During deep NREM sleep, the spatial relationship was reduced, though often still present or close to significant.</p>
+
+<p>This fits naturally with what is known about slow-wave sleep. Deep NREM sleep introduces large-scale entrainment through slow and delta oscillations. As slow fluctuations become more dominant, the cortex becomes more globally synchronized, and local spatial distinctions can be partially washed out. In the language of the exponential model, slow state-dependent fluctuations raise the baseline component (\beta), reducing the relative prominence of the local spatially modulated component (\kappa).</p>
+
+<p>This is another reason the result is interesting. The local excitatory structure is not independent of brain state. It is embedded in ongoing global dynamics. The same microcircuit can look more locally structured or more globally synchronized depending on the sleep state and timescale of analysis.</p>
+
+<hr />
+
+<h2 id="a-two-scale-picture-of-human-cortical-microcircuits">A two-scale picture of human cortical microcircuits</h2>
+
+<p>The main conceptual picture that emerges from the paper is a two-scale organization:</p>
+
+<ol>
+  <li><strong>Local excitatory assemblies</strong>, organized over approximately millimeter scales.</li>
+  <li><strong>Broad inhibitory coordination</strong>, extending over several millimeters or more.</li>
+</ol>
+
+<p>This is not a complete theory of cortical computation, but it is a concrete empirical constraint. The cortex is not simply a uniform sheet of recurrently coupled neurons. Nor is it only a set of independent local modules. The data suggest a hybrid structure: local excitatory coherence embedded in broader inhibitory coordination.</p>
+
+<p>This picture resonates with several ideas in systems neuroscience. Local excitatory connectivity can support assemblies, feature-specific computation, and recurrent amplification. Broad inhibition can regulate gain, synchronize or desynchronize local populations, control timing, and prevent runaway excitation. The interaction between these two systems may be one way the cortex balances local specialization with global state control.</p>
+
+<p>It also resonates with balanced network theory. The observed ratio of firing rates between putative inhibitory and excitatory neurons, together with the relative proportions of the two populations, provides indirect support for the idea that inhibitory neurons compensate for their smaller numbers by firing at higher rates. The broad log-normal firing-rate distributions further suggest a sparse, heterogeneous operating regime rather than a homogeneous mean-field one.</p>
+
+<p>At the same time, the paper does not claim to directly demonstrate balance in the intracellular conductance sense. That would require intracellular recordings. The evidence here is extracellular and population-level. It is therefore best viewed as a set of convergent signatures: waveform-based cell classes, functional monosynaptic validation, firing-rate asymmetry, broad firing-rate distributions, and distinct E–E versus I–I spatial correlation structure.</p>
+
+<hr />
+
+<h2 id="why-this-matters-for-computational-neuroscience">Why this matters for computational neuroscience</h2>
+
+<p>For computational neuroscience, the paper provides several constraints that are easy to state but nontrivial to build into models.</p>
+
+<p>First, <strong>cell type matters</strong>. A recurrent cortical model that ignores the distinction between excitatory and inhibitory populations may reproduce some aggregate dynamics, but it will miss the different spatial organizations of these populations. Excitation and inhibition are not just positive and negative weights. They are embedded in different anatomical, physiological, and dynamical structures.</p>
+
+<p>Second, <strong>space matters</strong>. The millimeter-scale decay of excitatory correlations suggests that local recurrent excitation should not be modeled as spatially uniform. Distance-dependent connectivity, local assembly structure, and finite spatial correlation lengths are not details; they shape the effective computational units of cortex.</p>
+
+<p>Third, <strong>timescale matters</strong>. The apparent organization of the network depends on the temporal scale at which interactions are measured. Short timescales reveal local structure more sharply. Long timescales introduce global components that increase baseline correlations. A model that only matches correlations at one bin size may miss the actual spatiotemporal organization of the circuit.</p>
+
+<p>Fourth, <strong>state matters</strong>. The same cortical tissue expresses different correlation structures across wake/drowsiness, light NREM, and deep NREM sleep. Models of cortical computation should therefore not only reproduce task-evoked activity or stationary spontaneous activity. They should also explain how circuit interactions change with global state.</p>
+
+<p>A useful modeling target would be to build recurrent E/I networks in which local excitatory assemblies coexist with broad inhibitory coordination, and then test whether such networks reproduce the observed dependence of pairwise correlations on distance, timescale, and sleep state.</p>
+
+<hr />
+
+<h2 id="hints-for-neuroai">Hints for neuroAI</h2>
+
+<p>The neuroAI implications should be treated carefully. The goal is not to copy every biological detail into artificial networks. But this paper does suggest architectural principles that may be useful.</p>
+
+<p>Many artificial neural networks use relatively uniform computational operations across a layer. Convolutional networks impose local spatial structure, but they do not usually distinguish between local excitatory assembly formation and broader inhibitory state control. Transformers implement global interactions through attention, but their global mixing is not usually organized around biologically distinct excitatory and inhibitory populations. Recurrent neural networks can in principle express rich dynamics, but they often lack structured multiscale E/I organization.</p>
+
+<p>The cortical pattern suggested here is different:</p>
+
+\[\text{local recurrent excitation} + \text{broad inhibitory coordination}.\]
+
+<p>One neuroAI translation would be to design architectures in which local modules perform representational computation through recurrent excitatory-like interactions, while broader inhibitory-like mechanisms control gain, competition, routing, normalization, or state transitions.</p>
+
+<p>This could be implemented in many ways, depending on the model class:</p>
+
+<ul>
+  <li>In recurrent neural networks, one could impose distance-dependent excitatory connectivity while allowing inhibitory units to pool or regulate activity over larger spatial domains.</li>
+  <li>In spiking neural networks, burst-capable excitatory units could be embedded in locally recurrent assemblies, with inhibitory populations coordinating timing across modules.</li>
+  <li>In graph neural networks, excitatory and inhibitory edges could be assigned different spatial kernels and different update rules.</li>
+  <li>In attention-based systems, local attention-like mechanisms could be combined with broader suppressive or normalizing mechanisms that regulate context and prevent uncontrolled amplification.</li>
+</ul>
+
+<p>The most important point is not that inhibition should be added as a superficial negative weight. Rather, inhibition may be better thought of as a <strong>state-control system</strong>: a mechanism that regulates when local computations become synchronized, desynchronized, amplified, or suppressed.</p>
+
+<p>The sleep-state dependence in the paper is especially relevant here. Biological networks do not operate with a fixed correlation structure. They move between regimes. For neuroAI, this suggests that useful recurrent systems may require mechanisms for state-dependent reconfiguration: the same local modules may need to operate differently depending on whether the system is in an exploratory, integrative, memory-consolidating, or task-engaged regime.</p>
+
+<p>In this sense, the paper points toward a richer form of biologically inspired architecture: not simply networks with E/I signs, but networks with <strong>different spatial scales for excitation and inhibition</strong>, and with <strong>state-dependent modulation of their interaction structure</strong>.</p>
+
+<hr />
+
+<h2 id="limitations-and-caution">Limitations and caution</h2>
+
+<p>Several caveats are important.</p>
+
+<p>The recordings were obtained from patients with epilepsy. Although the analyzed periods excluded overt seizures and epileptiform activity on the relevant electrodes, one cannot completely rule out disease-related changes in local circuitry.</p>
+
+<p>The recordings were from a limited cortical region, the middle temporal gyrus, and primarily from superficial layers. The results should not automatically be generalized to all cortical areas, all layers, or all behavioral states.</p>
+
+<p>The classification into pyramidal cells and interneurons is putative. It is based on extracellular waveform features, firing properties, and functional interactions. This is strong evidence, but it is not the same as genetic, morphological, or intracellular identification.</p>
+
+<p>The spatial range of the array was also limited. The finding that inhibitory correlations remain broad over (4) mm does not tell us the full spatial extent of inhibitory coordination. It tells us that, within the sampled range, the I–I correlation structure does not show the same decay observed for E–E pairs.</p>
+
+<p>Finally, correlations are not direct causal interactions. The paper combines cross-correlogram analysis with pairwise correlation analysis, but the broader spatial correlations likely reflect direct connections, shared inputs, state modulation, and polysynaptic interactions.</p>
+
+<p>These caveats do not weaken the core result. They define its proper interpretation.</p>
+
+<hr />
+
+<h2 id="the-broader-message">The broader message</h2>
+
+<p>The paper provides a rare view of human neocortical microcircuit dynamics at the level of putative excitatory and inhibitory neurons. Its central contribution is not only the separation of cell classes, but the demonstration that these classes participate in different spatial regimes of interaction.</p>
+
+<p>Excitatory neurons form locally coherent structures, with correlations decaying over approximately (1) mm. Inhibitory neurons show broader correlation over the sampled cortical patch. These two scales coexist during sleep and are modulated by brain state.</p>
+
+<p>For systems neuroscience, this provides a concrete empirical picture of human cortical microarchitecture. For computational neuroscience, it gives modelers measurable constraints: firing-rate distributions, E/I asymmetry, sparse local monosynaptic interactions, distance-dependent excitatory correlations, broad inhibitory coordination, and state-dependent modulation. For neuroAI, it suggests that useful biologically inspired architectures may need more than generic recurrence or local connectivity. They may need distinct spatial and dynamical roles for excitation and inhibition.</p>
+
+<p>The cortex appears to solve a difficult computational problem: how to maintain local specialization while preserving global coordination. This paper suggests one possible mechanism. Local excitatory assemblies provide spatially specific computation. Broad inhibitory dynamics provide large-scale regulation. Their interaction may be one of the organizing principles that allows human cortex to remain both structured and flexible across changing brain states.</p>
+
+<hr />
+
+  </section>
+
+  
+  <section class="paper__section">
+    <h2>The room this opens</h2>
+    <div class="linkbar">
+      <a href="/papers/Spatiotemporal-dynamics-EI/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="20" x2="12" y2="12"/><line x1="12" y1="12" x2="21" y2="4"/><line x1="12" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="21" y2="20"/></svg>
+        Follow this path into the Maze
+      </a>
+    </div>
+  </section>
+  
+</article>
+
+      <footer class="foot">
+  <span>© 2026 · Nima Dehghani</span>
+  <span>
+    <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    ·
+    <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+  </span>
+</footer>
+
+    </main>
+  </div>
+
+  <script src="/assets/js/quotes.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
