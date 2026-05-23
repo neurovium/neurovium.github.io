@@ -70,7 +70,8 @@
   });
   function shouldWatermark(img) {
     var src = (img.getAttribute('src') || img.currentSrc || '').toLowerCase();
-    if (/(mark|glyph|merge)\.(svg|png|jpe?g|webp)(\?|$)/.test(src)) return false;
+    // Skip the brand mark itself — only files named neurovium-*.ext qualify.
+    if (/\/neurovium-[a-z0-9-]+\.(svg|png|jpe?g|webp)(\?|$)/i.test(src)) return false;
     if (img.closest('.no-watermark') || img.classList.contains('no-watermark')) return false;
     if (img.classList.contains('card__image') || img.classList.contains('pcard__img')) return false;
     if (img.closest('.card__media') || img.closest('.pcard__media')) return false;
