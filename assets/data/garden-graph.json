@@ -1,8 +1,8 @@
 {
   "meta": {
-    "paper_count": 24,
-    "concept_count": 102,
-    "edge_count": 343,
+    "paper_count": 25,
+    "concept_count": 104,
+    "edge_count": 350,
     "tfidf": true
   },
   "nodes": [
@@ -19,6 +19,20 @@
         "Symbolic Regression",
         "Automated Scientific Discovery",
         "Data-Driven Modeling"
+      ]
+    },
+    {
+      "id": "Inhibitory-cortical-depth",
+      "kind": "paper",
+      "title": "Morphoelectric properties of inhibitory neurons shift gradually and regardless of cell type along the depth of the cerebral cortex",
+      "year": 2026,
+      "url": "/papers/Inhibitory-cortical-depth/",
+      "wash": "--wash-plum",
+      "tags": [
+        "Inhibition",
+        "Morphoelectric",
+        "Cell Type",
+        "Cortex"
       ]
     },
     {
@@ -424,7 +438,7 @@
       "wash": "--wash-slate",
       "blurb": "",
       "curated": false,
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "BOLD Response",
@@ -461,6 +475,15 @@
       "blurb": "",
       "curated": false,
       "weight": 2
+    },
+    {
+      "id": "Cell Type",
+      "kind": "concept",
+      "name": "Cell Type",
+      "wash": "--wash-dust",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
     },
     {
       "id": "Cerebral Blood Flow",
@@ -550,7 +573,7 @@
       "wash": "--wash-slate",
       "blurb": "",
       "curated": false,
-      "weight": 7
+      "weight": 8
     },
     {
       "id": "cortical down-state",
@@ -793,7 +816,7 @@
       "wash": "--wash-plum",
       "blurb": "",
       "curated": false,
-      "weight": 5
+      "weight": 6
     },
     {
       "id": "Invariances",
@@ -845,6 +868,15 @@
       "kind": "concept",
       "name": "Modulation",
       "wash": "--wash-teal",
+      "blurb": "",
+      "curated": false,
+      "weight": 2
+    },
+    {
+      "id": "Morphoelectric",
+      "kind": "concept",
+      "name": "Morphoelectric",
+      "wash": "--wash-slate",
       "blurb": "",
       "curated": false,
       "weight": 1
@@ -1319,7 +1351,7 @@
     {
       "source": "Collective Dynamics",
       "target": "Inhibition",
-      "weight": 0.4,
+      "weight": 0.3333,
       "kind": "cooccur"
     },
     {
@@ -1337,91 +1369,97 @@
     {
       "source": "Cortex",
       "target": "Dynamics",
-      "weight": 0.1818,
+      "weight": 0.1667,
       "kind": "cooccur"
     },
     {
       "source": "Cortex",
       "target": "EEG",
-      "weight": 0.2727,
+      "weight": 0.25,
       "kind": "cooccur"
     },
     {
       "source": "Cortex",
       "target": "Inhibition",
-      "weight": 0.2,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Cortex",
-      "target": "LFP",
-      "weight": 0.25,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Cortex",
-      "target": "MEG",
       "weight": 0.2727,
       "kind": "cooccur"
     },
     {
       "source": "Cortex",
+      "target": "LFP",
+      "weight": 0.2222,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Cortex",
+      "target": "MEG",
+      "weight": 0.25,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Cortex",
+      "target": "Modulation",
+      "weight": 0.25,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Cortex",
       "target": "Network",
-      "weight": 0.2,
+      "weight": 0.1818,
       "kind": "cooccur"
     },
     {
       "source": "Cortex",
       "target": "Oscillation",
-      "weight": 0.3333,
+      "weight": 0.3,
       "kind": "cooccur"
     },
     {
       "source": "Cortex",
       "target": "Sleep",
-      "weight": 0.3846,
+      "weight": 0.3571,
       "kind": "cooccur"
     },
     {
       "source": "Cortex",
       "target": "Spike",
-      "weight": 0.2,
+      "weight": 0.1818,
       "kind": "cooccur"
     },
     {
       "source": "Cortex",
       "target": "Spindle",
-      "weight": 0.3333,
+      "weight": 0.3,
       "kind": "cooccur"
     },
     {
       "source": "Cortex",
       "target": "Statistical Physics",
-      "weight": 0.25,
+      "weight": 0.2222,
       "kind": "cooccur"
     },
     {
       "source": "Cortex",
       "target": "Synchrony",
-      "weight": 0.5,
+      "weight": 0.4444,
       "kind": "cooccur"
     },
     {
       "source": "Cortex",
       "target": "Thalamocortical",
-      "weight": 0.25,
+      "weight": 0.2222,
       "kind": "cooccur"
     },
     {
       "source": "Cortex",
       "target": "Thalamus",
-      "weight": 0.25,
+      "weight": 0.2222,
       "kind": "cooccur"
     },
     {
       "source": "Cortex",
       "target": "focal asynchronous oscillation",
-      "weight": 0.25,
+      "weight": 0.2222,
       "kind": "cooccur"
     },
     {
@@ -1445,7 +1483,7 @@
     {
       "source": "Dynamics",
       "target": "Inhibition",
-      "weight": 0.2222,
+      "weight": 0.2,
       "kind": "cooccur"
     },
     {
@@ -1583,7 +1621,7 @@
     {
       "source": "Excitation",
       "target": "Inhibition",
-      "weight": 0.4286,
+      "weight": 0.375,
       "kind": "cooccur"
     },
     {
@@ -1631,7 +1669,7 @@
     {
       "source": "Excitation-Inhibition (E/I) Balance",
       "target": "Inhibition",
-      "weight": 0.3333,
+      "weight": 0.2857,
       "kind": "cooccur"
     },
     {
@@ -1679,31 +1717,31 @@
     {
       "source": "Inhibition",
       "target": "Multielectrode Arrays (MEA)",
-      "weight": 0.2857,
+      "weight": 0.25,
       "kind": "cooccur"
     },
     {
       "source": "Inhibition",
       "target": "Sleep",
-      "weight": 0.2308,
+      "weight": 0.2143,
       "kind": "cooccur"
     },
     {
       "source": "Inhibition",
       "target": "Sleep-Wake Dynamics",
-      "weight": 0.2857,
+      "weight": 0.25,
       "kind": "cooccur"
     },
     {
       "source": "Inhibition",
       "target": "Slow-Wave Sleep (SWS)",
-      "weight": 0.2857,
+      "weight": 0.25,
       "kind": "cooccur"
     },
     {
       "source": "Inhibition",
       "target": "Spike",
-      "weight": 0.4286,
+      "weight": 0.375,
       "kind": "cooccur"
     },
     {
@@ -2105,6 +2143,30 @@
     {
       "source": "CRX",
       "target": "Symbolic Regression",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Inhibitory-cortical-depth",
+      "target": "Cell Type",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Inhibitory-cortical-depth",
+      "target": "Cortex",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Inhibitory-cortical-depth",
+      "target": "Inhibition",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Inhibitory-cortical-depth",
+      "target": "Morphoelectric",
       "weight": 1.0,
       "kind": "explicit"
     },
@@ -3107,6 +3169,18 @@
     {
       "source": "CRX",
       "target": "Noise",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "Inhibitory-cortical-depth",
+      "target": "Bio-inspired AI",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "Inhibitory-cortical-depth",
+      "target": "Modulation",
       "weight": 0.6,
       "kind": "mined"
     },
