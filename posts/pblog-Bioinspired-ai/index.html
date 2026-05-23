@@ -1,0 +1,597 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ead7be">
+<title>Beyond Neural Imitation: Multi-Scale Biological Complexity as a Design Principle for AI · Nima Dehghani</title>
+<meta name="description" content="Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<link type="application/atom+xml" rel="alternate" href="https://neurovium.github.io/feed.xml" title="Nima Dehghani" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Beyond Neural Imitation: Multi-Scale Biological Complexity as a Design Principle for AI | Nima Dehghani</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Beyond Neural Imitation: Multi-Scale Biological Complexity as a Design Principle for AI" />
+<meta name="author" content="Nima Dehghani" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Companion post to: Bio-inspired AI: Integrating Biological Complexity into Artificial Intelligence Nima Dehghani and Michael Levin arXiv 2024, 2411.15243 DOI: https://doi.org/10.48550/arXiv.2411.15243" />
+<meta property="og:description" content="Companion post to: Bio-inspired AI: Integrating Biological Complexity into Artificial Intelligence Nima Dehghani and Michael Levin arXiv 2024, 2411.15243 DOI: https://doi.org/10.48550/arXiv.2411.15243" />
+<link rel="canonical" href="https://neurovium.github.io/posts/pblog-Bioinspired-ai/" />
+<meta property="og:url" content="https://neurovium.github.io/posts/pblog-Bioinspired-ai/" />
+<meta property="og:site_name" content="Nima Dehghani" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-11-22T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Beyond Neural Imitation: Multi-Scale Biological Complexity as a Design Principle for AI" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Nima Dehghani"},"dateModified":"2024-11-22T00:00:00+00:00","datePublished":"2024-11-22T00:00:00+00:00","description":"Companion post to: Bio-inspired AI: Integrating Biological Complexity into Artificial Intelligence Nima Dehghani and Michael Levin arXiv 2024, 2411.15243 DOI: https://doi.org/10.48550/arXiv.2411.15243","headline":"Beyond Neural Imitation: Multi-Scale Biological Complexity as a Design Principle for AI","mainEntityOfPage":{"@type":"WebPage","@id":"https://neurovium.github.io/posts/pblog-Bioinspired-ai/"},"url":"https://neurovium.github.io/posts/pblog-Bioinspired-ai/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+  },
+  options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+
+</head>
+<body>
+  <header class="topbar">
+    <a href="/" class="topbar__brand">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"><line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/><line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/><line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/></g><circle cx="18" cy="20" r="2.2" fill="currentColor"/></svg>
+      Nima Dehghani
+    </a>
+    <button class="topbar__toggle" id="sidebar-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sidebar">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </header>
+
+  <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
+
+  <div class="app">
+    
+
+<aside class="side" id="sidebar" aria-label="Primary">
+  <a class="side__brand" href="/">
+    <svg class="glyph" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none">
+        <line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/>
+        <line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/>
+        <line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/>
+      </g>
+      <circle cx="18" cy="20" r="2.2" fill="currentColor"/>
+    </svg>
+    <span>
+      <span class="side__name">Nima Dehghani</span>
+      <span class="side__tag">@neurovium · MIT</span>
+    </span>
+  </a>
+
+  <nav class="side__nav" aria-label="Main navigation">
+    <a href="/" class="">Home</a>
+    <a href="/news/" class="">News<span class="side__pip" aria-label="new"></span></a>
+    <a href="/research/" class="">Research</a>
+    <a href="/papers/" class="">Paper Maze</a>
+    <a href="/garden/" class="">Idea Garden</a>
+    <a href="/blog/" class="">Blog</a>
+    <a href="/open-science/" class="">Open Science</a>
+    <a href="/about/" class="">About</a>
+    <a href="/neurovium-decoded/" class="">Neurovium Decoded</a>
+  </nav>
+
+  <div class="side__social" aria-label="Social links">
+    <div class="side__social-row">
+      <a href="https://scholar.google.com/citations?user=acFMrVUAAAAJ&hl=en" title="Google Scholar" target="_blank" rel="noopener" aria-label="Google Scholar">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9zm6.82 7L12 12.72 5.18 9 12 5.28zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73z"/></svg>
+      </a>
+      <a href="mailto:nima.dehghani@mit.edu" title="Email" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/nimadehghani/" title="LinkedIn" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+    </div>
+    <div class="side__social-row">
+      <a href="https://github.com/neurovium" title="GitHub" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      </a>
+      <a href="https://twitter.com/neurovium" title="X" target="_blank" rel="noopener" aria-label="X">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://bsky.app/profile/neurovium.bsky.social" class="is-bsky" title="Bluesky" target="_blank" rel="noopener" aria-label="Bluesky">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.335 5.144c2.606 1.957 5.41 5.923 6.44 8.051.99-2.046 3.855-6.132 6.44-8.051 1.864-1.383 4.885-2.453 4.885 1.002 0 .69-.396 5.795-.629 6.624-.809 2.882-3.748 3.616-6.363 3.17 4.573.78 5.737 3.359 3.224 5.939-4.772 4.9-6.859-1.23-7.394-2.802-.534 1.572-2.622 7.702-7.394 2.802-2.513-2.58-1.349-5.16 3.224-5.939-2.615.446-5.554-.288-6.363-3.17-.233-.829-.629-5.934-.629-6.624 0-3.455 3.021-2.385 4.885-1.002z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="n4-set" aria-label="N⁴ : NeuroAI ⊃ N³">
+    <span class="n4-set__lbl">N&#8308;</span>
+    <div class="n4-set n4-set--ai">
+      <span class="n4-set__lbl">NeuroAI</span>
+      <div class="n4-set n4-set--n3">
+        <span class="n4-set__lbl">N&#179;</span>
+        <ul>
+          <li>NeuroPhysics</li>
+          <li>NeuroComputation</li>
+          <li>NeuroDynamics</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="side__foot">
+    <span>
+      <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+      ·
+      <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    </span>
+  </div>
+</aside>
+
+    <main class="main">
+      <article class="paper">
+  <div class="paper__crumb">
+    <a href="/blog/">← Blog</a>
+    <span style="color:var(--muted-soft);">·</span>
+    <span>Nov 22, 2024</span>
+  </div>
+
+  <h1>Beyond Neural Imitation: Multi-Scale Biological Complexity as a Design Principle for AI</h1>
+  
+  
+
+  
+  <div class="linkbar" style="margin-top:24px;">
+    <a href="/papers/Bioinspired-ai/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="20" x2="12" y2="12"/><line x1="12" y1="12" x2="21" y2="4"/><line x1="12" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="21" y2="20"/></svg>
+      Follow this path into the Maze
+    </a>
+  </div>
+  
+
+  <section class="paper__section prose" style="margin-top:28px;">
+    <p><em>Companion post to:</em><br />
+<strong>Bio-inspired AI: Integrating Biological Complexity into Artificial Intelligence</strong>
+Nima Dehghani and Michael Levin
+<em>arXiv</em> 2024, 2411.15243
+DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.48550/arXiv.2411.15243</code></p>
+
+<hr />
+
+<h1 id="beyond-neural-imitation-multi-scale-biological-complexity-as-a-design-principle-for-ai">Beyond Neural Imitation: Multi-Scale Biological Complexity as a Design Principle for AI</h1>
+
+<p><em>A companion to “Bio-inspired AI: Integrating Biological Complexity into Artificial Intelligence” by Nima Dehghani and Michael Levin</em></p>
+
+<p>Artificial intelligence has always carried a biological shadow. From early cybernetics to neural networks, from reinforcement learning to modern NeuroAI, the attempt to build intelligent machines has repeatedly returned to living systems for inspiration. This is not accidental. Biology is the only known domain in which intelligence has emerged robustly, repeatedly, and across many scales: cells regulate themselves, tissues coordinate, organisms learn, collectives adapt, and nervous systems construct flexible models of the world.</p>
+
+<p>Yet the phrase “bio-inspired AI” often hides a narrowing of the biological imagination. In much of contemporary AI, biological inspiration has meant something much more specific: inspiration from the nervous system, and even more narrowly, from neurons, synapses, and cortical circuits. This has been extraordinarily productive. Convolutional neural networks drew from hierarchical visual processing. Recurrent networks and Hopfield networks drew from attractor dynamics and associative memory. Reinforcement learning has long been informed by animal behavior, reward, and dopamine-like prediction signals. More recently, NeuroAI has emerged as a serious research program connecting machine learning, systems neuroscience, and cognitive science.</p>
+
+<p>But biological intelligence is not exhausted by neurons.</p>
+
+<p>This is the central point of our paper. If biology is to guide the next generation of artificial intelligence, we should not restrict ourselves to the spiking neuron as the privileged unit of inspiration. Nervous systems are a late evolutionary development. Long before neurons, organisms were already solving problems: regulating metabolism, maintaining homeostasis, repairing damage, navigating chemical gradients, coordinating morphogenesis, and adapting to changing environments. Cells and tissues compute. Development computes. Physiology computes. Evolution computes. The brain is one remarkable layer in a much deeper hierarchy of biological information processing.</p>
+
+<p>The goal of bio-inspired AI should therefore not be to copy the brain in isolation. It should be to extract general principles from living systems as multi-scale, adaptive, embodied, physically realized agents.</p>
+
+<p>This shift matters for NeuroAI, machine learning, complex systems, and the foundations of bio-inspired computation. Current AI systems have achieved impressive performance, but they remain limited in ways that are increasingly difficult to ignore. They can be brittle outside their training distributions. They often lack causal understanding. Their apparent competence may depend on enormous data and energy budgets. They can produce fluent outputs without stable grounding in action, embodiment, or self-maintaining goals. They scale impressively, but scaling alone does not explain the flexible, context-sensitive intelligence of living systems.</p>
+
+<p>Biology suggests a different design space: intelligence as the coordinated activity of nested systems, each with its own dynamics, constraints, and local competencies, coupled across scales through feedback, embodiment, and context-dependent control.</p>
+
+<p>This is not a call to abandon modern AI. It is a call to broaden the biological basis from which AI draws its next set of abstractions.</p>
+
+<hr />
+
+<h2 id="1-the-narrow-success-of-neural-inspiration">1. The narrow success of neural inspiration</h2>
+
+<p>The history of AI is often told as a sequence of changing metaphors. Logic inspired symbolic AI. Brains inspired neural networks. Evolution inspired genetic algorithms and neuroevolution. Behavior inspired reinforcement learning. Markets, swarms, immune systems, and ecosystems have all provided computational metaphors.</p>
+
+<p>Among these, neural inspiration has been the most consequential for modern machine learning. Deep learning succeeded in part because it adopted a powerful abstraction from biological nervous systems: layered nonlinear transformation. In vision, this abstraction became particularly clear. The mammalian visual system processes information hierarchically, moving from local features to increasingly abstract representations. Convolutional neural networks translated this loose biological insight into an engineering architecture capable of extraordinary performance.</p>
+
+<p>This is a legitimate triumph of bio-inspired AI. It shows that biology can provide not only metaphor but architecture. Hierarchy, locality, weight sharing, compositional feature extraction, and distributed representation all became part of the machine learning toolkit.</p>
+
+<p>But there is a danger in mistaking a successful abstraction for a complete theory of biological intelligence.</p>
+
+<p>The cortical neuron is not the atom of intelligence. The nervous system is not a disembodied computational graph. The brain is not merely an input-output function approximator trained on static datasets. It is embedded in a body, coupled to an environment, constrained by metabolism, shaped by development, regulated by physiology, and constructed from cells that are themselves adaptive agents.</p>
+
+<p>If we abstract too quickly, we risk extracting the wrong lesson. We may copy the visible computational surface while missing the organizational principles that make biological systems robust, adaptive, and open-ended.</p>
+
+<p>This is especially important for NeuroAI. If the goal is simply to build artificial networks that predict neural responses, then architectures inspired by cortical processing may be sufficient. But if the goal is to understand intelligence as a biological phenomenon, or to build artificial agents with the adaptive capacities of living systems, the explanatory frame must expand.</p>
+
+<p>The neuron is important. It is not enough.</p>
+
+<hr />
+
+<h2 id="2-intelligence-before-neurons">2. Intelligence before neurons</h2>
+
+<p>One of the most important lessons from biology is that problem-solving predates nervous systems.</p>
+
+<p>Single-celled organisms integrate signals, regulate internal state, navigate gradients, and adjust behavior. <em>Paramecium</em>, for example, can respond adaptively to sensory perturbations despite having no neurons. Bacteria coordinate population-level behaviors through quorum sensing. Slime molds such as <em>Physarum polycephalum</em> can solve spatial optimization problems, forming efficient transport networks and navigating mazes without a nervous system. Plants respond to light, gravity, injury, water, pathogens, and neighboring organisms through distributed signaling and growth regulation.</p>
+
+<p>These examples are not anecdotes meant to stretch the word “intelligence” beyond usefulness. They point to a deeper principle: biological systems solve problems in many spaces, not only in behavioral space.</p>
+
+<p>A bacterium navigates chemical space. A cell navigates metabolic and transcriptional space. A tissue navigates morphogenetic space. An immune system navigates antigenic space. A nervous system navigates sensorimotor and cognitive space. Evolution navigates genotype-phenotype space. Each of these systems must maintain viability while adapting to changing constraints. Each must select actions, regulate internal variables, and exploit structure in its environment.</p>
+
+<p>This suggests that intelligence is not a property that suddenly appears with brains. Rather, nervous systems elaborate and accelerate a more ancient biological capacity: adaptive navigation through high-dimensional problem spaces.</p>
+
+<p>For AI, this matters because most current systems are designed around a narrow input-output paradigm. A model receives data, transforms it, and produces an output. It may be trained by gradient descent, reinforcement learning, or some hybrid objective. But it typically lacks intrinsic self-maintenance, multi-scale embodiment, and a hierarchy of local goals. It does not have to keep itself alive. It does not repair itself. It does not coordinate semi-autonomous subunits with their own constraints. It does not reinterpret information in the service of ongoing viability.</p>
+
+<p>Living systems do all of these things.</p>
+
+<p>The implication is not that AI systems must literally be alive. Rather, the design principles of living systems may reveal forms of computation that are missing from current AI architectures. These include multi-scale control, local agency, modular repair, goal-directed regulation, and context-dependent reinterpretation of signals.</p>
+
+<p>A bio-inspired AI worthy of the name should therefore ask: what computational principles are shared across cells, tissues, nervous systems, organisms, and collectives?</p>
+
+<hr />
+
+<h2 id="3-biological-computation-is-multi-scale-computation">3. Biological computation is multi-scale computation</h2>
+
+<p>A central difference between biological systems and most artificial systems is that biology computes across scales.</p>
+
+<p>In conventional AI, the relevant levels are usually predefined: parameters, layers, modules, models, agents, perhaps populations of agents. These levels can be useful, but they are generally engineered from the outside. In biology, levels are deeply entangled. Molecular networks affect cellular behavior; cellular behavior affects tissue dynamics; tissue dynamics affect organismal physiology; organismal behavior changes the environment; environmental feedback changes selection pressures and developmental trajectories.</p>
+
+<p>There is no single privileged level at which the “real” computation happens.</p>
+
+<p>This is why biological intelligence is difficult to reduce to a standard algorithmic picture. A biological system is not just executing a program stored in DNA, nor is the brain simply executing a program stored in synaptic weights. Genes, cells, circuits, bodies, and environments form coupled dynamical systems. Information is processed through material organization, not merely represented in symbolic form.</p>
+
+<p>This has several consequences.</p>
+
+<p>First, biological systems are context-dependent. The same signal can have different meanings depending on tissue state, developmental history, environmental conditions, metabolic constraints, and higher-level goals. A molecule is not simply a message; its effect depends on the state of the system receiving it.</p>
+
+<p>Second, biological systems exhibit feedback across levels. Lower-level components generate higher-level patterns, but higher-level patterns also constrain and regulate lower-level activity. This is not mystical. It is a basic feature of organized complex systems. A tissue-level voltage pattern can influence cell behavior. A behavioral state can modulate neural excitability. A physiological need can reorganize attention, perception, and action.</p>
+
+<p>Third, biological systems are not merely robust because they resist change. They are robust because they regulate change. Stability is maintained through active adaptation, not through static rigidity.</p>
+
+<p>This is a crucial point for AI. Many machine learning systems are powerful but fragile. They are optimized for performance under a training distribution but can fail under distribution shift. Biological systems, by contrast, are constantly operating under shift. Development, injury, aging, environmental variation, and internal noise are not exceptions; they are the normal operating conditions of life.</p>
+
+<p>The design lesson is that robustness should not be treated only as an external evaluation metric. It should be built into the architecture through multi-scale regulation, modularity, redundancy, and adaptive control.</p>
+
+<hr />
+
+<h2 id="4-context-is-not-metadata">4. Context is not metadata</h2>
+
+<p>In machine learning, context is often treated as additional input: a longer prompt, a conditioning vector, a task descriptor, a memory token, or environmental state. This is useful, but it does not fully capture what context means in biology.</p>
+
+<p>In biological systems, context changes the rules by which information is interpreted. A signal does not have a fixed meaning independent of the receiver. The same biochemical cue can trigger proliferation, differentiation, migration, or death depending on cellular state and tissue-level organization. The same sensory input can produce different behavioral responses depending on hunger, threat, fatigue, development, or prior experience.</p>
+
+<p>Context is therefore not merely more data. It is a control condition on the dynamics of interpretation.</p>
+
+<p>This is where biological systems differ sharply from many artificial ones. In standard supervised learning, the mapping from input to output is stabilized through training. In reinforcement learning, context enters through state, reward, and policy. In large language models, context enters through token history and learned attention. But in all these cases, the system usually lacks a deep architecture of self-modifying interpretation grounded in viability, embodiment, and multi-scale goals.</p>
+
+<p>Biological context is active. It modulates the computational regime itself.</p>
+
+<p>For AI, this suggests that context-sensitive systems should not only condition outputs on inputs. They should be able to alter their own internal dynamics, recruit different modules, reweight objectives, and reinterpret signals depending on higher-level state. This is not simply a matter of adding memory or more parameters. It is a question of architecture.</p>
+
+<p>A truly context-dependent AI system would need mechanisms for switching among modes of computation, stabilizing task-relevant abstractions, and allowing higher-level goals to shape lower-level processing without micromanaging it.</p>
+
+<p>This is one reason multi-scale organization is so important. Without levels, there is no natural place for top-down modulation. Without modularity, there is no stable substrate to modulate. Without embodiment or environmental coupling, context remains abstract and weakly grounded.</p>
+
+<hr />
+
+<h2 id="5-top-down-causality-and-the-architecture-of-control">5. Top-down causality and the architecture of control</h2>
+
+<p>One of the most important conceptual challenges in biological computation is top-down causality.</p>
+
+<p>In reductionist accounts, causation is often assumed to flow upward: molecules determine cells, cells determine tissues, tissues determine organs, organs determine organisms. This view captures part of the story, but it misses the reciprocal nature of biological organization. Higher-level states constrain lower-level dynamics. Tissue architecture influences cellular behavior. Organismal needs reshape physiological regulation. Behavioral goals modulate neural processing.</p>
+
+<p>This does not violate physics. It reflects the fact that organized systems create constraints that alter the effective dynamics of their components.</p>
+
+<p>In complex systems language, macroscopic variables can become causally relevant because they summarize, constrain, and regulate microscopic degrees of freedom. In biological systems, these macroscopic variables are not passive summaries. They often participate in control loops.</p>
+
+<p>For AI, this raises a design question: how can artificial systems implement meaningful top-down control?</p>
+
+<p>Most neural networks are trained bottom-up through gradient-based optimization. Higher-level features emerge through training, but once deployed, the system often performs inference through a fixed computation graph. Some architectures include attention, gating, recurrence, memory, routing, or external tools, but these are still primitive compared with the multi-level control seen in biology.</p>
+
+<p>A bio-inspired architecture might require explicit interactions among levels:</p>
+
+<ul>
+  <li>low-level adaptive units with local competencies;</li>
+  <li>intermediate modules that coordinate local units into functional assemblies;</li>
+  <li>higher-level regulators that set goals, constraints, and operating regimes;</li>
+  <li>feedback pathways that allow system-level state to modulate component-level dynamics;</li>
+  <li>mechanisms for repair, reconfiguration, and reallocation of function.</li>
+</ul>
+
+<p>This is not simply deep learning with more layers. A hierarchy of representation is not the same as a hierarchy of agency. Biological systems contain semi-autonomous subunits. Cells have local goals. Tissues have collective goals. Organisms have behavioral goals. Intelligence emerges from the alignment, conflict, negotiation, and coordination among these levels.</p>
+
+<p>The challenge for AI is to move from hierarchical representation to hierarchical regulation.</p>
+
+<hr />
+
+<h2 id="6-polycomputing-one-substrate-many-computations">6. Polycomputing: one substrate, many computations</h2>
+
+<p>Another biological principle that deserves more attention in AI is polycomputing.</p>
+
+<p>In engineered digital systems, components are often designed for specialized functions. A memory register stores information. A processor executes instructions. A communication bus transmits signals. Abstraction boundaries are deliberately clean.</p>
+
+<p>Biology is messier and more efficient. The same component can participate in many processes at once. A protein may have structural, catalytic, and signaling roles. A cell may contribute to mechanical stability, electrical signaling, metabolic regulation, and immune response. A neural population may encode sensory variables, motor plans, internal state, and task context depending on behavioral regime.</p>
+
+<p>This multifunctionality is not an accident. It is a consequence of evolutionary tinkering. Evolution rarely designs from scratch. It reuses, repurposes, layers, and recombines existing structures. Biological systems are therefore deeply overloaded. They compute many things through the same physical substrate.</p>
+
+<p>This has important implications for AI design.</p>
+
+<p>Modern architectures often pursue modularity through clean separation: one module for perception, one for memory, one for planning, one for action. This may be useful, but biological systems suggest a different kind of modularity: overlapping, context-dependent, multifunctional modules whose role changes with system state.</p>
+
+<p>Polycomputing may be one route toward more efficient and flexible AI. Instead of scaling by adding more specialized components, systems could reuse the same substrate across multiple computational regimes. The relevant question becomes not only “what does this unit represent?” but “what family of computations can this substrate support under different boundary conditions?”</p>
+
+<p>This connects directly to physical computing. If computation is understood as the structured evolution of a physical system, then the same system can realize different computations depending on how it is initialized, coupled, constrained, and read out. Biological systems exploit this constantly. Artificial systems have only begun to explore it.</p>
+
+<hr />
+
+<h2 id="7-trial-and-error-as-a-principle-not-a-weakness">7. Trial-and-error as a principle, not a weakness</h2>
+
+<p>Biology does not solve problems by exhaustive search. Nor does it generally compute globally optimal solutions from first principles. It uses heuristics, feedback, redundancy, exploration, and repair. Evolution itself is a vast trial-and-error process, but trial-and-error also appears within development, learning, immune adaptation, cellular regulation, and behavior.</p>
+
+<p>This matters because AI is often framed around optimization. We define a loss function, construct a training procedure, and search for parameters that minimize error. This has been enormously successful. But biological adaptation is not reducible to the minimization of a fixed externally specified objective.</p>
+
+<p>Organisms operate in open-ended environments. Goals shift. Constraints change. New problem spaces appear. Internal states reorganize. The relevant objective is not always known in advance.</p>
+
+<p>Trial-and-error is not merely inefficient optimization. It is a strategy for navigating spaces where the objective is incomplete, changing, or only locally discoverable.</p>
+
+<p>Ashby’s work on adaptation and requisite variety is relevant here. A system can regulate its environment only if it has enough internal variety to match the variety of perturbations it faces. But too much unconstrained connectivity can destabilize a system. The biological solution is not unlimited flexibility; it is organized flexibility. Modularity, hierarchy, and feedback allow systems to explore without disintegrating.</p>
+
+<p>For machine learning, this suggests that open-ended intelligence requires more than better loss functions. It requires architectures capable of maintaining identity while exploring new configurations. It requires systems that can tolerate partial failure, reuse components, generate behavioral variation, and stabilize useful discoveries.</p>
+
+<p>This is especially relevant for agents operating in real-world environments. A disembodied model can be reset after failure. A biological organism cannot. It must explore while remaining viable. This constraint may be one of the deepest sources of biological intelligence.</p>
+
+<hr />
+
+<h2 id="8-embodiment-is-not-an-optional-add-on">8. Embodiment is not an optional add-on</h2>
+
+<p>Embodiment is often discussed in AI as if it were an application domain: robotics, agents, sensorimotor control. But in biology, embodiment is not a domain. It is the condition under which intelligence exists.</p>
+
+<p>Living systems are not detached from the world. They are physically embedded in it. Their bodies determine what they can sense, what they can do, what matters to them, and what kinds of regularities they can exploit. The body is not merely an actuator controlled by the brain. It is part of the computational system.</p>
+
+<p>This is clear in animals, where morphology shapes behavior. But it is also true at cellular and tissue scales. A cell’s geometry, membrane properties, mechanical environment, and bioelectric state influence what information it can process. Morphogenesis is not a program executed by passive material; it is a collective process in which cells communicate, exert forces, respond to gradients, and revise developmental trajectories.</p>
+
+<p>Embodiment gives information its stakes. A signal matters because it changes what the system can do, what risks it faces, or how it maintains itself. This is one reason purely disembodied benchmarks may be insufficient for evaluating general intelligence. A system that manipulates symbols or tokens successfully may still lack the adaptive grounding characteristic of living agents.</p>
+
+<p>This does not mean every AI system must be a robot. But it does suggest that the path toward more general intelligence may require richer forms of world-coupling: simulation environments, active perception, tool use, persistent memory, self-maintenance constraints, and feedback between action and representation.</p>
+
+<p>The “embodied Turing test” is important in this context. Rather than asking whether a system can imitate human conversation, we might ask whether it can adaptively participate in the physical or simulated world: sensing, acting, repairing, learning, and maintaining coherent goals under changing conditions.</p>
+
+<p>Language is powerful. But language alone is not the full ecology of intelligence.</p>
+
+<hr />
+
+<h2 id="9-energy-efficiency-and-the-physical-cost-of-intelligence">9. Energy, efficiency, and the physical cost of intelligence</h2>
+
+<p>Modern AI has made clear that scaling works. Larger models trained on more data with more compute can acquire impressive capabilities. But biological systems remind us that intelligence is not only a question of performance. It is also a question of energetic and material efficiency.</p>
+
+<p>The human brain operates at roughly the scale of tens of watts while supporting perception, action, memory, imagination, social reasoning, motor control, and continual adaptation. This comparison is often used rhetorically, but the deeper point is architectural. The brain is not efficient merely because neurons are magical low-power devices. It is efficient because biological computation is sparse, event-driven, embodied, hierarchical, and deeply constrained by metabolic cost.</p>
+
+<p>Neuromorphic engineering addresses part of this issue by building hardware inspired by spiking neural systems. Event-based communication, sparse activity, and local memory can reduce energy consumption relative to conventional architectures. Chips such as TrueNorth and Loihi are important examples of this direction.</p>
+
+<p>But energy efficiency should not be confined to neuromorphic hardware. It should be understood as a systems-level design principle. Biological systems economize by reusing components, exploiting embodiment, adapting locally, and computing only what is relevant for action. They do not maintain arbitrary precision everywhere. They do not process all available data equally. They prioritize salience, viability, and context.</p>
+
+<p>This suggests a contrast with brute-force scaling. Scaling may continue to produce more capable systems, but without architectural changes it may also amplify inefficiencies. A serious bio-inspired AI program should ask how living systems achieve adaptive competence under severe energetic constraints.</p>
+
+<p>The question is not only how to make AI larger. It is how to make it more organized.</p>
+
+<hr />
+
+<h2 id="10-what-current-ai-can-learn-from-biology">10. What current AI can learn from biology</h2>
+
+<p>The relationship between biology and AI should not be one-directional. AI already provides useful models for neuroscience and biology. Deep networks can predict neural responses. Reinforcement learning provides models of behavior. Dynamical systems and control theory help formalize adaptive regulation. Large-scale models may even become tools for hypothesis generation in biology.</p>
+
+<p>But if we ask what AI can learn from biology, several principles stand out.</p>
+
+<p>First, intelligence is distributed across scales. It does not reside in a single privileged unit.</p>
+
+<p>Second, context changes computation. Signals do not have fixed meanings independent of the system state in which they are interpreted.</p>
+
+<p>Third, robust adaptation requires modularity and hierarchy. Flexibility without organization becomes instability.</p>
+
+<p>Fourth, embodiment grounds intelligence. Agents learn through action, constraint, and feedback from the world.</p>
+
+<p>Fifth, biological systems exploit multifunctional substrates. Components are reused across computational roles.</p>
+
+<p>Sixth, top-down regulation is central. Higher-level goals and states modulate lower-level dynamics.</p>
+
+<p>Seventh, trial-and-error is fundamental. Open-ended environments require exploratory strategies, not only predefined optimization.</p>
+
+<p>Eighth, energy and material constraints are not secondary engineering details. They shape the form of intelligence itself.</p>
+
+<p>These principles do not specify a single architecture. Rather, they define a design space. They point toward AI systems that are modular but not rigid, embodied but not necessarily robotic, hierarchical but not merely layered, adaptive but not unstable, and physically grounded without being literal copies of biological organisms.</p>
+
+<hr />
+
+<h2 id="11-case-studies-partial-successes-and-deeper-lessons">11. Case studies: partial successes and deeper lessons</h2>
+
+<p>Several existing lines of work already illustrate the value of biological inspiration, though each captures only part of the broader picture.</p>
+
+<h3 id="cnns-and-hierarchical-visual-processing">CNNs and hierarchical visual processing</h3>
+
+<p>Convolutional neural networks remain a paradigmatic success of bio-inspired AI. Their connection to the visual cortex is not exact, but the broad principle of hierarchical feature extraction proved enormously powerful. Early layers detect local structure; deeper layers combine local features into more abstract representations. This mirrors, in simplified form, the hierarchical organization of visual processing in biological systems.</p>
+
+<p>The deeper lesson is not that AI should copy the visual cortex layer by layer. Rather, it is that biological organization can reveal computational motifs: locality, hierarchy, compositionality, invariance, and progressive abstraction.</p>
+
+<h3 id="xenobots-and-embodied-biological-design">Xenobots and embodied biological design</h3>
+
+<p>Xenobots show a very different kind of biological inspiration. They are not artificial neural networks modeled on brains. They are living, reconfigurable organisms constructed from frog embryonic cells. Their behavior emerges from the physical and biological properties of the cells themselves, combined with design procedures that search through possible configurations.</p>
+
+<p>The significance of xenobots is that they make computation inseparable from embodiment. Their morphology, material properties, cellular behaviors, and environment jointly produce adaptive function. They suggest that intelligent behavior can emerge from the organization of living matter even without a nervous system.</p>
+
+<p>For AI, xenobots point toward a broader design philosophy: intelligence can be built by arranging competent subunits whose collective dynamics solve problems.</p>
+
+<h3 id="astrocytes-transformers-and-non-neuronal-computation">Astrocytes, transformers, and non-neuronal computation</h3>
+
+<p>The rise of transformer architectures has renewed interest in mechanisms of contextual integration. In neuroscience, astrocytes have moved from the background to the foreground as active participants in neural computation. They interact with synapses, modulate signaling, and integrate information across spatial and temporal scales.</p>
+
+<p>Recent work drawing analogies between neuron-astrocyte interactions and attention-like mechanisms is important because it challenges neuron-centric accounts of computation. The brain is not only a network of neurons. It is a tissue composed of multiple interacting cell types, embedded in vascular, metabolic, immune, and extracellular contexts.</p>
+
+<p>For AI, this suggests that future architectures may benefit from heterogeneous computational units, not only more artificial neurons. Different components may regulate, gate, stabilize, contextualize, or metabolically constrain the activity of others.</p>
+
+<h3 id="llms-and-the-limits-of-disembodied-scaling">LLMs and the limits of disembodied scaling</h3>
+
+<p>Large language models have transformed AI. They demonstrate that large-scale self-supervised learning over language can produce systems with striking generality. But they also expose the limits of pattern completion as a model of intelligence. Questions of grounding, causality, agency, reliability, and understanding remain unresolved.</p>
+
+<p>Bio-inspired AI does not imply rejecting LLMs. Rather, it suggests ways of extending them: coupling language models to embodied agents, causal models, memory systems, active experimentation, hierarchical planners, and adaptive self-regulation. The goal is not to replace statistical learning with biology, but to embed statistical learning within richer architectures of action, context, and control.</p>
+
+<p>A future AI system may combine the representational power of foundation models with the organizational principles of living systems.</p>
+
+<hr />
+
+<h2 id="12-from-neuroai-to-bioai">12. From NeuroAI to BioAI</h2>
+
+<p>NeuroAI is one of the most important developments at the interface of neuroscience and machine learning. It asks how insights from the brain can guide AI, and how AI models can help explain the brain. This exchange is already reshaping both fields.</p>
+
+<p>But the broader argument of our paper is that NeuroAI should be nested within a larger BioAI.</p>
+
+<p>The nervous system is one biological solution to the problem of adaptive intelligence. It is not the only one. Cells, tissues, immune systems, developmental systems, and collectives all display forms of problem-solving. The principles underlying these systems may be just as important for future AI as cortical hierarchy or synaptic plasticity.</p>
+
+<p>A BioAI perspective would expand the units of inspiration:</p>
+
+<ul>
+  <li>from neurons to cells;</li>
+  <li>from circuits to tissues;</li>
+  <li>from synapses to bioelectric, biochemical, and mechanical signaling;</li>
+  <li>from learning to development and regeneration;</li>
+  <li>from inference to viability;</li>
+  <li>from representation to regulation;</li>
+  <li>from task performance to adaptive persistence.</li>
+</ul>
+
+<p>This does not dilute NeuroAI. It strengthens it. Brains evolved within bodies. Nervous systems interface with pre-existing cellular intelligence. Neural computation is layered on top of ancient mechanisms of regulation, signaling, and morphogenesis. Understanding intelligence biologically requires connecting neural computation to these deeper substrates.</p>
+
+<p>For machine learning, BioAI may provide a route beyond the current dichotomy between brute-force scaling and hand-engineered symbolic structure. It suggests systems that grow, adapt, repair, regulate, and reorganize.</p>
+
+<hr />
+
+<h2 id="13-complex-systems-as-the-natural-language-of-bio-inspired-ai">13. Complex systems as the natural language of bio-inspired AI</h2>
+
+<p>The conceptual tools needed for this program will not come from machine learning alone. They require complex systems theory, dynamical systems, control theory, statistical physics, information theory, category theory, and theoretical biology.</p>
+
+<p>Biological intelligence is a complex systems problem because it involves:</p>
+
+<ul>
+  <li>many interacting components;</li>
+  <li>nonlinear dynamics;</li>
+  <li>feedback across scales;</li>
+  <li>emergent macroscopic order;</li>
+  <li>modularity and hierarchy;</li>
+  <li>robustness under perturbation;</li>
+  <li>adaptation in changing environments;</li>
+  <li>collective behavior;</li>
+  <li>constraints imposed by energy, material, and morphology.</li>
+</ul>
+
+<p>This is why the connection between bio-inspired AI and complex systems is not superficial. If intelligence is multi-scale adaptive organization, then complex systems theory provides the natural mathematical language for describing it.</p>
+
+<p>For example, Ashby’s law of requisite variety speaks directly to adaptive control. Simon’s theory of near-decomposable systems explains why hierarchy and modularity enable complex systems to evolve and remain stable. Statistical physics offers tools for understanding collective behavior, phase transitions, energy landscapes, and coarse-graining. Category theory offers ways to formalize compositionality: how systems can be assembled from parts while preserving structure across levels.</p>
+
+<p>The challenge is to turn these conceptual tools into engineering principles.</p>
+
+<p>This will require architectures where modules are not merely stacked, but composed; where higher-level states regulate lower-level dynamics; where learning is not only parameter optimization but system reconfiguration; where physical constraints are not afterthoughts but part of the computation.</p>
+
+<hr />
+
+<h2 id="14-toward-design-principles-for-next-generation-ai">14. Toward design principles for next-generation AI</h2>
+
+<p>A serious bio-inspired AI program should avoid two mistakes.</p>
+
+<p>The first mistake is superficial biomimicry: copying biological details without understanding the principle they implement. Not every biological mechanism is useful for AI. Evolution produces historical contingencies as well as elegant solutions. Biology should inspire, not constrain.</p>
+
+<p>The second mistake is over-abstraction: extracting a vague metaphor from biology and then ignoring the material and organizational features that made the biological system work. Calling a network “neural” does not make it biologically intelligent. Calling a system “embodied” does not ensure meaningful world-coupling. Calling a module “adaptive” does not give it local agency.</p>
+
+<p>The useful path lies between these extremes. We should identify transferable principles.</p>
+
+<p>Some candidate principles are:</p>
+
+<h3 id="multi-scale-architecture">Multi-scale architecture</h3>
+
+<p>AI systems should be designed with interacting levels of organization, not only deeper layers. These levels should have different temporal scales, representational forms, and control roles.</p>
+
+<h3 id="context-sensitive-computation">Context-sensitive computation</h3>
+
+<p>Systems should be able to change their computational regime depending on internal and external context. Context should regulate processing, not merely condition output.</p>
+
+<h3 id="top-down-modulation">Top-down modulation</h3>
+
+<p>Higher-level goals and states should modulate lower-level dynamics. This requires feedback pathways, gating mechanisms, and architectures that support hierarchical control.</p>
+
+<h3 id="modular-but-overlapping-organization">Modular but overlapping organization</h3>
+
+<p>Modules should be stable enough to preserve function, but flexible enough to be reused across tasks. Biological modularity is often overlapping and multifunctional.</p>
+
+<h3 id="embodied-interaction">Embodied interaction</h3>
+
+<p>Intelligence should be evaluated through adaptive interaction with environments, not only static benchmarks. Even simulated embodiment can be useful if it imposes action, feedback, and constraint.</p>
+
+<h3 id="local-agency">Local agency</h3>
+
+<p>Components should not be passive units. They should possess local adaptive capacities that can be coordinated by higher-level organization.</p>
+
+<h3 id="energetic-and-material-constraints">Energetic and material constraints</h3>
+
+<p>Architectures should be evaluated not only by performance but by efficiency, robustness, and capacity for adaptation under resource constraints.</p>
+
+<h3 id="open-ended-exploration">Open-ended exploration</h3>
+
+<p>Systems should support trial-and-error search in changing problem spaces where objectives are not fully specified in advance.</p>
+
+<p>These are not minor modifications to current AI. They point to a different architectural imagination.</p>
+
+<hr />
+
+<h2 id="15-conclusion-biology-as-a-theory-of-organized-intelligence">15. Conclusion: biology as a theory of organized intelligence</h2>
+
+<p>The central claim of our paper is that biological intelligence cannot be understood by focusing only on neurons, and artificial intelligence will be limited if it draws inspiration only from neural networks. Intelligence in living systems is multi-scale, embodied, context-dependent, and physically organized. It emerges not from isolated computational units, but from nested systems that regulate, repair, adapt, and coordinate across levels.</p>
+
+<p>This does not mean that current AI is on the wrong path. Deep learning, transformers, reinforcement learning, neuromorphic computing, and NeuroAI are all important. But they are partial. They capture fragments of a much larger biological design space.</p>
+
+<p>The next phase of bio-inspired AI should move beyond neural imitation toward biological organization.</p>
+
+<p>That means taking seriously the intelligence of cells, tissues, developmental systems, immune systems, and collectives. It means studying how living systems maintain stability while remaining plastic, how they exploit context, how they implement top-down control, how they reuse components across functions, and how they navigate open-ended problem spaces under physical constraints.</p>
+
+<p>For NeuroAI, this broadens the biological foundation. For machine learning, it offers new architectures. For complex systems, it provides a rich domain where emergence, control, hierarchy, and adaptation meet. For bio-inspired AI, it clarifies the central challenge: not to copy life, but to understand the principles by which life computes.</p>
+
+<p>The future of AI may depend not only on larger models, more data, or faster hardware, but on a deeper understanding of biological complexity.</p>
+
+<p>If intelligence is organized adaptation across scales, then biology is not merely a source of metaphors for AI. It is the most important existing theory of intelligence we have.</p>
+
+  </section>
+
+  
+  <section class="paper__section">
+    <h2>The room this opens</h2>
+    <div class="linkbar">
+      <a href="/papers/Bioinspired-ai/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="20" x2="12" y2="12"/><line x1="12" y1="12" x2="21" y2="4"/><line x1="12" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="21" y2="20"/></svg>
+        Follow this path into the Maze
+      </a>
+    </div>
+  </section>
+  
+</article>
+
+      <footer class="foot">
+  <span>© 2026 · Nima Dehghani</span>
+  <span>
+    <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    ·
+    <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+  </span>
+</footer>
+
+    </main>
+  </div>
+
+  <script src="/assets/js/quotes.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

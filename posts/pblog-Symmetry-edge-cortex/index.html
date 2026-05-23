@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ead7be">
+<title>Symmetry’s Edge in Cortical Dynamics · Nima Dehghani</title>
+<meta name="description" content="Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<link type="application/atom+xml" rel="alternate" href="https://neurovium.github.io/feed.xml" title="Nima Dehghani" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Symmetry’s Edge in Cortical Dynamics | Nima Dehghani</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Symmetry’s Edge in Cortical Dynamics" />
+<meta name="author" content="Nima Dehghani" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Companion post to: Symmetry’s Edge in Cortical Dynamics: Multiscale Dynamics of Ensemble Excitation and Inhibition Nima Dehghani arXiv . (2025) DOI: https://doi.org/10.48550/arXiv.2306.11965" />
+<meta property="og:description" content="Companion post to: Symmetry’s Edge in Cortical Dynamics: Multiscale Dynamics of Ensemble Excitation and Inhibition Nima Dehghani arXiv . (2025) DOI: https://doi.org/10.48550/arXiv.2306.11965" />
+<link rel="canonical" href="https://neurovium.github.io/posts/pblog-Symmetry-edge-cortex/" />
+<meta property="og:url" content="https://neurovium.github.io/posts/pblog-Symmetry-edge-cortex/" />
+<meta property="og:site_name" content="Nima Dehghani" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-05-27T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Symmetry’s Edge in Cortical Dynamics" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Nima Dehghani"},"dateModified":"2025-05-27T00:00:00+00:00","datePublished":"2025-05-27T00:00:00+00:00","description":"Companion post to: Symmetry’s Edge in Cortical Dynamics: Multiscale Dynamics of Ensemble Excitation and Inhibition Nima Dehghani arXiv . (2025) DOI: https://doi.org/10.48550/arXiv.2306.11965","headline":"Symmetry’s Edge in Cortical Dynamics","mainEntityOfPage":{"@type":"WebPage","@id":"https://neurovium.github.io/posts/pblog-Symmetry-edge-cortex/"},"url":"https://neurovium.github.io/posts/pblog-Symmetry-edge-cortex/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+  },
+  options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+
+</head>
+<body>
+  <header class="topbar">
+    <a href="/" class="topbar__brand">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"><line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/><line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/><line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/></g><circle cx="18" cy="20" r="2.2" fill="currentColor"/></svg>
+      Nima Dehghani
+    </a>
+    <button class="topbar__toggle" id="sidebar-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sidebar">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </header>
+
+  <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
+
+  <div class="app">
+    
+
+<aside class="side" id="sidebar" aria-label="Primary">
+  <a class="side__brand" href="/">
+    <svg class="glyph" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none">
+        <line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/>
+        <line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/>
+        <line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/>
+      </g>
+      <circle cx="18" cy="20" r="2.2" fill="currentColor"/>
+    </svg>
+    <span>
+      <span class="side__name">Nima Dehghani</span>
+      <span class="side__tag">@neurovium · MIT</span>
+    </span>
+  </a>
+
+  <nav class="side__nav" aria-label="Main navigation">
+    <a href="/" class="">Home</a>
+    <a href="/news/" class="">News<span class="side__pip" aria-label="new"></span></a>
+    <a href="/research/" class="">Research</a>
+    <a href="/papers/" class="">Paper Maze</a>
+    <a href="/garden/" class="">Idea Garden</a>
+    <a href="/blog/" class="">Blog</a>
+    <a href="/open-science/" class="">Open Science</a>
+    <a href="/about/" class="">About</a>
+    <a href="/neurovium-decoded/" class="">Neurovium Decoded</a>
+  </nav>
+
+  <div class="side__social" aria-label="Social links">
+    <div class="side__social-row">
+      <a href="https://scholar.google.com/citations?user=acFMrVUAAAAJ&hl=en" title="Google Scholar" target="_blank" rel="noopener" aria-label="Google Scholar">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9zm6.82 7L12 12.72 5.18 9 12 5.28zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73z"/></svg>
+      </a>
+      <a href="mailto:nima.dehghani@mit.edu" title="Email" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/nimadehghani/" title="LinkedIn" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+    </div>
+    <div class="side__social-row">
+      <a href="https://github.com/neurovium" title="GitHub" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      </a>
+      <a href="https://twitter.com/neurovium" title="X" target="_blank" rel="noopener" aria-label="X">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://bsky.app/profile/neurovium.bsky.social" class="is-bsky" title="Bluesky" target="_blank" rel="noopener" aria-label="Bluesky">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.335 5.144c2.606 1.957 5.41 5.923 6.44 8.051.99-2.046 3.855-6.132 6.44-8.051 1.864-1.383 4.885-2.453 4.885 1.002 0 .69-.396 5.795-.629 6.624-.809 2.882-3.748 3.616-6.363 3.17 4.573.78 5.737 3.359 3.224 5.939-4.772 4.9-6.859-1.23-7.394-2.802-.534 1.572-2.622 7.702-7.394 2.802-2.513-2.58-1.349-5.16 3.224-5.939-2.615.446-5.554-.288-6.363-3.17-.233-.829-.629-5.934-.629-6.624 0-3.455 3.021-2.385 4.885-1.002z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="n4-set" aria-label="N⁴ : NeuroAI ⊃ N³">
+    <span class="n4-set__lbl">N&#8308;</span>
+    <div class="n4-set n4-set--ai">
+      <span class="n4-set__lbl">NeuroAI</span>
+      <div class="n4-set n4-set--n3">
+        <span class="n4-set__lbl">N&#179;</span>
+        <ul>
+          <li>NeuroPhysics</li>
+          <li>NeuroComputation</li>
+          <li>NeuroDynamics</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="side__foot">
+    <span>
+      <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+      ·
+      <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    </span>
+  </div>
+</aside>
+
+    <main class="main">
+      <article class="paper">
+  <div class="paper__crumb">
+    <a href="/blog/">← Blog</a>
+    <span style="color:var(--muted-soft);">·</span>
+    <span>May 27, 2025</span>
+  </div>
+
+  <h1>Symmetry’s Edge in Cortical Dynamics</h1>
+  <div class="paper__subtitle">Multiscale ensemble excitation/inhibition balance, renormalization, and broken symmetry in cortex</div>
+  
+  <div class="paper__venue" style="margin-top:10px;">
+    <span>cortical dynamics</span><span>excitation-inhibition balance</span><span>statistical physics</span><span>complex systems</span><span>criticality</span><span>sleep</span><span>seizures</span>
+  </div>
+  
+
+  
+  <div class="linkbar" style="margin-top:24px;">
+    <a href="/papers/Symmetry-edge-cortex/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="20" x2="12" y2="12"/><line x1="12" y1="12" x2="21" y2="4"/><line x1="12" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="21" y2="20"/></svg>
+      Follow this path into the Maze
+    </a>
+  </div>
+  
+
+  <section class="paper__section prose" style="margin-top:28px;">
+    <p><em>Companion post to:</em><br />
+<strong>Symmetry’s Edge in Cortical Dynamics: Multiscale Dynamics of Ensemble Excitation and Inhibition</strong><br />
+Nima Dehghani
+<em>arXiv</em> . (2025)
+DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.48550/arXiv.2306.11965</code></p>
+
+<hr />
+
+<h1 id="symmetrys-edge-in-cortical-dynamics">Symmetry’s Edge in Cortical Dynamics</h1>
+
+<h2 id="multiscale-ensemble-excitationinhibition-balance-renormalization-and-broken-symmetry-in-cortex">Multiscale ensemble excitation/inhibition balance, renormalization, and broken symmetry in cortex</h2>
+
+<p>Creating a quantitative theory of cortex requires deciding what kind of object the cortex is, mathematically and physically. Is it best described at the level of single neurons, local circuits, cortical columns, fields, waves, or whole-brain states? Are the relevant interactions pairwise, higher-order, mean-field, or mediated by latent collective variables? And what should count as a control parameter for a system that is noisy, dissipative, nonstationary, adaptive, and constantly driven?</p>
+
+<p>These questions are familiar to both theoretical neuroscience and statistical physics. In physics, the search for macroscopic laws often begins by asking which microscopic details can be ignored, which collective variables survive coarse-graining, which symmetries constrain the dynamics, and which broken symmetries reveal the emergence of new states. The goal is not to describe every microscopic degree of freedom. The goal is to identify the right variables: the order parameters and invariances that expose the effective laws of the system.</p>
+
+<p>In this paper, <strong>Symmetry’s Edge in Cortical Dynamics</strong>, I apply this way of thinking to cortical ensemble activity. The central object is not the membrane potential of a single neuron, nor the input balance onto a single cell, but the <strong>population-level balance of ensemble excitation and inhibition</strong>. By aggregating spikes from excitatory and inhibitory neurons, coarse-graining them across time, and comparing their joint dynamics across wakefulness, sleep, and seizure, the paper asks whether ensemble E/I balance behaves like a macroscopic organizing principle of cortex.</p>
+
+<p>The main claim is that cortical activity appears to live near an <strong>edge of symmetry</strong>. Across temporal scales, excitation and inhibition remain tightly balanced in a way that is not explained by simple averaging or matched firing rates. Yet this balance is not rigid. Different vigilance states introduce structured deviations from perfect symmetry, and seizures correspond to pathological departures from the balanced manifold followed by a striking post-ictal return. In this sense, normal cortical function may depend on a dynamic compromise: maintaining a scale-invariant balance while allowing controlled symmetry breaking for computation, state transitions, and recovery.</p>
+
+<hr />
+
+<h2 id="from-input-ei-balance-to-ensemble-ei-balance">From input E/I balance to ensemble E/I balance</h2>
+
+<p>In neuroscience, excitation/inhibition balance usually refers to <strong>input balance</strong>: the matching of excitatory and inhibitory synaptic currents impinging on a single neuron. This concept has been central to understanding stable firing, asynchronous cortical states, spike timing, and the prevention of runaway excitation. It is a local, cellular, and synaptic notion of balance.</p>
+
+<p>The concept in this paper is different. Here the relevant quantity is <strong>ensemble E/I balance</strong>. Instead of asking whether the inputs to one neuron are balanced, we ask whether the collective activity of excitatory and inhibitory populations remains balanced across time and scale.</p>
+
+<p>Let $S_n(t)$ denote the spike train of neuron $n$. For a temporal bin of size $\Delta t$, we define normalized ensemble activity for the excitatory and inhibitory populations:</p>
+
+\[Ens_E(t;\Delta t) =
+\frac{1}{N_E}
+\sum_{n \in E}
+\sum_{t' \in [t,t+\Delta t]} S_n(t'),\]
+
+\[Ens_I(t;\Delta t) =
+\frac{1}{N_I}
+\sum_{n \in I}
+\sum_{t' \in [t,t+\Delta t]} S_n(t').\]
+
+<p>The observable of interest is the signed ensemble fluctuation:</p>
+
+\[f_{\mathrm{obs}}(t;\Delta t) =
+Ens_E(t;\Delta t) - Ens_I(t;\Delta t).\]
+
+<p>This quantity is deliberately macroscopic. It is not meant to reconstruct the full microstate of the circuit. Instead, it asks whether a large heterogeneous population has a collective degree of freedom that remains meaningful after coarse-graining. If such a quantity preserves its structure across scales, then it may function as an order parameter for cortical state organization.</p>
+
+<p>This distinction matters because the cortex is deeply multiscale. The behavior of a cortical circuit is not simply the sum of single-cell properties. Local recurrent interactions, inhibitory feedback, neuromodulatory state, dendritic filtering, population synchrony, traveling waves, and large-scale oscillations all interact. A theory that stops at single-neuron input balance risks missing the collective regime in which the cortex actually operates.</p>
+
+<hr />
+
+<h2 id="why-a-renormalization-mindset">Why a renormalization mindset?</h2>
+
+<p>Mean-field and neural mass models have been extremely useful in theoretical neuroscience. They replace heterogeneous microscopic interactions by effective average variables such as population firing rates, membrane potentials, or fields over cortical space. This strategy can reveal oscillations, instabilities, bifurcations, and wave-like dynamics.</p>
+
+<p>But mean-field descriptions can also average away precisely what matters. Spiking data are non-Gaussian, bursty, temporally structured, and state-dependent. The cortex does not merely smooth into a homogeneous field when viewed at larger scales. Some microscopic details disappear under coarse-graining, but others survive. The question is: <strong>which structures remain invariant?</strong></p>
+
+<p>This is where the renormalization group provides a useful conceptual guide. In physics, RG does not simply mean averaging. It means systematically integrating out degrees of freedom, rescaling the remaining variables, and studying whether the system flows toward a fixed point, away from it, or along an extended manifold. Fixed points reveal scale invariance. Relevant perturbations reveal which parameters matter. Broken symmetries reveal how new macroscopic states emerge.</p>
+
+<p>The approach in this paper is not a full spatial RG of cortical tissue. It is a <strong>temporal coarse-graining</strong> of ensemble spiking activity. The bin size $\Delta t$ is varied logarithmically from millisecond to multi-second scales. At each scale, the excitatory and inhibitory ensemble signals are recomputed and compared. The aim is to ask whether population E/I balance has an invariant structure under temporal coarse-graining.</p>
+
+<p>If excitation and inhibition were independent processes, or if the observed balance were merely a consequence of averaging many spikes, the central limit theorem would predict a simple reduction of variance with increasing bin size. Instead, the paper finds a slower, sublinear scaling of the variance of $f_{\mathrm{obs}}$. This indicates that the balance is not a trivial statistical artifact. It reflects structured temporal correlations between excitatory and inhibitory ensemble activity that persist across scales.</p>
+
+<hr />
+
+<h2 id="the-empirical-system-multielectrode-recordings-across-cortical-states">The empirical system: multielectrode recordings across cortical states</h2>
+
+<p>The analysis uses multielectrode recordings from human temporal cortex, obtained with Utah arrays implanted in cortical layers II/III. These arrays provide simultaneous recordings from many units across a local cortical patch, together with local field potentials and state labels from wakefulness and sleep. Units are classified as excitatory or inhibitory using extracellular waveform features and short-latency interaction structure.</p>
+
+<p>This dataset is not a complete sampling of a cortical column. No current multielectrode array captures all neurons in a local volume. A Utah array samples only a tiny fraction of the neurons contained in the underlying cortical tissue. This limitation is important. The results should therefore be understood as conservative estimates of population-level structure. If scale-invariant E/I balance is already visible under severe subsampling, denser recordings may reveal an even richer geometry of ensemble balance across local and mesoscale cortical tissue.</p>
+
+<p>The paper studies three related regimes:</p>
+
+<ol>
+  <li><strong>Normal vigilance states</strong>, including wakefulness, REM sleep, light sleep, and slow-wave sleep.</li>
+  <li><strong>Scale transformations</strong>, obtained by temporal coarse-graining from milliseconds to seconds.</li>
+  <li><strong>Pathological excursions</strong>, especially electrographic seizures and post-ictal recovery.</li>
+</ol>
+
+<p>The point is not merely to compare states. The point is to ask whether a shared macroscopic symmetry persists across states, and how different states break that symmetry in controlled or pathological ways.</p>
+
+<hr />
+
+<h2 id="scale-invariant-mirroring-of-excitation-and-inhibition">Scale-invariant mirroring of excitation and inhibition</h2>
+
+<p>The first result is visually simple but conceptually important. Across wake, REM, light sleep, and slow-wave sleep, normalized ensemble excitation and inhibition track one another closely across temporal scales. When plotted against each other, the joint distribution of $Ens_E$ and $Ens_I$ forms elongated ellipsoids aligned along the diagonal corresponding to balanced activity.</p>
+
+<p>This geometry is significant. The diagonal direction corresponds to co-fluctuation of excitation and inhibition. The orthogonal direction corresponds to imbalance: moments when excitation transiently dominates inhibition, or inhibition dominates excitation. Under coarse-graining, the orthogonal width contracts, but the diagonal organization remains. This means that coarse-graining reduces fast fluctuations without destroying the fundamental E/I coordination.</p>
+
+<p>The balance is therefore not a static equality of firing rates. It is a dynamical relationship between two population variables. Excitation and inhibition fluctuate, but they fluctuate together. The symmetry is not exact at every instant; rather, it is statistically maintained across time and scale.</p>
+
+<p>This is why I call the system an edge of symmetry. The cortex is not perfectly symmetric. Perfect symmetry would be computationally inert. But neither is it unconstrained. The system operates near a balanced manifold and explores structured deviations around it.</p>
+
+<hr />
+
+<h2 id="randomization-destroys-the-symmetry">Randomization destroys the symmetry</h2>
+
+<p>A central concern in any population analysis is whether the observed structure is trivial. Perhaps excitation and inhibition appear balanced simply because both populations have matched mean rates, or because coarse-graining smooths everything into a common trend.</p>
+
+<p>To test this, the paper uses two surrogate procedures.</p>
+
+<p>The first randomly permutes inter-spike intervals of the pooled excitatory and inhibitory ensemble spike trains. This preserves spike counts and the empirical ISI distribution within each population but destroys the original temporal ordering.</p>
+
+<p>The second circularly shifts individual spike trains by random offsets. This preserves each neuron’s internal spike timing structure but disrupts cross-neuron alignment.</p>
+
+<p>Both procedures preserve important marginal statistics. But both destroy the precise temporal relationship between excitatory and inhibitory ensemble activity.</p>
+
+<p>The result is decisive. The structured diagonal ellipsoids in the $Ens_E \times Ens_I$ plane become isotropic clouds. The scale-invariant geometry disappears. The collapse-curve structure described below is also destroyed. Thus, ensemble E/I balance is not merely a product of matched rates or averaging. It depends on temporally coordinated population structure.</p>
+
+<p>This is an important constraint for models. A model that reproduces firing rate distributions but not the joint temporal coordination of excitation and inhibition has missed the phenomenon.</p>
+
+<hr />
+
+<h2 id="collapse-curves-and-universality">Collapse curves and universality</h2>
+
+<p>One of the main tools introduced in the paper is a collapse-curve analysis inspired by avalanche physics and crackling noise.</p>
+
+<p>For each timescale $\Delta t$, the values of</p>
+
+\[f_{\mathrm{obs}}(t;\Delta t)\]
+
+<p>are sorted, cumulatively summed, and rescaled. If the structure of E/I fluctuations is scale-invariant, then curves from different $\Delta t$ should collapse onto a common shape. In physical systems, such data collapse is often taken as evidence that different microscopic realizations are governed by the same effective scaling law.</p>
+
+<p>In the cortical data, the empirical curves from millisecond to multi-second scales collapse onto a common symmetric master curve. Remarkably, this collapse is preserved across wakefulness, REM sleep, light sleep, and slow-wave sleep.</p>
+
+<p>This does not mean that all brain states are identical. They are not. The point is subtler: after the appropriate coarse-graining and normalization, the fluctuation structure of ensemble E/I balance has a state-independent component. The cortex appears to preserve a universal balanced backbone across states, while allowing state-specific deviations around it.</p>
+
+<p>The randomization tests sharpen the interpretation. Surrogate data do not collapse onto the empirical master curve, except partially at the coarsest scales where much of the fine temporal structure has been averaged out. This confirms that the collapse is not an inevitable result of normalization. It reflects a real temporal organization of population activity.</p>
+
+<p>For physicists, this is the closest analogy to an RG fixed-point signature in the paper. For neuroscientists, the important point is that population E/I balance is not simply stable in a mean-rate sense; it has a multiscale statistical form.</p>
+
+<hr />
+
+<h2 id="partition-curves-the-cortex-does-not-average-into-homogeneity">Partition curves: the cortex does not average into homogeneity</h2>
+
+<p>If excitation and inhibition remain balanced across scales, one might imagine that cortical activity simply becomes homogeneous under coarse-graining. The partition-curve analysis shows that this is not the case.</p>
+
+<p>A partition curve measures how unequally ensemble spikes are distributed across time bins. If activity were uniformly distributed, the curve would lie near the diagonal. If a small fraction of time bins contained a large fraction of spikes, the curve would be strongly convex.</p>
+
+<p>The empirical partition curves remain convex across scales. Coarse-graining moves them closer to the diagonal, as expected, but it does not erase the inequality. Even at coarse timescales, activity remains bursty and inhomogeneous.</p>
+
+<p>This result is important because it prevents a misleading interpretation of balance. Ensemble E/I balance does not imply a smooth Poisson-like background. The cortex maintains balance while preserving temporally concentrated activity. In statistical-mechanics language, coarse-graining reduces some degrees of freedom but does not eliminate structured heterogeneity. The macroscopic balanced variable coexists with burst-like microstate accessibility.</p>
+
+<p>This is one reason classical Poisson or simple renewal descriptions are insufficient. The cortex is not just a rate process with independent intervals. Its ensemble activity contains serial dependencies, nonstationary fluctuations, and coordinated population events. The partition curve provides a distribution-free way to quantify that inhomogeneity.</p>
+
+<hr />
+
+<h2 id="state-dependent-symmetry-breaking">State-dependent symmetry breaking</h2>
+
+<p>If the collapse curves suggest an invariant balanced backbone, the next question is how different brain states differ. Wakefulness, REM sleep, light sleep, and slow-wave sleep are not interchangeable. They support different forms of sensory processing, internal dynamics, memory consolidation, and arousal regulation. A useful theory must explain both the invariant and the state-specific.</p>
+
+<p>To address this, the paper introduces a <strong>Multiscale Normalized Co-occurrence Matrix</strong> (MNCM). Conceptually, this treats excitation, inhibition, and scale as a joint space. The analysis measures how often particular levels of excitation and inhibition co-occur across offsets in this multiscale space, then extracts features such as:</p>
+
+<ul>
+  <li>correlation,</li>
+  <li>contrast,</li>
+  <li>dissimilarity,</li>
+  <li>homogeneity,</li>
+  <li>energy,</li>
+  <li>entropy.</li>
+</ul>
+
+<p>These features are adapted from texture-analysis methods, but here the “texture” is not an image. It is the multiscale joint structure of excitation and inhibition.</p>
+
+<p>The result is that different vigilance states occupy distinct regions of feature space. Wakefulness shows high homogeneity of E/I co-occurrence. Non-REM sleep states show stronger entropy and contrast structure, consistent with temporally localized alternations such as slow oscillatory activity. REM sleep displays a distinct profile, plausibly reflecting internally generated processing during a state that is physiologically sleep but dynamically closer to waking in some respects.</p>
+
+<p>This is the sense in which the cortex exhibits <strong>controlled symmetry breaking</strong>. The global balanced structure remains, but the detailed co-occurrence geometry changes across states. The system does not abandon E/I balance in order to enter different functional regimes. Instead, it modulates the way balance is locally and temporally expressed.</p>
+
+<p>A useful analogy is not a system moving between unrelated attractors, but a system moving along a constrained manifold. Each vigilance state corresponds to a different region of this manifold. The shared constraint is ensemble E/I balance. The state-specific computation is expressed through structured deviations from perfect symmetry.</p>
+
+<hr />
+
+<h2 id="beyond-a-single-self-organized-critical-point">Beyond a single self-organized critical point</h2>
+
+<p>The language of criticality has been influential in neuroscience, especially through neuronal avalanche studies and self-organized criticality. But the cortex is not a sandpile. A single control-parameter-free SOC attractor is unlikely to capture the full richness of cortical dynamics, especially because excitation and inhibition are biologically distinct populations with different cellular, synaptic, and network roles.</p>
+
+<p>The present work points to a different picture: not a single critical point, but an <strong>extended critical manifold</strong>. Along this manifold, ensemble E/I balance remains scale-invariant, but different cortical states correspond to different structured symmetry breakings. This view is also consistent with previous work showing that naive avalanche interpretations can fail under rigorous statistical testing, and that maximum entropy models that ignore inhibitory neurons can misrepresent the synchrony structure of cortical populations.</p>
+
+<p>The key theoretical point is that the excitatory/inhibitory distinction is not a detail to be averaged away. It is a fundamental axis of cortical organization. A homogeneous model of population activity may reproduce some scaling laws while missing the biological mechanism that stabilizes them. By explicitly separating excitation and inhibition, one obtains a more constrained and physiologically interpretable picture of cortical criticality.</p>
+
+<p>In this framework, criticality is not simply the presence of a power law. It is the persistence of structured correlations under coarse-graining, the existence of invariant macroscopic forms, and the presence of state-dependent relevant perturbations. Ensemble E/I balance provides one candidate order parameter for this structure.</p>
+
+<hr />
+
+<h2 id="seizure-as-pathological-symmetry-breaking">Seizure as pathological symmetry breaking</h2>
+
+<p>Normal vigilance states appear to involve controlled departures from perfect balance. Seizures provide a more extreme case: a pathological breakdown of the balanced manifold.</p>
+
+<p>During electrographic seizures, excitatory and inhibitory ensemble dynamics become strongly decoupled. The signed fluctuation</p>
+
+\[f_{\mathrm{obs}}(t) = Ens_E(t) - Ens_I(t)\]
+
+<p>deviates dramatically from its balanced regime. At the same time, local field potentials undergo abrupt changes in their time-frequency structure.</p>
+
+<p>To connect spiking activity to population-level field dynamics, the paper reconstructs an estimated synaptic current by convolving excitatory and inhibitory spikes with exponential kernels and subtracting inhibitory from excitatory contributions:</p>
+
+\[C(t) =
+\left(
+\sum_{t_i' \in D_E}
+e^{-(t-t_i')/\tau_E}
+\right)
+-
+\left(
+\sum_{t_j' \in D_I}
+e^{-(t-t_j')/\tau_I}
+\right),\]
+
+<p>with excitatory and inhibitory time constants chosen to reflect approximate synaptic current kinetics.</p>
+
+<p>Wavelet coherence and ridge extraction then reveal multiscale signatures of seizure onset and evolution. The seizure is not merely a local increase in firing. It is a system-level reorganization across spikes, estimated synaptic current, and LFP frequency structure.</p>
+
+<p>This supports the interpretation of seizure as <strong>pathological symmetry breaking</strong>: a transient excursion away from the balanced manifold that normally constrains cortical dynamics.</p>
+
+<hr />
+
+<h2 id="the-post-ictal-reset-and-the-balance-homeostat">The post-ictal reset and the balance homeostat</h2>
+
+<p>Perhaps the most striking observation is not only that seizures disrupt balance, but that the system returns.</p>
+
+<p>By tracking the signed cumulative activity,</p>
+
+\[S(t) =
+\sum_{t' \leq t}
+\left[
+Ens_E(t') - Ens_I(t')
+\right],\]
+
+<p>the paper shows that seizure onset produces a large deviation from the expected balanced trajectory. But after seizure termination, the trajectory gradually returns toward the pre-seizure balance line over roughly hundreds of seconds.</p>
+
+<p>This suggests the presence of a large-scale <strong>balance homeostat</strong>. The term is meant functionally: some combination of synaptic, cellular, network, and neuromodulatory mechanisms appears capable of restoring the ensemble E/I set point after a severe perturbation.</p>
+
+<p>This recovery is theoretically important. If seizures were simply transitions into a new attractor, one might expect the system to settle into a different regime. Instead, the observed trajectory suggests a transient escape from a constrained manifold followed by active return. The cortex behaves not like an equilibrium system relaxing into a passive minimum, but like a dissipative biological system that spends energy maintaining a dynamically unstable form of organization.</p>
+
+<p>The observation also has clinical implications. If seizure pathology involves a breakdown of multiscale E/I balance, then therapeutic strategies might be framed not only in terms of reducing excitability, but also in terms of restoring the mechanisms that stabilize ensemble balance.</p>
+
+<hr />
+
+<h2 id="why-symmetrys-edge">Why “symmetry’s edge”?</h2>
+
+<p>The phrase “symmetry’s edge” is meant to capture a specific dynamical regime.</p>
+
+<p>A perfectly symmetric system would have no useful differentiation. A completely broken system would lose stability. The cortex appears to operate between these extremes. It maintains a large-scale symmetry between excitation and inhibition, but continually breaks that symmetry in local, transient, and state-specific ways.</p>
+
+<p>This is different from symmetry breaking in equilibrium systems such as magnets or crystals, where the system settles into a lower-energy ordered phase. Cortex is not an equilibrium material. It is a living, dissipative, metabolically expensive system. It must constantly maintain itself far from equilibrium. In that setting, symmetry is not simply broken once and for all. It is continually broken and restored.</p>
+
+<p>This links the paper to a broader tradition in physics, from Anderson’s “More is Different” to Prigogine’s dissipative structures. Large biological systems may exhibit collective laws that are not obvious from their microscopic components. Their symmetries may be dynamically maintained rather than statically imposed. Their broken symmetries may be functional rather than merely structural.</p>
+
+<p>For cortex, the conjecture is that ensemble E/I balance is one such dynamically maintained symmetry. Computation occurs through structured deviations from it.</p>
+
+<hr />
+
+<h2 id="what-this-framework-adds">What this framework adds</h2>
+
+<p>The paper contributes three main ideas.</p>
+
+<p>First, it reframes E/I balance as a <strong>multiscale ensemble phenomenon</strong>. Input balance remains essential, but it is not the whole story. Population-level E/I balance may serve as a macroscopic order parameter connecting spikes, local circuits, vigilance states, and pathological transitions.</p>
+
+<p>Second, it introduces a set of <strong>distribution-free and scale-aware descriptors</strong> for cortical ensemble activity: collapse curves, partition curves, and MNCM features. These tools are designed for nonstationary, non-Gaussian, temporally structured neural data, where classical assumptions of Poisson firing or simple renewal statistics are inadequate.</p>
+
+<p>Third, it proposes that cortex operates on an <strong>extended critical manifold</strong> rather than at a single SOC-like point. This manifold is stabilized by recurrent excitatory/inhibitory interactions and modulated by state-dependent symmetry breaking. Seizures correspond to extreme excursions from this manifold, followed by homeostatic return.</p>
+
+<p>This picture does not claim that the cortex is literally an equilibrium critical system. Nor does it claim that temporal coarse-graining alone is a complete RG theory of cortex. The claim is more modest and, I think, more useful: statistical physics gives us a language for identifying invariances, order parameters, and relevant perturbations in neural population data. Ensemble E/I balance appears to be one such invariant.</p>
+
+<hr />
+
+<h2 id="limitations-and-next-steps">Limitations and next steps</h2>
+
+<p>Several limitations are important.</p>
+
+<p>The recordings are highly subsampled relative to the number of neurons in the underlying cortical tissue. A Utah array provides access to a valuable but incomplete view of local population dynamics. Future high-density recordings should make it possible to test whether the same ensemble E/I invariances hold across larger spatial fields, neighboring cortical columns, and laminar structure.</p>
+
+<p>The coarse-graining performed here is temporal rather than spatial. A fuller theory should combine temporal and spatial renormalization, especially because cortical activity includes traveling waves, anisotropic propagation, laminar interactions, and long-range coupling.</p>
+
+<p>The E/I classification is based on extracellular signatures and interaction criteria, which are useful but imperfect. Future work combining electrophysiology with cell-type-specific labeling, transcriptomics, or multimodal anatomical information could sharpen the link between cellular identity and ensemble dynamics.</p>
+
+<p>The seizure analysis is suggestive but should be extended to larger cohorts, different seizure types, and more diverse cortical regions. The post-ictal reset is especially interesting, but the mechanisms remain unresolved.</p>
+
+<p>The theoretical next step is to build models that reproduce not just firing rates or pairwise correlations, but the full set of observed constraints: diagonal E/I geometry, sublinear variance scaling, collapse-curve universality, partition-curve inhomogeneity, MNCM state dependence, and post-ictal recovery. A successful model should explain why balance is scale-invariant, how symmetry breaking is controlled, and what mechanisms restore the manifold after pathological excursions.</p>
+
+<hr />
+
+<h2 id="toward-a-statistical-physics-of-cortical-state-space">Toward a statistical physics of cortical state space</h2>
+
+<p>A quantitative theory of cortex should not begin by assuming that one scale is privileged. Nor should it assume that cognition, oscillations, spikes, and synapses can be cleanly separated into independent explanatory layers. The cortex is a multiscale dynamical system. Its effective laws may only become visible when we ask which quantities survive coarse-graining.</p>
+
+<p>In this paper, ensemble excitation/inhibition balance emerges as one such quantity. It persists across time scales, across vigilance states, and even reappears after pathological disruption. At the same time, it is not rigid: wakefulness, REM sleep, slow-wave sleep, and seizures all reshape the geometry of balance.</p>
+
+<p>That combination is the essential point. The cortex is stable because it maintains balance. It is flexible because it breaks balance locally and transiently. It is pathological when the break becomes too large. And it recovers when the system restores the balanced manifold.</p>
+
+<p>This is the edge of symmetry: a regime where the cortex remains close enough to a universal organizing principle to preserve stability, but far enough from exact symmetry to compute, adapt, sleep, dream, and recover.</p>
+
+<hr />
+
+  </section>
+
+  
+  <section class="paper__section">
+    <h2>The room this opens</h2>
+    <div class="linkbar">
+      <a href="/papers/Symmetry-edge-cortex/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="20" x2="12" y2="12"/><line x1="12" y1="12" x2="21" y2="4"/><line x1="12" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="21" y2="20"/></svg>
+        Follow this path into the Maze
+      </a>
+    </div>
+  </section>
+  
+</article>
+
+      <footer class="foot">
+  <span>© 2026 · Nima Dehghani</span>
+  <span>
+    <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    ·
+    <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+  </span>
+</footer>
+
+    </main>
+  </div>
+
+  <script src="/assets/js/quotes.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
