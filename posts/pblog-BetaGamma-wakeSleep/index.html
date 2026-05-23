@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ead7be">
+<title>Inhibitory Orchestration of Neocortical Beta and Gamma Oscillations Across the Wake--Sleep Cycle · Nima Dehghani</title>
+<meta name="description" content="Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<link type="application/atom+xml" rel="alternate" href="https://neurovium.github.io/feed.xml" title="Nima Dehghani" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Inhibitory Orchestration of Neocortical Beta and Gamma Oscillations Across the Wake–Sleep Cycle | Nima Dehghani</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Inhibitory Orchestration of Neocortical Beta and Gamma Oscillations Across the Wake–Sleep Cycle" />
+<meta name="author" content="Nima Dehghani" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Companion post to: Experimental validation of the influence of white matter anisotropy on the intracranial EEG forward solution Michel Le Van Quyen, Lyle E. Muller, Bartosz Telenczuk, Eric Halgren, Sydney Cash, Nicholas G. Hatsopoulos, Nima Dehghani, and Alain Destexhe PNAS 113 (33) 9363-9368, (2016) DOI: https://doi.org/10.1073/pnas.1523583113" />
+<meta property="og:description" content="Companion post to: Experimental validation of the influence of white matter anisotropy on the intracranial EEG forward solution Michel Le Van Quyen, Lyle E. Muller, Bartosz Telenczuk, Eric Halgren, Sydney Cash, Nicholas G. Hatsopoulos, Nima Dehghani, and Alain Destexhe PNAS 113 (33) 9363-9368, (2016) DOI: https://doi.org/10.1073/pnas.1523583113" />
+<link rel="canonical" href="https://neurovium.github.io/posts/pblog-BetaGamma-wakeSleep/" />
+<meta property="og:url" content="https://neurovium.github.io/posts/pblog-BetaGamma-wakeSleep/" />
+<meta property="og:site_name" content="Nima Dehghani" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-08-11T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Inhibitory Orchestration of Neocortical Beta and Gamma Oscillations Across the Wake–Sleep Cycle" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Nima Dehghani"},"dateModified":"2016-08-11T00:00:00+00:00","datePublished":"2016-08-11T00:00:00+00:00","description":"Companion post to: Experimental validation of the influence of white matter anisotropy on the intracranial EEG forward solution Michel Le Van Quyen, Lyle E. Muller, Bartosz Telenczuk, Eric Halgren, Sydney Cash, Nicholas G. Hatsopoulos, Nima Dehghani, and Alain Destexhe PNAS 113 (33) 9363-9368, (2016) DOI: https://doi.org/10.1073/pnas.1523583113","headline":"Inhibitory Orchestration of Neocortical Beta and Gamma Oscillations Across the Wake–Sleep Cycle","mainEntityOfPage":{"@type":"WebPage","@id":"https://neurovium.github.io/posts/pblog-BetaGamma-wakeSleep/"},"url":"https://neurovium.github.io/posts/pblog-BetaGamma-wakeSleep/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+  },
+  options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+
+</head>
+<body>
+  <header class="topbar">
+    <a href="/" class="topbar__brand">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"><line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/><line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/><line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/></g><circle cx="18" cy="20" r="2.2" fill="currentColor"/></svg>
+      Nima Dehghani
+    </a>
+    <button class="topbar__toggle" id="sidebar-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sidebar">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </header>
+
+  <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
+
+  <div class="app">
+    
+
+<aside class="side" id="sidebar" aria-label="Primary">
+  <a class="side__brand" href="/">
+    <svg class="glyph" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none">
+        <line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/>
+        <line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/>
+        <line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/>
+      </g>
+      <circle cx="18" cy="20" r="2.2" fill="currentColor"/>
+    </svg>
+    <span>
+      <span class="side__name">Nima Dehghani</span>
+      <span class="side__tag">@neurovium · MIT</span>
+    </span>
+  </a>
+
+  <nav class="side__nav" aria-label="Main navigation">
+    <a href="/" class="">Home</a>
+    <a href="/news/" class="">News<span class="side__pip" aria-label="new"></span></a>
+    <a href="/research/" class="">Research</a>
+    <a href="/papers/" class="">Paper Maze</a>
+    <a href="/garden/" class="">Idea Garden</a>
+    <a href="/blog/" class="">Blog</a>
+    <a href="/open-science/" class="">Open Science</a>
+    <a href="/about/" class="">About</a>
+    <a href="/neurovium-decoded/" class="">Neurovium Decoded</a>
+  </nav>
+
+  <div class="side__social" aria-label="Social links">
+    <div class="side__social-row">
+      <a href="https://scholar.google.com/citations?user=acFMrVUAAAAJ&hl=en" title="Google Scholar" target="_blank" rel="noopener" aria-label="Google Scholar">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9zm6.82 7L12 12.72 5.18 9 12 5.28zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73z"/></svg>
+      </a>
+      <a href="mailto:nima.dehghani@mit.edu" title="Email" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/nimadehghani/" title="LinkedIn" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+    </div>
+    <div class="side__social-row">
+      <a href="https://github.com/neurovium" title="GitHub" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      </a>
+      <a href="https://twitter.com/neurovium" title="X" target="_blank" rel="noopener" aria-label="X">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://bsky.app/profile/neurovium.bsky.social" class="is-bsky" title="Bluesky" target="_blank" rel="noopener" aria-label="Bluesky">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.335 5.144c2.606 1.957 5.41 5.923 6.44 8.051.99-2.046 3.855-6.132 6.44-8.051 1.864-1.383 4.885-2.453 4.885 1.002 0 .69-.396 5.795-.629 6.624-.809 2.882-3.748 3.616-6.363 3.17 4.573.78 5.737 3.359 3.224 5.939-4.772 4.9-6.859-1.23-7.394-2.802-.534 1.572-2.622 7.702-7.394 2.802-2.513-2.58-1.349-5.16 3.224-5.939-2.615.446-5.554-.288-6.363-3.17-.233-.829-.629-5.934-.629-6.624 0-3.455 3.021-2.385 4.885-1.002z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="n4-set" aria-label="N⁴ : NeuroAI ⊃ N³">
+    <span class="n4-set__lbl">N&#8308;</span>
+    <div class="n4-set n4-set--ai">
+      <span class="n4-set__lbl">NeuroAI</span>
+      <div class="n4-set n4-set--n3">
+        <span class="n4-set__lbl">N&#179;</span>
+        <ul>
+          <li>NeuroPhysics</li>
+          <li>NeuroComputation</li>
+          <li>NeuroDynamics</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="side__foot">
+    <span>
+      <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+      ·
+      <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    </span>
+  </div>
+</aside>
+
+    <main class="main">
+      <article class="paper">
+  <div class="paper__crumb">
+    <a href="/blog/">← Blog</a>
+    <span style="color:var(--muted-soft);">·</span>
+    <span>Aug 11, 2016</span>
+  </div>
+
+  <h1>Inhibitory Orchestration of Neocortical Beta and Gamma Oscillations Across the Wake--Sleep Cycle</h1>
+  
+  
+
+  
+  <div class="linkbar" style="margin-top:24px;">
+    <a href="/papers/BetaGamma-wakeSleep/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="20" x2="12" y2="12"/><line x1="12" y1="12" x2="21" y2="4"/><line x1="12" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="21" y2="20"/></svg>
+      Follow this path into the Maze
+    </a>
+  </div>
+  
+
+  <section class="paper__section prose" style="margin-top:28px;">
+    <p><em>Companion post to:</em><br />
+<strong>Experimental validation of the influence of white matter anisotropy on the intracranial EEG forward solution</strong><br />
+Michel Le Van Quyen, Lyle E. Muller, Bartosz Telenczuk, Eric Halgren, Sydney Cash, Nicholas G. Hatsopoulos, Nima Dehghani, and Alain Destexhe<br />
+<em>PNAS</em> 113 (33) 9363-9368, (2016)<br />
+DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.1073/pnas.1523583113</code></p>
+
+<hr />
+
+<h1 id="inhibitory-orchestration-of-neocortical-beta-and-gamma-oscillations-across-the-wakesleep-cycle">Inhibitory Orchestration of Neocortical Beta and Gamma Oscillations Across the Wake–Sleep Cycle</h1>
+
+<p><strong>Paper:</strong> <em>High-frequency oscillations in human and monkey neocortex during the wake–sleep cycle</em><br />
+<strong>Authors:</strong> Michel Le Van Quyen, Lyle E. Muller II, Bartosz Telenczuk, Eric Halgren, Sydney Cash, Nicholas G. Hatsopoulos, Nima Dehghani, and Alain Destexhe<br />
+<strong>Journal:</strong> <em>PNAS</em>, 2016</p>
+
+<hr />
+
+<h2 id="why-look-for-fast-rhythms-during-sleep">Why look for fast rhythms during sleep?</h2>
+
+<p>Beta ($\beta$) and gamma ($\gamma$) oscillations are usually discussed in the context of wakefulness. In systems neuroscience and neurophysiology, they are associated with sensory processing, attention, movement, action planning, feature binding, and the coordination of distributed cortical activity. In computational neuroscience, they are often treated as signatures of recurrent circuit interactions, especially the interaction between excitation and inhibition.</p>
+
+<p>Sleep, by contrast, is usually described through slower rhythms: slow oscillations, spindles, delta waves, and hippocampal sharp-wave ripples. This division is useful, but it can also be misleading. It risks making sleep look like a low-frequency regime in which fast neocortical rhythms either disappear or become functionally secondary.</p>
+
+<p>In this paper, we asked a more local and circuit-level question:</p>
+
+<blockquote>
+  <p>Do neocortical $\beta$- and $\gamma$-oscillations persist across the wake–sleep cycle, and if they do, how are they organized at the level of identified excitatory and inhibitory populations?</p>
+</blockquote>
+
+<p>The answer was not simply that fast oscillations occur during sleep. The more interesting result was that their <strong>spatiotemporal organization changes with brain state</strong>. During slow-wave sleep (SWS), these fast oscillations become more coherent over millimeter-scale cortical distances, and this long-range coherence is most strongly associated with inhibitory fast-spiking neurons.</p>
+
+<hr />
+
+<h2 id="experimental-strategy-dense-recordings-across-species-and-states">Experimental strategy: dense recordings across species and states</h2>
+
+<p>The study used high-density $10 \times 10$ microelectrode arrays to record local field potentials (LFPs) and spiking activity from neocortex across wake and sleep states.</p>
+
+<p>In humans, recordings were obtained from temporal neocortex in patients undergoing invasive monitoring for epilepsy. In monkeys, recordings were obtained from premotor and motor cortical areas, including dorsal premotor cortex (PMd) and primary motor cortex (M1). This gave us access to local circuit dynamics across different neocortical areas and across different vigilance states.</p>
+
+<p>A key feature of the study was that the recordings allowed us to classify units into two broad physiological groups:</p>
+
+<ul>
+  <li>putative inhibitory fast-spiking cells, denoted FS;</li>
+  <li>putative excitatory regular-spiking cells, denoted RS.</li>
+</ul>
+
+<p>This distinction is not equivalent to genetic cell-type identification, but it is a powerful electrophysiological separation. It allows one to ask whether fast oscillations are merely reflected in the LFP, or whether they preferentially engage specific cellular populations.</p>
+
+<p>The analysis focused on:</p>
+
+<ol>
+  <li>the presence of $\beta$- and $\gamma$-events across wake, REM, and SWS;</li>
+  <li>the firing probability of FS and RS cells during these events;</li>
+  <li>phase-locking of spikes to the oscillatory LFP cycle;</li>
+  <li>spatial coherence of LFPs and spike-field relationships across the array;</li>
+  <li>traveling-wave organization of fast oscillatory events.</li>
+</ol>
+
+<p>In humans, the prominent fast oscillatory events were in the $\gamma$ range, approximately $30$–$50$ Hz. In monkeys, the prominent fast oscillatory events were in the $\beta$ range, approximately $15$–$30$ Hz. The species and cortical-area differences are important, but the central question was shared: how do fast neocortical oscillations organize local circuit activity across the wake–sleep cycle?</p>
+
+<hr />
+
+<h2 id="fast-neocortical-oscillations-are-preserved-during-sleep">Fast neocortical oscillations are preserved during sleep</h2>
+
+<p>The first result is direct but important: fast oscillations were clearly present across the wake–sleep cycle.</p>
+
+<p>In human temporal neocortex, $\gamma$-oscillations appeared during wakefulness, REM sleep, and SWS. In monkey motor and premotor cortex, $\beta$-oscillations appeared during wakefulness and SWS. These events were not weak residual fluctuations hidden in the background. They were detectable as transient, large-amplitude oscillatory events in the LFP, often visible across many channels of the array.</p>
+
+<p>This matters because it shifts the interpretation of neocortical sleep dynamics. SWS is not simply a regime of slow global alternation between UP and DOWN states. Embedded within this slow structure are faster oscillatory events with their own cellular and spatial organization.</p>
+
+<p>This point is especially relevant for systems neuroscience. If fast rhythms are present during SWS, then the sleeping cortex is not just globally synchronized at low frequencies. It also contains structured high-frequency activity that may coordinate local and mesoscale assemblies.</p>
+
+<hr />
+
+<h2 id="inhibitory-cells-are-preferentially-engaged-during-fast-oscillations">Inhibitory cells are preferentially engaged during fast oscillations</h2>
+
+<p>The most direct cellular finding was that FS cells were more strongly engaged during fast oscillatory events than RS cells.</p>
+
+<p>During $\gamma$-events in human neocortex and $\beta$-events in monkey neocortex, a larger fraction of FS cells increased their firing probability. RS cells also participated, but less strongly and less consistently. Thus, the fast oscillations were not purely inhibitory phenomena, but inhibitory neurons were more prominently involved.</p>
+
+<p>This is important for the interpretation of $\beta$ and $\gamma$ rhythms. Many computational and experimental models emphasize the role of inhibition in generating fast rhythmic synchronization. Depending on the circuit, fast oscillations may arise through interactions among interneurons, through pyramidal-interneuron loops, or through a mixture of local and distal inputs. Our extracellular data cannot fully distinguish these mechanisms. But the cellular signature is clear: inhibitory FS cells are more strongly recruited.</p>
+
+<p>The result should not be read as saying that excitation is unimportant. Fast oscillations in cortex are almost certainly not produced by inhibition alone in a literal sense. Rather, the result suggests that inhibitory cells provide a dominant temporal scaffold for these rhythms. They are strongly engaged, phase-locked, and positioned to coordinate the timing of population activity.</p>
+
+<hr />
+
+<h2 id="phase-locking-reveals-temporal-structure-within-the-oscillation-cycle">Phase-locking reveals temporal structure within the oscillation cycle</h2>
+
+<p>The next question was not only whether FS cells fire more, but whether their spikes are organized with respect to the phase of the oscillation.</p>
+
+<p>They were.</p>
+
+<p>Both FS and RS cells could show phase-locking to the local oscillatory LFP cycle. However, FS cells showed stronger and more frequent phase-locking. This was especially pronounced during SWS. In addition, FS cells tended to fire earlier in the oscillation cycle than RS cells.</p>
+
+<p>That phase relationship is important. In a recurrent circuit, the relative timing of excitation and inhibition is not a minor detail; it is part of the mechanism by which the circuit controls gain, synchrony, and propagation. If inhibitory cells fire at a consistent phase, and earlier than excitatory cells, they can shape the temporal window in which excitatory populations are allowed to interact.</p>
+
+<p>In computational terms, the oscillation is not just a frequency-domain signature. It is a temporal coordination scheme. The phase of the rhythm defines windows of excitability and suppression. FS cells appear to occupy a privileged position in that scheme.</p>
+
+<p>At the same time, the firing patterns were heterogeneous. Not all FS cells behaved identically, and not all RS cells were silent or weakly involved. Some cells showed strong stereotyped modulation; others showed more variable responses across events. This heterogeneity is biologically important. It suggests that fast oscillations do not recruit the entire local population uniformly. Instead, they organize subsets of cells in a state- and event-dependent manner.</p>
+
+<hr />
+
+<h2 id="the-major-state-dependent-result-sws-increases-millimeter-scale-coherence">The major state-dependent result: SWS increases millimeter-scale coherence</h2>
+
+<p>The most striking finding was not simply that $\beta$ and $\gamma$ oscillations exist during sleep. It was that their spatial coherence changes across states.</p>
+
+<p>During wakefulness, fast oscillatory correlations were relatively local. Correlations declined steeply with distance across the array. This is consistent with the usual view that fast rhythms support local computations and short-range coordination.</p>
+
+<p>During SWS, however, the picture changed. Fast oscillations became coherent over several millimeters of neocortex. In both human and monkey recordings, spatial correlations remained high over larger distances during SWS than during wakefulness.</p>
+
+<p>This state-dependent coherence was especially visible in the relationship between spikes and fields. During SWS, FS cells showed significant phase-locking to fast LFP oscillations over distances up to roughly $3$ mm. In contrast, RS cells showed weaker long-range coherence, and during wakefulness these long-distance spike-field relationships were largely absent.</p>
+
+<p>This is the central physiological message of the paper:</p>
+
+<blockquote>
+  <p>During slow-wave sleep, neocortical fast oscillations become large-scale coherent events, and this coherence is preferentially organized through inhibitory fast-spiking cells.</p>
+</blockquote>
+
+<p>For neurophysiology, this result is important because it links three levels of organization:</p>
+
+<ol>
+  <li>local fast oscillatory LFP events;</li>
+  <li>spike timing of identified physiological cell classes;</li>
+  <li>millimeter-scale spatial coordination across neocortex.</li>
+</ol>
+
+<p>For systems neuroscience, it suggests that SWS is not merely a state of reduced responsiveness or global slow synchronization. It is also a state in which fast rhythms can transiently bind distributed cortical sites into coherent activity patterns.</p>
+
+<hr />
+
+<h2 id="fsfs-synchrony-inhibition-as-a-mesoscale-organizing-scaffold">FS–FS synchrony: inhibition as a mesoscale organizing scaffold</h2>
+
+<p>The long-range spike-field result was complemented by spike-spike synchrony analysis. During SWS fast oscillations, FS cells showed significant synchrony with other FS cells, including cells separated across the array and, in the monkey data, sometimes across cortical areas such as PMd and M1.</p>
+
+<p>This is an important observation because it suggests that inhibitory neurons are not simply local suppressors. In this regime, they participate in a distributed timing structure. They appear to help coordinate the activity of spatially separated cortical sites during fast oscillatory events.</p>
+
+<p>Inhibition is often introduced pedagogically as a local balancing force: excitation drives activity, inhibition restrains it. That picture is incomplete. In recurrent cortical systems, inhibition can also organize timing, synchronize assemblies, regulate transitions between states, and shape propagation.</p>
+
+<p>The SWS results make this point especially clearly. During deep sleep, inhibitory neurons appear to participate in a spatially extended scaffold for fast oscillatory coherence.</p>
+
+<hr />
+
+<h2 id="fast-oscillations-propagate-as-traveling-waves">Fast oscillations propagate as traveling waves</h2>
+
+<p>The study also showed that fast oscillatory events were not merely synchronous bursts appearing everywhere at once. They often propagated across the array as traveling waves.</p>
+
+<p>Using phase-based analyses, we found that $\beta$- and $\gamma$-oscillatory events exhibited systematic wave-like propagation across the cortical surface. These traveling waves had speeds on the order of approximately $500$ mm/s and often followed stereotyped trajectories within a given array.</p>
+
+<p>The propagation was present across wake and sleep states. The speed distributions of fast waves were relatively similar across states, whereas slow $\delta$-frequency waves propagated much more slowly.</p>
+
+<p>This has several implications.</p>
+
+<p>First, it suggests that the cortical substrate supporting these fast waves is preserved across states. The brain state changes the coherence and cellular coordination of the events, but the underlying propagation paths may remain partly constrained by cortical architecture.</p>
+
+<p>Second, it links fast oscillations to cortical geometry and horizontal connectivity. Traveling waves are not just temporal rhythms; they are spatiotemporal objects. They have direction, speed, and spatial extent. This makes them relevant to questions of routing, communication, and distributed computation in cortex.</p>
+
+<p>Third, the preservation of wave directionality during sleep raises the possibility that sleep reactivation is not only a replay of firing patterns, but also a replay or reuse of spatiotemporal paths through cortical tissue.</p>
+
+<hr />
+
+<h2 id="a-computational-interpretation-fast-rhythms-as-state-dependent-coordination-fields">A computational interpretation: fast rhythms as state-dependent coordination fields</h2>
+
+<p>For computational neuroscience, the paper suggests a useful way to think about fast neocortical rhythms.</p>
+
+<p>A $\beta$- or $\gamma$-oscillation is not only a local clock. It is also a state-dependent coordination field. It organizes spike timing, recruits inhibitory cells, propagates across cortical space, and changes its coherence depending on the global state of the brain.</p>
+
+<p>During wakefulness, fast rhythms may support relatively local computations and flexible routing. Their spatial correlations are present but decay with distance. During SWS, the same broad class of rhythms becomes more coherent over larger distances, potentially enabling the coordinated reactivation of distributed cortical assemblies.</p>
+
+<p>This interpretation is compatible with the broader idea that sleep supports memory consolidation through reactivation. But the paper adds a more specific circuit-level mechanism: coherent fast oscillations, organized strongly by inhibitory neurons, could provide the temporal precision needed to coordinate distributed cortical reactivation.</p>
+
+<p>The point is not that $\gamma$ or $\beta$ alone “is” memory consolidation. Rather, these rhythms may provide one of the temporal substrates through which sleep-dependent plasticity becomes organized. Slow oscillations may define global windows of cortical excitability, while faster rhythms structure local and mesoscale spike timing within those windows.</p>
+
+<p>In this view, SWS is not only slow. It is a nested dynamical regime in which slow rhythms and fast rhythms interact across spatial scales.</p>
+
+<hr />
+
+<h2 id="relation-to-excitationinhibition-balance">Relation to excitation–inhibition balance</h2>
+
+<p>This paper also connects naturally to the broader theme of excitation–inhibition balance in cortical dynamics.</p>
+
+<p>Fast oscillations are often described as inhibition-based rhythms, but the phrase “inhibition-based” can be misleading if it is interpreted too narrowly. The cortex is a recurrent excitatory-inhibitory system. Inhibition does not act in isolation. It shapes the timing, gain, and stability of excitatory population activity.</p>
+
+<p>The results here show that FS cells are more strongly engaged and more precisely phase-locked during fast oscillations. They also show that FS cells participate in long-range coherent interactions during SWS. Thus, inhibition is not merely balancing excitation at each local site. It is helping to coordinate activity across space.</p>
+
+<p>From a dynamical systems perspective, this suggests that inhibitory populations can help define the phase structure of cortical activity. They contribute to when local populations fire, how distant populations align, and how oscillatory waves propagate.</p>
+
+<p>This is especially relevant for models of cortical computation. Many models treat inhibition as a stabilizing term or as a local gain-control mechanism. These results suggest a richer role: inhibition can act as a spatiotemporal organizer of population dynamics.</p>
+
+<hr />
+
+<h2 id="why-this-matters-for-systems-neuroscience-and-neurophysiology">Why this matters for systems neuroscience and neurophysiology</h2>
+
+<p>The paper contributes to systems neuroscience in several ways.</p>
+
+<p>First, it extends the study of fast neocortical oscillations into natural sleep at the level of microcircuit recordings. Instead of relying only on macroscopic EEG, MEG, or intracranial recordings, the study links fast rhythms to the activity of putative inhibitory and excitatory cells.</p>
+
+<p>Second, it shows that the same broad frequency bands can have different spatial organization depending on brain state. A $\gamma$-event during wakefulness and a $\gamma$-event during SWS may occupy a similar frequency range, but they do not necessarily have the same spatial coherence or cellular coordination.</p>
+
+<p>Third, it emphasizes that sleep should not be understood only through slow rhythms. Slow-wave sleep contains structured high-frequency activity that may be crucial for understanding reactivation, consolidation, and the coordination of cortical assemblies.</p>
+
+<p>Fourth, it provides a bridge between local circuit physiology and mesoscale cortical dynamics. Dense microelectrode arrays are especially valuable here because they allow one to move beyond single-channel spectral analysis. The relevant object is not only the oscillation in one electrode, but the spatiotemporal pattern across the cortical sheet.</p>
+
+<hr />
+
+<h2 id="caveats-and-boundaries-of-interpretation">Caveats and boundaries of interpretation</h2>
+
+<p>There are several important limits to the interpretation.</p>
+
+<p>The human recordings came from patients with epilepsy, although the analyzed regions were outside seizure onset zones and oscillatory events containing epileptic activity were excluded. Still, human invasive recordings always require caution in generalization.</p>
+
+<p>The FS/RS distinction is based on extracellular waveform and functional classification. It is a useful and standard physiological separation, but it is not equivalent to molecularly defined interneuron classes. The FS population likely contains a mixture of inhibitory cell types, and the RS population is also physiologically diverse.</p>
+
+<p>The data do not allow us to determine whether the fast oscillations are generated locally, inherited from distal inputs, or produced by a mixture of local and long-range interactions. In particular, the observation that FS cells fire earlier than RS cells does not by itself settle the distinction between ING, PING, or other circuit mechanisms. It constrains the mechanism, but does not uniquely identify it.</p>
+
+<p>Finally, the human and monkey recordings involved different cortical areas and different dominant frequency bands. This is not a flaw, but it means the paper should be read as identifying a general organizational principle rather than claiming that human temporal $\gamma$ and monkey motor $\beta$ are identical phenomena.</p>
+
+<p>Despite these caveats, the convergence across species, cortical areas, states, LFPs, spikes, phase-locking, coherence, and wave propagation makes the central result robust: fast neocortical oscillations persist across the wake–sleep cycle, and during SWS they become especially coherent through inhibitory circuit organization.</p>
+
+<hr />
+
+<h2 id="the-broader-picture">The broader picture</h2>
+
+<p>A simple summary of the paper would be:</p>
+
+<blockquote>
+  <p>Fast neocortical oscillations occur during sleep, and inhibitory neurons are strongly involved.</p>
+</blockquote>
+
+<p>But the deeper point is more interesting:</p>
+
+<blockquote>
+  <p>During slow-wave sleep, the neocortex can enter a regime in which fast oscillations propagate across cortical tissue and coordinate inhibitory spiking over millimeter-scale distances.</p>
+</blockquote>
+
+<p>This changes how we think about sleep. SWS is not only a low-frequency state. It is a state in which slow rhythms, fast oscillations, inhibitory timing, and cortical wave propagation coexist. The cortex is not silent, nor is it merely globally synchronized. It is dynamically structured across multiple temporal and spatial scales.</p>
+
+<p>For systems neuroscience, this suggests that sleep reactivation may involve not only the recurrence of firing patterns, but also the recurrence of spatiotemporal motifs. For computational neuroscience, it highlights the role of inhibition as a coordinator of population timing. For neurophysiology, it shows the value of dense multielectrode recordings that can connect LFP events, single-unit activity, and spatial propagation.</p>
+
+<p>The sleeping cortex, in this view, is not simply offline. It is reorganizing activity through structured fast dynamics embedded within slow global state changes. Inhibitory circuits appear to play a central role in that organization.</p>
+
+<hr />
+
+<h2 id="take-home-message">Take-home message</h2>
+
+<p>Neocortical $\beta$- and $\gamma$-oscillations are not restricted to waking cognition. They are present across the wake–sleep cycle, and during slow-wave sleep they become especially coherent over millimeter-scale cortical distances. This coherence is preferentially associated with fast-spiking inhibitory neurons, which show stronger firing, stronger phase-locking, earlier phase preference, and long-range synchrony during fast oscillatory events.</p>
+
+<p>The result points to a view of inhibition not merely as local suppression, but as a spatiotemporal organizing principle for cortical dynamics. During SWS, inhibitory networks may help coordinate fast reactivation patterns across the neocortex, providing a possible substrate for sleep-dependent consolidation and the reorganization of distributed cortical assemblies.</p>
+
+  </section>
+
+  
+  <section class="paper__section">
+    <h2>The room this opens</h2>
+    <div class="linkbar">
+      <a href="/papers/BetaGamma-wakeSleep/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="20" x2="12" y2="12"/><line x1="12" y1="12" x2="21" y2="4"/><line x1="12" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="21" y2="20"/></svg>
+        Follow this path into the Maze
+      </a>
+    </div>
+  </section>
+  
+</article>
+
+      <footer class="foot">
+  <span>© 2026 · Nima Dehghani</span>
+  <span>
+    <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    ·
+    <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+  </span>
+</footer>
+
+    </main>
+  </div>
+
+  <script src="/assets/js/quotes.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
