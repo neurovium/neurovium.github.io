@@ -1143,7 +1143,18 @@ a.tag:hover { color: var(--fork); border-color: var(--fork-soft); }
 .about-id .handle { font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fork); }
 .about-id .affil { font-family: var(--sans); font-size: 15px; color: var(--body); margin-top: 10px; }
 .about-id .affil a { color: var(--ink); border-bottom: 1px solid var(--hairline-strong); }
-.about-brand-img { width: 100%; border-radius: 16px; border: 1px solid var(--hairline); margin: 36px 0 0; mix-blend-mode: multiply; }
+.about-brand-img { width: 100%; border-radius: 16px; border: 1px solid var(--hairline); margin: 36px 0 0; }
+
+/* Contact block on About — vertical list with social glyphs */
+.about-contact { margin: 24px 0 0; padding: 20px 22px; background: var(--card-bg); border: 1px solid var(--hairline); border-radius: 14px; box-shadow: var(--card-shadow); }
+.about-contact h3 { font-family: var(--serif); font-weight: 400; font-size: 20px; color: var(--ink); margin: 0 0 14px; }
+.about-contact ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
+.about-contact li { display: flex; align-items: center; gap: 12px; font-family: var(--sans); font-size: 15px; color: var(--body); }
+.about-contact .ico { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 9999px; border: 1px solid var(--hairline-strong); color: var(--ink); flex-shrink: 0; background: var(--paper-soft); }
+.about-contact .ico svg { width: 16px; height: 16px; }
+.about-contact a { color: var(--ink); border-bottom: 1px solid var(--hairline-strong); }
+.about-contact a:hover { border-bottom-color: var(--fork); color: var(--fork); }
+.about-contact .handle { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; color: var(--muted); margin-left: 6px; }
 
 /* =====================================================================
    Footer + reveal
