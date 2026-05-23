@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#ead7be">
 <title>Idea Garden · Nima Dehghani</title>
-<meta name="description" content="Same archive, a different door. Wander the concepts that cross the rooms; hover a word to light only the corridors that hold it.">
+<meta name="description" content="A knowledge graph of the concepts that cross the rooms. Drag, zoom, click a paper to enter its room.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,8 +19,8 @@
 <meta property="og:title" content="Idea Garden" />
 <meta name="author" content="Nima Dehghani" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Same archive, a different door. Wander the concepts that cross the rooms; hover a word to light only the corridors that hold it." />
-<meta property="og:description" content="Same archive, a different door. Wander the concepts that cross the rooms; hover a word to light only the corridors that hold it." />
+<meta name="description" content="A knowledge graph of the concepts that cross the rooms. Drag, zoom, click a paper to enter its room." />
+<meta property="og:description" content="A knowledge graph of the concepts that cross the rooms. Drag, zoom, click a paper to enter its room." />
 <link rel="canonical" href="https://neurovium.github.io/garden/" />
 <meta property="og:url" content="https://neurovium.github.io/garden/" />
 <meta property="og:site_name" content="Nima Dehghani" />
@@ -28,7 +28,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Idea Garden" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Nima Dehghani"},"description":"Same archive, a different door. Wander the concepts that cross the rooms; hover a word to light only the corridors that hold it.","headline":"Idea Garden","url":"https://neurovium.github.io/garden/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Nima Dehghani"},"description":"A knowledge graph of the concepts that cross the rooms. Drag, zoom, click a paper to enter its room.","headline":"Idea Garden","url":"https://neurovium.github.io/garden/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -137,7 +137,7 @@
       <header class="page-head">
   <div class="page-head__kicker is-fork">&#8997; The Garden · knowledge graph</div>
   <h1 class="is-italic">Wander semantically.</h1>
-  <p>Same archive. Different door. Concepts are larger orbs; papers are smaller satellites. Drag a node, pinch or scroll to zoom, drag the background to pan. Click a concept to open its fork; click a paper to enter the room.</p>
+  <p>Concepts are warm orbs; papers are small embossed slabs. Drag a node, pinch or scroll to zoom, drag the background to pan. Click a concept to open its fork; click a paper to enter the room.</p>
 </header>
 
 <section class="garden" id="garden">
@@ -147,540 +147,19 @@
     <div class="garden__orb" style="left:30%;bottom:-120px;background:radial-gradient(circle, var(--wash-teal) 0%, transparent 65%);"></div>
   </div>
 
-  <p class="garden__lead">19 curated concepts plus tag-mined neighbours wander between the rooms. Hover any node to see the corridors it touches.</p>
-
-  <div class="garden__graph-wrap">
-    <div class="garden__graph-caption" aria-hidden="true">Drag · scroll/pinch to zoom · tap to open</div>
+  <div class="garden__graph-wrap" id="garden-graph-wrap">
+    <div class="garden__graph-caption" aria-hidden="true">Drag · scroll/pinch to zoom · click to open</div>
     <svg id="garden-graph" class="garden__graph" role="img" aria-label="Knowledge graph of concepts and rooms"></svg>
-    <noscript>
-      <p class="garden__fallback">The interactive graph requires JavaScript. The static cloud below lists every curated concept.</p>
-    </noscript>
   </div>
 
-  <!-- Static fallback cloud — visible only if the graph fails to load. -->
-  <div class="garden__cloud" id="garden-cloud" hidden>
-    <button class="garden__word fork-link-trigger" style="font-size:22px;" data-fork="cortical down-state" data-rooms="">cortical down-state</button>
-    <button class="garden__word fork-link-trigger" style="font-size:22px;" data-fork="multiunit firing" data-rooms="">multiunit firing</button>
-    <button class="garden__word fork-link-trigger" style="font-size:28px;" data-fork="dendritic current" data-rooms="">dendritic current</button>
-    <button class="garden__word fork-link-trigger" style="font-size:22px;" data-fork="down-state" data-rooms="">down-state</button>
-    <button class="garden__word fork-link-trigger" style="font-size:36px;" data-fork="focal asynchronous oscillation" data-rooms="">focal asynchronous oscillation</button>
-    <button class="garden__word fork-link-trigger" style="font-size:28px;" data-fork="thalamocortical matrix" data-rooms="">thalamocortical matrix</button>
-    <button class="garden__word fork-link-trigger" style="font-size:28px;" data-fork="thalamocortical core" data-rooms="">thalamocortical core</button>
-    <button class="garden__word fork-link-trigger" style="font-size:22px;" data-fork="EEG/MEG asynchrony" data-rooms="">EEG/MEG asynchrony</button>
-    <button class="garden__word fork-link-trigger" style="font-size:22px;" data-fork="distributed source modelling" data-rooms="">distributed source modelling</button>
-    <button class="garden__word fork-link-trigger" style="font-size:22px;" data-fork="synchronous wave" data-rooms="">synchronous wave</button>
-    <button class="garden__word fork-link-trigger" style="font-size:22px;" data-fork="recruitment time" data-rooms="">recruitment time</button>
-    <button class="garden__word fork-link-trigger" style="font-size:22px;" data-fork="travelling frequency front" data-rooms="">travelling frequency front</button>
-    <button class="garden__word fork-link-trigger" style="font-size:22px;" data-fork="spatially-propagating oscillator" data-rooms="">spatially-propagating oscillator</button>
-    <button class="garden__word fork-link-trigger" style="font-size:22px;" data-fork="purely resistive" data-rooms="">purely resistive</button>
-    <button class="garden__word fork-link-trigger" style="font-size:22px;" data-fork="non-resistive extracellular medium" data-rooms="">non-resistive extracellular medium</button>
-    <button class="garden__word fork-link-trigger" style="font-size:22px;" data-fork="renormalisation-group" data-rooms="">renormalisation-group</button>
-    <button class="garden__word fork-link-trigger" style="font-size:22px;" data-fork="coarse-graining" data-rooms="">coarse-graining</button>
-    <button class="garden__word fork-link-trigger" style="font-size:22px;" data-fork="RG flow" data-rooms="">RG flow</button>
-    <button class="garden__word fork-link-trigger" style="font-size:22px;" data-fork="information-bottleneck" data-rooms="">information-bottleneck</button>
-    
-  </div>
+  <p class="garden__legend" aria-hidden="true">
+    <span class="garden__legend-item"><span class="garden__legend-swatch garden__legend-swatch--concept"></span> Concept</span>
+    <span class="garden__legend-item"><span class="garden__legend-swatch garden__legend-swatch--paper"></span> Paper · click to enter the room</span>
+  </p>
 
-  <div class="garden__rooms" id="garden-rooms">
-    
-    
-      
-
-<a class="card pcard reveal" href="/papers/Bioinspired-ai/" data-tags="" style="--wash-color: var(--wash-slate);">
-  <div class="card__media">
-    
-      <div class="card__placeholder" aria-hidden="true"></div>
-    
-  </div>
-  <div class="card__body">
-    <span class="card__kicker">Room 1 · </span>
-    <h3 class="card__title"></h3>
-    
-    
-  </div>
-</a>
-
-    
-      
-
-<a class="card pcard reveal" href="/papers/UnitarySpike-LFP/" data-tags="" style="--wash-color: var(--wash-slate);">
-  <div class="card__media">
-    
-      <div class="card__placeholder" aria-hidden="true"></div>
-    
-  </div>
-  <div class="card__body">
-    <span class="card__kicker">Room 2 · </span>
-    <h3 class="card__title"></h3>
-    
-    
-  </div>
-</a>
-
-    
-      
-
-<a class="card pcard reveal" href="/papers/depth-coarse-graining/" data-tags="renormalization-group,deep-learning,information-theory,coarse-graining,neural-networks,statistical-physics" style="--wash-color: var(--wash-slate);">
-  <div class="card__media">
-    
-      <img class="card__image" src="/assets/img/papers/depth-cg-teaser.png" alt="Depth as Successive Coarse-Graining in Plain MLPs">
-    
-  </div>
-  <div class="card__body">
-    <span class="card__kicker">Room 3 · 2025 · Preprint</span>
-    <h3 class="card__title">Depth as Successive Coarse-Graining in Plain MLPs</h3>
-    <div class="card__meta">Nima Dehghani</div>
-    
-    <div class="card__tags">
-      <span class="tag">renormalization-group</span><span class="tag">deep-learning</span><span class="tag">information-theory</span>
-    </div>
-    
-  </div>
-</a>
-
-    
-      
-
-<a class="card pcard reveal" href="/papers/MEGEEG-spectra-scaling/" data-tags="Electromagnetism,Scaling,EEG,MEG,Resistive-Medium,Noise" style="--wash-color: var(--wash-plum);">
-  <div class="card__media">
-    
-      <img class="card__image" src="/assets/img/papers/EMEG_spectra4.png" alt="Comparative power spectral analysis of simultaneous electroencephalographic and magnetoencephalographic recordings in humans suggests non-resistive extracellular media">
-    
-  </div>
-  <div class="card__body">
-    <span class="card__kicker">Room 4 · 2025 · Journal of Computational Neuroscience</span>
-    <h3 class="card__title">Comparative power spectral analysis of simultaneous electroencephalographic and magnetoencephalographic recordings in humans suggests non-resistive extracellular media</h3>
-    <div class="card__meta">Nima Dehghani, Claude Bédard, Sydney S. Cash, Eric Halgren, and Alain Destexhe</div>
-    
-    <div class="card__tags">
-      <span class="tag">Electromagnetism</span><span class="tag">Scaling</span><span class="tag">EEG</span>
-    </div>
-    
-  </div>
-</a>
-
-    
-      
-
-<a class="card pcard reveal" href="/papers/Spindle-MEG-EEG-Async/" data-tags="Spindle,Thalamocortical,Oscillation,Synchrony,Sleep,MEG,EEG" style="--wash-color: var(--wash-oxblood);">
-  <div class="card__media">
-    
-      <img class="card__image" src="/assets/img/papers/spindle_async2.jpg" alt="Emergence of synchronous EEG spindles from asynchronous MEG spindles">
-    
-  </div>
-  <div class="card__body">
-    <span class="card__kicker">Room 5 · 2011 · Human Brain Mapping</span>
-    <h3 class="card__title">Emergence of synchronous EEG spindles from asynchronous MEG spindles</h3>
-    <div class="card__meta">Nima Dehghani</div>
-    
-    <div class="card__tags">
-      <span class="tag">Spindle</span><span class="tag">Thalamocortical</span><span class="tag">Oscillation</span>
-    </div>
-    
-  </div>
-</a>
-
-    
-      
-
-<a class="card pcard reveal" href="/papers/Spindle-cortical-generators/" data-tags="Spindle,Sleep,Oscillation,Synchrony,MEG,EEG" style="--wash-color: var(--wash-slate);">
-  <div class="card__media">
-    
-      <img class="card__image" src="/assets/img/papers/spindle_emeg_2.jpeg" alt="Magnetoencephalography Demonstrates Multiple Asynchronous Generators During Human Sleep Spindles">
-    
-  </div>
-  <div class="card__body">
-    <span class="card__kicker">Room 6 · 2010 · Journal Of Physiology</span>
-    <h3 class="card__title">Magnetoencephalography Demonstrates Multiple Asynchronous Generators During Human Sleep Spindles</h3>
-    <div class="card__meta">Dehghani, Nima and Cash, Sydney S. and Rossetti, Andrea O. and Chen, Chih Chuan and Halgren, Eric</div>
-    
-    <div class="card__tags">
-      <span class="tag">Spindle</span><span class="tag">Sleep</span><span class="tag">Oscillation</span>
-    </div>
-    
-  </div>
-</a>
-
-    
-      
-
-<a class="card pcard reveal" href="/papers/Spindle-divergent-generator/" data-tags="Spindle,Thalamocortical,Oscillation,Statistical Parametric Mapping,Source Localization,MEG,EEG,Sleep" style="--wash-color: var(--wash-teal);">
-  <div class="card__media">
-    
-      <img class="card__image" src="/assets/img/papers/spindle_dspm2.png" alt="Divergent Cortical Generators of Sleep Spindles">
-    
-  </div>
-  <div class="card__body">
-    <span class="card__kicker">Room 7 · 2010 · Plos One</span>
-    <h3 class="card__title">Divergent Cortical Generators of Sleep Spindles</h3>
-    <div class="card__meta">Nima Dehghani</div>
-    
-    <div class="card__tags">
-      <span class="tag">Spindle</span><span class="tag">Thalamocortical</span><span class="tag">Oscillation</span>
-    </div>
-    
-  </div>
-</a>
-
-    
-      
-
-<a class="card pcard reveal" href="/papers/Spindle-topo-frq/" data-tags="Spindle,Synchrony,MEG,EEG,Cortex,Thalamus,Inverse solution,Oscillation" style="--wash-color: var(--wash-dust);">
-  <div class="card__media">
-    
-      <img class="card__image" src="/assets/img/papers/spindle_topo3.jpg" alt="Topographical frequency dynamics within EEG and MEG sleep spindles">
-    
-  </div>
-  <div class="card__body">
-    <span class="card__kicker">Room 8 · 2021 · Clinical Neurophysiology</span>
-    <h3 class="card__title">Topographical frequency dynamics within EEG and MEG sleep spindles</h3>
-    <div class="card__meta">Nima Dehghani</div>
-    
-    <div class="card__tags">
-      <span class="tag">Spindle</span><span class="tag">Synchrony</span><span class="tag">MEG</span>
-    </div>
-    
-  </div>
-</a>
-
-    
-      
-
-<a class="card pcard reveal" href="/papers/Avalanche-spikeLfp/" data-tags="Multielectrode Arrays (MEA),Statistical Physics,LFP,Spike,Self-Organized Criticality (SOC),Sleep-Wake Dynamics,Slow-Wave Sleep (SWS)" style="--wash-color: var(--wash-plum);">
-  <div class="card__media">
-    
-      <img class="card__image" src="/assets/img/papers/avalanche_4.png" alt="Avalanche Analysis from Multielectrode Ensemble Recordings in Cat, Monkey, and Human Cerebral Cortex during Wakefulness and Sleep">
-    
-  </div>
-  <div class="card__body">
-    <span class="card__kicker">Room 9 · 2012 · Frontiers in Physiology</span>
-    <h3 class="card__title">Avalanche Analysis from Multielectrode Ensemble Recordings in Cat, Monkey, and Human Cerebral Cortex during Wakefulness and Sleep</h3>
-    <div class="card__meta">Nima Dehghani</div>
-    
-    <div class="card__tags">
-      <span class="tag">Multielectrode Arrays (MEA)</span><span class="tag">Statistical Physics</span><span class="tag">LFP</span>
-    </div>
-    
-  </div>
-</a>
-
-    
-      
-
-<a class="card pcard reveal" href="/papers/BetaGamma-wakeSleep/" data-tags="Multielectrode Arrays (MEA),Spike,Excitation-Inhibition (E/I) Balance,Sleep-Wake Dynamics,Slow-Wave Sleep (SWS),Rhythm,Oscillation,Wave" style="--wash-color: var(--wash-plum);">
-  <div class="card__media">
-    
-      <img class="card__image" src="/assets/img/papers/fastosc_1.jpeg" alt="High-frequency oscillations in human and monkey neocortex during the wake–sleep cycle">
-    
-  </div>
-  <div class="card__body">
-    <span class="card__kicker">Room 10 · 2016 · PNAS</span>
-    <h3 class="card__title">High-frequency oscillations in human and monkey neocortex during the wake–sleep cycle</h3>
-    <div class="card__meta">Nima Dehghani</div>
-    
-    <div class="card__tags">
-      <span class="tag">Multielectrode Arrays (MEA)</span><span class="tag">Spike</span><span class="tag">Excitation-Inhibition (E/I) Balance</span>
-    </div>
-    
-  </div>
-</a>
-
-    
-      
-
-<a class="card pcard reveal" href="/papers/CRX/" data-tags="Physics-Informed AI,Complexity,Symbolic Regression,Automated Scientific Discovery,Data-Driven Modeling" style="--wash-color: var(--wash-plum);">
-  <div class="card__media">
-    
-      <img class="card__image" src="/assets/img/brand/neuron-circuit.jpg" alt="Compression, Regularity, Randomness and Emergent Structure: Rethinking Physical Complexity in the Data-Driven Era">
-    
-  </div>
-  <div class="card__body">
-    <span class="card__kicker">Room 11 · 2025 · arXiv</span>
-    <h3 class="card__title">Compression, Regularity, Randomness and Emergent Structure: Rethinking Physical Complexity in the Data-Driven Era</h3>
-    <div class="card__meta">Nima Dehghani</div>
-    
-    <div class="card__tags">
-      <span class="tag">Physics-Informed AI</span><span class="tag">Complexity</span><span class="tag">Symbolic Regression</span>
-    </div>
-    
-  </div>
-</a>
-
-    
-      
-
-<a class="card pcard reveal" href="/papers/Catcomp/" data-tags="Compositionality,Category Theory,Physical Computing,Non-Classical Computing" style="--wash-color: var(--wash-plum);">
-  <div class="card__media">
-    
-      <img class="card__image" src="/assets/img/papers/catcomp_4.jpg" alt="Physical computing: a category theoretic perspective on physical computation and system compositionality">
-    
-  </div>
-  <div class="card__body">
-    <span class="card__kicker">Room 12 · 2024 · Journal of Physics: Complexity</span>
-    <h3 class="card__title">Physical computing: a category theoretic perspective on physical computation and system compositionality</h3>
-    <div class="card__meta">Nima Dehghani</div>
-    
-    <div class="card__tags">
-      <span class="tag">Compositionality</span><span class="tag">Category Theory</span><span class="tag">Physical Computing</span>
-    </div>
-    
-  </div>
-</a>
-
-    
-      
-
-<a class="card pcard reveal" href="/papers/Causal-rotor-cardiac/" data-tags="Wave,Excitable Medium,Spatiotemporal,Dynamics,Causality,Information Theory" style="--wash-color: var(--wash-plum);">
-  <div class="card__media">
-    
-      <img class="card__image" src="/assets/img/papers/causal_rotor_1.png" alt="Causal Scale of Rotors in a Cardiac System">
-    
-  </div>
-  <div class="card__body">
-    <span class="card__kicker">Room 13 · 2018 · Frontiers in Computational Physics</span>
-    <h3 class="card__title">Causal Scale of Rotors in a Cardiac System</h3>
-    <div class="card__meta">Nima Dehghani</div>
-    
-    <div class="card__tags">
-      <span class="tag">Wave</span><span class="tag">Excitable Medium</span><span class="tag">Spatiotemporal</span>
-    </div>
-    
-  </div>
-</a>
-
-    
-      
-
-<a class="card pcard reveal" href="/papers/Cell-hilbert/" data-tags="Compositionality,Systems Biology,Noise,Emergence,Multiscale,Adaptability,Robustness" style="--wash-color: var(--wash-plum);">
-  <div class="card__media">
-    
-      <img class="card__image" src="/assets/img/brand/neuron-circuit.jpg" alt="Systematizing cellular complexity: A Hilbertian approach to biological problems">
-    
-  </div>
-  <div class="card__body">
-    <span class="card__kicker">Room 14 · 2024 · Plos Complex systems</span>
-    <h3 class="card__title">Systematizing cellular complexity: A Hilbertian approach to biological problems</h3>
-    <div class="card__meta">Nima Dehghani</div>
-    
-    <div class="card__tags">
-      <span class="tag">Compositionality</span><span class="tag">Systems Biology</span><span class="tag">Noise</span>
-    </div>
-    
-  </div>
-</a>
-
-    
-      
-
-<a class="card pcard reveal" href="/papers/Compute-thalamus/" data-tags="Dynamic Gating,Emergent Computation,Thalamus,Modulation,Energetic Efficiency,Network,Optimization" style="--wash-color: var(--wash-plum);">
-  <div class="card__media">
-    
-      <img class="card__image" src="/assets/img/papers/thalcomp_8.png" alt="A Computational Perspective of the Role of the Thalamus in Cognition">
-    
-  </div>
-  <div class="card__body">
-    <span class="card__kicker">Room 15 · 2019 · Nerual Computation</span>
-    <h3 class="card__title">A Computational Perspective of the Role of the Thalamus in Cognition</h3>
-    <div class="card__meta">Nima Dehghani</div>
-    
-    <div class="card__tags">
-      <span class="tag">Dynamic Gating</span><span class="tag">Emergent Computation</span><span class="tag">Thalamus</span>
-    </div>
-    
-  </div>
-</a>
-
-    
-      
-
-<a class="card pcard reveal" href="/papers/Dynamic-balance/" data-tags="Multielectrode Arrays (MEA),Spike,Excitation-Inhibition (E/I) Balance,Sleep-Wake Dynamics,Slow-Wave Sleep (SWS),Multiscale,Population Dynamics,Seizure" style="--wash-color: var(--wash-plum);">
-  <div class="card__media">
-    
-      <img class="card__image" src="/assets/img/papers/BalanceEI_1.jpg" alt="Dynamic Balance of Excitation and Inhibition in Human and Monkey Neocortex">
-    
-  </div>
-  <div class="card__body">
-    <span class="card__kicker">Room 16 · 2017 · Scientific Reports</span>
-    <h3 class="card__title">Dynamic Balance of Excitation and Inhibition in Human and Monkey Neocortex</h3>
-    <div class="card__meta">Nima Dehghani</div>
-    
-    <div class="card__tags">
-      <span class="tag">Multielectrode Arrays (MEA)</span><span class="tag">Spike</span><span class="tag">Excitation-Inhibition (E/I) Balance</span>
-    </div>
-    
-  </div>
-</a>
-
-    
-      
-
-<a class="card pcard reveal" href="/papers/Forward-ieegeeg/" data-tags="Brain Mapping,Diffusion Tensor Imaging,Evoked potentials,MEG,EEG,Forward Model,Neuroanatomy,Einite Element Model" style="--wash-color: var(--wash-plum);">
-  <div class="card__media">
-    
-      <img class="card__image" src="/assets/img/papers/Forward-ieeg4.png" alt="Experimental validation of the influence of white matter anisotropy on the intracranial EEG forward solution">
-    
-  </div>
-  <div class="card__body">
-    <span class="card__kicker">Room 17 · 2010 · Journal of Computational Neuroscience</span>
-    <h3 class="card__title">Experimental validation of the influence of white matter anisotropy on the intracranial EEG forward solution</h3>
-    <div class="card__meta">Nima Dehghani</div>
-    
-    <div class="card__tags">
-      <span class="tag">Brain Mapping</span><span class="tag">Diffusion Tensor Imaging</span><span class="tag">Evoked potentials</span>
-    </div>
-    
-  </div>
-</a>
-
-    
-      
-
-<a class="card pcard reveal" href="/papers/Hypercapnia-corticalActivity/" data-tags="Cerebral Blood Flow,Cerebral Metabolic Rate,BOLD Response,fMRI,MEG" style="--wash-color: var(--wash-plum);">
-  <div class="card__media">
-    
-      <img class="card__image" src="/assets/img/papers/Hypercapnia_meg_1.jpg" alt="Depression of cortical activity in humans by mild hypercapnia">
-    
-  </div>
-  <div class="card__body">
-    <span class="card__kicker">Room 18 · 2012 · Human Brain Mapping</span>
-    <h3 class="card__title">Depression of cortical activity in humans by mild hypercapnia</h3>
-    <div class="card__meta">Nima Dehghani</div>
-    
-    <div class="card__tags">
-      <span class="tag">Cerebral Blood Flow</span><span class="tag">Cerebral Metabolic Rate</span><span class="tag">BOLD Response</span>
-    </div>
-    
-  </div>
-</a>
-
-    
-      
-
-<a class="card pcard reveal" href="/papers/Ising-EI/" data-tags="Collective Dynamics,Ising Model,Sampling,Inhibiton,Excitation,Network,Statistical Physics" style="--wash-color: var(--wash-plum);">
-  <div class="card__media">
-    
-      <img class="card__image" src="/assets/img/papers/ising_ei_4.png" alt="Ensemble inhibition and excitation in the human cortex: An Ising-model analysis with uncertainties">
-    
-  </div>
-  <div class="card__body">
-    <span class="card__kicker">Room 19 · 2019 · Physica Review E</span>
-    <h3 class="card__title">Ensemble inhibition and excitation in the human cortex: An Ising-model analysis with uncertainties</h3>
-    <div class="card__meta">Nima Dehghani</div>
-    
-    <div class="card__tags">
-      <span class="tag">Collective Dynamics</span><span class="tag">Ising Model</span><span class="tag">Sampling</span>
-    </div>
-    
-  </div>
-</a>
-
-    
-      
-
-<a class="card pcard reveal" href="/papers/K-complex/" data-tags="Sleep,Graphoelement,Slow-Wave,Spindle,Multiunit Activity,Local Field Potential" style="--wash-color: var(--wash-plum);">
-  <div class="card__media">
-    
-      <img class="card__image" src="/assets/img/papers/KC2.jpeg" alt="The Human K-Complex as an Isolated Cortical &quot;Down-State&quot;">
-    
-  </div>
-  <div class="card__body">
-    <span class="card__kicker">Room 20 · 2009 · Science</span>
-    <h3 class="card__title">The Human K-Complex as an Isolated Cortical "Down-State"</h3>
-    <div class="card__meta">Nima Dehghani</div>
-    
-    <div class="card__tags">
-      <span class="tag">Sleep</span><span class="tag">Graphoelement</span><span class="tag">Slow-Wave</span>
-    </div>
-    
-  </div>
-</a>
-
-    
-      
-
-<a class="card pcard reveal" href="/papers/Odin/" data-tags="" style="--wash-color: var(--wash-plum);">
-  <div class="card__media">
-    
-      <img class="card__image" src="/assets/img/papers/odin_1.jpg" alt="Open Data In Neurophysiology: Advancements, Solutions &amp; Challenges">
-    
-  </div>
-  <div class="card__body">
-    <span class="card__kicker">Room 21 · 2025 · eNeuro</span>
-    <h3 class="card__title">Open Data In Neurophysiology: Advancements, Solutions & Challenges</h3>
-    <div class="card__meta">Nima Dehghani</div>
-    
-    <div class="card__tags">
-      
-    </div>
-    
-  </div>
-</a>
-
-    
-      
-
-<a class="card pcard reveal" href="/papers/Spatiotemporal-dynamics-EI/" data-tags="Multielectrode Arrays (MEA),Spike,Excitation-Inhibition (E/I) Balance,Sleep-Wake Dynamics,Slow-Wave Sleep (SWS)" style="--wash-color: var(--wash-plum);">
-  <div class="card__media">
-    
-      <img class="card__image" src="/assets/img/papers/spatiotemporal_4.jpeg" alt="Spatiotemporal dynamics of neocortical excitation and inhibition during human sleep">
-    
-  </div>
-  <div class="card__body">
-    <span class="card__kicker">Room 22 · 2012 · PNAS</span>
-    <h3 class="card__title">Spatiotemporal dynamics of neocortical excitation and inhibition during human sleep</h3>
-    <div class="card__meta">Nima Dehghani</div>
-    
-    <div class="card__tags">
-      <span class="tag">Multielectrode Arrays (MEA)</span><span class="tag">Spike</span><span class="tag">Excitation-Inhibition (E/I) Balance</span>
-    </div>
-    
-  </div>
-</a>
-
-    
-      
-
-<a class="card pcard reveal" href="/papers/Symmetry-edge-cortex/" data-tags="Invariances,Collective Dynamics,Multiscale,Emergence,Symmetry Breaking" style="--wash-color: var(--wash-plum);">
-  <div class="card__media">
-    
-      <img class="card__image" src="/assets/img/papers/symmetry_edge_3.png" alt="Symmetry’s Edge in Cortical Dynamics Multiscale Dynamics of Ensemble Excitation and Inhibition">
-    
-  </div>
-  <div class="card__body">
-    <span class="card__kicker">Room 23 · 2025 · arXiv</span>
-    <h3 class="card__title">Symmetry’s Edge in Cortical Dynamics Multiscale Dynamics of Ensemble Excitation and Inhibition</h3>
-    <div class="card__meta">Nima Dehghani</div>
-    
-    <div class="card__tags">
-      <span class="tag">Invariances</span><span class="tag">Collective Dynamics</span><span class="tag">Multiscale</span>
-    </div>
-    
-  </div>
-</a>
-
-    
-      
-
-<a class="card pcard reveal" href="/papers/Theory-control-net/" data-tags="Spatiotemporal,Dynamics,Control,Emergence,Network,Information Theory,Multiscale" style="--wash-color: var(--wash-plum);">
-  <div class="card__media">
-    
-      <img class="card__image" src="/assets/img/brand/neuron-circuit.jpg" alt="Theoretical Principles of Multiscale Spatiotemporal Control of Neuronal Networks: A Complex Systems Perspective">
-    
-  </div>
-  <div class="card__body">
-    <span class="card__kicker">Room 24 · 2018 · Frontiers in Computational Neuroscience</span>
-    <h3 class="card__title">Theoretical Principles of Multiscale Spatiotemporal Control of Neuronal Networks: A Complex Systems Perspective</h3>
-    <div class="card__meta">Nima Dehghani</div>
-    
-    <div class="card__tags">
-      <span class="tag">Spatiotemporal</span><span class="tag">Dynamics</span><span class="tag">Control</span>
-    </div>
-    
-  </div>
-</a>
-
-    
-  </div>
+  <noscript>
+    <p class="garden__fallback">Interactive graph requires JavaScript. Browse the <a href="/papers/">Paper Maze</a> instead.</p>
+  </noscript>
 
   <aside class="fork-panel" id="fork-panel" hidden aria-label="Concept fork" style="margin-top:32px;">
     <div class="fork-panel__inner">
@@ -783,29 +262,9 @@
 (function () {
   var GRAPH_URL = "/assets/data/garden-graph.json";
   var svgEl = document.getElementById('garden-graph');
-  var cloudEl = document.getElementById('garden-cloud');
-  var roomsWrap = document.getElementById('garden-rooms');
-  if (!svgEl || !roomsWrap) return;
+  var wrap = document.getElementById('garden-graph-wrap');
+  if (!svgEl) return;
 
-  var cards = Array.from(roomsWrap.querySelectorAll('.card'));
-  var conceptsJson = {};
-  try { conceptsJson = JSON.parse(document.getElementById('concepts-data').textContent || '{}'); }
-  catch (e) { conceptsJson = {}; }
-
-  // Existing room-card dim behaviour, reused on graph hover.
-  function dim(concept) {
-    var lit = null;
-    if (concept && conceptsJson[concept]) {
-      lit = conceptsJson[concept].rooms.map(function (r) { return r.url; });
-    }
-    cards.forEach(function (card) {
-      var on = !lit || lit.indexOf(card.getAttribute('href')) !== -1;
-      card.classList.toggle('is-dim', !on);
-    });
-  }
-
-  // Reuse the existing fork-panel handler (main.js) by dispatching a click on
-  // a hidden element that carries the concept name in data-fork.
   function openFork(name) {
     var ghost = document.createElement('button');
     ghost.type = 'button';
@@ -819,22 +278,18 @@
     setTimeout(function () { ghost.remove(); }, 0);
   }
 
-  function fallback() {
-    if (cloudEl) cloudEl.hidden = false;
-    if (svgEl && svgEl.parentNode) svgEl.parentNode.removeChild(svgEl);
-    // Wire the static cloud's hover-dim if we fall back.
-    if (!cloudEl) return;
-    cloudEl.querySelectorAll('.garden__word').forEach(function (w) {
-      w.addEventListener('mouseenter', function () { dim(w.dataset.fork); w.classList.add('is-active'); });
-      w.addEventListener('mouseleave', function () { dim(null); w.classList.remove('is-active'); });
-    });
+  function fallback(reason) {
+    if (!wrap) return;
+    wrap.innerHTML = '<p class="garden__fallback">Interactive graph could not load. Browse the <a href="' +
+      ("/papers/") + '">Paper Maze</a> instead.</p>';
+    if (reason) console.warn('Garden graph fallback:', reason);
   }
 
   function waitForD3(then, timeoutMs) {
     var t0 = Date.now();
     (function poll() {
       if (window.d3 && window.d3.select) { then(); return; }
-      if (Date.now() - t0 > timeoutMs) { fallback(); return; }
+      if (Date.now() - t0 > timeoutMs) { fallback('d3 timeout'); return; }
       setTimeout(poll, 80);
     })();
   }
@@ -844,10 +299,7 @@
     return r.json();
   }).then(function (graph) {
     waitForD3(function () { render(graph); }, 6000);
-  }).catch(function (e) {
-    console.warn('Garden graph: falling back.', e);
-    fallback();
-  });
+  }).catch(function (e) { fallback(e); });
 
   function render(graph) {
     var d3 = window.d3;
@@ -856,11 +308,8 @@
 
     var byId = {};
     nodes.forEach(function (n) { byId[n.id] = n; });
-
-    // Drop links whose endpoints aren't in the node set (defensive).
     links = links.filter(function (l) { return byId[l.source] && byId[l.target]; });
 
-    // Build neighbour index for hover dimming.
     var neighbours = {};
     nodes.forEach(function (n) { neighbours[n.id] = new Set([n.id]); });
     links.forEach(function (l) {
@@ -872,8 +321,8 @@
     var isMobile = window.matchMedia('(max-width: 760px)').matches;
 
     var width = svgEl.clientWidth || 800;
-    var height = isMobile ? Math.round(window.innerHeight * 0.55)
-                          : Math.min(820, Math.round(window.innerHeight * 0.7));
+    var height = isMobile ? Math.round(window.innerHeight * 0.6)
+                          : Math.min(820, Math.round(window.innerHeight * 0.72));
     svgEl.setAttribute('viewBox', '0 0 ' + width + ' ' + height);
     svgEl.style.height = height + 'px';
 
@@ -897,29 +346,41 @@
     });
 
     var rootG = svg.append('g').attr('class', 'gg-root');
-
     var linkG = rootG.append('g').attr('class', 'gg-links');
     var nodeG = rootG.append('g').attr('class', 'gg-nodes');
 
     function washUrl(tok) {
       return 'url(#wash-' + (tok || '--wash-slate').replace(/[^a-z0-9]/gi, '') + ')';
     }
-    function radius(n) {
-      if (n.kind === 'paper') return isMobile ? 4 : 5;
+    function conceptRadius(n) {
       var w = n.weight || 1;
       var r = 12 + Math.sqrt(w) * 7;
       if (isMobile) r *= 0.85;
       return Math.max(12, Math.min(38, r));
     }
+    // Paper slab dimensions — portrait, page-like.
+    var PAPER_W = isMobile ? 11 : 14;
+    var PAPER_H = isMobile ? 14 : 18;
+    var PAPER_HALO_PAD = 7;
+
+    function collideRadius(n) {
+      if (n.kind === 'paper') {
+        return Math.max(PAPER_W, PAPER_H) / 2 + PAPER_HALO_PAD + 22;
+      }
+      return conceptRadius(n) + 14;
+    }
+
+    function truncate(s, n) {
+      if (!s) return '';
+      return s.length > n ? s.slice(0, n - 1).replace(/\s+$/, '') + '…' : s;
+    }
 
     var linkSel = linkG.selectAll('line')
       .data(links)
       .enter().append('line')
-      .attr('class', function (l) {
-        return 'glink glink--' + l.kind;
-      })
+      .attr('class', function (l) { return 'glink glink--' + l.kind; })
       .attr('stroke-width', function (l) {
-        return Math.max(0.6, Math.min(2.4, l.weight * 1.4));
+        return Math.max(0.55, Math.min(2.2, l.weight * 1.3));
       });
 
     var nodeSel = nodeG.selectAll('g.gnode')
@@ -932,74 +393,91 @@
       })
       .attr('tabindex', 0)
       .attr('role', 'button')
-      .attr('aria-label', function (n) { return (n.kind === 'paper' ? 'Paper: ' : 'Concept: ') + (n.title || n.name); });
+      .attr('aria-label', function (n) {
+        return n.kind === 'paper'
+          ? 'Open room: ' + (n.title || '')
+          : 'Concept: ' + (n.name || n.id);
+      });
 
-    // Concept halo (radial wash)
-    nodeSel.filter(function (n) { return n.kind === 'concept'; })
-      .append('circle')
+    // -- Concept nodes ---------------------------------------------------------
+    var conceptSel = nodeSel.filter(function (n) { return n.kind === 'concept'; });
+    conceptSel.append('circle')
       .attr('class', 'gnode__halo')
-      .attr('r', function (n) { return radius(n) + 8; })
+      .attr('r', function (n) { return conceptRadius(n) + 8; })
       .attr('fill', function (n) { return washUrl(n.wash); })
       .attr('pointer-events', 'none');
-
-    // Concept core circle
-    nodeSel.filter(function (n) { return n.kind === 'concept'; })
-      .append('circle')
+    conceptSel.append('circle')
       .attr('class', 'gnode__core')
-      .attr('r', function (n) { return radius(n); })
+      .attr('r', function (n) { return conceptRadius(n); })
       .attr('fill', 'var(--paper)')
       .attr('stroke', function (n) { return n.curated ? 'var(--ink-soft)' : 'var(--hairline-strong)'; })
       .attr('stroke-width', function (n) { return n.curated ? 1.1 : 0.9; });
+    conceptSel.append('text')
+      .attr('class', 'glabel glabel--concept')
+      .attr('text-anchor', 'middle')
+      .attr('dy', function (n) { return conceptRadius(n) + 18; })
+      .text(function (n) { return n.name; });
 
-    // Paper node halo
-    nodeSel.filter(function (n) { return n.kind === 'paper'; })
-      .append('circle')
+    // -- Paper nodes (rounded rects, always-labelled) --------------------------
+    var paperSel = nodeSel.filter(function (n) { return n.kind === 'paper'; });
+    // Wash halo behind the rect
+    paperSel.append('rect')
       .attr('class', 'gnode__paper-halo')
-      .attr('r', function (n) { return radius(n) + 5; })
+      .attr('x', -(PAPER_W / 2 + PAPER_HALO_PAD))
+      .attr('y', -(PAPER_H / 2 + PAPER_HALO_PAD))
+      .attr('width', PAPER_W + PAPER_HALO_PAD * 2)
+      .attr('height', PAPER_H + PAPER_HALO_PAD * 2)
+      .attr('rx', 6).attr('ry', 6)
       .attr('fill', function (n) { return washUrl(n.wash); })
       .attr('pointer-events', 'none');
-
-    // Paper node core
-    nodeSel.filter(function (n) { return n.kind === 'paper'; })
-      .append('circle')
-      .attr('class', 'gnode__paper-core')
-      .attr('r', function (n) { return radius(n); })
-      .attr('fill', 'var(--ink)');
-
-    // Labels
-    nodeSel.append('text')
-      .attr('class', function (n) { return 'glabel glabel--' + n.kind; })
+    // Slab
+    paperSel.append('rect')
+      .attr('class', 'gnode__paper-rect')
+      .attr('x', -PAPER_W / 2)
+      .attr('y', -PAPER_H / 2)
+      .attr('width', PAPER_W)
+      .attr('height', PAPER_H)
+      .attr('rx', 2).attr('ry', 2)
+      .attr('fill', 'var(--card-bg)')
+      .attr('stroke', 'var(--ink)')
+      .attr('stroke-width', 1);
+    // Tiny corner fold (decorative — hints "page")
+    paperSel.append('path')
+      .attr('class', 'gnode__paper-fold')
+      .attr('d', function () {
+        var x = PAPER_W / 2 - 4;
+        var y = -PAPER_H / 2;
+        return 'M ' + x + ' ' + y + ' l 4 0 l 0 4 z';
+      })
+      .attr('fill', 'var(--ink)')
+      .attr('opacity', 0.85)
+      .attr('pointer-events', 'none');
+    // Kicker: Room · year
+    paperSel.append('text')
+      .attr('class', 'gkicker gkicker--paper')
       .attr('text-anchor', 'middle')
-      .attr('dy', function (n) { return radius(n) + (n.kind === 'concept' ? 18 : 12); })
-      .text(function (n) {
-        if (n.kind === 'concept') return n.name;
-        var t = n.title || '';
-        return t.length > 56 ? t.slice(0, 54) + '…' : t;
-      });
+      .attr('dy', PAPER_H / 2 + 13)
+      .text(function (n) { return 'Room · ' + (n.year || ''); });
+    // Title in Spectral
+    paperSel.append('text')
+      .attr('class', 'glabel glabel--paper')
+      .attr('text-anchor', 'middle')
+      .attr('dy', PAPER_H / 2 + 27)
+      .text(function (n) { return truncate(n.title || '', isMobile ? 36 : 46); });
 
-    // Force simulation
+    // -- Simulation -------------------------------------------------------------
     var sim = d3.forceSimulation(nodes)
       .force('link', d3.forceLink(links)
         .id(function (n) { return n.id; })
         .distance(function (l) {
-          var base = l.kind === 'cooccur' ? 90 : 70;
+          var base = l.kind === 'cooccur' ? 110 : 90;
           return base / Math.max(0.4, l.weight);
         })
-        .strength(function (l) { return l.kind === 'cooccur' ? 0.18 : 0.5; })
+        .strength(function (l) { return l.kind === 'cooccur' ? 0.16 : 0.45; })
       )
-      .force('charge', d3.forceManyBody().strength(isMobile ? -140 : -210))
+      .force('charge', d3.forceManyBody().strength(isMobile ? -160 : -240))
       .force('center', d3.forceCenter(width / 2, height / 2))
-      .force('collide', d3.forceCollide().radius(function (n) { return radius(n) + 10; }).strength(0.9));
-
-    if (reducedMotion) {
-      // Run a deterministic number of ticks, no animated transitions.
-      for (var i = 0; i < 200; i++) sim.tick();
-      sim.stop();
-      ticked();
-    } else {
-      sim.alpha(0.9).alphaDecay(0.035).on('tick', ticked);
-      setTimeout(function () { sim.alphaTarget(0).stop(); }, 2400);
-    }
+      .force('collide', d3.forceCollide().radius(collideRadius).strength(0.9));
 
     function ticked() {
       linkSel
@@ -1012,31 +490,35 @@
       });
     }
 
-    // Drag
+    if (reducedMotion) {
+      for (var i = 0; i < 240; i++) sim.tick();
+      sim.stop();
+      ticked();
+    } else {
+      sim.alpha(0.9).alphaDecay(0.032).on('tick', ticked);
+      setTimeout(function () { sim.alphaTarget(0).stop(); }, 2600);
+    }
+
+    // -- Drag -------------------------------------------------------------------
     var drag = d3.drag()
       .on('start', function (event, d) {
         if (!event.active) sim.alphaTarget(0.25).restart();
         d.fx = d.x; d.fy = d.y;
       })
-      .on('drag', function (event, d) {
-        d.fx = event.x; d.fy = event.y;
-      })
+      .on('drag', function (event, d) { d.fx = event.x; d.fy = event.y; })
       .on('end', function (event, d) {
         if (!event.active) sim.alphaTarget(0);
-        // Release pin so layout can rebalance after drag.
         d.fx = null; d.fy = null;
       });
     nodeSel.call(drag);
 
-    // Zoom + pan
+    // -- Zoom -------------------------------------------------------------------
     var zoom = d3.zoom()
       .scaleExtent([0.4, 4])
-      .on('zoom', function (event) {
-        rootG.attr('transform', event.transform);
-      });
+      .on('zoom', function (event) { rootG.attr('transform', event.transform); });
     svg.call(zoom);
 
-    // Hover dimming (graph + room cards)
+    // -- Hover dimming ----------------------------------------------------------
     function focus(id) {
       var keep = neighbours[id] || new Set([id]);
       nodeSel.classed('is-dim', function (n) { return !keep.has(n.id); });
@@ -1044,14 +526,10 @@
         return !(keep.has(l.source.id) && keep.has(l.target.id));
       });
       nodeSel.classed('is-focus', function (n) { return n.id === id; });
-      var node = byId[id];
-      if (node && node.kind === 'concept') dim(node.name);
-      else dim(null);
     }
     function unfocus() {
       nodeSel.classed('is-dim', false).classed('is-focus', false);
       linkSel.classed('is-dim', false);
-      dim(null);
     }
     nodeSel
       .on('mouseenter', function (event, d) { focus(d.id); })
@@ -1059,7 +537,7 @@
       .on('focus', function (event, d) { focus(d.id); })
       .on('blur', unfocus);
 
-    // Click semantics
+    // -- Click ------------------------------------------------------------------
     nodeSel.on('click', function (event, d) {
       event.stopPropagation();
       if (d.kind === 'paper') {
@@ -1079,11 +557,11 @@
       if (e.key === 'Escape') unfocus();
     });
 
-    // Re-center on resize.
+    // -- Resize -----------------------------------------------------------------
     window.addEventListener('resize', function () {
       var w = svgEl.clientWidth || width;
-      var h = isMobile ? Math.round(window.innerHeight * 0.55)
-                       : Math.min(820, Math.round(window.innerHeight * 0.7));
+      var h = isMobile ? Math.round(window.innerHeight * 0.6)
+                       : Math.min(820, Math.round(window.innerHeight * 0.72));
       svgEl.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
       svgEl.style.height = h + 'px';
       sim.force('center', d3.forceCenter(w / 2, h / 2));
