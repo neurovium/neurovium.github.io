@@ -72,6 +72,8 @@
     var src = (img.getAttribute('src') || img.currentSrc || '').toLowerCase();
     if (/(mark|glyph|merge)\.(svg|png|jpe?g|webp)(\?|$)/.test(src)) return false;
     if (img.closest('.no-watermark') || img.classList.contains('no-watermark')) return false;
+    if (img.classList.contains('card__image') || img.classList.contains('pcard__img')) return false;
+    if (img.closest('.card__media') || img.closest('.pcard__media')) return false;
     return true;
   }
   document.querySelectorAll('img').forEach(function (img) {
