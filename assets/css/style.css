@@ -1157,6 +1157,119 @@ a.tag:hover { color: var(--fork); border-color: var(--fork-soft); }
 .about-contact .handle { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; color: var(--muted); margin-left: 6px; }
 
 /* =====================================================================
+   On Liberty — essays section
+   ===================================================================== */
+
+/* Banner ------------------------------------------------------- */
+.onliberty-banner {
+  margin: 8px 0 28px; padding: 0;
+  border-radius: 16px; border: 1px solid var(--hairline);
+  overflow: hidden; box-shadow: var(--card-shadow);
+  background: var(--card-bg);
+}
+.onliberty-banner img {
+  display: block; width: 100%; height: auto;
+  max-height: 360px; object-fit: cover; object-position: center;
+}
+.onliberty-head { padding-top: 4px; }
+@media (max-width: 760px) {
+  .onliberty-banner img { max-height: 220px; }
+}
+
+/* Card: typographic seal in place of an image ------------------ */
+.pcard--essay .card__media--seal {
+  position: relative; display: flex; align-items: center; justify-content: center;
+  height: 170px;
+  background:
+    radial-gradient(circle at 30% 35%, var(--wash-color, var(--wash-oxblood)) 0%, transparent 60%),
+    var(--paper-deep);
+  border-bottom: 1px solid var(--hairline);
+  overflow: hidden;
+}
+.pcard--essay .card__media--seal::before {
+  content: ""; position: absolute; inset: 0;
+  background-image:
+    linear-gradient(var(--hairline) 1px, transparent 1px),
+    linear-gradient(90deg, var(--hairline) 1px, transparent 1px);
+  background-size: 22px 22px; opacity: 0.18; mix-blend-mode: multiply;
+  pointer-events: none;
+}
+.card__seal-num {
+  position: relative; font-family: var(--serif); font-weight: 300; font-style: italic;
+  font-size: 72px; letter-spacing: -2px; color: var(--ink);
+  line-height: 1; opacity: 0.86;
+}
+.card__seal-lbl {
+  position: absolute; bottom: 14px; right: 16px;
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--muted);
+}
+.pcard--essay .card__sub {
+  font-family: var(--serif); font-style: italic; font-weight: 300;
+  font-size: 14px; color: var(--ink-soft); line-height: 1.4; margin-top: -2px;
+}
+.pcard--essay .card__excerpt {
+  font-family: var(--sans); font-size: 14px; color: var(--body);
+  line-height: 1.55; margin: 6px 0 2px;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+
+/* Essay page seal --------------------------------------------- */
+.essay__seal {
+  display: flex; align-items: center; gap: 18px; margin: 24px 0 36px;
+  padding: 22px 26px; border: 1px solid var(--hairline);
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at 18% 50%, var(--wash-color, var(--wash-oxblood)) 0%, transparent 55%),
+    var(--card-bg);
+  box-shadow: var(--card-shadow);
+}
+.essay__seal-num {
+  font-family: var(--serif); font-style: italic; font-weight: 300;
+  font-size: 56px; line-height: 1; color: var(--ink); letter-spacing: -1.5px;
+}
+.essay__seal-rule { flex: 0 0 80px; height: 1px; background: var(--hairline-strong); }
+.essay__seal-lbl {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--muted);
+}
+.essay__precis {
+  font-family: var(--serif); font-style: italic; font-weight: 300;
+  font-size: 19px; line-height: 1.55; color: var(--ink-soft);
+  max-width: 60ch; letter-spacing: -0.1px; margin: 0;
+}
+
+/* References — hanging indent, smaller serif ------------------ */
+.essay__refs {
+  margin-top: 56px; padding-top: 28px;
+  border-top: 1px solid var(--hairline);
+  max-width: 68ch;
+}
+.essay__refs h2 {
+  font-family: var(--mono); font-weight: 500; font-size: 11px;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted);
+  border: 0; padding: 0; margin: 0 0 18px;
+}
+.essay__refs h3 {
+  font-family: var(--mono); font-weight: 500; font-size: 11px;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted);
+  margin: 18px 0 10px;
+}
+.essay__refs p,
+.essay__refs li {
+  font-family: var(--serif); font-weight: 300; font-size: 14.5px;
+  line-height: 1.55; color: var(--ink-soft); letter-spacing: 0;
+  padding-left: 1.6em; text-indent: -1.6em;
+  margin: 0 0 10px;
+}
+.essay__refs ul, .essay__refs ol { list-style: none; padding-left: 0; margin: 0; }
+.essay__refs em, .essay__refs i { color: var(--ink); font-style: italic; }
+.essay__refs a {
+  color: var(--ink); border-bottom: 1px solid var(--hairline);
+}
+.essay__refs a:hover { border-bottom-color: var(--fork); color: var(--fork); }
+
+/* =====================================================================
    Footer + reveal
    ===================================================================== */
 
