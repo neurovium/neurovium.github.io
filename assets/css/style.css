@@ -1533,8 +1533,7 @@ a.tag:hover { color: var(--fork); border-color: var(--fork-soft); }
   position: relative; display: inline-block; max-width: 100%; line-height: 0;
 }
 .protected-img-wm > img { display: block; max-width: 100%; height: auto; }
-.protected-img-wm::after,
-.about-photo::after {
+.protected-img-wm::after {
   content: ""; position: absolute;
   right: 12px; bottom: 12px;
   width: 22%; min-width: 64px; max-width: 140px;
@@ -1548,7 +1547,6 @@ a.tag:hover { color: var(--fork); border-color: var(--fork-soft); }
   pointer-events: none;
 }
 .about-photo { position: relative; }
-.about-photo::after { right: 10px; bottom: 10px; width: 28%; max-width: 110px; }
 @media (prefers-reduced-motion: no-preference) {
   .protected-img-wm::after { transition: opacity 0.3s ease; }
 }
