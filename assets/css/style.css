@@ -1166,6 +1166,12 @@ a.tag:hover { color: var(--fork); border-color: var(--fork-soft); }
 
 /* About page */
 .about-head { display: flex; gap: 32px; align-items: flex-start; flex-wrap: wrap; padding: 16px 0 8px; }
+.about-photo-col { display: flex; flex-direction: column; gap: 10px; flex-shrink: 0; width: 180px; }
+.about-photo-cap {
+  font-family: var(--serif); font-style: italic; font-weight: 300;
+  font-size: 13px; line-height: 1.45; letter-spacing: -0.1px;
+  color: var(--muted); margin: 0;
+}
 .about-photo {
   width: 180px; height: 180px; border-radius: 16px; flex-shrink: 0;
   object-fit: cover; border: 1px solid var(--card-edge);
