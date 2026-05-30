@@ -40,6 +40,10 @@ window.QUOTES = [
   {
     text: "Time forks perpetually toward innumerable futures.",
     who: "Jorge Luis Borges"
+  },
+  {
+    text: "Calculemus! (Let us calculate!)",
+    who: "Gottfried Wilhelm Leibniz"
   }
 ];
 
