@@ -71,17 +71,29 @@
     </span>
   </a>
 
+  
+  
   <nav class="side__nav" aria-label="Main navigation">
-    <a href="/" class="">Home</a>
+    <a href="/about/" class="">About</a>
     <a href="/news/" class="">News<span class="side__pip" aria-label="new"></span></a>
     <a href="/research/" class="">Research</a>
     <a href="/papers/" class="">Paper Maze</a>
     <a href="/garden/" class="">Idea Garden</a>
     <a href="/blog/" class="">Blog</a>
     <a href="/open-science/" class="">Open Science</a>
-    <a href="/on-liberty/" class="is-active">On Liberty</a>
-    <a href="/about/" class="">About</a>
-    <a href="/neurovium-decoded/" class="">Neurovium Decoded</a>
+
+    <details class="side__group" open>
+      <summary class="side__group-sum is-active">
+        <span>Reflections</span>
+        <svg class="side__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="side__subnav">
+        <a href="/on-liberty/" class="is-active">On Liberty</a>
+        <a href="/neurovium-decoded/" class="">Neurovium Decoded</a>
+        <a href="/leibnizian-dream/" class="">Leibnizian Dream</a>
+        <a href="/scientific-understanding/" class="">Scientific Understanding</a>
+      </div>
+    </details>
   </nav>
 
   <div class="side__social" aria-label="Social links">
