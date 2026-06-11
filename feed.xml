@@ -1,4 +1,394 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://neurovium.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neurovium.github.io/" rel="alternate" type="text/html" /><updated>2026-06-08T21:13:24+00:00</updated><id>https://neurovium.github.io/feed.xml</id><title type="html">Nima Dehghani</title><subtitle>Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics</subtitle><author><name>Nima Dehghani</name></author><entry><title type="html">Interneuron Diversity Is Not Only a Taxonomy Problem: Cortical Depth as a Continuous Axis of Morphoelectric Organization</title><link href="https://neurovium.github.io/posts/pblog-Inhibitory-cortical-depth/" rel="alternate" type="text/html" title="Interneuron Diversity Is Not Only a Taxonomy Problem: Cortical Depth as a Continuous Axis of Morphoelectric Organization" /><published>2026-03-06T00:00:00+00:00</published><updated>2026-03-06T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-Inhibitory-cortical-depth</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-Inhibitory-cortical-depth/"><![CDATA[<p><em>Companion post to:</em><br />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://neurovium.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neurovium.github.io/" rel="alternate" type="text/html" /><updated>2026-06-11T16:41:13+00:00</updated><id>https://neurovium.github.io/feed.xml</id><title type="html">Nima Dehghani</title><subtitle>Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics</subtitle><author><name>Nima Dehghani</name></author><entry><title type="html">Beyond Pairwise Connectivity: Reconstructing the Local–Global Structure of Neural Fields</title><link href="https://neurovium.github.io/posts/pblog-SMR-local-global/" rel="alternate" type="text/html" title="Beyond Pairwise Connectivity: Reconstructing the Local–Global Structure of Neural Fields" /><published>2026-08-11T00:00:00+00:00</published><updated>2026-08-11T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-SMR-local-global</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-SMR-local-global/"><![CDATA[<p><em>Companion post to:</em><br />
+<strong>Spatially Masked Regression Reveals Local and Distributed Predictability in Electrophysiological Recording</strong>
+Maryam Ostadsharif Memar, Nima Dehghani
+<em>arXiv</em> 2026.
+DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.48550/arXiv.2606.11415</code></p>
+
+<hr />
+<h1 id="rethinking-the-local-in-local-field-potentials-a-masked-reconstruction-approach">Rethinking the “Local” in Local Field Potentials: A Masked Reconstruction Approach</h1>
+
+<p>Electrophysiological recordings occupy an ambiguous position in systems neuroscience.<br />
+An electrode is physically located at a specific point in space, and we often speak of its signal as a local measurement. Yet the signals measured by EEG, ECoG, and intracranial EEG are rarely interpretable as isolated readouts of a single local generator. They are shaped by the geometry of tissue, the physics of extracellular fields, the spatial arrangement of sensors, and the distributed dynamics of the underlying neural system.</p>
+
+<p>This tension is especially clear in the phrase <em>local field potential</em>. The word “local” is meaningful, but it is not absolute. It refers to a field measured near a sensor, not to a signal whose generative structure is necessarily confined to the immediate neighborhood of that sensor. A channel can be strongly influenced by nearby sources while still carrying information about activity distributed across a larger network.</p>
+
+<p>This creates a basic question:</p>
+
+<p><strong>How much of an electrode’s signal is locally redundant, and how much is embedded in broader distributed structure?</strong></p>
+
+<p>This question is often approached indirectly through functional connectivity. We compute correlations, coherence, phase-locking values, mutual information, or other pairwise measures, and then interpret the resulting graph as a representation of network organization. These methods have been valuable, but they also inherit a difficulty: they ask whether two signals are statistically related, not whether the signal at one electrode is <em>predictively represented</em> across the rest of the array.</p>
+
+<p>In field recordings, this distinction matters. Nearby electrodes can look highly connected simply because of spatial smoothness, volume conduction, or shared filtering through tissue. Pairwise connectivity can therefore be dominated by short-range redundancy, while weaker but functionally meaningful long-range structure remains harder to isolate.</p>
+
+<p>In this paper, we approached the problem differently. Instead of asking whether two electrodes are connected, we asked:</p>
+
+<p><strong>Can the signal at one electrode be reconstructed from the rest of the array?</strong></p>
+
+<p>And more importantly:</p>
+
+<p><strong>What happens to that reconstructability when we deliberately remove the local neighborhood around the target electrode?</strong></p>
+
+<p>This is the central idea behind <strong>Spatially Masked Regression</strong>.</p>
+
+<hr />
+
+<h2 id="from-pairwise-connectivity-to-predictive-embedding">From pairwise connectivity to predictive embedding</h2>
+
+<p>The usual connectivity question has the form:</p>
+
+\[\text{Are } x_i(t) \text{ and } x_j(t) \text{ statistically associated?}\]
+
+<p>Spatially Masked Regression, or SMR, asks a different question:</p>
+
+\[\text{How well can } x_i(t) \text{ be reconstructed from } \{x_j(t)\}_{j \neq i}?\]
+
+<p>The shift is subtle but important. We are no longer treating pairwise association as the primitive object. Instead, we treat each channel as a target to be reconstructed from the rest of the recording array.</p>
+
+<p>For a target electrode (i) in subject (s), the SMR reconstruction is written as</p>
+
+\[\hat{x}^{(s)}_i(t)
+=
+\sum_{j=1}^{N_s}
+\left(1-K^{(s)}_{ij}\right)
+w^{(s)}_{ij}
+x^{(s)}_j(t).\]
+
+<p>Here, (x^{(s)}<em>j(t)) is the signal from predictor electrode (j), (w^{(s)}</em>{ij}) is the learned contribution of electrode (j) to the reconstruction of electrode (i), and (K^{(s)}_{ij}) is a spatial mask.</p>
+
+<p>The mask is the essential object. If electrode (j) belongs to the predefined local neighborhood of target electrode (i), then</p>
+
+\[K^{(s)}_{ij}=1,\]
+
+<p>and that predictor is excluded from the reconstruction. If it is outside the masked neighborhood, then</p>
+
+\[K^{(s)}_{ij}=0,\]
+
+<p>and it remains available to the model.</p>
+
+<p>This turns locality into an experimental control. With no masking, the model can exploit all available predictors, including the strongest local redundancies. With strict masking, the model is forced to reconstruct the target from non-local electrodes only.</p>
+
+<p>In other words, SMR allows us to ask how much predictive information survives after the immediate spatial neighborhood has been removed.</p>
+
+<p>#&gt;[INSERT FIGURE 1 HERE: Schematic of the SMR framework. Show a target electrode, its local neighborhood, the masked predictors, the remaining non-local predictors, and the reconstructed target signal.]</p>
+
+<p>The learned matrix is asymmetric. The weight (w_{ij}) quantifies the contribution of channel (j) to reconstructing channel (i), not the reverse. This is not a causal model, but it is also not simply a symmetric connectivity graph. It is a reconstruction operator: a map from the rest of the array to a target channel.</p>
+
+<hr />
+
+<h2 id="two-spatial-regimes-scalp-eeg-and-intracranial-eeg">Two spatial regimes: scalp EEG and intracranial EEG</h2>
+
+<p>We applied SMR to two electrophysiological regimes.</p>
+
+<p>The first was scalp EEG recorded during upper-limb movements and motor imagery. EEG has a standardized sensor layout and substantial spatial mixing because signals must pass through brain tissue, cerebrospinal fluid, skull, and scalp before reaching the electrodes. This produces strong channel-to-channel redundancy, especially among nearby electrodes.</p>
+
+<p>The second was the AJILE12 intracranial EEG dataset. iEEG sits closer to the neural generators and therefore has greater spatial specificity. But it also comes with a different problem: electrode placement is clinically determined and varies strongly across subjects. Unlike scalp EEG, there is no common standardized sensor geometry across all individuals.</p>
+
+<p>These two modalities therefore provide a useful contrast. EEG should be more spatially mixed and more transferable across subjects. iEEG should be more focal, more subject-specific, and harder to transfer.</p>
+
+<p>This is what we found.</p>
+
+<p>In the intra-subject setting, where the model was trained and tested within the same individual, reconstruction was strong in both modalities, but substantially stronger in EEG. Mean distance correlation was approximately
+$
+\mathrm{DistCorr}<em>{\mathrm{EEG}} = 0.908 \pm 0.028,
+$
+, whereas for iEEG it was
+$
+\mathrm{DistCorr}</em>{\mathrm{iEEG}} = 0.553 \pm 0.068.
+$</p>
+
+<p>This difference is not surprising. Scalp EEG is spatially smoother and more redundant. Multiple electrodes often contain overlapping mixtures of related neural sources. iEEG, by contrast, preserves a more focal and individualized spatial structure.</p>
+
+<p>The cross-subject analysis sharpened this contrast. For EEG, a learned inter-electrode relationship matrix transferred well across subjects, reaching an average distance correlation of
+$
+\mathrm{DistCorr}<em>{\mathrm{EEG, cross}} = 0.783 \pm 0.093.
+$
+For iEEG, even after correlation-based electrode mapping, cross-subject transfer was much weaker:
+$
+\mathrm{DistCorr}</em>{\mathrm{iEEG, cross}} = 0.389 \pm 0.064.
+$</p>
+
+<p>This result captures a basic difference between the modalities. EEG lives in a relatively standardized, spatially mixed measurement space. iEEG samples the cortex more directly, but the sampling geometry is idiosyncratic. The same anatomical or functional system may be sampled differently across patients, and this makes learned inter-electrode structure much less portable.</p>
+
+<p>#&gt;[INSERT FIGURE 2 OR 3 HERE: Subject-wise intra-subject and cross-subject reconstruction performance, together with representative original versus reconstructed traces.]</p>
+
+<p>This distinction matters for how we interpret generalization. Strong EEG transfer does not necessarily mean that the underlying neural generators are identical across subjects. It may partly reflect the fact that the measurement process itself imposes a shared spatial smoothing structure. Conversely, weak iEEG transfer does not mean that there is no common neural organization. It may reflect the difficulty of aligning sparse, heterogeneous, clinically placed electrodes across individuals.</p>
+
+<hr />
+
+<h2 id="local-masking-turning-neighborhood-structure-into-a-probe">Local masking: turning neighborhood structure into a probe</h2>
+
+<p>The core analysis of the paper is the masking experiment.</p>
+
+<p>For each target electrode, we progressively excluded increasing fractions of its local neighborhood. We tested mask intensities of
+$
+0\%,\ 25\%,\ 50\%,\ 75\%,\ 100\%.
+$</p>
+
+<p>At (0\%), no local electrodes were excluded. At (100\%), the full predefined local neighborhood was removed. For EEG, neighborhoods were defined using the standardized 10–10/10–5 montage structure. For iEEG, neighborhoods were defined anatomically using AAL-based regional proximity.</p>
+
+<p>The result was clear: reconstruction performance decreased as more local information was masked.</p>
+
+<p>This confirms that nearby electrodes carry the densest predictive information. That is expected from the biophysics of field potentials. Neural fields are spatially smooth at many scales, and tissue properties impose distance- and frequency-dependent filtering. Local redundancy is not an artifact in the trivial sense; it is part of the physical structure of the measurement.</p>
+
+<p>But the important result is what remained after local masking.</p>
+
+<p>Even under strict local exclusion, reconstruction performance stayed above zero. The target signal was degraded but not erased. This means that the signal at an electrode is not fully determined by its immediate neighborhood. Some predictive structure remains distributed across more distant electrodes.</p>
+
+<p>This is the key conceptual point:</p>
+
+<p><strong>SMR does not show that field potentials are global rather than local. It shows that they are mixed objects: locally concentrated, but distributed in their predictive embedding.</strong></p>
+
+<p>#&gt;[INSERT FIGURE 4 HERE: Distance correlation as a function of mask intensity for iEEG and EEG. Show the monotonic degradation with increasing local masking, while emphasizing residual predictability at full masking.]</p>
+
+<p>This result argues against two oversimplified views.</p>
+
+<p>The first is the purely local view: each electrode is mainly a readout of the tissue immediately underneath it. If that were true, strict local masking should destroy reconstructability almost completely.</p>
+
+<p>The second is the purely global view: each electrode is just one redundant projection of a broadly distributed field. If that were true, local masking would have relatively little effect.</p>
+
+<p>The data support neither extreme. Local electrodes matter strongly, but distant electrodes still carry information. The signal is neither purely local nor purely global. It is locally anchored and globally embedded.</p>
+
+<hr />
+
+<h2 id="local-only-non-local-only-and-all-electrode-reconstruction">Local-only, non-local-only, and all-electrode reconstruction</h2>
+
+<p>To separate these contributions further, we compared three input configurations.</p>
+
+<ol>
+  <li><strong>Local-only:</strong> use only spatially adjacent or anatomically local electrodes.</li>
+  <li><strong>Non-local-only:</strong> exclude local neighbors and use distant electrodes.</li>
+  <li><strong>All electrodes:</strong> use both local and non-local inputs.</li>
+</ol>
+
+<p>The local-only model consistently outperformed the non-local-only model. This confirms that the immediate neighborhood contains the most concentrated and coherent predictive information.</p>
+
+<p>However, the best performance came from the all-electrode condition.</p>
+
+<p>That result is important. It means that distant electrodes are not merely weak substitutes for local electrodes. They add complementary information when combined with local predictors. Local electrodes provide the strongest core reconstruction, but non-local electrodes contribute additional structure that local electrodes alone cannot fully capture.</p>
+
+<p>This gives a more precise interpretation of distributed predictability. The point is not that distant sensors are better than local sensors. They are not. The point is that distant sensors contain information that is not completely redundant with the local neighborhood.</p>
+
+<p>#&gt;[INSERT FIGURE 5 HERE: Comparison of local-only, non-local-only, and all-electrode reconstruction performance.]</p>
+
+<p>This has practical implications for sensor selection and montage design. If the goal is reconstruction or decoding, dense local coverage may provide the largest immediate gain. But eliminating broader spatial coverage can remove distributed information that improves performance. A good recording array should not be thought of only as a dense local sampler or only as a broad global sampler. It should balance both.</p>
+
+<hr />
+
+<h2 id="why-distance-correlation">Why distance correlation?</h2>
+
+<p>We evaluated reconstruction quality using distance correlation, rather than ordinary Pearson correlation alone.</p>
+
+<p>Distance correlation measures statistical dependence between two signals using pairwise distance matrices. For original signal (u) and reconstructed signal (v), one first computes pairwise distances,</p>
+
+\[a_{mn}=|u_m-u_n|,
+\qquad
+b_{mn}=|v_m-v_n|,\]
+
+<p>then double-centers these distance matrices and computes a normalized distance covariance.</p>
+
+<p>The resulting value is zero when the variables are statistically independent and increases as dependence becomes stronger.</p>
+
+<p>This was useful here because we wanted a scalar reconstruction score that could capture more than linear correspondence. The model itself is linear, but the relationship between original and reconstructed signals may still contain nonlinear dependence structure. Distance correlation provides a more general measure of reconstruction fidelity while remaining interpretable across subjects, modalities, and masking conditions.</p>
+
+<hr />
+
+<h2 id="lagged-predictors-little-gain-beyond-instantaneous-structure">Lagged predictors: little gain beyond instantaneous structure</h2>
+
+<p>We also tested a lagged variant of SMR. Instead of reconstructing (x_i(t)) only from other channels at the same time point, the lagged model used predictors at short temporal offsets:</p>
+
+\[\hat{x}^{(s)}_i(t)
+=
+\sum_{\tau \in \mathcal{T}}
+\sum_{j=1}^{N_s}
+\left(1-K^{(s)}_{ij}\right)
+w^{(s)}_{ij}[\tau]
+x^{(s)}_j(t-\tau).\]
+
+<p>The tested lags were chosen to cover time scales relevant to motor-related beta and gamma activity, including delays up to 60 ms.</p>
+
+<p>The effect was minimal. In EEG, intra-subject performance changed from approximately
+$
+0.908 \pm 0.028
+$
+to
+$
+0.910 \pm 0.027.
+$
+In iEEG, it changed from
+$
+0.553 \pm 0.068
+$
+to
+$
+0.554 \pm 0.067.
+$</p>
+
+<p>Thus, within the tested lag range, most of the recoverable structure was already captured by the instantaneous model.</p>
+
+<p>This should not be interpreted to mean that delayed interactions are physiologically unimportant. Rather, it suggests that for this reconstruction objective, and for these motor-related data, adding short lags did not substantially improve overall signal recoverability. The dominant structure available to the model was already present in the instantaneous spatial covariance pattern.</p>
+
+<p>The lagged formulation remains useful as an extension, especially for datasets where propagation, delayed coordination, or directional temporal dependencies are central. But in this study, it did not alter the main conclusion.</p>
+
+<hr />
+
+<h2 id="surrogate-controls-reconstruction-is-not-just-marginal-statistics">Surrogate controls: reconstruction is not just marginal statistics</h2>
+
+<p>Any reconstruction result in neural time series must face a basic objection: perhaps the model is not using meaningful spatiotemporal structure at all. Perhaps it is exploiting static amplitude distributions, power spectra, autocorrelation, or other low-order properties.</p>
+
+<p>To test this, we used three surrogate controls.</p>
+
+<h3 id="phase-shuffled-surrogates">Phase-shuffled surrogates</h3>
+
+<p>Phase shuffling preserves the amplitude spectrum of each signal but disrupts phase structure. This keeps the power spectrum largely intact while destroying fine-grained temporal organization.</p>
+
+<h3 id="iaaft-surrogates">IAAFT surrogates</h3>
+
+<p>IAAFT surrogates preserve both the amplitude distribution and approximately preserve the power spectrum. They are a stronger control because they retain more low-order structure while disrupting nonlinear temporal dependencies and phase organization.</p>
+
+<h3 id="block-shuffled-surrogates">Block-shuffled surrogates</h3>
+
+<p>Block shuffling preserves short local temporal segments but disrupts their long-range ordering. This tests whether reconstruction depends on the temporal arrangement of those segments, rather than only on local within-block structure.</p>
+
+<p>Across all surrogate conditions, reconstruction performance dropped substantially.</p>
+
+<p>For iEEG, mean distance correlation fell from
+$
+0.553 \pm 0.068
+$
+ in the original data to
+$
+0.181 \pm 0.029
+$
+ under phase shuffling,
+$
+0.232 \pm 0.060
+$
+ under IAAFT, and
+$
+0.201 \pm 0.168
+$
+ under block shuffling.</p>
+
+<p>For EEG, performance fell from
+$
+0.908 \pm 0.028
+$
+to
+$
+0.124 \pm 0.049,
+$
+$
+0.184 \pm 0.073,
+$
+and
+$
+0.160 \pm 0.078
+$
+for phase-shuffled, IAAFT, and block-shuffled surrogates, respectively.</p>
+
+<p>This result constrains the interpretation of SMR. The model is not simply exploiting amplitude distributions or static spectral profiles. Preserving those properties is not enough. Reconstruction depends on structured temporal and cross-channel organization present in the original recordings.</p>
+
+<p>The phase-shuffling result is especially informative. Destroying phase organization while preserving spectral magnitude caused a large performance collapse. This suggests that the predictive structure used by SMR depends strongly on the temporal organization of the signals, not merely on their power spectra.</p>
+
+<p>At the same time, we should avoid overclaiming. These surrogate analyses do not prove a specific mechanism, nor do they establish causality. They show that the reconstruction depends on structured spatiotemporal organization that is disrupted by phase randomization, amplitude-adjusted spectral surrogates, and temporal reordering.</p>
+
+<hr />
+
+<h2 id="what-smr-adds-to-functional-connectivity">What SMR adds to functional connectivity</h2>
+
+<p>SMR is not intended to replace functional connectivity. It asks a different question.</p>
+
+<p>Functional connectivity typically begins with pairwise dependence:</p>
+
+\[x_i(t) \leftrightarrow x_j(t).\]
+
+<p>SMR begins with reconstruction:</p>
+
+\[\{x_j(t)\}_{j\neq i} \rightarrow x_i(t).\]
+
+<p>This makes the object of analysis different. The learned matrix is not simply a graph of pairwise associations. It is an asymmetric reconstruction matrix describing how the rest of the array contributes to each target channel.</p>
+
+<p>This shift has several advantages.</p>
+
+<p>First, SMR naturally separates redundant and complementary information. If a target can be reconstructed well even after local masking, then some information about that target is distributed beyond its immediate neighborhood.</p>
+
+<p>Second, SMR provides a controlled way to test locality. Instead of trying to correct for local field spread after the fact, the method explicitly removes local predictors and measures what remains.</p>
+
+<p>Third, SMR is interpretable. It is linear, spatially constrained, and directly tied to reconstruction performance. More complex nonlinear models could certainly be developed, but the simplicity of SMR is useful because the effect of masking is transparent.</p>
+
+<p>In this sense, SMR sits between biophysics, signal reconstruction, and network neuroscience. It does not infer hidden sources directly. It does not claim causal directionality. It does not reduce the system to a symmetric connectivity graph. Instead, it asks how each measured channel is embedded in the rest of the measured array.</p>
+
+<hr />
+
+<h2 id="the-biophysical-interpretation">The biophysical interpretation</h2>
+
+<p>The results are consistent with a physically grounded view of electrophysiological recordings.</p>
+
+<p>Field potentials are shaped by the geometry of current sources, the conductivity and permittivity of tissue, the distance between sources and sensors, and the spatial arrangement of electrodes. These factors impose spatial smoothing, frequency-dependent attenuation, and shared variance across channels.</p>
+
+<p>EEG and iEEG differ because they sample different points along this measurement chain.</p>
+
+<p>Scalp EEG is farther from the generators and filtered through multiple tissue compartments. It is therefore more spatially mixed and more redundant across electrodes. This helps explain the higher intra-subject reconstruction performance and the stronger cross-subject transfer.</p>
+
+<p>iEEG is closer to the generators. It has higher spatial specificity and less standardized coverage. This reduces redundancy and makes inter-subject transfer more difficult.</p>
+
+<p>The masking result adds another layer to this interpretation. Local redundancy is strong, as expected from field biophysics. But residual predictability under strict local masking indicates that field recordings also carry distributed network structure. The signal at one electrode is not only a local field in the narrow spatial sense. It is a projection of a larger dynamical system into a particular measurement geometry.</p>
+
+<hr />
+
+<h2 id="practical-implications">Practical implications</h2>
+
+<p>The immediate application of SMR is diagnostic. It gives us a way to quantify the balance between local redundancy and distributed predictability in a recording array.</p>
+
+<p>This can be useful in several contexts.</p>
+
+<h3 id="sensor-selection">Sensor selection</h3>
+
+<p>Channels that are highly reconstructable from the rest of the array may be relatively redundant. Channels that are poorly reconstructable may carry more unique information. This distinction could help guide electrode selection in BCI, EEG montage design, or dimensionality reduction.</p>
+
+<h3 id="comparing-modalities">Comparing modalities</h3>
+
+<p>SMR provides a common framework for comparing EEG, ECoG, iEEG, MEG, or other multichannel recordings. The same masking logic can be used to ask how local or distributed each modality is in practice.</p>
+
+<h3 id="brain-state-analysis">Brain-state analysis</h3>
+
+<p>The local-global balance is unlikely to be fixed. It may change across sleep, wakefulness, anesthesia, seizure states, movement, cognition, or pathology. SMR could be applied dynamically to track how distributed dependencies reorganize across brain states.</p>
+
+<h3 id="model-evaluation">Model evaluation</h3>
+
+<p>For computational neuroscience and neuroengineering, SMR can serve as a benchmark for how much structure a model captures. A generative or dynamical model of electrophysiology should not only reproduce spectra or pairwise correlations; it should reproduce the observed pattern of local and non-local reconstructability.</p>
+
+<hr />
+
+<h2 id="limitations-and-extensions">Limitations and extensions</h2>
+
+<p>The present version of SMR is intentionally simple. It uses linear regression with spatial masking. This makes the method interpretable, but it also limits the class of dependencies it can capture.</p>
+
+<p>Several extensions are natural.</p>
+
+<p>A nonlinear version could use kernel regression, Gaussian processes, neural networks, or state-space models while preserving the same masking protocol. The key idea is not the linear model itself, but the experimental logic of withholding local predictors and measuring residual reconstructability.</p>
+
+<p>A temporal version could incorporate richer autoregressive structure or latent dynamics, allowing SMR to probe not only instantaneous predictability but also delayed and state-dependent dependencies.</p>
+
+<p>A source-space version could apply the same masking logic after source reconstruction, asking whether cortical regions are locally or distributedly predictable in a source-estimated representation.</p>
+
+<p>A state-aware version could estimate SMR matrices separately across behavioral or physiological states, allowing the local-global structure of the array to become a dynamical variable in its own right.</p>
+
+<hr />
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>The main result of this paper is not that electrophysiological signals are local, nor that they are global. It is that they are both.</p>
+
+<p>Nearby electrodes carry the strongest predictive information, and removing them systematically degrades reconstruction. But even after local neighborhoods are masked, substantial predictive structure remains. Local information is therefore dominant but not exhaustive.</p>
+
+<p>EEG and iEEG express this balance differently. EEG is more spatially mixed, more redundant, and more transferable across subjects. iEEG is more focal, more individualized, and more sensitive to subject-specific electrode geometry. These differences are not nuisances; they are part of the physical and anatomical structure of the measurement.</p>
+
+<p>SMR provides a way to make this structure measurable. By turning locality into an experimental knob, it separates local redundancy from distributed predictability and gives us a direct operational handle on how each electrode is embedded in the broader recording array.</p>
+
+<p>For electrophysiology, this is a useful shift in perspective. A channel is not merely a point measurement. It is a local observation of a distributed dynamical system, filtered through tissue, sensor geometry, and network organization.</p>
+
+<p>Spatially Masked Regression gives us a way to quantify that statement.</p>]]></content><author><name>Nima Dehghani</name></author><category term="Neural signal reconstruction; predictive embedding; functional connectivity; local redundancy; distributed predictability; spatial masking; volume conduction; sensor geometry; distance correlation; cross-subject transfer; surrogate data; phase shuffling; IAAFT; block shuffling; sensor selection; brain-computer interfaces; multichannel neural recordings; Spatially Masked Regression; SMR; local field potentials; electrophysiology; EEG; intracranial EEG; iEEG." /><summary type="html"><![CDATA[Companion post to: Spatially Masked Regression Reveals Local and Distributed Predictability in Electrophysiological Recording Maryam Ostadsharif Memar, Nima Dehghani arXiv 2026. DOI: https://doi.org/10.48550/arXiv.2606.11415]]></summary></entry><entry><title type="html">Interneuron Diversity Is Not Only a Taxonomy Problem: Cortical Depth as a Continuous Axis of Morphoelectric Organization</title><link href="https://neurovium.github.io/posts/pblog-Inhibitory-cortical-depth/" rel="alternate" type="text/html" title="Interneuron Diversity Is Not Only a Taxonomy Problem: Cortical Depth as a Continuous Axis of Morphoelectric Organization" /><published>2026-03-06T00:00:00+00:00</published><updated>2026-03-06T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-Inhibitory-cortical-depth</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-Inhibitory-cortical-depth/"><![CDATA[<p><em>Companion post to:</em><br />
 <strong>Morphoelectric properties of inhibitory neurons shift gradually and regardless of cell type along the depth of the cerebral cortex</strong>
 Yanez, Felipe and Messore, Fernando and Qi, Guanxiao and Dehghani, Nima and Meyer, Hanno S. and Feldmeyer, Dirk and Sakmann, Bert and Oberlaender, Marcel 
 <em>biorxiv</em> 7, 40211 (2026).
@@ -2426,563 +2816,4 @@ DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.1103/
   <li>The results have implications for statistical physics, systems neuroscience, and biologically inspired AI, especially for energy-based models, recurrent dynamics, and E/I-balanced architectures.</li>
 </ul>
 
-<p>The broader message is that cortical activity can be studied as a many-body system, but doing so responsibly requires both physical modeling and statistical humility. The Ising model is not the cortex. But when fit carefully, with uncertainty estimates and biological constraints, it becomes a useful lens for seeing how excitation, inhibition, and collective structure shape the neural state space.</p>]]></content><author><name>Nima Dehghani</name></author><category term="statistical physics" /><category term="maximum entropy" /><category term="Ising model" /><category term="cortical dynamics" /><category term="excitation-inhibition balance" /><category term="sleep" /><category term="criticality" /><category term="computational neuroscience" /><category term="complex systems" /><category term="AI" /><summary type="html"><![CDATA[Companion post to: Ensemble Inhibition and Excitation in the Human Cortex: An Ising-Model Analysis with Uncertainties Cristian Zanoci, Nima Dehghani, and Max Tegmark Physical Review E . Phys. Rev. E 99, 032408 DOI: https://doi.org/10.1103/PhysRevE.99.032408]]></summary></entry><entry><title type="html">Causal Scale of Rotors in a Cardiac System</title><link href="https://neurovium.github.io/posts/pblog-Causal-roto-cardiac/" rel="alternate" type="text/html" title="Causal Scale of Rotors in a Cardiac System" /><published>2018-09-04T00:00:00+00:00</published><updated>2018-09-04T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-Causal-roto-cardiac</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-Causal-roto-cardiac/"><![CDATA[<p><em>Companion post to:</em><br />
-<strong>Causal Scale of Rotors in a Cardiac System</strong><br />
-Hiroshi Ashikaga, Francisco Prieto-Castrillo, Mari Kawakatsu, Nima Dehghani  <br />
-<em>Frontiers in Computational Physics</em> Volume 6 - 2018 
-DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.3389/fphy.2018.00030</code></p>
-
-<hr />
-
-<h1 id="the-causal-scale-of-rotors-in-cardiac-excitable-media">The Causal Scale of Rotors in Cardiac Excitable Media</h1>
-
-<p>Atrial fibrillation is often described through the language of mechanisms.<br />
-Some patterns trigger it, some sustain it, and some are thought to organize the
-otherwise irregular electrical activity of the atria. Among the most important
-of these proposed organizing structures are <strong>rotors</strong>: the rotating cores of
-spiral waves in cardiac tissue.</p>
-
-<p>Rotors are attractive objects for both physiology and physics. They are
-macroscopic structures, yet they arise from the local interaction of many
-excitable elements. They have topology, because their centers can be described
-as phase singularities. They have dynamics, because they drift, interact,
-appear, disappear, and sometimes fragment. And they have clinical relevance,
-because if rotors maintain atrial fibrillation, then finding and ablating them
-should, in principle, eliminate the arrhythmia.</p>
-
-<p>But this mechanistic picture has never been entirely straightforward. Early
-clinical attempts to map and ablate rotors in atrial fibrillation produced
-promising results, but subsequent outcomes were mixed. Part of the difficulty
-is technical: clinical mapping systems have finite spatial resolution, finite
-temporal resolution, and incomplete access to the atrial surface. But there is
-also a deeper conceptual problem. When we say that a rotor is a mechanism, at
-what scale is that statement supposed to be true?</p>
-
-<p>This paper was written around that question.</p>
-
-<p>The central argument is not that rotors are irrelevant. Nor is it that the
-microscopic behavior of cardiomyocytes alone is the only legitimate causal
-level. Instead, the paper asks whether the causal status of a rotor is
-<strong>scale-dependent</strong>. In other words: a rotor may be a causal mechanism at one
-spatiotemporal scale, but not at another.</p>
-
-<p>That is a different way of thinking about mechanism in excitable media. It
-moves the question from:</p>
-
-<blockquote>
-  <p>Are rotors causal mechanisms?</p>
-</blockquote>
-
-<p>to:</p>
-
-<blockquote>
-  <p>At what spatiotemporal scale do rotors have causal power?</p>
-</blockquote>
-
-<p>This distinction matters not only for cardiac electrophysiology, but also for
-broader problems in complex systems, neurophysiology, and biological
-computation, where macroscopic patterns are routinely invoked as mechanisms
-for microscopic dynamics.</p>
-
-<hr />
-
-<h2 id="rotors-as-emergent-objects-in-an-excitable-medium">Rotors as emergent objects in an excitable medium</h2>
-
-<p>Cardiac tissue is an excitable medium. Each local element can be activated,
-recover, and then become excitable again. When these local elements are coupled
-spatially, they support propagating waves. Under appropriate conditions, those
-waves can curl into spiral waves. The center of rotation is a rotor, or more
-precisely, a phase singularity: a point around which the phase winds but at
-which the phase itself is undefined.</p>
-
-<p>In a continuous excitable medium, a rotor is not simply an object placed on top
-of the tissue. It is a collective dynamical structure. It exists because of the
-local rules of excitation, recovery, conduction, refractoriness, curvature, and
-coupling. At the same time, once it exists, it appears to organize the activity
-around it. This is the classical tension of emergence: the macrostructure is
-generated by the microdynamics, but it may also constrain the future evolution
-of those microdynamics.</p>
-
-<p>This kind of macro–micro relationship appears throughout physiology and
-neuroscience. Cortical traveling waves, seizure propagation, sleep oscillations,
-population bursts, and spiral waves in neural tissue all raise similar
-questions. We observe a mesoscopic or macroscopic pattern and ask whether it is
-merely a description of many local events, or whether it has causal force as an
-organized dynamical entity.</p>
-
-<p>The answer cannot be obtained simply by naming the pattern. A spiral wave is
-not automatically a causal mechanism just because we can see it. A rotor is not
-automatically the cause of fibrillation simply because it is correlated with
-fibrillatory activity. The causal question requires a scale-sensitive
-description of the system.</p>
-
-<hr />
-
-<h2 id="why-scale-matters-for-causation">Why scale matters for causation</h2>
-
-<p>In many biological systems, the choice of scale changes the apparent
-mechanism. At the microscopic scale, one sees individual components and local
-interactions. At a more macroscopic scale, one sees collective modes,
-oscillations, waves, attractors, motifs, and spatial patterns. Both
-descriptions can be valid, but they do not necessarily carry the same causal
-information.</p>
-
-<p>A fully microscopic description is not always the most causally informative
-description. This is one of the important ideas behind <strong>causal emergence</strong>.
-A macroscopic description can sometimes have more effective causal power than
-the underlying microscopic description, because the macroscopic scale can
-suppress irrelevant degrees of freedom, reduce noise, and expose the
-state-transitions that matter for the system’s future behavior.</p>
-
-<p>This idea is especially natural from the perspective of statistical physics.
-Renormalization is not merely a tool for throwing away detail. It is a way of
-asking which degrees of freedom remain relevant under changes of scale. In a
-complex dynamical system, coarse-graining can reveal a level of description at
-which the system’s organization becomes more interpretable and, in some cases,
-more causally informative.</p>
-
-<p>For an excitable medium such as cardiac tissue, this is a concrete question.
-If we progressively coarse-grain the system in space and time, does the rotor
-remain a causal organizing structure? Or does its apparent causal role vanish
-when the description becomes too coarse?</p>
-
-<p>The paper addresses this by combining three ideas:</p>
-
-<ol>
-  <li>a numerical model of cardiac excitation,</li>
-  <li>a renormalization-like construction of spatiotemporal scales,</li>
-  <li>an information-theoretic measure of causal emergence.</li>
-</ol>
-
-<hr />
-
-<h2 id="modeling-spiral-waves-in-cardiac-tissue">Modeling spiral waves in cardiac tissue</h2>
-
-<p>The simulations used a modified FitzHugh–Nagumo model, a simplified but
-useful model of excitable dynamics. The model represents the local cardiac
-action potential through a fast excitation variable and a slower recovery
-variable:</p>
-
-\[\frac{\partial v}{\partial t}
-=
-0.26v(v-0.13)(1-v) - 0.1vr + I_{\mathrm{ex}} + \nabla \cdot (D\nabla v),\]
-
-\[\frac{\partial r}{\partial t}
-=
-0.013(v-r).\]
-
-<p>Here, $v$ is the transmembrane potential, $r$ is the recovery variable,
-$I_{\mathrm{ex}}$ is an external current, and $D$ is the diffusion tensor. In
-this study, the tissue was modeled as a two-dimensional isotropic homogeneous
-medium. This was an intentional simplification. The goal was not to reproduce
-every anatomical detail of atrial tissue, but to isolate the causal relationship
-between rotors and spiral waves without adding confounds from anisotropy,
-fibrosis, or tissue heterogeneity.</p>
-
-<p>Spiral waves were induced by random sequential point stimulations. Once the
-spiral waves were generated, the local phase of the signal was estimated using
-the analytic signal:</p>
-
-\[\xi(t) = v(t) + i v_H(t) = A(t)e^{i\phi(t)},\]
-
-<p>where $v_H(t)$ is the Hilbert transform of $v(t)$, $A(t)$ is the instantaneous
-amplitude, and $\phi(t)$ is the instantaneous phase.</p>
-
-<p>The rotor was then identified as a phase singularity. Around such a point, the
-phase winds by an integer multiple of $2\pi$. The topological charge was
-computed as</p>
-
-\[n_t =
-\frac{1}{2\pi}
-\oint_c \nabla \phi \cdot d\mathbf{l}.\]
-
-<p>A value of $n_t = +1$ corresponds to a counterclockwise rotor, $n_t = -1$ to a
-clockwise rotor, and $n_t = 0$ to the absence of a rotor. The magnitude
-$|n_t|$ was used to quantify the average number of rotors over the time series.</p>
-
-<p>This gives a concrete bridge between excitable-medium physiology and
-topological characterization. The rotor is not defined visually or
-heuristically; it is localized through phase structure.</p>
-
-<hr />
-
-<h2 id="constructing-a-spatiotemporal-renormalization-group">Constructing a spatiotemporal renormalization group</h2>
-
-<p>The next step was to describe the same cardiac system at multiple
-spatiotemporal scales.</p>
-
-<p>Each component of the lattice was first binarized: it was assigned a value of
-1 when excited and 0 when resting. This binary representation made it possible
-to define the system state at each time point as a high-dimensional binary
-configuration.</p>
-
-<p>Then the system was coarse-grained in space and time.</p>
-
-<p>Spatially, the lattice was decimated by a factor of 2. A block of neighboring
-sites was reduced to a representative site at the next scale. Temporally, the
-binary time series was downsampled by a factor of 2. Repeating these operations
-generated a family of system descriptions, ranging from relatively microscopic
-to highly macroscopic.</p>
-
-<p>The spatial scales were:</p>
-
-\[30 \times 30,\quad
-15 \times 15,\quad
-8 \times 8,\quad
-4 \times 4,\quad
-2 \times 2,\quad
-1 \times 1.\]
-
-<p>The temporal scales were:</p>
-
-\[400 \ \mathrm{Hz},\quad
-200 \ \mathrm{Hz},\quad
-100 \ \mathrm{Hz},\quad
-50 \ \mathrm{Hz},\quad
-25 \ \mathrm{Hz},\quad
-12 \ \mathrm{Hz}.\]
-
-<p>Together, these produced 36 spatiotemporal descriptions of the same underlying
-class of rotor dynamics.</p>
-
-<p>This construction is important because it treats scale as an explicit
-variable. The rotor is not assumed to be causal at all resolutions. Instead,
-the analysis asks how causal structure changes as the system is progressively
-coarse-grained.</p>
-
-<hr />
-
-<h2 id="effective-information-and-causal-emergence">Effective information and causal emergence</h2>
-
-<p>To quantify causal structure, the study used <strong>effective information</strong>.</p>
-
-<p>At each scale, the system can be treated as a process with possible causes
-$X$ and possible effects $Y$. Effective information measures how much
-information is generated when a system, starting from an unconstrained
-repertoire of possible causes, enters a specific state of possible effects.</p>
-
-<p>Formally, effective information is written as</p>
-
-\[EI(X \to Y) = I(X;Y),\]
-
-<p>where</p>
-
-\[I(X;Y)
-=
-H(X) + H(Y) - H(X,Y),\]
-
-<p>or equivalently,</p>
-
-\[I(X;Y)
-=
-\sum_{x,y} p(x,y)
-\log_2
-\frac{p(x,y)}{p(x)p(y)}.\]
-
-<p>On its own, mutual information is not a causal measure. It is a measure of
-statistical dependence. The causal interpretation comes from the construction
-of $X$: the possible causes are treated as an unconstrained repertoire, with a
-uniform probability distribution. This corresponds to perturbing the system
-into all possible states with equal probability and then evaluating how much
-information is generated by the transition to the observed effect state.</p>
-
-<p>Causal emergence is then defined as the difference in effective information
-between two scales:</p>
-
-\[CE =
-EI(X_m \to Y_m) - EI(X_n \to Y_n),\]
-
-<p>where $m$ and $n$ refer to different spatiotemporal scales.</p>
-
-<p>In this paper, causal emergence was evaluated relative to the most microscopic
-description. A positive value of $CE$ means that the more macroscopic
-description has greater effective information than the microscopic one. In
-that case, the macro-description is not merely a compressed summary; it has
-greater causal informativeness. A negative value means that the macro-scale
-description has lost causal information relative to the microscopic scale.</p>
-
-<p>This is the key conceptual move of the paper. Instead of asking whether the
-rotor is a cause in an absolute sense, the paper asks whether the scale at
-which the rotor is described has greater or lesser causal information than the
-microscopic description.</p>
-
-<hr />
-
-<h2 id="the-main-result-causation-peaks-at-an-intermediate-scale">The main result: causation peaks at an intermediate scale</h2>
-
-<p>The first major result is that effective information does not simply increase
-as the description becomes more microscopic, nor does it monotonically increase
-as the description becomes more macroscopic.</p>
-
-<p>Instead, effective information peaks at an intermediate spatiotemporal scale.</p>
-
-<p>This is the central finding. The most causally informative description of the
-rotor-bearing cardiac system was neither the most microscopic lattice nor the
-most extreme coarse-grained description. It was an intermediate scale, where
-the system retained enough spatial and temporal structure to capture rotor
-organization, while removing some of the microscopic degrees of freedom that
-do not contribute strongly to the causal architecture.</p>
-
-<p>In the aggregate simulations, effective information reached a global maximum
-around spatial scale 4 and temporal scale 4. Beyond that scale, further
-coarse-graining reduced effective information. This means that the system has
-a <strong>scale of peak causation</strong>.</p>
-
-<p>This has an important interpretation. At scales below the peak, the
-intermediate macro-description can exert downward causal organization relative
-to the microscopic description. But at scales above the peak, the system has
-been coarse-grained too aggressively. The macroscopic description no longer
-preserves the causal structure needed to describe rotor-mediated dynamics.</p>
-
-<p>Thus, causal power is not located at “the micro” or “the macro” in a simple
-way. It is distributed across scale, and in this system it is maximized at an
-intermediate level.</p>
-
-<p>This result is consistent with a broader intuition from complex systems:
-biological function often does not live at the finest possible resolution.
-Too much microscopic detail can obscure the collective variables that matter.
-But too much coarse-graining can erase the very organization one hoped to
-understand.</p>
-
-<hr />
-
-<h2 id="rotors-are-causal-but-not-universally-causal">Rotors are causal, but not universally causal</h2>
-
-<p>The second major result concerns the relationship between the number of rotors
-and causal emergence.</p>
-
-<p>Across 1,000 simulated datasets, the number of rotors ranged from 0 to 7. The
-study then asked whether systems with more rotors showed greater causal
-emergence at each spatiotemporal scale.</p>
-
-<p>At scales up to the scale of peak causation, the relationship was positive:
-more rotors were associated with greater causal emergence. In this regime,
-rotor dynamics behaved as an emergent causal organization of the system.</p>
-
-<p>But this relationship did not hold at all scales.</p>
-
-<p>At sufficiently coarse spatial scales, causal emergence became negative, and
-the correlation between rotor number and causal emergence reversed. In other
-words, when the system was described too macroscopically, increasing the number
-of rotors no longer corresponded to stronger emergent causal organization.
-Instead, rotor dynamics became reducible to the underlying microscopic
-description.</p>
-
-<p>This is the most important conceptual conclusion of the paper:</p>
-
-<p><strong>Rotors can be causal mechanisms for maintaining spiral waves, but they are
-not universal causal mechanisms across all spatiotemporal scales.</strong></p>
-
-<p>This statement avoids two overly simple interpretations.</p>
-
-<p>The first simplistic interpretation would be:</p>
-
-<blockquote>
-  <p>Rotors are the mechanism of atrial fibrillation.</p>
-</blockquote>
-
-<p>The second would be:</p>
-
-<blockquote>
-  <p>Rotors are not real mechanisms, because rotor ablation has produced mixed
-clinical outcomes.</p>
-</blockquote>
-
-<p>The scale-dependent view is more precise. Rotors may have causal power at
-some scales, but not at others. Therefore, the success or failure of a rotor
-based intervention may depend not only on whether a rotor exists, but also on
-whether the mapping, interpretation, and intervention operate at the scale at
-which that rotor has causal relevance.</p>
-
-<hr />
-
-<h2 id="why-spatial-coarse-graining-mattered-more-than-temporal-coarse-graining">Why spatial coarse-graining mattered more than temporal coarse-graining</h2>
-
-<p>Another important result was that spatial coarse-graining had a stronger
-effect on effective information than temporal coarse-graining.</p>
-
-<p>This makes sense physiologically. Spiral waves and rotors are spatially
-organized phenomena. Their identity depends on the spatial arrangement of
-phase, wavefront curvature, and propagation around a singularity. If spatial
-coarse-graining becomes too severe, the phase singularity is no longer
-represented in a meaningful way. The rotor has been erased by the measurement
-scale.</p>
-
-<p>Temporal coarse-graining also matters, because rotor dynamics unfold over
-time, and insufficient sampling can distort phase and propagation. But in this
-model, the loss of spatial structure was more damaging to the causal
-architecture than the loss of temporal resolution.</p>
-
-<p>For cardiac mapping, this distinction is important. A clinical mapping system
-does not merely observe the heart; it defines the effective scale at which the
-heart is represented. If the spatial resolution is too coarse, the mapping
-system may fail to capture the causal scale of the rotor even if a rotor-like
-dynamical structure exists in the tissue.</p>
-
-<p>The same point applies to neurophysiology. In cortical systems, waves,
-oscillations, avalanches, and phase singularities can look very different
-depending on whether they are measured by intracellular recordings, dense
-microelectrode arrays, ECoG, EEG, MEG, calcium imaging, or widefield optical
-signals. A collective pattern observed at one scale may not have the same
-causal interpretation at another.</p>
-
-<hr />
-
-<h2 id="mechanism-should-not-be-treated-as-scale-free">Mechanism should not be treated as scale-free</h2>
-
-<p>A major philosophical implication of the paper is that mechanism should not be
-treated as a binary, scale-free property.</p>
-
-<p>In many areas of physiology, we often ask whether a structure or process “is
-the mechanism” of a phenomenon. But this language hides the fact that
-mechanistic explanations are almost always tied to a level of description.</p>
-
-<p>A rotor is a mechanism only relative to a scale at which it can be represented
-and at which its presence changes the effective causal architecture of the
-system. Below that scale, it may dissolve into local excitation and recovery
-dynamics. Above that scale, it may disappear into a coarse global descriptor
-that no longer preserves its causal structure.</p>
-
-<p>This is not a weakness of the rotor concept. It is a more precise way of
-understanding it.</p>
-
-<p>In complex systems, the same physical process can appear as microscopic
-interaction, mesoscopic organization, or macroscopic order parameter depending
-on the observational scale. The causal role of that process is not guaranteed
-to be invariant under coarse-graining. A mechanism may be real, but only within
-a finite range of scales.</p>
-
-<p>This is also why information theory is useful here. It provides a way to ask
-whether a given scale of description carries causal information, rather than
-assuming that higher resolution is always better or that macroscopic patterns
-are automatically explanatory.</p>
-
-<hr />
-
-<h2 id="clinical-implications-rotor-ablation-and-the-missing-variable-of-scale">Clinical implications: rotor ablation and the missing variable of scale</h2>
-
-<p>The clinical motivation for this work comes from atrial fibrillation therapy.</p>
-
-<p>Successful arrhythmia treatment requires targeting the mechanism that
-maintains the arrhythmia, not merely the events that trigger it. Pulmonary vein
-isolation has been successful in many patients because pulmonary veins are
-important sources of triggers. But persistent atrial fibrillation often
-involves a more distributed substrate, and recurrence remains common.</p>
-
-<p>Rotor-guided ablation was motivated by the idea that localized sources or
-rotors maintain fibrillation. If those sources could be identified and
-eliminated, the arrhythmia might terminate. But clinical results have been
-inconsistent.</p>
-
-<p>The analysis in this paper suggests one possible reason: clinical mapping and
-ablation may not explicitly account for the causal scale of the mechanism. A
-rotor may be causally meaningful only at a particular spatiotemporal scale. If
-the mapping system observes at the wrong scale, the inferred rotor may be
-unstable, incomplete, or causally misleading. Conversely, if ablation changes
-the tissue at a scale that does not correspond to the rotor’s causal scale, the
-intervention may fail even if the rotor was correctly identified in a visual or
-geometric sense.</p>
-
-<p>This does not mean that rotor ablation is invalid. It means that the relevant
-endpoint may not simply be the visual elimination of rotor-like activity. A
-more principled endpoint might involve changes in the causal architecture of
-the tissue: whether the intervention reduces the effective information
-supporting fibrillatory dynamics, disrupts the scale at which pathological
-organization is maintained, or changes the communication topology of the
-excitable medium.</p>
-
-<p>This is especially relevant for ablation strategies that segment the atria
-through linear lesions, posterior wall isolation, or other substrate-modifying
-approaches. These interventions change the topology of electrical
-communication. In doing so, they likely alter the causal architecture of the
-atrium. The question is whether such changes move the system away from the
-scale regime that supports fibrillation.</p>
-
-<p>A future clinical version of this framework would not merely map activation.
-It would estimate patient-specific multiscale causal structure from
-multi-electrode recordings and ask how that structure changes during
-intervention.</p>
-
-<hr />
-
-<h2 id="relevance-beyond-the-heart-waves-oscillations-and-causal-scales-in-neural-systems">Relevance beyond the heart: waves, oscillations, and causal scales in neural systems</h2>
-
-<p>Although the paper is about cardiac rotors, the underlying question is much
-broader.</p>
-
-<p>Many neurophysiological phenomena have the same conceptual structure. They
-are emergent patterns in excitable or active media, and they are observed
-through measurements that impose a particular scale. Examples include cortical
-traveling waves, seizure waves, sleep slow oscillations, spindle propagation,
-phase-amplitude organization, and large-scale synchrony.</p>
-
-<p>In each case, one can ask:</p>
-
-<ul>
-  <li>Is the observed macroscopic pattern merely descriptive?</li>
-  <li>Does it constrain local activity?</li>
-  <li>At what scale does it have maximal causal information?</li>
-  <li>Does coarse-graining reveal the relevant collective variable, or erase it?</li>
-  <li>Is the measurement scale aligned with the causal scale of the phenomenon?</li>
-</ul>
-
-<p>For example, a cortical traveling wave observed in LFP or ECoG may organize
-local spiking activity, but that causal relationship may depend on spatial
-sampling, temporal bandwidth, laminar depth, and the scale of the neural
-population being analyzed. Similarly, seizure dynamics may involve spirals,
-sources, sinks, and traveling fronts whose causal relevance changes with
-measurement scale.</p>
-
-<p>The broader lesson is that physiological mechanisms should be studied as
-scale-dependent causal architectures, not merely as patterns detected in data.</p>
-
-<hr />
-
-<h2 id="what-this-paper-does-not-claim">What this paper does not claim</h2>
-
-<p>It is important to be precise about the limitations.</p>
-
-<p>The model used here is a simplified two-dimensional homogeneous and isotropic
-excitable medium. Real atrial tissue has anisotropy, fiber structure,
-heterogeneous conduction, fibrosis, curvature, wall thickness, variable
-refractoriness, and patient-specific anatomy. Those factors will almost
-certainly affect the causal architecture.</p>
-
-<p>The point of the model was not to reproduce all clinical details of atrial
-fibrillation. The point was to isolate a fundamental question: even in a clean
-excitable medium where rotors can be clearly defined, is the causal status of
-the rotor invariant across scale?</p>
-
-<p>The answer was no.</p>
-
-<p>That negative answer is valuable precisely because it appears in a simplified
-system. If scale-dependence is already present in an idealized model, it is
-unlikely to disappear in the more complex biological heart.</p>
-
-<hr />
-
-<h2 id="the-main-lesson">The main lesson</h2>
-
-<p>The paper argues for a scale-sensitive view of mechanism in excitable media.</p>
-
-<p>Rotors are not dismissed. They are not declared irrelevant. Instead, they are
-placed within a causal hierarchy. They are emergent structures whose causal
-power is maximal only over a finite range of spatiotemporal scales.</p>
-
-<p>This changes how one should think about both theory and intervention. The
-question is not whether the microscopic or macroscopic description is the
-“true” one. The question is which scale carries the most causal information
-for the phenomenon of interest.</p>
-
-<p>For cardiac fibrillation, that means that rotor-based mechanisms should be
-understood through the scale at which they organize spiral-wave dynamics. For
-clinical electrophysiology, it means that mapping and ablation should
-eventually be evaluated not only by anatomical or visual criteria, but by how
-they alter the multiscale causal architecture of the tissue. For complex
-systems and neurophysiology, it provides a general lesson: emergent patterns
-may be real mechanisms, but their causal power is not necessarily scale-free.</p>
-
-<p>A rotor is therefore not simply a thing in the heart. It is a scale-dependent
-causal object in an excitable medium.</p>
-
-<p>That, in the end, is the central message of the paper.</p>]]></content><author><name>Nima Dehghani</name></author><summary type="html"><![CDATA[Companion post to: Causal Scale of Rotors in a Cardiac System Hiroshi Ashikaga, Francisco Prieto-Castrillo, Mari Kawakatsu, Nima Dehghani Frontiers in Computational Physics Volume 6 - 2018 DOI: https://doi.org/10.3389/fphy.2018.00030]]></summary></entry></feed>
+<p>The broader message is that cortical activity can be studied as a many-body system, but doing so responsibly requires both physical modeling and statistical humility. The Ising model is not the cortex. But when fit carefully, with uncertainty estimates and biological constraints, it becomes a useful lens for seeing how excitation, inhibition, and collective structure shape the neural state space.</p>]]></content><author><name>Nima Dehghani</name></author><category term="statistical physics" /><category term="maximum entropy" /><category term="Ising model" /><category term="cortical dynamics" /><category term="excitation-inhibition balance" /><category term="sleep" /><category term="criticality" /><category term="computational neuroscience" /><category term="complex systems" /><category term="AI" /><summary type="html"><![CDATA[Companion post to: Ensemble Inhibition and Excitation in the Human Cortex: An Ising-Model Analysis with Uncertainties Cristian Zanoci, Nima Dehghani, and Max Tegmark Physical Review E . Phys. Rev. E 99, 032408 DOI: https://doi.org/10.1103/PhysRevE.99.032408]]></summary></entry></feed>
