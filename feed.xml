@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://neurovium.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neurovium.github.io/" rel="alternate" type="text/html" /><updated>2026-06-11T16:41:13+00:00</updated><id>https://neurovium.github.io/feed.xml</id><title type="html">Nima Dehghani</title><subtitle>Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics</subtitle><author><name>Nima Dehghani</name></author><entry><title type="html">Beyond Pairwise Connectivity: Reconstructing the Local–Global Structure of Neural Fields</title><link href="https://neurovium.github.io/posts/pblog-SMR-local-global/" rel="alternate" type="text/html" title="Beyond Pairwise Connectivity: Reconstructing the Local–Global Structure of Neural Fields" /><published>2026-08-11T00:00:00+00:00</published><updated>2026-08-11T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-SMR-local-global</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-SMR-local-global/"><![CDATA[<p><em>Companion post to:</em><br />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://neurovium.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neurovium.github.io/" rel="alternate" type="text/html" /><updated>2026-06-11T16:56:57+00:00</updated><id>https://neurovium.github.io/feed.xml</id><title type="html">Nima Dehghani</title><subtitle>Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics</subtitle><author><name>Nima Dehghani</name></author><entry><title type="html">Beyond Pairwise Connectivity: Reconstructing the Local–Global Structure of Neural Fields</title><link href="https://neurovium.github.io/posts/pblog-SMR-local-global/" rel="alternate" type="text/html" title="Beyond Pairwise Connectivity: Reconstructing the Local–Global Structure of Neural Fields" /><published>2026-08-11T00:00:00+00:00</published><updated>2026-08-11T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-SMR-local-global</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-SMR-local-global/"><![CDATA[<p><em>Companion post to:</em><br />
 <strong>Spatially Masked Regression Reveals Local and Distributed Predictability in Electrophysiological Recording</strong>
 Maryam Ostadsharif Memar, Nima Dehghani
 <em>arXiv</em> 2026.
@@ -53,9 +53,9 @@ An electrode is physically located at a specific point in space, and we often sp
 w^{(s)}_{ij}
 x^{(s)}_j(t).\]
 
-<p>Here, (x^{(s)}<em>j(t)) is the signal from predictor electrode (j), (w^{(s)}</em>{ij}) is the learned contribution of electrode (j) to the reconstruction of electrode (i), and (K^{(s)}_{ij}) is a spatial mask.</p>
+<p>Here, $x^{(s)}<em>j(t)$ is the signal from predictor electrode $j$, $w^{(s)}</em>{ij}$ is the learned contribution of electrode $j$ to the reconstruction of electrode $i$, and $K^{(s)}_{ij}$ is a spatial mask.</p>
 
-<p>The mask is the essential object. If electrode (j) belongs to the predefined local neighborhood of target electrode (i), then</p>
+<p>The mask is the essential object. If electrode $j$ belongs to the predefined local neighborhood of target electrode $i$, then</p>
 
 \[K^{(s)}_{ij}=1,\]
 
@@ -69,9 +69,9 @@ x^{(s)}_j(t).\]
 
 <p>In other words, SMR allows us to ask how much predictive information survives after the immediate spatial neighborhood has been removed.</p>
 
-<p>#&gt;[INSERT FIGURE 1 HERE: Schematic of the SMR framework. Show a target electrode, its local neighborhood, the masked predictors, the remaining non-local predictors, and the reconstructed target signal.]</p>
+<!-- >[INSERT FIGURE 1 HERE: Schematic of the SMR framework. Show a target electrode, its local neighborhood, the masked predictors, the remaining non-local predictors, and the reconstructed target signal.] -->
 
-<p>The learned matrix is asymmetric. The weight (w_{ij}) quantifies the contribution of channel (j) to reconstructing channel (i), not the reverse. This is not a causal model, but it is also not simply a symmetric connectivity graph. It is a reconstruction operator: a map from the rest of the array to a target channel.</p>
+<p>The learned matrix is asymmetric. The weight $w_{ij}$ quantifies the contribution of channel $j$ to reconstructing channel $i$, not the reverse. This is not a causal model, but it is also not simply a symmetric connectivity graph. It is a reconstruction operator: a map from the rest of the array to a target channel.</p>
 
 <hr />
 
@@ -109,7 +109,7 @@ $</p>
 
 <p>This result captures a basic difference between the modalities. EEG lives in a relatively standardized, spatially mixed measurement space. iEEG samples the cortex more directly, but the sampling geometry is idiosyncratic. The same anatomical or functional system may be sampled differently across patients, and this makes learned inter-electrode structure much less portable.</p>
 
-<p>#&gt;[INSERT FIGURE 2 OR 3 HERE: Subject-wise intra-subject and cross-subject reconstruction performance, together with representative original versus reconstructed traces.]</p>
+<!-- >[INSERT FIGURE 2 OR 3 HERE: Subject-wise intra-subject and cross-subject reconstruction performance, together with representative original versus reconstructed traces.] -->
 
 <p>This distinction matters for how we interpret generalization. Strong EEG transfer does not necessarily mean that the underlying neural generators are identical across subjects. It may partly reflect the fact that the measurement process itself imposes a shared spatial smoothing structure. Conversely, weak iEEG transfer does not mean that there is no common neural organization. It may reflect the difficulty of aligning sparse, heterogeneous, clinically placed electrodes across individuals.</p>
 
@@ -124,7 +124,7 @@ $
 0\%,\ 25\%,\ 50\%,\ 75\%,\ 100\%.
 $</p>
 
-<p>At (0\%), no local electrodes were excluded. At (100\%), the full predefined local neighborhood was removed. For EEG, neighborhoods were defined using the standardized 10–10/10–5 montage structure. For iEEG, neighborhoods were defined anatomically using AAL-based regional proximity.</p>
+<p>At $0\%$, no local electrodes were excluded. At $100\%$, the full predefined local neighborhood was removed. For EEG, neighborhoods were defined using the standardized 10–10/10–5 montage structure. For iEEG, neighborhoods were defined anatomically using AAL-based regional proximity.</p>
 
 <p>The result was clear: reconstruction performance decreased as more local information was masked.</p>
 
@@ -138,7 +138,7 @@ $</p>
 
 <p><strong>SMR does not show that field potentials are global rather than local. It shows that they are mixed objects: locally concentrated, but distributed in their predictive embedding.</strong></p>
 
-<p>#&gt;[INSERT FIGURE 4 HERE: Distance correlation as a function of mask intensity for iEEG and EEG. Show the monotonic degradation with increasing local masking, while emphasizing residual predictability at full masking.]</p>
+<!-- >[INSERT FIGURE 4 HERE: Distance correlation as a function of mask intensity for iEEG and EEG. Show the monotonic degradation with increasing local masking, while emphasizing residual predictability at full masking.] -->
 
 <p>This result argues against two oversimplified views.</p>
 
@@ -168,7 +168,7 @@ $</p>
 
 <p>This gives a more precise interpretation of distributed predictability. The point is not that distant sensors are better than local sensors. They are not. The point is that distant sensors contain information that is not completely redundant with the local neighborhood.</p>
 
-<p>#&gt;[INSERT FIGURE 5 HERE: Comparison of local-only, non-local-only, and all-electrode reconstruction performance.]</p>
+<!-- #>[INSERT FIGURE 5 HERE: Comparison of local-only, non-local-only, and all-electrode reconstruction performance.] -->
 
 <p>This has practical implications for sensor selection and montage design. If the goal is reconstruction or decoding, dense local coverage may provide the largest immediate gain. But eliminating broader spatial coverage can remove distributed information that improves performance. A good recording array should not be thought of only as a dense local sampler or only as a broad global sampler. It should balance both.</p>
 
@@ -178,7 +178,7 @@ $</p>
 
 <p>We evaluated reconstruction quality using distance correlation, rather than ordinary Pearson correlation alone.</p>
 
-<p>Distance correlation measures statistical dependence between two signals using pairwise distance matrices. For original signal (u) and reconstructed signal (v), one first computes pairwise distances,</p>
+<p>Distance correlation measures statistical dependence between two signals using pairwise distance matrices. For original signal $u$ and reconstructed signal $v$, one first computes pairwise distances,</p>
 
 \[a_{mn}=|u_m-u_n|,
 \qquad
@@ -194,7 +194,7 @@ b_{mn}=|v_m-v_n|,\]
 
 <h2 id="lagged-predictors-little-gain-beyond-instantaneous-structure">Lagged predictors: little gain beyond instantaneous structure</h2>
 
-<p>We also tested a lagged variant of SMR. Instead of reconstructing (x_i(t)) only from other channels at the same time point, the lagged model used predictors at short temporal offsets:</p>
+<p>We also tested a lagged variant of SMR. Instead of reconstructing $x_i(t)$ only from other channels at the same time point, the lagged model used predictors at short temporal offsets:</p>
 
 \[\hat{x}^{(s)}_i(t)
 =
@@ -388,7 +388,7 @@ for phase-shuffled, IAAFT, and block-shuffled surrogates, respectively.</p>
 
 <p>For electrophysiology, this is a useful shift in perspective. A channel is not merely a point measurement. It is a local observation of a distributed dynamical system, filtered through tissue, sensor geometry, and network organization.</p>
 
-<p>Spatially Masked Regression gives us a way to quantify that statement.</p>]]></content><author><name>Nima Dehghani</name></author><category term="Neural signal reconstruction; predictive embedding; functional connectivity; local redundancy; distributed predictability; spatial masking; volume conduction; sensor geometry; distance correlation; cross-subject transfer; surrogate data; phase shuffling; IAAFT; block shuffling; sensor selection; brain-computer interfaces; multichannel neural recordings; Spatially Masked Regression; SMR; local field potentials; electrophysiology; EEG; intracranial EEG; iEEG." /><summary type="html"><![CDATA[Companion post to: Spatially Masked Regression Reveals Local and Distributed Predictability in Electrophysiological Recording Maryam Ostadsharif Memar, Nima Dehghani arXiv 2026. DOI: https://doi.org/10.48550/arXiv.2606.11415]]></summary></entry><entry><title type="html">Interneuron Diversity Is Not Only a Taxonomy Problem: Cortical Depth as a Continuous Axis of Morphoelectric Organization</title><link href="https://neurovium.github.io/posts/pblog-Inhibitory-cortical-depth/" rel="alternate" type="text/html" title="Interneuron Diversity Is Not Only a Taxonomy Problem: Cortical Depth as a Continuous Axis of Morphoelectric Organization" /><published>2026-03-06T00:00:00+00:00</published><updated>2026-03-06T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-Inhibitory-cortical-depth</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-Inhibitory-cortical-depth/"><![CDATA[<p><em>Companion post to:</em><br />
+<p>Spatially Masked Regression gives us a way to quantify that statement.</p>]]></content><author><name>Nima Dehghani</name></author><category term="Neural signal reconstruction" /><category term="predictive embedding" /><category term="functional connectivity" /><category term="local redundancy" /><category term="distributed predictability" /><category term="spatial masking" /><category term="volume conduction" /><category term="sensor geometry" /><category term="distance correlation" /><category term="cross-subject transfer" /><category term="surrogate data" /><category term="phase shuffling" /><category term="IAAFT" /><category term="block shuffling" /><category term="sensor selection" /><category term="brain-computer interfaces" /><category term="multichannel neural recordings" /><category term="Spatially Masked Regression" /><category term="local field potentials" /><category term="electrophysiology" /><category term="EEG" /><category term="intracranial EEG" /><category term="iEEG" /><summary type="html"><![CDATA[Companion post to: Spatially Masked Regression Reveals Local and Distributed Predictability in Electrophysiological Recording Maryam Ostadsharif Memar, Nima Dehghani arXiv 2026. DOI: https://doi.org/10.48550/arXiv.2606.11415]]></summary></entry><entry><title type="html">Interneuron Diversity Is Not Only a Taxonomy Problem: Cortical Depth as a Continuous Axis of Morphoelectric Organization</title><link href="https://neurovium.github.io/posts/pblog-Inhibitory-cortical-depth/" rel="alternate" type="text/html" title="Interneuron Diversity Is Not Only a Taxonomy Problem: Cortical Depth as a Continuous Axis of Morphoelectric Organization" /><published>2026-03-06T00:00:00+00:00</published><updated>2026-03-06T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-Inhibitory-cortical-depth</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-Inhibitory-cortical-depth/"><![CDATA[<p><em>Companion post to:</em><br />
 <strong>Morphoelectric properties of inhibitory neurons shift gradually and regardless of cell type along the depth of the cerebral cortex</strong>
 Yanez, Felipe and Messore, Fernando and Qi, Guanxiao and Dehghani, Nima and Meyer, Hanno S. and Feldmeyer, Dirk and Sakmann, Bert and Oberlaender, Marcel 
 <em>biorxiv</em> 7, 40211 (2026).
