@@ -232,7 +232,7 @@ An electrode is physically located at a specific point in space, and we often sp
 
 <p>The shift is subtle but important. We are no longer treating pairwise association as the primitive object. Instead, we treat each channel as a target to be reconstructed from the rest of the recording array.</p>
 
-<p>For a target electrode (i) in subject (s), the SMR reconstruction is written as</p>
+<p>For a target electrode $i$ in subject $s$, the SMR reconstruction is written as</p>
 
 \[\hat{x}^{(s)}_i(t)
 =
@@ -241,7 +241,7 @@ An electrode is physically located at a specific point in space, and we often sp
 w^{(s)}_{ij}
 x^{(s)}_j(t).\]
 
-<p>Here, $x^{(s)}<em>j(t)$ is the signal from predictor electrode $j$, $w^{(s)}</em>{ij}$ is the learned contribution of electrode $j$ to the reconstruction of electrode $i$, and $K^{(s)}_{ij}$ is a spatial mask.</p>
+<p>Here, $x^{(s)}<em>{j(t)}$ is the signal from predictor electrode $j$, $w^{(s)}</em>{ij}$ is the learned contribution of electrode $j$ to the reconstruction of electrode $i$, and $K^{(s)}_{ij}$ is a spatial mask.</p>
 
 <p>The mask is the essential object. If electrode $j$ belongs to the predefined local neighborhood of target electrode $i$, then</p>
 
@@ -276,24 +276,16 @@ x^{(s)}_j(t).\]
 <p>This is what we found.</p>
 
 <p>In the intra-subject setting, where the model was trained and tested within the same individual, reconstruction was strong in both modalities, but substantially stronger in EEG. Mean distance correlation was approximately
-$
-\mathrm{DistCorr}<em>{\mathrm{EEG}} = 0.908 \pm 0.028,
-$
-, whereas for iEEG it was
-$
-\mathrm{DistCorr}</em>{\mathrm{iEEG}} = 0.553 \pm 0.068.
-$</p>
+$\mathrm{DistCorr}<em>{\mathrm{EEG}} = 0.908 \pm 0.028$, 
+whereas for iEEG it was 
+$\mathrm{DistCorr}</em>{\mathrm{iEEG}} = 0.553 \pm 0.068$.</p>
 
 <p>This difference is not surprising. Scalp EEG is spatially smoother and more redundant. Multiple electrodes often contain overlapping mixtures of related neural sources. iEEG, by contrast, preserves a more focal and individualized spatial structure.</p>
 
 <p>The cross-subject analysis sharpened this contrast. For EEG, a learned inter-electrode relationship matrix transferred well across subjects, reaching an average distance correlation of
-$
-\mathrm{DistCorr}<em>{\mathrm{EEG, cross}} = 0.783 \pm 0.093.
-$
+$\mathrm{DistCorr}<em>{\mathrm{EEG, cross}} = 0.783 \pm 0.093.$
 For iEEG, even after correlation-based electrode mapping, cross-subject transfer was much weaker:
-$
-\mathrm{DistCorr}</em>{\mathrm{iEEG, cross}} = 0.389 \pm 0.064.
-$</p>
+$\mathrm{DistCorr}</em>{\mathrm{iEEG, cross}} = 0.389 \pm 0.064.$</p>
 
 <p>This result captures a basic difference between the modalities. EEG lives in a relatively standardized, spatially mixed measurement space. iEEG samples the cortex more directly, but the sampling geometry is idiosyncratic. The same anatomical or functional system may be sampled differently across patients, and this makes learned inter-electrode structure much less portable.</p>
 
@@ -308,9 +300,7 @@ $</p>
 <p>The core analysis of the paper is the masking experiment.</p>
 
 <p>For each target electrode, we progressively excluded increasing fractions of its local neighborhood. We tested mask intensities of
-$
-0\%,\ 25\%,\ 50\%,\ 75\%,\ 100\%.
-$</p>
+$0\%,\ 25\%,\ 50\%,\ 75\%,\ 100\%.$</p>
 
 <p>At $0\%$, no local electrodes were excluded. At $100\%$, the full predefined local neighborhood was removed. For EEG, neighborhoods were defined using the standardized 10–10/10–5 montage structure. For iEEG, neighborhoods were defined anatomically using AAL-based regional proximity.</p>
 
@@ -395,21 +385,7 @@ x^{(s)}_j(t-\tau).\]
 <p>The tested lags were chosen to cover time scales relevant to motor-related beta and gamma activity, including delays up to 60 ms.</p>
 
 <p>The effect was minimal. In EEG, intra-subject performance changed from approximately
-$
-0.908 \pm 0.028
-$
-to
-$
-0.910 \pm 0.027.
-$
-In iEEG, it changed from
-$
-0.553 \pm 0.068
-$
-to
-$
-0.554 \pm 0.067.
-$</p>
+$0.908 \pm 0.028$ to $0.910 \pm 0.027.$ In iEEG, it changed from $0.553 \pm 0.068$ to $0.554 \pm 0.067.$</p>
 
 <p>Thus, within the tested lag range, most of the recoverable structure was already captured by the instantaneous model.</p>
 
@@ -439,40 +415,9 @@ $</p>
 
 <p>Across all surrogate conditions, reconstruction performance dropped substantially.</p>
 
-<p>For iEEG, mean distance correlation fell from
-$
-0.553 \pm 0.068
-$
- in the original data to
-$
-0.181 \pm 0.029
-$
- under phase shuffling,
-$
-0.232 \pm 0.060
-$
- under IAAFT, and
-$
-0.201 \pm 0.168
-$
- under block shuffling.</p>
+<p>For iEEG, mean distance correlation fell from $0.553 \pm 0.068$ in the original data to $0.181 \pm 0.029$ under phase shuffling, $0.232 \pm 0.060$ under IAAFT, and $0.201 \pm 0.168$ under block shuffling.</p>
 
-<p>For EEG, performance fell from
-$
-0.908 \pm 0.028
-$
-to
-$
-0.124 \pm 0.049,
-$
-$
-0.184 \pm 0.073,
-$
-and
-$
-0.160 \pm 0.078
-$
-for phase-shuffled, IAAFT, and block-shuffled surrogates, respectively.</p>
+<p>For EEG, performance fell from $0.908 \pm 0.028$ to $0.124 \pm 0.049$, $0.184 \pm 0.073$, and $0.160 \pm 0.078]$ for phase-shuffled, IAAFT, and block-shuffled surrogates, respectively.</p>
 
 <p>This result constrains the interpretation of SMR. The model is not simply exploiting amplitude distributions or static spectral profiles. Preserving those properties is not enough. Reconstruction depends on structured temporal and cross-channel organization present in the original recordings.</p>
 

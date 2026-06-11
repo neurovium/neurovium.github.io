@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ead7be">
+<title>Cortical Machinery as a Design Principle for RNNs · Nima Dehghani</title>
+<meta name="description" content="Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<link type="application/atom+xml" rel="alternate" href="https://neurovium.github.io/feed.xml" title="Nima Dehghani" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Cortical Machinery as a Design Principle for RNNs | Nima Dehghani</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Cortical Machinery as a Design Principle for RNNs" />
+<meta name="author" content="Nima Dehghani" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Companion post to: Harnessing Cortical Geometry, Wiring, and Function as Inductive Biases for RNNs Mo Shakiba, Rana Rokni, Mohammad Mohammadi, Nima Dehghani arXiv 2026. DOI: ``" />
+<meta property="og:description" content="Companion post to: Harnessing Cortical Geometry, Wiring, and Function as Inductive Biases for RNNs Mo Shakiba, Rana Rokni, Mohammad Mohammadi, Nima Dehghani arXiv 2026. DOI: ``" />
+<link rel="canonical" href="https://neurovium.github.io/posts/pblog-Cortical-blueprint-RNN/" />
+<meta property="og:url" content="https://neurovium.github.io/posts/pblog-Cortical-blueprint-RNN/" />
+<meta property="og:site_name" content="Nima Dehghani" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-08-12T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Cortical Machinery as a Design Principle for RNNs" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Nima Dehghani"},"dateModified":"2026-08-12T00:00:00+00:00","datePublished":"2026-08-12T00:00:00+00:00","description":"Companion post to: Harnessing Cortical Geometry, Wiring, and Function as Inductive Biases for RNNs Mo Shakiba, Rana Rokni, Mohammad Mohammadi, Nima Dehghani arXiv 2026. DOI: ``","headline":"Cortical Machinery as a Design Principle for RNNs","mainEntityOfPage":{"@type":"WebPage","@id":"https://neurovium.github.io/posts/pblog-Cortical-blueprint-RNN/"},"url":"https://neurovium.github.io/posts/pblog-Cortical-blueprint-RNN/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+  },
+  options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+
+</head>
+<body>
+  <header class="topbar">
+    <a href="/" class="topbar__brand">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"><line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/><line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/><line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/></g><circle cx="18" cy="20" r="2.2" fill="currentColor"/></svg>
+      Nima Dehghani
+    </a>
+    <button class="topbar__toggle" id="sidebar-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sidebar">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </header>
+
+  <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
+
+  <div class="app">
+    
+
+<aside class="side" id="sidebar" aria-label="Primary">
+  <a class="side__brand" href="/">
+    <svg class="glyph" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none">
+        <line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/>
+        <line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/>
+        <line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/>
+      </g>
+      <circle cx="18" cy="20" r="2.2" fill="currentColor"/>
+    </svg>
+    <span>
+      <span class="side__name">Nima Dehghani</span>
+      <span class="side__tag">@neurovium · MIT</span>
+    </span>
+  </a>
+
+  
+  
+  <nav class="side__nav" aria-label="Main navigation">
+    <a href="/about/" class="">About</a>
+    <a href="/news/" class="">News<span class="side__pip" aria-label="new"></span></a>
+    <a href="/research/" class="">Research</a>
+    <a href="/papers/" class="">Paper Maze</a>
+    <a href="/garden/" class="">Idea Garden</a>
+    <a href="/blog/" class="">Blog</a>
+    <a href="/open-science/" class="">Open Science</a>
+
+    <details class="side__group">
+      <summary class="side__group-sum" aria-label="Reflections — 4 pages">
+        <span class="side__group-label">Reflections</span>
+        <span class="side__group-meta">
+          <span class="side__group-count">4</span>
+          <svg class="side__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </span>
+      </summary>
+      <div class="side__subnav">
+        <a href="/on-liberty/" class="">On Liberty</a>
+        <a href="/neurovium-decoded/" class="">Neurovium Decoded</a>
+        <a href="/leibnizian-dream/" class="">Leibnizian Dream</a>
+        <a href="/scientific-understanding/" class="">Scientific Understanding</a>
+      </div>
+    </details>
+  </nav>
+
+  <div class="side__social" aria-label="Social links">
+    <div class="side__social-row">
+      <a href="https://scholar.google.com/citations?user=acFMrVUAAAAJ&hl=en" title="Google Scholar" target="_blank" rel="noopener" aria-label="Google Scholar">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9zm6.82 7L12 12.72 5.18 9 12 5.28zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73z"/></svg>
+      </a>
+      <a href="mailto:nima.dehghani@mit.edu" title="Email" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/nimadehghani/" title="LinkedIn" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+    </div>
+    <div class="side__social-row">
+      <a href="https://github.com/neurovium" title="GitHub" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      </a>
+      <a href="https://twitter.com/neurovium" title="X" target="_blank" rel="noopener" aria-label="X">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://bsky.app/profile/neurovium.bsky.social" class="is-bsky" title="Bluesky" target="_blank" rel="noopener" aria-label="Bluesky">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.335 5.144c2.606 1.957 5.41 5.923 6.44 8.051.99-2.046 3.855-6.132 6.44-8.051 1.864-1.383 4.885-2.453 4.885 1.002 0 .69-.396 5.795-.629 6.624-.809 2.882-3.748 3.616-6.363 3.17 4.573.78 5.737 3.359 3.224 5.939-4.772 4.9-6.859-1.23-7.394-2.802-.534 1.572-2.622 7.702-7.394 2.802-2.513-2.58-1.349-5.16 3.224-5.939-2.615.446-5.554-.288-6.363-3.17-.233-.829-.629-5.934-.629-6.624 0-3.455 3.021-2.385 4.885-1.002z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="n4-set" aria-label="N⁴ : NeuroAI ⊃ N³">
+    <span class="n4-set__lbl">N&#8308;</span>
+    <div class="n4-set n4-set--ai">
+      <span class="n4-set__lbl">NeuroAI</span>
+      <div class="n4-set n4-set--n3">
+        <span class="n4-set__lbl">N&#179;</span>
+        <ul>
+          <li>NeuroPhysics</li>
+          <li>NeuroComputation</li>
+          <li>NeuroDynamics</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="side__foot">
+    <span>
+      <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+      ·
+      <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    </span>
+  </div>
+</aside>
+
+    <main class="main">
+      <article class="paper">
+  <div class="paper__crumb">
+    <a href="/blog/">← Blog</a>
+    <span style="color:var(--muted-soft);">·</span>
+    <span>Aug 12, 2026</span>
+  </div>
+
+  <h1>Cortical Machinery as a Design Principle for RNNs</h1>
+  <div class="paper__subtitle">Building RNNs with Cortical Priors</div>
+  
+  <div class="paper__venue" style="margin-top:10px;">
+    <span>NeuroAI</span><span>functional connectomics</span><span>cortical wiring</span><span>cortical geometry</span><span>recurrent neural networks</span><span>RNNs</span><span>biological inductive biases</span><span>MICrONS</span><span>spatially embedded networks</span><span>communicability</span><span>graph topology</span><span>small-world networks</span><span>modularity</span><span>neural computation</span><span>bio-inspired AI</span><span>connectome-constrained modeling</span><span>recurrent learning</span><span>cortical priors</span><span>functional initialization</span><span>wiring economy</span><span>biological computation</span>
+  </div>
+  
+
+  
+  <div class="linkbar" style="margin-top:24px;">
+    <a href="/papers/Cortical-blueprint-RNN/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="20" x2="12" y2="12"/><line x1="12" y1="12" x2="21" y2="4"/><line x1="12" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="21" y2="20"/></svg>
+      Follow this path into the Maze
+    </a>
+  </div>
+  
+
+  <section class="paper__section prose" style="margin-top:28px;">
+    <p><em>Companion post to:</em><br />
+<strong>Harnessing Cortical Geometry, Wiring, and Function as Inductive Biases for RNNs</strong>
+Mo Shakiba, Rana Rokni, Mohammad Mohammadi, Nima Dehghani
+<em>arXiv</em> 2026.
+DOI: ``</p>
+
+<hr />
+
+<h1 id="harnessing-cortical-geometry-wiring-and-function-as-inductive-biases-for-rnns">Harnessing Cortical Geometry, Wiring, and Function as Inductive Biases for RNNs</h1>
+
+<p>A central problem at the interface of neuroscience, machine learning, and complex systems physics is whether the organization of biological circuits can be translated into useful inductive biases for artificial systems.</p>
+
+<p>Recurrent neural networks are a natural setting for this question. RNNs support temporal integration, memory, decision-making, and the maintenance of internal state. They are widely used both as engineering tools and as models of neural computation. Yet most artificial recurrent networks are still initialized generically and trained with relatively unconstrained recurrent connectivity. Cortex is not built this way. Cortical neurons occupy physical space. Their connectivity is shaped by wiring cost. Their recurrent interactions are embedded in anatomical structure. Their functional relationships are expressed through activity.</p>
+
+<p>In this paper, we ask whether those measured cortical regularities can be used directly as inductive structure for artificial recurrent networks.</p>
+
+<p>The question is not simply whether we can make RNNs look more biological. The sharper question is:</p>
+
+<p><strong>Which aspects of cortical organization actually help recurrent networks learn?</strong></p>
+
+<p>To address this, we use data from the MICrONS functional connectomics program, where two-photon calcium imaging is co-registered with high-resolution electron microscopy reconstruction in the same mouse visual cortex. This makes it possible to link neuronal position, anatomical connectivity, and functional activity within a common cortical substrate.</p>
+
+<p>The core idea is simple. Instead of treating cortical data only as something to model or predict, we treat it as something to build with.</p>
+
+<h2 id="from-stylized-spatial-embedding-to-measured-cortical-priors">From stylized spatial embedding to measured cortical priors</h2>
+
+<p>Recent work on spatially embedded RNNs has shown that assigning recurrent units positions in physical space and penalizing long-distance communication can produce sparse, modular, and small-world architectures while preserving strong task performance. This is an important conceptual step because it treats physical embedding and wiring economy as computationally meaningful constraints rather than biological ornamentation.</p>
+
+<p>But many such models still rely on artificial spatial grids or stylized embeddings. In our work, we replace these abstract constraints with measured cortical structure.</p>
+
+<p>Using MICrONS, we derive three classes of cortical priors:</p>
+
+<ol>
+  <li><strong>Function-derived recurrent weight initialization</strong></li>
+  <li><strong>Real neuronal spatial embedding</strong></li>
+  <li><strong>Communicability-aware regularization derived from anatomical connectivity</strong></li>
+</ol>
+
+<p>We then construct eleven RNN variants that selectively include or remove these priors. This allows us to treat cortical organization not as one monolithic biological constraint, but as a set of separable design factors.</p>
+
+<p>That separation is important. It allows us to ask whether performance is driven mainly by function, geometry, wiring, or their interaction.</p>
+
+<h2 id="the-three-cortical-priors">The three cortical priors</h2>
+
+<h3 id="1-functional-initialization-w">1. Functional initialization: $W^*$</h3>
+
+<p>Instead of relying only on orthogonal or random recurrent initialization, we initialize recurrent weights using functional relationships derived from calcium-imaging activity.</p>
+
+<p>The base recurrent weights are sampled from a log-normal distribution, motivated by the heavy-tailed structure of biological synaptic weights. These weights are then modulated element-wise by functional relationships among neurons, including Pearson correlation and the Spike Time Tiling Coefficient.</p>
+
+<p>In schematic form, the biologically informed recurrent initialization is</p>
+
+\[W_{\mathrm{bio}} =
+W_{\mathrm{lognormal}}
+\odot
+\mathrm{Corr}
+\odot
+\mathrm{STTC},\]
+
+<p>where $\odot$ denotes element-wise multiplication.</p>
+
+<p>We also test an alternative initialization based on the precision matrix. This is useful because the precision matrix emphasizes conditional dependencies by removing variance shared through the rest of the population. Correlation captures broad co-activity structure; precision gives a sparser view of putatively more direct functional dependency.</p>
+
+<p>This gives the recurrent network an initial structure that reflects how neurons co-vary during activity, rather than starting from an uninformed random matrix.</p>
+
+<h3 id="2-real-spatial-embedding-d">2. Real spatial embedding: $D^*$</h3>
+
+<p>Spatially embedded RNNs typically place units on an artificial grid. Here, we instead embed recurrent units using measured MICrONS neuronal soma coordinates.</p>
+
+<p>This lets us ask whether the actual spatial arrangement of cortical neurons provides useful structure for recurrent optimization. The distance matrix derived from these coordinates enters the regularization term, penalizing recurrent solutions that are spatially expensive.</p>
+
+<p>The control condition, denoted $D$, uses artificial grid coordinates. This allows us to isolate the contribution of real cortical geometry.</p>
+
+<p>The key question is therefore not whether space matters in the abstract, but whether measured cortical space matters.</p>
+
+<h3 id="3-communicability-aware-regularization-c-and-c">3. Communicability-aware regularization: $C$ and $C^*$</h3>
+
+<p>Anatomical connectivity does not only define direct edges. It also defines possible routes through which activity can propagate across the network.</p>
+
+<p>To capture this, we use communicability, a matrix-exponential graph measure that weights walks of all lengths through the network. In simplified form,</p>
+
+\[C = \exp\left(S^{-1/2} W S^{-1/2}\right),\]
+
+<p>where $W$ is the adjacency matrix and $S$ is the diagonal matrix of node strengths.</p>
+
+<p>This gives a communication-aware view of the anatomical graph. It is richer than simply asking whether two neurons are directly connected, and different from reducing the graph to shortest paths alone.</p>
+
+<p>We test two formulations.</p>
+
+<p>In the direct communicability condition, $C$, communicability enters the spatial regularization term directly:</p>
+
+\[\mathcal{L}
+=
+\mathcal{L}_{\mathrm{task}}
++
+\lambda
+\|W \odot D \odot C\|.\]
+
+<p>In the $C^*$ condition, we use an Earth Mover’s Distance penalty to match the distribution of communicability values between the empirical cortical graph and the artificial recurrent network:</p>
+
+\[\mathcal{L}
+=
+\mathcal{L}_{\mathrm{task}}
++
+\lambda
+\|W \odot D\|
++
+\lambda_{\mathrm{EMD}}
+\,
+\mathrm{EMD}
+\left(
+C_{\mathrm{emp}},
+C_{\mathrm{art}}
+\right).\]
+
+<p>Together, $W^<em>$, $D^</em>$, and $C/C^*$ allow us to ask how cortical function, geometry, and communication topology jointly shape recurrent learning.</p>
+
+<h2 id="a-systematic-ablation-of-cortical-priors">A systematic ablation of cortical priors</h2>
+
+<p>The model family was designed as a structured ablation. Each variant selectively includes or removes one or more cortical priors: function-derived initialization, real spatial embedding, and communicability-aware regularization. This design lets us ask not only whether biological constraints help, but which biological constraints help, and under what combinations.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Model variant</th>
+      <th>Functional initialization</th>
+      <th>Spatial embedding</th>
+      <th>Communicability constraint</th>
+      <th>Main comparison it enables</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$W^<em>D^</em>C$</td>
+      <td>Biological, from MICrONS activity</td>
+      <td>Real MICrONS coordinates</td>
+      <td>Direct communicability</td>
+      <td>Full cortical-prior model with direct communicability</td>
+    </tr>
+    <tr>
+      <td>$WD^*C$</td>
+      <td>Standard/random</td>
+      <td>Real MICrONS coordinates</td>
+      <td>Direct communicability</td>
+      <td>Tests whether geometry and communicability help without biological weight initialization</td>
+    </tr>
+    <tr>
+      <td>$WDC$</td>
+      <td>Standard/random</td>
+      <td>Artificial grid</td>
+      <td>Direct communicability</td>
+      <td>Stylized spatial-control model</td>
+    </tr>
+    <tr>
+      <td>$WD^*$</td>
+      <td>Standard/random</td>
+      <td>Real MICrONS coordinates</td>
+      <td>None</td>
+      <td>Isolates the effect of real cortical geometry</td>
+    </tr>
+    <tr>
+      <td>$WD$</td>
+      <td>Standard/random</td>
+      <td>Artificial grid</td>
+      <td>None</td>
+      <td>Spatial embedding control using non-biological coordinates</td>
+    </tr>
+    <tr>
+      <td>$W$</td>
+      <td>Standard/random</td>
+      <td>None</td>
+      <td>None</td>
+      <td>Baseline simple RNN</td>
+    </tr>
+    <tr>
+      <td>$W^<em>D^</em>C^*$</td>
+      <td>Biological, from MICRONS activity</td>
+      <td>Real MICrONS coordinates</td>
+      <td>EMD matching of communicability distributions</td>
+      <td>Full cortical-prior model with distributional communicability matching</td>
+    </tr>
+    <tr>
+      <td>$WD^<em>C^</em>$</td>
+      <td>Standard/random</td>
+      <td>Real MICrONS coordinates</td>
+      <td>EMD matching</td>
+      <td>Tests EMD-based communicability without biological initialization</td>
+    </tr>
+    <tr>
+      <td>$W^<em>DC^</em>$</td>
+      <td>Biological, from MICRONS activity</td>
+      <td>Artificial grid</td>
+      <td>EMD matching</td>
+      <td>Tests biological initialization without real cortical geometry</td>
+    </tr>
+    <tr>
+      <td>$W^!D^*C$</td>
+      <td>Permuted biological initialization</td>
+      <td>Real MICrONS coordinates</td>
+      <td>Direct communicability</td>
+      <td>Tests whether biological weight statistics help even when neuron-to-neuron assignment is disrupted</td>
+    </tr>
+    <tr>
+      <td>$W^!D^<em>C^</em>$</td>
+      <td>Permuted biological initialization</td>
+      <td>Real MICrONS coordinates</td>
+      <td>EMD matching</td>
+      <td>Tests the same permutation control under EMD-based communicability</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Here $W^<em>$ denotes function-derived biological initialization, $W^!$ denotes a permuted biological initialization, $D^</em>$ denotes real MICrONS neuronal coordinates, $D$ denotes an artificial spatial grid, $C$ denotes direct communicability regularization, and $C^*$ denotes an Earth Mover’s Distance penalty matching empirical and artificial communicability distributions.</p>
+
+<p>This table is important because it shows that the study is not a single comparison between a “biological” model and a “non-biological” model. It is a factorial perturbation of cortical structure. Function, geometry, and communication topology are separated so that their individual and combined effects can be examined.</p>
+
+<h2 id="task-suite">Task suite</h2>
+
+<p>We trained all model variants on three cognitive decision-making tasks.</p>
+
+<p>The first was <strong>One-Choice Inference</strong>, where the network must integrate sequential stimuli across a delay to choose the correct movement direction.</p>
+
+<p>The second was <strong>Perceptual Decision-Making</strong>, where the network must integrate noisy sensory evidence and identify the dominant alternative.</p>
+
+<p>The third was <strong>Go/NoGo</strong>, where the network must maintain stimulus information and generate or suppress an action at the correct time.</p>
+
+<p>These tasks probe different combinations of temporal integration, short-term memory, and decision control. They are not intended to exhaust the richness of cognition, but they provide a controlled setting for comparing recurrent architectures under matched conditions.</p>
+
+<h2 id="main-result-cortical-priors-improve-learning">Main result: cortical priors improve learning</h2>
+
+<p>The strongest models were those combining function-derived initialization, real spatial embedding, and communicability-aware regularization. In particular, the $W^<em>D^</em>C$ and $W^<em>D^</em>C^*$ variants consistently performed among the best across tasks.</p>
+
+<p>The important point, however, is not only that the fully constrained models performed well. The ablation structure revealed a hierarchy among the priors.</p>
+
+<p><strong>Functional initialization provided the largest and most general gain.</strong> Models initialized from functional cortical relationships strongly outperformed randomly initialized or partially constrained variants, especially on the more difficult tasks.</p>
+
+<p><strong>Real spatial embedding added a robust secondary benefit.</strong> Replacing artificial grid coordinates with measured neuronal coordinates improved performance across several matched comparisons, showing that cortical geometry itself contributes useful structure.</p>
+
+<p><strong>Communicability had a more selective effect.</strong> Communication-aware regularization refined learning and topology, especially when combined with real spatial embedding, but it was not the dominant driver of performance.</p>
+
+<p>This hierarchy is one of the central messages of the paper. Cortical priors do not all matter equally. Function-derived initialization has the strongest effect, spatial embedding provides an additional computational advantage, and communicability shapes the learned solution more selectively.</p>
+
+<p>For me, this is the important shift. The result is not simply that “biology helps.” The result is that different aspects of cortical organization have different computational roles.</p>
+
+<h2 id="positive-only-recurrence-biological-initialization-stabilizes-difficult-optimization">Positive-only recurrence: biological initialization stabilizes difficult optimization</h2>
+
+<p>We also tested a more restrictive setting in which recurrent weights were constrained to be non-negative. This is not a full Dale-compliant excitatory/inhibitory network, since the models are built from excitatory MICrONS neurons, but it is a strong sign constraint on recurrent dynamics.</p>
+
+<p>Under this positive-only constraint, randomly initialized models collapsed toward chance performance. In contrast, models initialized with functional cortical priors retained high accuracy.</p>
+
+<p>This result suggests that biological initialization does more than improve average performance. It changes the optimization landscape. By starting the recurrent network in a structured region of parameter space, functional initialization makes learning more robust even when the recurrent architecture is severely constrained.</p>
+
+<p>The permuted biological initialization, $W^!$, was especially informative. This variant preserves the empirical distribution of biologically derived weights but disrupts their original neuron-to-neuron assignment. Its performance was often comparable to $W^*$, indicating that part of the benefit comes from the statistical structure of the biological initialization rather than a strict one-to-one mapping between specific neurons and specific weights.</p>
+
+<p>But distribution alone is not the full story.</p>
+
+<p>When we resampled the nonzero entries of $W_{\mathrm{bio}}$ from its empirical cumulative distribution function and reassigned them to the same support, performance dropped substantially. Thus, simply matching the marginal weight distribution is not sufficient. The original biologically derived weight values contain task-relevant structure that is lost under distribution-matched randomization.</p>
+
+<p>This is a subtle but important point. The biological prior is not reducible to a generic heavy-tailed distribution. Its values and structure carry computational information.</p>
+
+<h2 id="cortical-priors-reshape-the-topology-of-learned-recurrent-networks">Cortical priors reshape the topology of learned recurrent networks</h2>
+
+<p>We then asked whether cortical constraints change not only task accuracy, but also the organization of the learned recurrent weights.</p>
+
+<p>They do.</p>
+
+<p>Across model variants, cortical priors shifted recurrent networks away from high-entropy, random-like configurations and toward more structured regimes. We quantified this using graph-theoretic measures including entropy, modularity, small-worldness, and assortativity.</p>
+
+<h3 id="entropy">Entropy</h3>
+
+<p>Functionally initialized and spatially grounded models tended to develop lower-entropy recurrent weight organization. This indicates that learning under cortical priors concentrates recurrent structure into more specialized, less random configurations.</p>
+
+<p>Entropy here acts as a compact descriptor of how concentrated or diffuse the learned weight distribution becomes:</p>
+
+\[H(W)
+=
+-
+\sum_i
+p(w_i)
+\log_2 p(w_i).\]
+
+<p>High-entropy models were generally closer to random-like regimes and performed poorly on the harder tasks. Low- and intermediate-entropy models were more structured and often performed better.</p>
+
+<p>The implication is that cortical priors do not merely bias the initial state of the network. They alter the class of solutions reached by learning.</p>
+
+<h3 id="modularity-and-small-worldness">Modularity and small-worldness</h3>
+
+<p>Models combining functional priors, real spatial embedding, and direct communicability regularization developed stronger modular and small-world structure.</p>
+
+<p>This matters because modular small-world topology is a canonical feature of brain networks. It supports local specialization while preserving efficient global communication. The learned RNNs therefore did not merely perform better; they converged toward organizational regimes that resemble known principles of biological network architecture.</p>
+
+<p>Small-worldness was quantified as</p>
+
+\[\sigma
+=
+\frac{C/C_{\mathrm{rand}}}{L/L_{\mathrm{rand}}},\]
+
+<p>where $C$ is the clustering coefficient, $L$ is the characteristic path length, and the denominator gives the corresponding random-network baselines.</p>
+
+<p>However, topology and performance were not identical. Some $C^*$ variants achieved high task accuracy and low entropy without developing comparably strong modularity or small-worldness. This dissociation shows that sparse structured connectivity and modular small-world organization are related but distinct outcomes of learning.</p>
+
+<p>This point is important. A network can become structured without becoming modular in the canonical small-world sense. The cortical priors constrain the solution space, but they do not force all successful networks into one topological endpoint.</p>
+
+<h3 id="assortativity">Assortativity</h3>
+
+<p>Assortativity revealed another distinction. Some spatially constrained models developed positively assortative, hub-rich organization, while functionally initialized models more often shifted toward disassortative hub-periphery structure.</p>
+
+<p>This suggests that different cortical priors favor different trade-offs between integration, segregation, and distribution of computational load. Cortical constraints do not impose a single canonical topology. They bias the family of solutions that learning discovers.</p>
+
+<p>This is precisely why the ablation design matters. If we had treated biology as a single intervention, we would have missed the fact that function, geometry, and communicability pull the learned networks toward different regions of topological space.</p>
+
+<h2 id="microns-as-an-architectural-resource-for-ai">MICrONS as an architectural resource for AI</h2>
+
+<p>For machine learning, the message is that better recurrent computation does not necessarily require larger models, more gates, or more architectural complexity.</p>
+
+<p>The models here use the same basic RNN architecture. What changes is the inductive structure: how recurrent weights are initialized, how spatial cost is imposed, and how communication structure is regularized.</p>
+
+<p>This points to a broader design principle. Biological data can be used not only as something to predict, but as something to build with. Measured cortical organization can provide priors that improve learning, robustness, and internal organization.</p>
+
+<p>In this sense, MICrONS-like datasets are not only resources for neuroscience. They are architectural resources for AI.</p>
+
+<p>This does not mean that artificial systems should copy cortex literally. The point is more precise. Cortical data can reveal reusable constraints: spatial embedding, wiring economy, structured functional initialization, communication-aware regularization, modularity, sparsity, and small-world organization. These are not superficial biological details. They are design principles that can be tested, ablated, and repurposed.</p>
+
+<h2 id="why-this-matters-for-neuroscience">Why this matters for neuroscience</h2>
+
+<p>For neuroscience, the framework provides a way to reverse-engineer cortical computation through controlled model perturbation.</p>
+
+<p>Because we can independently ablate function-derived initialization, real geometry, and communicability, we can ask which biological features are necessary for which computational outcomes. This makes the RNN model family a kind of experimental testbed.</p>
+
+<p>The results suggest that anatomical wiring and geometry matter, but that functional relationships provide the strongest constraint on recurrent learning. This fits with a broader lesson from connectome-constrained modeling: structure alone may not uniquely determine dynamics. To understand computation, we need both wiring and activity.</p>
+
+<p>The cortical graph provides a scaffold. Functional activity tells us how that scaffold is used.</p>
+
+<p>This distinction is central. A connectome alone may define a space of possible dynamics, but not a unique computation. Function-derived structure narrows that space.</p>
+
+<h2 id="relation-to-biological-computation-and-physical-computing">Relation to biological computation and physical computing</h2>
+
+<p>There is a broader way to read these results.</p>
+
+<p>A recurrent network computes by evolving its state. Its computation is not only represented in its input-output map, but in the trajectory of its internal dynamics. From this perspective, initialization, geometry, and connectivity are not implementation details. They define the physical substrate in which computation unfolds.</p>
+
+<p>This view is natural in neuroscience, but it is also relevant to machine learning and physical computing more generally. Biological systems compute under constraints: spatial embedding, energetic cost, wiring economy, noise, sign structure, local interactions, and recurrent dynamics. These constraints are often treated as inconveniences when building artificial systems. But in biological systems, they may be part of what makes computation efficient, robust, and reusable.</p>
+
+<p>The present work treats cortical organization in exactly this way. It asks whether the constraints of the cortical substrate can be translated into artificial recurrent systems as useful inductive structure.</p>
+
+<p>The answer is yes, but with nuance. The most useful biological constraint was not simply the anatomical graph. It was the function-derived structure of the activity. Geometry helped. Communicability helped more selectively. The computational value emerged from the interplay between measured function, measured space, and measured wiring.</p>
+
+<h2 id="what-the-study-does-not-claim">What the study does not claim</h2>
+
+<p>It is important to be clear about the scope.</p>
+
+<p>This is not a claim that the RNNs reproduce cortical computation in full biological detail. The models use excitatory neurons from MICrONS and do not yet incorporate the full diversity of inhibitory cell types, laminar structure, neuromodulation, synaptic dynamics, or developmental constraints.</p>
+
+<p>The positive-only experiments are not a full Dale-compliant excitatory/inhibitory model. They are a strong sign-constrained test showing that functional initialization stabilizes learning under a difficult recurrent constraint.</p>
+
+<p>The task suite is also controlled and simplified. One-Choice Inference, Perceptual Decision-Making, and Go/NoGo probe important recurrent capacities, but they do not capture the full richness of naturalistic cortical computation.</p>
+
+<p>The point is therefore not that the model is a complete model of cortex. The point is that measured cortical organization contains computationally useful structure, and that this structure can be decomposed experimentally.</p>
+
+<h2 id="the-larger-picture">The larger picture</h2>
+
+<p>The central claim of the paper is straightforward:</p>
+
+<p><strong>Cortical organization is not just biological detail. It is computational structure.</strong></p>
+
+<p>By grounding RNNs in measured cortical geometry, wiring, and function, we show that biological priors can improve learning, stabilize optimization under sign constraints, and guide networks toward structured topological regimes.</p>
+
+<p>This gives us two complementary opportunities.</p>
+
+<p>For AI, cortical data can inspire more efficient, robust, and interpretable recurrent architectures.</p>
+
+<p>For neuroscience, artificial recurrent networks can serve as controlled systems for testing which aspects of cortical organization are computationally consequential.</p>
+
+<p>The machinery of cortex can therefore be used both as an inductive basis for artificial learning systems and as a scientific object to be interrogated through those systems.</p>
+
+<p>In that sense, this work is not only about building better RNNs, and it is not only about interpreting cortical data. It is about using biological organization as a bridge between neural computation, machine learning, and the physics of structured dynamical systems.</p>
+
+  </section>
+
+  
+  <section class="paper__section">
+    <h2>The room this opens</h2>
+    <div class="linkbar">
+      <a href="/papers/Cortical-blueprint-RNN/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="20" x2="12" y2="12"/><line x1="12" y1="12" x2="21" y2="4"/><line x1="12" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="21" y2="20"/></svg>
+        Follow this path into the Maze
+      </a>
+    </div>
+  </section>
+  
+</article>
+
+      <footer class="foot">
+  <span>© 2026 · Nima Dehghani</span>
+  <span>
+    <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    ·
+    <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+  </span>
+</footer>
+
+    </main>
+  </div>
+
+  <script src="/assets/js/quotes.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
