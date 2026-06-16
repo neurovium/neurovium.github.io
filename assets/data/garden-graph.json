@@ -1,8 +1,8 @@
 {
   "meta": {
-    "paper_count": 26,
-    "concept_count": 125,
-    "edge_count": 387,
+    "paper_count": 27,
+    "concept_count": 146,
+    "edge_count": 411,
     "tfidf": true
   },
   "nodes": [
@@ -19,6 +19,37 @@
         "Symbolic Regression",
         "Automated Scientific Discovery",
         "Data-Driven Modeling"
+      ]
+    },
+    {
+      "id": "Cortical-blueprint-RNN",
+      "kind": "paper",
+      "title": "Harnessing cortical geometry, wiring, and function as inductive biases for recurrent neural networks",
+      "year": 2026,
+      "url": "/papers/Cortical-blueprint-RNN/",
+      "wash": "--wash-plum",
+      "tags": [
+        "NeuroAI",
+        "functional connectomics",
+        "cortical wiring",
+        "cortical geometry",
+        "recurrent neural networks",
+        "RNNs",
+        "biological inductive biases",
+        "MICrONS",
+        "spatially embedded networks",
+        "communicability",
+        "graph topology",
+        "small-world networks",
+        "modularity",
+        "neural computation",
+        "bio-inspired AI",
+        "connectome-constrained modeling",
+        "recurrent learning",
+        "cortical priors",
+        "functional initialization",
+        "wiring economy",
+        "biological computation"
       ]
     },
     {
@@ -471,7 +502,34 @@
       "wash": "--wash-slate",
       "blurb": "",
       "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "bio-inspired AI",
+      "kind": "concept",
+      "name": "bio-inspired AI",
+      "wash": "--wash-slate",
+      "blurb": "",
+      "curated": false,
+      "weight": 3
+    },
+    {
+      "id": "biological computation",
+      "kind": "concept",
+      "name": "biological computation",
+      "wash": "--wash-slate",
+      "blurb": "",
+      "curated": false,
       "weight": 2
+    },
+    {
+      "id": "biological inductive biases",
+      "kind": "concept",
+      "name": "biological inductive biases",
+      "wash": "--wash-teal",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
     },
     {
       "id": "block shuffling",
@@ -582,6 +640,15 @@
       "weight": 2
     },
     {
+      "id": "communicability",
+      "kind": "concept",
+      "name": "communicability",
+      "wash": "--wash-plum",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
       "id": "Complex Systems",
       "kind": "concept",
       "name": "Complex Systems",
@@ -597,7 +664,7 @@
       "wash": "--wash-oxblood",
       "blurb": "",
       "curated": false,
-      "weight": 4
+      "weight": 3
     },
     {
       "id": "Compositionality",
@@ -607,6 +674,15 @@
       "blurb": "",
       "curated": false,
       "weight": 2
+    },
+    {
+      "id": "connectome-constrained modeling",
+      "kind": "concept",
+      "name": "connectome-constrained modeling",
+      "wash": "--wash-teal",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
     },
     {
       "id": "Control",
@@ -624,7 +700,7 @@
       "wash": "--wash-slate",
       "blurb": "",
       "curated": false,
-      "weight": 8
+      "weight": 9
     },
     {
       "id": "cortical down-state",
@@ -633,6 +709,33 @@
       "wash": "--wash-plum",
       "blurb": "A brief, profound silence of neuronal firing — the negative half of the cortical slow oscillation. In humans it appears, isolated, as the K-complex.",
       "curated": true,
+      "weight": 1
+    },
+    {
+      "id": "cortical geometry",
+      "kind": "concept",
+      "name": "cortical geometry",
+      "wash": "--wash-plum",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "cortical priors",
+      "kind": "concept",
+      "name": "cortical priors",
+      "wash": "--wash-teal",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "cortical wiring",
+      "kind": "concept",
+      "name": "cortical wiring",
+      "wash": "--wash-slate",
+      "blurb": "",
+      "curated": false,
       "weight": 1
     },
     {
@@ -879,6 +982,33 @@
       "weight": 1
     },
     {
+      "id": "functional connectomics",
+      "kind": "concept",
+      "name": "functional connectomics",
+      "wash": "--wash-oxblood",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "functional initialization",
+      "kind": "concept",
+      "name": "functional initialization",
+      "wash": "--wash-dust",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "graph topology",
+      "kind": "concept",
+      "name": "graph topology",
+      "wash": "--wash-slate",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
       "id": "Graphoelement",
       "kind": "concept",
       "name": "Graphoelement",
@@ -996,6 +1126,24 @@
       "weight": 7
     },
     {
+      "id": "MICrONS",
+      "kind": "concept",
+      "name": "MICrONS",
+      "wash": "--wash-teal",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "modularity",
+      "kind": "concept",
+      "name": "modularity",
+      "wash": "--wash-slate",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
       "id": "Modulation",
       "kind": "concept",
       "name": "Modulation",
@@ -1068,6 +1216,15 @@
       "weight": 6
     },
     {
+      "id": "neural computation",
+      "kind": "concept",
+      "name": "neural computation",
+      "wash": "--wash-dust",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
       "id": "Neural Networks",
       "kind": "concept",
       "name": "Neural Networks",
@@ -1081,6 +1238,15 @@
       "kind": "concept",
       "name": "Neural signal reconstruction",
       "wash": "--wash-plum",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "NeuroAI",
+      "kind": "concept",
+      "name": "NeuroAI",
+      "wash": "--wash-rust",
       "blurb": "",
       "curated": false,
       "weight": 1
@@ -1212,6 +1378,24 @@
       "weight": 1
     },
     {
+      "id": "recurrent learning",
+      "kind": "concept",
+      "name": "recurrent learning",
+      "wash": "--wash-oxblood",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "recurrent neural networks",
+      "kind": "concept",
+      "name": "recurrent neural networks",
+      "wash": "--wash-teal",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
       "id": "renormalisation-group",
       "kind": "concept",
       "name": "renormalisation-group",
@@ -1252,6 +1436,15 @@
       "kind": "concept",
       "name": "Rhythm",
       "wash": "--wash-plum",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "RNNs",
+      "kind": "concept",
+      "name": "RNNs",
+      "wash": "--wash-rust",
       "blurb": "",
       "curated": false,
       "weight": 1
@@ -1356,6 +1549,15 @@
       "weight": 4
     },
     {
+      "id": "small-world networks",
+      "kind": "concept",
+      "name": "small-world networks",
+      "wash": "--wash-teal",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
       "id": "Source Localization",
       "kind": "concept",
       "name": "Source Localization",
@@ -1369,6 +1571,15 @@
       "kind": "concept",
       "name": "spatial masking",
       "wash": "--wash-plum",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "spatially embedded networks",
+      "kind": "concept",
+      "name": "spatially embedded networks",
+      "wash": "--wash-rust",
       "blurb": "",
       "curated": false,
       "weight": 1
@@ -1561,6 +1772,15 @@
       "blurb": "",
       "curated": false,
       "weight": 2
+    },
+    {
+      "id": "wiring economy",
+      "kind": "concept",
+      "name": "wiring economy",
+      "wash": "--wash-oxblood",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
     }
   ],
   "links": [
@@ -1579,13 +1799,13 @@
     {
       "source": "Complexity",
       "target": "Emergence",
-      "weight": 0.25,
+      "weight": 0.2857,
       "kind": "cooccur"
     },
     {
       "source": "Complexity",
       "target": "Noise",
-      "weight": 0.2857,
+      "weight": 0.3333,
       "kind": "cooccur"
     },
     {
@@ -1602,98 +1822,98 @@
     },
     {
       "source": "Cortex",
-      "target": "Dynamics",
-      "weight": 0.1538,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Cortex",
       "target": "EEG",
-      "weight": 0.2308,
+      "weight": 0.2143,
       "kind": "cooccur"
     },
     {
       "source": "Cortex",
       "target": "Inhibition",
-      "weight": 0.2727,
+      "weight": 0.25,
       "kind": "cooccur"
     },
     {
       "source": "Cortex",
       "target": "LFP",
-      "weight": 0.2,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Cortex",
-      "target": "MEG",
-      "weight": 0.25,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Cortex",
-      "target": "Modulation",
-      "weight": 0.25,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Cortex",
-      "target": "Network",
-      "weight": 0.1667,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Cortex",
-      "target": "Oscillation",
-      "weight": 0.3,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Cortex",
-      "target": "Sleep",
-      "weight": 0.3571,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Cortex",
-      "target": "Spike",
       "weight": 0.1818,
       "kind": "cooccur"
     },
     {
       "source": "Cortex",
+      "target": "MEG",
+      "weight": 0.2308,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Cortex",
+      "target": "Modulation",
+      "weight": 0.2222,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Cortex",
+      "target": "Network",
+      "weight": 0.1538,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Cortex",
+      "target": "Oscillation",
+      "weight": 0.2727,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Cortex",
+      "target": "Sleep",
+      "weight": 0.3333,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Cortex",
+      "target": "Spike",
+      "weight": 0.1667,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Cortex",
       "target": "Spindle",
-      "weight": 0.3,
+      "weight": 0.2727,
       "kind": "cooccur"
     },
     {
       "source": "Cortex",
       "target": "Statistical Physics",
-      "weight": 0.2222,
+      "weight": 0.2,
       "kind": "cooccur"
     },
     {
       "source": "Cortex",
       "target": "Synchrony",
-      "weight": 0.4444,
+      "weight": 0.4,
       "kind": "cooccur"
     },
     {
       "source": "Cortex",
       "target": "Thalamocortical",
-      "weight": 0.2222,
+      "weight": 0.2,
       "kind": "cooccur"
     },
     {
       "source": "Cortex",
       "target": "Thalamus",
-      "weight": 0.2222,
+      "weight": 0.2,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Cortex",
+      "target": "bio-inspired AI",
+      "weight": 0.2,
       "kind": "cooccur"
     },
     {
       "source": "Cortex",
       "target": "focal asynchronous oscillation",
-      "weight": 0.2222,
+      "weight": 0.2,
       "kind": "cooccur"
     },
     {
@@ -2375,6 +2595,12 @@
       "kind": "cooccur"
     },
     {
+      "source": "bio-inspired AI",
+      "target": "biological computation",
+      "weight": 0.6667,
+      "kind": "cooccur"
+    },
+    {
       "source": "focal asynchronous oscillation",
       "target": "thalamocortical core",
       "weight": 0.6667,
@@ -2419,6 +2645,132 @@
     {
       "source": "CRX",
       "target": "Symbolic Regression",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Cortical-blueprint-RNN",
+      "target": "MICrONS",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Cortical-blueprint-RNN",
+      "target": "NeuroAI",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Cortical-blueprint-RNN",
+      "target": "RNNs",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Cortical-blueprint-RNN",
+      "target": "bio-inspired AI",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Cortical-blueprint-RNN",
+      "target": "biological computation",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Cortical-blueprint-RNN",
+      "target": "biological inductive biases",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Cortical-blueprint-RNN",
+      "target": "communicability",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Cortical-blueprint-RNN",
+      "target": "connectome-constrained modeling",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Cortical-blueprint-RNN",
+      "target": "cortical geometry",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Cortical-blueprint-RNN",
+      "target": "cortical priors",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Cortical-blueprint-RNN",
+      "target": "cortical wiring",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Cortical-blueprint-RNN",
+      "target": "functional connectomics",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Cortical-blueprint-RNN",
+      "target": "functional initialization",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Cortical-blueprint-RNN",
+      "target": "graph topology",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Cortical-blueprint-RNN",
+      "target": "modularity",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Cortical-blueprint-RNN",
+      "target": "neural computation",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Cortical-blueprint-RNN",
+      "target": "recurrent learning",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Cortical-blueprint-RNN",
+      "target": "recurrent neural networks",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Cortical-blueprint-RNN",
+      "target": "small-world networks",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Cortical-blueprint-RNN",
+      "target": "spatially embedded networks",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Cortical-blueprint-RNN",
+      "target": "wiring economy",
       "weight": 1.0,
       "kind": "explicit"
     },
@@ -3587,14 +3939,20 @@
       "kind": "mined"
     },
     {
-      "source": "Inhibitory-cortical-depth",
-      "target": "Bio-inspired AI",
+      "source": "Cortical-blueprint-RNN",
+      "target": "Cortex",
       "weight": 0.6,
       "kind": "mined"
     },
     {
       "source": "Inhibitory-cortical-depth",
       "target": "Modulation",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "Inhibitory-cortical-depth",
+      "target": "bio-inspired AI",
       "weight": 0.6,
       "kind": "mined"
     },
@@ -3660,7 +4018,13 @@
     },
     {
       "source": "bioisnpired-ai",
-      "target": "Complexity",
+      "target": "bio-inspired AI",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "bioisnpired-ai",
+      "target": "biological computation",
       "weight": 0.6,
       "kind": "mined"
     },
