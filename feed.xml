@@ -1,4 +1,571 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://neurovium.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neurovium.github.io/" rel="alternate" type="text/html" /><updated>2026-06-22T15:41:07+00:00</updated><id>https://neurovium.github.io/feed.xml</id><title type="html">Nima Dehghani</title><subtitle>Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics</subtitle><author><name>Nima Dehghani</name></author><entry><title type="html">Cortical Machinery as a Design Principle for RNNs</title><link href="https://neurovium.github.io/posts/pblog-Cortical-blueprint-RNN/" rel="alternate" type="text/html" title="Cortical Machinery as a Design Principle for RNNs" /><published>2026-06-16T00:00:00+00:00</published><updated>2026-06-16T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-Cortical-blueprint-RNN</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-Cortical-blueprint-RNN/"><![CDATA[<p><em>Companion post to:</em><br />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://neurovium.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neurovium.github.io/" rel="alternate" type="text/html" /><updated>2026-06-23T05:32:39+00:00</updated><id>https://neurovium.github.io/feed.xml</id><title type="html">Nima Dehghani</title><subtitle>Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics</subtitle><author><name>Nima Dehghani</name></author><entry><title type="html">When Prediction Shapes the Machine: Evolutionary Reservoirs, Chaos, and Structural Constraints</title><link href="https://neurovium.github.io/posts/pblog-Adaptive-reservoir/" rel="alternate" type="text/html" title="When Prediction Shapes the Machine: Evolutionary Reservoirs, Chaos, and Structural Constraints" /><published>2026-06-23T00:00:00+00:00</published><updated>2026-06-23T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-Adaptive-reservoir</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-Adaptive-reservoir/"><![CDATA[<p><em>Companion post to:</em><br />
+<strong>Evolutionary Optimization Reveals Structural Constraints on Reservoir Architecture for Spatiotemporal Chaos</strong>
+Nima Dehghani
+<em>arXiv</em> 2026.
+DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.48550/arXiv.2606.22765</code></p>
+
+<hr />
+
+<h1 id="when-prediction-shapes-the-machine-evolutionary-reservoirs-chaos-and-structural-constraints">When Prediction Shapes the Machine: Evolutionary Reservoirs, Chaos, and Structural Constraints</h1>
+
+<p>Biological systems do not live in static worlds. Cells, organisms, and nervous systems are continuously driven by changing environments whose future states are only partly predictable. Survival depends not only on reacting to the present, but on transforming past stimulation into internal states that are useful for future action. In that broad sense, prediction is not a luxury computation. It is one of the organizing pressures on biological dynamics.</p>
+
+<p>This paper asks a simple question from that perspective:</p>
+
+<p><strong>If a recurrent dynamical system is selected only for predictive performance, what kind of internal structure does it evolve?</strong></p>
+
+<p>The question is computational, but it is also biological. In machine learning, recurrent networks and reservoirs are often treated as tools for timeseries prediction. In physics, they are dynamical systems that can be studied through spectra, stability, memory, relaxation modes, and attractor geometry. In neuroscience and biology, they are abstractions of physical substrates whose internal states carry traces of the past and prepare the system for the future.</p>
+
+<p>Reservoir computing is a natural place to bring these perspectives together. A reservoir computer consists of a recurrent dynamical system that transforms an input timeseries into a high-dimensional internal state. A usually simple readout is then trained to extract the desired output. The standard approach keeps the recurrent reservoir fixed, often random, and trains only the readout. That makes reservoir computing elegant and powerful, but it leaves a deeper question untouched: <strong>what if the recurrent substrate itself is allowed to adapt?</strong></p>
+
+<p>In this work, I used evolutionary optimization to tune reservoir computers for prediction of the Kuramoto–Sivashinsky equation, a canonical model of spatiotemporal chaos. The optimization did not directly mutate every recurrent weight. Instead, it acted on five construction hyperparameters: reservoir size, connectivity degree, spectral radius, input scaling, and readout regularization. This distinction matters. The genetic algorithm did not sculpt each synapse one by one. It selected the rules from which recurrent substrates were generated.</p>
+
+<p>The result is not just that the reservoirs predict better. The more interesting result is that prediction reveals structural invariants. Evolution improves performance while confining the reservoirs to a constrained dynamical class: a conserved spectral envelope, targeted refinement of slow modes, intermediate modularity, and reduced connection cost. The recurrent substrate becomes interpretable not by inspecting one weight at a time, but by asking which structural degrees of freedom are stabilized, which are refined, and which are pruned away.</p>
+
+<hr />
+
+<h2 id="1-prediction-as-a-biological-and-physical-problem">1. Prediction as a biological and physical problem</h2>
+
+<p>A fluctuating environment carries temporal structure. Some of that structure is predictable; some is not. A biological system does not need an explicit symbolic model of the world to exploit this structure. A bacterium, a gene regulatory network, a cortical circuit, or a biochemical feedback loop can encode environmental history in its internal state. The system’s present state then becomes a compressed dynamical trace of its past inputs.</p>
+
+<p>This is one reason reservoir computing is attractive as a model class. A reservoir computer is not trained in the same way as a conventional recurrent neural network. The recurrent dynamics are usually fixed. The input drives the reservoir, the reservoir expands the input history into a rich dynamical representation, and a readout learns to extract the desired prediction.</p>
+
+<p>A minimal reservoir update can be written as</p>
+
+\[x(t) = \phi \left( A x(t-1) + W_{\mathrm{in}} u(t) \right),\]
+
+<p>where $x(t)$ is the reservoir state, $A$ is the recurrent matrix, $W_{\mathrm{in}}$ maps the input into the reservoir, $u(t)$ is the input signal, and $\phi$ is a nonlinear activation such as $\tanh$.</p>
+
+<p>The readout is usually linear:</p>
+
+\[y(t) = W_{\mathrm{out}} x_{\mathrm{aug}}(t),\]
+
+<p>where $x_{\mathrm{aug}}(t)$ may include the reservoir state together with additional features such as a bias or nonlinear augmentation.</p>
+
+<p>During training, the reservoir is driven by the true input sequence. During autonomous prediction, the reservoir is closed on itself: its own previous output is fed back as the next input. The update becomes</p>
+
+\[x(t) = \phi \left( A x(t-1) + W_{\mathrm{in}} y(t-1) \right),\]
+
+\[y(t) = W_{\mathrm{out}} x_{\mathrm{aug}}(t).\]
+
+<p>This closed-loop mode is where the real test happens. A reservoir that only tracks the training signal under teacher forcing has not necessarily learned the dynamics. To predict autonomously, the reservoir must generate a trajectory that remains aligned with the target system for a finite time. For chaotic systems, this is especially difficult because small errors grow rapidly.</p>
+
+<p>The relevant problem is therefore not only approximation, but dynamical continuation. The reservoir must carry enough memory, enough nonlinear richness, and enough stability to remain on or near the correct evolving attractor.</p>
+
+<hr />
+
+<h2 id="2-why-kuramotosivashinsky-chaos">2. Why Kuramoto–Sivashinsky chaos?</h2>
+
+<p>The target system in this work is the one-dimensional Kuramoto–Sivashinsky equation:</p>
+
+\[\frac{\partial u}{\partial t}
++
+u \frac{\partial u}{\partial x}
++
+\frac{\partial^2 u}{\partial x^2}
++
+\frac{\partial^4 u}{\partial x^4}
+=
+0.\]
+
+<p>Here $u(x,t)$ is a spatial field evolving over time. The equation combines nonlinear advection, long-wavelength instability, and short-wavelength dissipation. In Fourier space, the linear part has the form</p>
+
+\[L_k = k^2 - k^4.\]
+
+<p>The $k^2$ term destabilizes certain modes, while the $-k^4$ term damps high-frequency structure. The nonlinear term redistributes energy across modes. The result is spatiotemporal chaos: structured enough to have correlations and coherent patterns, but unstable enough that small errors amplify.</p>
+
+<p>This makes the Kuramoto–Sivashinsky system a strong testbed for prediction. It is not merely a low-dimensional chaotic oscillator. It is an extended field with spatial structure, interacting modes, and finite predictability horizons. A good predictor must capture both local pattern evolution and global temporal coherence.</p>
+
+<p>For physicists, the task is naturally phrased in terms of chaotic flow, Lyapunov growth, relaxation modes, and finite-time prediction. For machine learners, it is a benchmark in autonomous sequence modeling under compounding error. For neuroscientists and biologists, it is a controlled abstraction of the problem faced by living systems: how can an internal recurrent substrate transform past stimulation into a state that remains useful for predicting a complex future?</p>
+
+<hr />
+
+<h2 id="3-what-was-evolved">3. What was evolved?</h2>
+
+<p>The genetic algorithm optimized five reservoir construction hyperparameters:</p>
+
+<ol>
+  <li><strong>Reservoir size</strong>, $n_r$</li>
+  <li><strong>Connectivity degree</strong>, $d$, or equivalently sparsity</li>
+  <li><strong>Spectral radius</strong>, $\rho$</li>
+  <li><strong>Input scaling</strong>, $\sigma$</li>
+  <li><strong>Readout regularization</strong>, $\beta$</li>
+</ol>
+
+<p>The recurrent matrix was initialized as a sparse directed weighted network. If the reservoir has $n_r$ nodes and average degree $d$, the connection probability is</p>
+
+\[p = \frac{d}{n_r}.\]
+
+<p>An initial random recurrent matrix $A_0$ is generated, and then rescaled to impose the desired spectral radius. If</p>
+
+\[\lambda_{\max} = \max_\ell |\lambda_\ell(A_0)|,\]
+
+<p>then the recurrent matrix used by the reservoir is</p>
+
+\[A = \rho_{\mathrm{target}} \frac{A_0}{\lambda_{\max}}.\]
+
+<p>Thus the genetic algorithm does not choose every entry of $A$. It chooses the parameters that define the ensemble from which $A$ is drawn.</p>
+
+<p>This is important for the biological interpretation. Biological evolution does not encode every synapse in a brain individually. It shapes developmental rules, molecular cues, cell types, growth constraints, and activity-dependent mechanisms. Structure emerges from rules. In the same way, the genetic algorithm here selects construction parameters, and the recurrent substrates generated from those parameters acquire characteristic structural statistics.</p>
+
+<p>The readout is trained by ridge regression. If $X_{\mathrm{aug}}$ is the matrix of reservoir states collected during training and $Y$ is the target output matrix, then</p>
+
+\[W_{\mathrm{out}}
+=
+Y X_{\mathrm{aug}}^\top
+\left(
+X_{\mathrm{aug}} X_{\mathrm{aug}}^\top + \beta I
+\right)^{-1}.\]
+
+<p>The recurrent network is not trained by gradient descent. The reservoir substrate is evaluated through its ability to support autonomous prediction, and the genetic algorithm selects hyperparameter regimes that produce better predictors.</p>
+
+<hr />
+
+<h2 id="4-fitness-not-just-low-error-but-spatially-meaningful-prediction">4. Fitness: not just low error, but spatially meaningful prediction</h2>
+
+<p>The prediction target is a spatially extended field. A reservoir that predicts only a few spatial components well but fails everywhere else is not truly capturing the Kuramoto–Sivashinsky dynamics. For this reason, the fitness score combines an aggregate error with the number of output dimensions that achieve acceptable prediction.</p>
+
+<p>For output dimension $k$, the normalized root mean square error is</p>
+
+\[\mathrm{NRMSE}_k
+=
+\frac{
+\sqrt{
+\frac{1}{T}
+\sum_{t=1}^{T}
+\left(
+y_k(t) - y_{\mathrm{target},k}(t)
+\right)^2
+}
+}{
+\sigma_{y_{\mathrm{target},k}}
+}.\]
+
+<p>The normalized mean absolute error is computed after min–max normalization of the predicted and target outputs:</p>
+
+\[\mathrm{NMAE}
+=
+\frac{1}{KT}
+\sum_{k=1}^{K}
+\sum_{t=1}^{T}
+\left|
+\tilde y_k(t)
+-
+\tilde y_{\mathrm{target},k}(t)
+\right|.\]
+
+<p>The composite fitness score is</p>
+
+\[J
+=
+\frac{
+\mathrm{NMAE}
+}{
+\sum_{k=1}^{K}
+\mathbf{1}
+[
+\mathrm{NRMSE}_k &lt; \varepsilon
+]
+}.\]
+
+<p>Lower $J$ is better. The numerator rewards low overall error. The denominator rewards prediction across many spatial output dimensions. This score therefore asks whether the reservoir is capturing the field dynamics broadly, rather than succeeding only locally.</p>
+
+<p>This matters for interpreting the results. The optimization is not simply fitting a scalar trajectory. It is selecting recurrent substrates that can preserve a spatially distributed chaotic pattern over a finite autonomous forecast horizon.</p>
+
+<hr />
+
+<h2 id="5-the-first-result-evolution-improves-the-whole-population-not-just-a-few-elites">5. The first result: evolution improves the whole population, not just a few elites</h2>
+
+<p>Across generations, evolutionary optimization systematically reduced the composite prediction error. But the more important point is that improvement occurred at the population level. The genetic algorithm did not merely discover a few exceptional reservoirs while the rest remained poor. The full distribution shifted toward better prediction.</p>
+
+<p>This tells us that evolution found hyperparameter regimes whose typical realizations were better matched to the task. Since each reservoir is still stochastically generated, this is a stronger result than finding a single lucky matrix. It means the evolutionary process reshaped the reservoir design space. It identified regions where many networks, not just rare outliers, have useful predictive dynamics.</p>
+
+<p>For machine learning, this is a useful lesson. Hyperparameter optimization is often treated as a practical nuisance: tune the numbers until performance improves. Here the optimized population becomes an object of scientific analysis. The distribution of successful networks reveals what the task demands from the recurrent substrate.</p>
+
+<p>For biology, the analogy is also natural. Evolution does not need to produce identical organisms or identical circuits. It can select developmental regimes that reliably generate functional individuals despite stochastic variation. The fact that population variance narrows and typical performance improves is therefore part of the story.</p>
+
+<hr />
+
+<h2 id="6-forecast-horizon-prediction-in-chaos-is-about-staying-aligned">6. Forecast horizon: prediction in chaos is about staying aligned</h2>
+
+<p>A scalar error score is useful, but chaotic prediction requires a time-resolved view. In a chaotic system, even a very good model eventually diverges from the true trajectory. The question is how long the predicted trajectory remains close enough to be meaningful.</p>
+
+<p>This is why the paper analyzes the time-resolved NRMSE across the prediction horizon. A reservoir can fail immediately, producing dynamics unrelated to the target. It can learn short-time structure but drift away quickly. Or it can remain dynamically aligned with the true Kuramoto–Sivashinsky field for a longer interval.</p>
+
+<p>The evolved reservoirs show the third pattern. They maintain low error for longer portions of the forecast window. In other words, evolution does not only reduce average error. It extends the duration over which the reservoir remains on a useful predictive trajectory.</p>
+
+<p>This is the correct way to think about prediction in chaotic systems. Because of sensitive dependence on initial conditions, indefinite pointwise prediction is impossible. The relevant object is a finite prediction horizon, often understood relative to the system’s Lyapunov timescale. A good reservoir does not abolish chaos. It learns a local continuation of the chaotic flow that remains valid for a longer time.</p>
+
+<p>For physicists, this is a dynamical alignment problem. For machine learners, it is a closed-loop stability problem. For neuroscientists and biologists, it resembles the problem of maintaining an internal state that remains informative about an evolving environment despite uncertainty and noise.</p>
+
+<hr />
+
+<h2 id="7-size-helps-but-only-with-diminishing-returns">7. Size helps, but only with diminishing returns</h2>
+
+<p>One possible outcome would have been simple: larger reservoirs predict better. More units mean more degrees of freedom, so perhaps evolution would just increase reservoir size. But that is not what happens.</p>
+
+<p>When reservoirs are represented in the size–error plane, evolution organizes them along an empirical size–efficiency frontier. A reservoir is Pareto efficient if no other reservoir is both smaller and more accurate. Formally, reservoir $i$ is nondominated if there is no reservoir $j$ such that</p>
+
+\[n_{r,j} \leq n_{r,i},
+\qquad
+J_j \leq J_i,\]
+
+<p>with at least one strict inequality.</p>
+
+<p>The resulting frontier has a diminishing-return structure. Increasing reservoir size can reduce attainable error, but the marginal gain decreases. Many large reservoirs remain poor if their other hyperparameters are not tuned. Some smaller reservoirs remain efficient because they offer compact, moderately accurate solutions.</p>
+
+<p>The lesson is that size is permissive, not sufficient. A reservoir must have enough capacity to represent the relevant dynamics, but capacity alone does not solve the problem. It must be paired with the right spectral radius, input scaling, connectivity degree, and regularization.</p>
+
+<p>This is a useful warning for both machine learning and neuroscience. In artificial networks, scaling is powerful, but structure and operating regime still matter. In biological systems, large size alone does not explain computation. What matters is how degrees of freedom are organized into dynamical modes that are useful for the task.</p>
+
+<hr />
+
+<h2 id="8-spectral-analysis-looking-at-the-reservoir-as-a-dynamical-graph">8. Spectral analysis: looking at the reservoir as a dynamical graph</h2>
+
+<p>To understand what structural features were selected, the recurrent matrix was analyzed through the random-walk normalized Laplacian:</p>
+
+\[L_{\mathrm{rw}} = I - D^{-1} A,\]
+
+<p>where $D$ is the diagonal matrix of row sums:</p>
+
+\[D = \mathrm{diag}(d_1,d_2,\ldots,d_{n_r}),\]
+
+\[d_i = \sum_j A_{ij}.\]
+
+<p>The spectrum of $L_{\mathrm{rw}}$ provides a compact description of the reservoir’s graph dynamics. Since $D^{-1}A$ is a row-normalized transition-like matrix, $L_{\mathrm{rw}}$ captures how activity would relax, mix, and propagate through the recurrent substrate.</p>
+
+<p>For each reservoir, the eigenvalues of $L_{\mathrm{rw}}$ were used as a spectral signature. To compare spectra across networks, the discrete eigenvalue sets were converted into smoothed densities:</p>
+
+\[\Gamma(x)
+=
+\frac{1}{m}
+\sum_{i=1}^{m}
+\frac{1}{\sqrt{2\pi s^2}}
+\exp
+\left(
+-
+\frac{(x-\lambda_i)^2}{2s^2}
+\right).\]
+
+<p>This allows the population of reservoirs to be compared as distributions in spectral space.</p>
+
+<p>The central finding is that the evolved reservoirs occupy a conserved spectral envelope. The spectrum has a sharp diagnostic peak near $\lambda = 1$ embedded in a broader bulk. When compared qualitatively to canonical graph families, this signature resembles a stochastic-block-model-like spectral class more than a homogeneous random graph, a scale-free graph, or a small-world graph.</p>
+
+<p>The phrase “SBM-like” is important. The reservoirs were not initialized as stochastic block models, and no explicit block partition was imposed on the recurrent matrix. The recurrent networks were sparse random directed weighted graphs generated from the selected construction parameters. The spectral resemblance means that the evolved substrates occupy a structural signature class with features reminiscent of block-like organization and redundancy, not that the algorithm literally recovered an SBM.</p>
+
+<p>This distinction matters because the conserved spectral envelope is itself a result. Evolution does not transform the reservoir into an entirely different architectural family. It operates within a constrained class. The question then becomes: within that class, where does selection act?</p>
+
+<hr />
+
+<h2 id="9-the-key-spectral-result-evolution-targets-slow-modes">9. The key spectral result: evolution targets slow modes</h2>
+
+<p>The most important spectral changes occur at the low-eigenvalue end of the Laplacian spectrum.</p>
+
+<p>For a random-walk Laplacian, small eigenvalues correspond to slow relaxation modes. A rough intuition is</p>
+
+\[\tau_i \sim \frac{1}{\lambda_i},\]
+
+<p>so smaller $\lambda_i$ means a longer characteristic timescale. More precisely, if a mode of $D^{-1}A$ has eigenvalue close to $1$, the corresponding Laplacian eigenvalue $\lambda_i$ is close to $0$, and that mode decays slowly.</p>
+
+<p>This is exactly where evolutionary selection concentrates. Early reservoirs include many networks whose smallest eigenvalues are relatively large, corresponding to faster relaxation and shorter memory. Later reservoirs condense toward the $\lambda_1 \to 0$ regime, which supports longer integration timescales.</p>
+
+<p>The high-eigenvalue end of the spectrum behaves differently. It does not show comparable directional refinement. This asymmetry is meaningful. Fast modes are necessary for responsiveness, but they do not need to be tuned precisely once they are fast enough. Slow modes, by contrast, determine whether the reservoir can hold information across the correlation time of the target system. Prediction of spatiotemporal chaos requires memory at the right timescale, and that requirement is written into the bottom of the spectrum.</p>
+
+<p>This is one of the central mechanistic interpretations of the paper:</p>
+
+<p><strong>Evolution preserves the global spectral class, but tunes the slow recurrent modes that determine predictive memory.</strong></p>
+
+<p>For machine learning, this suggests a form of mechanistic probing for recurrent systems. The task-relevant structure may not live in the largest variance directions of a parameter or representation space. It may live in a small, low-variance spectral feature that directly controls timescale.</p>
+
+<p>That is exactly what the PCA analysis shows. The first principal components of the spectrum capture large axes of population variation, but they do not explain predictive fitness. The predictive signal appears in a lower-variance component that loads on the smallest eigenvalues. In other words, the modes that vary the most are not necessarily the modes that matter most.</p>
+
+<p>This is a lesson that extends beyond reservoir computing. In evolved or trained systems, dominant variance can reflect tolerated variation inside a conserved class. Function may instead be encoded in small residual directions that selection has not fully equalized but strongly constrains.</p>
+
+<hr />
+
+<h2 id="10-spectral-conservation-and-selective-refinement">10. Spectral conservation and selective refinement</h2>
+
+<p>The spectral findings can be summarized by two simultaneous forces:</p>
+
+<p><strong>Stabilizing selection:</strong> keep the reservoir inside a task-suitable spectral envelope.
+<strong>Directional selection:</strong> push the slow modes toward longer memory timescales.</p>
+
+<p>The paper quantified global spectral drift using an optimal-transport distance between eigenvalue distributions. If two spectra are treated as empirical probability measures,</p>
+
+\[\Lambda^{(1)}
+=
+{\lambda_1^{(1)},\lambda_2^{(1)},\ldots,\lambda_m^{(1)}},\]
+
+\[\Lambda^{(2)}
+=
+{\lambda_1^{(2)},\lambda_2^{(2)},\ldots,\lambda_n^{(2)}},\]
+
+<p>then the Earth Mover’s Distance can be written as</p>
+
+\[\mathrm{EMD}
+\left(
+\Lambda^{(1)},
+\Lambda^{(2)}
+\right)
+=
+\min_{\gamma \in \Pi(a,b)}
+\sum_{i=1}^{m}
+\sum_{j=1}^{n}
+\gamma_{ij} C_{ij},\]
+
+<p>with cost</p>
+
+\[C_{ij}
+=
+\left(
+\lambda_i^{(1)}
+-
+\lambda_j^{(2)}
+\right)^2.\]
+
+<p>This measures how much “work” is needed to transform one spectrum into another. Large spectral drift away from the initial spectral envelope is not associated with better prediction. In fact, reservoirs that drift too far from the conserved template tend to perform worse.</p>
+
+<p>This gives a more nuanced picture than “evolution changes the spectrum.” Evolution changes the spectrum in a specific way. It does not reward arbitrary spectral novelty. It stabilizes the envelope and refines the bottom.</p>
+
+<p>This is a general principle worth emphasizing. Adaptive systems often show conservation and plasticity at the same time. Some features are held fixed because they define a viable class. Other features are tuned because they control performance within that class. The interesting mechanistic question is not simply what changes, but what is conserved, what is refined, and how the two are coupled.</p>
+
+<hr />
+
+<h2 id="11-modularity-neither-fully-mixed-nor-fully-segregated">11. Modularity: neither fully mixed nor fully segregated</h2>
+
+<p>The spectral analysis suggests that the evolved reservoirs occupy a constrained structural class. The macroscopic graph analysis reveals the same logic in a more direct topological form.</p>
+
+<p>The paper analyzes Newman modularity, $Q$, which measures the extent to which a network contains more within-community connectivity than expected under a suitable null model. In broad terms, modularity captures the balance between segregation and integration.</p>
+
+<p>A network with too little modularity is globally mixed. All parts communicate similarly with all other parts, but distinct functional roles can be washed out. A network with too much modularity is fragmented. Local specialization exists, but global coordination becomes difficult.</p>
+
+<p>The evolved reservoirs converge to an intermediate modularity regime. This is important because the Kuramoto–Sivashinsky system itself requires both spatial differentiation and temporal integration. Different parts of the field have local structure, but the global dynamics are coupled. A useful reservoir must preserve distinct modes without losing coherent interaction across the system.</p>
+
+<p>The result is not that modularity increases without bound. Nor is the result that the best reservoir is maximally integrated. Instead, prediction selects a narrow intermediate regime.</p>
+
+<p>This is where the biological interpretation becomes especially natural. Brains are not homogeneous random graphs, but they are not collections of isolated modules either. Cortical and subcortical networks repeatedly show mixtures of modular organization and integrative connectivity. Local specialization and global coordination are both required. The evolved reservoirs recapitulate this logic in an abstract computational setting.</p>
+
+<p>For machine learning, the implication is that useful recurrent architectures may need structured partial modularity: enough separation to support differentiated internal computations, enough coupling to maintain coherent global dynamics.</p>
+
+<hr />
+
+<h2 id="12-connection-cost-pruning-inside-a-locked-modular-regime">12. Connection cost: pruning inside a locked modular regime</h2>
+
+<p>The next result is perhaps the cleanest structural finding.</p>
+
+<p>Connection cost decreases strongly across evolution, while modularity remains locked in a narrow band. The cost used in the paper combines total recurrent weight, connection density, and path length:</p>
+
+\[C
+=
+\alpha \sum_{ij} |A_{ij}|
++
+\beta_c \rho_{\mathrm{density}}
++
+\gamma \ell.\]
+
+<p>Here $\rho_{\mathrm{density}}$ is connection density and $\ell$ is average path length. This cost is not just the number of edges. It is a regularized structural expense combining weight, density, and graph traversal.</p>
+
+<p>Evolution prunes this cost while preserving the modularity regime. This means the optimization does not smoothly trade modularity against cost. Instead, it first confines reservoirs to a narrow modularity class and then removes excess recurrent connectivity within that class.</p>
+
+<p>This is close to a wiring-economy principle. Biological neural systems face material and energetic constraints: axons take space, synapses require maintenance, long-range wiring has metabolic and developmental costs, and communication delays matter. But biological systems cannot simply minimize wiring cost in isolation. They must preserve function.</p>
+
+<p>The evolved reservoirs show a similar logic. The cheapest possible network is not necessarily useful. The useful network is the cheapest network that remains inside the right dynamical and topological class.</p>
+
+<p>This distinction matters for bio-inspired AI. “Sparse” is not enough. “Modular” is not enough. “Large” is not enough. The important object is the constrained intersection: a recurrent substrate with the right slow modes, the right intermediate modularity, and minimal unnecessary cost.</p>
+
+<hr />
+
+<h2 id="13-pareto-geometry-the-horizontal-floor">13. Pareto geometry: the horizontal floor</h2>
+
+<p>To analyze the relationship among performance, modularity, and cost, the paper uses a post hoc multi-objective Pareto analysis. This is separate from the genetic algorithm that evolved the reservoirs. The genetic algorithm generated the reservoir population. The Pareto analysis asks how the resulting reservoirs sit in the space of competing objectives.</p>
+
+<p>The normalized objectives include performance, generation, modularity, and connection cost. For example, the structural-efficiency objective is</p>
+
+\[O_2
+=
+\frac{
+C_{\mathrm{norm}}
+}{
+1 + Q_{\mathrm{norm}}
+},\]
+
+<p>and the performance-cost objective is</p>
+
+\[O_4
+=
+J_{\mathrm{norm}}
+\left(
+1 + C_{\mathrm{norm}}
+\right).\]
+
+<p>Other objectives capture improvement across generations and the performance-modularity relationship:</p>
+
+\[O_1
+=
+\frac{
+J_{\mathrm{norm}}
+}{
+1 + g_{\mathrm{norm}}
+},\]
+
+\[O_3
+=
+\frac{
+J_{\mathrm{norm}}
+}{
+1 + Q_{\mathrm{norm}}
+}.\]
+
+<p>A traditional trade-off curve would be sloped. For example, one might expect that reducing cost requires sacrificing modularity, or that improving accuracy requires paying with more connectivity. But the empirical Pareto geometry is different. The elite solutions form a horizontal band near the floor of connection cost.</p>
+
+<p>That geometry has a precise interpretation. Accuracy and efficiency are not related by a simple zero-sum trade-off. Instead, the population is constrained by two conditions:</p>
+
+<p><strong>First, the reservoir must occupy the appropriate modularity regime.</strong>
+<strong>Second, within that regime, connection cost is minimized.</strong></p>
+
+<p>The Pareto floor is therefore not a curve of compromise between modularity and cost. It is a boundary condition: once modularity is constrained, cost is pushed downward.</p>
+
+<p>This is one of the most important conceptual outcomes of the work. Evolutionary optimization does not merely search for better hyperparameters. It reveals the shape of the feasible region for adaptive recurrent prediction.</p>
+
+<hr />
+
+<h2 id="14-what-does-this-mean-for-mechanistic-interpretability">14. What does this mean for mechanistic interpretability?</h2>
+
+<p>In modern machine learning, mechanistic interpretability often focuses on trained networks: circuits, features, attention heads, activation patterns, internal representations, and causal interventions. This work suggests a complementary kind of interpretability for recurrent dynamical systems.</p>
+
+<p>Here, the interpretability target is not a single neuron or a single weight. It is the recurrent substrate as a dynamical graph.</p>
+
+<p>The question becomes:</p>
+
+<p><strong>Which structural degrees of freedom are functionally constrained by the task?</strong></p>
+
+<p>In this paper, the answer is:</p>
+
+<ul>
+  <li>Slow Laplacian modes are refined because they control memory timescales.</li>
+  <li>A global spectral envelope is conserved because it defines a viable dynamical class.</li>
+  <li>Modularity locks to an intermediate regime because prediction requires both segregation and integration.</li>
+  <li>Connection cost is pruned because excessive recurrent wiring is unnecessary once the correct structural class is achieved.</li>
+  <li>Large variance spectral modes are not necessarily predictive; task-relevant information can live in low-variance directions.</li>
+</ul>
+
+<p>This gives a population-level form of mechanistic interpretability. Rather than interpreting a single trained model, we interpret the distribution of models selected by an adaptive process. The evolved population tells us which structural features the task repeatedly demands.</p>
+
+<p>This is especially relevant for recurrent neural networks, reservoir computers, neuromorphic systems, and biological circuits. In all of these systems, function is not fully explained by local weights alone. It depends on spectral structure, timescale hierarchy, modularity, feedback, and cost.</p>
+
+<hr />
+
+<h2 id="15-what-does-this-mean-for-physics">15. What does this mean for physics?</h2>
+
+<p>For physicists, the paper can be read as a study of adaptive dynamical substrates under selection for forecasting a chaotic field.</p>
+
+<p>The Kuramoto–Sivashinsky equation provides the target flow. The reservoir provides a high-dimensional driven dynamical system. The genetic algorithm selects construction parameters that make the reservoir’s autonomous dynamics track the target flow for longer finite horizons.</p>
+
+<p>The key physical idea is timescale matching. The reservoir must contain slow modes whose relaxation times are appropriate for the target system’s correlation structure. If the slow modes decay too quickly, the reservoir forgets relevant history. If the reservoir is poorly organized, it may have many degrees of freedom but not the right dynamical memory. The low-eigenvalue Laplacian modes are therefore not a technical graph feature; they are a signature of the substrate’s memory timescale.</p>
+
+<p>The second physical idea is constraint geometry. The evolved reservoirs do not spread arbitrarily through architecture space. They occupy a constrained region defined by spectral class, modularity, and cost. This is reminiscent of many physical systems in which function emerges not from unconstrained optimization of one variable, but from the intersection of multiple constraints.</p>
+
+<p>The third physical idea is that predictive performance can reveal hidden structural invariants. Instead of prescribing the correct architecture, the evolutionary process exposes which architectures are compatible with the target dynamics.</p>
+
+<hr />
+
+<h2 id="16-what-does-this-mean-for-machine-learning-and-ai">16. What does this mean for machine learning and AI?</h2>
+
+<p>For machine learning, the work makes several points.</p>
+
+<p>First, recurrent substrates should not be treated as inert random feature generators. Even in reservoir computing, where the readout is the only trained component, the architecture and dynamics of the reservoir determine what histories can be represented and how stable autonomous prediction will be.</p>
+
+<p>Second, size is not enough. Larger reservoirs can help, but only with diminishing returns and only when other dynamical parameters are tuned. Capacity without the right operating regime does not produce reliable chaotic prediction.</p>
+
+<p>Third, the relevant structure may be spectral and topological rather than purely parametric. Spectral radius is useful, but it is not sufficient. The low-eigenvalue structure of the normalized Laplacian carries information about slow memory modes. Modularity and cost reveal additional constraints that are invisible if one only measures validation error.</p>
+
+<p>Fourth, evolutionary optimization can be used as a mechanistic probe. The goal is not only to find a good model, but to analyze the population of selected models. What does selection preserve? What does it refine? What does it remove? These questions are directly relevant to interpretability.</p>
+
+<p>Finally, the work suggests a route toward bio-inspired AI that is more structural than metaphorical. The point is not simply to say that brains are recurrent, modular, or sparse. The point is to identify the conditions under which predictive demands select recurrence, modularity, slow modes, and wiring economy.</p>
+
+<hr />
+
+<h2 id="17-what-does-this-mean-for-neuroscience-and-biology">17. What does this mean for neuroscience and biology?</h2>
+
+<p>For neuroscience and biology, the reservoir is not meant to be a literal model of cortex, a gene regulatory network, or a cellular system. It is a controlled abstraction of a recurrent physical substrate under predictive demand.</p>
+
+<p>Living systems often operate in environments with temporal regularities. Gene regulatory networks can anticipate environmental changes. Neural circuits maintain internal states that condition future behavior. Biochemical and cellular systems can store traces of past inputs through feedback, recurrence, and state-dependent dynamics.</p>
+
+<p>In such systems, prediction does not require an explicit internal symbolic model. It can arise from the organization of the substrate itself. The present work asks what happens when a recurrent substrate is selected for this kind of function.</p>
+
+<p>The answer resonates with biological principles:</p>
+
+<p><strong>Slow modes matter.</strong> Biological systems often contain multiple timescales, from fast sensory responses to slow integrative states. The evolved reservoirs show that predictive selection targets slow modes because they carry memory.</p>
+
+<p><strong>Intermediate modularity matters.</strong> Biological networks are neither fully homogeneous nor fully fragmented. They combine local specialization with global integration. The evolved reservoirs converge to the same kind of balance.</p>
+
+<p><strong>Wiring economy matters.</strong> Biological networks are constrained by material, metabolic, and developmental costs. The evolved reservoirs prune excess connectivity while preserving function.</p>
+
+<p><strong>Rules matter more than individual edges.</strong> Biological evolution shapes generative rules and developmental programs, not individual microscopic connections one by one. The genetic algorithm here similarly selects construction hyperparameters, not every recurrent weight.</p>
+
+<p>This is why the work belongs to bio-inspired AI and biocomputation. It does not merely borrow biological vocabulary. It studies how predictive function shapes recurrent substrates under structural constraints.</p>
+
+<hr />
+
+<h2 id="18-the-broader-principle-conserved-class-refined-feature">18. The broader principle: conserved class, refined feature</h2>
+
+<p>The most compact way to summarize the paper is this:</p>
+
+<p><strong>Evolution stabilizes the class and refines the feature.</strong></p>
+
+<p>The class is the global architectural/dynamical envelope: the SBM-like spectral signature, the intermediate modularity regime, and the broad recurrent organization compatible with prediction.</p>
+
+<p>The feature is the specific degree of freedom that controls performance within that class: the low-eigenvalue slow modes, the cost pruned inside the modularity band, and the hyperparameter combinations that place the reservoir on the size-efficiency frontier.</p>
+
+<p>This distinction is important because many analyses of neural systems, biological systems, and machine learning models look for the largest differences. But the largest differences are not always functional. In this work, the dominant spectral variation is not where predictive performance lives. The predictive signal is hidden in a lower-variance mode at the bottom of the spectrum.</p>
+
+<p>That is a general lesson for studying adaptive systems. Selection may compress the most important global structure so strongly that it becomes almost invisible as variance. Function can then appear in small deviations inside a conserved envelope.</p>
+
+<hr />
+
+<h2 id="19-why-this-work-is-not-just-hyperparameter-optimization">19. Why this work is not just hyperparameter optimization</h2>
+
+<p>It would be easy to misread the project as a reservoir-computing hyperparameter search. That would miss the point.</p>
+
+<p>The purpose of the genetic algorithm is not merely to obtain a better predictor. It is to create a controlled evolutionary experiment. The evolved population becomes data. By analyzing that population, we can infer which structural constraints are repeatedly associated with predictive success.</p>
+
+<p>This is why the paper examines error distributions, forecast horizons, size-efficiency frontiers, Laplacian spectra, spectral transport distances, PCA modes, modularity, connection cost, and Pareto geometry. The goal is not only performance. The goal is structural interpretation.</p>
+
+<p>The central claim is therefore not “a genetic algorithm improves reservoir computing.” The stronger claim is:</p>
+
+<p><strong>Predictive selection unmasks structural invariants of recurrent dynamical substrates.</strong></p>
+
+<p>That is the bridge between physics, AI, neuroscience, and biological computation.</p>
+
+<hr />
+
+<h2 id="20-outlook">20. Outlook</h2>
+
+<p>The structural signatures found here are likely task-dependent. Kuramoto–Sivashinsky chaos has spatial correlations, temporal correlations, unstable modes, dissipative stabilization, and a finite Lyapunov prediction horizon. Other systems may select different reservoir constraints.</p>
+
+<p>Low-dimensional chaotic systems may require different memory structure. Excitable media may place stronger demands on wave propagation and threshold dynamics. Biological timeseries may require multiscale slow variables, nonstationary adaptation, or state-dependent modulation. Sensory prediction tasks may select different modularity and spectral signatures than motor-control tasks.</p>
+
+<p>This opens a broader research program: use adaptive reservoir computing as a way to map the relationship between target dynamics and substrate structure.</p>
+
+<p>The question becomes:</p>
+
+<p><strong>Given a class of environments, what recurrent substrates does prediction select?</strong></p>
+
+<p>That question can be asked across artificial reservoirs, neuromorphic hardware, recurrent neural networks, cortical circuits, gene regulatory networks, biochemical systems, and cellular computation.</p>
+
+<p>In this sense, reservoir computing becomes more than a machine learning method. It becomes a scientific instrument for probing the structural laws of adaptive prediction.</p>
+
+<hr />
+
+<h2 id="21-conclusion">21. Conclusion</h2>
+
+<p>This work started from a biological intuition: systems that live in fluctuating environments must transform past stimulation into internal states that support future-oriented behavior. Reservoir computing gives this intuition a mathematical and computational form. A recurrent substrate stores and transforms temporal history; a readout extracts predictions.</p>
+
+<p>By placing the reservoir substrate under evolutionary selection, the study asks what prediction does to structure. The answer is not unrestricted growth, arbitrary complexity, or simple densification. Evolution improves prediction while revealing a constrained architecture: larger reservoirs help only with diminishing returns; global spectral organization is conserved; slow modes are directionally refined; modularity locks to an intermediate regime; and excess connection cost is pruned within that regime.</p>
+
+<p>The resulting picture is a form of bio-inspired AI grounded in dynamics rather than metaphor. Prediction shapes the machine by selecting the structural features that make recurrent memory useful. The recurrent substrate becomes interpretable as a physical system: a constrained dynamical medium whose spectra, modularity, and cost reveal how adaptive prediction is organized.</p>
+
+<p>The broader implication is that intelligence, in both artificial and biological systems, may depend less on unconstrained complexity than on the right kind of constrained recurrence: slow enough to remember, structured enough to differentiate, integrated enough to coordinate, and economical enough to remain viable.</p>]]></content><author><name>Nima Dehghani</name></author><category term="adaptive" /><category term="optimization" /><category term="bio-inspired" /><category term="prediction" /><category term="inference" /><category term="AI" /><category term="RNNs" /><category term="modularity" /><category term="wiring economy" /><category term="biological computation" /><category term="physical computing" /><category term="mechanistic" /><category term="interpretability" /><category term="recurrent" /><category term="dynamics" /><category term="chaos" /><category term="optimality" /><category term="neuroai" /><category term="spatiotemporal" /><summary type="html"><![CDATA[Companion post to: Evolutionary Optimization Reveals Structural Constraints on Reservoir Architecture for Spatiotemporal Chaos Nima Dehghani arXiv 2026. DOI: https://doi.org/10.48550/arXiv.2606.22765]]></summary></entry><entry><title type="html">Cortical Machinery as a Design Principle for RNNs</title><link href="https://neurovium.github.io/posts/pblog-Cortical-blueprint-RNN/" rel="alternate" type="text/html" title="Cortical Machinery as a Design Principle for RNNs" /><published>2026-06-16T00:00:00+00:00</published><updated>2026-06-16T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-Cortical-blueprint-RNN</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-Cortical-blueprint-RNN/"><![CDATA[<p><em>Companion post to:</em><br />
 <strong>Harnessing Cortical Geometry, Wiring, and Function as Inductive Biases for RNNs</strong>
 Mo Shakiba, Rana Rokni, Mohammad Mohammadi, Nima Dehghani
 <em>arXiv</em> 2026.
@@ -2597,268 +3164,4 @@ When is a computational description merely a useful model, and when is it physic
 
 <p>The goal is not to decide once and for all whether “the brain is a computer,” whether “cells compute,” or whether “the universe computes.” Those questions are too broad. The better goal is to develop a formal framework that tells us what must be true for a physical system, or part of a physical system, to count as computing.</p>
 
-<p>That is the direction this paper takes: away from computation as metaphor, and toward computation as structured physical process.</p>]]></content><author><name>Nima Dehghani</name></author><category term="physical computation" /><category term="biological computation" /><category term="quantum computing" /><category term="compositionality" /><summary type="html"><![CDATA[Companion post to: A category-theoretic perspective on physical computation, biological computation, and system compositionality Nima Dehghani, Gianluca Caterina Journal of Physics: Complexity . Volume 5, Number 3 DOI: https://doi.org/10.1088/2632-072X/ad6051]]></summary></entry><entry><title type="html">Beyond the Relay: A Computational Perspective on the Thalamocortical Cognitive Engine</title><link href="https://neurovium.github.io/posts/pblog-Compute-thalamus/" rel="alternate" type="text/html" title="Beyond the Relay: A Computational Perspective on the Thalamocortical Cognitive Engine" /><published>2019-07-01T00:00:00+00:00</published><updated>2019-07-01T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-Compute-thalamus</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-Compute-thalamus/"><![CDATA[<p><em>Companion post to:</em><br />
-<em>*A Computational Perspective of the Role of the Thalamus in Cognition **<br />
-Nima Dehghani, Ralf D. Wimmer
-*Neural Computation</em> . (2019) 31 (7): 1380–1418.
-DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.1162/neco_a_01197</code></p>
-
-<hr />
-<h1 id="beyond-the-relay-a-computational-perspective-on-the-thalamocortical-cognitive-engine">Beyond the Relay: A Computational Perspective on the Thalamocortical Cognitive Engine</h1>
-
-<p>The thalamus has often been introduced to students of neuroscience as a relay station: a structure that receives sensory input and passes it to cortex, where the real work of perception and cognition begins. This picture is not simply a pedagogical simplification. It has deeply shaped how neuroscientists, cognitive scientists, and even artificial intelligence researchers have imagined the architecture of intelligent systems. In this view, cognition is primarily cortical. The thalamus sits at the entrance to the hierarchy, while cortex transforms signals into increasingly abstract representations.</p>
-
-<p>This view has historical reasons. The lateral geniculate nucleus (LGN), which receives retinal input and projects to primary visual cortex, provided one of the clearest examples of thalamic function. In the classical visual system, sensory information appears to move from retina to LGN to V1 and then through a hierarchy of cortical areas. This picture fit naturally with the broader idea of hierarchical feature construction: simple features become more complex features, and eventually perceptual or cognitive categories emerge.</p>
-
-<p>A similar logic underlies much of modern deep learning. Convolutional neural networks, for example, construct increasingly complex feature representations across successive layers. Early layers extract local edges or textures; deeper layers combine those features into motifs, objects, and task-relevant representations. This has been an enormously productive framework, both in neuroscience and in machine learning. But it is not sufficient as a general theory of cognition.</p>
-
-<p>Cognition is not merely hierarchical feature enrichment. It requires context. It requires flexible switching between rules. It requires memory over recent history, but not unlimited memory. It requires deciding which variables matter now, which cortical subnetworks should be engaged, and when further computation is no longer worth its cost. A static feedforward hierarchy, even a very deep one, does not naturally solve these problems. Nor does a purely cortico-centric recurrent model fully explain how distributed cortical computations are coordinated, stabilized, and reconfigured in time.</p>
-
-<p>In our paper, <strong>“A computational perspective of the role of Thalamus in cognition,”</strong> we argue that the thalamus should not be understood only as a relay device. Instead, the thalamus and cortex jointly form a distributed cognitive computing system. Some thalamic nuclei do relay information in a relatively faithful and topographic manner. But other thalamic structures, especially higher-order nuclei such as the mediodorsal thalamus (MD) and pulvinar, are better understood as modulatory computational structures. They do not simply pass information forward. They help select, bias, route, and stabilize cortical computations.</p>
-
-<p>The central claim is that cognition is not implemented by cortex alone. It emerges from <strong>cortico-thalamo-cortical loops</strong> in which the thalamus acts as a dynamic contextual modulator of cortical computation.</p>
-
-<hr />
-
-<h2 id="1-why-the-relay-model-was-plausible--and-why-it-is-incomplete">1. Why the relay model was plausible — and why it is incomplete</h2>
-
-<p>The relay model did not arise out of nowhere. In early sensory systems, especially the visual system, it captured something real. Retinal ganglion cells project to the LGN, and LGN neurons project topographically to V1. This architecture looks like a structured transmission channel. The receptive fields of LGN neurons resemble those of retinal inputs, and much of the transformation associated with visual feature extraction occurs downstream in cortex.</p>
-
-<p>From this perspective, the thalamus seemed like an input stage. Cortex, particularly the neocortex, was treated as the primary site of representation and computation. Higher cognition was then imagined as the progressive enrichment of sensory representations through increasingly abstract cortical areas.</p>
-
-<p>But the anatomy of the thalamus does not support a uniform relay interpretation. The LGN is not a template for the entire thalamus. Many thalamic nuclei do not receive their dominant input from the sensory periphery. In fact, much of the input to thalamic relay structures comes not from sensory organs but from cortex, basal ganglia, brainstem, and other sources. Some thalamic territories receive strong cortical input and project broadly back to cortex. Their projection patterns are not suited for precise point-to-point relay.</p>
-
-<p>This difference matters computationally. If a thalamic nucleus receives convergent cortical input and sends diffuse projections to superficial cortical layers, then its function is unlikely to be simple transmission of a sensory message. Such a structure is better positioned to modify the state of cortical networks. It can regulate gain, influence recurrence, adjust synchrony, reshape effective connectivity, and help determine which cortical representations become behaviorally relevant.</p>
-
-<p>The important point is not that the thalamus never relays information. It clearly does. The point is that “relay” is only one thalamic mode. A general theory of thalamic function must distinguish between different thalamic architectures and the different computational roles they enable.</p>
-
-<hr />
-
-<h2 id="2-thalamic-diversity-as-computational-diversity">2. Thalamic diversity as computational diversity</h2>
-
-<p>The thalamus is often discussed as a single structure, but computationally it is more useful to think of it as a family of circuit motifs. These motifs differ in their inputs, outputs, intrinsic cellular properties, inhibitory control, and cortical targets.</p>
-
-<p>A relay-like nucleus such as the LGN has relatively focal and topographic projections to primary sensory cortex. This architecture supports high-fidelity transmission and gain regulation. It is appropriate when the computational problem is to preserve structured sensory information while controlling its flow into cortex.</p>
-
-<p>Higher-order nuclei such as MD and pulvinar are different. They receive strong cortical and subcortical inputs, often convergent in nature, and project broadly to cortical areas. MD, for example, has dense reciprocal interactions with prefrontal cortex. It projects not only to layer I but also to layer III, and it contacts both excitatory and inhibitory cortical neurons. These projections are not designed merely to deliver a sensory variable. They are positioned to influence the operating regime of cortical circuits.</p>
-
-<p>This is where the anatomical distinction becomes computational. Cortex contains recurrent networks capable of maintaining activity, generating attractor-like dynamics, and supporting mixed selectivity. But recurrent networks require control. They need to be placed into the right dynamical regime. They need to switch between task contexts. They need to avoid pathological persistence, irrelevant attractors, or excessive energetic cost. A structure such as MD is anatomically well placed to provide this kind of modulation.</p>
-
-<p>In this view, thalamic nuclei are not passive input channels. They are part of the control architecture of cognition.</p>
-
-<hr />
-
-<h2 id="3-the-mediodorsal-thalamus-and-prefrontal-computation">3. The mediodorsal thalamus and prefrontal computation</h2>
-
-<p>The interaction between MD and prefrontal cortex provides one of the clearest examples of thalamic involvement in cognition. Prefrontal cortex is often modeled as a recurrent system capable of maintaining task rules, contextual information, and working memory states. But experimental work has shown that prefrontal persistent activity cannot be fully understood without MD.</p>
-
-<p>In attentional control and working memory tasks, PFC neurons can maintain rule-selective activity during a delay. MD neurons may not always show the same categorical rule selectivity, but perturbing MD strongly affects the maintenance of rule-specific PFC activity. Inhibiting MD reduces the ability of PFC populations to sustain the relevant representation. Activating MD can enhance prefrontal activity and strengthen the functional connectivity among PFC neurons.</p>
-
-<p>This suggests a role for MD that is different from representing the task variable directly. MD may instead regulate the effective recurrent connectivity of PFC. It can help determine whether a prefrontal representation remains stable, whether it decays, or whether the system switches to a different state. In computational terms, MD can act as a contextual modulator of a cortical recurrent network.</p>
-
-<p>This is not a small adjustment to a cortico-centric theory. It changes the architecture. If MD is necessary for sustaining or reconfiguring PFC representations, then cognitive computation cannot be localized solely within cortex. The relevant computational unit is the <strong>MD-PFC loop</strong>.</p>
-
-<p>The thalamus, in this case, does not merely send an input to cortex. It participates in maintaining the conditions under which cortical computation remains meaningful.</p>
-
-<hr />
-
-<h2 id="4-thalamus-as-an-active-blackboard">4. Thalamus as an active blackboard</h2>
-
-<p>One useful analogy is the <strong>blackboard architecture</strong> from classical artificial intelligence. In a blackboard system, multiple specialist modules read from and write to a common workspace. Each module contributes partial solutions, and the shared workspace is iteratively updated until a useful solution emerges.</p>
-
-<p>The thalamocortical system resembles such an architecture, but with an important difference: the biological “blackboard” is not passive. The thalamus does not merely store symbols written by cortical modules. It transforms, filters, gates, and redistributes activity back to cortex.</p>
-
-<p>A simplified computational picture is as follows:</p>
-
-<ol>
-  <li>Cortical modules process incoming information in parallel.</li>
-  <li>Their outputs are communicated back to thalamus through cortico-thalamic projections.</li>
-  <li>Thalamus integrates these signals with sensory and subcortical input.</li>
-  <li>Thalamic output then modifies the state of cortical networks.</li>
-  <li>The next cortical computation occurs under a changed context.</li>
-</ol>
-
-<p>This loop allows cognition to proceed as an iterative process. Cortical assemblies do not compute in isolation. Their current state influences thalamic output, and thalamic output in turn shapes which cortical assemblies are recruited next.</p>
-
-<p>This can be described as a <strong>read/write medium</strong> for cortical parallel processing. Cortex writes the partial results of computation to thalamus. Thalamus reads these results, combines them with ongoing context, and writes back a modulatory signal that reshapes cortical dynamics.</p>
-
-<p>The blackboard analogy is especially useful because it avoids treating cognition as a single serial pipeline. Instead, cognition becomes a distributed, parallel, iterative process. Multiple cortical processors contribute partial interpretations, while thalamus helps coordinate the global state of the system.</p>
-
-<p>But unlike engineered blackboard systems, the thalamic blackboard is dynamical, embodied, biophysical, and metabolically constrained. It does not simply accumulate information. It regulates the cost and timing of computation.</p>
-
-<hr />
-
-<h2 id="5-the-thalamocortical-system-as-a-contextual-computing-architecture">5. The thalamocortical system as a contextual computing architecture</h2>
-
-<p>Context is one of the central difficulties in both neuroscience and artificial intelligence. The same sensory cue can imply different actions depending on task rule, behavioral state, reward history, internal goals, or environmental conditions. A tone may mean “attend to vision” in one context and “attend to audition” in another. A visual stimulus may require approach, avoidance, or no action depending on the current rule.</p>
-
-<p>A feedforward network can classify inputs, but contextual cognition requires more than classification. It requires a system in which the mapping from input to output can be dynamically reconfigured.</p>
-
-<p>Recurrent neural networks provide one solution. A recurrent network can maintain memory of prior states and use those states to influence present computation. Reservoir computing provides a related framework: a recurrent dynamical system maps inputs into a high-dimensional state space, and a readout extracts task-relevant outputs. Such systems have useful properties: separation of inputs, fading memory, and nonlinear expansion of state space.</p>
-
-<p>The PFC has often been interpreted in this spirit. It is recurrent, high-dimensional, and capable of mixed selectivity. But recurrence alone is not enough. A reservoir needs to be driven, biased, and controlled. Otherwise, it may settle into irrelevant dynamics, fail to switch when the context changes, or become metabolically inefficient.</p>
-
-<p>This is where MD-like thalamus becomes computationally interesting. MD can modulate the recurrent dynamics of PFC without simply being another recurrent cortical module. Because the thalamus lacks local excitatory recurrence, it can provide a different kind of control signal. It can influence cortical dynamics without itself becoming another cortical attractor network.</p>
-
-<p>In this interpretation, cortex provides the high-dimensional recurrent substrate, while thalamus helps regulate which regions of that dynamical space are explored. MD can help select cortical subnetworks, modulate gain, alter inhibitory tone, and bias the emergence of particular attractor states.</p>
-
-<p>Thus, the thalamocortical system is not just an RNN. It is closer to a <strong>controlled recurrent dynamical system</strong>, where the control structure is itself biological and adaptive.</p>
-
-<hr />
-
-<h2 id="6-phase-synchrony-and-temporal-binding">6. Phase, synchrony, and temporal binding</h2>
-
-<p>Cognition unfolds in time. A system that performs contextual computation must bind current input to recent history. It must retain enough past information to interpret the present, but it must not be dominated by irrelevant remote history. This is the classical problem of memory in dynamical systems: too little memory prevents context dependence; too much memory prevents flexibility.</p>
-
-<p>Thalamocortical loops provide a plausible architecture for this balance. MD-PFC interactions are not only anatomical but dynamical. They involve synchrony, oscillatory coordination, and state-dependent modulation. In particular, thalamic interactions with cortex can be phase-dependent, and thalamic cellular mechanisms such as T-type calcium channels can support transitions between firing modes and synchronization regimes.</p>
-
-<p>The computational significance is that thalamus may help coordinate when cortical assemblies become excitable, when they communicate, and when they are functionally coupled. Rather than simply adding input current to cortex, thalamic output can regulate the timing and gain of cortical interactions.</p>
-
-<p>This suggests a view of thalamus as a kind of phase-sensitive modulator. It helps bind cortical processing across time by regulating the dynamical conditions under which cortical recurrence operates.</p>
-
-<p>In artificial systems, timing is often treated as an implementation detail. In biological systems, timing is part of the computation. Synchrony, phase, gain, inhibition, and recurrence are not separate from cognition. They are among the mechanisms through which cognitive variables become dynamically organized.</p>
-
-<p>The thalamus is therefore not only a structural hub. It is a temporal regulator of cortical computation.</p>
-
-<hr />
-
-<h2 id="7-information-cost-and-the-need-for-biological-optimization">7. Information, cost, and the need for biological optimization</h2>
-
-<p>A purely computational theory of cognition is incomplete if it ignores biological cost. Brains are not idealized computers with unlimited time, energy, and memory. Neural computation is metabolically expensive. Spiking, synaptic transmission, long-range communication, and recurrent activity all consume energy. A cognitive system must therefore solve problems under constraints.</p>
-
-<p>This leads to a central argument of the paper: cognition requires a tradeoff between <strong>information gain</strong> and <strong>computational cost</strong>.</p>
-
-<p>The brain cannot maximize information at any cost. Recruiting more neurons, sustaining more activity, or running longer recurrent computations may improve accuracy, but only up to a point. Beyond that point, the metabolic and temporal costs become prohibitive. Conversely, minimizing cost alone is not useful if the computation becomes too weak, too slow, or too inaccurate to guide behavior.</p>
-
-<p>Biological cognition must therefore implement something like:</p>
-
-\[\text{maximize information gain}\]
-
-<p>while also controlling:</p>
-
-\[\text{metabolic cost} + \text{time cost}.\]
-
-<p>This is not a single-objective optimization problem. There is no unique optimum that maximizes everything simultaneously. Instead, the system faces a multi-objective optimization problem. Improving one objective often worsens another.</p>
-
-<p>The appropriate concept here is a <strong>Pareto frontier</strong>. A point on the Pareto frontier is efficient in the sense that one objective cannot be improved without worsening another. In the thalamocortical case, the relevant tradeoff is between computational effectiveness and computational economy.</p>
-
-<p>In the paper, we formalize this by considering information and cost as functions of thalamic and cortical activity. If (f_{\mathrm{Th}}) denotes thalamic activity and (f_{\mathrm{Cx}}) denotes cortical activity, then information and cost can be mapped into a joint functional space:</p>
-
-\[I = I(f_{\mathrm{Th}}, f_{\mathrm{Cx}})\]
-
-\[C = C(f_{\mathrm{Th}}, f_{\mathrm{Cx}}).\]
-
-<p>The goal is not simply to maximize (I) or minimize (C), but to dynamically regulate the system so that its operations remain near an efficient tradeoff surface:</p>
-
-\[\mathcal{P} = \left\{ (I, C) : \text{no other feasible state improves both information and cost} \right\}.\]
-
-<p>The thalamocortical loop provides a biological mechanism for moving through this space. Cortex performs high-dimensional recurrent computation. Thalamus receives information about cortical state, integrates it with ongoing input and context, and modulates cortical dynamics in return. Through this iterative process, the system can adjust how much computation is performed, which assemblies are recruited, and when a computation should be terminated or updated.</p>
-
-<p>The phrase “just enough, just in time” captures this principle. The system does not need a perfect representation of the world. It needs a sufficiently informative representation at the right time and at an acceptable cost.</p>
-
-<hr />
-
-<h2 id="8-why-cortex-alone-is-not-enough">8. Why cortex alone is not enough</h2>
-
-<p>One might ask why cortex could not solve this problem by itself. After all, cortex is recurrent, distributed, and richly interconnected. Why introduce thalamus as a computational partner?</p>
-
-<p>The answer is that cortex alone may be too unconstrained. A large recurrent cortical system has enormous dynamical capacity, but that capacity needs regulation. Without a mechanism for selecting, stabilizing, and terminating cortical computations, the system risks either excessive persistence or unstable switching. It may also consume too much energy if large cortical populations are recruited unnecessarily.</p>
-
-<p>The thalamus offers a complementary architecture. It lacks local excitatory recurrence, but it is reciprocally connected with cortex. This makes it well suited to act as a modulatory control structure rather than another recurrent processing layer. It can monitor cortical outputs, receive contextual and subcortical signals, and influence cortical effective connectivity.</p>
-
-<p>In this sense, thalamus helps prevent the cortical system from merely wandering through its own state space. It can bias cortical dynamics toward task-relevant regions, regulate the interaction between cortical assemblies, and help maintain an efficient balance between stability and flexibility.</p>
-
-<p>This is a key distinction from the purely cortico-centric view. The thalamus is not added as an extra node in an already complete cortical model. It changes the computational nature of the model.</p>
-
-<hr />
-
-<h2 id="9-implications-for-ai-and-machine-learning">9. Implications for AI and machine learning</h2>
-
-<p>The thalamocortical perspective has consequences beyond neuroscience. Many current AI systems are powerful pattern recognition systems. They can classify, predict, generate, and optimize at scales that would have seemed impossible only a decade ago. But they often remain weak in the kinds of flexible contextual control that biological cognition performs continuously.</p>
-
-<p>Several lessons from thalamocortical computation are relevant for AI and ML.</p>
-
-<p>First, cognition may require architectures that separate <strong>representation</strong> from <strong>contextual control</strong>. Cortex-like recurrent modules may generate rich state spaces, but a separate modulatory system may be needed to select and reshape those states according to task context.</p>
-
-<p>Second, biological computation suggests that memory should be dynamically regulated. A system should not simply remember everything or rely on fixed context windows. It should control which aspects of recent history remain active and which are allowed to decay. The fading-memory property of reservoir computing is useful here, but thalamic modulation suggests a more active form of memory control.</p>
-
-<p>Third, the thalamocortical loop suggests a form of adaptive routing. Rather than routing information through a fixed feedforward pathway, the system can dynamically select cortical subnetworks based on context. This has obvious relevance for mixture-of-experts models, modular neural networks, attention mechanisms, and dynamically gated architectures.</p>
-
-<p>Fourth, the information/cost tradeoff is not optional. Biological intelligence is energy-limited and time-limited. Artificial systems increasingly face analogous constraints: compute budgets, latency, memory, communication costs, and energy consumption. A cognitive architecture that explicitly regulates the tradeoff between information gain and computational cost may be more robust and scalable than one that simply increases model size.</p>
-
-<p>Finally, the thalamocortical view suggests that intelligence may require not only larger models but better control over dynamical regimes. The question is not only what a network represents, but how it changes its operating mode when the context changes.</p>
-
-<hr />
-
-<h2 id="10-implications-for-computational-neuroscience">10. Implications for computational neuroscience</h2>
-
-<p>For computational neuroscience, the thalamocortical perspective encourages a shift in modeling strategy. Instead of treating thalamus as an input source to cortical models, we should model thalamus and cortex as a coupled dynamical system.</p>
-
-<p>This means asking questions such as:</p>
-
-<ul>
-  <li>How does MD activity change the effective connectivity of PFC populations?</li>
-  <li>How do thalamic projections regulate cortical attractor dynamics?</li>
-  <li>How does thalamocortical synchrony relate to task context and rule switching?</li>
-  <li>How do different thalamic nuclei implement different computational motifs?</li>
-  <li>How does the system trade off accuracy, speed, and metabolic cost?</li>
-  <li>What distinguishes relay-like thalamic computation from modulatory thalamic computation?</li>
-</ul>
-
-<p>These questions require simultaneous measurements of thalamic and cortical activity during behavior. They also require perturbation experiments that distinguish between relay, gain control, contextual modulation, and state selection. Anatomical specificity matters: LGN, pulvinar, MD, POm, and other nuclei should not be collapsed into a single generic thalamic node.</p>
-
-<p>The modeling challenge is equally important. We need models in which thalamus is not merely an input layer. It should be represented as a structure that modifies cortical dynamics, participates in recurrent loops, and contributes to optimization under biological constraints.</p>
-
-<p>A useful computational model of thalamocortical cognition should therefore combine:</p>
-
-\[\text{cortical recurrence}\]
-
-\[\text{thalamic contextual modulation}\]
-
-\[\text{phase- and synchrony-dependent coupling}\]
-
-\[\text{energy/time constraints}\]
-
-\[\text{task-dependent state selection}.\]
-
-<p>Such models would be more biologically realistic than purely cortical RNNs and more cognitively relevant than feedforward sensory hierarchies.</p>
-
-<hr />
-
-<h2 id="11-clinical-relevance-when-modulation-fails">11. Clinical relevance: when modulation fails</h2>
-
-<p>The thalamocortical view also helps interpret cognitive dysfunction. If higher-order thalamus regulates cortical state, then disruption of thalamocortical loops should impair cognition even if primary cortical circuits remain partly intact.</p>
-
-<p>This is consistent with observations involving MD-PFC dysfunction in neuropsychiatric and neurodevelopmental disorders. Disrupted thalamocortical connectivity, altered MD volume, abnormal synchrony, and impaired prefrontal inhibitory regulation have all been implicated in conditions such as schizophrenia. From the perspective developed here, these are not secondary details. They strike at the architecture required for contextual cognition.</p>
-
-<p>If MD helps regulate prefrontal recurrence, then MD dysfunction could produce deficits in working memory, flexible rule switching, and context-dependent behavior. If thalamic modulation of inhibitory tone is disrupted, cortical networks may become unstable, overly synchronized, insufficiently selective, or metabolically inefficient.</p>
-
-<p>This suggests that some cognitive disorders may be fruitfully understood as disorders of thalamocortical regulation rather than purely cortical computation. The relevant pathology may lie not only in local cortical processing but in the failure of the loop that selects and stabilizes cortical states.</p>
-
-<hr />
-
-<h2 id="12-from-relay-to-regulator">12. From relay to regulator</h2>
-
-<p>The thalamus is not one thing computationally. Some thalamic circuits relay information. Others modulate cortical state. Still others may combine relay, gating, synchronization, and contextual control. The mistake is to generalize from one motif to the entire structure.</p>
-
-<p>The broader point is that cognition requires more than representation. It requires regulation of representation. It requires a mechanism for determining which cortical states matter, how long they should persist, when they should change, and how much metabolic cost should be spent maintaining them.</p>
-
-<p>The thalamus is anatomically and dynamically positioned to contribute to this regulatory role. In particular, MD-like nuclei may serve as read/write structures for cortical processing, contextual modulators of recurrent dynamics, and participants in information/cost optimization.</p>
-
-<p>This leads to a reframing of the cognitive engine. The computational unit is not cortex alone. It is the <strong>thalamo-cortical system</strong>.</p>
-
-<hr />
-
-<h2 id="13-concluding-perspective">13. Concluding perspective</h2>
-
-<p>The cortico-centric view of cognition was productive, but it is incomplete. It captured the importance of hierarchical cortical processing, but it underestimated the role of thalamus in coordinating, modulating, and optimizing cortical computation.</p>
-
-<p>The thalamus should not be seen merely as a sensory gateway. It is part of the machinery that makes cortical cognition flexible. It helps determine how cortical recurrent networks are configured, how task context reshapes computation, how parallel cortical modules communicate through shared loops, and how the brain balances information gain against biological cost.</p>
-
-<p>For systems neuroscience, this means that thalamocortical loops should be treated as core components of cognitive computation. For computational neuroscience, it means that models of cognition should include thalamic modulation as more than an input term. For AI and machine learning, it suggests that future cognitive architectures may need explicit mechanisms for contextual control, dynamic routing, and cost-aware computation.</p>
-
-<p>Cognition is not simply the transformation of sensory input into cortical representation. It is an ongoing, iterative, metabolically constrained process in which cortex and thalamus jointly regulate the state of the system.</p>
-
-<p>The thalamus is not just a relay.</p>
-
-<p>It is part of the computational engine.</p>]]></content><author><name>Nima Dehghani</name></author><summary type="html"><![CDATA[Companion post to: *A Computational Perspective of the Role of the Thalamus in Cognition ** Nima Dehghani, Ralf D. Wimmer *Neural Computation . (2019) 31 (7): 1380–1418. DOI: https://doi.org/10.1162/neco_a_01197]]></summary></entry></feed>
+<p>That is the direction this paper takes: away from computation as metaphor, and toward computation as structured physical process.</p>]]></content><author><name>Nima Dehghani</name></author><category term="physical computation" /><category term="biological computation" /><category term="quantum computing" /><category term="compositionality" /><summary type="html"><![CDATA[Companion post to: A category-theoretic perspective on physical computation, biological computation, and system compositionality Nima Dehghani, Gianluca Caterina Journal of Physics: Complexity . Volume 5, Number 3 DOI: https://doi.org/10.1088/2632-072X/ad6051]]></summary></entry></feed>
