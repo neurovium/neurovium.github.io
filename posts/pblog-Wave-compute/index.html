@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ead7be">
+<title>When Does Matter Compute? Wave Memory, Closure, and the Architecture of Autonomous Physical Computation · Nima Dehghani</title>
+<meta name="description" content="Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<link type="application/atom+xml" rel="alternate" href="https://neurovium.github.io/feed.xml" title="Nima Dehghani" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>When Does Matter Compute? Wave Memory, Closure, and the Architecture of Autonomous Physical Computation | Nima Dehghani</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="When Does Matter Compute? Wave Memory, Closure, and the Architecture of Autonomous Physical Computation" />
+<meta name="author" content="Nima Dehghani" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics" />
+<meta property="og:description" content="Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics" />
+<link rel="canonical" href="https://neurovium.github.io/posts/pblog-Wave-compute/" />
+<meta property="og:url" content="https://neurovium.github.io/posts/pblog-Wave-compute/" />
+<meta property="og:site_name" content="Nima Dehghani" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-06-23T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="When Does Matter Compute? Wave Memory, Closure, and the Architecture of Autonomous Physical Computation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Nima Dehghani"},"dateModified":"2026-06-23T00:00:00+00:00","datePublished":"2026-06-23T00:00:00+00:00","description":"Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics","headline":"When Does Matter Compute? Wave Memory, Closure, and the Architecture of Autonomous Physical Computation","mainEntityOfPage":{"@type":"WebPage","@id":"https://neurovium.github.io/posts/pblog-Wave-compute/"},"url":"https://neurovium.github.io/posts/pblog-Wave-compute/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+  },
+  options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+
+</head>
+<body>
+  <header class="topbar">
+    <a href="/" class="topbar__brand">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"><line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/><line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/><line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/></g><circle cx="18" cy="20" r="2.2" fill="currentColor"/></svg>
+      Nima Dehghani
+    </a>
+    <button class="topbar__toggle" id="sidebar-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sidebar">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </header>
+
+  <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
+
+  <div class="app">
+    
+
+<aside class="side" id="sidebar" aria-label="Primary">
+  <a class="side__brand" href="/">
+    <svg class="glyph" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none">
+        <line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/>
+        <line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/>
+        <line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/>
+      </g>
+      <circle cx="18" cy="20" r="2.2" fill="currentColor"/>
+    </svg>
+    <span>
+      <span class="side__name">Nima Dehghani</span>
+      <span class="side__tag">@neurovium · MIT</span>
+    </span>
+  </a>
+
+  
+  
+  <nav class="side__nav" aria-label="Main navigation">
+    <a href="/about/" class="">About</a>
+    <a href="/news/" class="">News<span class="side__pip" aria-label="new"></span></a>
+    <a href="/research/" class="">Research</a>
+    <a href="/papers/" class="">Paper Maze</a>
+    <a href="/garden/" class="">Idea Garden</a>
+    <a href="/blog/" class="">Blog</a>
+    <a href="/open-science/" class="">Open Science</a>
+
+    <details class="side__group">
+      <summary class="side__group-sum" aria-label="Reflections — 4 pages">
+        <span class="side__group-label">Reflections</span>
+        <span class="side__group-meta">
+          <span class="side__group-count">4</span>
+          <svg class="side__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </span>
+      </summary>
+      <div class="side__subnav">
+        <a href="/on-liberty/" class="">On Liberty</a>
+        <a href="/neurovium-decoded/" class="">Neurovium Decoded</a>
+        <a href="/leibnizian-dream/" class="">Leibnizian Dream</a>
+        <a href="/scientific-understanding/" class="">Scientific Understanding</a>
+      </div>
+    </details>
+  </nav>
+
+  <div class="side__social" aria-label="Social links">
+    <div class="side__social-row">
+      <a href="https://scholar.google.com/citations?user=acFMrVUAAAAJ&hl=en" title="Google Scholar" target="_blank" rel="noopener" aria-label="Google Scholar">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9zm6.82 7L12 12.72 5.18 9 12 5.28zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73z"/></svg>
+      </a>
+      <a href="mailto:nima.dehghani@mit.edu" title="Email" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/nimadehghani/" title="LinkedIn" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+    </div>
+    <div class="side__social-row">
+      <a href="https://github.com/neurovium" title="GitHub" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      </a>
+      <a href="https://twitter.com/neurovium" title="X" target="_blank" rel="noopener" aria-label="X">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://bsky.app/profile/neurovium.bsky.social" class="is-bsky" title="Bluesky" target="_blank" rel="noopener" aria-label="Bluesky">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.335 5.144c2.606 1.957 5.41 5.923 6.44 8.051.99-2.046 3.855-6.132 6.44-8.051 1.864-1.383 4.885-2.453 4.885 1.002 0 .69-.396 5.795-.629 6.624-.809 2.882-3.748 3.616-6.363 3.17 4.573.78 5.737 3.359 3.224 5.939-4.772 4.9-6.859-1.23-7.394-2.802-.534 1.572-2.622 7.702-7.394 2.802-2.513-2.58-1.349-5.16 3.224-5.939-2.615.446-5.554-.288-6.363-3.17-.233-.829-.629-5.934-.629-6.624 0-3.455 3.021-2.385 4.885-1.002z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="n4-set" aria-label="N⁴ : NeuroAI ⊃ N³">
+    <span class="n4-set__lbl">N&#8308;</span>
+    <div class="n4-set n4-set--ai">
+      <span class="n4-set__lbl">NeuroAI</span>
+      <div class="n4-set n4-set--n3">
+        <span class="n4-set__lbl">N&#179;</span>
+        <ul>
+          <li>NeuroPhysics</li>
+          <li>NeuroComputation</li>
+          <li>NeuroDynamics</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="side__foot">
+    <span>
+      <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+      ·
+      <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    </span>
+  </div>
+</aside>
+
+    <main class="main">
+      <article class="paper">
+  <div class="paper__crumb">
+    <a href="/blog/">← Blog</a>
+    <span style="color:var(--muted-soft);">·</span>
+    <span>Jun 23, 2026</span>
+  </div>
+
+  <h1>When Does Matter Compute? Wave Memory, Closure, and the Architecture of Autonomous Physical Computation</h1>
+  <div class="paper__subtitle">When Does Matter Compute?</div>
+  
+  <div class="paper__venue" style="margin-top:10px;">
+    <span>adaptive</span><span>optimization</span><span>bio-inspired</span><span>prediction</span><span>inference</span><span>AI</span><span>RNNs</span><span>modularity</span><span>wiring economy</span><span>biological computation</span><span>physical computing</span><span>mechanistic</span><span>interpretability</span><span>recurrent</span><span>dynamics</span><span>chaos</span><span>optimality</span><span>neuroai</span><span>spatiotemporal</span>
+  </div>
+  
+
+  
+  <div class="linkbar" style="margin-top:24px;">
+    <a href="/papers/Wave-compute/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="20" x2="12" y2="12"/><line x1="12" y1="12" x2="21" y2="4"/><line x1="12" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="21" y2="20"/></svg>
+      Follow this path into the Maze
+    </a>
+  </div>
+  
+
+  <section class="paper__section prose" style="margin-top:28px;">
+    <p><em>Companion post to:</em><br />
+<strong>Autonomous Physical Computation: A Categorical Closure Criterion for Physical and Neuromorphic Reservoirs.</strong>
+Nima Dehghani
+<em>arXiv</em> 2026.
+DOI: ``</p>
+
+<hr />
+
+<h1 id="when-does-matter-compute-wave-memory-closure-and-the-architecture-of-autonomous-physical-computation">When Does Matter Compute? Wave Memory, Closure, and the Architecture of Autonomous Physical Computation</h1>
+
+<hr />
+
+<h2 id="a-droplet-that-walks-backward-through-its-own-memory">A droplet that walks backward through its own memory</h2>
+
+<p>There is an experiment in fluid dynamics that should unsettle anyone who thinks they know where the boundary between “physics” and “computation” lies.</p>
+
+<p>Place a millimetric droplet on a bath of silicone oil vibrated just below the Faraday instability threshold. The droplet bounces indefinitely, never coalescing, and at each bounce it excites a standing surface wave. Because the bath is driven close to threshold, these waves decay slowly — the surface becomes a fading record of everywhere the droplet has recently been. The droplet, in turn, is propelled by the local slope of this self-generated field. It <em>writes</em> to the bath, and the bath <em>guides</em> it. The result — the “walker” of Couder, Fort, and colleagues — is neither a passive particle nor a prescribed wave packet, but a recurrent wave–particle entity guided by its own history.</p>
+
+<p>Then comes the striking part. Perrard, Fort, and Couder showed that if you impose a controlled $\pi$-phase shift between the droplet’s bounce and the preexisting wave field, the effective wave-induced kick reverses sign. In confined chaotic regimes, the droplet doesn’t merely reverse velocity — it transiently <em>retraces its own complex trajectory</em>, reading its stored wave memory backward. And as it backtracks, the freshly emitted waves are written in antiphase with the old field, destructively interfering with it. The walker reads its memory backward while <em>physically erasing</em> it.</p>
+
+<p>Writing. Storage. Reading. Feedback. Reversal. Erasure. The vocabulary of a Turing machine, embodied in oil and vibration. Perrard and colleagues framed the experiment in exactly those terms — a “wave-memory Turing machine.”</p>
+
+<p>The question my paper asks is the one this framing forces on us: <strong>does a physical system that writes, stores, reads, and erases information thereby compute?</strong> And if not, what exactly is missing — not metaphorically, but as a matter of state spaces, dynamics, and physically checkable conditions?</p>
+
+<p>The answer I develop is a hierarchy with a sharp final rung:</p>
+
+\[\text{physical memory} \;\rightarrow\; \text{transition-preserving physical computation} \;\rightarrow\; \text{closed autonomous physical computation}.\]
+
+<p>The walker occupies the first rung magnificently and gestures at the second. It does not reach the third — and the reason it doesn’t turns out to be a <em>design principle</em>, one that applies far beyond hydrodynamics: to neuromorphic hardware, physical reservoir computers, and arguably to how we should think about computation in nervous systems.</p>
+
+<p>Let me build this up from the physics.</p>
+
+<hr />
+
+<h2 id="the-walker-as-a-stroboscopic-reservoir">The walker as a stroboscopic reservoir</h2>
+
+<p>The first move in the paper is to strip the walker down to the minimal dynamical structure needed to talk about memory, readout, erasure, and computation — without losing what makes it physical.</p>
+
+<p>The system has a natural clock: the Faraday period $T_F$. Stroboscoping at impact times $t_n = nT_F$, the physical state at bounce $n$ is</p>
+
+\[x_n = (\mathbf{r}_n, \mathbf{v}_n, \sigma_n, H_n) \in X,\]
+
+<p>where $\mathbf{r}_n$ and $\mathbf{v}_n$ are the droplet’s horizontal position and velocity, $\sigma_n \in {+1,-1}$ is its bouncing phase relative to a fixed Faraday phase, and $H_n$ is the surface-wave field over the bath — the memory. The field lives in a function space $\mathcal{H}$ (something like $H^1(\Omega)$, since the droplet responds to slope).</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Each bounce writes a localized Faraday source into the bath — in the Bessel approximation, $\psi_{\mathbf{r}}(\rho) = h_0 J_0(k_F</td>
+      <td>\rho - \mathbf{r}</td>
+      <td>)$ — and the field updates as</td>
+    </tr>
+  </tbody>
+</table>
+
+\[H_{n+1}(\rho) = \lambda H_n(\rho) + \sigma_n \, \psi_{\mathbf{r}_n}(\rho),
+\qquad
+\lambda = e^{-1/M_e},\]
+
+<p>where $M_e = \tau / T_F$ is the dimensionless <strong>memory parameter</strong>: the wave decay time measured in Faraday periods. Iterating, the field is an exponentially weighted trace of the droplet’s own past:</p>
+
+\[H_n = \sum_{q=1}^{n} \lambda^{q-1} \, \sigma_{n-q} \, \psi_{\mathbf{r}_{n-q}}.\]
+
+<p>This is the <em>storage</em> half of the loop. The <em>reading</em> half is strikingly local: the droplet does not perceive the global field. It samples only the slope at its own impact point,</p>
+
+\[\mathbf{g}_n = \nabla H_n(\mathbf{r}_n),\]
+
+<p>and receives a horizontal kick $-\kappa\,\sigma_n \nabla H_n(\mathbf{r}_n)$ at the next bounce, alongside persistence, confinement, and noise:</p>
+
+\[\mathbf{v}_{n+1} = a\,\mathbf{v}_n - \kappa\,\sigma_n \nabla H_n(\mathbf{r}_n) - \chi \nabla V(\mathbf{r}_n) + \boldsymbol{\xi}_n,
+\qquad
+\mathbf{r}_{n+1} = \mathbf{r}_n + T_F \mathbf{v}_{n+1}.\]
+
+<p>The factor $\sigma_n$ deserves a word, because it is doing quiet but essential work. The droplet samples the field <em>at its own bouncing phase</em>, so the wave-mediated force is $\mathbf{F}^{\mathrm{wave}}_n = -C\,\sigma_n \nabla H_n(\mathbf{r}_n)$. In the phase-locked regime this factor is inert — $\sigma_n$ squares against the phases carried by $H_n$ and the standard guidance is recovered. Its role is to make the phase a <em>live variable in the force law</em>, which is what allows a phase intervention to act on the dynamics at all. Without it, flipping $\sigma$ would change nothing about the kick, and the erasure story below would not follow from the equations.</p>
+
+<p>Together these define a stroboscopic map $x_{n+1} = F(x_n)$ — a discrete-time reduction of the Oza–Rosales–Bush trajectory equation that retains the memory kernel and the local-slope coupling while suppressing within-bounce hydrodynamics.</p>
+
+<p>Written this way, the walker <em>is</em> a physical reservoir system. The extended field $H_n$ is a high-dimensional memory reservoir; the droplet is simultaneously a localized probe and a localized actuator; and the readout $\nabla H_n(\mathbf{r}_n)$ feeds back into future motion and future writing. This identification is not decorative — it is what lets the closure criterion, derived on the walker, transfer to reservoir computing at the end.</p>
+
+<hr />
+
+<h2 id="memory-and-erasure-made-quantitative">Memory and erasure, made quantitative</h2>
+
+<p>“Wave memory” here is not a metaphor and not an observer’s reconstruction. Two facts make it physical.</p>
+
+<p><strong>Finite horizon.</strong> Truncating the trace to the last $L$ impacts incurs an error bounded by</p>
+
+\[\|H_n - H_n^{(L)}\|_{\mathcal{H}} \leq \Psi_0 \frac{\lambda^L}{1-\lambda},\]
+
+<p>so at fixed field resolution the effective memory horizon scales as $L_{\mathrm{eff}} \sim M_e$. The memory parameter is not a knob on a model; it is a physically tunable memory depth.</p>
+
+<p><strong>Causal readability.</strong> The stored field enters the equation of motion through $\nabla H_n(\mathbf{r}_n)$. The memory affects the future. This is what separates a <em>dynamical memory</em> from a mere record that only an external observer could decode.</p>
+
+<p>Erasure gets an equally physical definition. The $\pi$-shift is an operation on state,</p>
+
+\[P_\pi : (\mathbf{r}, \mathbf{v}, \sigma, H) \mapsto (\mathbf{r}, \mathbf{v}, -\sigma, H),\]
+
+<p>which does <em>not</em> touch the stored field directly. Instead, all subsequent writing happens in antiphase. Decomposing the field $m$ bounces after the shift into the decayed old memory $H_{\mathrm{old}}^{(m)} = \lambda^m H_{n_\pi}$ and the newly written antiphase contribution $H_{\mathrm{new}}^{(m)}$, <strong>erasure</strong> is the condition that new writing reduces the field energy beyond passive decay:</p>
+
+\[\|H_{\mathrm{old}}^{(m)} + H_{\mathrm{new}}^{(m)}\|^2 &lt; \|H_{\mathrm{old}}^{(m)}\|^2,\]
+
+<p>i.e. genuine destructive interference between the new sources and the stored trace. Because the coupling carries $\sigma_n$, the same phase flip reverses the effective kick exerted by the <em>preexisting</em> field, $-C\sigma_+\nabla H \mapsto +C\sigma_+\nabla H$, producing finite-time backtracking over a horizon of order $M_e/2$. Note what this does <em>not</em> say: the droplet’s interaction with the new, antiphase sources it is now laying down is perfectly normal. Only its relation to the stored past is inverted. Not global time-reversal invariance — memory-mediated, finite-horizon reversal, with the memory consumed in the act.</p>
+
+<p>So the walker has, demonstrably and quantitatively: writing, finite-time storage, local reading, closed analog feedback, finite-time reversal, and physically real erasure. These are genuine information-processing primitives. And here is the pivot of the whole paper: <strong>they are still not sufficient for computation.</strong></p>
+
+<hr />
+
+<h2 id="what-computation-demands-coarse-grained-transition-preservation">What computation demands: coarse-grained transition preservation</h2>
+
+<p>Physical memory is not yet computation. A magnetized material “remembers” its field history; a deformed solid retains a record of its loading; a memristive element carries a trace of past current. Rich, dynamically consequential memory is everywhere in physics. Something more is needed, and the paper’s first criterion pins it down.</p>
+
+<p>Let $F : X \to X$ be the physical dynamics and $G : A \to A$ an abstract transition rule on an abstract state space $A$ — the “program level.” A coarse-graining $\Pi : X \to A$ implements $G$ on a domain $U \subseteq X$ when the diagram commutes:</p>
+
+\[\Pi \circ F = G \circ \Pi \qquad \text{on } U.\]
+
+<p>Physically evolve then abstract, or abstract then formally step — you land in the same place. The abstraction is not a label painted on after the fact; the dynamics <em>respects</em> it.</p>
+
+<p>Two features of this condition do the philosophical heavy lifting.</p>
+
+<p>First, $\Pi$ is many-to-one. It induces an equivalence $x \sim_\Pi x’ \iff \Pi(x) = \Pi(x’)$, and the physical dynamics descends to a well-defined abstract rule on the quotient only if</p>
+
+\[\Pi(x) = \Pi(x') \;\Longrightarrow\; \Pi(F(x)) = \Pi(F(x')).\]
+
+<p>When this holds, the abstract map $G$ exists and is <em>unique</em> (this is a proposition in the paper). Abstract states are not microstates — they are equivalence classes, macrostates, basins. This replaces the overly strong demand of one-to-one physical–symbol identity, which no real computer satisfies anyway.</p>
+
+<p>Second, and pulling in the opposite direction, the commutation requirement is exactly what blocks the overly <em>weak</em> view — Putnam- and Chalmers-style arguments that any physical system “computes” anything you can map onto it. An arbitrary labeling won’t commute with the dynamics. The mapping must be preserved <em>by the physics</em>, step after step. That single equation is the wall between computation and relabeling.</p>
+
+<p>This criterion has a lineage worth naming. Abstraction/representation (AR) theory framed computation as a commuting relation between physical dynamics and an evolving representation, but placed no restriction on the representation — leaving it exposed to the simple-mapping objection. The mechanistic account demands robust, functionally individuated structure but stays descriptive, without a concrete tie to dynamics. The categorical framework Gianluca Caterina and I developed previously casts the relation as a functor between a category of physical processes and one of abstract processes. This paper instantiates that framework on an explicit physical substrate and, as we’ll see, pushes it one step further — because putting it on a concrete substrate exposes a question the abstract formulation never had to confront.</p>
+
+<hr />
+
+<h2 id="robust-symbolization-computation-must-survive-noise">Robust symbolization: computation must survive noise</h2>
+
+<p>Exact commutation is an idealization. Real systems are noisy and finite-resolution, so the paper’s second criterion replaces exact symbols with <strong>separated basins</strong>.</p>
+
+<p>For a finite abstract alphabet $A = {a_1, \ldots, a_K}$, each symbol $a_i$ is realized by a physical region $B_i \subset X$, and robustness requires the basins to be distinguishable at the physical uncertainty scale $\varepsilon_X$:</p>
+
+\[\operatorname{dist}(B_i, B_j) &gt; 2\varepsilon_X, \qquad i \neq j,\]
+
+<p>with transitions that remain reliable under stochastic dynamics:</p>
+
+\[K(x, B_{g(i)}) \geq 1 - \delta \qquad \text{for } x \in N_{\varepsilon_X}(B_i),\]
+
+<p>where $K$ is the transition kernel. A symbol is a basin you can’t accidentally fall out of; a transition is a basin-to-basin map that holds with probability at least $1-\delta$.</p>
+
+<p>This framing makes the <em>failure modes</em> of physical computation just as precise as the success condition: <strong>aliasing</strong> (basins that overlap at resolution $\varepsilon_X$), <strong>representative dependence</strong> (two microstates in one basin evolving into different basins — the commutation condition failing), <strong>noise-induced basin crossing</strong>, and <strong>transition deformation</strong>.</p>
+
+<p>One failure mode is specific to wave reservoirs and worth singling out: <strong>memory decay</strong>. Two wave-memory states separated by $D_0$ converge under passive decay as $D_m \approx \lambda^m D_0$, becoming physically indistinguishable after</p>
+
+\[m \gtrsim M_e \log\!\left(\frac{D_0}{2\varepsilon_H}\right)\]
+
+<p>bounces. The memory parameter doesn’t just set how long the walker remembers its path — it bounds the reliable lifetime of <em>any</em> memory-dependent symbolic distinction the system could support. A fading reservoir imposes a hard expiration date on its own alphabet. Any wave-based computing architecture must either operate within this horizon or actively refresh its symbols.</p>
+
+<hr />
+
+<h2 id="the-closure-criterion-who-selects-the-next-operation">The closure criterion: who selects the next operation?</h2>
+
+<p>Now the central step — the paper’s core contribution.</p>
+
+<p>Suppose a system passes everything so far: it has memory, separated basins, robust transition preservation. It can still fail to be a computer in an important sense, because everything above can hold while <em>an external agent supplies the operations</em>. If $\mathcal{O}$ is a set of physically realizable operations $F_o : X \to X$ and an experimenter schedules the sequence $o_0, o_1, \ldots$, the evolution</p>
+
+\[x_{n+1} = F_{o_n}(x_n)\]
+
+<p>may implement perfectly valid abstract transitions — but the <em>selection</em> of what happens next lives outside the system. This is exactly the walker’s situation: the $\pi$-shift, the one operation that triggers reversal and erasure, is imposed by the experimenter’s function generator.</p>
+
+<p><strong>Closure</strong> is the condition that operation selection be internal. Decompose the state space as</p>
+
+\[X = X_R \times X_Y \times X_Z,\]
+
+<p>where $X_R$ is the reservoir/memory subsystem and $X_Y$ is a <em>physical readout-control subsystem</em>. Let $y_n = p_Y(x_n)$ be the readout state and $C : X_Y \to \mathcal{O}$ a physical operation-selection map. The closed-loop evolution is</p>
+
+\[\boxed{\,x_{n+1} = F_{C(y_n)}(x_n) = F_{C(p_Y(x_n))}(x_n)\,}\]
+
+<p>The readout is not merely observed — it is <em>coupled back</em> into the dynamics, choosing what the system does next. Writing $\Phi(x) = F_{C(p_Y(x))}(x)$ for the resulting autonomous map, closed physical computation is the compatibility of this loop with the abstraction: $\Pi(\Phi(x)) = G(\Pi(x))$, or with operation-dependent abstract rules, $\Pi(\Phi(x)) = G_{\Theta(C(p_Y(x)))}(\Pi(x))$.</p>
+
+<p>Two clarifications sharpen what closure is and is not.</p>
+
+<p><strong>Closure is not feedback.</strong> The walker already has a beautiful closed analog loop: $H_n \to \nabla H_n(\mathbf{r}<em>n) \to \mathbf{v}</em>{n+1} \to H_{n+1}$. Feedback is ubiquitous — a driven pendulum has it, a chemical oscillator has it. Closure requires something structurally stronger: a readout state that selects among <em>distinct operations</em> — normal propagation vs. phase flip vs. confinement change — not a continuous variable that merely modulates one flow. (The supplement makes this precise with nondegeneracy conditions separating genuine operation selection from continuous feedback.)</p>
+
+<p><strong>Closure is not computational power.</strong> This is a boundary the paper draws deliberately. A two-state controller that flips $o_{\mathrm{normal}} \leftrightarrow o_\pi$ every step is closed, transition-preserving, and autonomous — and computes nothing of interest. Closure marks the line between externally driven and autonomous physical computation, not between weak and powerful computation. Richness — a sufficient alphabet, programmable transitions, composable operations — is a separate, further requirement.</p>
+
+<hr />
+
+<h2 id="the-categorical-lift-where-does-the-morphism-come-from">The categorical lift: where does the morphism come from?</h2>
+
+<p>Why bring category theory into a fluid-dynamics paper? Not as ornament. The dynamical-systems statement of closure leaves three things implicit that the categorical formulation makes structural.</p>
+
+<p>In the framework from my earlier work with Caterina, physical processes form a category $\mathbf{PhysProc}$ (objects: physical regions; morphisms: physically realizable processes), abstract transitions form $\mathbf{AbsProc}$, and computation is a functorial relation between them. The coarse-graining descends to a <strong>quotient functor</strong></p>
+
+\[Q_\Pi : \mathbf{PhysProc}_\Pi \to \mathbf{AbsProc},
+\qquad
+Q_\Pi(F) = G \iff \Pi \circ F = G \circ \Pi,\]
+
+<p>defined on the subcategory of processes that respect $\Pi$-equivalence. Abstraction and concretization, $\alpha(U) = \Pi(U)$ and $\gamma(S) = \Pi^{-1}(S)$, form a Galois-style pair,</p>
+
+\[\alpha(U) \subseteq S \iff U \subseteq \gamma(S),\]
+
+<p>and transition preservation becomes basin containment: $F(B_a) \subseteq B_{G(a)}$. In noisy systems, strict functoriality relaxes to an approximate quotient functor $Q_\Pi(F) \approx_{\varepsilon,\delta} G$, with $\varepsilon$ tracking resolution and $\delta$ bounding transition failure. This is the formal home of the intuition that computation is about <em>processes respecting a quotient</em> — many microstates per symbol, adjunction rather than bijection, the middle path between physical–symbol identity and arbitrary mapping.</p>
+
+<p>But instantiating this machinery on the walker’s explicit state space exposed a question the functorial picture never had to confront: <strong>at each step, what chooses the morphism?</strong> In AR theory and in the functorial formulation alike, the operation is handed to the diagram from outside. Closure is the condition that the <em>system</em> choose it. Categorically, the closed-loop morphism is</p>
+
+\[\Phi = \mathrm{Act} \circ \langle C \circ p_Y, \;\mathrm{id}_X \rangle,
+\qquad
+\mathrm{Act}(o, x) = F_o(x).\]
+
+<p>Read this composite carefully, because it is the paper’s contribution in one line. The pairing $\langle C \circ p_Y, \mathrm{id}_X \rangle$ sends $x \mapsto (C(p_Y(x)), x)$: the system’s own state produces both the operation and the operand. The external index $o \in \mathcal{O}$ has been <em>eliminated from the diagram</em> — replaced by a value of the system’s own readout. Coalgebraically, $\Phi$ equips $X$ with the structure of a transition system whose next-step map factors through an internal observation rather than an external driver. Autonomy stops being an interpretive gloss and becomes a structural property of how the process is generated.</p>
+
+<hr />
+
+<h2 id="the-verdict-on-the-walker">The verdict on the walker</h2>
+
+<p>With the hierarchy in hand, the classification is precise, and it is neither a debunking nor an endorsement of the “wave Turing machine” framing.</p>
+
+<p>The walker <strong>has</strong>: physical memory ($H_n$ as an exponentially weighted trace), physical writing ($H_{n+1} = \lambda H_n + \sigma_n \psi_{\mathbf{r}_n}$), finite-time storage (horizon $\sim M_e$), physical local reading ($\nabla H_n(\mathbf{r}_n)$ entering the equation of motion), closed analog feedback, physically real erasure (the destructive-interference inequality), and finite-time memory-mediated reversal.</p>
+
+<p>The walker <strong>lacks</strong>, as experimentally realized: a demonstrated symbolic transition system $(A, \Pi, G)$ with $\Pi \circ F = G \circ \Pi$; separated basins with reliable transitions serving as an alphabet; and — decisively — closure. The $\pi$-shift is imposed externally. There is no internal readout state $y_n$ with $C(y_n) = P_\pi$.</p>
+
+\[\boxed{\text{wave-memory physical machine with Turing-like primitives}}
+\quad \text{but not} \quad
+\boxed{\text{closed autonomous Turing machine}}\]
+
+<p>The point of this classification is that the missing layer is <em>not mysterious</em>. It is a specific, buildable subsystem — and that turns the criterion into a research program.</p>
+
+<hr />
+
+<h2 id="closing-the-loop-from-criterion-to-blueprint">Closing the loop: from criterion to blueprint</h2>
+
+<p>If closure is what’s missing, add it. The constructive section of the paper proposes physical architectures of the form</p>
+
+\[y_{n+1} = \mathcal{R}(y_n, H_n, z_n), \qquad o_n = C(y_n), \qquad (H_{n+1}, z_{n+1}) = F_{o_n}(H_n, z_n),\]
+
+<p>where $z_n = (\mathbf{r}_n, \mathbf{v}_n, \sigma_n)$ and the readout $y$ is a <em>physical</em> degree of freedom, not a camera feed into a laptop. Candidate implementations:</p>
+
+<p><strong>A multistable readout.</strong> A coordinate $y$ in a double-well potential $U_Y(y;q) = \frac{\alpha}{4}y^4 - \frac{\beta}{2}y^2 - \gamma q y$, tilted by a scalar $q_n$ extracted from the wave state (a projected slope, or an integrated field $\int_\Omega \chi(\rho) H_n(\rho)\,d\rho$). The two wells $Y_\pm$ are the readout basins; $C(Y_+) = o_\pi$, $C(Y_-) = o_{\mathrm{normal}}$. The phase flip becomes wave-triggered.</p>
+
+<p><strong>A thresholded, hysteretic wave detector.</strong> The cleanest decisive experiment — an <strong>autonomous eraser</strong>. Let the readout track the normalized wave energy $E_W[n] = |H_n|<em>{L^2}^2 / |\psi</em>{\mathbf{0}}|_{L^2}^2$ through a hysteretic threshold:</p>
+
+\[y_{n+1} =
+\begin{cases}
+1, &amp; E_W[n] &gt; \Theta_E,\\[2pt]
+0, &amp; E_W[n] &lt; \Theta_E - \Delta,\\[2pt]
+y_n, &amp; \text{otherwise},
+\end{cases}
+\qquad C(0) = o_{\mathrm{normal}}, \quad C(1) = o_\pi.\]
+
+<p>The loop $H_n \to E_W[n] \to y_n \to o_\pi \to \text{erasure}$ means the system erases its own memory when its own field crosses a physical threshold. The critical experimental comparison is three-way: an external phase schedule (the current experiment), observer-side readout <em>without</em> feedback, and physical readout <em>with</em> feedback. Only the third satisfies closure — and hysteresis is essential, because it is what makes the readout a genuine two-basin state rather than a relabeled continuous variable.</p>
+
+<p><strong>Boundary-controlled reservoirs and coupled walkers.</strong> The readout can also select bath parameters — memory depth $\lambda(y_n)$, forcing phase, confinement geometry — making the wave update itself state-dependent. Or a second walker in the same bath, interacting through the superposed field $H_{n+1} = \lambda H_n + \sigma_n^A \psi_{\mathbf{r}<em>n^A} + \sigma_n^B \psi</em>{\mathbf{r}_n^B}$, can serve as a finite-state controller embedded in the very substrate it controls.</p>
+
+<p>The design principle, boxed in the paper:</p>
+
+\[\boxed{\;\text{wave memory} \;+\; \text{intrinsic readout basins} \;+\; \text{state-dependent operation selection} \;=\; \text{closed physical computation}\;}\]
+
+<hr />
+
+<h2 id="what-this-means-for-physics">What this means for physics</h2>
+
+<p><strong>A falsifiable criterion where there was a metaphor.</strong> “This system computes” has too often been an interpretive flourish attached to interesting dynamics. The framework replaces it with conditions you can check in the lab: exhibit the basins, measure their separation against the noise scale $\varepsilon_X$, verify transition reliability $1-\delta$, and identify — or fail to identify — the internal readout-to-operation coupling. The three-way autonomous-eraser comparison is a concrete experiment with a binary outcome. Computation claims about physical systems become experimental claims.</p>
+
+<p><strong>A hierarchy that organizes a zoo.</strong> Memristive materials, magnetic hysteresis, shape memory, vortex records, wave fields: physics is full of systems with memory, and the literature is full of debates about which of them “compute.” The three-rung ladder — memory, transition preservation, closure — gives these debates a shared coordinate system. Most memory materials sit on rung one. Externally clocked, externally read devices can reach rung two. Rung three is rare and architecturally specific, and that is precisely what makes it a meaningful target.</p>
+
+<p><strong>Memory depth as a computational resource with hard bounds.</strong> The result $m \gtrsim M_e \log(D_0 / 2\varepsilon_H)$ ties an abstract computational property — how long a symbolic distinction can persist — to a measurable physical parameter. For any fading-memory substrate (near-threshold waves, decaying spin textures, leaky photonic cavities), this bound tells you the symbol lifetime your physics can support before refresh is mandatory. It is the kind of exchange rate between physical and computational quantities that a physics of computation should be producing.</p>
+
+<p><strong>A disciplined answer to pancomputationalism.</strong> Does a rock compute its trajectory? Does the Solar System compute Newton’s laws? The framework’s answer is a firm <em>no, not in the relevant sense</em> — but for a physicist’s reason, not a philosopher’s. What the rock lacks is not complexity or observers; it lacks a physically organized coarse-graining whose transitions the dynamics preserves robustly, and any readout-control organization at all. The contrast case is the billiard-ball computer: a generic moving ball is not a logic gate, but a ball in a constrained collision architecture is, because the constraints organize the physics to preserve an abstract transition structure. Computation is a property of <em>physical organization</em>, not of physical evolution per se — a statement that rejects arbitrary mappings without denying that unconventional, analog, quantum, or wave-based substrates can genuinely compute.</p>
+
+<p><strong>And a caveat physics should respect.</strong> The criterion is deliberately minimal. It says nothing about computational power, efficiency, thermodynamic cost, or universality — a closed system can be trivially closed. Universality would require a robust alphabet, programmable transitions, addressable memory, scalable composition. The paper stops at the prior question, because the prior question — <em>is the system autonomous or externally driven?</em> — had no sharp answer before.</p>
+
+<hr />
+
+<h2 id="what-this-means-for-neuroscience-and-why-neuroai-needs-it">What this means for neuroscience (and why NeuroAI needs it)</h2>
+
+<p>Neuroscientists say “this circuit computes” constantly, and almost never say what would make it false. The word usually means one of three very different things — that the activity <em>carries information about</em> a stimulus, that it <em>transforms</em> inputs into outputs, or that it <em>implements an algorithm</em> — and the slide between them is so frictionless that it rarely gets noticed. The framework above is, among other things, a way to stop sliding. Let me translate it out of the oil bath.</p>
+
+<h3 id="the-three-rungs-in-neural-terms">The three rungs, in neural terms</h3>
+
+<p><strong>Rung one: memory.</strong> A circuit’s current state carries information about its past. This is nearly free. Synaptic traces, short-term facilitation, slow adaptation currents, persistent activity, the after-effects of a traveling wave — all of it is memory in the sense used here. A dissipative system with a fading trace of its own history is not rare; it is the default condition of nervous tissue. Finding memory in a circuit tells you almost nothing about whether it computes.</p>
+
+<p><strong>Rung two: transition preservation.</strong> Now there is a coarse-graining $\Pi$ from neural states to some abstract description — task states, decision variables, latent factors, phases of a sequence — and the <em>neural dynamics respect it</em>: evolving the circuit and then abstracting gives the same answer as abstracting and then applying the abstract rule, $\Pi \circ F = G \circ \Pi$. This is a real constraint, and it is what most careful computational neuroscience is actually claiming when it says a circuit “implements” something. The robustness layer matters here too: the abstract states must be <em>separated basins</em> in the neural state space, distinguishable at the scale of the circuit’s own noise, with transitions that hold reliably. A latent variable you can extract from population activity is not automatically a symbol the circuit itself can act on.</p>
+
+<p><strong>Rung three: closure.</strong> The circuit’s own readout state selects what the circuit does next. Not “influences” — <em>selects</em>, from among distinct operations.</p>
+
+<p>That third rung is where the interesting claim lives, and where neuroscience has been unwittingly ambiguous.</p>
+
+<h3 id="the-decoding-fallacy-named">The decoding fallacy, named</h3>
+
+<p>Here is the uncomfortable observation. The single most common methodology in systems neuroscience is: record a population, train a decoder, report that the decoder recovers some variable with high accuracy, and conclude that the region <em>encodes</em>, <em>represents</em>, or <em>computes</em> that variable.</p>
+
+<p>Look at what that experiment actually establishes, in the framework’s terms. It establishes that an <strong>observer-side readout</strong> exists — that <em>you</em>, with a GLM or an SVM or a linear projection, can recover the variable. It establishes precisely nothing about whether the <em>brain</em> reads it. The decoder is your classifier, running on your laptop, downstream of nothing.</p>
+
+<p>Recall the three-way experimental comparison the paper proposes for the walker:</p>
+
+<ol>
+  <li>an external operation schedule,</li>
+  <li>observer-side readout <strong>without</strong> feedback,</li>
+  <li>physical readout <strong>with</strong> feedback.</li>
+</ol>
+
+<p>Only the third satisfies closure. And condition 2 — observer-side readout with no causal path back into the dynamics — is a description of a decoding study. It is the <em>control condition</em>. Neuroscience has industrialized the control condition and, in a great deal of its rhetoric, reported it as the result.</p>
+
+<p>This is not a claim that decoding is bad science; it is indispensable, and it establishes that the information is <em>there</em>. It is a claim about what the inference licenses. Decodability is a statement about the mutual information between neural activity and a variable. Computation, in the sense that would justify the word, is a statement about <strong>causal architecture</strong>: whether some physical state of the circuit is coupled back into the circuit’s own subsequent operations. Those are different claims, and only the second one is about the brain rather than about the experimenter.</p>
+
+<p>Notice this is the <em>same</em> error, structurally, that the walker experiment makes — and the walker’s version is more honest, because there the external agent (the function generator imposing the $\pi$-shift) is visible on the bench. In a decoding study the external agent is the analysis pipeline, and it is easy to forget it is there at all.</p>
+
+<h3 id="what-closure-would-actually-require-of-a-circuit">What closure would actually require of a circuit</h3>
+
+<p>So what would it take to earn the word? You would need to identify, physically:</p>
+
+<ul>
+  <li><strong>A readout variable inside the circuit.</strong> Not a latent factor in your dimensionality reduction — a physical degree of freedom. Downstream spiking in a target population. A dendritic nonlinearity crossing threshold. A neuromodulatory state. A bistable attractor in a gating circuit. It has to be <em>made of neurons</em>, not of PCA.</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td><strong>Distinct operations for it to select among.</strong> This is the condition people skip. Closure requires more than that the readout <em>modulates</em> an ongoing flow — that is just feedback, and feedback is everywhere (recurrent excitation, adaptation, gain control, every loop in the brain has it). Closure requires that the readout state select among <em>qualitatively different things the circuit can do</em>: gate this pathway or that one, write to memory or erase it, switch dynamical regime, route to a different downstream target. Formally, the operation-selection map must be nontrivial, $</td>
+          <td>\mathrm{Im}(C)</td>
+          <td>\geq 2$. A circuit whose recurrent activity smoothly tunes its own gain is a beautiful feedback system and is <em>not</em>, on that basis alone, closed.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li><strong>A causal path from the readout back into the dynamics.</strong> Perturb the readout state; the subsequent operation changes. That is an intervention, not an observation — and it is why optogenetics, not electrophysiology, is the natural instrument for testing closure.</li>
+</ul>
+
+<p>Written this way, the criterion turns into an experimental program: identify the candidate readout, show it occupies separated basins, show that basin membership predicts <em>which operation</em> the circuit performs next, and show that forcing the basin forces the operation.</p>
+
+<p>And here is the part worth sitting with: <strong>nervous systems very likely are closed, and that is a substantive structural fact, not a truism.</strong> Neural activity does not merely represent states for an external observer — it acts on downstream circuits, gates future processing, opens and closes routing pathways, and changes the physical conditions under which later activity unfolds. At the cellular scale the point is even sharper: ion channels function simultaneously as the readout <em>and</em> the control variable, which is closure in miniature. The brain is not a reservoir waiting to be decoded. It is a system that reads itself and acts on what it reads. That is precisely the property that almost every engineered “physical computer” lacks — and it may be the most underrated thing about biological computation.</p>
+
+<h3 id="traveling-waves-as-the-test-case">Traveling waves as the test case</h3>
+
+<p>The same discipline applies to what is currently one of the most enthusiastic corners of the field. Cortical traveling waves propagate, modulate excitability, organize spike timing, and structure spatiotemporal activity. Do they <em>compute</em>?</p>
+
+<p>Under this criterion, the question stops being about appearance and becomes about architecture. A wave becomes computationally relevant when you can identify the physical variables it transforms, the coarse-grained states it stabilizes or routes, and the <strong>downstream readout/control pathways through which it changes later neural dynamics</strong>. Not whether the activity pattern visually resembles a wave. Whether the readouts form robust, transition-preserving, <em>closed</em> loops.</p>
+
+<p>I want to be careful about the analogy, because it is easy to abuse. The claim is emphatically <em>not</em> that cortex is a hydrodynamic walker. It is structural and limited: both systems contain distributed wave-like activity, local readout, and recurrent physical coupling. In the walker, the readout is the droplet sampling $\nabla H(\mathbf{r})$. In cortex, the readout might be downstream spiking, synaptic integration, dendritic nonlinearities, local thresholds, or long-range recurrent coupling. What transfers is the <em>question</em>, not the substrate.</p>
+
+<p>The research program this suggests is concrete: do wave variables define robust basins or phase states? Do those states predict — or better, <em>control</em> — transitions in downstream populations? Does perturbing wave phase, direction, or speed change the inferred transition map? And is the relevant readout internal to the circuit, or imposed by your decoder? Cortical waves are, in this sense, an unusually clean biological test case for the closure criterion.</p>
+
+<h3 id="why-neuroai-needs-this-specifically">Why NeuroAI needs this, specifically</h3>
+
+<p>NeuroAI is a field built on an analogy between two systems whose computational status is asserted far more often than it is defined. That is a precarious foundation, and it produces a recurring pathology: a property is found in a trained network, the corresponding property is found in cortex, and the resemblance is reported as convergence — without either side having said what would make the claim false.</p>
+
+<p>The framework offers a shared coordinate system, and it cuts in both directions.</p>
+
+<p>Toward the models: a deep network’s hidden layer that a linear probe can decode is at rung two at best, and the probe is <em>your</em> probe. The network’s own subsequent computation typically does not depend on the probed variable at all. Meanwhile a large model in a standard serving loop — where an external harness decides when to sample, when to call a tool, when to stop — is, structurally, externally driven, however agentic its behavior looks. Closure asks a question that no benchmark currently asks: <em>who selects the next operation, the system or the harness?</em></p>
+
+<p>Toward the brains: the criterion demands that “the cortex computes X” be cashed out as a causal architecture with identifiable readout basins and operation selection, rather than as a decoding accuracy. It makes the claim expensive — which is the point. Claims that cost nothing are worth nothing.</p>
+
+<p>And it makes the comparison honest. If nervous systems are closed and current artificial systems mostly are not, that is not a gap to be papered over with an analogy; it is arguably <em>the</em> structural difference between them, and it deserves to be named rather than dissolved into the shared vocabulary of “information processing.” The two fields have been using one word — <em>computation</em> — for at least three distinct properties, and NeuroAI is the place where that ambiguity does the most damage, because it is where the equivocation gets laundered into a scientific claim.</p>
+
+<p>The closure criterion will not tell you what the brain computes. It will tell you what you have to demonstrate before you are entitled to say it computes anything at all.</p>
+
+<hr />
+
+<h2 id="what-this-means-for-ai-and-ml">What this means for AI and ML</h2>
+
+<p>The closure criterion was derived on droplets and oil, but its most immediate audience may be people building learning machines out of physics.</p>
+
+<p><strong>Reservoir computing has been benchmarking the wrong loop — or at least, only half of it.</strong> The standard architecture (echo state networks, liquid state machines, and their myriad physical implementations in spintronics, photonics, mechanics, and fluids) is: a high-dimensional dynamical reservoir transforms input history into a rich state, and an <em>external, trained</em> readout — usually a linear layer on a computer — extracts the answer. Reservoirs are evaluated by how well that external readout decodes them. The closure criterion exposes the architecture’s structural incompleteness: the decoded state never touches the physics again. In the paper’s terms, physical reservoir computing as standardly practiced lives on rung two — transition-preserving under external readout — and the walker makes this separation unusually visible, because its reservoir (the wave field) and its probe (the droplet) are right there in front of you while the operation selection sits in a function generator.</p>
+
+<p>I want to be precise about <em>where</em> the incompleteness lies, because the obvious fix is not the right one. In <a href="https://arxiv.org/abs/2606.22765">other work</a>, I put the reservoir <em>substrate itself</em> under evolutionary selection — evolving size, connectivity, spectral radius, input scaling, and regularization of reservoirs tasked with predicting Kuramoto–Sivashinsky spatiotemporal chaos — rather than accepting the usual fixed random recurrent matrix. The substrate turns out to be richly structured and far from arbitrary: selection conserves a global spectral envelope while directionally refining the slow, low-eigenvalue modes that set the reservoir’s memory timescale; macroscopic modularity locks into a narrow band; connection cost is exponentially pruned within that band. Prediction, in other words, imposes legible structural constraints on the recurrent medium — the substrate is a real object of design, not a bag of random dynamics.</p>
+
+<p>And yet: those reservoirs are still on rung two. Every one of them is decoded by a ridge-regression readout trained offline and living outside the physics. Optimizing the substrate — even beautifully, even in ways that reveal genuine structure–function laws — does not move a system across the closure line, because closure is not a property of the reservoir. It is a property of the <em>loop</em>. This is exactly why the criterion is worth having: it identifies an axis of incompleteness that no amount of substrate engineering can address, and that is invisible to the benchmarks the field currently runs. You can evolve the medium to the edge of what prediction demands and still have built something externally driven.</p>
+
+<p>The stronger benchmark the criterion suggests: <strong>can the readout be physically internalized, so that decoded states select subsequent reservoir operations?</strong></p>
+
+\[\text{reservoir} \;\to\; \text{physical readout} \;\to\; \text{operation selection} \;\to\; \text{reservoir}.\]
+
+<p>A device that satisfies this is a <em>physically closed reservoir computer</em>: its computational state is not read off after the fact but participates in its own future evolution. For neuromorphic engineering, this is a concrete design axis orthogonal to the usual ones (speed, energy, dimensionality): not “how expressive is your reservoir” but “who selects the next operation — your chip, or your host workstation?” A memristive crossbar whose outputs are digitized, thresholded in software, and fed back through a DAC is externally driven no matter how exotic its materials. The same crossbar with an on-substrate hysteretic element that gates its own update pathway is closed. The criterion gives that difference a name and a test.</p>
+
+<p><strong>Symbols from dynamics, with error bars.</strong> The robust-symbolization layer — basins separated by $2\varepsilon_X$, transitions reliable to $1-\delta$, symbol lifetimes bounded by memory decay — is essentially a physical theory of when continuous dynamics supports discrete, reliable information processing. That is a question ML keeps encountering from the other direction: when do RNN hidden states organize into effectively discrete attractors? When do the representations inside a trained network support compositional, symbol-like manipulation? When does an analog accelerator’s noise floor destroy the discrete abstraction its compiler assumes? The framework’s failure taxonomy — aliasing, representative dependence, noise-induced crossing, memory decay, transition deformation — reads like a diagnostic checklist for analog and in-materio ML hardware, and each item comes with an inequality rather than an adjective.</p>
+
+<p><strong>Autonomy as architecture, not vibes.</strong> The AI world talks constantly about “agents” and “autonomy,” usually behaviorally. The closure criterion offers a structural definition with teeth: a system is autonomous when its next operation is a function of its own readout state, $o_n = C(p_Y(x_n))$, rather than an externally supplied index. Notice what this does and doesn’t say. A large language model in a standard serving loop — where an external harness decides when to sample, when to call tools, when to stop — is, in this structural sense, externally driven regardless of how agentic its outputs look. A system whose own state gates its subsequent operations (what to update, when to erase, which sub-process to run) is closed regardless of how simple it is. And the paper’s own remark cuts the other way too: closure without richness is trivial — a period-two flip-flop is autonomous and boring. Interesting machine intelligence presumably requires both closure <em>and</em> a rich operation set. Keeping those two requirements separate, rather than blending them into one fuzzy notion of agency, is exactly the kind of conceptual hygiene the formalism enforces.</p>
+
+<p><strong>A bridge to biology that isn’t hand-waving.</strong> In recurrent neural systems, readout-like variables act on downstream circuits, gate future processing, and change the physical conditions under which later activity unfolds; at the cellular scale, ion channels function simultaneously as readout and control variables. Nervous systems, in other words, look closed in precisely the structural sense defined here — which suggests the criterion as a common language for comparing engineered reservoirs, unconventional computers, and neural circuits without collapsing them all into the vague claim that they “process information.”</p>
+
+<hr />
+
+<h2 id="looping-back-physical-computing-as-the-real-subject">Looping back: physical computing as the real subject</h2>
+
+<p>Step back from the droplet, and the paper is an answer to a single old question: <strong>what does it take for matter to compute?</strong></p>
+
+<p>The history of that question has oscillated between two failure modes. One extreme makes computation too cheap: if computation is just “a mapping from physical states to abstract states,” then everything computes everything, the rock implements every finite-state machine, and the concept dissolves. The other extreme makes it too expensive: if computation requires exact symbol-by-symbol identity between physical and formal states, then nothing physical computes — not even your laptop, whose “bits” are noisy charge distributions stabilized by basins and error margins.</p>
+
+<p>The resolution developed here threads between them with three moves, each carrying its own mathematics:</p>
+
+<ol>
+  <li><strong>Symbols are basins, not microstates.</strong> Physical realization is many-to-one, formalized by a quotient — an adjunction, not a bijection: $\gamma({a}) = B_a$, with $\operatorname{dist}(B_i, B_j) &gt; 2\varepsilon_X$.</li>
+  <li><strong>Computation is transition preservation, not labeling.</strong> The dynamics must commute with the abstraction, $\Pi \circ F = G \circ \Pi$, robustly under noise. This single requirement dissolves pancomputationalism without special pleading.</li>
+  <li><strong>Autonomy is internal morphism selection.</strong> The step that had never been formalized: a computer, as opposed to a computed-upon system, selects its own next operation — $\Phi = \mathrm{Act} \circ \langle C \circ p_Y, \mathrm{id}_X \rangle$, the external index eliminated from the diagram.</li>
+</ol>
+
+<p>Memory, preservation, closure. Each rung is physically checkable; each has a categorical expression; and the top rung converts a philosophical dispute into an engineering blueprint.</p>
+
+<p>That last conversion is, to me, the point. The walker experiment showed something genuinely profound: memory can be written into matter by matter, read by matter, and erased by matter, in a continuous wave field with no electronics in sight. The closure criterion neither inflates that result into “hydrodynamic Turing machine” nor deflates it into “just a dynamical system.” It locates it — a wave-memory physical machine with Turing-like primitives, one architectural layer short of autonomy — and then specifies the layer: intrinsic readout basins coupled to operation selection. An autonomous eraser on a vibrating bath would be, to my knowledge, the first system to demonstrably cross the closure line in a continuous physical substrate.</p>
+
+<p>The question is no longer whether wave memory is metaphorically computational. The question is how to build physical architectures in which wave memory, readout basins, and operation selection compose into closed autonomous computation — on an oil bath, in a photonic cavity, on a neuromorphic chip, or in a dish of neurons. The criterion tells you what to build and how to know when you’ve built it.</p>
+
+<p>That is what a physics of computation should look like.</p>
+
+<hr />
+
+<p><em>The paper develops each layer in full technical detail, with supplementary sections covering the stroboscopic wave model, erasure energetics, coarse-graining theory, robust symbolization, closure and nondegeneracy conditions, the categorical lift, the walker classification, and constructive extensions. The categorical framework builds on Dehghani &amp; Caterina, J. Phys. Complexity (2024).</em></p>
+
+  </section>
+
+  
+  <section class="paper__section">
+    <h2>The room this opens</h2>
+    <div class="linkbar">
+      <a href="/papers/Wave-compute/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="20" x2="12" y2="12"/><line x1="12" y1="12" x2="21" y2="4"/><line x1="12" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="21" y2="20"/></svg>
+        Follow this path into the Maze
+      </a>
+    </div>
+  </section>
+  
+</article>
+
+      <footer class="foot">
+  <span>© 2026 · Nima Dehghani</span>
+  <span>
+    <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    ·
+    <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+  </span>
+</footer>
+
+    </main>
+  </div>
+
+  <script src="/assets/js/quotes.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

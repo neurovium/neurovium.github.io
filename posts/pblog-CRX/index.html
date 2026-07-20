@@ -219,7 +219,7 @@ DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.48550
   <li>And how do modern machine-learning methods approximate the classical ideals that complexity theory often defines but cannot compute?</li>
 </ul>
 
-<p>The central claim of the paper is that many classical and modern approaches can be organized around three interrelated but distinct axes:</p>
+<p>The central claim of the paper is that many classical and modern approaches can be organized around three distinct but distinct axes:</p>
 
 <ol>
   <li><strong>regularity</strong>,</li>
@@ -312,6 +312,26 @@ A complex system is compressible, but not trivially so. Its compressed descripti
 
 <p>Each family captures a different aspect of the regularity-randomness-complexity landscape.</p>
 
+<!-- ![**The Regularity--Randomness--Complexity landscape.**
+Approximate placement of the measures discussed in this paper. Statistical entropies (circles) cluster near the
+randomness vertex; algorithmic and structural measures (squares) occupy the
+regularity--complexity flank, with Kolmogorov complexity near the regularity--randomness
+base since it grows monotonically with randomness rather than peaking at intermediate
+disorder; dynamical measures (diamonds) probe the interior, straddling predictability and
+novelty. Positions are conceptual, not quantitative coordinates.](../assets/img/papers/CompRegCx.png) -->
+
+<div align="center">
+  <img src="../assets/img/papers/CompRegCx.png" width="700" />
+</div>
+
+<p><strong>The Regularity–Randomness–Complexity landscape.</strong>
+Approximate placement of the measures discussed in this paper. Statistical entropies (circles) cluster near the
+randomness vertex; algorithmic and structural measures (squares) occupy the
+regularity–complexity flank, with Kolmogorov complexity near the regularity–randomness
+base since it grows monotonically with randomness rather than peaking at intermediate
+disorder; dynamical measures (diamonds) probe the interior, straddling predictability and
+novelty. Positions are conceptual, not quantitative coordinates.</p>
+
 <hr />
 
 <h2 id="1-statistical-measures-uncertainty-and-apparent-disorder">1. Statistical measures: uncertainty and apparent disorder</h2>
@@ -344,7 +364,9 @@ A complex system is compressible, but not trivially so. Its compressed descripti
 
 <p><strong>Logical depth</strong>, introduced by Bennett, measures the computational effort required to unfold an object from its compressed description. This captures the intuition that complex objects are not merely compressible; they may require a long generative history. A random string is shallow because it is just printed directly. A trivial string is shallow because it is generated easily. A deep object is one whose compact description requires substantial computation to produce the observed structure.</p>
 
-<p><strong>Statistical complexity</strong>, from computational mechanics, measures the amount of information stored in the causal states of a process—the minimal predictive memory needed to optimally forecast its future. This is especially important for dynamical systems, because it links complexity to prediction.</p>
+<p><strong>Statistical complexity</strong> measures the amount of information stored in the causal states of a process—the minimal predictive memory needed to optimally forecast its future. The idea was introduced by Grassberger as forecasting complexity and later formalized by Crutchfield and Young within <em>computational mechanics</em>. This is especially important for dynamical systems, because it links complexity to prediction.</p>
+
+<p>A related notion, <strong>sophistication</strong>, measures the size of the simplest model that adequately explains the data—complexity as the richness of the best explanation rather than of the data itself.</p>
 
 <p>These measures are conceptually powerful because they distinguish structure from noise. But they are also difficult or impossible to compute exactly. This is the central tension of classical complexity theory:</p>
 
@@ -360,7 +382,7 @@ A complex system is compressible, but not trivially so. Its compressed descripti
 
 <p><strong>Entropy rate</strong> measures the uncertainty of a process after accounting for its past. A low entropy rate indicates strong temporal regularity; a high entropy rate indicates persistent unpredictability.</p>
 
-<p><strong>Transfer entropy</strong> measures directed information flow from one process to another. It asks whether knowing the past of process (X) improves prediction of the future of process (Y), beyond what (Y)’s own past already provides. This has made transfer entropy influential in neuroscience, where researchers often want to infer directed functional interactions among brain regions or neural populations.</p>
+<p><strong>Transfer entropy</strong> measures directed information flow from one process to another. It asks whether knowing the past of process <em>X</em> improves prediction of the future of process <em>Y</em>, beyond what <em>Y</em>’s own past already provides. This has made transfer entropy influential in neuroscience, where researchers often want to infer directed functional interactions among brain regions or neural populations.</p>
 
 <p><strong>Active information storage</strong> measures how much of a system’s future is predictable from its own past. This is a measure of memory.</p>
 
