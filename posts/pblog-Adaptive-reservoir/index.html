@@ -193,6 +193,63 @@ Nima Dehghani
 DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.48550/arXiv.2606.22765</code></p>
 
 <hr />
+<h2 id="how-this-project-began">How this project began</h2>
+
+<p>This project began with a question much broader than reservoir computing:</p>
+
+<p><strong>How do biological systems make sense of their environments?</strong></p>
+
+<p>One way to approach this question is to begin with sophisticated nervous systems, particularly the mammalian brain. But this is also where I think much of computational neuroscience encounters its Achilles heel. Discussions of computation in the brain tend to gravitate rapidly toward high-level functions: perception, decision-making, attention, memory, cognition, and other categories inherited from psychology and cognitive science.</p>
+
+<p>These are important phenomena, of course. But they can also become the level at which explanation stops. The underlying physical problem—how a biological system transforms environmental stimulation into internal dynamics that support useful action—becomes obscured by descriptions that are already several conceptual layers removed from the machinery.</p>
+
+<p>A related problem appears in artificial intelligence. A considerable amount of work presented under the banner of interpretability amounts, in practice, to a kind of psychology of neural networks. We ask what a network “recognizes,” “believes,” “attends to,” or “represents,” often using categories modeled after human cognition. Such descriptions may be useful, but they do not necessarily explain how the system computes as a physical dynamical object.</p>
+
+<p>To find a more elementary formulation, it helps to trace nervous systems backward through evolution. Before mammalian cortex, before centralized brains, and even before neurons, living systems were already sensing their surroundings, retaining information about previous stimulation, and changing their future behavior accordingly. Single cells continuously process information about nutrient availability, chemical gradients, temperature, stress, and other environmental variables. They do not need an explicit cognitive model of the world. Their internal molecular dynamics are the model.</p>
+
+<p>At this level, the relationship among the statistics of the environment, the task faced by the organism, and the architecture of the biological machinery becomes easier to formulate. A simple nervous system—or even a single cell—can be viewed as a control system embedded in and driven by its environment. To maintain stability, preserve a viable internal state, or move toward a favorable condition, the system must exploit regularities in what has happened to anticipate what is likely to happen next.</p>
+
+<p>From this perspective, prediction and control are not separate problems. A system that uses its present state and the history of environmental inputs to guide its future behavior is performing something close to <strong>closed-loop model predictive control</strong>. It is learning enough about the structure of its environment to forecast what comes next and to act accordingly, whatever its effective objective function may be.</p>
+
+<p>For readers interested in how this type of problem might be formalized closer to the internal machinery of cells, I developed a related perspective in <a href="https://journals.plos.org/complexsystems/article?id=10.1371/journal.pcsy.0000013"><em>Systematizing cellular complexity: A Hilbertian approach to biological problems</em></a>. (Also see <a href="https://neurovium.science/posts/pblog-Cell-hilbert/">“the companion post to that work”</a>).</p>
+
+<p>Around the time I was thinking about these questions, I came across a Quanta Magazine article titled <a href="https://www.quantamagazine.org/machine-learnings-amazing-ability-to-predict-chaos-20180418/"><em>Machine Learning’s “Amazing” Ability to Predict Chaos</em></a>. It led me to two papers that immediately caught my attention.</p>
+
+<p>The first, from Edward Ott’s group, was <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.024102"><em>Model-Free Prediction of Large Spatiotemporally Chaotic Systems from Data: A Reservoir Computing Approach</em></a>. The second was <a href="https://pubs.aip.org/aip/cha/article-abstract/28/4/043118/280931/Observing-spatio-temporal-dynamics-of-excitable?redirectedFrom=fulltext"><em>Observing spatio-temporal dynamics of excitable media using reservoir computing</em></a>.</p>
+
+<p>Both papers demonstrated something remarkable. A recurrent dynamical system with a relatively simple trained readout could learn enough of the structure of a complex spatiotemporal process to continue its evolution autonomously. The reservoir was not merely classifying snapshots or interpolating among examples. It was transforming the history of a driven system into an internal state from which the system’s future dynamics could be extended.</p>
+
+<p>Reservoir computing was also already in the air around me. A colleague in our MIT physics group was deeply interested in the subject and spoke to me about it frequently. After leaving MIT, he published the review <a href="https://royalsocietypublishing.org/rstb/article/374/1774/20180377/42286/Evolutionary-aspects-of-reservoir"><em>Evolutionary aspects of reservoir computing</em></a>, which examined reservoir computing in relation to evolution, biological information processing, and the possible origins of recurrent computational architectures.</p>
+
+<p>At the same time, I had begun a broader series of projects aimed at deciphering the internal operation of recurrent systems—both biological and artificial—through the lens of physics. I was interested not only in whether these systems worked, but in what their dynamics were doing: which modes carried memory, how recurrence created useful timescales, how stability was maintained, and how structural constraints shaped computation.</p>
+
+<p>Then the pieces clicked together.</p>
+
+<p>Recurrence, prediction, control, dynamics, and evolution were not separate themes. They were different aspects of the same problem faced by living systems: how to construct an internal dynamical substrate that can use the past to anticipate the future and thereby remain viable in a changing environment.</p>
+
+<p>The cortex would seem like the natural place to investigate this idea. It is recurrent, adaptive, multiscale, and continuously engaged in prediction and control. But it is also an exceptionally difficult place to begin. Its recurrent loops span enormous ranges of space and time, and the relevant computations are distributed across cellular, circuit, regional, and behavioral scales. The very richness that makes cortex interesting can make the underlying problem nearly impenetrable.</p>
+
+<p>I had discussed some of these difficulties in <a href="https://www.frontiersin.org/journals/computational-neuroscience/articles/10.3389/fncom.2018.00081/full"><em>Theoretical Principles of Multiscale Spatiotemporal Control of Neuronal Networks: A Complex Systems Perspective</em></a>. (Also see <a href="https://neurovium.science/posts/pblog-Theory-control-net/">“the companion post to that work”</a>). If the goal was to understand how predictive demands shape recurrent machinery, I needed a system in which the environment, the task, the recurrent architecture, and the selection pressure could all be controlled.</p>
+
+<p>So I reduced the problem.</p>
+
+<p>Instead of beginning with cortex and attempting to work backward through its layers of biological complexity, I would construct recurrent systems whose environment was known, whose predictive objective was explicit, and whose architecture could be placed under evolutionary selection. I could then look under the hood and ask which structural features were preserved, which were refined, and which were discarded.</p>
+
+<p>That is how this work began.</p>
+
+<p>There is also a more personal part of the story. Although much of the work and the underlying ideas were already in place, I had not yet found the narrative that would bring them together as a paper. That changed during a long drive from Cascais to Porto with my friend and fellow physicist-turned-neuroscientist André Peterson at the University of Melbourne. As I explained the results and the ideas behind them—talking for roughly seven hours about recurrence, evolution, prediction, spectra, and structure—the larger argument finally clicked into place. The drive was interleaved with Fado, Roman mosaics in Conimbriga Ruins, and an unsuccessful attempt to reach the waves of Nazaré before sunset. Sometimes, explaining a project to a good listener is what allows you to understand the story you have actually been trying to tell.</p>
+
+<p>Good ears are an underrated scientific instrument.</p>
+
+<p>André’s own work on the relationship between sparsity, stability, and the eigenspectrum of recurrent networks—<a href="https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.5.043132"><em>Effect of sparsity on network stability in random neural networks obeying Dale’s law</em></a>—also helped sharpen my thinking about how the problem might be attacked through the spectral and structural properties of the recurrent substrate.</p>
+
+<p>What emerged was a controlled experiment in the physics of interpretability. Rather than assigning cognitive labels to internal units, I wanted to ask how a population of recurrent systems changes when predictive function becomes the selection pressure. Which dynamical modes are retained? Which timescales are extended? Does the network become denser, larger, more modular, or more economical? And are there structural invariants that remain hidden when we examine only predictive error?</p>
+
+<p>So, if you are interested in interpretability through the lens of physics rather than the psychology of neural networks, fasten your seatbelt.</p>
+
+<p><em>We are about to tease apart the recurrent machinery of reservoir computing and see how the demand to predict spatiotemporal chaos reshapes the network from within.</em></p>
+
+<hr />
 
 <h1 id="when-prediction-shapes-the-machine-evolutionary-reservoirs-chaos-and-structural-constraints">When Prediction Shapes the Machine: Evolutionary Reservoirs, Chaos, and Structural Constraints</h1>
 

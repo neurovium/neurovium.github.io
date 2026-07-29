@@ -137,6 +137,10 @@
 <lastmod>2026-06-23T00:00:00+00:00</lastmod>
 </url>
 <url>
+<loc>https://neurovium.github.io/papers/Wave-compute/</loc>
+<lastmod>2026-07-27T00:00:00+00:00</lastmod>
+</url>
+<url>
 <loc>https://neurovium.github.io/posts/pblog-K-complex/</loc>
 <lastmod>2009-04-24T00:00:00+00:00</lastmod>
 </url>
@@ -241,7 +245,8 @@
 <lastmod>2026-06-23T00:00:00+00:00</lastmod>
 </url>
 <url>
-<loc>https://neurovium.github.io/working/Wave-compute/</loc>
+<loc>https://neurovium.github.io/posts/pblog-Wave-compute/</loc>
+<lastmod>2026-07-27T00:00:00+00:00</lastmod>
 </url>
 <url>
 <loc>https://neurovium.github.io/about/</loc>
@@ -281,9 +286,6 @@
 </url>
 <url>
 <loc>https://neurovium.github.io/papers/</loc>
-</url>
-<url>
-<loc>https://neurovium.github.io/posts/pblog-Wave-compute/</loc>
 </url>
 <url>
 <loc>https://neurovium.github.io/research/</loc>

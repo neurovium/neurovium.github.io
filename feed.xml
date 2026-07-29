@@ -1,8 +1,582 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://neurovium.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neurovium.github.io/" rel="alternate" type="text/html" /><updated>2026-07-20T19:19:15+00:00</updated><id>https://neurovium.github.io/feed.xml</id><title type="html">Nima Dehghani</title><subtitle>Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics</subtitle><author><name>Nima Dehghani</name></author><entry><title type="html">When Prediction Shapes the Machine: Evolutionary Reservoirs, Chaos, and Structural Constraints</title><link href="https://neurovium.github.io/posts/pblog-Adaptive-reservoir/" rel="alternate" type="text/html" title="When Prediction Shapes the Machine: Evolutionary Reservoirs, Chaos, and Structural Constraints" /><published>2026-06-23T00:00:00+00:00</published><updated>2026-06-23T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-Adaptive-reservoir</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-Adaptive-reservoir/"><![CDATA[<p><em>Companion post to:</em><br />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://neurovium.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neurovium.github.io/" rel="alternate" type="text/html" /><updated>2026-07-29T20:00:31+00:00</updated><id>https://neurovium.github.io/feed.xml</id><title type="html">Nima Dehghani</title><subtitle>Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics</subtitle><author><name>Nima Dehghani</name></author><entry><title type="html">When Does Matter Compute? Wave Memory, Closure, and the Architecture of Autonomous Physical Computation</title><link href="https://neurovium.github.io/posts/pblog-Wave-compute/" rel="alternate" type="text/html" title="When Does Matter Compute? Wave Memory, Closure, and the Architecture of Autonomous Physical Computation" /><published>2026-07-27T00:00:00+00:00</published><updated>2026-07-27T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-Wave-compute</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-Wave-compute/"><![CDATA[<p><em>Companion post to:</em><br />
+<strong>Autonomous Physical Computation: A Categorical Closure Criterion for Physical and Neuromorphic Reservoirs.</strong>
+Nima Dehghani
+<em>arXiv</em> 2026.
+DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.48550/arXiv.2607.23902</code></p>
+
+<hr />
+
+<h1 id="when-does-matter-compute-wave-memory-closure-and-the-architecture-of-autonomous-physical-computation">When Does Matter Compute? Wave Memory, Closure, and the Architecture of Autonomous Physical Computation</h1>
+
+<h2 id="how-this-paper-began">How this paper began</h2>
+
+<p>The idea behind this paper began many years ago, in a hotel room overlooking Mission Bay in San Diego.</p>
+
+<p>I was there for a conference, but the talks had become sufficiently uninspiring that I retreated to my room. It was a hot day. I was drinking a glass of white wine and talking with a beautiful woman while looking out over the bay.</p>
+
+<p>At some point, I noticed a can—perhaps a soda can, perhaps a beer can; I no longer remember—bobbing up and down on the water.</p>
+
+<p>That ordinary object suddenly became conceptually intriguing.</p>
+
+<p>The can was being moved by the wave field, but it was also contributing to the wave field. Its motion depended on the surrounding water, yet its own motion perturbed that water in return. It was simultaneously acted upon by the global dynamics and participating in their construction.</p>
+
+<p>A series of questions appeared almost immediately:</p>
+
+<p><em>Does the can record a memory of the wave?</em></p>
+
+<p><em>Because it also contributes to generating the wave, could one say that it is reading from and writing to the wave field?</em></p>
+
+<p><em>Could it, in any meaningful sense, be said to compute the wave field?</em></p>
+
+<div style="text-align: center;">
+  <div style="display: flex; justify-content: center; gap: 20px;">
+  <img src="../assets/img/papers/wave_1.png" width="450" />
+  <img src="../assets/img/papers/wave_2.png" width="450" />
+  </div>  
+  <p style="margin-top: 8px;">
+<strong>I gave ChatGPT the text of this post and asked it to generate an accompanying image. The results were both wrong and interesting, so I decided to keep them</strong>. The left panel depicts waves, but not the kind of waves discussed in the paper. The model imagined something closer to open-water swells, misunderstood the appearance of San Diego’s Mission Bay, chose the wrong type of boat in the background, and invented an implausible horizon and surrounding landscape. I then explained these problems and asked it to try again. The second image is somewhat closer, but still no cigar. Together, the images <em>reveal how little physical grounding current generative models possess</em>. Despite having been trained on millions of images and vast amounts of text, the model failed to infer that the story concerned an empty soda or beer can. More importantly, it appears not to understand the physics of a floating object bobbing on a water surface: the orientation and immersion of the can are inconsistent with the surrounding wave geometry. I kept both images because their failures are instructive. They offer a small visual demonstration of the distance that still separates statistical familiarity with descriptions and images from the structured understanding us humans bring to objects, environments, and the physical world.
+  </p>
+</div>
+
+<p>I began imagining the can as a kind of local read–write element embedded in a much larger dynamical medium. Perhaps one could define a moving boundary around it—not a rigid box, because the boundary would have to deform and move with the water, but something more like a loose enclosure made of ropes. The purpose of this imagined boundary would be to separate the local interaction from the global field without isolating the two.</p>
+
+<p>Inside that boundary, the can would interact with the wave at one location. But the bay was vastly larger, and every local disturbance contributed to a field that propagated globally. The same wave was therefore both local and nonlocal: sampled at the position of the can, yet distributed across the entire medium.</p>
+
+<p>That was the beginning of my thinking about physical computation, local readout, distributed memory, and closure.</p>
+
+<p>At the same time, I have also been working on cortical traveling waves—developing methods for wave decomposition and thinking about generative models of traveling-wave dynamics using modern machine-learning ideas, including Koopman-based representations (unpubplished works). Those projects have taken their own circuitous path through the current disorder of the American scientific funding system. The proposal is still waiting for review. NSF, please do your job. At this point, I may also need a patron saint.</p>
+
+<p>But scientifically, the connection was natural. Cortical waves are distributed physical processes. Local neuronal populations both respond to those waves and contribute to their propagation. Information is neither stored at a single point nor located entirely in the global field. It emerges through the interaction between local dynamics, distributed state, memory, and recurrence.</p>
+
+<p>The question from Mission Bay therefore returned in a more serious form:</p>
+
+<p><strong>When does a physical wave field merely evolve, and when does a system coupled to that field compute?</strong></p>
+
+<p>An important step came when I read the elegant experiment by Perrard, Fort, and Couder, <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.117.094502">“Wave-Based Turing Machine: Time Reversal and Information Erasing.”</a></p>
+
+<p>In their system, a droplet bounces on a vertically oscillating liquid bath and generates a persistent wave field. The droplet is then guided by the local slope of the very field created by its previous impacts. Its trajectory is written into the wave, stored for a finite time, and subsequently read through the droplet–wave interaction. Under an imposed phase shift, the droplet can retrace part of its previous trajectory while progressively erasing the stored wave field.</p>
+
+<p>It is a beautiful physical realization of writing, storage, reading, feedback, and erasure.</p>
+
+<p>But it also sharpened the conceptual difficulty. Are these ingredients sufficient for computation? Does physical memory automatically imply computation? Is a system computing because an observer can interpret its state evolution computationally, or must the computational organization be realized within the physics of the system itself?</p>
+
+<p>It took several years to determine how I wanted to approach these questions.</p>
+
+<p>Eventually, together with my mathematician friend and collaborator Gianluca Caterina, I developed a category-theoretic framework for physical computation. That work became <a href="https://iopscience.iop.org/article/10.1088/2632-072X/ad6051">“Physical computing: a category theoretic perspective on physical computation and system compositionality.”</a>. (Also see <a href="https://neurovium.science/posts/pblog-Catcomp/">“the companion post to that work”</a>).</p>
+
+<p>The categorical framework gave us a formal language for relating physical processes to abstract computational processes while preserving their structure. It also allowed us to think systematically about composition, multiple realizability, scale, and the relationship between local physical operations and higher-level abstractions.</p>
+
+<p>Once that foundation was in place, I could return to the original wave problem.</p>
+
+<p>The remaining step was to ask what distinguishes a physical system with memory from a physically closed computational system. A wave reservoir may contain a detailed record of its past. A localized probe may read from it and perturb it. But autonomous computation requires something more: the system’s own physical readout must participate in selecting what operation occurs next.</p>
+
+<p>This is where the connection to reservoir computing becomes natural. A reservoir contains a high-dimensional dynamical state shaped by its input history. A readout extracts task-relevant structure from that state. But in most reservoir-computing systems, the readout remains external: it observes the reservoir without becoming part of the physical causal loop that determines the reservoir’s next operation.</p>
+
+<p>The paper develops a closure criterion for when that readout becomes internalized—when memory, readout, control, and subsequent physical evolution form a closed computational organization.</p>
+
+<p>This also connects with my broader work on opening the black box of recurrent systems and understanding how their internal dynamics support computation—for example, in <a href="https://arxiv.org/abs/2606.22765">this recent work on reservoir computing and spatiotemporal chaos</a>. (Also see <a href="https://neurovium.science/posts/pblog-Adaptive-reservoir/">“the companion post to that work”</a>).</p>
+
+<p>I wrote this companion piece because the final paper sits at the intersection of several fields. Physicists may recognize the wave dynamics but not the category theory. AI researchers may recognize reservoirs and recurrent computation but not the physical-computational problem. Neuroscientists may recognize traveling waves and distributed recurrence but not the formal machinery used to connect them.</p>
+
+<p>The purpose here is to make the union more accessible: to explain how a can bobbing in Mission Bay led, through wave memory, cortical dynamics, category theory, and reservoir computing, to a criterion for autonomous physical computation.</p>
+
+<p>Enjoy—and stay tuned. There is more coming on this front.</p>
+
+<p>And I am still accepting applications for a patron saint.</p>
+
+<p>As for the beautiful woman in the hotel room: it probably would not have worked in the long run. The conversation was pleasant, but my attention had already been captured by a floating can and the computational ontology of waves.</p>
+
+<hr />
+
+<h2 id="a-droplet-that-walks-backward-through-its-own-memory">A droplet that walks backward through its own memory</h2>
+
+<p>There is an experiment in fluid dynamics that should unsettle anyone who thinks they know where the boundary between “physics” and “computation” lies.</p>
+
+<p>Place a millimetric droplet on a bath of silicone oil vibrated just below the Faraday instability threshold. The droplet bounces indefinitely, never coalescing, and at each bounce it excites a standing surface wave. Because the bath is driven close to threshold, these waves decay slowly — the surface becomes a fading record of everywhere the droplet has recently been. The droplet, in turn, is propelled by the local slope of this self-generated field. It <em>writes</em> to the bath, and the bath <em>guides</em> it. The result — the “walker” of Couder, Fort, and colleagues — is neither a passive particle nor a prescribed wave packet, but a recurrent wave–particle entity guided by its own history.</p>
+
+<div style="text-align: center;">
+  <div style="display: flex; justify-content: center; gap: 20px;">
+  <img src="../assets/img/papers/waveComp_1.png" width="650" />
+  </div>  
+  <p style="margin-top: 8px;">
+  </p>
+</div>
+
+<p>Then comes the striking part. Perrard, Fort, and Couder showed that if you impose a controlled $\pi$-phase shift between the droplet’s bounce and the preexisting wave field, the effective wave-induced kick reverses sign. In confined chaotic regimes, the droplet doesn’t merely reverse velocity — it transiently <em>retraces its own complex trajectory</em>, reading its stored wave memory backward. And as it backtracks, the freshly emitted waves are written in antiphase with the old field, destructively interfering with it. The walker reads its memory backward while <em>physically erasing</em> it.</p>
+
+<p>Writing. Storage. Reading. Feedback. Reversal. Erasure. The vocabulary of a Turing machine, embodied in oil and vibration. Perrard and colleagues framed the experiment in exactly those terms — a “wave-memory Turing machine.”</p>
+
+<p>The question my paper asks is the one this framing forces on us: <strong>does a physical system that writes, stores, reads, and erases information thereby compute?</strong> And if not, what exactly is missing — not metaphorically, but as a matter of state spaces, dynamics, and physically checkable conditions?</p>
+
+<p>The answer I develop is a hierarchy with a sharp final rung:</p>
+
+\[\text{physical memory} \;\rightarrow\; \text{transition-preserving physical computation} \;\rightarrow\; \text{closed autonomous physical computation}.\]
+
+<p>The walker occupies the first rung magnificently and gestures at the second. It does not reach the third — and the reason it doesn’t turns out to be a <em>design principle</em>, one that applies far beyond hydrodynamics: to neuromorphic hardware, physical reservoir computers, and arguably to how we should think about computation in nervous systems.</p>
+
+<div style="text-align: center;">
+  <div style="display: flex; justify-content: center; gap: 20px;">
+  <img src="../assets/img/papers/waveComp_2.png" width="650" />
+  </div>  
+  <p style="margin-top: 8px;">
+  </p>
+</div>
+
+<p>Let me build this up from the physics.</p>
+
+<hr />
+
+<h2 id="the-walker-as-a-stroboscopic-reservoir">The walker as a stroboscopic reservoir</h2>
+
+<p>The first move in the paper is to strip the walker down to the minimal dynamical structure needed to talk about memory, readout, erasure, and computation — without losing what makes it physical.</p>
+
+<p>The system has a natural clock: the Faraday period $T_F$. Stroboscoping at impact times $t_n = nT_F$, the physical state at bounce $n$ is</p>
+
+\[x_n = (\mathbf{r}_n, \mathbf{v}_n, \sigma_n, H_n) \in X,\]
+
+<p>where $\mathbf{r}_n$ and $\mathbf{v}_n$ are the droplet’s horizontal position and velocity, $\sigma_n \in {+1,-1}$ is its bouncing phase relative to a fixed Faraday phase, and $H_n$ is the surface-wave field over the bath — the memory. The field lives in a function space $\mathcal{H}$ (something like $H^1(\Omega)$, since the droplet responds to slope).</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Each bounce writes a localized Faraday source into the bath — in the Bessel approximation, $\psi_{\mathbf{r}}(\rho) = h_0 J_0(k_F</td>
+      <td>\rho - \mathbf{r}</td>
+      <td>)$ — and the field updates as</td>
+    </tr>
+  </tbody>
+</table>
+
+\[H_{n+1}(\rho) = \lambda H_n(\rho) + \sigma_n \, \psi_{\mathbf{r}_n}(\rho),
+\qquad
+\lambda = e^{-1/M_e},\]
+
+<p>where $M_e = \tau / T_F$ is the dimensionless <strong>memory parameter</strong>: the wave decay time measured in Faraday periods. Iterating, the field is an exponentially weighted trace of the droplet’s own past:</p>
+
+\[H_n = \sum_{q=1}^{n} \lambda^{q-1} \, \sigma_{n-q} \, \psi_{\mathbf{r}_{n-q}}.\]
+
+<p>This is the <em>storage</em> half of the loop. The <em>reading</em> half is strikingly local: the droplet does not perceive the global field. It samples only the slope at its own impact point,</p>
+
+\[\mathbf{g}_n = \nabla H_n(\mathbf{r}_n),\]
+
+<p>and receives a horizontal kick $-\kappa\,\sigma_n \nabla H_n(\mathbf{r}_n)$ at the next bounce, alongside persistence, confinement, and noise:</p>
+
+\[\mathbf{v}_{n+1} = a\,\mathbf{v}_n - \kappa\,\sigma_n \nabla H_n(\mathbf{r}_n) - \chi \nabla V(\mathbf{r}_n) + \boldsymbol{\xi}_n,
+\qquad
+\mathbf{r}_{n+1} = \mathbf{r}_n + T_F \mathbf{v}_{n+1}.\]
+
+<p>The factor $\sigma_n$ deserves a word, because it is doing quiet but essential work. The droplet samples the field <em>at its own bouncing phase</em>, so the wave-mediated force is $\mathbf{F}^{\mathrm{wave}}_n = -C\,\sigma_n \nabla H_n(\mathbf{r}_n)$. In the phase-locked regime this factor is inert — $\sigma_n$ squares against the phases carried by $H_n$ and the standard guidance is recovered. Its role is to make the phase a <em>live variable in the force law</em>, which is what allows a phase intervention to act on the dynamics at all. Without it, flipping $\sigma$ would change nothing about the kick, and the erasure story below would not follow from the equations.</p>
+
+<p>Together these define a stroboscopic map $x_{n+1} = F(x_n)$ — a discrete-time reduction of the Oza–Rosales–Bush trajectory equation that retains the memory kernel and the local-slope coupling while suppressing within-bounce hydrodynamics.</p>
+
+<p>Written this way, the walker <em>is</em> a physical reservoir system. The extended field $H_n$ is a high-dimensional memory reservoir; the droplet is simultaneously a localized probe and a localized actuator; and the readout $\nabla H_n(\mathbf{r}_n)$ feeds back into future motion and future writing. This identification is not decorative — it is what lets the closure criterion, derived on the walker, transfer to reservoir computing at the end.</p>
+
+<hr />
+
+<h2 id="memory-and-erasure-made-quantitative">Memory and erasure, made quantitative</h2>
+
+<p>“Wave memory” here is not a metaphor and not an observer’s reconstruction. Two facts make it physical.</p>
+
+<p><strong>Finite horizon.</strong> Truncating the trace to the last $L$ impacts incurs an error bounded by</p>
+
+\[\|H_n - H_n^{(L)}\|_{\mathcal{H}} \leq \Psi_0 \frac{\lambda^L}{1-\lambda},\]
+
+<p>so at fixed field resolution the effective memory horizon scales as $L_{\mathrm{eff}} \sim M_e$. The memory parameter is not a knob on a model; it is a physically tunable memory depth.</p>
+
+<p><strong>Causal readability.</strong> The stored field enters the equation of motion through $\nabla H_n(\mathbf{r}_n)$. The memory affects the future. This is what separates a <em>dynamical memory</em> from a mere record that only an external observer could decode.</p>
+
+<p>Erasure gets an equally physical definition. The $\pi$-shift is an operation on state,</p>
+
+\[P_\pi : (\mathbf{r}, \mathbf{v}, \sigma, H) \mapsto (\mathbf{r}, \mathbf{v}, -\sigma, H),\]
+
+<p>which does <em>not</em> touch the stored field directly. Instead, all subsequent writing happens in antiphase. Decomposing the field $m$ bounces after the shift into the decayed old memory $H_{\mathrm{old}}^{(m)} = \lambda^m H_{n_\pi}$ and the newly written antiphase contribution $H_{\mathrm{new}}^{(m)}$, <strong>erasure</strong> is the condition that new writing reduces the field energy beyond passive decay:</p>
+
+\[\|H_{\mathrm{old}}^{(m)} + H_{\mathrm{new}}^{(m)}\|^2 &lt; \|H_{\mathrm{old}}^{(m)}\|^2,\]
+
+<p>i.e. genuine destructive interference between the new sources and the stored trace. Because the coupling carries $\sigma_n$, the same phase flip reverses the effective kick exerted by the <em>preexisting</em> field, $-C\sigma_+\nabla H \mapsto +C\sigma_+\nabla H$, producing finite-time backtracking over a horizon of order $M_e/2$. Note what this does <em>not</em> say: the droplet’s interaction with the new, antiphase sources it is now laying down is perfectly normal. Only its relation to the stored past is inverted. Not global time-reversal invariance — memory-mediated, finite-horizon reversal, with the memory consumed in the act.</p>
+
+<p>So the walker has, demonstrably and quantitatively: writing, finite-time storage, local reading, closed analog feedback, finite-time reversal, and physically real erasure. These are genuine information-processing primitives. And here is the pivot of the whole paper: <strong>they are still not sufficient for computation.</strong></p>
+
+<hr />
+
+<h2 id="what-computation-demands-coarse-grained-transition-preservation">What computation demands: coarse-grained transition preservation</h2>
+
+<p>Physical memory is not yet computation. A magnetized material “remembers” its field history; a deformed solid retains a record of its loading; a memristive element carries a trace of past current. Rich, dynamically consequential memory is everywhere in physics. Something more is needed, and the paper’s first criterion pins it down.</p>
+
+<p>Let $F : X \to X$ be the physical dynamics and $G : A \to A$ an abstract transition rule on an abstract state space $A$ — the “program level.” A coarse-graining $\Pi : X \to A$ implements $G$ on a domain $U \subseteq X$ when the diagram commutes:</p>
+
+\[\Pi \circ F = G \circ \Pi \qquad \text{on } U.\]
+
+<p>Physically evolve then abstract, or abstract then formally step — you land in the same place. The abstraction is not a label painted on after the fact; the dynamics <em>respects</em> it.</p>
+
+<p>Two features of this condition do the philosophical heavy lifting.</p>
+
+<p>First, $\Pi$ is many-to-one. It induces an equivalence $x \sim_\Pi x’ \iff \Pi(x) = \Pi(x’)$, and the physical dynamics descends to a well-defined abstract rule on the quotient only if</p>
+
+\[\Pi(x) = \Pi(x') \;\Longrightarrow\; \Pi(F(x)) = \Pi(F(x')).\]
+
+<p>When this holds, the abstract map $G$ exists and is <em>unique</em> (this is a proposition in the paper). Abstract states are not microstates — they are equivalence classes, macrostates, basins. This replaces the overly strong demand of one-to-one physical–symbol identity, which no real computer satisfies anyway.</p>
+
+<p>Second, and pulling in the opposite direction, the commutation requirement is exactly what blocks the overly <em>weak</em> view — Putnam- and Chalmers-style arguments that any physical system “computes” anything you can map onto it. An arbitrary labeling won’t commute with the dynamics. The mapping must be preserved <em>by the physics</em>, step after step. That single equation is the wall between computation and relabeling.</p>
+
+<p>This criterion has a lineage worth naming. Abstraction/representation (AR) theory framed computation as a commuting relation between physical dynamics and an evolving representation, but placed no restriction on the representation — leaving it exposed to the simple-mapping objection. The mechanistic account demands robust, functionally individuated structure but stays descriptive, without a concrete tie to dynamics. The categorical framework Gianluca Caterina and I developed previously casts the relation as a functor between a category of physical processes and one of abstract processes. This paper instantiates that framework on an explicit physical substrate and, as we’ll see, pushes it one step further — because putting it on a concrete substrate exposes a question the abstract formulation never had to confront.</p>
+
+<hr />
+
+<h2 id="robust-symbolization-computation-must-survive-noise">Robust symbolization: computation must survive noise</h2>
+
+<p>Exact commutation is an idealization. Real systems are noisy and finite-resolution, so the paper’s second criterion replaces exact symbols with <strong>separated basins</strong>.</p>
+
+<p>For a finite abstract alphabet $A = {a_1, \ldots, a_K}$, each symbol $a_i$ is realized by a physical region $B_i \subset X$, and robustness requires the basins to be distinguishable at the physical uncertainty scale $\varepsilon_X$:</p>
+
+\[\operatorname{dist}(B_i, B_j) &gt; 2\varepsilon_X, \qquad i \neq j,\]
+
+<p>with transitions that remain reliable under stochastic dynamics:</p>
+
+\[K(x, B_{g(i)}) \geq 1 - \delta \qquad \text{for } x \in N_{\varepsilon_X}(B_i),\]
+
+<p>where $K$ is the transition kernel. A symbol is a basin you can’t accidentally fall out of; a transition is a basin-to-basin map that holds with probability at least $1-\delta$.</p>
+
+<p>This framing makes the <em>failure modes</em> of physical computation just as precise as the success condition: <strong>aliasing</strong> (basins that overlap at resolution $\varepsilon_X$), <strong>representative dependence</strong> (two microstates in one basin evolving into different basins — the commutation condition failing), <strong>noise-induced basin crossing</strong>, and <strong>transition deformation</strong>.</p>
+
+<p>One failure mode is specific to wave reservoirs and worth singling out: <strong>memory decay</strong>. Two wave-memory states separated by $D_0$ converge under passive decay as $D_m \approx \lambda^m D_0$, becoming physically indistinguishable after</p>
+
+\[m \gtrsim M_e \log\!\left(\frac{D_0}{2\varepsilon_H}\right)\]
+
+<p>bounces. The memory parameter doesn’t just set how long the walker remembers its path — it bounds the reliable lifetime of <em>any</em> memory-dependent symbolic distinction the system could support. A fading reservoir imposes a hard expiration date on its own alphabet. Any wave-based computing architecture must either operate within this horizon or actively refresh its symbols.</p>
+
+<hr />
+
+<h2 id="the-closure-criterion-who-selects-the-next-operation">The closure criterion: who selects the next operation?</h2>
+
+<p>Now the central step — the paper’s core contribution.</p>
+
+<p>Suppose a system passes everything so far: it has memory, separated basins, robust transition preservation. It can still fail to be a computer in an important sense, because everything above can hold while <em>an external agent supplies the operations</em>. If $\mathcal{O}$ is a set of physically realizable operations $F_o : X \to X$ and an experimenter schedules the sequence $o_0, o_1, \ldots$, the evolution</p>
+
+\[x_{n+1} = F_{o_n}(x_n)\]
+
+<p>may implement perfectly valid abstract transitions — but the <em>selection</em> of what happens next lives outside the system. This is exactly the walker’s situation: the $\pi$-shift, the one operation that triggers reversal and erasure, is imposed by the experimenter’s function generator.</p>
+
+<p><strong>Closure</strong> is the condition that operation selection be internal. Decompose the state space as</p>
+
+\[X = X_R \times X_Y \times X_Z,\]
+
+<p>where $X_R$ is the reservoir/memory subsystem and $X_Y$ is a <em>physical readout-control subsystem</em>. Let $y_n = p_Y(x_n)$ be the readout state and $C : X_Y \to \mathcal{O}$ a physical operation-selection map. The closed-loop evolution is</p>
+
+\[\boxed{\,x_{n+1} = F_{C(y_n)}(x_n) = F_{C(p_Y(x_n))}(x_n)\,}\]
+
+<p>The readout is not merely observed — it is <em>coupled back</em> into the dynamics, choosing what the system does next. Writing $\Phi(x) = F_{C(p_Y(x))}(x)$ for the resulting autonomous map, closed physical computation is the compatibility of this loop with the abstraction: $\Pi(\Phi(x)) = G(\Pi(x))$, or with operation-dependent abstract rules, $\Pi(\Phi(x)) = G_{\Theta(C(p_Y(x)))}(\Pi(x))$.</p>
+
+<p>Two clarifications sharpen what closure is and is not.</p>
+
+<p><strong>Closure is not feedback.</strong> The walker already has a beautiful closed analog loop: $H_n \to \nabla H_n(\mathbf{r}<em>n) \to \mathbf{v}</em>{n+1} \to H_{n+1}$. Feedback is ubiquitous — a driven pendulum has it, a chemical oscillator has it. Closure requires something structurally stronger: a readout state that selects among <em>distinct operations</em> — normal propagation vs. phase flip vs. confinement change — not a continuous variable that merely modulates one flow. (The supplement makes this precise with nondegeneracy conditions separating genuine operation selection from continuous feedback.)</p>
+
+<p><strong>Closure is not computational power.</strong> This is a boundary the paper draws deliberately. A two-state controller that flips $o_{\mathrm{normal}} \leftrightarrow o_\pi$ every step is closed, transition-preserving, and autonomous — and computes nothing of interest. Closure marks the line between externally driven and autonomous physical computation, not between weak and powerful computation. Richness — a sufficient alphabet, programmable transitions, composable operations — is a separate, further requirement.</p>
+
+<hr />
+
+<h2 id="the-categorical-lift-where-does-the-morphism-come-from">The categorical lift: where does the morphism come from?</h2>
+
+<p>Why bring category theory into a fluid-dynamics paper? Not as ornament. The dynamical-systems statement of closure leaves three things implicit that the categorical formulation makes structural.</p>
+
+<p>In the framework from my earlier work with Caterina, physical processes form a category $\mathbf{PhysProc}$ (objects: physical regions; morphisms: physically realizable processes), abstract transitions form $\mathbf{AbsProc}$, and computation is a functorial relation between them. The coarse-graining descends to a <strong>quotient functor</strong></p>
+
+\[Q_\Pi : \mathbf{PhysProc}_\Pi \to \mathbf{AbsProc},
+\qquad
+Q_\Pi(F) = G \iff \Pi \circ F = G \circ \Pi,\]
+
+<p>defined on the subcategory of processes that respect $\Pi$-equivalence. Abstraction and concretization, $\alpha(U) = \Pi(U)$ and $\gamma(S) = \Pi^{-1}(S)$, form a Galois-style pair,</p>
+
+\[\alpha(U) \subseteq S \iff U \subseteq \gamma(S),\]
+
+<p>and transition preservation becomes basin containment: $F(B_a) \subseteq B_{G(a)}$. In noisy systems, strict functoriality relaxes to an approximate quotient functor $Q_\Pi(F) \approx_{\varepsilon,\delta} G$, with $\varepsilon$ tracking resolution and $\delta$ bounding transition failure. This is the formal home of the intuition that computation is about <em>processes respecting a quotient</em> — many microstates per symbol, adjunction rather than bijection, the middle path between physical–symbol identity and arbitrary mapping.</p>
+
+<p>But instantiating this machinery on the walker’s explicit state space exposed a question the functorial picture never had to confront: <strong>at each step, what chooses the morphism?</strong> In AR theory and in the functorial formulation alike, the operation is handed to the diagram from outside. Closure is the condition that the <em>system</em> choose it. Categorically, the closed-loop morphism is</p>
+
+\[\Phi = \mathrm{Act} \circ \langle C \circ p_Y, \;\mathrm{id}_X \rangle,
+\qquad
+\mathrm{Act}(o, x) = F_o(x).\]
+
+<p>Read this composite carefully. The pairing $\langle C \circ p_Y, \mathrm{id}_X \rangle$ sends $x \mapsto (C(p_Y(x)), x)$: the system’s own state produces both the operation and the operand. The external index $o \in \mathcal{O}$ has been <em>eliminated from the diagram</em> — replaced by a value of the system’s own readout. Coalgebraically, $\Phi$ equips $X$ with the structure of a transition system whose next-step map factors through an internal observation rather than an external driver. Autonomy stops being an interpretive gloss and becomes a structural property of how the process is generated.</p>
+
+<div style="text-align: center;">
+  <div style="display: flex; justify-content: center; gap: 20px;">
+  <img src="../assets/img/papers/waveComp_4.png" width="650" />
+  </div>  
+  <p style="margin-top: 8px;">
+  </p>
+</div>
+
+<hr />
+
+<h2 id="the-verdict-on-the-walker">The verdict on the walker</h2>
+
+<p>With the hierarchy in hand, the classification is precise, and it is neither a debunking nor an endorsement of the “wave Turing machine” framing.</p>
+
+<p>The walker <strong>has</strong>: physical memory ($H_n$ as an exponentially weighted trace), physical writing ($H_{n+1} = \lambda H_n + \sigma_n \psi_{\mathbf{r}_n}$), finite-time storage (horizon $\sim M_e$), physical local reading ($\nabla H_n(\mathbf{r}_n)$ entering the equation of motion), closed analog feedback, physically real erasure (the destructive-interference inequality), and finite-time memory-mediated reversal.</p>
+
+<p>The walker <strong>lacks</strong>, as experimentally realized: a demonstrated symbolic transition system $(A, \Pi, G)$ with $\Pi \circ F = G \circ \Pi$; separated basins with reliable transitions serving as an alphabet; and — decisively — closure. The $\pi$-shift is imposed externally. There is no internal readout state $y_n$ with $C(y_n) = P_\pi$.</p>
+
+\[\boxed{\text{wave-memory physical machine with Turing-like primitives}}
+\quad \text{but not} \quad
+\boxed{\text{closed autonomous Turing machine}}\]
+
+<div style="text-align: center;">
+  <div style="display: flex; justify-content: center; gap: 20px;">
+  <img src="../assets/img/papers/waveComp_5.png" width="650" />
+  </div>  
+  <p style="margin-top: 8px;">
+  </p>
+</div>
+
+<p>The point of this classification is that the missing layer is <em>not mysterious</em>. It is a specific, buildable subsystem — and that turns the criterion into a research program.</p>
+
+<hr />
+
+<h2 id="closing-the-loop-from-criterion-to-blueprint">Closing the loop: from criterion to blueprint</h2>
+
+<p>If closure is what’s missing, add it. The constructive section of the paper proposes physical architectures of the form</p>
+
+\[y_{n+1} = \mathcal{R}(y_n, H_n, z_n), \qquad o_n = C(y_n), \qquad (H_{n+1}, z_{n+1}) = F_{o_n}(H_n, z_n),\]
+
+<p>where $z_n = (\mathbf{r}_n, \mathbf{v}_n, \sigma_n)$ and the readout $y$ is a <em>physical</em> degree of freedom, not a camera feed into a laptop. Candidate implementations:</p>
+
+<p><strong>A multistable readout.</strong> A coordinate $y$ in a double-well potential $U_Y(y;q) = \frac{\alpha}{4}y^4 - \frac{\beta}{2}y^2 - \gamma q y$, tilted by a scalar $q_n$ extracted from the wave state (a projected slope, or an integrated field $\int_\Omega \chi(\rho) H_n(\rho)\,d\rho$). The two wells $Y_\pm$ are the readout basins; $C(Y_+) = o_\pi$, $C(Y_-) = o_{\mathrm{normal}}$. The phase flip becomes wave-triggered.</p>
+
+<p><strong>A thresholded, hysteretic wave detector.</strong> The cleanest decisive experiment — an <strong>autonomous eraser</strong>. Let the readout track the normalized wave energy $E_W[n] = |H_n|<em>{L^2}^2 / |\psi</em>{\mathbf{0}}|_{L^2}^2$ through a hysteretic threshold:</p>
+
+\[y_{n+1} =
+\begin{cases}
+1, &amp; E_W[n] &gt; \Theta_E,\\[2pt]
+0, &amp; E_W[n] &lt; \Theta_E - \Delta,\\[2pt]
+y_n, &amp; \text{otherwise},
+\end{cases}
+\qquad C(0) = o_{\mathrm{normal}}, \quad C(1) = o_\pi.\]
+
+<p>The loop $H_n \to E_W[n] \to y_n \to o_\pi \to \text{erasure}$ means the system erases its own memory when its own field crosses a physical threshold. The critical experimental comparison is three-way: an external phase schedule (the current experiment), observer-side readout <em>without</em> feedback, and physical readout <em>with</em> feedback. Only the third satisfies closure — and hysteresis is essential, because it is what makes the readout a genuine two-basin state rather than a relabeled continuous variable.</p>
+
+<p><strong>Boundary-controlled reservoirs and coupled walkers.</strong> The readout can also select bath parameters — memory depth $\lambda(y_n)$, forcing phase, confinement geometry — making the wave update itself state-dependent. Or a second walker in the same bath, interacting through the superposed field $H_{n+1} = \lambda H_n + \sigma_n^A \psi_{\mathbf{r}<em>n^A} + \sigma_n^B \psi</em>{\mathbf{r}_n^B}$, can serve as a finite-state controller embedded in the very substrate it controls.</p>
+
+<p>The design principle, boxed in the paper:</p>
+
+\[\boxed{\;\text{wave memory} \;+\; \text{intrinsic readout basins} \;+\; \text{state-dependent operation selection} \;=\; \text{closed physical computation}\;}\]
+
+<div style="text-align: center;">
+  <div style="display: flex; justify-content: center; gap: 20px;">
+  <img src="../assets/img/papers/waveComp_6.png" width="650" />
+  </div>  
+  <p style="margin-top: 8px;">
+  </p>
+</div>
+<hr />
+
+<h2 id="what-this-means-for-physics">What this means for physics</h2>
+
+<p><strong>A falsifiable criterion where there was a metaphor.</strong> “This system computes” has too often been an interpretive flourish attached to interesting dynamics. The framework replaces it with conditions you can check in the lab: exhibit the basins, measure their separation against the noise scale $\varepsilon_X$, verify transition reliability $1-\delta$, and identify — or fail to identify — the internal readout-to-operation coupling. The three-way autonomous-eraser comparison is a concrete experiment with a binary outcome. Computation claims about physical systems become experimental claims.</p>
+
+<p><strong>A hierarchy that organizes a zoo.</strong> Memristive materials, magnetic hysteresis, shape memory, vortex records, wave fields: physics is full of systems with memory, and the literature is full of debates about which of them “compute.” The three-rung ladder — memory, transition preservation, closure — gives these debates a shared coordinate system. Most memory materials sit on rung one. Externally clocked, externally read devices can reach rung two. Rung three is rare and architecturally specific, and that is precisely what makes it a meaningful target.</p>
+
+<p><strong>Memory depth as a computational resource with hard bounds.</strong> The result $m \gtrsim M_e \log(D_0 / 2\varepsilon_H)$ ties an abstract computational property — how long a symbolic distinction can persist — to a measurable physical parameter. For any fading-memory substrate (near-threshold waves, decaying spin textures, leaky photonic cavities), this bound tells you the symbol lifetime your physics can support before refresh is mandatory. It is the kind of exchange rate between physical and computational quantities that a physics of computation should be producing.</p>
+
+<p><strong>A disciplined answer to pancomputationalism.</strong> Does a rock compute its trajectory? Does the Solar System compute Newton’s laws? The framework’s answer is a firm <em>no, not in the relevant sense</em> — but for a physicist’s reason, not a philosopher’s. What the rock lacks is not complexity or observers; it lacks a physically organized coarse-graining whose transitions the dynamics preserves robustly, and any readout-control organization at all. The contrast case is the billiard-ball computer: a generic moving ball is not a logic gate, but a ball in a constrained collision architecture is, because the constraints organize the physics to preserve an abstract transition structure. Computation is a property of <em>physical organization</em>, not of physical evolution per se — a statement that rejects arbitrary mappings without denying that unconventional, analog, quantum, or wave-based substrates can genuinely compute.</p>
+
+<p><strong>And a caveat physics should respect.</strong> The criterion is deliberately minimal. It says nothing about computational power, efficiency, thermodynamic cost, or universality — a closed system can be trivially closed. Universality would require a robust alphabet, programmable transitions, addressable memory, scalable composition. The paper stops at the prior question, because the prior question — <em>is the system autonomous or externally driven?</em> — had no sharp answer before.</p>
+
+<hr />
+
+<h2 id="what-this-means-for-neuroscience-and-why-neuroai-needs-it">What this means for neuroscience (and why NeuroAI needs it)</h2>
+
+<p>Neuroscientists say “this circuit computes” constantly, and almost never say what would make it false. The word usually means one of three very different things — that the activity <em>carries information about</em> a stimulus, that it <em>transforms</em> inputs into outputs, or that it <em>implements an algorithm</em> — and the slide between them is so frictionless that it rarely gets noticed. The framework above is, among other things, a way to stop sliding. Let me translate it out of the oil bath.</p>
+
+<h3 id="the-three-rungs-in-neural-terms">The three rungs, in neural terms</h3>
+
+<p><strong>Rung one: memory.</strong> A circuit’s current state carries information about its past. This is nearly free. Synaptic traces, short-term facilitation, slow adaptation currents, persistent activity, the after-effects of a traveling wave — all of it is memory in the sense used here. A dissipative system with a fading trace of its own history is not rare; it is the default condition of nervous tissue. Finding memory in a circuit tells you almost nothing about whether it computes.</p>
+
+<p><strong>Rung two: transition preservation.</strong> Now there is a coarse-graining $\Pi$ from neural states to some abstract description — task states, decision variables, latent factors, phases of a sequence — and the <em>neural dynamics respect it</em>: evolving the circuit and then abstracting gives the same answer as abstracting and then applying the abstract rule, $\Pi \circ F = G \circ \Pi$. This is a real constraint, and it is what most careful computational neuroscience is actually claiming when it says a circuit “implements” something. The robustness layer matters here too: the abstract states must be <em>separated basins</em> in the neural state space, distinguishable at the scale of the circuit’s own noise, with transitions that hold reliably. A latent variable you can extract from population activity is not automatically a symbol the circuit itself can act on.</p>
+
+<p><strong>Rung three: closure.</strong> The circuit’s own readout state selects what the circuit does next. Not “influences” — <em>selects</em>, from among distinct operations.</p>
+
+<p>That third rung is where the interesting claim lives, and where neuroscience has been unwittingly ambiguous.</p>
+
+<h3 id="the-decoding-fallacy-named">The decoding fallacy, named</h3>
+
+<p>Here is the uncomfortable observation. The single most common methodology in systems neuroscience is: record a population, train a decoder, report that the decoder recovers some variable with high accuracy, and conclude that the region <em>encodes</em>, <em>represents</em>, or <em>computes</em> that variable.</p>
+
+<p>Look at what that experiment actually establishes, in the framework’s terms. It establishes that an <strong>observer-side readout</strong> exists — that <em>you</em>, with a GLM or an SVM or a linear projection, can recover the variable. It establishes precisely nothing about whether the <em>brain</em> reads it. The decoder is your classifier, running on your laptop, downstream of nothing.</p>
+
+<p>Recall the three-way experimental comparison the paper proposes for the walker:</p>
+
+<ol>
+  <li>an external operation schedule,</li>
+  <li>observer-side readout <strong>without</strong> feedback,</li>
+  <li>physical readout <strong>with</strong> feedback.</li>
+</ol>
+
+<p>Only the third satisfies closure. And condition 2 — observer-side readout with no causal path back into the dynamics — is a description of a decoding study. It is the <em>control condition</em>. Neuroscience has industrialized the control condition and, in a great deal of its rhetoric, reported it as the result.</p>
+
+<p>This is not a claim that decoding is bad science; it is indispensable, and it establishes that the information is <em>there</em>. It is a claim about what the inference licenses. Decodability is a statement about the mutual information between neural activity and a variable. Computation, in the sense that would justify the word, is a statement about <strong>causal architecture</strong>: whether some physical state of the circuit is coupled back into the circuit’s own subsequent operations. Those are different claims, and only the second one is about the brain rather than about the experimenter.</p>
+
+<p>Notice this is the <em>same</em> error, structurally, that the walker experiment makes — and the walker’s version is more honest, because there the external agent (the function generator imposing the $\pi$-shift) is visible on the bench. In a decoding study the external agent is the analysis pipeline, and it is easy to forget it is there at all.</p>
+
+<h3 id="what-closure-would-actually-require-of-a-circuit">What closure would actually require of a circuit</h3>
+
+<p>So what would it take to earn the word? You would need to identify, physically:</p>
+
+<ul>
+  <li><strong>A readout variable inside the circuit.</strong> Not a latent factor in your dimensionality reduction — a physical degree of freedom. Downstream spiking in a target population. A dendritic nonlinearity crossing threshold. A neuromodulatory state. A bistable attractor in a gating circuit. It has to be <em>made of neurons</em>, not of PCA.</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td><strong>Distinct operations for it to select among.</strong> This is the condition people skip. Closure requires more than that the readout <em>modulates</em> an ongoing flow — that is just feedback, and feedback is everywhere (recurrent excitation, adaptation, gain control, every loop in the brain has it). Closure requires that the readout state select among <em>qualitatively different things the circuit can do</em>: gate this pathway or that one, write to memory or erase it, switch dynamical regime, route to a different downstream target. Formally, the operation-selection map must be nontrivial, $</td>
+          <td>\mathrm{Im}(C)</td>
+          <td>\geq 2$. A circuit whose recurrent activity smoothly tunes its own gain is a beautiful feedback system and is <em>not</em>, on that basis alone, closed.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li><strong>A causal path from the readout back into the dynamics.</strong> Perturb the readout state; the subsequent operation changes. That is an intervention, not an observation — and it is why optogenetics, not electrophysiology, is the natural instrument for testing closure.</li>
+</ul>
+
+<p>Written this way, the criterion turns into an experimental program: identify the candidate readout, show it occupies separated basins, show that basin membership predicts <em>which operation</em> the circuit performs next, and show that forcing the basin forces the operation.</p>
+
+<p>And here is the part worth sitting with: <strong>nervous systems very likely are closed, and that is a substantive structural fact, not a truism.</strong> Neural activity does not merely represent states for an external observer — it acts on downstream circuits, gates future processing, opens and closes routing pathways, and changes the physical conditions under which later activity unfolds. At the cellular scale the point is even sharper: ion channels function simultaneously as the readout <em>and</em> the control variable, which is closure in miniature. The brain is not a reservoir waiting to be decoded. It is a system that reads itself and acts on what it reads. That is precisely the property that almost every engineered “physical computer” lacks — and it may be the most underrated thing about biological computation.</p>
+
+<h3 id="traveling-waves-as-the-test-case">Traveling waves as the test case</h3>
+
+<p>The same discipline applies to what is currently one of the most enthusiastic corners of the field. Cortical traveling waves propagate, modulate excitability, organize spike timing, and structure spatiotemporal activity. Do they <em>compute</em>?</p>
+
+<p>Under this criterion, the question stops being about appearance and becomes about architecture. A wave becomes computationally relevant when you can identify the physical variables it transforms, the coarse-grained states it stabilizes or routes, and the <strong>downstream readout/control pathways through which it changes later neural dynamics</strong>. Not whether the activity pattern visually resembles a wave. Whether the readouts form robust, transition-preserving, <em>closed</em> loops.</p>
+
+<p>I want to be careful about the analogy, because it is easy to abuse. The claim is emphatically <em>not</em> that cortex is a hydrodynamic walker. It is structural and limited: both systems contain distributed wave-like activity, local readout, and recurrent physical coupling. In the walker, the readout is the droplet sampling $\nabla H(\mathbf{r})$. In cortex, the readout might be downstream spiking, synaptic integration, dendritic nonlinearities, local thresholds, or long-range recurrent coupling. What transfers is the <em>question</em>, not the substrate.</p>
+
+<p>The research program this suggests is concrete: do wave variables define robust basins or phase states? Do those states predict — or better, <em>control</em> — transitions in downstream populations? Does perturbing wave phase, direction, or speed change the inferred transition map? And is the relevant readout internal to the circuit, or imposed by your decoder? Cortical waves are, in this sense, an unusually clean biological test case for the closure criterion.</p>
+
+<h3 id="why-neuroai-needs-this-specifically">Why NeuroAI needs this, specifically</h3>
+
+<p>NeuroAI is a field built on an analogy between two systems whose computational status is asserted far more often than it is defined. That is a precarious foundation, and it produces a recurring pathology: a property is found in a trained network, the corresponding property is found in cortex, and the resemblance is reported as convergence — without either side having said what would make the claim false.</p>
+
+<p>The framework offers a shared coordinate system, and it cuts in both directions.</p>
+
+<p>Toward the models: a deep network’s hidden layer that a linear probe can decode is at rung two at best, and the probe is <em>your</em> probe. The network’s own subsequent computation typically does not depend on the probed variable at all. Meanwhile a large model in a standard serving loop — where an external harness decides when to sample, when to call a tool, when to stop — is, structurally, externally driven, however agentic its behavior looks. Closure asks a question that no benchmark currently asks: <em>who selects the next operation, the system or the harness?</em></p>
+
+<p>Toward the brains: the criterion demands that “the cortex computes X” be cashed out as a causal architecture with identifiable readout basins and operation selection, rather than as a decoding accuracy. It makes the claim expensive — which is the point. Claims that cost nothing are worth nothing.</p>
+
+<p>And it makes the comparison honest. If nervous systems are closed and current artificial systems mostly are not, that is not a gap to be papered over with an analogy; it is arguably <em>the</em> structural difference between them, and it deserves to be named rather than dissolved into the shared vocabulary of “information processing.” The two fields have been using one word — <em>computation</em> — for at least three distinct properties, and NeuroAI is the place where that ambiguity does the most damage, because it is where the equivocation gets laundered into a scientific claim.</p>
+
+<p>The closure criterion will not tell you what the brain computes. It will tell you what you have to demonstrate before you are entitled to say it computes anything at all.</p>
+
+<hr />
+
+<h2 id="what-this-means-for-ai-and-ml">What this means for AI and ML</h2>
+
+<p>The closure criterion was derived on droplets and oil, but its most immediate audience may be people building learning machines out of physics.</p>
+
+<p><strong>Reservoir computing has been benchmarking the wrong loop — or at least, only half of it.</strong> The standard architecture (echo state networks, liquid state machines, and their myriad physical implementations in spintronics, photonics, mechanics, and fluids) is: a high-dimensional dynamical reservoir transforms input history into a rich state, and an <em>external, trained</em> readout — usually a linear layer on a computer — extracts the answer. Reservoirs are evaluated by how well that external readout decodes them. The closure criterion exposes the architecture’s structural incompleteness: the decoded state never touches the physics again. In the paper’s terms, physical reservoir computing as standardly practiced lives on rung two — transition-preserving under external readout — and the walker makes this separation unusually visible, because its reservoir (the wave field) and its probe (the droplet) are right there in front of you while the operation selection sits in a function generator.</p>
+
+<p>I want to be precise about <em>where</em> the incompleteness lies, because the obvious fix is not the right one. In <a href="https://arxiv.org/abs/2606.22765">other work</a>, I put the reservoir <em>substrate itself</em> under evolutionary selection — evolving size, connectivity, spectral radius, input scaling, and regularization of reservoirs tasked with predicting Kuramoto–Sivashinsky spatiotemporal chaos — rather than accepting the usual fixed random recurrent matrix. The substrate turns out to be richly structured and far from arbitrary: selection conserves a global spectral envelope while directionally refining the slow, low-eigenvalue modes that set the reservoir’s memory timescale; macroscopic modularity locks into a narrow band; connection cost is exponentially pruned within that band. Prediction, in other words, imposes legible structural constraints on the recurrent medium — the substrate is a real object of design, not a bag of random dynamics.</p>
+
+<p>And yet: those reservoirs are still on rung two. Every one of them is decoded by a ridge-regression readout trained offline and living outside the physics. Optimizing the substrate — even beautifully, even in ways that reveal genuine structure–function laws — does not move a system across the closure line, because closure is not a property of the reservoir. It is a property of the <em>loop</em>. This is exactly why the criterion is worth having: it identifies an axis of incompleteness that no amount of substrate engineering can address, and that is invisible to the benchmarks the field currently runs. You can evolve the medium to the edge of what prediction demands and still have built something externally driven.</p>
+
+<p>The stronger benchmark the criterion suggests: <strong>can the readout be physically internalized, so that decoded states select subsequent reservoir operations?</strong></p>
+
+\[\text{reservoir} \;\to\; \text{physical readout} \;\to\; \text{operation selection} \;\to\; \text{reservoir}.\]
+
+<p>A device that satisfies this is a <em>physically closed reservoir computer</em>: its computational state is not read off after the fact but participates in its own future evolution. For neuromorphic engineering, this is a concrete design axis orthogonal to the usual ones (speed, energy, dimensionality): not “how expressive is your reservoir” but “who selects the next operation — your chip, or your host workstation?” A memristive crossbar whose outputs are digitized, thresholded in software, and fed back through a DAC is externally driven no matter how exotic its materials. The same crossbar with an on-substrate hysteretic element that gates its own update pathway is closed. The criterion gives that difference a name and a test.</p>
+
+<p><strong>Symbols from dynamics, with error bars.</strong> The robust-symbolization layer — basins separated by $2\varepsilon_X$, transitions reliable to $1-\delta$, symbol lifetimes bounded by memory decay — is essentially a physical theory of when continuous dynamics supports discrete, reliable information processing. That is a question ML keeps encountering from the other direction: when do RNN hidden states organize into effectively discrete attractors? When do the representations inside a trained network support compositional, symbol-like manipulation? When does an analog accelerator’s noise floor destroy the discrete abstraction its compiler assumes? The framework’s failure taxonomy — aliasing, representative dependence, noise-induced crossing, memory decay, transition deformation — reads like a diagnostic checklist for analog and in-materio ML hardware, and each item comes with an inequality rather than an adjective.</p>
+
+<p><strong>Autonomy as architecture, not vibes.</strong> The AI world talks constantly about “agents” and “autonomy,” usually behaviorally. The closure criterion offers a structural definition with teeth: a system is autonomous when its next operation is a function of its own readout state, $o_n = C(p_Y(x_n))$, rather than an externally supplied index. Notice what this does and doesn’t say. A large language model in a standard serving loop — where an external harness decides when to sample, when to call tools, when to stop — is, in this structural sense, externally driven regardless of how agentic its outputs look. A system whose own state gates its subsequent operations (what to update, when to erase, which sub-process to run) is closed regardless of how simple it is. And the paper’s own remark cuts the other way too: closure without richness is trivial — a period-two flip-flop is autonomous and boring. Interesting machine intelligence presumably requires both closure <em>and</em> a rich operation set. Keeping those two requirements separate, rather than blending them into one fuzzy notion of agency, is exactly the kind of conceptual hygiene the formalism enforces.</p>
+
+<p><strong>A bridge to biology that isn’t hand-waving.</strong> In recurrent neural systems, readout-like variables act on downstream circuits, gate future processing, and change the physical conditions under which later activity unfolds; at the cellular scale, ion channels function simultaneously as readout and control variables. Nervous systems, in other words, look closed in precisely the structural sense defined here — which suggests the criterion as a common language for comparing engineered reservoirs, unconventional computers, and neural circuits without collapsing them all into the vague claim that they “process information.”</p>
+
+<hr />
+
+<h2 id="looping-back-physical-computing-as-the-real-subject">Looping back: physical computing as the real subject</h2>
+
+<p>Step back from the droplet, and the paper is an answer to a single old question: <strong>what does it take for matter to compute?</strong></p>
+
+<p>The history of that question has oscillated between two failure modes. One extreme makes computation too cheap: if computation is just “a mapping from physical states to abstract states,” then everything computes everything, the rock implements every finite-state machine, and the concept dissolves. The other extreme makes it too expensive: if computation requires exact symbol-by-symbol identity between physical and formal states, then nothing physical computes — not even your laptop, whose “bits” are noisy charge distributions stabilized by basins and error margins.</p>
+
+<p>The resolution developed here threads between them with three moves, each carrying its own mathematics:</p>
+
+<ol>
+  <li><strong>Symbols are basins, not microstates.</strong> Physical realization is many-to-one, formalized by a quotient — an adjunction, not a bijection: $\gamma({a}) = B_a$, with $\operatorname{dist}(B_i, B_j) &gt; 2\varepsilon_X$.</li>
+  <li><strong>Computation is transition preservation, not labeling.</strong> The dynamics must commute with the abstraction, $\Pi \circ F = G \circ \Pi$, robustly under noise. This single requirement dissolves pancomputationalism without special pleading.</li>
+  <li><strong>Autonomy is internal morphism selection.</strong> The step that had never been formalized: a computer, as opposed to a computed-upon system, selects its own next operation — $\Phi = \mathrm{Act} \circ \langle C \circ p_Y, \mathrm{id}_X \rangle$, the external index eliminated from the diagram.</li>
+</ol>
+
+<p>Memory, preservation, closure. Each rung is physically checkable; each has a categorical expression; and the top rung converts a philosophical dispute into an engineering blueprint.</p>
+
+<p>That last conversion is, to me, the point. The walker experiment showed something genuinely profound: memory can be written into matter by matter, read by matter, and erased by matter, in a continuous wave field with no electronics in sight. The closure criterion neither inflates that result into “hydrodynamic Turing machine” nor deflates it into “just a dynamical system.” It locates it — a wave-memory physical machine with Turing-like primitives, one architectural layer short of autonomy — and then specifies the layer: intrinsic readout basins coupled to operation selection. An autonomous eraser on a vibrating bath would be, to my knowledge, the first system to demonstrably cross the closure line in a continuous physical substrate.</p>
+
+<p>The question is no longer whether wave memory is metaphorically computational. The question is how to build physical architectures in which wave memory, readout basins, and operation selection compose into closed autonomous computation — on an oil bath, in a photonic cavity, on a neuromorphic chip, or in a dish of neurons. The criterion tells you what to build and how to know when you’ve built it.</p>
+
+<p>That is what a physics of computation should look like.</p>
+
+<hr />
+
+<p><em>The paper develops each layer in full technical detail, with supplementary sections covering the stroboscopic wave model, erasure energetics, coarse-graining theory, robust symbolization, closure and nondegeneracy conditions, the categorical lift, the walker classification, and constructive extensions. The categorical framework builds on Dehghani &amp; Caterina, J. Phys. Complexity (2024) <a href="https://iopscience.iop.org/article/10.1088/2632-072X/ad6051">“Physical computing: a category theoretic perspective on physical computation and system compositionality.”</a>.</em></p>]]></content><author><name>Nima Dehghani</name></author><category term="physical computing" /><category term="mechanistic interpretability" /><category term="recurrent" /><category term="dynamics" /><category term="spatiotemporal" /><category term="biological computation" /><category term="state-space dynamics" /><category term="computational closure" /><category term="reservoir computing" /><category term="neuromoprhic" /><category term="dynamical memory" /><category term="Turing" /><summary type="html"><![CDATA[Companion post to: Autonomous Physical Computation: A Categorical Closure Criterion for Physical and Neuromorphic Reservoirs. Nima Dehghani arXiv 2026. DOI: https://doi.org/10.48550/arXiv.2607.23902]]></summary></entry><entry><title type="html">When Prediction Shapes the Machine: Evolutionary Reservoirs, Chaos, and Structural Constraints</title><link href="https://neurovium.github.io/posts/pblog-Adaptive-reservoir/" rel="alternate" type="text/html" title="When Prediction Shapes the Machine: Evolutionary Reservoirs, Chaos, and Structural Constraints" /><published>2026-06-23T00:00:00+00:00</published><updated>2026-06-23T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-Adaptive-reservoir</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-Adaptive-reservoir/"><![CDATA[<p><em>Companion post to:</em><br />
 <strong>Evolutionary Optimization Reveals Structural Constraints on Reservoir Architecture for Spatiotemporal Chaos</strong>
 Nima Dehghani
 <em>arXiv</em> 2026.
 DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.48550/arXiv.2606.22765</code></p>
+
+<hr />
+<h2 id="how-this-project-began">How this project began</h2>
+
+<p>This project began with a question much broader than reservoir computing:</p>
+
+<p><strong>How do biological systems make sense of their environments?</strong></p>
+
+<p>One way to approach this question is to begin with sophisticated nervous systems, particularly the mammalian brain. But this is also where I think much of computational neuroscience encounters its Achilles heel. Discussions of computation in the brain tend to gravitate rapidly toward high-level functions: perception, decision-making, attention, memory, cognition, and other categories inherited from psychology and cognitive science.</p>
+
+<p>These are important phenomena, of course. But they can also become the level at which explanation stops. The underlying physical problem—how a biological system transforms environmental stimulation into internal dynamics that support useful action—becomes obscured by descriptions that are already several conceptual layers removed from the machinery.</p>
+
+<p>A related problem appears in artificial intelligence. A considerable amount of work presented under the banner of interpretability amounts, in practice, to a kind of psychology of neural networks. We ask what a network “recognizes,” “believes,” “attends to,” or “represents,” often using categories modeled after human cognition. Such descriptions may be useful, but they do not necessarily explain how the system computes as a physical dynamical object.</p>
+
+<p>To find a more elementary formulation, it helps to trace nervous systems backward through evolution. Before mammalian cortex, before centralized brains, and even before neurons, living systems were already sensing their surroundings, retaining information about previous stimulation, and changing their future behavior accordingly. Single cells continuously process information about nutrient availability, chemical gradients, temperature, stress, and other environmental variables. They do not need an explicit cognitive model of the world. Their internal molecular dynamics are the model.</p>
+
+<p>At this level, the relationship among the statistics of the environment, the task faced by the organism, and the architecture of the biological machinery becomes easier to formulate. A simple nervous system—or even a single cell—can be viewed as a control system embedded in and driven by its environment. To maintain stability, preserve a viable internal state, or move toward a favorable condition, the system must exploit regularities in what has happened to anticipate what is likely to happen next.</p>
+
+<p>From this perspective, prediction and control are not separate problems. A system that uses its present state and the history of environmental inputs to guide its future behavior is performing something close to <strong>closed-loop model predictive control</strong>. It is learning enough about the structure of its environment to forecast what comes next and to act accordingly, whatever its effective objective function may be.</p>
+
+<p>For readers interested in how this type of problem might be formalized closer to the internal machinery of cells, I developed a related perspective in <a href="https://journals.plos.org/complexsystems/article?id=10.1371/journal.pcsy.0000013"><em>Systematizing cellular complexity: A Hilbertian approach to biological problems</em></a>. (Also see <a href="https://neurovium.science/posts/pblog-Cell-hilbert/">“the companion post to that work”</a>).</p>
+
+<p>Around the time I was thinking about these questions, I came across a Quanta Magazine article titled <a href="https://www.quantamagazine.org/machine-learnings-amazing-ability-to-predict-chaos-20180418/"><em>Machine Learning’s “Amazing” Ability to Predict Chaos</em></a>. It led me to two papers that immediately caught my attention.</p>
+
+<p>The first, from Edward Ott’s group, was <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.024102"><em>Model-Free Prediction of Large Spatiotemporally Chaotic Systems from Data: A Reservoir Computing Approach</em></a>. The second was <a href="https://pubs.aip.org/aip/cha/article-abstract/28/4/043118/280931/Observing-spatio-temporal-dynamics-of-excitable?redirectedFrom=fulltext"><em>Observing spatio-temporal dynamics of excitable media using reservoir computing</em></a>.</p>
+
+<p>Both papers demonstrated something remarkable. A recurrent dynamical system with a relatively simple trained readout could learn enough of the structure of a complex spatiotemporal process to continue its evolution autonomously. The reservoir was not merely classifying snapshots or interpolating among examples. It was transforming the history of a driven system into an internal state from which the system’s future dynamics could be extended.</p>
+
+<p>Reservoir computing was also already in the air around me. A colleague in our MIT physics group was deeply interested in the subject and spoke to me about it frequently. After leaving MIT, he published the review <a href="https://royalsocietypublishing.org/rstb/article/374/1774/20180377/42286/Evolutionary-aspects-of-reservoir"><em>Evolutionary aspects of reservoir computing</em></a>, which examined reservoir computing in relation to evolution, biological information processing, and the possible origins of recurrent computational architectures.</p>
+
+<p>At the same time, I had begun a broader series of projects aimed at deciphering the internal operation of recurrent systems—both biological and artificial—through the lens of physics. I was interested not only in whether these systems worked, but in what their dynamics were doing: which modes carried memory, how recurrence created useful timescales, how stability was maintained, and how structural constraints shaped computation.</p>
+
+<p>Then the pieces clicked together.</p>
+
+<p>Recurrence, prediction, control, dynamics, and evolution were not separate themes. They were different aspects of the same problem faced by living systems: how to construct an internal dynamical substrate that can use the past to anticipate the future and thereby remain viable in a changing environment.</p>
+
+<p>The cortex would seem like the natural place to investigate this idea. It is recurrent, adaptive, multiscale, and continuously engaged in prediction and control. But it is also an exceptionally difficult place to begin. Its recurrent loops span enormous ranges of space and time, and the relevant computations are distributed across cellular, circuit, regional, and behavioral scales. The very richness that makes cortex interesting can make the underlying problem nearly impenetrable.</p>
+
+<p>I had discussed some of these difficulties in <a href="https://www.frontiersin.org/journals/computational-neuroscience/articles/10.3389/fncom.2018.00081/full"><em>Theoretical Principles of Multiscale Spatiotemporal Control of Neuronal Networks: A Complex Systems Perspective</em></a>. (Also see <a href="https://neurovium.science/posts/pblog-Theory-control-net/">“the companion post to that work”</a>). If the goal was to understand how predictive demands shape recurrent machinery, I needed a system in which the environment, the task, the recurrent architecture, and the selection pressure could all be controlled.</p>
+
+<p>So I reduced the problem.</p>
+
+<p>Instead of beginning with cortex and attempting to work backward through its layers of biological complexity, I would construct recurrent systems whose environment was known, whose predictive objective was explicit, and whose architecture could be placed under evolutionary selection. I could then look under the hood and ask which structural features were preserved, which were refined, and which were discarded.</p>
+
+<p>That is how this work began.</p>
+
+<p>There is also a more personal part of the story. Although much of the work and the underlying ideas were already in place, I had not yet found the narrative that would bring them together as a paper. That changed during a long drive from Cascais to Porto with my friend and fellow physicist-turned-neuroscientist André Peterson at the University of Melbourne. As I explained the results and the ideas behind them—talking for roughly seven hours about recurrence, evolution, prediction, spectra, and structure—the larger argument finally clicked into place. The drive was interleaved with Fado, Roman mosaics in Conimbriga Ruins, and an unsuccessful attempt to reach the waves of Nazaré before sunset. Sometimes, explaining a project to a good listener is what allows you to understand the story you have actually been trying to tell.</p>
+
+<p>Good ears are an underrated scientific instrument.</p>
+
+<p>André’s own work on the relationship between sparsity, stability, and the eigenspectrum of recurrent networks—<a href="https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.5.043132"><em>Effect of sparsity on network stability in random neural networks obeying Dale’s law</em></a>—also helped sharpen my thinking about how the problem might be attacked through the spectral and structural properties of the recurrent substrate.</p>
+
+<p>What emerged was a controlled experiment in the physics of interpretability. Rather than assigning cognitive labels to internal units, I wanted to ask how a population of recurrent systems changes when predictive function becomes the selection pressure. Which dynamical modes are retained? Which timescales are extended? Does the network become denser, larger, more modular, or more economical? And are there structural invariants that remain hidden when we examine only predictive error?</p>
+
+<p>So, if you are interested in interpretability through the lens of physics rather than the psychology of neural networks, fasten your seatbelt.</p>
+
+<p><em>We are about to tease apart the recurrent machinery of reservoir computing and see how the demand to predict spatiotemporal chaos reshapes the network from within.</em></p>
 
 <hr />
 
@@ -2928,262 +3502,4 @@ DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.1371/
 
 <p>And that, in essence, is the Hilbertian approach proposed in the paper.</p>
 
-<hr />]]></content><author><name>Nima Dehghani</name></author><category term="biological-computation" /><category term="biophysics" /><category term="systems-biology" /><category term="complexity" /><summary type="html"><![CDATA[Companion post to: Systematizing Cellular Complexity: Toward a Hilbertian Program for Biology Nima Dehghani Plos Complex Systems . PLOS Complex Syst 1(3): e0000013 DOI: https://doi.org/10.1371/journal.pcsy.0000013]]></summary></entry><entry><title type="html">When Does a Physical System Compute?</title><link href="https://neurovium.github.io/posts/pblog-Catcomp/" rel="alternate" type="text/html" title="When Does a Physical System Compute?" /><published>2024-07-24T00:00:00+00:00</published><updated>2024-07-24T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-Catcomp</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-Catcomp/"><![CDATA[<p><em>Companion post to:</em><br />
-<strong>A category-theoretic perspective on physical computation, biological computation, and system compositionality</strong><br />
-Nima Dehghani, Gianluca Caterina
-<em>Journal of Physics: Complexity</em> . Volume 5, Number 3
-DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.1088/2632-072X/ad6051</code></p>
-
-<hr />
-
-<h1 id="when-does-a-physical-system-compute">When Does a Physical System Compute?</h1>
-
-<p>In classical computer science, the direction of thought is usually clear. We begin with an abstract notion of a computable function. We then define a model of computation, such as a Turing machine, lambda calculus, finite-state automata, process calculi, or other formally equivalent models. Finally, we build physical devices that implement those models. In that direction, the conceptual pipeline is relatively well behaved:</p>
-
-\[\text{computable function} \rightarrow \text{model of computation} \rightarrow \text{physical device}.\]
-
-<p>This is the direction that gave us digital computers, programming languages, and much of modern computational theory.</p>
-
-<p>But many of the most interesting questions in physical, biological, and unconventional computation go in the opposite direction. We are not always handed a clean abstract function and then asked to build a machine that computes it. Instead, we often begin with a physical system: a quantum device, a neural circuit, a biochemical signaling pathway, a cellular regulatory network, a bacterial colony, or a brain. We observe that the system has states, transitions, dynamics, information flow, constraints, and perhaps adaptive behavior. Then we ask:</p>
-
-<p><strong>Is this system computing?</strong></p>
-
-<p>That reverse direction is much harder:</p>
-
-\[\text{natural system} \rightarrow \text{physical operations} \rightarrow \text{mathematical abstraction}.\]
-
-<p>The difficulty is that natural systems change state all the time. Electrons move. Molecules interact. Cells signal. Brains evolve through high-dimensional neural trajectories. A rock rolling down a hill follows physical law. The Solar System evolves according to gravitational dynamics. But we do not want a definition of computation so weak that every physical state transition becomes a computation. If everything computes simply because it changes state, then computation has lost its explanatory power.</p>
-
-<p>This is the central motivation of our paper:</p>
-
-<p><strong>Physical computing: a category theoretic perspective on physical computation and system compositionality</strong><br />
-Nima Dehghani and Gianluca Caterina<br />
-<em>Journal of Physics: Complexity</em> 5, 035005, 2024<br />
-DOI: <code class="language-plaintext highlighter-rouge">10.1088/2632-072X/ad6051</code></p>
-
-<p>The paper develops a category-theoretic framework for physical computation. The goal is not to add another metaphor to the already crowded discussion of whether brains, bacteria, slime moulds, chemical waves, or quantum systems “compute.” The goal is to provide a formal way to ask when a physical process can be treated as a computation, under what constraints, and at what scale.</p>
-
-<h2 id="the-problem-with-saying-that-everything-computes">The problem with saying that everything computes</h2>
-
-<p>The history of physical computation is entangled with a persistent problem: <strong>pancomputationalism</strong>. In its broadest form, pancomputationalism is the view that every physical system computes, or at least that every physical system implements some computation. The reasoning often begins with the observation that physical systems have states and transitions. If we can map those physical states onto computational states, then perhaps the system implements the corresponding computation.</p>
-
-<p>This idea appears in different forms in debates about concrete computation. Hilary Putnam’s “simple mapping account,” for example, showed how dangerously permissive such mappings can become. If all that is required is a mapping between the states of a physical system and the states of an abstract automaton, then almost any sufficiently rich physical system can be interpreted as implementing almost any finite-state computation. A rock, under the right mapping, could be said to implement a finite-state automaton. A physical object moving through space could be said to compute its own trajectory. The Solar System could be said to compute the laws of motion.</p>
-
-<p>This is not a useful theory of computation. It may reveal something important about the danger of arbitrary mappings, but it does not tell us what distinguishes a physical computer from a physical system merely undergoing change.</p>
-
-<p>The issue becomes especially serious in biological and neural systems. In biology, it is tempting to describe almost every regulatory process as computation. Cells process signals. Bacteria integrate environmental cues. Neural circuits transform sensory inputs into motor outputs. Organisms maintain internal variables, regulate themselves, and respond to perturbations. But if “computation” simply means “information processing,” and if “information processing” simply means “a physical system changes in response to another physical system,” then the concept becomes too broad.</p>
-
-<p>A useful account of biological computation needs to be stricter. It must be able to say that some physical processes support computation, while others may involve signaling, regulation, causal coupling, or information transfer without thereby becoming computations in the relevant sense.</p>
-
-<h2 id="from-abstractionrepresentation-theory-to-categorical-structure">From abstraction/representation theory to categorical structure</h2>
-
-<p>A major starting point for our work is the Abstraction/Representation framework developed by Horsman, Stepney, Wagner, and Kendon. Their framework was motivated partly by quantum computation and unconventional computation. It asks: when does a physical system compute?</p>
-
-<p>Their answer is built around a “compute cycle.” A physical system evolves according to physical dynamics. At the same time, an abstract representation of that physical system evolves according to an abstract computational rule. A physical system computes when the physical evolution and the abstract evolution correspond in the right way. This correspondence can be drawn as a commuting diagram: one path evolves the physical system and then abstracts it; the other path abstracts it first and then evolves the abstraction. If the diagram commutes, the physical evolution can be used to predict the abstract evolution.</p>
-
-<p>This was an important conceptual step because it made explicit that physical computation involves a relationship between physical dynamics and abstract representation. A physical computer is not just a lump of matter. It is a system whose physical evolution is usable as the evolution of an abstract computation.</p>
-
-<p>However, the abstraction/representation framework also leaves open a difficult question: <strong>what constrains the mapping between the physical and abstract domains?</strong></p>
-
-<p>If the mapping is too loose, then the framework risks inheriting the same problem as simple mapping accounts. A mapping alone is not enough. We need a way to specify when a mapping preserves the relevant structure of the physical process and the abstract process. We need to know how computations compose, how representations relate to one another, how different physical systems can realize the same computation, and how nested systems can support computation across scales.</p>
-
-<p>This is where category theory becomes useful.</p>
-
-<h2 id="why-category-theory">Why category theory?</h2>
-
-<p>Category theory is often described as the mathematics of structure and compositionality. That description is accurate, but it can sound too general. In this context, the usefulness of category theory is quite concrete.</p>
-
-<p>Computation is not just about isolated states. It is about transformations between states, and transformations that can be composed. A program takes an input and produces an output. A physical process takes a physical system from one state to another. A computation may be refined, decomposed, implemented at different levels, or realized in multiple substrates. These are all relational and compositional notions.</p>
-
-<p>Category theory gives us a language for this.</p>
-
-<p>A category consists of objects and morphisms. Morphisms are arrows between objects. They can be composed. Each object has an identity morphism. These simple ingredients are powerful because they allow us to describe systems in terms of their structure-preserving transformations.</p>
-
-<p>In our framework, we define a category of physical processes and a category of abstract processes.</p>
-
-<p>The physical category, which we call <code class="language-plaintext highlighter-rouge">PhysProc</code>, has physical systems as objects. Its morphisms are physical processes that transform one physical system or state into another. These processes take finite time and can be composed sequentially.</p>
-
-<p>The abstract category, which we call <code class="language-plaintext highlighter-rouge">AbsProc</code>, or more concretely <code class="language-plaintext highlighter-rouge">Comp</code> in the paper, contains abstract computational objects. In a pragmatic version, the objects may be data types such as Booleans, integers, reals, or other formal objects. The morphisms are programs or abstract operations that transform inputs into outputs.</p>
-
-<p>The key move is this:</p>
-
-<p><strong>A physical computation is not an arbitrary mapping between physical states and abstract states. It is a structured functorial relationship between a category of physical processes and a category of abstract processes.</strong></p>
-
-<p>A functor maps objects to objects and morphisms to morphisms while preserving composition and identity. This is crucial. It means that the physical-to-abstract relationship must preserve the structure of processes, not merely assign labels to states.</p>
-
-<p>If a physical process takes (p_1) to (p_2), and if those physical states are represented abstractly as (c_1) and (c_2), then the abstract transition from (c_1) to (c_2) must correspond to the physical transition. The mapping has to respect the dynamics. It must preserve the process structure.</p>
-
-<p>This is what prevents arbitrary reinterpretation. A functorial account asks not only whether we can associate physical states with computational states, but whether the transitions, compositions, and process structure are preserved.</p>
-
-<h2 id="physical-computation-as-a-pair-of-functors">Physical computation as a pair of functors</h2>
-
-<p>In the paper, we formulate physical computation using functors between physical and abstract process categories. Schematically, one functor maps physical processes into abstract processes:</p>
-
-\[\mathcal{R}_T : \textbf{PhysProc} \rightarrow \textbf{AbsProc}.\]
-
-<p>This is the abstraction or representation direction. It tells us how a physical system, under a theory (T), is represented as an abstract computational process.</p>
-
-<p>But physical computation also requires a way of relating abstract processes back to physical processes. In the strict version, this can be understood through an inverse-like relationship, where the abstract process and physical process are aligned strongly enough that the physical system can serve as a computer for that abstraction.</p>
-
-<p>In a more flexible version, this relationship can be relaxed using adjunctions. This matters because physical computation often does not involve exact identity between levels. Different physical devices can implement the same abstract computation. A silicon circuit, a quantum device, a mechanical billiard-ball computer, and perhaps a biological circuit can all instantiate related computational structures without having identical physical states.</p>
-
-<p>Thus, the categorical view allows us to distinguish between several levels of physical-computational relationship. Some systems may support a strict equivalence between physical and abstract process structure. Others may support a looser but still structured relationship through adjoint functors. What matters is that the relationship is not arbitrary. It is constrained by the morphisms of the physical system and the morphisms of the abstract process.</p>
-
-<p>This also gives us a way to talk about the “amount” or “type” of computation a physical system can support. The computational capacity of a physical system is related to the image of the abstraction functor. A system with rich controllable dynamics, stable distinguishable states, and composable operations can support a richer abstract process structure. A system without such structure may undergo physical evolution without being a computer in the relevant sense.</p>
-
-<h2 id="computation-is-not-just-representation">Computation is not just representation</h2>
-
-<p>One important implication of the framework is that computation should not be reduced to representation alone. A representation is not enough. The relation between physical and abstract systems has to preserve the right structure.</p>
-
-<p>This is where the categorical approach differs from weak mapping accounts. In weak mapping accounts, one can often invent a mapping after the fact. The mapping may associate physical states with computational states, but it does not necessarily preserve the causal and counterfactual structure of the physical system. It does not necessarily respect what the system could have done under different inputs, boundary conditions, or perturbations.</p>
-
-<p>In the functorial framework, the morphisms matter. The physical transitions themselves are part of the structure being mapped. This means that causal and counterfactual constraints are not external decorations added later to rescue the theory. They are naturally tied to the preservation of process structure.</p>
-
-<p>If a physical system can move from (p_1) to (p_2), and this transition corresponds to an abstract transition from (c_1) to (c_2), then the computation depends on that physical transition being permissible under the system’s dynamics. Likewise, if alternative physical transitions are possible under alternative conditions, the abstract process must respect those alternatives if it is to capture the computation performed by the system.</p>
-
-<p>This matters for physical computing generally, and it matters especially for biological systems. A biological process may be meaningful, regulated, adaptive, and causally rich without necessarily constituting a computation under a given abstraction. The question is not whether we can describe it computationally after the fact. The question is whether the process structure of the biological system maps functorially onto an abstract computational process.</p>
-
-<h2 id="natural-transformations-refinement-and-change-of-representation">Natural transformations: refinement and change of representation</h2>
-
-<p>Once computation is understood functorially, we can ask a second-order question: how do different representations of the same physical computation relate to each other?</p>
-
-<p>This is where natural transformations enter.</p>
-
-<p>A natural transformation is a morphism between functors. If functors are structure-preserving maps between categories, then natural transformations are structure-preserving maps between such maps. They are sometimes described as “relations between relations,” which is exactly what we need when thinking about computational refinement.</p>
-
-<p>Consider a simple example: addition. A physical device may implement addition at the binary level. But a user may think in decimal. Another representation may use octal. These are different abstract representations of related computational structure. The device’s physical dynamics may be binary, while the intended high-level operation is decimal addition. The relationship between these abstraction levels can be described using natural transformations.</p>
-
-<p>This gives a formal account of computational refinement. A computation can be represented at one level, then refined into another representation, and the relationship between those levels can be expressed categorically. This is not merely a software engineering convenience. It is a way of describing how physical processes, low-level operations, and high-level computations remain coherently related.</p>
-
-<p>For biological and neural systems, this is particularly important. A neural circuit can be described at many levels: ion channels, synapses, dendritic compartments, spiking dynamics, population trajectories, behavior, and perhaps cognitive variables. These levels are not interchangeable. But they may be related by structured transformations. A categorical framework gives us a way to ask when such cross-level descriptions preserve computational structure and when they are merely descriptive projections.</p>
-
-<h2 id="multiple-realizability-and-adjunctions">Multiple realizability and adjunctions</h2>
-
-<p>A central idea in philosophy of mind, computational neuroscience, and cognitive science is multiple realizability. The same abstract function can be implemented in different physical substrates. A computation may be realized in silicon, in a mechanical device, in a quantum system, or perhaps in a biological system.</p>
-
-<p>David Marr’s tri-level framework made this idea familiar in neuroscience: one can distinguish the computational level, the algorithmic or representational level, and the implementational level. But the mathematical relationship between these levels is often left informal. We say that the same computation can be implemented in different ways, but what exactly does that mean?</p>
-
-<p>In our framework, adjoint pairs provide a way to formalize this idea. Rather than requiring a strict identity between abstract and physical process categories, we can allow a structured relationship in which mappings back and forth preserve the relevant computational organization in a weaker, but still disciplined, way.</p>
-
-<p>This is important because different physical systems rarely share identical state spaces. A transistor circuit, a quantum dot system, and a neural circuit do not have the same physical degrees of freedom. Yet they may support related abstract processes. Adjunctions allow us to describe this without collapsing all physical details into a vague claim of “implementation.”</p>
-
-<p>This also clarifies what medium independence can and cannot mean. Computation is often said to be medium-independent, but this phrase is easy to misuse. It does not mean that the physical medium is irrelevant. It means that the same abstract computational structure may be realizable in different media, provided that each medium has the appropriate physical degrees of freedom, controllable operations, and read/write structure to support the relevant abstract process.</p>
-
-<p>The medium matters because it determines which physical morphisms are available. It determines what can be written, transformed, stabilized, coupled, measured, and read out. The abstract computation may be multiply realizable, but each realization is constrained by physical dynamics.</p>
-
-<h2 id="scale-matters">Scale matters</h2>
-
-<p>The categorical framework also makes clear that physical computation is scale-dependent.</p>
-
-<p>Consider quantum computation. An isolated electron spin is not, by itself, a computer. It has physical degrees of freedom, but computation requires more than the existence of distinguishable physical states. The spin must be embedded within a larger architecture that allows preparation, controlled evolution, coupling, measurement, and interpretation. In a spin qubit system, the relevant physical degrees of freedom become computational only within a write-control-read structure that supports abstract operations.</p>
-
-<p>The same point applies to quantum-dot cellular automata. Individual quantum dots have physical properties. But the computational system emerges from the designed arrangement, interactions, boundary conditions, and input/output structure. The computation is not simply “inside” the quantum dot as a metaphysical property. It is supported by a structured physical process that maps onto an abstract process.</p>
-
-<p>This is also true in biology. A molecule binding to another molecule is a physical event. A signaling pathway propagating a state change is a physical and biochemical process. A gene regulatory network stabilizing a cell fate is a dynamical system. Whether any of these are computations depends on the scale of description, the available morphisms, the compositional structure, and the abstraction under which the physical process maps to an abstract process.</p>
-
-<p>This is why the question “does the brain compute?” is too coarse. A better question is:</p>
-
-<p><strong>Which physical processes in the brain, at which scales, under which abstractions, and with which compositional structure, constitute computations?</strong></p>
-
-<p>This reframing avoids both extremes. It avoids the simplistic claim that the brain is “just a computer.” It also avoids the equally unhelpful claim that biological systems are too embodied, continuous, or material to be understood computationally. The categorical view allows us to examine specific candidate computations in neural and biological systems with formal precision.</p>
-
-<h2 id="nested-composition-and-biological-systems">Nested composition and biological systems</h2>
-
-<p>Biological systems are not flat. They are nested, modular, and multiscale. Molecular interactions compose into pathways. Pathways compose into regulatory networks. Cells compose into tissues. Neural circuits compose into larger circuits and brain-wide dynamics. Organisms interact with environments. Each level has its own variables, constraints, and characteristic timescales.</p>
-
-<p>The paper introduces nested composition as a way to think about such systems. The idea is that an abstraction of one physical process can itself become part of another physical process. A physical system (P) may have state transitions that map to an abstract process. That abstracted process may then be coupled to another physical system (P’), whose own state transitions are mapped into another abstraction, and so on.</p>
-
-<p>This is not just hierarchy in the ordinary sense. It is compositional nesting across physical and abstract domains. The abstraction of one physical process can feed into the dynamics of another. Linked open dynamical systems with shared variables can therefore be understood as nested compositional structures.</p>
-
-<p>This is highly relevant to systems biology. Biological computation, if it exists in a given case, is unlikely to be localized to a single molecular event. It is more likely to arise from structured interactions among components, constraints, feedback loops, and readout mechanisms across scales. Category theory gives us a formal language for asking how these components compose.</p>
-
-<p>It also helps distinguish computation from information transfer. Biological systems constantly transfer information in a broad physical sense. But not every transfer of information is computation. For a biological process to count as computation under this framework, the relevant physical transitions must map coherently into an abstract process category. The system must support more than correlation, signaling, or causal influence. It must support structured, composable operations.</p>
-
-<h2 id="implications-for-computational-neuroscience">Implications for computational neuroscience</h2>
-
-<p>Computational neuroscience often uses computational language at multiple levels. We speak of neurons encoding variables, circuits implementing algorithms, cortical areas performing inference, populations representing latent states, synapses storing information, and brains computing predictions. Some of this language is productive. Some of it is metaphorical. Some of it may be misleading.</p>
-
-<p>The framework in this paper is not meant to abolish computational language in neuroscience. Rather, it gives us a way to make that language more precise.</p>
-
-<p>For a neural system, we can ask:</p>
-
-<p>What are the relevant physical objects?<br />
-Are they ion channels, neurons, synapses, local field potentials, cell assemblies, population trajectories, or brain regions?</p>
-
-<p>What are the morphisms?<br />
-Are they spike transitions, synaptic updates, dynamical flows, network state transitions, behavioral transformations, or experimentally controlled input-output relations?</p>
-
-<p>What is the abstraction functor?<br />
-How are physical states mapped into abstract states? What structure does that mapping preserve?</p>
-
-<p>What counts as composition?<br />
-Can the relevant operations be composed in a way that supports an abstract computational process?</p>
-
-<p>What are the causal and counterfactual constraints?<br />
-Would the system support the same abstract transition under relevant perturbations, inputs, or boundary conditions?</p>
-
-<p>These questions push us beyond loose statements such as “the cortex computes prediction error” or “the brain performs Bayesian inference.” Such statements may be useful hypotheses, but the categorical view asks what physical process category is being mapped into what abstract process category, and whether the mapping preserves the relevant dynamics.</p>
-
-<p>This is especially important in modern neuroscience, where high-dimensional neural data can often be described by many different abstract models. The same neural population activity might be interpreted as encoding, decoding, inference, control, attractor dynamics, dynamical systems evolution, or manifold traversal. A categorical framework asks how these descriptions relate. Are they refinements of one another? Are they different abstraction functors? Are there natural transformations between them? Do they preserve the same process structure, or are they merely alternative descriptions imposed after the fact?</p>
-
-<p>That is a much sharper way to discuss computation in the brain.</p>
-
-<h2 id="implications-for-unconventional-and-quantum-computing">Implications for unconventional and quantum computing</h2>
-
-<p>The same framework also applies to unconventional computing and quantum computing.</p>
-
-<p>In unconventional computing, one often uses physical processes directly: chemical waves, slime mould growth, DNA interactions, mechanical collisions, memristive materials, neuromorphic substrates, or quantum systems. These systems are interesting precisely because they do not always resemble classical digital computers. They may be continuous, stochastic, embodied, spatially extended, or strongly substrate-dependent.</p>
-
-<p>The categorical approach does not require them to look like classical computers. It does not demand that every physical computer be a digital machine. Instead, it asks whether the physical process structure can be mapped into an abstract process category in a way that preserves the relevant operations.</p>
-
-<p>This is a useful standard. It allows us to take unconventional computing seriously without turning every interesting physical process into a computer. It also makes clear that the physical substrate is not merely an implementation detail. In quantum computation, for example, the available operations depend on the structure of the physical system: superposition, entanglement, unitary evolution, measurement, decoherence, and control constraints. The abstract computational power of the system is inseparable from the physical morphisms it supports.</p>
-
-<p>Thus, the framework is broad enough to include quantum and unconventional systems, but strict enough to avoid the claim that all physical systems compute merely by evolving.</p>
-
-<h2 id="what-the-framework-rules-out">What the framework rules out</h2>
-
-<p>One of the strengths of a good scientific framework is not only what it explains, but what it refuses to explain too easily. A theory that can be modified to fit any observation is weak. A useful theory should be hard to vary. It should prevent certain bad explanations.</p>
-
-<p>The categorical framework rules out the idea that arbitrary mapping is sufficient for computation. It rules out the idea that any physical state transition is automatically computational. It rules out the idea that information transfer and computation are identical. It rules out the idea that medium independence means substrate irrelevance.</p>
-
-<p>It also rules out a common confusion in modeling. A model of a physical system may compute predictions about that system. But the physical system itself is not thereby computing the model. A simulated projectile computes a trajectory in the model. The actual projectile does not compute all possible theories of its own motion simply by moving through space. The physical system has dynamics; the model has a computational structure. Whether there is a physical computation depends on a constrained relationship between physical and abstract process categories.</p>
-
-<p>This distinction is essential for avoiding pancomputationalism.</p>
-
-<p>By contrast, consider a billiard-ball computer. In that case, the physical system is deliberately constrained so that collisions of idealized balls implement logical operations. The physical dynamics are organized so that the system’s state transitions correspond to abstract computational operations. The mapping is not arbitrary. It is built into the device’s structure, its boundary conditions, and its read/write interpretation. That is the kind of case where the categorical framework can describe physical computation clearly.</p>
-
-<h2 id="toward-a-more-precise-theory-of-biological-computation">Toward a more precise theory of biological computation</h2>
-
-<p>The long-term motivation of this work is not only philosophical. It is also scientific.</p>
-
-<p>Biological systems are full of organized dynamics. They regulate, adapt, signal, remember, differentiate, synchronize, oscillate, and respond to perturbations. In computational neuroscience and systems biology, we often want to know whether such systems are computing, and if so, what kind of computation they perform.</p>
-
-<p>But the answer cannot be obtained by metaphor. It requires a formal account of when physical dynamics support abstract operations.</p>
-
-<p>The category-theoretic framework developed in the paper is a step toward such an account. It gives us a way to examine biological systems without either reducing them prematurely to digital computers or exempting them from computational analysis altogether. It allows us to ask whether a given biological process has the compositional, causal, counterfactual, and representational structure required for computation.</p>
-
-<p>This may be particularly useful for studying neural circuits, cellular regulatory systems, developmental processes, and multiscale biological organization. These systems are not merely collections of components. They are compositional physical systems with nested dynamics. Category theory is well suited to describing such systems because it treats relations, transformations, and composition as primary.</p>
-
-<p>In this sense, the framework may help move the discussion from “is life computation?” or “is the brain a computer?” toward more precise questions:</p>
-
-<p>Which biological processes instantiate computations?<br />
-Which abstractions preserve their physical process structure?<br />
-How do computational descriptions at different biological scales relate?<br />
-When are two biological implementations computationally equivalent?<br />
-When is a computational description merely a useful model, and when is it physically instantiated by the system?</p>
-
-<p>These are the questions that a mature theory of biological computation must answer.</p>
-
-<h2 id="conclusion">Conclusion</h2>
-
-<p>Computation is physical, but not every physical process is computation.</p>
-
-<p>That sentence captures the central tension of the paper. On one hand, every real computation must be physically instantiated. There is no computation without some physical system undergoing state transitions. On the other hand, physical state transition alone is not enough. A physical system computes only when its dynamics can be mapped, in a constrained and structure-preserving way, to an abstract process.</p>
-
-<p>The category-theoretic framework gives us a language for that constraint. By defining physical and abstract process categories, using functors to relate them, natural transformations to describe refinement, and adjunctions to formalize multiple realizability, we obtain a more precise account of physical computation.</p>
-
-<p>This matters for foundations of computation. It matters for quantum and unconventional computing. It matters for systems biology. And it matters for computational neuroscience, where the language of computation is powerful but often under-constrained.</p>
-
-<p>The goal is not to decide once and for all whether “the brain is a computer,” whether “cells compute,” or whether “the universe computes.” Those questions are too broad. The better goal is to develop a formal framework that tells us what must be true for a physical system, or part of a physical system, to count as computing.</p>
-
-<p>That is the direction this paper takes: away from computation as metaphor, and toward computation as structured physical process.</p>]]></content><author><name>Nima Dehghani</name></author><category term="physical computation" /><category term="biological computation" /><category term="quantum computing" /><category term="compositionality" /><summary type="html"><![CDATA[Companion post to: A category-theoretic perspective on physical computation, biological computation, and system compositionality Nima Dehghani, Gianluca Caterina Journal of Physics: Complexity . Volume 5, Number 3 DOI: https://doi.org/10.1088/2632-072X/ad6051]]></summary></entry></feed>
+<hr />]]></content><author><name>Nima Dehghani</name></author><category term="biological-computation" /><category term="biophysics" /><category term="systems-biology" /><category term="complexity" /><summary type="html"><![CDATA[Companion post to: Systematizing Cellular Complexity: Toward a Hilbertian Program for Biology Nima Dehghani Plos Complex Systems . PLOS Complex Syst 1(3): e0000013 DOI: https://doi.org/10.1371/journal.pcsy.0000013]]></summary></entry></feed>

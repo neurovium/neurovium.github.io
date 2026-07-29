@@ -19,17 +19,17 @@
 <meta property="og:title" content="When Does Matter Compute? Wave Memory, Closure, and the Architecture of Autonomous Physical Computation" />
 <meta name="author" content="Nima Dehghani" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics" />
-<meta property="og:description" content="Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics" />
+<meta name="description" content="Companion post to: Autonomous Physical Computation: A Categorical Closure Criterion for Physical and Neuromorphic Reservoirs. Nima Dehghani arXiv 2026. DOI: https://doi.org/10.48550/arXiv.2607.23902" />
+<meta property="og:description" content="Companion post to: Autonomous Physical Computation: A Categorical Closure Criterion for Physical and Neuromorphic Reservoirs. Nima Dehghani arXiv 2026. DOI: https://doi.org/10.48550/arXiv.2607.23902" />
 <link rel="canonical" href="https://neurovium.github.io/posts/pblog-Wave-compute/" />
 <meta property="og:url" content="https://neurovium.github.io/posts/pblog-Wave-compute/" />
 <meta property="og:site_name" content="Nima Dehghani" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-06-23T00:00:00+00:00" />
+<meta property="article:published_time" content="2026-07-27T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="When Does Matter Compute? Wave Memory, Closure, and the Architecture of Autonomous Physical Computation" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Nima Dehghani"},"dateModified":"2026-06-23T00:00:00+00:00","datePublished":"2026-06-23T00:00:00+00:00","description":"Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics","headline":"When Does Matter Compute? Wave Memory, Closure, and the Architecture of Autonomous Physical Computation","mainEntityOfPage":{"@type":"WebPage","@id":"https://neurovium.github.io/posts/pblog-Wave-compute/"},"url":"https://neurovium.github.io/posts/pblog-Wave-compute/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Nima Dehghani"},"dateModified":"2026-07-27T00:00:00+00:00","datePublished":"2026-07-27T00:00:00+00:00","description":"Companion post to: Autonomous Physical Computation: A Categorical Closure Criterion for Physical and Neuromorphic Reservoirs. Nima Dehghani arXiv 2026. DOI: https://doi.org/10.48550/arXiv.2607.23902","headline":"When Does Matter Compute? Wave Memory, Closure, and the Architecture of Autonomous Physical Computation","mainEntityOfPage":{"@type":"WebPage","@id":"https://neurovium.github.io/posts/pblog-Wave-compute/"},"url":"https://neurovium.github.io/posts/pblog-Wave-compute/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -165,14 +165,14 @@ window.MathJax = {
   <div class="paper__crumb">
     <a href="/blog/">← Blog</a>
     <span style="color:var(--muted-soft);">·</span>
-    <span>Jun 23, 2026</span>
+    <span>Jul 27, 2026</span>
   </div>
 
   <h1>When Does Matter Compute? Wave Memory, Closure, and the Architecture of Autonomous Physical Computation</h1>
   <div class="paper__subtitle">When Does Matter Compute?</div>
   
   <div class="paper__venue" style="margin-top:10px;">
-    <span>adaptive</span><span>optimization</span><span>bio-inspired</span><span>prediction</span><span>inference</span><span>AI</span><span>RNNs</span><span>modularity</span><span>wiring economy</span><span>biological computation</span><span>physical computing</span><span>mechanistic</span><span>interpretability</span><span>recurrent</span><span>dynamics</span><span>chaos</span><span>optimality</span><span>neuroai</span><span>spatiotemporal</span>
+    <span>physical computing</span><span>mechanistic interpretability</span><span>recurrent</span><span>dynamics</span><span>spatiotemporal</span><span>biological computation</span><span>state-space dynamics</span><span>computational closure</span><span>reservoir computing</span><span>neuromoprhic</span><span>dynamical memory</span><span>Turing</span>
   </div>
   
 
@@ -190,11 +190,89 @@ window.MathJax = {
 <strong>Autonomous Physical Computation: A Categorical Closure Criterion for Physical and Neuromorphic Reservoirs.</strong>
 Nima Dehghani
 <em>arXiv</em> 2026.
-DOI: ``</p>
+DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.48550/arXiv.2607.23902</code></p>
 
 <hr />
 
 <h1 id="when-does-matter-compute-wave-memory-closure-and-the-architecture-of-autonomous-physical-computation">When Does Matter Compute? Wave Memory, Closure, and the Architecture of Autonomous Physical Computation</h1>
+
+<h2 id="how-this-paper-began">How this paper began</h2>
+
+<p>The idea behind this paper began many years ago, in a hotel room overlooking Mission Bay in San Diego.</p>
+
+<p>I was there for a conference, but the talks had become sufficiently uninspiring that I retreated to my room. It was a hot day. I was drinking a glass of white wine and talking with a beautiful woman while looking out over the bay.</p>
+
+<p>At some point, I noticed a can—perhaps a soda can, perhaps a beer can; I no longer remember—bobbing up and down on the water.</p>
+
+<p>That ordinary object suddenly became conceptually intriguing.</p>
+
+<p>The can was being moved by the wave field, but it was also contributing to the wave field. Its motion depended on the surrounding water, yet its own motion perturbed that water in return. It was simultaneously acted upon by the global dynamics and participating in their construction.</p>
+
+<p>A series of questions appeared almost immediately:</p>
+
+<p><em>Does the can record a memory of the wave?</em></p>
+
+<p><em>Because it also contributes to generating the wave, could one say that it is reading from and writing to the wave field?</em></p>
+
+<p><em>Could it, in any meaningful sense, be said to compute the wave field?</em></p>
+
+<div style="text-align: center;">
+  <div style="display: flex; justify-content: center; gap: 20px;">
+  <img src="../assets/img/papers/wave_1.png" width="450" />
+  <img src="../assets/img/papers/wave_2.png" width="450" />
+  </div>  
+  <p style="margin-top: 8px;">
+<strong>I gave ChatGPT the text of this post and asked it to generate an accompanying image. The results were both wrong and interesting, so I decided to keep them</strong>. The left panel depicts waves, but not the kind of waves discussed in the paper. The model imagined something closer to open-water swells, misunderstood the appearance of San Diego’s Mission Bay, chose the wrong type of boat in the background, and invented an implausible horizon and surrounding landscape. I then explained these problems and asked it to try again. The second image is somewhat closer, but still no cigar. Together, the images <em>reveal how little physical grounding current generative models possess</em>. Despite having been trained on millions of images and vast amounts of text, the model failed to infer that the story concerned an empty soda or beer can. More importantly, it appears not to understand the physics of a floating object bobbing on a water surface: the orientation and immersion of the can are inconsistent with the surrounding wave geometry. I kept both images because their failures are instructive. They offer a small visual demonstration of the distance that still separates statistical familiarity with descriptions and images from the structured understanding us humans bring to objects, environments, and the physical world.
+  </p>
+</div>
+
+<p>I began imagining the can as a kind of local read–write element embedded in a much larger dynamical medium. Perhaps one could define a moving boundary around it—not a rigid box, because the boundary would have to deform and move with the water, but something more like a loose enclosure made of ropes. The purpose of this imagined boundary would be to separate the local interaction from the global field without isolating the two.</p>
+
+<p>Inside that boundary, the can would interact with the wave at one location. But the bay was vastly larger, and every local disturbance contributed to a field that propagated globally. The same wave was therefore both local and nonlocal: sampled at the position of the can, yet distributed across the entire medium.</p>
+
+<p>That was the beginning of my thinking about physical computation, local readout, distributed memory, and closure.</p>
+
+<p>At the same time, I have also been working on cortical traveling waves—developing methods for wave decomposition and thinking about generative models of traveling-wave dynamics using modern machine-learning ideas, including Koopman-based representations (unpubplished works). Those projects have taken their own circuitous path through the current disorder of the American scientific funding system. The proposal is still waiting for review. NSF, please do your job. At this point, I may also need a patron saint.</p>
+
+<p>But scientifically, the connection was natural. Cortical waves are distributed physical processes. Local neuronal populations both respond to those waves and contribute to their propagation. Information is neither stored at a single point nor located entirely in the global field. It emerges through the interaction between local dynamics, distributed state, memory, and recurrence.</p>
+
+<p>The question from Mission Bay therefore returned in a more serious form:</p>
+
+<p><strong>When does a physical wave field merely evolve, and when does a system coupled to that field compute?</strong></p>
+
+<p>An important step came when I read the elegant experiment by Perrard, Fort, and Couder, <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.117.094502">“Wave-Based Turing Machine: Time Reversal and Information Erasing.”</a></p>
+
+<p>In their system, a droplet bounces on a vertically oscillating liquid bath and generates a persistent wave field. The droplet is then guided by the local slope of the very field created by its previous impacts. Its trajectory is written into the wave, stored for a finite time, and subsequently read through the droplet–wave interaction. Under an imposed phase shift, the droplet can retrace part of its previous trajectory while progressively erasing the stored wave field.</p>
+
+<p>It is a beautiful physical realization of writing, storage, reading, feedback, and erasure.</p>
+
+<p>But it also sharpened the conceptual difficulty. Are these ingredients sufficient for computation? Does physical memory automatically imply computation? Is a system computing because an observer can interpret its state evolution computationally, or must the computational organization be realized within the physics of the system itself?</p>
+
+<p>It took several years to determine how I wanted to approach these questions.</p>
+
+<p>Eventually, together with my mathematician friend and collaborator Gianluca Caterina, I developed a category-theoretic framework for physical computation. That work became <a href="https://iopscience.iop.org/article/10.1088/2632-072X/ad6051">“Physical computing: a category theoretic perspective on physical computation and system compositionality.”</a>. (Also see <a href="https://neurovium.science/posts/pblog-Catcomp/">“the companion post to that work”</a>).</p>
+
+<p>The categorical framework gave us a formal language for relating physical processes to abstract computational processes while preserving their structure. It also allowed us to think systematically about composition, multiple realizability, scale, and the relationship between local physical operations and higher-level abstractions.</p>
+
+<p>Once that foundation was in place, I could return to the original wave problem.</p>
+
+<p>The remaining step was to ask what distinguishes a physical system with memory from a physically closed computational system. A wave reservoir may contain a detailed record of its past. A localized probe may read from it and perturb it. But autonomous computation requires something more: the system’s own physical readout must participate in selecting what operation occurs next.</p>
+
+<p>This is where the connection to reservoir computing becomes natural. A reservoir contains a high-dimensional dynamical state shaped by its input history. A readout extracts task-relevant structure from that state. But in most reservoir-computing systems, the readout remains external: it observes the reservoir without becoming part of the physical causal loop that determines the reservoir’s next operation.</p>
+
+<p>The paper develops a closure criterion for when that readout becomes internalized—when memory, readout, control, and subsequent physical evolution form a closed computational organization.</p>
+
+<p>This also connects with my broader work on opening the black box of recurrent systems and understanding how their internal dynamics support computation—for example, in <a href="https://arxiv.org/abs/2606.22765">this recent work on reservoir computing and spatiotemporal chaos</a>. (Also see <a href="https://neurovium.science/posts/pblog-Adaptive-reservoir/">“the companion post to that work”</a>).</p>
+
+<p>I wrote this companion piece because the final paper sits at the intersection of several fields. Physicists may recognize the wave dynamics but not the category theory. AI researchers may recognize reservoirs and recurrent computation but not the physical-computational problem. Neuroscientists may recognize traveling waves and distributed recurrence but not the formal machinery used to connect them.</p>
+
+<p>The purpose here is to make the union more accessible: to explain how a can bobbing in Mission Bay led, through wave memory, cortical dynamics, category theory, and reservoir computing, to a criterion for autonomous physical computation.</p>
+
+<p>Enjoy—and stay tuned. There is more coming on this front.</p>
+
+<p>And I am still accepting applications for a patron saint.</p>
+
+<p>As for the beautiful woman in the hotel room: it probably would not have worked in the long run. The conversation was pleasant, but my attention had already been captured by a floating can and the computational ontology of waves.</p>
 
 <hr />
 
@@ -203,6 +281,14 @@ DOI: ``</p>
 <p>There is an experiment in fluid dynamics that should unsettle anyone who thinks they know where the boundary between “physics” and “computation” lies.</p>
 
 <p>Place a millimetric droplet on a bath of silicone oil vibrated just below the Faraday instability threshold. The droplet bounces indefinitely, never coalescing, and at each bounce it excites a standing surface wave. Because the bath is driven close to threshold, these waves decay slowly — the surface becomes a fading record of everywhere the droplet has recently been. The droplet, in turn, is propelled by the local slope of this self-generated field. It <em>writes</em> to the bath, and the bath <em>guides</em> it. The result — the “walker” of Couder, Fort, and colleagues — is neither a passive particle nor a prescribed wave packet, but a recurrent wave–particle entity guided by its own history.</p>
+
+<div style="text-align: center;">
+  <div style="display: flex; justify-content: center; gap: 20px;">
+  <img src="../assets/img/papers/waveComp_1.png" width="650" />
+  </div>  
+  <p style="margin-top: 8px;">
+  </p>
+</div>
 
 <p>Then comes the striking part. Perrard, Fort, and Couder showed that if you impose a controlled $\pi$-phase shift between the droplet’s bounce and the preexisting wave field, the effective wave-induced kick reverses sign. In confined chaotic regimes, the droplet doesn’t merely reverse velocity — it transiently <em>retraces its own complex trajectory</em>, reading its stored wave memory backward. And as it backtracks, the freshly emitted waves are written in antiphase with the old field, destructively interfering with it. The walker reads its memory backward while <em>physically erasing</em> it.</p>
 
@@ -215,6 +301,14 @@ DOI: ``</p>
 \[\text{physical memory} \;\rightarrow\; \text{transition-preserving physical computation} \;\rightarrow\; \text{closed autonomous physical computation}.\]
 
 <p>The walker occupies the first rung magnificently and gestures at the second. It does not reach the third — and the reason it doesn’t turns out to be a <em>design principle</em>, one that applies far beyond hydrodynamics: to neuromorphic hardware, physical reservoir computers, and arguably to how we should think about computation in nervous systems.</p>
+
+<div style="text-align: center;">
+  <div style="display: flex; justify-content: center; gap: 20px;">
+  <img src="../assets/img/papers/waveComp_2.png" width="650" />
+  </div>  
+  <p style="margin-top: 8px;">
+  </p>
+</div>
 
 <p>Let me build this up from the physics.</p>
 
@@ -390,7 +484,15 @@ Q_\Pi(F) = G \iff \Pi \circ F = G \circ \Pi,\]
 \qquad
 \mathrm{Act}(o, x) = F_o(x).\]
 
-<p>Read this composite carefully, because it is the paper’s contribution in one line. The pairing $\langle C \circ p_Y, \mathrm{id}_X \rangle$ sends $x \mapsto (C(p_Y(x)), x)$: the system’s own state produces both the operation and the operand. The external index $o \in \mathcal{O}$ has been <em>eliminated from the diagram</em> — replaced by a value of the system’s own readout. Coalgebraically, $\Phi$ equips $X$ with the structure of a transition system whose next-step map factors through an internal observation rather than an external driver. Autonomy stops being an interpretive gloss and becomes a structural property of how the process is generated.</p>
+<p>Read this composite carefully. The pairing $\langle C \circ p_Y, \mathrm{id}_X \rangle$ sends $x \mapsto (C(p_Y(x)), x)$: the system’s own state produces both the operation and the operand. The external index $o \in \mathcal{O}$ has been <em>eliminated from the diagram</em> — replaced by a value of the system’s own readout. Coalgebraically, $\Phi$ equips $X$ with the structure of a transition system whose next-step map factors through an internal observation rather than an external driver. Autonomy stops being an interpretive gloss and becomes a structural property of how the process is generated.</p>
+
+<div style="text-align: center;">
+  <div style="display: flex; justify-content: center; gap: 20px;">
+  <img src="../assets/img/papers/waveComp_4.png" width="650" />
+  </div>  
+  <p style="margin-top: 8px;">
+  </p>
+</div>
 
 <hr />
 
@@ -405,6 +507,14 @@ Q_\Pi(F) = G \iff \Pi \circ F = G \circ \Pi,\]
 \[\boxed{\text{wave-memory physical machine with Turing-like primitives}}
 \quad \text{but not} \quad
 \boxed{\text{closed autonomous Turing machine}}\]
+
+<div style="text-align: center;">
+  <div style="display: flex; justify-content: center; gap: 20px;">
+  <img src="../assets/img/papers/waveComp_5.png" width="650" />
+  </div>  
+  <p style="margin-top: 8px;">
+  </p>
+</div>
 
 <p>The point of this classification is that the missing layer is <em>not mysterious</em>. It is a specific, buildable subsystem — and that turns the criterion into a research program.</p>
 
@@ -438,6 +548,13 @@ y_n, &amp; \text{otherwise},
 
 \[\boxed{\;\text{wave memory} \;+\; \text{intrinsic readout basins} \;+\; \text{state-dependent operation selection} \;=\; \text{closed physical computation}\;}\]
 
+<div style="text-align: center;">
+  <div style="display: flex; justify-content: center; gap: 20px;">
+  <img src="../assets/img/papers/waveComp_6.png" width="650" />
+  </div>  
+  <p style="margin-top: 8px;">
+  </p>
+</div>
 <hr />
 
 <h2 id="what-this-means-for-physics">What this means for physics</h2>
@@ -586,7 +703,7 @@ y_n, &amp; \text{otherwise},
 
 <hr />
 
-<p><em>The paper develops each layer in full technical detail, with supplementary sections covering the stroboscopic wave model, erasure energetics, coarse-graining theory, robust symbolization, closure and nondegeneracy conditions, the categorical lift, the walker classification, and constructive extensions. The categorical framework builds on Dehghani &amp; Caterina, J. Phys. Complexity (2024).</em></p>
+<p><em>The paper develops each layer in full technical detail, with supplementary sections covering the stroboscopic wave model, erasure energetics, coarse-graining theory, robust symbolization, closure and nondegeneracy conditions, the categorical lift, the walker classification, and constructive extensions. The categorical framework builds on Dehghani &amp; Caterina, J. Phys. Complexity (2024) <a href="https://iopscience.iop.org/article/10.1088/2632-072X/ad6051">“Physical computing: a category theoretic perspective on physical computation and system compositionality.”</a>.</em></p>
 
   </section>
 
