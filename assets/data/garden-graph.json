@@ -1,8 +1,8 @@
 {
   "meta": {
     "paper_count": 29,
-    "concept_count": 168,
-    "edge_count": 497,
+    "concept_count": 171,
+    "edge_count": 509,
     "tfidf": false
   },
   "nodes": [
@@ -147,7 +147,8 @@
         "reservoir computing",
         "neuromoprhic",
         "dynamical memory",
-        "Turing"
+        "Turing",
+        "Category Theory"
       ]
     },
     {
@@ -211,7 +212,12 @@
         "Compositionality",
         "Category Theory",
         "Physical Computing",
-        "Non-Classical Computing"
+        "Non-Classical Computing",
+        "biological computation",
+        "quantum computing",
+        "recurrence",
+        "multiscale",
+        "dynamics"
       ]
     },
     {
@@ -598,7 +604,7 @@
       "wash": "--wash-slate",
       "blurb": "",
       "curated": false,
-      "weight": 3
+      "weight": 4
     },
     {
       "id": "biological inductive biases",
@@ -652,7 +658,7 @@
       "wash": "--wash-oxblood",
       "blurb": "",
       "curated": false,
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "Causality",
@@ -940,7 +946,7 @@
       "wash": "--wash-oxblood",
       "blurb": "",
       "curated": false,
-      "weight": 12
+      "weight": 13
     },
     {
       "id": "Dynamics",
@@ -949,7 +955,7 @@
       "wash": "--wash-dust",
       "blurb": "",
       "curated": false,
-      "weight": 9
+      "weight": 8
     },
     {
       "id": "EEG",
@@ -1330,6 +1336,15 @@
       "weight": 4
     },
     {
+      "id": "multiscale",
+      "kind": "concept",
+      "name": "multiscale",
+      "wash": "--wash-slate",
+      "blurb": "",
+      "curated": false,
+      "weight": 2
+    },
+    {
       "id": "Multiscale",
       "kind": "concept",
       "name": "Multiscale",
@@ -1381,7 +1396,7 @@
       "wash": "--wash-slate",
       "blurb": "",
       "curated": false,
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "Neural signal reconstruction",
@@ -1573,6 +1588,15 @@
       "weight": 1
     },
     {
+      "id": "quantum computing",
+      "kind": "concept",
+      "name": "quantum computing",
+      "wash": "--wash-rust",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
       "id": "recruitment time",
       "kind": "concept",
       "name": "recruitment time",
@@ -1580,6 +1604,15 @@
       "blurb": "The ~200 ms latency between a focal MEG spindle and its global EEG counterpart — the time the cortex takes to ignite.",
       "curated": true,
       "weight": 1
+    },
+    {
+      "id": "recurrence",
+      "kind": "concept",
+      "name": "recurrence",
+      "wash": "--wash-amber",
+      "blurb": "",
+      "curated": false,
+      "weight": 2
     },
     {
       "id": "recurrent",
@@ -2064,6 +2097,24 @@
       "kind": "cooccur"
     },
     {
+      "source": "Category Theory",
+      "target": "biological computation",
+      "weight": 0.5,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Category Theory",
+      "target": "dynamics",
+      "weight": 0.1538,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Category Theory",
+      "target": "physical computing",
+      "weight": 0.6667,
+      "kind": "cooccur"
+    },
+    {
       "source": "Collective Dynamics",
       "target": "Statistical Physics",
       "weight": 0.5,
@@ -2072,7 +2123,7 @@
     {
       "source": "Collective Dynamics",
       "target": "dynamics",
-      "weight": 0.1667,
+      "weight": 0.1538,
       "kind": "cooccur"
     },
     {
@@ -2115,6 +2166,18 @@
       "source": "Complexity",
       "target": "Noise",
       "weight": 0.3333,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Compositionality",
+      "target": "dynamics",
+      "weight": 0.1538,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Cortex",
+      "target": "Dynamics",
+      "weight": 0.1538,
       "kind": "cooccur"
     },
     {
@@ -2185,68 +2248,68 @@
     },
     {
       "source": "Dynamics",
+      "target": "EEG",
+      "weight": 0.1538,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Dynamics",
       "target": "Emergence",
-      "weight": 0.3636,
+      "weight": 0.2727,
       "kind": "cooccur"
     },
     {
       "source": "Dynamics",
       "target": "Information Theory",
-      "weight": 0.2,
+      "weight": 0.2222,
       "kind": "cooccur"
     },
     {
       "source": "Dynamics",
       "target": "LFP",
-      "weight": 0.3,
+      "weight": 0.3333,
       "kind": "cooccur"
     },
     {
       "source": "Dynamics",
       "target": "Multiscale",
-      "weight": 0.3,
+      "weight": 0.2,
       "kind": "cooccur"
     },
     {
       "source": "Dynamics",
       "target": "Spatiotemporal",
-      "weight": 0.1818,
+      "weight": 0.2,
       "kind": "cooccur"
     },
     {
       "source": "Dynamics",
       "target": "Spike",
-      "weight": 0.1667,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Dynamics",
-      "target": "Statistical Physics",
       "weight": 0.1818,
       "kind": "cooccur"
     },
     {
       "source": "Dynamics",
       "target": "Wave",
-      "weight": 0.2308,
+      "weight": 0.25,
       "kind": "cooccur"
     },
     {
       "source": "Dynamics",
       "target": "dynamics",
-      "weight": 0.6154,
+      "weight": 0.5,
       "kind": "cooccur"
     },
     {
       "source": "Dynamics",
       "target": "recurrent",
-      "weight": 0.1667,
+      "weight": 0.1818,
       "kind": "cooccur"
     },
     {
       "source": "Dynamics",
       "target": "spatiotemporal",
-      "weight": 0.2727,
+      "weight": 0.3,
       "kind": "cooccur"
     },
     {
@@ -2372,7 +2435,7 @@
     {
       "source": "Emergence",
       "target": "dynamics",
-      "weight": 0.2,
+      "weight": 0.1875,
       "kind": "cooccur"
     },
     {
@@ -2409,12 +2472,6 @@
       "source": "Excitation-Inhibition (E/I) Balance",
       "target": "Wave",
       "weight": 0.25,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Excitation-Inhibition (E/I) Balance",
-      "target": "dynamics",
-      "weight": 0.1538,
       "kind": "cooccur"
     },
     {
@@ -2462,7 +2519,7 @@
     {
       "source": "LFP",
       "target": "dynamics",
-      "weight": 0.2308,
+      "weight": 0.2143,
       "kind": "cooccur"
     },
     {
@@ -2564,13 +2621,13 @@
     {
       "source": "Multielectrode Arrays (MEA)",
       "target": "dynamics",
-      "weight": 0.2308,
+      "weight": 0.2143,
       "kind": "cooccur"
     },
     {
       "source": "Multiscale",
       "target": "dynamics",
-      "weight": 0.2308,
+      "weight": 0.2143,
       "kind": "cooccur"
     },
     {
@@ -2612,7 +2669,7 @@
     {
       "source": "Network",
       "target": "dynamics",
-      "weight": 0.1765,
+      "weight": 0.1667,
       "kind": "cooccur"
     },
     {
@@ -2690,7 +2747,7 @@
     {
       "source": "RNNs",
       "target": "biological computation",
-      "weight": 0.6667,
+      "weight": 0.5,
       "kind": "cooccur"
     },
     {
@@ -2780,7 +2837,7 @@
     {
       "source": "Sleep-Wake Dynamics",
       "target": "dynamics",
-      "weight": 0.2308,
+      "weight": 0.2143,
       "kind": "cooccur"
     },
     {
@@ -2798,7 +2855,7 @@
     {
       "source": "Slow-Wave Sleep (SWS)",
       "target": "dynamics",
-      "weight": 0.2308,
+      "weight": 0.2143,
       "kind": "cooccur"
     },
     {
@@ -2810,7 +2867,7 @@
     {
       "source": "Spatiotemporal",
       "target": "dynamics",
-      "weight": 0.2308,
+      "weight": 0.2143,
       "kind": "cooccur"
     },
     {
@@ -2828,7 +2885,7 @@
     {
       "source": "Spike",
       "target": "dynamics",
-      "weight": 0.3077,
+      "weight": 0.2857,
       "kind": "cooccur"
     },
     {
@@ -2882,7 +2939,7 @@
     {
       "source": "Statistical Physics",
       "target": "dynamics",
-      "weight": 0.2308,
+      "weight": 0.2143,
       "kind": "cooccur"
     },
     {
@@ -2924,7 +2981,7 @@
     {
       "source": "Wave",
       "target": "dynamics",
-      "weight": 0.2667,
+      "weight": 0.25,
       "kind": "cooccur"
     },
     {
@@ -2960,61 +3017,73 @@
     {
       "source": "biological computation",
       "target": "dynamics",
-      "weight": 0.1538,
+      "weight": 0.2143,
       "kind": "cooccur"
     },
     {
       "source": "biological computation",
       "target": "modularity",
-      "weight": 0.6667,
+      "weight": 0.5,
       "kind": "cooccur"
     },
     {
       "source": "biological computation",
       "target": "physical computing",
+      "weight": 0.75,
+      "kind": "cooccur"
+    },
+    {
+      "source": "biological computation",
+      "target": "recurrence",
       "weight": 0.5,
       "kind": "cooccur"
     },
     {
       "source": "biological computation",
       "target": "recurrent",
-      "weight": 0.6,
+      "weight": 0.5,
       "kind": "cooccur"
     },
     {
       "source": "biological computation",
       "target": "spatiotemporal",
-      "weight": 0.3333,
+      "weight": 0.2857,
       "kind": "cooccur"
     },
     {
       "source": "biological computation",
       "target": "wiring economy",
-      "weight": 0.6667,
+      "weight": 0.5,
       "kind": "cooccur"
     },
     {
       "source": "dynamics",
-      "target": "optimization",
-      "weight": 0.1667,
-      "kind": "cooccur"
-    },
-    {
-      "source": "dynamics",
-      "target": "physical computing",
+      "target": "multiscale",
       "weight": 0.1538,
       "kind": "cooccur"
     },
     {
       "source": "dynamics",
+      "target": "optimization",
+      "weight": 0.1538,
+      "kind": "cooccur"
+    },
+    {
+      "source": "dynamics",
+      "target": "physical computing",
+      "weight": 0.2308,
+      "kind": "cooccur"
+    },
+    {
+      "source": "dynamics",
       "target": "recurrent",
-      "weight": 0.3077,
+      "weight": 0.2857,
       "kind": "cooccur"
     },
     {
       "source": "dynamics",
       "target": "spatiotemporal",
-      "weight": 0.3077,
+      "weight": 0.2857,
       "kind": "cooccur"
     },
     {
@@ -3505,6 +3574,12 @@
     },
     {
       "source": "Wave-compute",
+      "target": "Category Theory",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Wave-compute",
       "target": "Turing",
       "weight": 1.0,
       "kind": "explicit"
@@ -3716,6 +3791,36 @@
     {
       "source": "catcomp",
       "target": "Physical Computing",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "catcomp",
+      "target": "biological computation",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "catcomp",
+      "target": "dynamics",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "catcomp",
+      "target": "multiscale",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "catcomp",
+      "target": "quantum computing",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "catcomp",
+      "target": "recurrence",
       "weight": 1.0,
       "kind": "explicit"
     },
@@ -4603,7 +4708,7 @@
     },
     {
       "source": "Cortical-blueprint-RNN",
-      "target": "Neural Networks",
+      "target": "recurrence",
       "weight": 0.6,
       "kind": "mined"
     },
@@ -4981,12 +5086,6 @@
     },
     {
       "source": "symmetry-edge",
-      "target": "Dynamics",
-      "weight": 0.6,
-      "kind": "mined"
-    },
-    {
-      "source": "symmetry-edge",
       "target": "Statistical Physics",
       "weight": 0.6,
       "kind": "mined"
@@ -4994,6 +5093,12 @@
     {
       "source": "symmetry-edge",
       "target": "dynamics",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "symmetry-edge",
+      "target": "multiscale",
       "weight": 0.6,
       "kind": "mined"
     },
