@@ -35,6 +35,7 @@
   --on-ink:           #faf9f5;
   --on-ink-soft:      #c5beb0;
   --link:             #2a5db0;  /* muted slate-blue — hyperlinks in article bodies */
+  --pdf-red:          #d63a2f;  /* PDF document badge in the garden graph */
 
   --night:            #14130f;
   --night-soft:       #1d1b16;
@@ -1033,17 +1034,33 @@ a.tag:hover { color: var(--fork); border-color: var(--fork-soft); }
   paint-order: stroke;
   stroke: var(--paper); stroke-width: 3px; stroke-linejoin: round;
 }
-.gnode__paper-rect {
-  transition: fill 0.18s ease, stroke 0.18s ease, transform 0.18s ease;
+/* Paper node — PDF document icon */
+.gnode__pdf-page {
+  fill: #ffffff;
+  stroke: var(--ink-soft);
+  stroke-width: 1;
+  transition: stroke 0.18s ease;
 }
-.gnode__paper-halo { opacity: 0.7; transition: opacity 0.22s ease; }
+.gnode__pdf-fold {
+  fill: var(--paper-deep);
+  stroke: var(--ink-soft);
+  stroke-width: 0.5;
+}
+.gnode__pdf-band { fill: var(--pdf-red); transition: fill 0.18s ease; }
+.gnode__pdf-text {
+  font-family: var(--sans); font-weight: 700;
+  font-size: 6px; letter-spacing: 0.04em;
+  fill: #ffffff; dominant-baseline: central; pointer-events: none;
+}
+.gnode__paper-halo { opacity: 0.65; transition: opacity 0.22s ease; }
 .gnode--paper:hover .gnode__paper-halo,
 .gnode--paper.is-focus .gnode__paper-halo { opacity: 1; }
 .gnode--paper:hover .glabel--paper,
 .gnode--paper:focus-visible .glabel--paper,
 .gnode--paper.is-focus .glabel--paper { fill: var(--fork); }
-.gnode--paper:hover .gnode__paper-rect,
-.gnode--paper.is-focus .gnode__paper-rect { stroke: var(--fork); }
+.gnode--paper:hover .gnode__pdf-page,
+.gnode--paper:focus-visible .gnode__pdf-page,
+.gnode--paper.is-focus .gnode__pdf-page { stroke: var(--fork); }
 
 /* Garden legend */
 .garden__legend {
@@ -1064,10 +1081,8 @@ a.tag:hover { color: var(--fork); border-color: var(--fork-soft); }
 }
 .garden__legend-swatch--paper {
   width: 14px; height: 18px; border-radius: 2px;
-  background: var(--card-bg);
-  border: 1px solid var(--ink);
-  box-shadow: 0 0 0 4px var(--wash-plum);
-  opacity: 0.85;
+  background: linear-gradient(to top, var(--pdf-red) 0 30%, #ffffff 30% 100%);
+  border: 1px solid var(--ink-soft);
 }
 
 @media (max-width: 760px) {
@@ -1075,6 +1090,7 @@ a.tag:hover { color: var(--fork); border-color: var(--fork-soft); }
   .glabel { font-size: 12px; }
   .glabel--paper { font-size: 11px; }
   .gkicker--paper { font-size: 8.5px; }
+  .gnode__pdf-text { font-size: 5px; }
   .garden__graph-caption { top: 8px; right: 8px; font-size: 9px; }
   .garden__legend { font-size: 9px; gap: 14px; }
 }

@@ -375,9 +375,10 @@
       if (isMobile) r *= 0.85;
       return Math.max(12, Math.min(38, r));
     }
-    // Paper slab dimensions — portrait, page-like.
-    var PAPER_W = isMobile ? 11 : 14;
-    var PAPER_H = isMobile ? 14 : 18;
+    // Paper icon dimensions — portrait PDF document, page-like.
+    var PAPER_W = isMobile ? 15 : 19;
+    var PAPER_H = isMobile ? 18 : 23;
+    var PAPER_FOLD = isMobile ? 4.5 : 5.5;
     var PAPER_HALO_PAD = 7;
 
     function collideRadius(n) {
@@ -435,40 +436,54 @@
       .attr('dy', function (n) { return conceptRadius(n) + 18; })
       .text(function (n) { return n.name; });
 
-    // -- Paper nodes (rounded rects, always-labelled) --------------------------
+    // -- Paper nodes (PDF document icon, always-labelled) ----------------------
     var paperSel = nodeSel.filter(function (n) { return n.kind === 'paper'; });
-    // Wash halo behind the rect
+    var PW = PAPER_W, PH = PAPER_H, PF = PAPER_FOLD;
+    var x0 = -PW / 2, y0 = -PH / 2, x1 = PW / 2, y1 = PH / 2;
+    // Wash halo behind the doc (keeps the concept-colour association)
     paperSel.append('rect')
       .attr('class', 'gnode__paper-halo')
-      .attr('x', -(PAPER_W / 2 + PAPER_HALO_PAD))
-      .attr('y', -(PAPER_H / 2 + PAPER_HALO_PAD))
-      .attr('width', PAPER_W + PAPER_HALO_PAD * 2)
-      .attr('height', PAPER_H + PAPER_HALO_PAD * 2)
+      .attr('x', -(PW / 2 + PAPER_HALO_PAD))
+      .attr('y', -(PH / 2 + PAPER_HALO_PAD))
+      .attr('width', PW + PAPER_HALO_PAD * 2)
+      .attr('height', PH + PAPER_HALO_PAD * 2)
       .attr('rx', 6).attr('ry', 6)
       .attr('fill', function (n) { return washUrl(n.wash); })
       .attr('pointer-events', 'none');
-    // Slab
-    paperSel.append('rect')
-      .attr('class', 'gnode__paper-rect')
-      .attr('x', -PAPER_W / 2)
-      .attr('y', -PAPER_H / 2)
-      .attr('width', PAPER_W)
-      .attr('height', PAPER_H)
-      .attr('rx', 2).attr('ry', 2)
-      .attr('fill', 'var(--card-bg)')
-      .attr('stroke', 'var(--ink)')
-      .attr('stroke-width', 1);
-    // Tiny corner fold (decorative — hints "page")
+    // Page body with a folded top-right corner
     paperSel.append('path')
-      .attr('class', 'gnode__paper-fold')
-      .attr('d', function () {
-        var x = PAPER_W / 2 - 4;
-        var y = -PAPER_H / 2;
-        return 'M ' + x + ' ' + y + ' l 4 0 l 0 4 z';
-      })
-      .attr('fill', 'var(--ink)')
-      .attr('opacity', 0.85)
+      .attr('class', 'gnode__pdf-page')
+      .attr('d',
+        'M ' + x0 + ' ' + y0 +
+        ' L ' + (x1 - PF) + ' ' + y0 +
+        ' L ' + x1 + ' ' + (y0 + PF) +
+        ' L ' + x1 + ' ' + y1 +
+        ' L ' + x0 + ' ' + y1 + ' Z');
+    // The turned-down corner triangle
+    paperSel.append('path')
+      .attr('class', 'gnode__pdf-fold')
+      .attr('d',
+        'M ' + (x1 - PF) + ' ' + y0 +
+        ' L ' + (x1 - PF) + ' ' + (y0 + PF) +
+        ' L ' + x1 + ' ' + (y0 + PF) + ' Z')
       .attr('pointer-events', 'none');
+    // Red "PDF" label band near the bottom of the page
+    var bandH = isMobile ? 6.5 : 8;
+    var bandInset = 2;
+    var bandY = y1 - bandH - 2;
+    paperSel.append('rect')
+      .attr('class', 'gnode__pdf-band')
+      .attr('x', x0 + bandInset)
+      .attr('y', bandY)
+      .attr('width', PW - bandInset * 2)
+      .attr('height', bandH)
+      .attr('rx', 1).attr('ry', 1)
+      .attr('pointer-events', 'none');
+    paperSel.append('text')
+      .attr('class', 'gnode__pdf-text')
+      .attr('text-anchor', 'middle')
+      .attr('y', bandY + bandH / 2)
+      .text('PDF');
     // Kicker: Room · year
     paperSel.append('text')
       .attr('class', 'gkicker gkicker--paper')
