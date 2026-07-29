@@ -34,6 +34,7 @@
   --hairline-strong:  #d4cfc2;
   --on-ink:           #faf9f5;
   --on-ink-soft:      #c5beb0;
+  --link:             #2a5db0;  /* muted slate-blue — hyperlinks in article bodies */
 
   --night:            #14130f;
   --night-soft:       #1d1b16;
@@ -1154,7 +1155,7 @@ a.tag:hover { color: var(--fork); border-color: var(--fork-soft); }
 .prose h1 { font-size: var(--t-display-lg); margin: 1.6em 0 0.5em; }
 .prose h2 { font-family: var(--serif); font-weight: 300; font-size: 26px; letter-spacing: -0.3px; color: var(--ink); margin: 1.8em 0 0.6em; padding-bottom: 8px; border-bottom: 1px solid var(--hairline); }
 .prose h3 { font-family: var(--serif); font-weight: 400; font-size: 20px; color: var(--ink); margin: 1.6em 0 0.4em; }
-.prose a { color: var(--ink); border-bottom: 1px solid var(--hairline-strong); }
+.prose a { color: var(--link); border-bottom: 1px solid var(--hairline-strong); }
 .prose a:hover { border-bottom-color: var(--fork); color: var(--fork); }
 .prose blockquote { margin: 1.4em 0; padding: 0 0 0 20px; border-left: 2px solid var(--hairline-strong); font-family: var(--serif); font-style: italic; font-weight: 300; font-size: 20px; color: var(--ink-soft); }
 .prose code { font-family: var(--mono); font-size: 13px; background: var(--paper-soft); border: 1px solid var(--hairline); padding: 1px 5px; border-radius: 4px; }
