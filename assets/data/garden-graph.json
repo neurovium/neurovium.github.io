@@ -1,9 +1,9 @@
 {
   "meta": {
-    "paper_count": 28,
-    "concept_count": 161,
-    "edge_count": 449,
-    "tfidf": true
+    "paper_count": 29,
+    "concept_count": 168,
+    "edge_count": 497,
+    "tfidf": false
   },
   "nodes": [
     {
@@ -126,6 +126,28 @@
         "EEG",
         "intracranial EEG",
         "iEEG"
+      ]
+    },
+    {
+      "id": "Wave-compute",
+      "kind": "paper",
+      "title": "Autonomous Physical Computation: A Categorical Closure Criterion for Physical and Neuromorphic Reservoirs.",
+      "year": 2026,
+      "url": "/papers/Wave-compute/",
+      "wash": "--wash-plum",
+      "tags": [
+        "physical computing",
+        "mechanistic interpretability",
+        "recurrent",
+        "dynamics",
+        "spatiotemporal",
+        "biological computation",
+        "state-space dynamics",
+        "computational closure",
+        "reservoir computing",
+        "neuromoprhic",
+        "dynamical memory",
+        "Turing"
       ]
     },
     {
@@ -513,7 +535,7 @@
       "wash": "--wash-rust",
       "blurb": "",
       "curated": false,
-      "weight": 3
+      "weight": 4
     },
     {
       "id": "Adaptive Systems",
@@ -531,7 +553,7 @@
       "wash": "--wash-oxblood",
       "blurb": "",
       "curated": false,
-      "weight": 3
+      "weight": 4
     },
     {
       "id": "Automated Scientific Discovery",
@@ -549,7 +571,7 @@
       "wash": "--wash-plum",
       "blurb": "",
       "curated": false,
-      "weight": 1
+      "weight": 3
     },
     {
       "id": "Bio-inspired AI",
@@ -558,7 +580,7 @@
       "wash": "--wash-slate",
       "blurb": "",
       "curated": false,
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "bio-inspired AI",
@@ -567,7 +589,7 @@
       "wash": "--wash-slate",
       "blurb": "",
       "curated": false,
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "biological computation",
@@ -639,7 +661,7 @@
       "wash": "--wash-slate",
       "blurb": "",
       "curated": false,
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "Cell Type",
@@ -684,7 +706,7 @@
       "wash": "--wash-slate",
       "blurb": "Any operation that throws away short-scale degrees of freedom while preserving long-scale ones. Each MLP layer is, we claim, an instance.",
       "curated": true,
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "Coarse-Graining",
@@ -741,6 +763,15 @@
       "weight": 2
     },
     {
+      "id": "computational closure",
+      "kind": "concept",
+      "name": "computational closure",
+      "wash": "--wash-teal",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
       "id": "connectome-constrained modeling",
       "kind": "concept",
       "name": "connectome-constrained modeling",
@@ -756,7 +787,7 @@
       "wash": "--wash-dust",
       "blurb": "",
       "curated": false,
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "Cortex",
@@ -765,7 +796,7 @@
       "wash": "--wash-slate",
       "blurb": "",
       "curated": false,
-      "weight": 8
+      "weight": 7
     },
     {
       "id": "cortical down-state",
@@ -894,13 +925,22 @@
       "weight": 1
     },
     {
+      "id": "dynamical memory",
+      "kind": "concept",
+      "name": "dynamical memory",
+      "wash": "--wash-teal",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
       "id": "dynamics",
       "kind": "concept",
       "name": "dynamics",
       "wash": "--wash-oxblood",
       "blurb": "",
       "curated": false,
-      "weight": 1
+      "weight": 12
     },
     {
       "id": "Dynamics",
@@ -909,7 +949,7 @@
       "wash": "--wash-dust",
       "blurb": "",
       "curated": false,
-      "weight": 7
+      "weight": 9
     },
     {
       "id": "EEG",
@@ -918,7 +958,7 @@
       "wash": "--wash-amber",
       "blurb": "",
       "curated": false,
-      "weight": 8
+      "weight": 7
     },
     {
       "id": "EEG/MEG asynchrony",
@@ -963,7 +1003,7 @@
       "wash": "--wash-oxblood",
       "blurb": "",
       "curated": false,
-      "weight": 4
+      "weight": 6
     },
     {
       "id": "Emergent Computation",
@@ -1008,7 +1048,7 @@
       "wash": "--wash-teal",
       "blurb": "",
       "curated": false,
-      "weight": 5
+      "weight": 1
     },
     {
       "id": "Excitation-Inhibition (E/I) Balance",
@@ -1143,7 +1183,7 @@
       "wash": "--wash-plum",
       "blurb": "",
       "curated": false,
-      "weight": 6
+      "weight": 4
     },
     {
       "id": "interpretability",
@@ -1218,6 +1258,15 @@
       "weight": 1
     },
     {
+      "id": "mechanistic interpretability",
+      "kind": "concept",
+      "name": "mechanistic interpretability",
+      "wash": "--wash-rust",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
       "id": "MEG",
       "kind": "concept",
       "name": "MEG",
@@ -1251,7 +1300,7 @@
       "wash": "--wash-teal",
       "blurb": "",
       "curated": false,
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "Morphoelectric",
@@ -1314,7 +1363,7 @@
       "wash": "--wash-slate",
       "blurb": "",
       "curated": false,
-      "weight": 6
+      "weight": 8
     },
     {
       "id": "neural computation",
@@ -1371,6 +1420,15 @@
       "weight": 1
     },
     {
+      "id": "neuromoprhic",
+      "kind": "concept",
+      "name": "neuromoprhic",
+      "wash": "--wash-rust",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
       "id": "Noise",
       "kind": "concept",
       "name": "Noise",
@@ -1413,7 +1471,7 @@
       "wash": "--wash-amber",
       "blurb": "",
       "curated": false,
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "Optimization",
@@ -1422,7 +1480,7 @@
       "wash": "--wash-oxblood",
       "blurb": "",
       "curated": false,
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "Oscillation",
@@ -1449,7 +1507,7 @@
       "wash": "--wash-teal",
       "blurb": "",
       "curated": false,
-      "weight": 1
+      "weight": 3
     },
     {
       "id": "Physical Computing",
@@ -1530,7 +1588,7 @@
       "wash": "--wash-amber",
       "blurb": "",
       "curated": false,
-      "weight": 3
+      "weight": 5
     },
     {
       "id": "recurrent learning",
@@ -1566,7 +1624,16 @@
       "wash": "--wash-rust",
       "blurb": "",
       "curated": false,
-      "weight": 2
+      "weight": 1
+    },
+    {
+      "id": "reservoir computing",
+      "kind": "concept",
+      "name": "reservoir computing",
+      "wash": "--wash-slate",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
     },
     {
       "id": "Resistive-Medium",
@@ -1629,7 +1696,7 @@
       "wash": "--wash-dust",
       "blurb": "",
       "curated": false,
-      "weight": 3
+      "weight": 2
     },
     {
       "id": "Seizure",
@@ -1674,7 +1741,7 @@
       "wash": "--wash-oxblood",
       "blurb": "",
       "curated": false,
-      "weight": 11
+      "weight": 6
     },
     {
       "id": "Sleep-Wake Dynamics",
@@ -1692,7 +1759,7 @@
       "wash": "--wash-plum",
       "blurb": "",
       "curated": false,
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "Slow-Wave Sleep (SWS)",
@@ -1764,7 +1831,7 @@
       "wash": "--wash-dust",
       "blurb": "",
       "curated": false,
-      "weight": 1
+      "weight": 5
     },
     {
       "id": "Spatiotemporal",
@@ -1773,7 +1840,7 @@
       "wash": "--wash-plum",
       "blurb": "",
       "curated": false,
-      "weight": 3
+      "weight": 4
     },
     {
       "id": "Spike",
@@ -1794,6 +1861,15 @@
       "weight": 5
     },
     {
+      "id": "state-space dynamics",
+      "kind": "concept",
+      "name": "state-space dynamics",
+      "wash": "--wash-teal",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
       "id": "Statistical Parametric Mapping",
       "kind": "concept",
       "name": "Statistical Parametric Mapping",
@@ -1809,7 +1885,7 @@
       "wash": "--wash-oxblood",
       "blurb": "",
       "curated": false,
-      "weight": 3
+      "weight": 4
     },
     {
       "id": "surrogate data",
@@ -1854,7 +1930,7 @@
       "wash": "--wash-amber",
       "blurb": "",
       "curated": false,
-      "weight": 5
+      "weight": 3
     },
     {
       "id": "Systems Biology",
@@ -1911,6 +1987,15 @@
       "weight": 1
     },
     {
+      "id": "Turing",
+      "kind": "concept",
+      "name": "Turing",
+      "wash": "--wash-plum",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
       "id": "Unconventional Computing",
       "kind": "concept",
       "name": "Unconventional Computing",
@@ -1935,7 +2020,7 @@
       "wash": "--wash-slate",
       "blurb": "",
       "curated": false,
-      "weight": 2
+      "weight": 7
     },
     {
       "id": "wiring economy",
@@ -1950,44 +2035,80 @@
   "links": [
     {
       "source": "AI",
-      "target": "Complex Systems",
+      "target": "Bio-inspired AI",
       "weight": 0.5,
       "kind": "cooccur"
     },
     {
       "source": "AI",
-      "target": "biological computation",
+      "target": "Complex Systems",
+      "weight": 0.4,
+      "kind": "cooccur"
+    },
+    {
+      "source": "AI",
+      "target": "adaptive",
+      "weight": 0.3333,
+      "kind": "cooccur"
+    },
+    {
+      "source": "AI",
+      "target": "bio-inspired",
+      "weight": 0.75,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Bio-inspired AI",
+      "target": "bio-inspired",
+      "weight": 0.6667,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Collective Dynamics",
+      "target": "Statistical Physics",
       "weight": 0.5,
       "kind": "cooccur"
     },
     {
       "source": "Collective Dynamics",
-      "target": "Excitation",
-      "weight": 0.4,
+      "target": "dynamics",
+      "weight": 0.1667,
       "kind": "cooccur"
     },
     {
-      "source": "Collective Dynamics",
-      "target": "Inhibition",
-      "weight": 0.3333,
+      "source": "Complex Systems",
+      "target": "Network",
+      "weight": 0.2222,
       "kind": "cooccur"
     },
     {
       "source": "Complex Systems",
       "target": "Spatiotemporal",
-      "weight": 0.5,
+      "weight": 0.4,
       "kind": "cooccur"
     },
     {
       "source": "Complex Systems",
       "target": "adaptive",
+      "weight": 0.75,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Complex Systems",
+      "target": "bio-inspired",
       "weight": 0.5,
       "kind": "cooccur"
     },
     {
       "source": "Complex Systems",
-      "target": "biological computation",
-      "weight": 0.5,
+      "target": "spatiotemporal",
+      "weight": 0.3333,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Complexity",
+      "target": "Emergence",
+      "weight": 0.2857,
       "kind": "cooccur"
     },
     {
@@ -1997,363 +2118,273 @@
       "kind": "cooccur"
     },
     {
-      "source": "Control",
-      "target": "Dynamics",
-      "weight": 0.2857,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Control",
-      "target": "Network",
-      "weight": 0.3333,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Cortex",
-      "target": "Dynamics",
-      "weight": 0.1538,
-      "kind": "cooccur"
-    },
-    {
       "source": "Cortex",
       "target": "EEG",
-      "weight": 0.2308,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Cortex",
-      "target": "Inhibition",
       "weight": 0.1667,
       "kind": "cooccur"
     },
     {
       "source": "Cortex",
-      "target": "LFP",
-      "weight": 0.2,
+      "target": "Inhibition",
+      "weight": 0.375,
       "kind": "cooccur"
     },
     {
       "source": "Cortex",
       "target": "MEG",
-      "weight": 0.25,
+      "weight": 0.1667,
       "kind": "cooccur"
     },
     {
       "source": "Cortex",
-      "target": "Modulation",
-      "weight": 0.25,
+      "target": "Network",
+      "weight": 0.1538,
       "kind": "cooccur"
     },
     {
       "source": "Cortex",
       "target": "Oscillation",
-      "weight": 0.3,
+      "weight": 0.3333,
       "kind": "cooccur"
     },
     {
       "source": "Cortex",
       "target": "Sleep",
-      "weight": 0.2667,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Cortex",
-      "target": "Spike",
       "weight": 0.1818,
       "kind": "cooccur"
     },
     {
       "source": "Cortex",
+      "target": "Spike",
+      "weight": 0.2,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Cortex",
       "target": "Spindle",
-      "weight": 0.3,
+      "weight": 0.2,
       "kind": "cooccur"
     },
     {
       "source": "Cortex",
       "target": "Synchrony",
-      "weight": 0.3,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Cortex",
-      "target": "Thalamocortical",
-      "weight": 0.2222,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Cortex",
-      "target": "Thalamus",
-      "weight": 0.2222,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Cortex",
-      "target": "bio-inspired AI",
       "weight": 0.25,
       "kind": "cooccur"
     },
     {
       "source": "Cortex",
-      "target": "focal asynchronous oscillation",
-      "weight": 0.2222,
+      "target": "Thalamus",
+      "weight": 0.4286,
       "kind": "cooccur"
     },
     {
       "source": "Cortex",
       "target": "recurrent",
-      "weight": 0.2222,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Dynamics",
-      "target": "EEG",
-      "weight": 0.1538,
+      "weight": 0.2,
       "kind": "cooccur"
     },
     {
       "source": "Dynamics",
       "target": "Emergence",
-      "weight": 0.5714,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Dynamics",
-      "target": "Excitation",
-      "weight": 0.2,
+      "weight": 0.3636,
       "kind": "cooccur"
     },
     {
       "source": "Dynamics",
       "target": "Information Theory",
-      "weight": 0.25,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Dynamics",
-      "target": "Inhibition",
-      "weight": 0.1818,
+      "weight": 0.2,
       "kind": "cooccur"
     },
     {
       "source": "Dynamics",
       "target": "LFP",
-      "weight": 0.2222,
+      "weight": 0.3,
       "kind": "cooccur"
     },
     {
       "source": "Dynamics",
       "target": "Multiscale",
-      "weight": 0.375,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Dynamics",
-      "target": "Network",
-      "weight": 0.1818,
+      "weight": 0.3,
       "kind": "cooccur"
     },
     {
       "source": "Dynamics",
       "target": "Spatiotemporal",
-      "weight": 0.25,
+      "weight": 0.1818,
       "kind": "cooccur"
     },
     {
-      "source": "EEG",
-      "target": "LFP",
-      "weight": 0.2,
+      "source": "Dynamics",
+      "target": "Spike",
+      "weight": 0.1667,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Dynamics",
+      "target": "Statistical Physics",
+      "weight": 0.1818,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Dynamics",
+      "target": "Wave",
+      "weight": 0.2308,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Dynamics",
+      "target": "dynamics",
+      "weight": 0.6154,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Dynamics",
+      "target": "recurrent",
+      "weight": 0.1667,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Dynamics",
+      "target": "spatiotemporal",
+      "weight": 0.2727,
       "kind": "cooccur"
     },
     {
       "source": "EEG",
       "target": "MEG",
-      "weight": 0.6667,
+      "weight": 0.75,
       "kind": "cooccur"
     },
     {
       "source": "EEG",
       "target": "Network",
-      "weight": 0.1667,
+      "weight": 0.1538,
       "kind": "cooccur"
     },
     {
       "source": "EEG",
       "target": "Noise",
-      "weight": 0.1818,
+      "weight": 0.2,
       "kind": "cooccur"
     },
     {
       "source": "EEG",
       "target": "Oscillation",
-      "weight": 0.4444,
+      "weight": 0.5,
       "kind": "cooccur"
     },
     {
       "source": "EEG",
       "target": "Scaling",
-      "weight": 0.2222,
+      "weight": 0.2857,
       "kind": "cooccur"
     },
     {
       "source": "EEG",
       "target": "Sleep",
-      "weight": 0.3571,
-      "kind": "cooccur"
-    },
-    {
-      "source": "EEG",
-      "target": "Source Localization",
-      "weight": 0.25,
-      "kind": "cooccur"
-    },
-    {
-      "source": "EEG",
-      "target": "Spindle",
-      "weight": 0.625,
-      "kind": "cooccur"
-    },
-    {
-      "source": "EEG",
-      "target": "Synchrony",
       "weight": 0.4444,
       "kind": "cooccur"
     },
     {
       "source": "EEG",
+      "target": "Source Localization",
+      "weight": 0.2857,
+      "kind": "cooccur"
+    },
+    {
+      "source": "EEG",
+      "target": "Spindle",
+      "weight": 0.5,
+      "kind": "cooccur"
+    },
+    {
+      "source": "EEG",
+      "target": "Synchrony",
+      "weight": 0.4286,
+      "kind": "cooccur"
+    },
+    {
+      "source": "EEG",
       "target": "Thalamocortical",
-      "weight": 0.375,
+      "weight": 0.4286,
       "kind": "cooccur"
     },
     {
       "source": "EEG",
       "target": "Thalamus",
-      "weight": 0.2222,
-      "kind": "cooccur"
-    },
-    {
-      "source": "EEG",
-      "target": "dendritic current",
       "weight": 0.25,
       "kind": "cooccur"
     },
     {
       "source": "EEG",
       "target": "focal asynchronous oscillation",
-      "weight": 0.375,
+      "weight": 0.4286,
       "kind": "cooccur"
     },
     {
       "source": "EEG",
       "target": "intracranial EEG",
-      "weight": 0.25,
+      "weight": 0.2857,
       "kind": "cooccur"
     },
     {
       "source": "EEG",
       "target": "thalamocortical core",
-      "weight": 0.25,
+      "weight": 0.2857,
       "kind": "cooccur"
     },
     {
       "source": "EEG",
       "target": "thalamocortical matrix",
-      "weight": 0.25,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Emergence",
-      "target": "Excitation",
       "weight": 0.2857,
       "kind": "cooccur"
     },
     {
       "source": "Emergence",
       "target": "Information Theory",
-      "weight": 0.4,
+      "weight": 0.2857,
       "kind": "cooccur"
     },
     {
       "source": "Emergence",
       "target": "Multiscale",
-      "weight": 0.6,
+      "weight": 0.4286,
       "kind": "cooccur"
     },
     {
       "source": "Emergence",
-      "target": "Spatiotemporal",
-      "weight": 0.4,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Excitation",
-      "target": "Excitation-Inhibition (E/I) Balance",
-      "weight": 0.3333,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Excitation",
-      "target": "Inhibition",
-      "weight": 0.375,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Excitation",
-      "target": "Multielectrode Arrays (MEA)",
-      "weight": 0.2857,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Excitation",
-      "target": "Multiscale",
-      "weight": 0.2857,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Excitation",
-      "target": "Network",
+      "target": "Noise",
       "weight": 0.2222,
       "kind": "cooccur"
     },
     {
-      "source": "Excitation",
-      "target": "Sleep",
-      "weight": 0.2308,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Excitation",
-      "target": "Sleep-Wake Dynamics",
-      "weight": 0.2857,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Excitation",
-      "target": "Slow-Wave Sleep (SWS)",
-      "weight": 0.2857,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Excitation",
-      "target": "Spike",
+      "source": "Emergence",
+      "target": "Spatiotemporal",
       "weight": 0.25,
       "kind": "cooccur"
     },
     {
-      "source": "Excitation-Inhibition (E/I) Balance",
-      "target": "Inhibition",
-      "weight": 0.2857,
+      "source": "Emergence",
+      "target": "Wave",
+      "weight": 0.1818,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Emergence",
+      "target": "dynamics",
+      "weight": 0.2,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Emergence",
+      "target": "spatiotemporal",
+      "weight": 0.2222,
       "kind": "cooccur"
     },
     {
       "source": "Excitation-Inhibition (E/I) Balance",
       "target": "Multielectrode Arrays (MEA)",
       "weight": 0.75,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Excitation-Inhibition (E/I) Balance",
-      "target": "Sleep",
-      "weight": 0.2727,
       "kind": "cooccur"
     },
     {
@@ -2375,63 +2406,63 @@
       "kind": "cooccur"
     },
     {
-      "source": "Information Theory",
-      "target": "Renormalization Group",
-      "weight": 0.6667,
+      "source": "Excitation-Inhibition (E/I) Balance",
+      "target": "Wave",
+      "weight": 0.25,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Excitation-Inhibition (E/I) Balance",
+      "target": "dynamics",
+      "weight": 0.1538,
       "kind": "cooccur"
     },
     {
       "source": "Information Theory",
       "target": "Spatiotemporal",
-      "weight": 0.5,
+      "weight": 0.4,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Information Theory",
+      "target": "spatiotemporal",
+      "weight": 0.3333,
       "kind": "cooccur"
     },
     {
       "source": "Inhibition",
-      "target": "Multielectrode Arrays (MEA)",
-      "weight": 0.25,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Inhibition",
-      "target": "Sleep",
-      "weight": 0.2143,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Inhibition",
-      "target": "Sleep-Wake Dynamics",
-      "weight": 0.25,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Inhibition",
-      "target": "Slow-Wave Sleep (SWS)",
-      "weight": 0.25,
+      "target": "Network",
+      "weight": 0.2,
       "kind": "cooccur"
     },
     {
       "source": "Inhibition",
       "target": "Spike",
-      "weight": 0.375,
+      "weight": 0.2857,
       "kind": "cooccur"
     },
     {
       "source": "LFP",
       "target": "Network",
-      "weight": 0.25,
-      "kind": "cooccur"
-    },
-    {
-      "source": "LFP",
-      "target": "Sleep",
-      "weight": 0.1538,
+      "weight": 0.2,
       "kind": "cooccur"
     },
     {
       "source": "LFP",
       "target": "Spike",
       "weight": 0.2857,
+      "kind": "cooccur"
+    },
+    {
+      "source": "LFP",
+      "target": "Wave",
+      "weight": 0.2222,
+      "kind": "cooccur"
+    },
+    {
+      "source": "LFP",
+      "target": "dynamics",
+      "weight": 0.2308,
       "kind": "cooccur"
     },
     {
@@ -2449,13 +2480,13 @@
     {
       "source": "MEG",
       "target": "Scaling",
-      "weight": 0.25,
+      "weight": 0.2857,
       "kind": "cooccur"
     },
     {
       "source": "MEG",
       "target": "Sleep",
-      "weight": 0.3846,
+      "weight": 0.625,
       "kind": "cooccur"
     },
     {
@@ -2473,7 +2504,7 @@
     {
       "source": "MEG",
       "target": "Synchrony",
-      "weight": 0.5,
+      "weight": 0.4286,
       "kind": "cooccur"
     },
     {
@@ -2504,12 +2535,6 @@
       "source": "MEG",
       "target": "thalamocortical matrix",
       "weight": 0.2857,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Multielectrode Arrays (MEA)",
-      "target": "Sleep",
-      "weight": 0.3636,
       "kind": "cooccur"
     },
     {
@@ -2531,27 +2556,75 @@
       "kind": "cooccur"
     },
     {
+      "source": "Multielectrode Arrays (MEA)",
+      "target": "Wave",
+      "weight": 0.375,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Multielectrode Arrays (MEA)",
+      "target": "dynamics",
+      "weight": 0.2308,
+      "kind": "cooccur"
+    },
+    {
       "source": "Multiscale",
-      "target": "Network",
-      "weight": 0.25,
+      "target": "dynamics",
+      "weight": 0.2308,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Network",
+      "target": "Oscillation",
+      "weight": 0.1818,
       "kind": "cooccur"
     },
     {
       "source": "Network",
       "target": "Sleep",
-      "weight": 0.2143,
+      "weight": 0.1667,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Network",
+      "target": "Spatiotemporal",
+      "weight": 0.2,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Network",
+      "target": "Spindle",
+      "weight": 0.1818,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Network",
+      "target": "Wave",
+      "weight": 0.1538,
       "kind": "cooccur"
     },
     {
       "source": "Network",
       "target": "adaptive",
-      "weight": 0.2857,
+      "weight": 0.3333,
       "kind": "cooccur"
     },
     {
-      "source": "Neural Networks",
-      "target": "Noise",
-      "weight": 0.4,
+      "source": "Network",
+      "target": "dynamics",
+      "weight": 0.1765,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Network",
+      "target": "optimization",
+      "weight": 0.25,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Network",
+      "target": "spatiotemporal",
+      "weight": 0.1818,
       "kind": "cooccur"
     },
     {
@@ -2563,7 +2636,7 @@
     {
       "source": "Oscillation",
       "target": "Sleep",
-      "weight": 0.4545,
+      "weight": 0.5714,
       "kind": "cooccur"
     },
     {
@@ -2575,7 +2648,7 @@
     {
       "source": "Oscillation",
       "target": "Synchrony",
-      "weight": 0.6667,
+      "weight": 0.6,
       "kind": "cooccur"
     },
     {
@@ -2588,6 +2661,12 @@
       "source": "Oscillation",
       "target": "Thalamus",
       "weight": 0.3333,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Oscillation",
+      "target": "Wave",
+      "weight": 0.2,
       "kind": "cooccur"
     },
     {
@@ -2623,7 +2702,7 @@
     {
       "source": "RNNs",
       "target": "recurrent",
-      "weight": 0.6667,
+      "weight": 0.4,
       "kind": "cooccur"
     },
     {
@@ -2634,74 +2713,50 @@
     },
     {
       "source": "Sleep",
-      "target": "Sleep-Wake Dynamics",
-      "weight": 0.3636,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Sleep",
-      "target": "Slow-Wave",
-      "weight": 0.1818,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Sleep",
-      "target": "Slow-Wave Sleep (SWS)",
-      "weight": 0.3636,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Sleep",
-      "target": "Spike",
-      "weight": 0.3333,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Sleep",
       "target": "Spindle",
-      "weight": 0.4545,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Sleep",
-      "target": "Statistical Physics",
-      "weight": 0.1667,
+      "weight": 0.8333,
       "kind": "cooccur"
     },
     {
       "source": "Sleep",
       "target": "Synchrony",
-      "weight": 0.4545,
+      "weight": 0.5,
       "kind": "cooccur"
     },
     {
       "source": "Sleep",
       "target": "Thalamocortical",
-      "weight": 0.2727,
+      "weight": 0.5,
       "kind": "cooccur"
     },
     {
       "source": "Sleep",
       "target": "Thalamus",
-      "weight": 0.1667,
+      "weight": 0.2857,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Sleep",
+      "target": "Wave",
+      "weight": 0.1818,
       "kind": "cooccur"
     },
     {
       "source": "Sleep",
       "target": "focal asynchronous oscillation",
-      "weight": 0.2727,
+      "weight": 0.5,
       "kind": "cooccur"
     },
     {
       "source": "Sleep",
       "target": "thalamocortical core",
-      "weight": 0.1818,
+      "weight": 0.3333,
       "kind": "cooccur"
     },
     {
       "source": "Sleep",
       "target": "thalamocortical matrix",
-      "weight": 0.1818,
+      "weight": 0.3333,
       "kind": "cooccur"
     },
     {
@@ -2714,6 +2769,18 @@
       "source": "Sleep-Wake Dynamics",
       "target": "Spike",
       "weight": 0.8,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Sleep-Wake Dynamics",
+      "target": "Wave",
+      "weight": 0.375,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Sleep-Wake Dynamics",
+      "target": "dynamics",
+      "weight": 0.2308,
       "kind": "cooccur"
     },
     {
@@ -2723,15 +2790,57 @@
       "kind": "cooccur"
     },
     {
+      "source": "Slow-Wave Sleep (SWS)",
+      "target": "Wave",
+      "weight": 0.375,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Slow-Wave Sleep (SWS)",
+      "target": "dynamics",
+      "weight": 0.2308,
+      "kind": "cooccur"
+    },
+    {
       "source": "Spatiotemporal",
       "target": "adaptive",
-      "weight": 0.5,
+      "weight": 0.3333,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Spatiotemporal",
+      "target": "dynamics",
+      "weight": 0.2308,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Spatiotemporal",
+      "target": "spatiotemporal",
+      "weight": 0.8,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Spike",
+      "target": "Wave",
+      "weight": 0.3333,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Spike",
+      "target": "dynamics",
+      "weight": 0.3077,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Spike",
+      "target": "recurrent",
+      "weight": 0.25,
       "kind": "cooccur"
     },
     {
       "source": "Spindle",
       "target": "Synchrony",
-      "weight": 0.6667,
+      "weight": 0.6,
       "kind": "cooccur"
     },
     {
@@ -2744,6 +2853,12 @@
       "source": "Spindle",
       "target": "Thalamus",
       "weight": 0.3333,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Spindle",
+      "target": "Wave",
+      "weight": 0.2,
       "kind": "cooccur"
     },
     {
@@ -2765,33 +2880,27 @@
       "kind": "cooccur"
     },
     {
+      "source": "Statistical Physics",
+      "target": "dynamics",
+      "weight": 0.2308,
+      "kind": "cooccur"
+    },
+    {
       "source": "Synchrony",
       "target": "Thalamocortical",
-      "weight": 0.6,
+      "weight": 0.5,
       "kind": "cooccur"
     },
     {
       "source": "Synchrony",
       "target": "Thalamus",
-      "weight": 0.3333,
+      "weight": 0.5,
       "kind": "cooccur"
     },
     {
       "source": "Synchrony",
       "target": "focal asynchronous oscillation",
-      "weight": 0.6,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Synchrony",
-      "target": "thalamocortical core",
-      "weight": 0.4,
-      "kind": "cooccur"
-    },
-    {
-      "source": "Synchrony",
-      "target": "thalamocortical matrix",
-      "weight": 0.4,
+      "weight": 0.5,
       "kind": "cooccur"
     },
     {
@@ -2810,6 +2919,48 @@
       "source": "Thalamocortical",
       "target": "thalamocortical matrix",
       "weight": 0.6667,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Wave",
+      "target": "dynamics",
+      "weight": 0.2667,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Wave",
+      "target": "recurrent",
+      "weight": 0.2,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Wave",
+      "target": "spatiotemporal",
+      "weight": 0.2,
+      "kind": "cooccur"
+    },
+    {
+      "source": "adaptive",
+      "target": "bio-inspired",
+      "weight": 0.4,
+      "kind": "cooccur"
+    },
+    {
+      "source": "adaptive",
+      "target": "optimization",
+      "weight": 0.5,
+      "kind": "cooccur"
+    },
+    {
+      "source": "adaptive",
+      "target": "spatiotemporal",
+      "weight": 0.2857,
+      "kind": "cooccur"
+    },
+    {
+      "source": "biological computation",
+      "target": "dynamics",
+      "weight": 0.1538,
       "kind": "cooccur"
     },
     {
@@ -2820,14 +2971,50 @@
     },
     {
       "source": "biological computation",
-      "target": "recurrent",
+      "target": "physical computing",
       "weight": 0.5,
+      "kind": "cooccur"
+    },
+    {
+      "source": "biological computation",
+      "target": "recurrent",
+      "weight": 0.6,
+      "kind": "cooccur"
+    },
+    {
+      "source": "biological computation",
+      "target": "spatiotemporal",
+      "weight": 0.3333,
       "kind": "cooccur"
     },
     {
       "source": "biological computation",
       "target": "wiring economy",
       "weight": 0.6667,
+      "kind": "cooccur"
+    },
+    {
+      "source": "dynamics",
+      "target": "optimization",
+      "weight": 0.1667,
+      "kind": "cooccur"
+    },
+    {
+      "source": "dynamics",
+      "target": "physical computing",
+      "weight": 0.1538,
+      "kind": "cooccur"
+    },
+    {
+      "source": "dynamics",
+      "target": "recurrent",
+      "weight": 0.3077,
+      "kind": "cooccur"
+    },
+    {
+      "source": "dynamics",
+      "target": "spatiotemporal",
+      "weight": 0.3077,
       "kind": "cooccur"
     },
     {
@@ -2845,7 +3032,7 @@
     {
       "source": "modularity",
       "target": "recurrent",
-      "weight": 0.6667,
+      "weight": 0.4,
       "kind": "cooccur"
     },
     {
@@ -2855,9 +3042,27 @@
       "kind": "cooccur"
     },
     {
+      "source": "physical computing",
+      "target": "recurrent",
+      "weight": 0.3333,
+      "kind": "cooccur"
+    },
+    {
+      "source": "physical computing",
+      "target": "spatiotemporal",
+      "weight": 0.3333,
+      "kind": "cooccur"
+    },
+    {
+      "source": "recurrent",
+      "target": "spatiotemporal",
+      "weight": 0.25,
+      "kind": "cooccur"
+    },
+    {
       "source": "recurrent",
       "target": "wiring economy",
-      "weight": 0.6667,
+      "weight": 0.4,
       "kind": "cooccur"
     },
     {
@@ -3295,6 +3500,78 @@
     {
       "source": "SMR-local-global",
       "target": "volume conduction",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Wave-compute",
+      "target": "Turing",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Wave-compute",
+      "target": "biological computation",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Wave-compute",
+      "target": "computational closure",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Wave-compute",
+      "target": "dynamical memory",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Wave-compute",
+      "target": "dynamics",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Wave-compute",
+      "target": "mechanistic interpretability",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Wave-compute",
+      "target": "neuromoprhic",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Wave-compute",
+      "target": "physical computing",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Wave-compute",
+      "target": "recurrent",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Wave-compute",
+      "target": "reservoir computing",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Wave-compute",
+      "target": "spatiotemporal",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "Wave-compute",
+      "target": "state-space dynamics",
       "weight": 1.0,
       "kind": "explicit"
     },
@@ -4290,7 +4567,7 @@
     },
     {
       "source": "Adaptive-reservoir",
-      "target": "Optimization",
+      "target": "Network",
       "weight": 0.6,
       "kind": "mined"
     },
@@ -4308,7 +4585,7 @@
     },
     {
       "source": "CRX",
-      "target": "Neural Networks",
+      "target": "Emergence",
       "weight": 0.6,
       "kind": "mined"
     },
@@ -4326,25 +4603,31 @@
     },
     {
       "source": "Cortical-blueprint-RNN",
+      "target": "Neural Networks",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "Cortical-blueprint-RNN",
       "target": "recurrent",
       "weight": 0.6,
       "kind": "mined"
     },
     {
       "source": "Inhibitory-cortical-depth",
-      "target": "Modulation",
+      "target": "AI",
       "weight": 0.6,
       "kind": "mined"
     },
     {
       "source": "Inhibitory-cortical-depth",
-      "target": "bio-inspired AI",
+      "target": "Bio-inspired AI",
       "weight": 0.6,
       "kind": "mined"
     },
     {
-      "source": "SMR-local-global",
-      "target": "Control",
+      "source": "Inhibitory-cortical-depth",
+      "target": "bio-inspired",
       "weight": 0.6,
       "kind": "mined"
     },
@@ -4361,20 +4644,50 @@
       "kind": "mined"
     },
     {
+      "source": "SMR-local-global",
+      "target": "dynamics",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "Wave-compute",
+      "target": "Dynamics",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "Wave-compute",
+      "target": "Wave",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "Wave-compute",
+      "target": "coarse-graining",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
       "source": "avalanche-spklfp",
+      "target": "Dynamics",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "avalanche-spklfp",
+      "target": "Wave",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "avalanche-spklfp",
+      "target": "dynamics",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "betagamma-sleep",
       "target": "Cortex",
-      "weight": 0.6,
-      "kind": "mined"
-    },
-    {
-      "source": "avalanche-spklfp",
-      "target": "Scaling",
-      "weight": 0.6,
-      "kind": "mined"
-    },
-    {
-      "source": "avalanche-spklfp",
-      "target": "Sleep",
       "weight": 0.6,
       "kind": "mined"
     },
@@ -4386,13 +4699,7 @@
     },
     {
       "source": "betagamma-sleep",
-      "target": "Sleep",
-      "weight": 0.6,
-      "kind": "mined"
-    },
-    {
-      "source": "betagamma-sleep",
-      "target": "Slow-Wave",
+      "target": "Network",
       "weight": 0.6,
       "kind": "mined"
     },
@@ -4404,13 +4711,19 @@
     },
     {
       "source": "bioisnpired-ai",
-      "target": "Causality",
+      "target": "adaptive",
       "weight": 0.6,
       "kind": "mined"
     },
     {
       "source": "bioisnpired-ai",
-      "target": "biological computation",
+      "target": "bio-inspired",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "catcomp",
+      "target": "physical computing",
       "weight": 0.6,
       "kind": "mined"
     },
@@ -4422,13 +4735,13 @@
     },
     {
       "source": "causal-rotor",
-      "target": "Excitation",
+      "target": "dynamics",
       "weight": 0.6,
       "kind": "mined"
     },
     {
       "source": "causal-rotor",
-      "target": "Renormalization Group",
+      "target": "spatiotemporal",
       "weight": 0.6,
       "kind": "mined"
     },
@@ -4441,6 +4754,12 @@
     {
       "source": "cell-hilbert",
       "target": "Dynamics",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "cell-hilbert",
+      "target": "dynamics",
       "weight": 0.6,
       "kind": "mined"
     },
@@ -4463,26 +4782,44 @@
       "kind": "mined"
     },
     {
+      "source": "control-net",
+      "target": "spatiotemporal",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
       "source": "depth-coarse-graining",
       "target": "Noise",
       "weight": 0.6,
       "kind": "mined"
     },
     {
-      "source": "dynamic-balance",
-      "target": "Excitation",
+      "source": "depth-coarse-graining",
+      "target": "RG flow",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "depth-coarse-graining",
+      "target": "coarse-graining",
       "weight": 0.6,
       "kind": "mined"
     },
     {
       "source": "dynamic-balance",
-      "target": "Network",
+      "target": "Wave",
       "weight": 0.6,
       "kind": "mined"
     },
     {
       "source": "dynamic-balance",
-      "target": "Sleep",
+      "target": "dynamics",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "dynamic-balance",
+      "target": "recurrent",
       "weight": 0.6,
       "kind": "mined"
     },
@@ -4512,31 +4849,37 @@
     },
     {
       "source": "ising-ei",
-      "target": "Sleep",
-      "weight": 0.6,
-      "kind": "mined"
-    },
-    {
-      "source": "ising-ei",
-      "target": "Synchrony",
-      "weight": 0.6,
-      "kind": "mined"
-    },
-    {
-      "source": "ising-ei",
       "target": "adaptive",
       "weight": 0.6,
       "kind": "mined"
     },
     {
-      "source": "k-complex",
-      "target": "EEG",
+      "source": "ising-ei",
+      "target": "dynamics",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "ising-ei",
+      "target": "optimization",
       "weight": 0.6,
       "kind": "mined"
     },
     {
       "source": "k-complex",
       "target": "Network",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "k-complex",
+      "target": "Wave",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "k-complex",
+      "target": "down-state",
       "weight": 0.6,
       "kind": "mined"
     },
@@ -4548,19 +4891,25 @@
     },
     {
       "source": "spatiotemporal-ei",
-      "target": "Excitation",
+      "target": "Spatiotemporal",
       "weight": 0.6,
       "kind": "mined"
     },
     {
       "source": "spatiotemporal-ei",
-      "target": "Inhibition",
+      "target": "dynamics",
       "weight": 0.6,
       "kind": "mined"
     },
     {
       "source": "spatiotemporal-ei",
-      "target": "Sleep",
+      "target": "spatiotemporal",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "spindle-async",
+      "target": "Cortex",
       "weight": 0.6,
       "kind": "mined"
     },
@@ -4578,7 +4927,7 @@
     },
     {
       "source": "spindle-divergent",
-      "target": "Cortex",
+      "target": "Network",
       "weight": 0.6,
       "kind": "mined"
     },
@@ -4590,13 +4939,25 @@
     },
     {
       "source": "spindle-divergent",
-      "target": "Synchrony",
+      "target": "thalamocortical matrix",
       "weight": 0.6,
       "kind": "mined"
     },
     {
       "source": "spindle-emergence",
-      "target": "Cortex",
+      "target": "Emergence",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "spindle-emergence",
+      "target": "Wave",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "spindle-emergence",
+      "target": "synchronous wave",
       "weight": 0.6,
       "kind": "mined"
     },
@@ -4613,6 +4974,12 @@
       "kind": "mined"
     },
     {
+      "source": "spindle-topo",
+      "target": "dynamics",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
       "source": "symmetry-edge",
       "target": "Dynamics",
       "weight": 0.6,
@@ -4620,19 +4987,25 @@
     },
     {
       "source": "symmetry-edge",
-      "target": "Excitation",
+      "target": "Statistical Physics",
       "weight": 0.6,
       "kind": "mined"
     },
     {
       "source": "symmetry-edge",
-      "target": "Inhibition",
+      "target": "dynamics",
       "weight": 0.6,
       "kind": "mined"
     },
     {
       "source": "unitary-lfp",
       "target": "Dynamics",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "unitary-lfp",
+      "target": "dynamics",
       "weight": 0.6,
       "kind": "mined"
     },
