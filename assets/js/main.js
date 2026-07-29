@@ -215,6 +215,39 @@
   }
 
   /* ---------------------------------------------------------------
+     BibTeX copy buttons (.citeblock)
+     --------------------------------------------------------------- */
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest && e.target.closest('[data-cite-copy]');
+    if (!btn) return;
+    var block = btn.closest('.citeblock');
+    var code = block && block.querySelector('pre');
+    if (!code) return;
+    var text = code.textContent;
+    var done = function () {
+      btn.textContent = 'Copied';
+      btn.classList.add('is-copied');
+      setTimeout(function () {
+        btn.textContent = 'Copy';
+        btn.classList.remove('is-copied');
+      }, 1600);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function () {});
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'absolute';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); done(); } catch (err) {}
+      document.body.removeChild(ta);
+    }
+  });
+
+  /* ---------------------------------------------------------------
      Corridor keyboard navigation (paper rooms): ← / →
      --------------------------------------------------------------- */
   if (document.querySelector('.corridor')) {

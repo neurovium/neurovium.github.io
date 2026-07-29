@@ -1181,6 +1181,46 @@ a.tag:hover { color: var(--fork); border-color: var(--fork-soft); }
 .prose ul, .prose ol { padding-left: 1.3em; }
 .prose hr { border: 0; border-top: 1px solid var(--hairline); margin: 2.5em 0; }
 
+/* Post citation (BibTeX) block */
+.citeblock__lede {
+  margin: 2.2em 0 0.7em; font-family: var(--serif); font-weight: 300; font-style: italic;
+  font-size: 17px; line-height: 1.5; color: var(--ink-soft); letter-spacing: -0.1px;
+}
+.citeblock {
+  margin: 1.4em 0 1.8em; border: 1px solid var(--hairline); border-radius: 14px;
+  background: var(--card-bg); box-shadow: var(--card-shadow); overflow: hidden;
+}
+.citeblock__head {
+  display: flex; align-items: center; justify-content: space-between; gap: 14px;
+  padding: 10px 14px 10px 16px; background: var(--paper-soft);
+  border-bottom: 1px solid var(--hairline);
+}
+.citeblock__label {
+  font-family: var(--mono); font-weight: 500; font-size: 11px;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
+}
+.citeblock__copy {
+  font-family: var(--mono); font-weight: 500; font-size: 11px; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--ink-soft); background: transparent;
+  border: 1px solid var(--hairline-strong); border-radius: 9999px;
+  padding: 5px 13px; cursor: pointer;
+  transition: background var(--t-fast) var(--ease), color var(--t-fast) var(--ease),
+              border-color var(--t-fast) var(--ease);
+}
+.citeblock__copy:hover { background: var(--ink); border-color: var(--ink); color: var(--on-ink); }
+.citeblock__copy.is-copied { border-color: var(--fork); color: var(--fork); background: transparent; }
+.citeblock pre, .prose .citeblock pre {
+  margin: 0; border: 0; border-radius: 0; background: transparent;
+  padding: 16px 18px; font-family: var(--mono); font-size: 12.5px;
+  line-height: 1.6; color: var(--ink-soft); overflow-x: auto;
+}
+.citeblock pre code, .prose .citeblock pre code {
+  font-size: inherit; background: none; border: 0; padding: 0;
+}
+@media (max-width: 560px) {
+  .citeblock pre, .prose .citeblock pre { font-size: 11.5px; padding: 14px; }
+}
+
 /* About page */
 .about-head { display: flex; gap: 32px; align-items: flex-start; flex-wrap: wrap; padding: 16px 0 8px; }
 .about-photo-col { display: flex; flex-direction: column; gap: 10px; flex-shrink: 0; width: 180px; }

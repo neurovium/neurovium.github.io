@@ -1,8 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://neurovium.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neurovium.github.io/" rel="alternate" type="text/html" /><updated>2026-07-29T20:52:36+00:00</updated><id>https://neurovium.github.io/feed.xml</id><title type="html">Nima Dehghani</title><subtitle>Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics</subtitle><author><name>Nima Dehghani</name></author><entry><title type="html">When Does Matter Compute? Wave Memory, Closure, and the Architecture of Autonomous Physical Computation</title><link href="https://neurovium.github.io/posts/pblog-Wave-compute/" rel="alternate" type="text/html" title="When Does Matter Compute? Wave Memory, Closure, and the Architecture of Autonomous Physical Computation" /><published>2026-07-27T00:00:00+00:00</published><updated>2026-07-27T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-Wave-compute</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-Wave-compute/"><![CDATA[<p><em>Companion post to:</em><br />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://neurovium.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neurovium.github.io/" rel="alternate" type="text/html" /><updated>2026-07-29T21:51:06+00:00</updated><id>https://neurovium.github.io/feed.xml</id><title type="html">Nima Dehghani</title><subtitle>Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics</subtitle><author><name>Nima Dehghani</name></author><entry><title type="html">When Does Matter Compute? Wave Memory, Closure, and the Architecture of Autonomous Physical Computation</title><link href="https://neurovium.github.io/posts/pblog-Wave-compute/" rel="alternate" type="text/html" title="When Does Matter Compute? Wave Memory, Closure, and the Architecture of Autonomous Physical Computation" /><published>2026-07-27T00:00:00+00:00</published><updated>2026-07-27T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-Wave-compute</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-Wave-compute/"><![CDATA[<p><em>Companion post to:</em><br />
 <strong>Autonomous Physical Computation: A Categorical Closure Criterion for Physical and Neuromorphic Reservoirs.</strong>
 Nima Dehghani
 <em>arXiv</em> 2026.
 DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.48550/arXiv.2607.23902</code></p>
+
+<div class="citeblock">
+  <div class="citeblock__head">
+    <span class="citeblock__label">Cite this post</span>
+    <button type="button" class="citeblock__copy" data-cite-copy="">Copy</button>
+  </div>
+  <pre><code>@misc{dehghani2026waveMatterCompute,
+  author       = {Nima Dehghani},
+  title        = {{When Does Matter Compute? Wave Memory, Closure, and the
+                  Architecture of Autonomous Physical Computation}},
+  year         = {2026},
+  howpublished = {\url{https://neurovium.science/posts/pblog-Wave-compute/}},
+  note         = {Technical companion post to arXiv:2607.23902}
+}</code></pre>
+</div>
 
 <hr />
 
