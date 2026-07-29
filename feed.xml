@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://neurovium.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neurovium.github.io/" rel="alternate" type="text/html" /><updated>2026-07-29T21:51:06+00:00</updated><id>https://neurovium.github.io/feed.xml</id><title type="html">Nima Dehghani</title><subtitle>Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics</subtitle><author><name>Nima Dehghani</name></author><entry><title type="html">When Does Matter Compute? Wave Memory, Closure, and the Architecture of Autonomous Physical Computation</title><link href="https://neurovium.github.io/posts/pblog-Wave-compute/" rel="alternate" type="text/html" title="When Does Matter Compute? Wave Memory, Closure, and the Architecture of Autonomous Physical Computation" /><published>2026-07-27T00:00:00+00:00</published><updated>2026-07-27T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-Wave-compute</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-Wave-compute/"><![CDATA[<p><em>Companion post to:</em><br />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://neurovium.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neurovium.github.io/" rel="alternate" type="text/html" /><updated>2026-07-29T22:05:48+00:00</updated><id>https://neurovium.github.io/feed.xml</id><title type="html">Nima Dehghani</title><subtitle>Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics</subtitle><author><name>Nima Dehghani</name></author><entry><title type="html">When Does Matter Compute? Wave Memory, Closure, and the Architecture of Autonomous Physical Computation</title><link href="https://neurovium.github.io/posts/pblog-Wave-compute/" rel="alternate" type="text/html" title="When Does Matter Compute? Wave Memory, Closure, and the Architecture of Autonomous Physical Computation" /><published>2026-07-27T00:00:00+00:00</published><updated>2026-07-27T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-Wave-compute</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-Wave-compute/"><![CDATA[<p><em>Companion post to:</em><br />
 <strong>Autonomous Physical Computation: A Categorical Closure Criterion for Physical and Neuromorphic Reservoirs.</strong>
 Nima Dehghani
 <em>arXiv</em> 2026.
@@ -11,11 +11,13 @@ DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.48550
   </div>
   <pre><code>@misc{dehghani2026waveMatterCompute,
   author       = {Nima Dehghani},
-  title        = {{When Does Matter Compute? Wave Memory, Closure, and the
-                  Architecture of Autonomous Physical Computation}},
+  title        = {{When Does Matter Compute? Wave Memory, Closure, and the Architecture of
+                   Autonomous Physical Computation}},
   year         = {2026},
   howpublished = {\url{https://neurovium.science/posts/pblog-Wave-compute/}},
-  note         = {Technical companion post to arXiv:2607.23902}
+  note         = {Companion post to: Autonomous Physical Computation: A Categorical
+                  Closure Criterion for Physical and Neuromorphic Reservoirs. arXiv
+                  (2026). arXiv:2607.23902}
 }</code></pre>
 </div>
 
@@ -535,6 +537,23 @@ y_n, &amp; \text{otherwise},
 Nima Dehghani
 <em>arXiv</em> 2026.
 DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.48550/arXiv.2606.22765</code></p>
+
+<div class="citeblock">
+  <div class="citeblock__head">
+    <span class="citeblock__label">Cite this post</span>
+    <button type="button" class="citeblock__copy" data-cite-copy="">Copy</button>
+  </div>
+  <pre><code>@misc{dehghani2026evolutionaryReservoirsChaos,
+  author       = {Nima Dehghani},
+  title        = {{When Prediction Shapes the Machine: Evolutionary Reservoirs, Chaos, and
+                   Structural Constraints}},
+  year         = {2026},
+  howpublished = {\url{https://neurovium.science/posts/pblog-Adaptive-reservoir/}},
+  note         = {Companion post to: Evolutionary Optimization Reveals Structural
+                  Constraints on Reservoir Architecture for Spatiotemporal Chaos. arXiv
+                  (2026). arXiv:2606.22765}
+}</code></pre>
+</div>
 
 <hr />
 <h2 id="how-this-project-began">How this project began</h2>
@@ -1160,6 +1179,22 @@ Mo Shakiba, Rana Rokni, Mohammad Mohammadi, Nima Dehghani
 <em>arXiv</em> 2026.
 DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.48550/arXiv.2606.14975</code></p>
 
+<div class="citeblock">
+  <div class="citeblock__head">
+    <span class="citeblock__label">Cite this post</span>
+    <button type="button" class="citeblock__copy" data-cite-copy="">Copy</button>
+  </div>
+  <pre><code>@misc{dehghani2026corticalPriorsRNN,
+  author       = {Nima Dehghani},
+  title        = {{Cortical Machinery as a Design Principle for RNNs}},
+  year         = {2026},
+  howpublished = {\url{https://neurovium.science/posts/pblog-Cortical-blueprint-RNN/}},
+  note         = {Companion post to: Harnessing cortical geometry, wiring, and function as
+                  inductive biases for recurrent neural networks. arXiv (2026).
+                  arXiv:2606.14975}
+}</code></pre>
+</div>
+
 <hr />
 
 <h1 id="harnessing-cortical-geometry-wiring-and-function-as-inductive-biases-for-rnns">Harnessing Cortical Geometry, Wiring, and Function as Inductive Biases for RNNs</h1>
@@ -1535,6 +1570,23 @@ Maryam Ostadsharif Memar, Nima Dehghani
 <em>arXiv</em> 2026.
 DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.48550/arXiv.2606.11415</code></p>
 
+<div class="citeblock">
+  <div class="citeblock__head">
+    <span class="citeblock__label">Cite this post</span>
+    <button type="button" class="citeblock__copy" data-cite-copy="">Copy</button>
+  </div>
+  <pre><code>@misc{dehghani2026localGlobalNeuralFields,
+  author       = {Nima Dehghani},
+  title        = {{Beyond Pairwise Connectivity: Reconstructing the Local–Global Structure
+                   of Neural Fields}},
+  year         = {2026},
+  howpublished = {\url{https://neurovium.science/posts/pblog-SMR-local-global/}},
+  note         = {Companion post to: Spatially Masked Regression Reveals Local and
+                  Distributed Predictability in Electrophysiological Recording. arXiv
+                  (2026). arXiv:2606.11415}
+}</code></pre>
+</div>
+
 <hr />
 <h1 id="rethinking-the-local-in-local-field-potentials-a-masked-reconstruction-approach">Rethinking the “Local” in Local Field Potentials: A Masked Reconstruction Approach</h1>
 
@@ -1870,6 +1922,23 @@ Yanez, Felipe and Messore, Fernando and Qi, Guanxiao and Dehghani, Nima and Meye
 <em>biorxiv</em> 7, 40211 (2026).
 DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.64898/2026.03.05.709819</code></p>
 
+<div class="citeblock">
+  <div class="citeblock__head">
+    <span class="citeblock__label">Cite this post</span>
+    <button type="button" class="citeblock__copy" data-cite-copy="">Copy</button>
+  </div>
+  <pre><code>@misc{dehghani2026interneuronCorticalDepth,
+  author       = {Nima Dehghani},
+  title        = {{Interneuron Diversity Is Not Only a Taxonomy Problem: Cortical Depth as
+                   a Continuous Axis of Morphoelectric Organization}},
+  year         = {2026},
+  howpublished = {\url{https://neurovium.science/posts/pblog-Inhibitory-cortical-depth/}},
+  note         = {Companion post to: Morphoelectric properties of inhibitory neurons shift
+                  gradually and regardless of cell type along the depth of the cerebral
+                  cortex. bioRxiv (2026). doi:10.64898/2026.03.05.709819}
+}</code></pre>
+</div>
+
 <hr />
 
 <h1 id="interneuron-diversity-is-not-only-a-taxonomy-problem-cortical-depth-as-a-continuous-axis-of-morphoelectric-organization">Interneuron Diversity Is Not Only a Taxonomy Problem: Cortical Depth as a Continuous Axis of Morphoelectric Organization</h1>
@@ -2033,6 +2102,22 @@ DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.64898
 Colleen J. Gillon, Cody Baker, Ryan Ly, Edoardo Balzani, Bingni W. Brunton, Manuel Schottdorf, Satrajit Ghosh and Nima Dehghani
 <em>eNeuro</em> 20 November 2025, 12 (11) ENEURO.0486-24.2025 
 DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.1523/ENEURO.0486-24.2025</code></p>
+
+<div class="citeblock">
+  <div class="citeblock__head">
+    <span class="citeblock__label">Cite this post</span>
+    <button type="button" class="citeblock__copy" data-cite-copy="">Copy</button>
+  </div>
+  <pre><code>@misc{dehghani2025openDataNeurophysiology,
+  author       = {Nima Dehghani},
+  title        = {{Open Data in Neurophysiology: From Data Sharing to Scientific
+                   Infrastructure}},
+  year         = {2025},
+  howpublished = {\url{https://neurovium.science/posts/pblog-Odin/}},
+  note         = {Companion post to: Open Data In Neurophysiology: Advancements, Solutions
+                  \&amp; Challenges. eNeuro (2025). doi:10.1523/ENEURO.0486-24.2025}
+}</code></pre>
+</div>
 
 <hr />
 
@@ -2246,6 +2331,22 @@ DOI: <a href="https://doi.org/10.1523/ENEURO.0486-24.2025">10.1523/ENEURO.0486-2
 Nima Dehghani
 <em>arXiv</em> . (2025)
 DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.48550/arXiv.2306.11965</code></p>
+
+<div class="citeblock">
+  <div class="citeblock__head">
+    <span class="citeblock__label">Cite this post</span>
+    <button type="button" class="citeblock__copy" data-cite-copy="">Copy</button>
+  </div>
+  <pre><code>@misc{dehghani2025symmetryEdgeCortex,
+  author       = {Nima Dehghani},
+  title        = {{Symmetry’s Edge in Cortical Dynamics}},
+  year         = {2025},
+  howpublished = {\url{https://neurovium.science/posts/pblog-Symmetry-edge-cortex/}},
+  note         = {Companion post to: Symmetry's Edge in Cortical Dynamics: Multiscale
+                  Dynamics of Ensemble Excitation and Inhibition. arXiv (2025).
+                  arXiv:2306.11965}
+}</code></pre>
+</div>
 
 <hr />
 
@@ -2537,6 +2638,22 @@ Ens_E(t') - Ens_I(t')
 Nima Dehghani
 <em>arXiv</em> . 2505.07222 (2025)
 DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.48550/arXiv.2505.07222</code></p>
+
+<div class="citeblock">
+  <div class="citeblock__head">
+    <span class="citeblock__label">Cite this post</span>
+    <button type="button" class="citeblock__copy" data-cite-copy="">Copy</button>
+  </div>
+  <pre><code>@misc{dehghani2025rethinkingPhysicalComplexity,
+  author       = {Nima Dehghani},
+  title        = {{Rethinking Physical Complexity in the Data-Driven Era}},
+  year         = {2025},
+  howpublished = {\url{https://neurovium.science/posts/pblog-CRX/}},
+  note         = {Companion post to: Compression, Regularity, Randomness and Emergent
+                  Structure: Rethinking Physical Complexity in the Data-Driven Era. arXiv
+                  (2025). arXiv:2505.07222}
+}</code></pre>
+</div>
 
 <hr />
 
@@ -2980,6 +3097,22 @@ Nima Dehghani and Michael Levin
 <em>arXiv</em> 2024, 2411.15243
 DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.48550/arXiv.2411.15243</code></p>
 
+<div class="citeblock">
+  <div class="citeblock__head">
+    <span class="citeblock__label">Cite this post</span>
+    <button type="button" class="citeblock__copy" data-cite-copy="">Copy</button>
+  </div>
+  <pre><code>@misc{dehghani2024bioinspiredComplexityAI,
+  author       = {Nima Dehghani},
+  title        = {{Beyond Neural Imitation: Multi-Scale Biological Complexity as a Design
+                   Principle for AI}},
+  year         = {2024},
+  howpublished = {\url{https://neurovium.science/posts/pblog-Bioinspired-ai/}},
+  note         = {Companion post to: Bio-inspired AI: Integrating Biological Complexity
+                  into Artificial Intelligence. arXiv (2024). arXiv:2411.15243}
+}</code></pre>
+</div>
+
 <hr />
 
 <h1 id="beyond-neural-imitation-multi-scale-biological-complexity-as-a-design-principle-for-ai">Beyond Neural Imitation: Multi-Scale Biological Complexity as a Design Principle for AI</h1>
@@ -3375,6 +3508,23 @@ DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.48550
 Nima Dehghani
 <em>Plos Complex Systems</em> . PLOS Complex Syst 1(3): e0000013
 DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.1371/journal.pcsy.0000013</code></p>
+
+<div class="citeblock">
+  <div class="citeblock__head">
+    <span class="citeblock__label">Cite this post</span>
+    <button type="button" class="citeblock__copy" data-cite-copy="">Copy</button>
+  </div>
+  <pre><code>@misc{dehghani2024cellularHilbertProgram,
+  author       = {Nima Dehghani},
+  title        = {{Systematizing Cellular Complexity: Toward a Hilbertian Program for
+                   Biology}},
+  year         = {2024},
+  howpublished = {\url{https://neurovium.science/posts/pblog-Cell-hilbert/}},
+  note         = {Companion post to: Systematizing cellular complexity: A Hilbertian
+                  approach to biological problems. PLOS Complex Systems (2024).
+                  doi:10.1371/journal.pcsy.0000013}
+}</code></pre>
+</div>
 
 <hr />
 
