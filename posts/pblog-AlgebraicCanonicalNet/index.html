@@ -223,9 +223,50 @@ DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.48550
 }</code></pre>
 </div>
 
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<ul>
+  <li><strong><a href="#part-i-history">Part I — How This Paper Began: An Itch That Wouldn’t Go Away</a></strong>
+    <ul>
+      <li><a href="#history-dedeo">Effective theories, and the first itch</a></li>
+      <li><a href="#history-cbmm">Compositionality, recurrence, and a hundred-page dead end</a></li>
+      <li><a href="#history-physical-computation">Physical computation supplied one half of the answer</a></li>
+      <li><a href="#history-itch-return">Then the itch came back</a></li>
+    </ul>
+  </li>
+  <li><strong><a href="#part-ii-technical">Part II — A Connectome Is Not a Program</a></strong>
+    <ul>
+      <li><a href="#technical-three-descriptions">1. Three Descriptions of a Neural Circuit</a></li>
+      <li><a href="#technical-finite-transformations">2. Neural Motifs as Finite Transformation Systems</a></li>
+      <li><a href="#technical-aperiodicity">3. The Strict Baseline: Every Primitive Operation Must Be Aperiodic</a></li>
+      <li><a href="#technical-wta">4. Winner-Take-All: Global Dissipation, Local Reversibility</a></li>
+      <li><a href="#technical-krohn-rhodes">5. Krohn–Rhodes Theory Without Assuming You Know Krohn–Rhodes Theory</a></li>
+      <li><a href="#technical-holonomy">6. What Holonomy Decomposition Adds</a></li>
+      <li><a href="#technical-composition">7. Composing Gain Control and Selection</a></li>
+      <li><a href="#technical-wta-to-dn">8. WTA→DN: When the Winner Changes the Gain Context</a></li>
+      <li><a href="#technical-comparison">9. A Compact Structural Comparison</a></li>
+      <li><a href="#technical-interface-sweep">10. Exhausting the Interface Space</a></li>
+      <li><a href="#technical-direction">11. Coupling Direction Matters More Than Mere Coupling</a></li>
+      <li><a href="#technical-timing">12. Timing Matters Too: 50,331,648 Interface–Schedule Combinations</a></li>
+      <li><a href="#technical-effective-theory">13. From Physical Computation Back to Effective Theories of Neural Circuits</a></li>
+      <li><a href="#technical-connectomics">14. What This Adds to Connectomics</a></li>
+      <li><a href="#technical-dynamical-systems">15. What This Adds to Dynamical-Systems Thinking</a></li>
+      <li><a href="#technical-ai-architecture">16. What This Suggests for AI Architecture</a></li>
+      <li><a href="#technical-not-claiming">17. What We Are <em>Not</em> Claiming</a></li>
+      <li><a href="#technical-main-takeaway">18. The Main Takeaway</a></li>
+      <li><a href="#technical-notes">Technical Notes and References</a></li>
+      <li><a href="#technical-neuroai">19. A NeuroAI Perspective: Where Neuroscience, Physics, and AI Meet</a></li>
+    </ul>
+  </li>
+</ul>
+
 <hr />
 
-<h2 id="how-this-paper-began-an-itch-that-wouldnt-go-away">How This Paper Began: An Itch That Wouldn’t Go Away</h2>
+<p><a id="part-i-history"></a></p>
+<h2 id="part-i--how-this-paper-began-an-itch-that-wouldnt-go-away">Part I — How This Paper Began: An Itch That Wouldn’t Go Away</h2>
+
+<p><a id="history-dedeo"></a></p>
+<h3 id="dedeo-effective-theories-and-the-first-itch">DeDeo, effective theories, and the first itch</h3>
 
 <p>This paper has a much longer history than its equations suggest.</p>
 
@@ -249,6 +290,7 @@ DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.48550
 
 <p>The conversation ended. The problem did not.</p>
 
+<p><a id="history-cbmm"></a></p>
 <h3 id="compositionality-recurrence-and-a-hundred-page-dead-end">Compositionality, recurrence, and a hundred-page dead end</h3>
 
 <p>A few years later, in 2016, I was at MIT Physics and the <strong>Center for Brains, Minds and Machines (CBMM)</strong> when CBMM held a wonderfully stimulating three-talk session on compositionality. Tomaso Poggio, Max Tegmark—my advisor at the time—and Joshua Tenenbaum each approached the problem from a different angle. The talks were different enough that each one opened a separate line of thought for me.</p>
@@ -257,7 +299,7 @@ DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.48550
 
 <p>The scientific point stuck much more strongly. At the time I was already thinking about excitation and inhibition as different computational ingredients. Tommy’s discussion of composing functions made me ask whether one could do something similar with <strong>basic biological neuronal circuit elements</strong>: not merely compose abstract layers, but compose motifs such as excitation, inhibition, normalization, competition, gating, and recurrence, and then ask what the composite <em>computes</em>.</p>
 
-<p>Feedforward composition is one thing. <strong>Recurrence is a much harder beast.</strong> Once a component’s output changes which operation is applied next, the neat picture of one function feeding another starts to break. I tried several ways of formalizing the problem. One attempt grew into more than a hundred pages of mathematics on what I called <em>categorical color spaces</em>, organized around seven classes of recurrent motifs. There were some good ideas in it, and I tried to bring the manuscript to a finished state, but as a route to the problem I cared about it was a dead end. The machinery had become heavier than the phenomenon. I was drained by it. I put the whole thing back in a drawer feeling, frankly, defeated on that front.</p>
+<p>Feedforward composition is one thing. <strong>Recurrence is a much harder beast.</strong> Once a component’s output changes which operation is applied next, the neat picture of one function feeding another starts to break. I tried several ways of formalizing the problem. One attempt grew into more than a hundred pages of mathematics on what I called <em>categorical color spaces</em>, organized around seven classes of recurrent motifs. There were some good ideas in it, and I actually brought the manuscript to a finished state, but as a route to the problem I cared about it was a dead end. The machinery had become heavier than the phenomenon. I was drained by it. I put the whole thing back in a drawer feeling, frankly, defeated on that front.</p>
 
 <p>Maybe I will return to it someday. Who knows.</p>
 
@@ -265,17 +307,21 @@ DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.48550
 
 <p>But the compositionality problem—the recurrent one—never quite went away.</p>
 
+<p><a id="history-physical-computation"></a></p>
 <h3 id="physical-computation-supplied-one-half-of-the-answer">Physical computation supplied one half of the answer</h3>
 
 <p>During the years that followed, I worked increasingly on the foundations of physical computation: how to say, without hand-waving, when a physical dynamical system implements a computation and how computations compose across levels.</p>
 
 <p>In <a href="https://arxiv.org/abs/2210.00392"><strong>Physical Computing: A Category Theoretic Perspective on Physical Computation and System Compositionality</strong></a> (<a href="https://neurovium.science/posts/pblog-Catcomp/">blog version</a>), Gianluca Caterina and I developed a framework in which physical and abstract dynamics are related through structure-preserving maps. Composition is not an analogy added afterward; it is part of the mathematical account. A central piece of that program was understanding <strong>nested composition</strong>: how computational descriptions can be composed while remaining anchored to the physical dynamics that realize them. A compact overview of that line of work is <a href="https://neurovium.science/papers/Catcomp/"><strong>here</strong></a>.</p>
 
-<p>On a related note -&gt; More recently, in <a href="https://arxiv.org/abs/2607.23902"><strong>Autonomous Physical Computation: A Categorical Closure Criterion for Physical and Neuromorphic Reservoirs</strong></a> (<a href="https://neurovium.science/posts/pblog-Wave-compute/">blog version</a>), I have pushed the question further: when does a physical system merely <em>support</em> externally orchestrated transformations, and when does its own internal state participate in selecting what operation happens next? That distinction between externally sequenced dynamics and internally closed computation turned out to be very close to the recurrent problem that had been bothering me since the CBMM meeting.</p>
+<p>More recently, in <a href="https://arxiv.org/abs/2607.23902"><strong>Autonomous Physical Computation: A Categorical Closure Criterion for Physical and Neuromorphic Reservoirs</strong></a> (<a href="https://neurovium.science/posts/pblog-Wave-compute/">blog version</a>), I pushed the question further: when does a physical system merely <em>support</em> externally orchestrated transformations, and when does its own internal state participate in selecting what operation happens next? That distinction between externally sequenced dynamics and internally closed computation turned out to be very close to the recurrent problem that had been bothering me since the CBMM meeting.</p>
 
+<p>Still, category theory gave me the language for <strong>what it means to compose physical computations</strong>. It did not yet give me the right finite, constructive instrument for asking what <em>new repertoire</em> appears when recurrent biological operations are composed.</p>
+
+<p><a id="history-itch-return"></a></p>
 <h3 id="then-the-itch-came-back">Then the itch came back</h3>
 
-<p>A few years after the CBMM meeting, Stephen Wolfram and Jonathan Gorard invited me to a small event at MIT to discuss a range of foundational questions. It was an intimate group, and my friend and collaborator <strong>Gianluca Caterina</strong> was there as well. We had already been working together on the physical-computation framework and its nested compositional structure.</p>
+<p>A few years later, Stephen Wolfram and Jonathan Gorard invited me to a small event at MIT to discuss a range of foundational questions. It was an intimate group, and my friend and collaborator <strong>Gianluca Caterina</strong> was there as well. We had already been working together on the physical-computation framework and its nested compositional structure.</p>
 
 <p>One of the topics that came up was <strong>combinators</strong>.</p>
 
@@ -301,7 +347,8 @@ DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.48550
 
 <hr />
 
-<p>A connectome is not a program.</p>
+<p><a id="part-ii-technical"></a></p>
+<h2 id="part-ii--a-connectome-is-not-a-program">Part II — A Connectome Is Not a Program</h2>
 
 <p>A wiring diagram tells us which elements are connected. A dynamical model tells us how activity evolves under a specified set of equations and inputs. But neither, by itself, tells us the full <strong>repertoire of transformations a circuit can generate when its operations are composed in time</strong>.</p>
 
@@ -325,7 +372,8 @@ DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.48550
 
 <hr />
 
-<h2 id="1-three-descriptions-of-a-neural-circuit">1. Three Descriptions of a Neural Circuit</h2>
+<p><a id="technical-three-descriptions"></a></p>
+<h3 id="1-three-descriptions-of-a-neural-circuit">1. Three Descriptions of a Neural Circuit</h3>
 
 <p>It is useful to separate three levels that are often blended together:</p>
 
@@ -343,7 +391,8 @@ Anatomical structure          Trajectories / attractors        Computational rep
 
 <hr />
 
-<h2 id="2-neural-motifs-as-finite-transformation-systems">2. Neural Motifs as Finite Transformation Systems</h2>
+<p><a id="technical-finite-transformations"></a></p>
+<h3 id="2-neural-motifs-as-finite-transformation-systems">2. Neural Motifs as Finite Transformation Systems</h3>
 
 <p>We represent a coarse-grained neural circuit as a deterministic finite transformation system</p>
 
@@ -373,7 +422,7 @@ f_a(x)=\delta(x,a).\]
 
 \[M=\langle f_a:a\in\Sigma\rangle.\]
 
-<h3 id="a-useful-non-algebra-analogy-buttons-and-programs">A useful non-algebra analogy: buttons and programs</h3>
+<h4 id="a-useful-non-algebra-analogy-buttons-and-programs">A useful non-algebra analogy: buttons and programs</h4>
 
 <p>Think of each primitive input-conditioned map as a button on a machine. Pressing one button once performs one allowed operation. The transition monoid is not the list of buttons. It is the library of <strong>every distinct program you can create by pressing those buttons in every possible finite order</strong>.</p>
 
@@ -383,7 +432,8 @@ f_a(x)=\delta(x,a).\]
 
 <hr />
 
-<h2 id="3-the-strict-baseline-every-primitive-operation-must-be-aperiodic">3. The Strict Baseline: Every Primitive Operation Must Be Aperiodic</h2>
+<p><a id="technical-aperiodicity"></a></p>
+<h3 id="3-the-strict-baseline-every-primitive-operation-must-be-aperiodic">3. The Strict Baseline: Every Primitive Operation Must Be Aperiodic</h3>
 
 <p>If a primitive update already contains a cycle, then finding cyclic structure in the full system is not surprising. We therefore imposed a stricter baseline.</p>
 
@@ -416,7 +466,8 @@ f_a(x)=\delta(x,a).\]
 
 <hr />
 
-<h2 id="4-winner-take-all-global-dissipation-local-reversibility">4. Winner-Take-All: Global Dissipation, Local Reversibility</h2>
+<p><a id="technical-wta"></a></p>
+<h3 id="4-winner-take-all-global-dissipation-local-reversibility">4. Winner-Take-All: Global Dissipation, Local Reversibility</h3>
 
 <p>Our WTA abstraction contains two competing excitatory populations, $x_1$ and $x_2$, together with a shared inhibitory variable $y$. The coarse-grained state is therefore</p>
 
@@ -464,7 +515,7 @@ f_a(x)=\delta(x,a).\]
 
 <p><em>Left: the WTA word funnels all states into a two-state image and then toggles the inhibitory gate. Right: the WTA→DN witness changes both the normalization and WTA coordinates.</em></p>
 
-<h3 id="why-this-is-more-interesting-than-the-circuit-oscillates">Why this is more interesting than “the circuit oscillates”</h3>
+<h4 id="why-this-is-more-interesting-than-the-circuit-oscillates">Why this is more interesting than “the circuit oscillates”</h4>
 
 <p>The global group of invertible elements of the WTA monoid is trivial. There is no global permutation symmetry of the eight-state space.</p>
 
@@ -490,13 +541,14 @@ f_a(x)=\delta(x,a).\]
 
 <hr />
 
-<h2 id="5-krohnrhodes-theory-without-assuming-you-know-krohnrhodes-theory">5. Krohn–Rhodes Theory Without Assuming You Know Krohn–Rhodes Theory</h2>
+<p><a id="technical-krohn-rhodes"></a></p>
+<h3 id="5-krohnrhodes-theory-without-assuming-you-know-krohnrhodes-theory">5. Krohn–Rhodes Theory Without Assuming You Know Krohn–Rhodes Theory</h3>
 
 <p>The phrase “Krohn–Rhodes decomposition” can make the paper sound more forbidding than the basic idea really is.</p>
 
 <p>Here is the intuition.</p>
 
-<h3 id="the-funnel-and-gear-picture">The funnel-and-gear picture</h3>
+<h4 id="the-funnel-and-gear-picture">The funnel-and-gear picture</h4>
 
 <p>Imagine building a finite-state machine out of two qualitative kinds of components.</p>
 
@@ -519,7 +571,7 @@ f_a(x)=\delta(x,a).\]
 
 <p>This is particularly useful for our neural examples because the interesting reversible structure is <em>not global</em>. The entire circuit can be dissipative while a small image reached after collapse carries a permutation.</p>
 
-<h3 id="what-does-mathbb-z_2-mean-here">What does $\mathbb Z_2$ mean here?</h3>
+<h4 id="what-does-mathbb-z_2-mean-here">What does $\mathbb Z_2$ mean here?</h4>
 
 <p>The simplest nontrivial finite group is</p>
 
@@ -537,7 +589,8 @@ f_a(x)=\delta(x,a).\]
 
 <hr />
 
-<h2 id="6-what-holonomy-decomposition-adds">6. What Holonomy Decomposition Adds</h2>
+<p><a id="technical-holonomy"></a></p>
+<h3 id="6-what-holonomy-decomposition-adds">6. What Holonomy Decomposition Adds</h3>
 
 <p>Krohn–Rhodes theory gives the structural theorem. <strong>Holonomy decomposition</strong> gives a practical way to expose the hierarchy for a concrete finite transformation system.</p>
 
@@ -559,7 +612,8 @@ f_a(x)=\delta(x,a).\]
 
 <hr />
 
-<h2 id="7-composing-gain-control-and-selection">7. Composing Gain Control and Selection</h2>
+<p><a id="technical-composition"></a></p>
+<h3 id="7-composing-gain-control-and-selection">7. Composing Gain Control and Selection</h3>
 
 <p>The main experiment places the four-state DN model and the eight-state WTA model on the product space</p>
 
@@ -569,7 +623,7 @@ f_a(x)=\delta(x,a).\]
 
 <p>We then compare different ways of coupling the two motifs.</p>
 
-<h3 id="control-1-independent-product">Control 1: Independent product</h3>
+<h4 id="control-1-independent-product">Control 1: Independent product</h4>
 
 <p>First, update the two systems side by side without allowing them to influence one another.</p>
 
@@ -589,7 +643,7 @@ f_a(x)=\delta(x,a).\]
 
 <p>Simply putting two motifs next to each other does not produce genuinely composite reversible structure.</p>
 
-<h3 id="dnwta-normalization-sets-the-competitive-drive">DN→WTA: normalization sets the competitive drive</h3>
+<h4 id="dnwta-normalization-sets-the-competitive-drive">DN→WTA: normalization sets the competitive drive</h4>
 
 <p>Next, let the DN state determine the effective input delivered to WTA through an interface</p>
 
@@ -621,7 +675,8 @@ f_a(x)=\delta(x,a).\]
 
 <hr />
 
-<h2 id="8-wtadn-when-the-winner-changes-the-gain-context">8. WTA→DN: When the Winner Changes the Gain Context</h2>
+<p><a id="technical-wta-to-dn"></a></p>
+<h3 id="8-wtadn-when-the-winner-changes-the-gain-context">8. WTA→DN: When the Winner Changes the Gain Context</h3>
 
 <p>Now reverse the causal direction.</p>
 
@@ -682,7 +737,8 @@ f_a(x)=\delta(x,a).\]
 
 <hr />
 
-<h2 id="9-a-compact-structural-comparison">9. A Compact Structural Comparison</h2>
+<p><a id="technical-comparison"></a></p>
+<h3 id="9-a-compact-structural-comparison">9. A Compact Structural Comparison</h3>
 
 <table>
   <thead>
@@ -800,7 +856,8 @@ f_a(x)=\delta(x,a).\]
 
 <hr />
 
-<h2 id="10-is-this-just-a-hand-tuned-interface-we-exhausted-the-interface-space">10. Is This Just a Hand-Tuned Interface? We Exhausted the Interface Space</h2>
+<p><a id="technical-interface-sweep"></a></p>
+<h3 id="10-is-this-just-a-hand-tuned-interface-we-exhausted-the-interface-space">10. Is This Just a Hand-Tuned Interface? We Exhausted the Interface Space</h3>
 
 <p>A natural objection is that the WTA→DN cycle might be an artifact of one carefully chosen winner-to-normalization interface.</p>
 
@@ -834,7 +891,7 @@ f_a(x)=\delta(x,a).\]
 
 <p>This exact exception structure is stronger than saying merely that “almost every interface works.” It tells us <em>what information the coupling must be capable of transmitting</em> for the composite degree of freedom to exist.</p>
 
-<h3 id="existence-is-not-the-same-as-legibility">Existence is not the same as legibility</h3>
+<h4 id="existence-is-not-the-same-as-legibility">Existence is not the same as legibility</h4>
 
 <p>The biological winner-pooling interface is not unique because it has a composite cycle. Most coupled interfaces do.</p>
 
@@ -850,7 +907,8 @@ f_a(x)=\delta(x,a).\]
 
 <hr />
 
-<h2 id="11-coupling-direction-matters-more-than-mere-coupling">11. Coupling Direction Matters More Than Mere Coupling</h2>
+<p><a id="technical-direction"></a></p>
+<h3 id="11-coupling-direction-matters-more-than-mere-coupling">11. Coupling Direction Matters More Than Mere Coupling</h3>
 
 <p>The reverse interface sweep—DN setting the WTA drive—contains only</p>
 
@@ -887,7 +945,8 @@ f_a(x)=\delta(x,a).\]
 
 <hr />
 
-<h2 id="12-timing-matters-too-50331648-interfaceschedule-combinations">12. Timing Matters Too: 50,331,648 Interface–Schedule Combinations</h2>
+<p><a id="technical-timing"></a></p>
+<h3 id="12-timing-matters-too-50331648-interfaceschedule-combinations">12. Timing Matters Too: 50,331,648 Interface–Schedule Combinations</h3>
 
 <p>We also exhaustively tested update schedule over</p>
 
@@ -899,7 +958,7 @@ f_a(x)=\delta(x,a).\]
 
 <p>This produces an important boundary around the main result.</p>
 
-<h3 id="synchronous-recurrent-coupling">Synchronous recurrent coupling</h3>
+<h4 id="synchronous-recurrent-coupling">Synchronous recurrent coupling</h4>
 
 <p>When DN and WTA set each other’s inputs simultaneously, the biological interface produces a nine-element monoid with a composite three-cycle and a $\mathbb Z_3$ holonomy component.</p>
 
@@ -907,7 +966,7 @@ f_a(x)=\delta(x,a).\]
 
 <p>Across the entire recurrent sweep, we found <strong>no case</strong> in which four aperiodic recurrent generators produced a non-aperiodic monoid. Under synchronous mutual feedback, non-aperiodicity is generator-explicit.</p>
 
-<h3 id="asynchronous-recurrent-coupling">Asynchronous recurrent coupling</h3>
+<h4 id="asynchronous-recurrent-coupling">Asynchronous recurrent coupling</h4>
 
 <p>At the biological interfaces, both strict update orders—DN first or WTA first—produce eight-element aperiodic monoids with no nontrivial group component.</p>
 
@@ -926,7 +985,8 @@ f_a(x)=\delta(x,a).\]
 
 <hr />
 
-<h2 id="13-from-physical-computation-back-to-effective-theories-of-neural-circuits">13. From Physical Computation Back to Effective Theories of Neural Circuits</h2>
+<p><a id="technical-effective-theory"></a></p>
+<h3 id="13-from-physical-computation-back-to-effective-theories-of-neural-circuits">13. From Physical Computation Back to Effective Theories of Neural Circuits</h3>
 
 <p>The phrase <strong>effective theory</strong> is doing real work here.</p>
 
@@ -981,7 +1041,8 @@ irreversible components + local reversible group structure
 
 <hr />
 
-<h2 id="14-what-this-adds-to-connectomics">14. What This Adds to Connectomics</h2>
+<p><a id="technical-connectomics"></a></p>
+<h3 id="14-what-this-adds-to-connectomics">14. What This Adds to Connectomics</h3>
 
 <p>Connectomics is rapidly moving from anatomical inventory toward functional inference. But anatomy alone still underdetermines computation.</p>
 
@@ -1028,7 +1089,8 @@ connectomics -&gt; effective circuit transformations -&gt; algebraic repertoire
 
 <hr />
 
-<h2 id="15-what-this-adds-to-dynamical-systems-thinking">15. What This Adds to Dynamical-Systems Thinking</h2>
+<p><a id="technical-dynamical-systems"></a></p>
+<h3 id="15-what-this-adds-to-dynamical-systems-thinking">15. What This Adds to Dynamical-Systems Thinking</h3>
 
 <p>Neural computation is usually described using fixed points, oscillations, bifurcations, chaos, manifolds, and attractors. Those are indispensable concepts.</p>
 
@@ -1052,7 +1114,8 @@ connectomics -&gt; effective circuit transformations -&gt; algebraic repertoire
 
 <hr />
 
-<h2 id="16-what-this-suggests-for-ai-architecture">16. What This Suggests for AI Architecture</h2>
+<p><a id="technical-ai-architecture"></a></p>
+<h3 id="16-what-this-suggests-for-ai-architecture">16. What This Suggests for AI Architecture</h3>
 
 <p>The most useful lesson for machine learning is not that divisive normalization is “the same thing as layer normalization,” or that WTA is “the same thing as max pooling.” Those analogies are too loose.</p>
 
@@ -1077,7 +1140,8 @@ connectomics -&gt; effective circuit transformations -&gt; algebraic repertoire
 
 <hr />
 
-<h2 id="17-what-we-are-not-claiming">17. What We Are <em>Not</em> Claiming</h2>
+<p><a id="technical-not-claiming"></a></p>
+<h3 id="17-what-we-are-not-claiming">17. What We Are <em>Not</em> Claiming</h3>
 
 <p>Because the algebra is exact, it is tempting to overinterpret it. Several boundaries are important.</p>
 
@@ -1095,7 +1159,8 @@ connectomics -&gt; effective circuit transformations -&gt; algebraic repertoire
 
 <hr />
 
-<h2 id="18-the-main-takeaway">18. The Main Takeaway</h2>
+<p><a id="technical-main-takeaway"></a></p>
+<h3 id="18-the-main-takeaway">18. The Main Takeaway</h3>
 
 <p>The most compact statement of the result is this:</p>
 
@@ -1126,7 +1191,8 @@ connectomics -&gt; effective circuit transformations -&gt; algebraic repertoire
 
 <hr />
 
-<h2 id="technical-notes-and-references">Technical Notes and References</h2>
+<p><a id="technical-notes"></a></p>
+<h3 id="technical-notes-and-references">Technical Notes and References</h3>
 
 <p>The full paper contains the explicit generator tables, state encodings, transition-monoid enumeration, witness searches, interface sweeps, rank distributions, and GAP/SgpDec holonomy analysis underlying the results summarized here.</p>
 
@@ -1144,7 +1210,8 @@ connectomics -&gt; effective circuit transformations -&gt; algebraic repertoire
 
 <hr />
 
-<h2 id="19-a-neuroai-perspective-where-neuroscience-physics-and-ai-meet">19. A NeuroAI Perspective: Where Neuroscience, Physics, and AI Meet</h2>
+<p><a id="technical-neuroai"></a></p>
+<h3 id="19-a-neuroai-perspective-where-neuroscience-physics-and-ai-meet">19. A NeuroAI Perspective: Where Neuroscience, Physics, and AI Meet</h3>
 
 <p>I think the larger opportunity here is <strong>NeuroAI</strong>—but in a sense broader than simply fitting neural networks to neural data or borrowing isolated motifs from biology.</p>
 
@@ -1195,7 +1262,6 @@ connectomics -&gt; effective circuit transformations -&gt; algebraic repertoire
 <p><strong>Connectomes tell us what is there. Dynamics tell us how it moves. Effective transformation algebra can tell us what it can compute.</strong></p>
 
 <p>For me, that is one of the directions in which NeuroAI becomes not just an exchange of metaphors between neuroscience and machine learning, but a genuine theory-building enterprise connecting biology, physics, and computation.</p>
-
 
   </section>
 
