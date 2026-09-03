@@ -1,0 +1,1233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ead7be">
+<title>Connectomes, Dynamics, and the Algebra of Computation: Why “More Is Different” in Canonical Recurrent Motifs · Nima Dehghani</title>
+<meta name="description" content="Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<link type="application/atom+xml" rel="alternate" href="https://neurovium.github.io/feed.xml" title="Nima Dehghani" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Connectomes, Dynamics, and the Algebra of Computation: Why “More Is Different” in Canonical Recurrent Motifs | Nima Dehghani</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Connectomes, Dynamics, and the Algebra of Computation: Why “More Is Different” in Canonical Recurrent Motifs" />
+<meta name="author" content="Nima Dehghani" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Companion post to: Algebraic Emergence of Effective Theories in Canonical Recurrent Motifs of Biological Neuronal Networks Nima Dehghani arXiv (2026) DOI: https://doi.org/10.48550/arXiv.2608.30231" />
+<meta property="og:description" content="Companion post to: Algebraic Emergence of Effective Theories in Canonical Recurrent Motifs of Biological Neuronal Networks Nima Dehghani arXiv (2026) DOI: https://doi.org/10.48550/arXiv.2608.30231" />
+<link rel="canonical" href="https://neurovium.github.io/posts/pblog-AlgebraicCanonicalNet/" />
+<meta property="og:url" content="https://neurovium.github.io/posts/pblog-AlgebraicCanonicalNet/" />
+<meta property="og:site_name" content="Nima Dehghani" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-08-31T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Connectomes, Dynamics, and the Algebra of Computation: Why “More Is Different” in Canonical Recurrent Motifs" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Nima Dehghani"},"dateModified":"2026-08-31T00:00:00+00:00","datePublished":"2026-08-31T00:00:00+00:00","description":"Companion post to: Algebraic Emergence of Effective Theories in Canonical Recurrent Motifs of Biological Neuronal Networks Nima Dehghani arXiv (2026) DOI: https://doi.org/10.48550/arXiv.2608.30231","headline":"Connectomes, Dynamics, and the Algebra of Computation: Why “More Is Different” in Canonical Recurrent Motifs","mainEntityOfPage":{"@type":"WebPage","@id":"https://neurovium.github.io/posts/pblog-AlgebraicCanonicalNet/"},"url":"https://neurovium.github.io/posts/pblog-AlgebraicCanonicalNet/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+  },
+  options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+
+</head>
+<body>
+  <header class="topbar">
+    <a href="/" class="topbar__brand">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"><line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/><line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/><line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/></g><circle cx="18" cy="20" r="2.2" fill="currentColor"/></svg>
+      Nima Dehghani
+    </a>
+    <button class="topbar__toggle" id="sidebar-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sidebar">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </header>
+
+  <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
+
+  <div class="app">
+    
+
+<aside class="side" id="sidebar" aria-label="Primary">
+  <a class="side__brand" href="/">
+    <svg class="glyph" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none">
+        <line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/>
+        <line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/>
+        <line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/>
+      </g>
+      <circle cx="18" cy="20" r="2.2" fill="currentColor"/>
+    </svg>
+    <span>
+      <span class="side__name">Nima Dehghani</span>
+      <span class="side__tag">@neurovium · MIT</span>
+    </span>
+  </a>
+
+  
+  
+  <nav class="side__nav" aria-label="Main navigation">
+    <a href="/about/" class="">About</a>
+    <a href="/news/" class="">News<span class="side__pip" aria-label="new"></span></a>
+    <a href="/research/" class="">Research</a>
+    <a href="/papers/" class="">Paper Maze</a>
+    <a href="/garden/" class="">Idea Garden</a>
+    <a href="/blog/" class="">Blog</a>
+    <a href="/open-science/" class="">Open Science</a>
+
+    <details class="side__group">
+      <summary class="side__group-sum" aria-label="Reflections — 4 pages">
+        <span class="side__group-label">Reflections</span>
+        <span class="side__group-meta">
+          <span class="side__group-count">4</span>
+          <svg class="side__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </span>
+      </summary>
+      <div class="side__subnav">
+        <a href="/on-liberty/" class="">On Liberty</a>
+        <a href="/neurovium-decoded/" class="">Neurovium Decoded</a>
+        <a href="/leibnizian-dream/" class="">Leibnizian Dream</a>
+        <a href="/scientific-understanding/" class="">Scientific Understanding</a>
+      </div>
+    </details>
+  </nav>
+
+  <div class="side__social" aria-label="Social links">
+    <div class="side__social-row">
+      <a href="https://scholar.google.com/citations?user=acFMrVUAAAAJ&hl=en" title="Google Scholar" target="_blank" rel="noopener" aria-label="Google Scholar">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9zm6.82 7L12 12.72 5.18 9 12 5.28zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73z"/></svg>
+      </a>
+      <a href="mailto:nima.dehghani@mit.edu" title="Email" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/nimadehghani/" title="LinkedIn" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+    </div>
+    <div class="side__social-row">
+      <a href="https://github.com/neurovium" title="GitHub" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      </a>
+      <a href="https://twitter.com/neurovium" title="X" target="_blank" rel="noopener" aria-label="X">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://bsky.app/profile/neurovium.bsky.social" class="is-bsky" title="Bluesky" target="_blank" rel="noopener" aria-label="Bluesky">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.335 5.144c2.606 1.957 5.41 5.923 6.44 8.051.99-2.046 3.855-6.132 6.44-8.051 1.864-1.383 4.885-2.453 4.885 1.002 0 .69-.396 5.795-.629 6.624-.809 2.882-3.748 3.616-6.363 3.17 4.573.78 5.737 3.359 3.224 5.939-4.772 4.9-6.859-1.23-7.394-2.802-.534 1.572-2.622 7.702-7.394 2.802-2.513-2.58-1.349-5.16 3.224-5.939-2.615.446-5.554-.288-6.363-3.17-.233-.829-.629-5.934-.629-6.624 0-3.455 3.021-2.385 4.885-1.002z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="n4-set" aria-label="N⁴ : NeuroAI ⊃ N³">
+    <span class="n4-set__lbl">N&#8308;</span>
+    <div class="n4-set n4-set--ai">
+      <span class="n4-set__lbl">NeuroAI</span>
+      <div class="n4-set n4-set--n3">
+        <span class="n4-set__lbl">N&#179;</span>
+        <ul>
+          <li>NeuroPhysics</li>
+          <li>NeuroComputation</li>
+          <li>NeuroDynamics</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="side__foot">
+    <span>
+      <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+      ·
+      <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    </span>
+  </div>
+</aside>
+
+    <main class="main">
+      <article class="paper">
+  <div class="paper__crumb">
+    <a href="/blog/">← Blog</a>
+    <span style="color:var(--muted-soft);">·</span>
+    <span>Aug 31, 2026</span>
+  </div>
+
+  <h1>Connectomes, Dynamics, and the Algebra of Computation: Why “More Is Different” in Canonical Recurrent Motifs</h1>
+  
+  
+
+  
+  <div class="linkbar" style="margin-top:24px;">
+    <a href="/papers/AlgebraicCanonicalNet/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="20" x2="12" y2="12"/><line x1="12" y1="12" x2="21" y2="4"/><line x1="12" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="21" y2="20"/></svg>
+      Follow this path into the Maze
+    </a>
+  </div>
+  
+
+  <section class="paper__section prose" style="margin-top:28px;">
+    <p><em>Companion post to:</em><br />
+<strong>Algebraic Emergence of Effective Theories in Canonical Recurrent Motifs of Biological Neuronal Networks</strong><br />
+Nima Dehghani
+<em>arXiv</em> (2026)<br />
+DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.48550/arXiv.2608.30231</code></p>
+
+<div class="citeblock">
+  <div class="citeblock__head">
+    <span class="citeblock__label">Cite this post</span>
+    <button type="button" class="citeblock__copy" data-cite-copy="">Copy</button>
+  </div>
+  <pre><code>@misc{dehghani2026moredifferentneuralcircuits,
+  title={"More Is Different" in Neural Circuits: Algebraic Emergence of Effective Theories in Canonical Recurrent Motifs of Biological Neuronal Networks}, 
+  author={Nima Dehghani},
+  year={2026},
+  eprint={2608.30231},
+  archivePrefix={arXiv},
+  primaryClass={q-bio.NC},
+  url={https://arxiv.org/abs/2608.30231}, 
+}</code></pre>
+</div>
+
+<hr />
+
+<h2 id="how-this-paper-began-an-itch-that-wouldnt-go-away">How This Paper Began: An Itch That Wouldn’t Go Away</h2>
+
+<p>This paper has a much longer history than its equations suggest.</p>
+
+<p>More than a decade ago, while I was doing my PhD and working on cortical dynamics and neural avalanches, I stumbled across Simon DeDeo’s 2011 <em>Chaos</em> paper, <a href="https://pubs.aip.org/aip/cha/article/21/3/037106/896660/Effective-theories-for-circuits-and-automata"><strong>“Effective theories for circuits and automata”</strong></a>. It completely captured my imagination.</p>
+
+<p>At the time, I was thinking a great deal about renormalization and coarse-graining in neural systems. Neuroscience routinely moves between scales: spikes become population activity; individual cells become local fields; microscopic events become avalanches, oscillations, or macroscopic state variables. But I kept feeling that something important was missing. The usual coarse-graining question is: <em>what variables or organizing principles survive when we move to a larger scale?</em> I wanted an analogue that could ask a different question:</p>
+
+<blockquote>
+  <p><strong>What survives—or emerges—at the level of the content of computation?</strong></p>
+</blockquote>
+
+<p>I was particularly uneasy with coarse-grainings that simply pooled everything together and then treated the aggregate as the object of interest. In neural systems, distinctions among classes of elements can matter. In my work on <a href="https://www.frontiersin.org/journals/physiology/articles/10.3389/fphys.2012.00302/full"><strong>neural avalanches in cat, monkey, and human cortex</strong></a>, for example, I was already arguing that one should not automatically treat population events as coming from one homogeneous process. Excitation and inhibition, and more generally different cellular subclasses, can leave different fingerprints on what looks macroscopically like one phenomenon. The broader lesson stayed with me: <strong>a convenient coarse-graining is not necessarily the right effective theory. What is discarded may be exactly what carries the computation.</strong></p>
+
+<p>DeDeo’s paper approached effective theories from a direction I had not seen before. Instead of starting from a field theory or a scaling law, it used finite automata and <strong>Krohn–Rhodes theory</strong> to ask how higher-level computational structure could arise from the composition of lower-level mechanisms—even in the presence of irreversibility and dissipation. That was much closer to the question I wanted to ask.</p>
+
+<p>And yet I did not feel that I completely understood it.</p>
+
+<p>I must have read the paper ten times. Most of it made sense, but parts of the Krohn–Rhodes construction kept bothering me. I could follow the formal steps without feeling that I had reached the conceptual core. After finishing my PhD, when I was at the Harvard Wyss Institute for Biologically Inspired Engineering and the New England Complex Systems Institute, I ran into Simon at the International Conference on Complex Systems in Boston, the annual meeting of the <a href="https://cssociety.org/"><strong>Complex Systems Society</strong></a>. It was a hot, humid summer day, and I grabbed the opportunity. We sat down at a table in the middle of the conference commotion, and I kept probing: <em>What, exactly, is Krohn–Rhodes telling us about a computation? What is the object that survives the decomposition? Where is the effective theory?</em></p>
+
+<p>It was a delightful conversation, and several things finally became clearer. It was also memorable for a less mathematical reason: somewhere in the middle of the discussion I managed to knock Simon’s glass of red wine onto my own <strong>white cotton pants</strong>. We both had a good laugh about it, and then had to run off to separate dinner plans.</p>
+
+<p>The conversation ended. The problem did not.</p>
+
+<h3 id="compositionality-recurrence-and-a-hundred-page-dead-end">Compositionality, recurrence, and a hundred-page dead end</h3>
+
+<p>A few years later, in 2016, I was at MIT Physics and the <strong>Center for Brains, Minds and Machines (CBMM)</strong> when CBMM held a wonderfully stimulating three-talk session on compositionality. Tomaso Poggio, Max Tegmark—my advisor at the time—and Joshua Tenenbaum each approached the problem from a different angle. The talks were different enough that each one opened a separate line of thought for me.</p>
+
+<p>Tommy’s talk focused on <strong>function composition in neural networks</strong>. You can see the relevant part <a href="https://youtu.be/A3bDQ-VLL28?si=DOmQe1yjaxvpTc5f&amp;t=155"><strong>here</strong></a>. His setting was primarily feedforward. I was sitting next to the whiteboard in orange, and, as a completely unintended side result of the recording, this was also the first time I realized I had started losing hair—I normally do not see the back of my own head.</p>
+
+<p>The scientific point stuck much more strongly. At the time I was already thinking about excitation and inhibition as different computational ingredients. Tommy’s discussion of composing functions made me ask whether one could do something similar with <strong>basic biological neuronal circuit elements</strong>: not merely compose abstract layers, but compose motifs such as excitation, inhibition, normalization, competition, gating, and recurrence, and then ask what the composite <em>computes</em>.</p>
+
+<p>Feedforward composition is one thing. <strong>Recurrence is a much harder beast.</strong> Once a component’s output changes which operation is applied next, the neat picture of one function feeding another starts to break. I tried several ways of formalizing the problem. One attempt grew into more than a hundred pages of mathematics on what I called <em>categorical color spaces</em>, organized around seven classes of recurrent motifs. There were some good ideas in it, and I tried to bring the manuscript to a finished state, but as a route to the problem I cared about it was a dead end. The machinery had become heavier than the phenomenon. I was drained by it. I put the whole thing back in a drawer feeling, frankly, defeated on that front.</p>
+
+<p>Maybe I will return to it someday. Who knows.</p>
+
+<p>That same, now slightly infamous, CBMM session also planted another seed. Max’s talk pushed me toward a different problem: whether something like an <strong>effective theory across the layers of deep networks</strong> could be made precise. That manuscript has also spent a long time in a drawer waiting for me to finish it. Apparently I have a drawer-based publication pipeline.</p>
+
+<p>But the compositionality problem—the recurrent one—never quite went away.</p>
+
+<h3 id="physical-computation-supplied-one-half-of-the-answer">Physical computation supplied one half of the answer</h3>
+
+<p>During the years that followed, I worked increasingly on the foundations of physical computation: how to say, without hand-waving, when a physical dynamical system implements a computation and how computations compose across levels.</p>
+
+<p>In <a href="https://arxiv.org/abs/2210.00392"><strong>Physical Computing: A Category Theoretic Perspective on Physical Computation and System Compositionality</strong></a> (<a href="https://neurovium.science/posts/pblog-Catcomp/">blog version</a>), Gianluca Caterina and I developed a framework in which physical and abstract dynamics are related through structure-preserving maps. Composition is not an analogy added afterward; it is part of the mathematical account. A central piece of that program was understanding <strong>nested composition</strong>: how computational descriptions can be composed while remaining anchored to the physical dynamics that realize them. A compact overview of that line of work is <a href="https://neurovium.science/papers/Catcomp/"><strong>here</strong></a>.</p>
+
+<p>On a related note -&gt; More recently, in <a href="https://arxiv.org/abs/2607.23902"><strong>Autonomous Physical Computation: A Categorical Closure Criterion for Physical and Neuromorphic Reservoirs</strong></a> (<a href="https://neurovium.science/posts/pblog-Wave-compute/">blog version</a>), I have pushed the question further: when does a physical system merely <em>support</em> externally orchestrated transformations, and when does its own internal state participate in selecting what operation happens next? That distinction between externally sequenced dynamics and internally closed computation turned out to be very close to the recurrent problem that had been bothering me since the CBMM meeting.</p>
+
+<h3 id="then-the-itch-came-back">Then the itch came back</h3>
+
+<p>A few years after the CBMM meeting, Stephen Wolfram and Jonathan Gorard invited me to a small event at MIT to discuss a range of foundational questions. It was an intimate group, and my friend and collaborator <strong>Gianluca Caterina</strong> was there as well. We had already been working together on the physical-computation framework and its nested compositional structure.</p>
+
+<p>One of the topics that came up was <strong>combinators</strong>.</p>
+
+<p>That was the moment when an uncanny opening appeared. I suddenly saw a route back into the problem I had failed to solve: composition not as a vague principle, and not as a gigantic categorical construction over every possible motif, but as something that could be attacked through the algebra of <strong>finite transformations generated by composable operations</strong>. The old Krohn–Rhodes problem that had challenged me years earlier suddenly looked less like an intimidating decomposition theorem and more like exactly the tool I had been missing.</p>
+
+<p>The itch came back.</p>
+
+<p>I started working on the problem again, now with a much sharper question: if canonical biological motifs are treated as primitive transformations, <strong>what algebra do they generate when we compose them, especially when recurrence makes the outcome of one operation determine the context of the next?</strong></p>
+
+<p>At roughly the same time, connectomics had reached a scale where this question no longer felt purely formal. We now have detailed circuit structure, large-scale structure–function maps, and recurrent models constrained by real cortical anatomy. In our recent work, <a href="https://arxiv.org/abs/2606.14975"><strong>Harnessing cortical geometry, wiring, and function as inductive biases for recurrent neural networks</strong></a> (<a href="https://neurovium.science/posts/pblog-Cortical-blueprint-RNN/">blog version</a>), we asked how geometry, anatomical connectivity, and function measured in the same cortical tissue can constrain recurrent neural networks. That work moves from biological structure toward learned dynamics.</p>
+
+<p>The present paper attacks the complementary layer:</p>
+
+<blockquote>
+  <p>Once we have candidate circuit structure and effective dynamics, <strong>what is the algebraic repertoire of computation generated by composing their operations?</strong></p>
+</blockquote>
+
+<p>That is where the old DeDeo/Krohn–Rhodes thread, the CBMM compositionality thread, the physical-computation program, the connectomics revolution, and the recurrent-network work finally met.</p>
+
+<p>And here is the story.</p>
+
+<p><strong>I owe Simon a glass of red wine.</strong></p>
+
+<hr />
+
+<p>A connectome is not a program.</p>
+
+<p>A wiring diagram tells us which elements are connected. A dynamical model tells us how activity evolves under a specified set of equations and inputs. But neither, by itself, tells us the full <strong>repertoire of transformations a circuit can generate when its operations are composed in time</strong>.</p>
+
+<p>That is the layer I study in my forthcoming <em>Neural Computation</em> paper, <strong>“Algebraic Emergence of Effective Theories in Canonical Recurrent Motifs of Biological Neuronal Networks.”</strong> The paper asks a deliberately different question from the usual ones in circuit neuroscience:</p>
+
+<blockquote>
+  <p>Given a set of biologically motivated circuit operations, what is the algebra of everything the circuit can do by composing those operations in sequence?</p>
+</blockquote>
+
+<p>The distinction matters because recurrent circuits are almost never exposed to one frozen condition forever. Inputs change. Context changes. Inhibition turns on and off. A selected population alters what happens next. Once the order of operations matters, the natural object is no longer a single trajectory or a single update rule. It is the <strong>closure of all allowed update rules under composition</strong>.</p>
+
+<p>For two canonical neural motifs—<strong>divisive normalization (DN)</strong> and <strong>winner-take-all (WTA) competition</strong>—that closure contains something that none of the primitive operations need contain individually: <strong>local reversible structure generated from individually irreversible updates</strong>.</p>
+
+<p>The strongest case occurs when the result of competition feeds back to determine the subsequent normalization condition. Every primitive update is still aperiodic and dissipative. Yet short sequences of those updates generate a two-state reversible degree of freedom involving <em>both</em> motifs.</p>
+
+<p>That is the precise sense in which “more is different” here: composition changes the algebraic kind of computation available to the circuit.</p>
+
+<p><img src="motif_schematic.png" alt="Canonical divisive-normalization and winner-take-all motifs, together with the composition architectures studied in the paper." /></p>
+
+<p><em>The canonical motifs and the four composition schemes studied in the paper: independent product, DN→WTA, WTA→DN, and recurrent coupling.</em></p>
+
+<hr />
+
+<h2 id="1-three-descriptions-of-a-neural-circuit">1. Three Descriptions of a Neural Circuit</h2>
+
+<p>It is useful to separate three levels that are often blended together:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Connectomics                 Dynamical systems                Transformation algebra
+What is connected?    ---&gt;   How does activity evolve?  ---&gt;  What can be generated by composition?
+
+Anatomical structure          Trajectories / attractors        Computational repertoire
+</code></pre></div></div>
+
+<p>The third level is not a replacement for the first two. It depends on them. But it asks a different question.</p>
+
+<p>Suppose a circuit has several possible input-conditioned update rules. A dynamical analysis might examine each rule separately, or study trajectories produced by a particular stimulus protocol. The algebraic approach instead asks for <strong>every state transformation obtainable from every finite sequence of admissible inputs</strong>.</p>
+
+<p>That seemingly small change—from one update to arbitrary sequences of updates—is where the new structure appears.</p>
+
+<hr />
+
+<h2 id="2-neural-motifs-as-finite-transformation-systems">2. Neural Motifs as Finite Transformation Systems</h2>
+
+<p>We represent a coarse-grained neural circuit as a deterministic finite transformation system</p>
+
+\[\mathcal A=(X,\Sigma,\delta),\]
+
+<p>where:</p>
+
+<ul>
+  <li>$X$ is a finite set of coarse-grained circuit states;</li>
+  <li>$\Sigma$ is a finite alphabet of input or drive conditions;</li>
+  <li>$\delta:X\times\Sigma\rightarrow X$ specifies the deterministic update.</li>
+</ul>
+
+<p>Each input symbol $a\in\Sigma$ therefore defines a concrete map</p>
+
+\[f_a:X\rightarrow X,
+\qquad
+f_a(x)=\delta(x,a).\]
+
+<p>Now comes the important step. We do not stop at the primitive maps $f_a$. We compose them.</p>
+
+<p>An input word</p>
+
+\[w=a_1a_2\cdots a_k\]
+
+<p>induces a transformation obtained by applying the corresponding maps in sequence. The set of all transformations obtainable from all finite words is the <strong>transition monoid</strong></p>
+
+\[M=\langle f_a:a\in\Sigma\rangle.\]
+
+<h3 id="a-useful-non-algebra-analogy-buttons-and-programs">A useful non-algebra analogy: buttons and programs</h3>
+
+<p>Think of each primitive input-conditioned map as a button on a machine. Pressing one button once performs one allowed operation. The transition monoid is not the list of buttons. It is the library of <strong>every distinct program you can create by pressing those buttons in every possible finite order</strong>.</p>
+
+<p>Two machines can therefore have primitive operations that look equally simple but radically different generated repertoires.</p>
+
+<p>This is why the monoid, rather than any single generator, is the central object.</p>
+
+<hr />
+
+<h2 id="3-the-strict-baseline-every-primitive-operation-must-be-aperiodic">3. The Strict Baseline: Every Primitive Operation Must Be Aperiodic</h2>
+
+<p>If a primitive update already contains a cycle, then finding cyclic structure in the full system is not surprising. We therefore imposed a stricter baseline.</p>
+
+<p>For a finite transformation $f$, call $f$ <strong>aperiodic</strong> when its functional graph contains no cycle longer than a fixed point. Equivalently, after sufficiently many repetitions, applying $f$ again produces no further change:</p>
+
+\[f^n=f^{n+1}\]
+
+<p>for some finite $n$.</p>
+
+<p>Intuitively, a fixed input eventually collapses the system onto fixed points. There is no nontrivial reversible orbit hiding inside that one primitive operation.</p>
+
+<p>The phenomenon of interest is therefore</p>
+
+\[\forall a\in\Sigma,\quad f_a\text{ is aperiodic},\]
+
+<p>while nevertheless</p>
+
+\[\exists m\in\langle f_a\rangle
+\quad\text{such that }m\text{ is non-aperiodic}.\]
+
+<p>In plain language:</p>
+
+<blockquote>
+  <p>Every primitive operation is individually dissipative, but some <em>sequence</em> of those operations creates a local cycle.</p>
+</blockquote>
+
+<p>This is the first notion of algebraic emergence used in the paper.</p>
+
+<p>A small four-state DN model already exhibits this phenomenon. But the WTA motif gives the cleaner biological example.</p>
+
+<hr />
+
+<h2 id="4-winner-take-all-global-dissipation-local-reversibility">4. Winner-Take-All: Global Dissipation, Local Reversibility</h2>
+
+<p>Our WTA abstraction contains two competing excitatory populations, $x_1$ and $x_2$, together with a shared inhibitory variable $y$. The coarse-grained state is therefore</p>
+
+\[(x_1,x_2,y)\in\{0,1\}^3,\]
+
+<p>giving eight states in total. We encode them by</p>
+
+\[w=4x_1+2x_2+y.\]
+
+<p>The four input conditions correspond to balanced drive, drive favoring population 1, drive favoring population 2, and joint drive.</p>
+
+<p>Every one of the four primitive WTA generators is strictly aperiodic. Hold any one input condition fixed and every orbit reaches a fixed point.</p>
+
+<p>If that were all we inspected, we would conclude that the finite WTA system is purely dissipative.</p>
+
+<p>But its generated transition monoid contains</p>
+
+\[|M_W|=326\]
+
+<p>distinct transformations, of which <strong>49 are non-aperiodic</strong>.</p>
+
+<p>A shortest witness is the two-symbol word corresponding to balanced drive followed by drive to population 1. If</p>
+
+\[h=f^W_{10}\circ f^W_{00},\]
+
+<p>then repeated application of $h$ collapses the eight-state space onto the two-state image</p>
+
+\[\{4,5\},\]
+
+<p>and on that surviving image $h$ acts as the transposition</p>
+
+\[4\longleftrightarrow 5.\]
+
+<p>Since</p>
+
+\[4=(1,0,0),\qquad 5=(1,0,1),\]
+
+<p>the identity of the winner does <strong>not</strong> alternate. Population 1 remains the winner. What toggles is the shared inhibitory gate:</p>
+
+\[(1,0,0)\longleftrightarrow(1,0,1).\]
+
+<p>The symmetric word produces the corresponding cycle for population 2.</p>
+
+<p><img src="witness_figure.png" alt="Functional-graph witnesses for the WTA cycle and the genuinely composite WTA→DN cycle." /></p>
+
+<p><em>Left: the WTA word funnels all states into a two-state image and then toggles the inhibitory gate. Right: the WTA→DN witness changes both the normalization and WTA coordinates.</em></p>
+
+<h3 id="why-this-is-more-interesting-than-the-circuit-oscillates">Why this is more interesting than “the circuit oscillates”</h3>
+
+<p>The global group of invertible elements of the WTA monoid is trivial. There is no global permutation symmetry of the eight-state space.</p>
+
+<p>The reversibility appears only <strong>after irreversible collapse</strong> onto a lower-rank image.</p>
+
+<p>For a transformation $f$, define its rank as</p>
+
+\[\mathrm{rank}(f)=|\mathrm{Im}(f)|.\]
+
+<p>Of the 49 non-aperiodic WTA transformations, 43 have rank two. None occurs at full rank.</p>
+
+<p>So the sequence of events is:</p>
+
+<ol>
+  <li>the circuit irreversibly discards distinctions among many initial states;</li>
+  <li>a small effective state space survives;</li>
+  <li>on that surviving image, a reversible degree of freedom appears.</li>
+</ol>
+
+<p>This is <strong>global dissipation with local reversibility</strong>.</p>
+
+<p>That combination is one of the main structural themes of the paper.</p>
+
+<hr />
+
+<h2 id="5-krohnrhodes-theory-without-assuming-you-know-krohnrhodes-theory">5. Krohn–Rhodes Theory Without Assuming You Know Krohn–Rhodes Theory</h2>
+
+<p>The phrase “Krohn–Rhodes decomposition” can make the paper sound more forbidding than the basic idea really is.</p>
+
+<p>Here is the intuition.</p>
+
+<h3 id="the-funnel-and-gear-picture">The funnel-and-gear picture</h3>
+
+<p>Imagine building a finite-state machine out of two qualitative kinds of components.</p>
+
+<p>A <strong>funnel</strong> is irreversible. It merges distinctions. Several states may be sent to one state or one smaller subset. Once two histories have been collapsed together, that information is gone. These are the reset-like, aperiodic parts of the computation.</p>
+
+<p>A <strong>gear</strong> is reversible. Within some surviving set of alternatives, it permutes them: two positions may flip, three may rotate, four may cycle, and so on. These are the group-like parts of the computation.</p>
+
+<p>Krohn–Rhodes theory says, roughly, that every finite transformation system can be represented—up to the appropriate algebraic notion of division—by a hierarchical cascade built from these two kinds of ingredients:</p>
+
+<ul>
+  <li><strong>aperiodic / reset-like components</strong>, and</li>
+  <li><strong>finite permutation-group components</strong>.</li>
+</ul>
+
+<p>So the decomposition asks:</p>
+
+<blockquote>
+  <p>How much of this machine is fundamentally irreversible funneling, and where are the irreducible reversible “gears” hidden inside it?</p>
+</blockquote>
+
+<p>This is particularly useful for our neural examples because the interesting reversible structure is <em>not global</em>. The entire circuit can be dissipative while a small image reached after collapse carries a permutation.</p>
+
+<h3 id="what-does-mathbb-z_2-mean-here">What does $\mathbb Z_2$ mean here?</h3>
+
+<p>The simplest nontrivial finite group is</p>
+
+\[\mathbb Z_2.\]
+
+<p>For our purposes, you can think of it as a two-position reversible switch:</p>
+
+\[A\leftrightarrow B.\]
+
+<p>Applying the nontrivial operation once swaps the two states; applying it twice returns to the starting point.</p>
+
+<p>A $\mathbb Z_3$ component is the analogous three-step rotation, and a $\mathbb Z_4$ component is a four-step cyclic structure.</p>
+
+<p>Importantly, these are <strong>algebraic permutation components</strong>, not claims that the underlying continuous neural circuit literally exhibits a sustained two-, three-, or four-cycle oscillation in physical time.</p>
+
+<hr />
+
+<h2 id="6-what-holonomy-decomposition-adds">6. What Holonomy Decomposition Adds</h2>
+
+<p>Krohn–Rhodes theory gives the structural theorem. <strong>Holonomy decomposition</strong> gives a practical way to expose the hierarchy for a concrete finite transformation system.</p>
+
+<p>The key objects are the images generated by the monoid.</p>
+
+<p>A transformation may collapse the full state space $X$ to a smaller image $P\subseteq X$. Inside that image, there can be maximal smaller image sets—its <strong>tiles</strong>. The holonomy construction organizes these image sets into a hierarchical skeleton and asks which transformations permute the tiles of each image.</p>
+
+<p>If an image has two singleton tiles,</p>
+
+\[\{A\},\{B\},\]
+
+<p>and the induced action exchanges them, then the holonomy group is a literal state-level $\mathbb Z_2$ on $A$ and $B$.</p>
+
+<p>If the tiles are larger subsets, the group acts on those subsets rather than directly on individual circuit states. We keep that distinction explicit in the paper because only singleton-tiled components support the straightforward statement that two particular neural states are being permuted.</p>
+
+<p>For the WTA system, the holonomy skeleton has depth 7 and 15 components. Two components carry nontrivial groups, both $\mathbb Z_2$. One of them acts on the image ${4,5}$ with singleton tiles. In other words, the decomposition independently finds the same local reversible degree of freedom exposed by the explicit witness word.</p>
+
+<p>This is why the holonomy analysis is more than decorative algebra. It turns “I found a cycle in a search” into “this reversible component belongs to the structural decomposition of the transformation system.”</p>
+
+<hr />
+
+<h2 id="7-composing-gain-control-and-selection">7. Composing Gain Control and Selection</h2>
+
+<p>The main experiment places the four-state DN model and the eight-state WTA model on the product space</p>
+
+\[X_D\times X_W,\]
+
+<p>with $4\times8=32$ joint states.</p>
+
+<p>We then compare different ways of coupling the two motifs.</p>
+
+<h3 id="control-1-independent-product">Control 1: Independent product</h3>
+
+<p>First, update the two systems side by side without allowing them to influence one another.</p>
+
+<p>The resulting monoid has</p>
+
+\[|M|=576\]
+
+<p>with 88 non-aperiodic elements.</p>
+
+<p>But every non-aperiodic witness is inherited: the DN coordinate stays fixed while the WTA coordinate performs the local gate cycle. The holonomy decomposition makes this especially clean. Among 34 group-carrying image sets,</p>
+
+<ul>
+  <li>27 move only the WTA coordinate;</li>
+  <li>7 move only the DN coordinate;</li>
+  <li><strong>0 move both</strong>.</li>
+</ul>
+
+<p>Simply putting two motifs next to each other does not produce genuinely composite reversible structure.</p>
+
+<h3 id="dnwta-normalization-sets-the-competitive-drive">DN→WTA: normalization sets the competitive drive</h3>
+
+<p>Next, let the DN state determine the effective input delivered to WTA through an interface</p>
+
+\[\phi:X_D\rightarrow\Sigma_W.\]
+
+<p>The transition monoid expands dramatically:</p>
+
+\[|M_{D\rightarrow W}|=3149,\]
+
+<p>with 401 non-aperiodic elements.</p>
+
+<p>The <em>shortest</em> non-aperiodic witness remains WTA-local. So if we only searched for the first cycle, we might conclude that the new algebra is inherited.</p>
+
+<p>That would be too strong.</p>
+
+<p>Deeper in the holonomy structure, this cascade does contain genuinely composite group actions: <strong>15 of 46 group-carrying image sets are composite</strong>, and the decomposition includes a $\mathbb Z_4$ component. One realization cycles through four joint states,</p>
+
+\[(D{:}0,W{:}1)
+\rightarrow
+(D{:}1,W{:}5)
+\rightarrow
+(D{:}0,W{:}3)
+\rightarrow
+(D{:}1,W{:}4).\]
+
+<p>So DN→WTA does create composite algebraic structure. It is simply <strong>less legible</strong>: the shortest witness is still inherited from WTA.</p>
+
+<p>This distinction between <em>existence</em> and <em>accessibility</em> becomes important below.</p>
+
+<hr />
+
+<h2 id="8-wtadn-when-the-winner-changes-the-gain-context">8. WTA→DN: When the Winner Changes the Gain Context</h2>
+
+<p>Now reverse the causal direction.</p>
+
+<p>Let the WTA state determine the normalization drive through a winner-pooling interface</p>
+
+\[\psi:X_W\rightarrow\Sigma_D.\]
+
+<p>This architecture has</p>
+
+\[|M_{W\rightarrow D}|=3084\]
+
+<p>with 361 non-aperiodic elements. The global group of units remains trivial, and—crucially—<strong>all four primitive composite generators remain aperiodic</strong>.</p>
+
+<p>But the shortest non-aperiodic witness is now genuinely composite:</p>
+
+\[(D{:}0,W{:}4)
+\longleftrightarrow
+(D{:}1,W{:}5).\]
+
+<p>Decoding the WTA coordinate,</p>
+
+\[W{:}4=(1,0,0),\qquad W{:}5=(1,0,1).\]
+
+<p>The winner remains population 1. What changes is:</p>
+
+<ul>
+  <li>the inhibitory gate, and</li>
+  <li>the normalization state.</li>
+</ul>
+
+<p>The local reversible degree of freedom is therefore not “inside DN” or “inside WTA.” It is a property of the <strong>coupled configuration</strong>.</p>
+
+<p>This is the paper’s clearest compositional result:</p>
+
+<blockquote>
+  <p>Selection changes the context in which gain is subsequently computed, and the resulting joint system supports a reversible transformation that belongs to neither motif in isolation.</p>
+</blockquote>
+
+<p>The holonomy skeleton certifies the pair</p>
+
+\[C=\{(D{:}0,W{:}4),(D{:}1,W{:}5)\}\]
+
+<p>as a group-carrying image set at depth 17. Its holonomy group is $\mathbb Z_2$, acting on two singleton tiles, so the group permutes the two composite states themselves.</p>
+
+<p>And this is not an isolated corner of the decomposition. Of the 57 group-carrying image sets in this system,</p>
+
+<ul>
+  <li>35 are <strong>composite</strong>;</li>
+  <li>12 are WTA-local;</li>
+  <li>10 are DN-local.</li>
+</ul>
+
+<p>Composite group structure is therefore the dominant kind in the WTA→DN cascade, whereas the independent product contains none at all.</p>
+
+<p><img src="rank_window_figure.png" alt="Rank distributions and decomposition-level classification of group-carrying image sets." /></p>
+
+<p><em>Non-aperiodic elements concentrate at low rank. The rightmost comparison classifies holonomy windows as WTA-local, DN-local, or genuinely composite.</em></p>
+
+<hr />
+
+<h2 id="9-a-compact-structural-comparison">9. A Compact Structural Comparison</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Architecture</th>
+      <th style="text-align: right">$</th>
+      <th style="text-align: right">M</th>
+      <th style="text-align: right">$</th>
+      <th>Non-aperiodic elements</th>
+      <th style="text-align: right">Holonomy depth</th>
+      <th>Nontrivial groups</th>
+      <th>Composite group-carrying image sets</th>
+      <th>Shortest witness</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Four-state DN</td>
+      <td style="text-align: right">24</td>
+      <td style="text-align: right">3</td>
+      <td style="text-align: right">4</td>
+      <td>$\mathbb Z_2$</td>
+      <td style="text-align: right">—</td>
+      <td>DN-local</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>WTA</td>
+      <td style="text-align: right">326</td>
+      <td style="text-align: right">49</td>
+      <td style="text-align: right">7</td>
+      <td>$\mathbb Z_2$ (2 components)</td>
+      <td style="text-align: right">—</td>
+      <td>WTA-local</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Independent DN×WTA</td>
+      <td style="text-align: right">576</td>
+      <td style="text-align: right">88</td>
+      <td style="text-align: right">9</td>
+      <td>$\mathbb Z_2$ (3 components)</td>
+      <td style="text-align: right"><strong>0 / 34</strong></td>
+      <td>WTA-local</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>DN→WTA cascade</td>
+      <td style="text-align: right">3,149</td>
+      <td style="text-align: right">401</td>
+      <td style="text-align: right">12</td>
+      <td>$\mathbb Z_4$ (1), $\mathbb Z_2$ (4)</td>
+      <td style="text-align: right"><strong>15 / 46</strong></td>
+      <td>WTA-local</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>WTA→DN cascade</td>
+      <td style="text-align: right">3,084</td>
+      <td style="text-align: right">361</td>
+      <td style="text-align: right">22</td>
+      <td>$\mathbb Z_2$ (5 components)</td>
+      <td style="text-align: right"><strong>35 / 57</strong></td>
+      <td><strong>Composite</strong></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Synchronous recurrent coupling</td>
+      <td style="text-align: right">9</td>
+      <td style="text-align: right">6</td>
+      <td style="text-align: right">8</td>
+      <td>$\mathbb Z_3$</td>
+      <td style="text-align: right">—</td>
+      <td>Generator-explicit composite</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Asynchronous recurrent, DN first</td>
+      <td style="text-align: right">8</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">9</td>
+      <td>none</td>
+      <td style="text-align: right">0</td>
+      <td>none</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Asynchronous recurrent, WTA first</td>
+      <td style="text-align: right">8</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">9</td>
+      <td>none</td>
+      <td style="text-align: right">0</td>
+      <td>none</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Two numbers deserve emphasis.</p>
+
+<p>First, the WTA→DN system has a skeleton depth of <strong>22</strong> and <strong>92 holonomy components</strong>, compared with depth 9 and 24 components for the independent product. Depth by itself is not a universal measure of “computational power,” but it shows that the coupling substantially reorganizes the image hierarchy.</p>
+
+<p>Second, the uncoupled product has <strong>zero</strong> composite group-carrying image sets, whereas <strong>35 of 57</strong> such image sets in WTA→DN move both coordinates.</p>
+
+<p>That is the decomposition-level signature of genuine compositionality.</p>
+
+<hr />
+
+<h2 id="10-is-this-just-a-hand-tuned-interface-we-exhausted-the-interface-space">10. Is This Just a Hand-Tuned Interface? We Exhausted the Interface Space</h2>
+
+<p>A natural objection is that the WTA→DN cycle might be an artifact of one carefully chosen winner-to-normalization interface.</p>
+
+<p>So we enumerated <strong>all</strong> maps</p>
+
+\[\psi:X_W\rightarrow\Sigma_D.\]
+
+<p>There are</p>
+
+\[4^8=65{,}536\]
+
+<p>such interfaces.</p>
+
+<p>A genuinely composite cycle is present for</p>
+
+\[65{,}278\]
+
+<p>of the 65,536 interfaces and, more meaningfully, for</p>
+
+\[65{,}278\text{ of }65{,}532\]
+
+<p><strong>coupled</strong> interfaces:</p>
+
+\[99.61\%.\]
+
+<p>So the existence of composite structure is extremely robust to the microscopic choice of interface.</p>
+
+<p>But the exceptions are informative.</p>
+
+<p>Among the coupled maps, the 254 exceptions are exactly the nonconstant interfaces whose image stays inside the <strong>two intermediate DN drive symbols</strong> and therefore never reaches either extreme of the normalization drive range. The remaining exceptional maps are constant interfaces, which carry no winner information; all four constant interfaces behave like the uncoupled control with respect to composite cycles.</p>
+
+<p>This exact exception structure is stronger than saying merely that “almost every interface works.” It tells us <em>what information the coupling must be capable of transmitting</em> for the composite degree of freedom to exist.</p>
+
+<h3 id="existence-is-not-the-same-as-legibility">Existence is not the same as legibility</h3>
+
+<p>The biological winner-pooling interface is not unique because it has a composite cycle. Most coupled interfaces do.</p>
+
+<p>What distinguishes it is that a composite cycle appears already as a <strong>shortest witness</strong>.</p>
+
+<p>Across the full $\psi$ sweep, the shortest witness is composite for 43,008 interfaces and WTA-local for 22,528. Among coupled interfaces, that makes a composite shortest witness a majority phenomenon, about 65.6%, but not a universal one.</p>
+
+<p>The biological interface also generates a relatively large algebra: its monoid size of 3,084 lies at the <strong>95.7th percentile</strong> of the complete interface sweep.</p>
+
+<p><img src="sweep_figure.png" alt="Exhaustive interface and update-schedule sweeps." /></p>
+
+<p><em>The sweeps separate the existence of composite cycles from whether they are the shortest witness, and show the strong effect of update schedule.</em></p>
+
+<hr />
+
+<h2 id="11-coupling-direction-matters-more-than-mere-coupling">11. Coupling Direction Matters More Than Mere Coupling</h2>
+
+<p>The reverse interface sweep—DN setting the WTA drive—contains only</p>
+
+\[4^4=256\]
+
+<p>maps, so we can exhaust that space as well.</p>
+
+<p>Among the 252 coupled DN→WTA interfaces, composite cycles are present for</p>
+
+\[224/252\approx88.9\%.\]
+
+<p>So genuinely composite structure is not exclusive to WTA→DN.</p>
+
+<p>But only</p>
+
+\[30/252\approx11.9\%\]
+
+<p>have a <strong>composite shortest witness</strong>.</p>
+
+<p>That is the important asymmetry.</p>
+
+<ul>
+  <li><strong>DN→WTA:</strong> composite structure is often present, but it tends to be buried behind a simpler WTA-local witness.</li>
+  <li><strong>WTA→DN:</strong> composite structure is not only widespread; it is much more likely to be immediately visible in the shortest non-aperiodic word.</li>
+</ul>
+
+<p>The distinction is not “one direction has emergence and the other does not.” The stronger statement is:</p>
+
+<blockquote>
+  <p><strong>Coupling direction controls the legibility and organization of the emergent algebra.</strong></p>
+</blockquote>
+
+<p>When selection determines subsequent gain control, the composite degree of freedom becomes structurally prominent.</p>
+
+<hr />
+
+<h2 id="12-timing-matters-too-50331648-interfaceschedule-combinations">12. Timing Matters Too: 50,331,648 Interface–Schedule Combinations</h2>
+
+<p>We also exhaustively tested update schedule over</p>
+
+\[256\times65{,}536\times3
+=
+50{,}331{,}648\]
+
+<p>interface-pair and schedule combinations.</p>
+
+<p>This produces an important boundary around the main result.</p>
+
+<h3 id="synchronous-recurrent-coupling">Synchronous recurrent coupling</h3>
+
+<p>When DN and WTA set each other’s inputs simultaneously, the biological interface produces a nine-element monoid with a composite three-cycle and a $\mathbb Z_3$ holonomy component.</p>
+
+<p>That sounds even richer—but algebraically it is a weaker emergence claim. The recurrent generator is already non-aperiodic. The cyclic structure is present in the primitive update itself rather than being synthesized by composing aperiodic maps.</p>
+
+<p>Across the entire recurrent sweep, we found <strong>no case</strong> in which four aperiodic recurrent generators produced a non-aperiodic monoid. Under synchronous mutual feedback, non-aperiodicity is generator-explicit.</p>
+
+<h3 id="asynchronous-recurrent-coupling">Asynchronous recurrent coupling</h3>
+
+<p>At the biological interfaces, both strict update orders—DN first or WTA first—produce eight-element aperiodic monoids with no nontrivial group component.</p>
+
+<p>Across all interfaces, asynchrony does not abolish composite cycles universally, but it suppresses them: the composite-cycle rate falls from 0.514 under synchronous updating to 0.374 under either asynchronous order.</p>
+
+<p>So the algebra is not a property of the motif labels alone. It depends on:</p>
+
+<ul>
+  <li>the state coarse-graining;</li>
+  <li>the interface map;</li>
+  <li>the causal direction of coupling;</li>
+  <li>and the update schedule.</li>
+</ul>
+
+<p>That is not a nuisance parameter story. Those choices <em>are part of the effective computational architecture</em>.</p>
+
+<hr />
+
+<h2 id="13-from-physical-computation-back-to-effective-theories-of-neural-circuits">13. From Physical Computation Back to Effective Theories of Neural Circuits</h2>
+
+<p>The phrase <strong>effective theory</strong> is doing real work here.</p>
+
+<p>At the microscopic level of the finite model, each primitive WTA or WTA→DN update can be completely irreversible. Yet after a sequence of operations has collapsed the state space, a smaller invariant image can acquire a reversible transformation. The effective degree of freedom exists on the surviving image, not on the full microscopic state space.</p>
+
+<p>The sequence is</p>
+
+\[\text{primitive dissipative maps}
+\longrightarrow
+\text{composition}
+\longrightarrow
+\text{state-space collapse}
+\longrightarrow
+\text{local reversible action}.\]
+
+<p>This is closely related to a familiar lesson from statistical physics: the useful variables and symmetries at one scale need not be explicit in the microscopic description. But there is an important difference. Here the goal is not merely to identify a lower-dimensional description of the dynamics. It is to identify the <strong>effective algebra of transformations</strong> that the system can generate.</p>
+
+<p>That distinction is also what connects this paper to my broader work on the foundations of physical computation.</p>
+
+<p>In <a href="https://arxiv.org/abs/2210.00392"><strong>Physical Computing: A Category Theoretic Perspective on Physical Computation and System Compositionality</strong></a> (<a href="https://neurovium.science/posts/pblog-Catcomp/">technical blog</a>), Gianluca Caterina and I asked how one can state rigorously that a physical process implements an abstract computation. The central idea is that physical dynamics and abstract transitions must be related by a structure-preserving map: if two physical operations compose, their abstract computational counterparts must compose consistently as well. Computation is therefore not just a label placed on a trajectory; it is a relation between levels of description that respects composition.</p>
+
+<p>In <a href="https://arxiv.org/abs/2607.23902"><strong>Autonomous Physical Computation: A Categorical Closure Criterion for Physical and Neuromorphic Reservoirs</strong></a> (<a href="https://neurovium.science/posts/pblog-Wave-compute/">technical blog</a>), I approached the problem from another side. There the question is when a physical dynamical system is computationally <em>closed</em>: when its internal physical state does not merely carry memory, but also selects the next physical operation. That criterion separates a system that is externally driven through a sequence of useful transformations from one whose own internal organization determines the continuation of the computation.</p>
+
+<p>The present paper asks the complementary algebraic question:</p>
+
+<blockquote>
+  <p><strong>Once a family of effective transformations has been identified, what computational structure is generated when those transformations are composed?</strong></p>
+</blockquote>
+
+<p>The categorical work tells us how to relate physical and abstract dynamics. The closure work asks when operation selection becomes internal to the physical system. The present Krohn–Rhodes/holonomy analysis asks what <em>algebra</em> those effective operations generate.</p>
+
+<p>Put schematically:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>physical dynamics
+      |
+      | coarse-graining / structure-preserving abstraction
+      v
+effective transformations
+      |
+      | sequential composition
+      v
+transition monoid
+      |
+      | Krohn–Rhodes / holonomy
+      v
+irreversible components + local reversible group structure
+</code></pre></div></div>
+
+<p>This is why I see the present result as more than a classification of two toy neural motifs. It is one part of a larger attempt to make <strong>effective theories of computation</strong> precise enough that we can say what is preserved, what is discarded, what is generated by composition, and at what level a new computational degree of freedom genuinely exists.</p>
+
+<p>The “more” in “more is different” is therefore not simply more neurons or more states. It is <strong>organized composition</strong>.</p>
+
+<hr />
+
+<h2 id="14-what-this-adds-to-connectomics">14. What This Adds to Connectomics</h2>
+
+<p>Connectomics is rapidly moving from anatomical inventory toward functional inference. But anatomy alone still underdetermines computation.</p>
+
+<p>The same structural subcircuit can support different effective transformations depending on input semantics, coupling strengths, timing, and the interface through which one motif modulates another.</p>
+
+<p>The framework suggests a pipeline:</p>
+
+\[\text{connectome}
+\rightarrow
+\text{candidate subcircuit}
+\rightarrow
+\text{biologically justified coarse-graining}
+\rightarrow
+\text{input-conditioned transformations}
+\rightarrow
+\text{generated transition monoid}
+\rightarrow
+\text{holonomy / Krohn--Rhodes structure}.\]
+
+<p>The present paper addresses the final steps for controlled canonical motifs. It does <strong>not</strong> derive its update maps from a measured connectome, and that distinction is important.</p>
+
+<p>What it supplies is a target for future structure–function work. Once effective transitions can be inferred or constrained experimentally, two circuits can be compared not only by anatomy, tuning curves, attractors, or trajectories, but by algebraic invariants such as:</p>
+
+<ul>
+  <li>aperiodicity;</li>
+  <li>transformation rank;</li>
+  <li>idempotent structure;</li>
+  <li>local permutation groups;</li>
+  <li>group divisors in a decomposition;</li>
+  <li>and whether those groups are inherited from a component or generated by coupling.</li>
+</ul>
+
+<p>A connectome tells us what is wired. A transformation algebra tells us what that wiring, together with its effective dynamics and interfaces, can generate sequentially.</p>
+
+<p>This also connects directly to our recent NeuroAI work on <a href="https://arxiv.org/abs/2606.14975"><strong>harnessing cortical geometry, wiring, and function as inductive biases for recurrent neural networks</strong></a> (<a href="https://neurovium.science/posts/pblog-Cortical-blueprint-RNN/">technical blog</a>). There we use functional-connectomics data from MICrONS to constrain recurrent-network architecture and learning: neuronal geometry, anatomical connectivity, and functional relationships become inductive biases for an artificial recurrent network. In other words, that project asks how biological structure can shape a <em>learned dynamical system</em>.</p>
+
+<p>The present paper adds a different layer. Once structure and dynamics have been specified, it asks how to characterize the <strong>sequential computational repertoire</strong> of the resulting circuit. These are complementary directions:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>connectomics -&gt; constraints on dynamics / learning -&gt; recurrent computation
+connectomics -&gt; effective circuit transformations -&gt; algebraic repertoire
+</code></pre></div></div>
+
+<p>The first route can tell us how a cortical blueprint improves an RNN. The second can tell us what classes of transformation that recurrent circuit can generate. Ultimately, a mature theory of structure–function–computation should need both.</p>
+
+<hr />
+
+<h2 id="15-what-this-adds-to-dynamical-systems-thinking">15. What This Adds to Dynamical-Systems Thinking</h2>
+
+<p>Neural computation is usually described using fixed points, oscillations, bifurcations, chaos, manifolds, and attractors. Those are indispensable concepts.</p>
+
+<p>But the algebraic question is orthogonal to them.</p>
+
+<p>A dynamical analysis often asks:</p>
+
+<blockquote>
+  <p>What trajectory follows from this state under this rule?</p>
+</blockquote>
+
+<p>The monoid asks:</p>
+
+<blockquote>
+  <p>What transformations of state space become possible under <em>all admissible finite sequences of rules</em>?</p>
+</blockquote>
+
+<p>A circuit can therefore look simple under every frozen input yet possess a richer sequential repertoire when those inputs are switched.</p>
+
+<p>This is particularly relevant for recurrent biological systems, where context and internal state continually change which effective operation is applied next.</p>
+
+<hr />
+
+<h2 id="16-what-this-suggests-for-ai-architecture">16. What This Suggests for AI Architecture</h2>
+
+<p>The most useful lesson for machine learning is not that divisive normalization is “the same thing as layer normalization,” or that WTA is “the same thing as max pooling.” Those analogies are too loose.</p>
+
+<p>The more general point is architectural:</p>
+
+<blockquote>
+  <p>Simple nonlinear modules can have a compositional transformation algebra that is much richer than the behavior of the modules considered one at a time.</p>
+</blockquote>
+
+<p>For recurrent and state-dependent architectures, this suggests a different design language. Instead of characterizing a module only by its activation function or local input–output map, one can ask what semigroup or monoid is generated by sequences of module-conditioned transformations.</p>
+
+<p>In principle, architectures could be designed or regularized around algebraic properties:</p>
+
+<ul>
+  <li>requiring or forbidding particular local group components;</li>
+  <li>controlling how quickly rank collapses;</li>
+  <li>engineering state-dependent interfaces that expose rather than bury composite structure;</li>
+  <li>or comparing learned recurrent networks by their effective transformation repertoires.</li>
+</ul>
+
+<p>Whether those ideas improve practical AI systems is an open question. The paper provides the finite algebraic framework needed to pose it sharply.</p>
+
+<hr />
+
+<h2 id="17-what-we-are-not-claiming">17. What We Are <em>Not</em> Claiming</h2>
+
+<p>Because the algebra is exact, it is tempting to overinterpret it. Several boundaries are important.</p>
+
+<p><strong>The cortex is not literally an eight- or 32-state automaton.</strong> The state spaces here are deliberately coarse-grained so that the full transition monoids can be enumerated exactly.</p>
+
+<p><strong>A $\mathbb Z_2$ holonomy component is not automatically a neural oscillation.</strong> It is a reversible permutation in the finite transformation algebra, potentially supported only after collapse onto a small image.</p>
+
+<p><strong>The global circuit is not reversible.</strong> In the main WTA and DN–WTA systems, the group of global units is trivial. The reversible structure is local.</p>
+
+<p><strong>The algebra is not determined by the motif name alone.</strong> Different discretizations, interfaces, and timing rules can change the generated monoid. The exhaustive sweeps are therefore essential: they show which findings are robust and which depend on an operating point.</p>
+
+<p><strong>A connectome alone is insufficient.</strong> Anatomy constrains the candidate circuit, but effective input-conditioned transformations still require functional and dynamical information.</p>
+
+<p>These are not qualifications that weaken the result. They identify exactly what has been proved: within a controlled finite-state abstraction of canonical recurrent operations, composition can generate local group structure absent from every primitive map, and coupling can make that structure genuinely joint across motifs.</p>
+
+<hr />
+
+<h2 id="18-the-main-takeaway">18. The Main Takeaway</h2>
+
+<p>The most compact statement of the result is this:</p>
+
+<blockquote>
+  <p><strong>Irreversible neural operations can compose into locally reversible computation.</strong></p>
+</blockquote>
+
+<p>In the WTA motif, every fixed-input update is aperiodic, yet switching among those updates creates a local $\mathbb Z_2$ gate attached to an already selected winner.</p>
+
+<p>In the WTA→DN cascade, every primitive composite generator remains aperiodic, yet a two-symbol word generates</p>
+
+\[(D{:}0,W{:}4)
+\longleftrightarrow
+(D{:}1,W{:}5),\]
+
+<p>a reversible degree of freedom in which normalization and inhibitory gating change together.</p>
+
+<p>Holonomy decomposition confirms that this is not merely an incidental trajectory: it appears as a nontrivial group component on a genuinely composite image set. The independent product has no composite group-carrying windows; the WTA→DN cascade has 35 of 57.</p>
+
+<p>So there is a layer of neural computation that sits naturally between dynamics and abstract computation:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>structure  -&gt;  dynamics  -&gt;  compositional transformation algebra
+</code></pre></div></div>
+
+<p>Connectomes tell us what is there. Dynamical systems tell us how it moves. Transformation algebra asks what the circuit can <strong>build out of its own allowed operations</strong>.</p>
+
+<p>For recurrent circuits, that last question may be where some of the most interesting forms of emergence live.</p>
+
+<hr />
+
+<h2 id="technical-notes-and-references">Technical Notes and References</h2>
+
+<p>The full paper contains the explicit generator tables, state encodings, transition-monoid enumeration, witness searches, interface sweeps, rank distributions, and GAP/SgpDec holonomy analysis underlying the results summarized here.</p>
+
+<p>Conceptually, the framework builds on:</p>
+
+<ul>
+  <li><strong>Krohn and Rhodes (1965)</strong> — prime decomposition of finite semigroups and machines;</li>
+  <li><strong>Schützenberger (1965)</strong> — characterization of finite monoids with only trivial subgroups;</li>
+  <li><strong>Holcombe (1982)</strong> and later computational holonomy work — practical decomposition of finite transformation semigroups;</li>
+  <li><strong>DeDeo (2011)</strong> — effective theories for circuits and automata;</li>
+  <li>the extensive neuroscience literature on <strong>divisive normalization</strong> and <strong>winner-take-all / recurrent excitation–inhibition</strong> as canonical circuit operations.</li>
+</ul>
+
+<p>The accompanying code and data reproduce the finite transformation audits, witness cycles, exhaustive interface and schedule sweeps, and the holonomy results reported in the manuscript.</p>
+
+<hr />
+
+<h2 id="19-a-neuroai-perspective-where-neuroscience-physics-and-ai-meet">19. A NeuroAI Perspective: Where Neuroscience, Physics, and AI Meet</h2>
+
+<p>I think the larger opportunity here is <strong>NeuroAI</strong>—but in a sense broader than simply fitting neural networks to neural data or borrowing isolated motifs from biology.</p>
+
+<p>Neuroscience, physics, and AI currently tend to ask different versions of the same question.</p>
+
+<p><strong>Neuroscience</strong> asks how anatomy, cell types, inhibition, recurrence, gain control, and learning give rise to behavior. The new connectomic datasets are making the structural side of that problem extraordinarily concrete. But a wiring diagram still needs an account of dynamics, and dynamics still need an account of computation.</p>
+
+<p><strong>Physics</strong> asks which macroscopic variables, symmetries, invariants, and effective degrees of freedom emerge from many interacting components. That tradition gives us renormalization, universality, dynamical systems, statistical mechanics, and the general idea that “more is different.” But for neural systems, the effective variables we care about may not only summarize <em>how activity behaves</em>. They may need to preserve <strong>what transformations the system can perform</strong>.</p>
+
+<p><strong>Machine learning and AI</strong> ask how to construct systems that learn useful transformations and how architecture constrains what can be represented or computed. Yet most architecture design is still expressed in terms of modules, losses, parameter counts, and optimization. The generated algebra of a recurrent architecture—the transformations available through sequences of state-dependent operations—is rarely treated as a first-class object.</p>
+
+<p>These viewpoints can be joined.</p>
+
+<p>The cortical-blueprint RNN work asks how <strong>biological structure can become an inductive bias for artificial recurrent systems</strong>. The physical-computation work asks when <strong>physical dynamics legitimately realize an abstract computation</strong> and when that computation becomes autonomous. The present paper asks what <strong>effective computational algebra emerges when biologically motivated operations are composed</strong>.</p>
+
+<p>Together, they suggest a research program that looks something like this:</p>
+
+\[\text{biological structure}
+\rightarrow
+\text{physical dynamics}
+\rightarrow
+\text{effective transformations}
+\rightarrow
+\text{composition algebra}
+\rightarrow
+\text{computational capability}.\]
+
+<p>And in the other direction:</p>
+
+\[\text{desired computation}
+\rightarrow
+\text{algebraic constraints}
+\rightarrow
+\text{dynamical architecture}
+\rightarrow
+\text{physically / biologically grounded implementation}.\]
+
+<p>That second arrow is particularly interesting for NeuroAI. Instead of asking only whether an artificial network reproduces neural activity, we can ask whether biological circuits reveal <strong>constructive principles for computation</strong>: which motifs should be composed, in what causal order, with what interfaces, and with what state-dependent feedback so that simple local operations generate a richer effective repertoire.</p>
+
+<p>This changes the role of connectomics. A connectome is no longer merely a giant graph to be reconstructed, nor merely a source of sparsity masks for neural networks. It becomes a candidate <strong>physical architecture for computation</strong>. The challenge is to discover the right abstraction that maps that architecture into effective transformations without throwing away the computational distinctions we care about.</p>
+
+<p>It also changes the role of effective theory. The aim is not to coarse-grain until the biology disappears. The aim is to find the scale at which the relevant computational organization becomes visible.</p>
+
+<p>That was the question that bothered me when I first read Simon DeDeo’s paper. It was the question behind my unease with indiscriminate coarse-graining during my work on neural avalanches. It resurfaced in my work on the foundations of physical computation, and again when we began asking how connectomic structure could constrain recurrent neural networks.</p>
+
+<p>Now, more than a decade after that conversation about Krohn–Rhodes—and the red wine on the white pants—the threads have finally come together.</p>
+
+<p><strong>Connectomes tell us what is there. Dynamics tell us how it moves. Effective transformation algebra can tell us what it can compute.</strong></p>
+
+<p>For me, that is one of the directions in which NeuroAI becomes not just an exchange of metaphors between neuroscience and machine learning, but a genuine theory-building enterprise connecting biology, physics, and computation.</p>
+
+
+  </section>
+
+  
+  <section class="paper__section prose">
+    <h2>Cite this post</h2>
+    
+<div class="citeblock">
+  <div class="citeblock__head">
+    <span class="citeblock__label">BibTeX</span>
+    <button type="button" class="citeblock__copy" data-cite-copy>Copy</button>
+  </div>
+  <pre><code>@misc{dehghani2026moredifferentneuralcircuits,
+  title={"More Is Different" in Neural Circuits: Algebraic Emergence of Effective Theories in Canonical Recurrent Motifs of Biological Neuronal Networks}, 
+  author={Nima Dehghani},
+  year={2026},
+  eprint={2608.30231},
+  archivePrefix={arXiv},
+  primaryClass={q-bio.NC},
+  url={https://arxiv.org/abs/2608.30231}, 
+}</code></pre>
+</div>
+  </section>
+  
+
+  
+  <section class="paper__section">
+    <h2>The room this opens</h2>
+    <div class="linkbar">
+      <a href="/papers/AlgebraicCanonicalNet/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="20" x2="12" y2="12"/><line x1="12" y1="12" x2="21" y2="4"/><line x1="12" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="21" y2="20"/></svg>
+        Follow this path into the Maze
+      </a>
+    </div>
+  </section>
+  
+</article>
+
+      <footer class="foot">
+  <span>© 2026 · Nima Dehghani</span>
+  <span>
+    <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    ·
+    <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+  </span>
+</footer>
+
+    </main>
+  </div>
+
+  <script src="/assets/js/quotes.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
