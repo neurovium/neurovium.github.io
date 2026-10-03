@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://neurovium.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neurovium.github.io/" rel="alternate" type="text/html" /><updated>2026-10-03T04:23:14+00:00</updated><id>https://neurovium.github.io/feed.xml</id><title type="html">Nima Dehghani</title><subtitle>Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics</subtitle><author><name>Nima Dehghani</name></author><entry><title type="html">The Silhouette Fallacy: Field closure, ephaptic coupling, and the physics of computation</title><link href="https://neurovium.github.io/posts/pblog-IceNeuron/" rel="alternate" type="text/html" title="The Silhouette Fallacy: Field closure, ephaptic coupling, and the physics of computation" /><published>2026-09-17T00:00:00+00:00</published><updated>2026-09-17T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-IceNeuron</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-IceNeuron/"><![CDATA[<p><em>Companion post to:</em><br />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://neurovium.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neurovium.github.io/" rel="alternate" type="text/html" /><updated>2026-10-03T04:30:11+00:00</updated><id>https://neurovium.github.io/feed.xml</id><title type="html">Nima Dehghani</title><subtitle>Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics</subtitle><author><name>Nima Dehghani</name></author><entry><title type="html">The Silhouette Fallacy: Field closure, ephaptic coupling, and the physics of computation</title><link href="https://neurovium.github.io/posts/pblog-IceNeuron/" rel="alternate" type="text/html" title="The Silhouette Fallacy: Field closure, ephaptic coupling, and the physics of computation" /><published>2026-09-17T00:00:00+00:00</published><updated>2026-09-17T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-IceNeuron</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-IceNeuron/"><![CDATA[<p><em>Companion post to:</em><br />
 <strong>Field closure, ice neurons, and when a dendrite is a motif</strong><br />
 Nima Dehghani
 <em>arXiv</em> 2026 
@@ -105,18 +105,18 @@ DOI: <code class="language-plaintext highlighter-rouge">https://arxiv.org/abs/26
   <figcaption class="gallery__note">Walden Pond, under the snow-covered ice (Feb 1, 2020). Click any plate for the full frame; arrow keys walk the set.</figcaption>
 </figure>
 
-<p>I also started lining some of the ice neurons up next to one another, because once you have seen enough cortical anatomy it is almost impossible not to start making comparisons.</p>
+<p>I started lining some of the ice neurons up next to one another, because once you have seen enough cortical anatomy it is almost impossible not to start making comparisons.</p>
 
 <figure class="gallery reveal" data-gallery="ice-aligned">
   <div class="gallery__grid" style="grid-template-columns: 1fr;">
     <a class="gallery__cell" style="aspect-ratio: 19 / 6;" href="/assets/img/papers/ice_walden.png" data-gallery-item="ice-aligned" data-caption="Ice formations, aligned the way one would plate cortical anatomy." aria-label="Open the aligned ice-neuron figure full size">
-      <img src="/assets/img/papers/fig_ice_walden.png" alt="Three ice formations aligned side by side" loading="lazy" decoding="async" />
+      <img src="/assets/img/papers/ice_walden.png" alt="Three ice formations aligned side by side" loading="lazy" decoding="async" />
       <span class="gallery__coord">01</span>
     </a>
   </div>
 </figure>
 
-<p>There is actually another paper hiding behind that figure. I have been working, on and off, on something about cortical columns, but I still have not found the final bit of magic that makes the whole thing click. So for now it is in my drawer.</p>
+<p>There is actually another paper hiding behind that 12th figure in the gallery. I have been working, on and off, on something about cortical columns,and how information and structure sculpt one another; but I still have not found the final bit of magic that makes the whole thing click. So for now it is in my drawer.</p>
 
 <p>At this rate the drawer is turning into Professor Balthazar’s closet — if you ever saw that charming Croatian animation for kids, you know exactly the sort of place I mean: half laboratory, half cabinet of unfinished wonders, with some contraption in the back that may one day suddenly work.</p>
 
