@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://neurovium.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neurovium.github.io/" rel="alternate" type="text/html" /><updated>2026-10-03T04:16:03+00:00</updated><id>https://neurovium.github.io/feed.xml</id><title type="html">Nima Dehghani</title><subtitle>Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics</subtitle><author><name>Nima Dehghani</name></author><entry><title type="html">The Silhouette Fallacy: Field closure, ephaptic coupling, and the physics of computation</title><link href="https://neurovium.github.io/posts/pblog-IceNeuron/" rel="alternate" type="text/html" title="The Silhouette Fallacy: Field closure, ephaptic coupling, and the physics of computation" /><published>2026-09-17T00:00:00+00:00</published><updated>2026-09-17T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-IceNeuron</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-IceNeuron/"><![CDATA[<p><em>Companion post to:</em><br />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://neurovium.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neurovium.github.io/" rel="alternate" type="text/html" /><updated>2026-10-03T04:23:14+00:00</updated><id>https://neurovium.github.io/feed.xml</id><title type="html">Nima Dehghani</title><subtitle>Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics</subtitle><author><name>Nima Dehghani</name></author><entry><title type="html">The Silhouette Fallacy: Field closure, ephaptic coupling, and the physics of computation</title><link href="https://neurovium.github.io/posts/pblog-IceNeuron/" rel="alternate" type="text/html" title="The Silhouette Fallacy: Field closure, ephaptic coupling, and the physics of computation" /><published>2026-09-17T00:00:00+00:00</published><updated>2026-09-17T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-IceNeuron</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-IceNeuron/"><![CDATA[<p><em>Companion post to:</em><br />
 <strong>Field closure, ice neurons, and when a dendrite is a motif</strong><br />
 Nima Dehghani
 <em>arXiv</em> 2026 
@@ -102,14 +102,14 @@ DOI: <code class="language-plaintext highlighter-rouge">https://arxiv.org/abs/26
       </a><a class="gallery__cell" href="/assets/img/papers/iceNeuronGallery/web/iceneuron_12.jpg" data-gallery-item="walden-ice" data-caption="" aria-label="Open image 12 of 12 full size"><img src="/assets/img/papers/iceNeuronGallery/thumb/iceneuron_12.jpg" alt="Ice formation on Walden Pond resembling a neuron — 12" loading="lazy" decoding="async" />
         <span class="gallery__coord">12</span>
       </a></div>
-  <figcaption class="gallery__note">Walden Pond, under the snow-covered ice. Click any plate for the full frame; arrow keys walk the set.</figcaption>
+  <figcaption class="gallery__note">Walden Pond, under the snow-covered ice (Feb 1, 2020). Click any plate for the full frame; arrow keys walk the set.</figcaption>
 </figure>
 
 <p>I also started lining some of the ice neurons up next to one another, because once you have seen enough cortical anatomy it is almost impossible not to start making comparisons.</p>
 
 <figure class="gallery reveal" data-gallery="ice-aligned">
   <div class="gallery__grid" style="grid-template-columns: 1fr;">
-    <a class="gallery__cell" style="aspect-ratio: 19 / 6;" href="/assets/img/papers/fig_ice_walden.png" data-gallery-item="ice-aligned" data-caption="Ice formations, aligned the way one would plate cortical anatomy." aria-label="Open the aligned ice-neuron figure full size">
+    <a class="gallery__cell" style="aspect-ratio: 19 / 6;" href="/assets/img/papers/ice_walden.png" data-gallery-item="ice-aligned" data-caption="Ice formations, aligned the way one would plate cortical anatomy." aria-label="Open the aligned ice-neuron figure full size">
       <img src="/assets/img/papers/fig_ice_walden.png" alt="Three ice formations aligned side by side" loading="lazy" decoding="async" />
       <span class="gallery__coord">01</span>
     </a>
@@ -305,13 +305,11 @@ DOI: <code class="language-plaintext highlighter-rouge">https://arxiv.org/abs/26
 
 <p>That is the step I call <strong>field closure</strong>.</p>
 
-<p>In the model, almost the entire conceptual distinction is carried by one parameter, (\gamma).</p>
+<p>In the model, almost the entire conceptual distinction is carried by one parameter, $\gamma$.</p>
 
 <p>When</p>
 
-<p>[
-\gamma = 0,
-]</p>
+\[\gamma = 0,\]
 
 <p>the interface responds to the field but does not contribute an independent state-dependent source back into it.</p>
 
@@ -319,15 +317,13 @@ DOI: <code class="language-plaintext highlighter-rouge">https://arxiv.org/abs/26
 
 <p>When</p>
 
-<p>[
-\gamma &gt; 0,
-]</p>
+\[\gamma &gt; 0,\]
 
 <p>the internal state writes into the field, and the field feeds back onto subsequent dynamics.</p>
 
 <p>The object has closed a physical loop.</p>
 
-<p>The point of (\gamma) is not that neurons have a literal knob called gamma. The point is that it lets the same mathematical object cross a very clean conceptual boundary:</p>
+<p>The point of $\gamma$ is not that neurons have a literal knob called gamma. The point is that it lets the same mathematical object cross a very clean conceptual boundary:</p>
 
 <p><strong>passive silhouette → field-closed dynamical system.</strong></p>
 
@@ -609,7 +605,7 @@ DOI: <code class="language-plaintext highlighter-rouge">https://arxiv.org/abs/26
       </a></div>
 </figure>
 
-<p><strong>And here is one pattern that I have no explanation for. If you do, you know who to call.</strong></p>]]></content><author><name>Nima Dehghani</name></author><category term="Ice Neurons" /><category term="Walden Pond" /><category term="Dendrites" /><category term="Pattern Formation" /><category term="Field Closure" /><category term="Ephaptic Coupling" /><category term="Dendritic Computation" /><category term="Network Motifs" /><category term="Morphogenesis" /><category term="Nonlinear Dynamics" /><category term="Physical Computation" /><category term="NeuroAI" /><category term="Neuromorphic Computing" /><category term="Structure And Function" /><category term="Scientific Serendipity" /><category term="Biophysics" /><summary type="html"><![CDATA[Companion post to: Field closure, ice neurons, and when a dendrite is a motif Nima Dehghani arXiv 2026 DOI: https://arxiv.org/abs/2610.00184v1]]></summary></entry><entry><title type="html">Connectomes, Dynamics, and the Algebra of Computation: Why “More Is Different” in Canonical Recurrent Motifs</title><link href="https://neurovium.github.io/posts/pblog-AlgebraicCanonicalNet/" rel="alternate" type="text/html" title="Connectomes, Dynamics, and the Algebra of Computation: Why “More Is Different” in Canonical Recurrent Motifs" /><published>2026-08-31T00:00:00+00:00</published><updated>2026-08-31T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-AlgebraicCanonicalNet</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-AlgebraicCanonicalNet/"><![CDATA[<p><em>Companion post to:</em><br />
+<p><strong>Here is one pattern that I have no explanation for. And no, it is not from Mars! It is the same place, Walden pond, same day. If you have a hunch, you know who to call.</strong></p>]]></content><author><name>Nima Dehghani</name></author><category term="Ice Neurons" /><category term="Walden Pond" /><category term="Dendrites" /><category term="Pattern Formation" /><category term="Field Closure" /><category term="Ephaptic Coupling" /><category term="Dendritic Computation" /><category term="Network Motifs" /><category term="Morphogenesis" /><category term="Nonlinear Dynamics" /><category term="Physical Computation" /><category term="NeuroAI" /><category term="Neuromorphic Computing" /><category term="Structure And Function" /><category term="Scientific Serendipity" /><category term="Biophysics" /><summary type="html"><![CDATA[Companion post to: Field closure, ice neurons, and when a dendrite is a motif Nima Dehghani arXiv 2026 DOI: https://arxiv.org/abs/2610.00184v1]]></summary></entry><entry><title type="html">Connectomes, Dynamics, and the Algebra of Computation: Why “More Is Different” in Canonical Recurrent Motifs</title><link href="https://neurovium.github.io/posts/pblog-AlgebraicCanonicalNet/" rel="alternate" type="text/html" title="Connectomes, Dynamics, and the Algebra of Computation: Why “More Is Different” in Canonical Recurrent Motifs" /><published>2026-08-31T00:00:00+00:00</published><updated>2026-08-31T00:00:00+00:00</updated><id>https://neurovium.github.io/posts/pblog-AlgebraicCanonicalNet</id><content type="html" xml:base="https://neurovium.github.io/posts/pblog-AlgebraicCanonicalNet/"><![CDATA[<p><em>Companion post to:</em><br />
 <strong>Algebraic Emergence of Effective Theories in Canonical Recurrent Motifs of Biological Neuronal Networks</strong><br />
 Nima Dehghani
 <em>arXiv</em> (2026)<br />
