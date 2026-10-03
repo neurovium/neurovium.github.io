@@ -1,0 +1,862 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ead7be">
+<title>The Silhouette Fallacy: Field closure, ephaptic coupling, and the physics of computation · Nima Dehghani</title>
+<meta name="description" content="Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="/assets/css/neurovium.css">
+
+<link type="application/atom+xml" rel="alternate" href="https://neurovium.github.io/feed.xml" title="Nima Dehghani" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>The Silhouette Fallacy: Field closure, ephaptic coupling, and the physics of computation | Nima Dehghani</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="The Silhouette Fallacy: Field closure, ephaptic coupling, and the physics of computation" />
+<meta name="author" content="Nima Dehghani" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Companion post to: Field closure, ice neurons, and when a dendrite is a motif Nima Dehghani arXiv 2026 DOI: https://arxiv.org/abs/2610.00184v1" />
+<meta property="og:description" content="Companion post to: Field closure, ice neurons, and when a dendrite is a motif Nima Dehghani arXiv 2026 DOI: https://arxiv.org/abs/2610.00184v1" />
+<link rel="canonical" href="https://neurovium.github.io/posts/pblog-IceNeuron/" />
+<meta property="og:url" content="https://neurovium.github.io/posts/pblog-IceNeuron/" />
+<meta property="og:site_name" content="Nima Dehghani" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-09-17T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="The Silhouette Fallacy: Field closure, ephaptic coupling, and the physics of computation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Nima Dehghani"},"dateModified":"2026-09-17T00:00:00+00:00","datePublished":"2026-09-17T00:00:00+00:00","description":"Companion post to: Field closure, ice neurons, and when a dendrite is a motif Nima Dehghani arXiv 2026 DOI: https://arxiv.org/abs/2610.00184v1","headline":"The Silhouette Fallacy: Field closure, ephaptic coupling, and the physics of computation","mainEntityOfPage":{"@type":"WebPage","@id":"https://neurovium.github.io/posts/pblog-IceNeuron/"},"url":"https://neurovium.github.io/posts/pblog-IceNeuron/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+
+
+
+
+
+</head>
+<body>
+  <header class="topbar">
+    <a href="/" class="topbar__brand">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"><line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/><line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/><line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/></g><circle cx="18" cy="20" r="2.2" fill="currentColor"/></svg>
+      Nima Dehghani
+    </a>
+    <button class="topbar__toggle" id="sidebar-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sidebar">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </header>
+
+  <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
+
+  <div class="app">
+    
+
+<aside class="side" id="sidebar" aria-label="Primary">
+  <a class="side__brand" href="/">
+    <svg class="glyph" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none">
+        <line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/>
+        <line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/>
+        <line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/>
+      </g>
+      <circle cx="18" cy="20" r="2.2" fill="currentColor"/>
+    </svg>
+    <span>
+      <span class="side__name">Nima Dehghani</span>
+      <span class="side__tag">@neurovium · MIT</span>
+    </span>
+  </a>
+
+  
+  
+  <nav class="side__nav" aria-label="Main navigation">
+    <a href="/about/" class="">About</a>
+    <a href="/news/" class="">News<span class="side__pip" aria-label="new"></span></a>
+    <a href="/research/" class="">Research</a>
+    <a href="/fullmetal_decade/" class="side__mark ">fullmetal_decade</a>
+    <a href="/papers/" class="">Paper Maze</a>
+    <a href="/garden/" class="">Idea Garden</a>
+
+    
+    
+    
+    <details class="side__group side__group--books" open>
+      <summary class="side__group-sum" aria-label="Books — 1 title">
+        <span class="side__group-label"><a href="/books/">Books</a></span>
+        <span class="side__group-meta">
+          <span class="side__group-count">1</span>
+          <svg class="side__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </span>
+      </summary>
+      <div class="side__subnav">
+        
+        <a href="/books/NeuroAI/" class="">NeuroAI</a>
+        
+      </div>
+    </details>
+
+    <a href="/blog/" class="">Blog</a>
+    <a href="/open-science/" class="">Open Science</a>
+
+    <details class="side__group">
+      <summary class="side__group-sum" aria-label="Reflections — 4 pages">
+        <span class="side__group-label">Reflections</span>
+        <span class="side__group-meta">
+          <span class="side__group-count">4</span>
+          <svg class="side__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </span>
+      </summary>
+      <div class="side__subnav">
+        <a href="/on-liberty/" class="">On Liberty</a>
+        <a href="/neurovium-decoded/" class="">Neurovium Decoded</a>
+        <a href="/leibnizian-dream/" class="">Leibnizian Dream</a>
+        <a href="/scientific-understanding/" class="">Scientific Understanding</a>
+      </div>
+    </details>
+  </nav>
+
+  <div class="side__social" aria-label="Social links">
+    <div class="side__social-row">
+      <a href="https://scholar.google.com/citations?user=acFMrVUAAAAJ&hl=en" title="Google Scholar" target="_blank" rel="noopener" aria-label="Google Scholar">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9zm6.82 7L12 12.72 5.18 9 12 5.28zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73z"/></svg>
+      </a>
+      <a href="mailto:nima.dehghani@mit.edu" title="Email" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/nimadehghani/" title="LinkedIn" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+    </div>
+    <div class="side__social-row">
+      <a href="https://github.com/neurovium" title="GitHub" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      </a>
+      <a href="https://twitter.com/neurovium" title="X" target="_blank" rel="noopener" aria-label="X">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://bsky.app/profile/neurovium.bsky.social" class="is-bsky" title="Bluesky" target="_blank" rel="noopener" aria-label="Bluesky">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.335 5.144c2.606 1.957 5.41 5.923 6.44 8.051.99-2.046 3.855-6.132 6.44-8.051 1.864-1.383 4.885-2.453 4.885 1.002 0 .69-.396 5.795-.629 6.624-.809 2.882-3.748 3.616-6.363 3.17 4.573.78 5.737 3.359 3.224 5.939-4.772 4.9-6.859-1.23-7.394-2.802-.534 1.572-2.622 7.702-7.394 2.802-2.513-2.58-1.349-5.16 3.224-5.939-2.615.446-5.554-.288-6.363-3.17-.233-.829-.629-5.934-.629-6.624 0-3.455 3.021-2.385 4.885-1.002z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="n4-set" aria-label="N⁴ : NeuroAI ⊃ N³">
+    <span class="n4-set__lbl">N&#8308;</span>
+    <div class="n4-set n4-set--ai">
+      <span class="n4-set__lbl">NeuroAI</span>
+      <div class="n4-set n4-set--n3">
+        <span class="n4-set__lbl">N&#179;</span>
+        <ul>
+          <li>NeuroPhysics</li>
+          <li>NeuroComputation</li>
+          <li>NeuroDynamics</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="side__foot">
+    <span>
+      <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+      ·
+      <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    </span>
+  </div>
+</aside>
+
+    <main class="main">
+      <article class="paper">
+  <div class="paper__crumb">
+    <a href="/blog/">← Blog</a>
+    <span style="color:var(--muted-soft);">·</span>
+    <span>Sep 17, 2026</span>
+  </div>
+
+  <h1>The Silhouette Fallacy: Field closure, ephaptic coupling, and the physics of computation</h1>
+  
+  
+  <div class="paper__venue" style="margin-top:10px;">
+    <span>Ice Neurons</span><span>Walden Pond</span><span>Dendrites</span><span>Pattern Formation</span><span>Field Closure</span><span>Ephaptic Coupling</span><span>Dendritic Computation</span><span>Network Motifs</span><span>Morphogenesis</span><span>Nonlinear Dynamics</span><span>Physical Computation</span><span>NeuroAI</span><span>Neuromorphic Computing</span><span>Structure And Function</span><span>Scientific Serendipity</span><span>Biophysics</span>
+  </div>
+  
+
+  
+  <div class="linkbar" style="margin-top:24px;">
+    <a href="/papers/IceNeuron/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="20" x2="12" y2="12"/><line x1="12" y1="12" x2="21" y2="4"/><line x1="12" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="21" y2="20"/></svg>
+      Follow this path into the Maze
+    </a>
+  </div>
+  
+
+  <section class="paper__section prose" style="margin-top:28px;">
+    <p><em>Companion post to:</em><br />
+<strong>Field closure, ice neurons, and when a dendrite is a motif</strong><br />
+Nima Dehghani
+<em>arXiv</em> 2026 
+DOI: <code class="language-plaintext highlighter-rouge">https://arxiv.org/abs/2610.00184v1</code></p>
+
+<div class="citeblock">
+  <div class="citeblock__head">
+    <span class="citeblock__label">Cite this post</span>
+    <button type="button" class="citeblock__copy" data-cite-copy="">Copy</button>
+  </div>
+  <pre><code>@misc{dehghani2026SilhouetteFallacy,
+  author       = {Nima Dehghani},
+  title        = {{The Silhouette Fallacy}},
+  year         = {2026},
+  howpublished = {\url{https://neurovium.science/posts/pblog-IceNeuron/}},
+  note         = {Companion post to: Field closure, ice neurons, and when a dendrite is a motif
+                  (2026). doi:10.48550/arXiv.2610.00184}
+}</code></pre>
+</div>
+
+<hr />
+<h1 id="the-silhouette-fallacy">The Silhouette Fallacy</h1>
+<h2 id="field-closure-ephaptic-coupling-and-the-physics-of-computation">Field closure, ephaptic coupling, and the physics of computation</h2>
+
+<p><em>Companion to</em> <strong>“Field closure, ice neurons, and when a dendrite is a motif.”</strong></p>
+
+<p>A frozen pond can draw a neuron.</p>
+
+<p>That sentence is both the beginning of the paper and the problem the paper is trying to solve.</p>
+
+<hr />
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li><strong>Origin</strong> — <a href="#origin">How this paper came to be</a> · <a href="#walden">Walden in winter</a> · <a href="#claude">The other Claude</a> · <a href="#home-at-last">Mullins–Sekerka: home at last</a></li>
+  <li><strong>The distinction</strong> — <a href="#fallacy">The silhouette fallacy</a> · <a href="#ice">Ice is not pretending to be a neuron</a> · <a href="#state">The missing state</a> · <a href="#writes-field">The neuron writes the field</a></li>
+  <li><strong>Closure in the model</strong> — <a href="#why-closure">Why closure rather than feedback?</a> · <a href="#one-knob">One knob deforms the physics</a> · <a href="#freeze-tree">Freeze the tree</a> · <a href="#graph">The graph is not the whole architecture</a></li>
+  <li><strong>What it means</strong> — <a href="#three-possessions">Three possessions</a> · <a href="#physical-computing">The physical-computing lesson</a> · <a href="#neuroai">The NeuroAI lesson</a> · <a href="#one-sentence">The fallacy, in one sentence</a></li>
+</ul>
+
+<hr />
+
+<p><a id="origin"></a></p>
+<h2 id="how-this-paper-came-to-be">How this paper came to be</h2>
+
+<p>The story behind this paper is part serendipity and part a sequence of past encounters with the right people at the right time.</p>
+
+<p>The serendipity was ice.</p>
+
+<p>The rest had been accumulating for years.</p>
+
+<p><a id="walden"></a></p>
+<h3 id="walden-in-winter">Walden in winter</h3>
+
+<p>The random encounter with the pond neuron happened on a winter day while I was walking around Walden Pond — yes, <em>that</em> Walden Pond, the one made famous by <em>Henry David Thoreau</em>.</p>
+
+<p>I had always loved Walden. It is an astonishingly tranquil place. Years ago, outside the summer season, there were days when it felt almost empty. Over the past decade it has become much more of a destination; in summer it buzzes with families, swimmers, visitors, and people making the pilgrimage to Thoreau’s pond.</p>
+
+<p>I still wanted my quiet walks.</p>
+
+<p>So one winter day, while I was thinking about physical computing and closure, I went there precisely because winter more or less guarantees that you will not bump into many other people.</p>
+
+<p>Instead, I bumped into something much stranger.</p>
+
+<p>We have all seen branching structures. Arteries. Bronchioles in the lung. River networks from an airplane. Tree canopies. Cracks. Lightning. Branching itself is not surprising.</p>
+
+<p>But these were different.</p>
+
+<p>Under patches of snow-covered ice were dark branching formations with an uncanny similarity to neurons. Some looked multipolar. Some had a dark soma-like center with a long polarized arbor. Some appeared as whole fields of competing dendritic trees.</p>
+
+<p>It was eerie, and completely captivating.</p>
+
+<p>I immediately assumed there had to be a thermal explanation. The formations were appearing specifically beneath the snow-covered parts of the pond, so some local heat differential and melting process had to be involved. But at that moment the physics was secondary. I just wanted to see them properly.</p>
+
+<p>No one was around. I went home, grabbed some rope and carabiners I had, came back, tied myself off to trees on shore, and got close enough to the ice to take a ridiculous number of photographs.</p>
+
+<figure class="gallery reveal" data-gallery="walden-ice">
+  <div class="gallery__grid"><a class="gallery__cell" href="/assets/img/papers/iceNeuronGallery/web/iceneuron_1.jpg" data-gallery-item="walden-ice" data-caption="" aria-label="Open image 1 of 12 full size"><img src="/assets/img/papers/iceNeuronGallery/thumb/iceneuron_1.jpg" alt="Ice formation on Walden Pond resembling a neuron — 1" loading="lazy" decoding="async" />
+        <span class="gallery__coord">01</span>
+      </a><a class="gallery__cell" href="/assets/img/papers/iceNeuronGallery/web/iceneuron_2.jpg" data-gallery-item="walden-ice" data-caption="" aria-label="Open image 2 of 12 full size"><img src="/assets/img/papers/iceNeuronGallery/thumb/iceneuron_2.jpg" alt="Ice formation on Walden Pond resembling a neuron — 2" loading="lazy" decoding="async" />
+        <span class="gallery__coord">02</span>
+      </a><a class="gallery__cell" href="/assets/img/papers/iceNeuronGallery/web/iceneuron_3.jpg" data-gallery-item="walden-ice" data-caption="" aria-label="Open image 3 of 12 full size"><img src="/assets/img/papers/iceNeuronGallery/thumb/iceneuron_3.jpg" alt="Ice formation on Walden Pond resembling a neuron — 3" loading="lazy" decoding="async" />
+        <span class="gallery__coord">03</span>
+      </a><a class="gallery__cell" href="/assets/img/papers/iceNeuronGallery/web/iceneuron_4.jpg" data-gallery-item="walden-ice" data-caption="" aria-label="Open image 4 of 12 full size"><img src="/assets/img/papers/iceNeuronGallery/thumb/iceneuron_4.jpg" alt="Ice formation on Walden Pond resembling a neuron — 4" loading="lazy" decoding="async" />
+        <span class="gallery__coord">04</span>
+      </a><a class="gallery__cell" href="/assets/img/papers/iceNeuronGallery/web/iceneuron_5.jpg" data-gallery-item="walden-ice" data-caption="" aria-label="Open image 5 of 12 full size"><img src="/assets/img/papers/iceNeuronGallery/thumb/iceneuron_5.jpg" alt="Ice formation on Walden Pond resembling a neuron — 5" loading="lazy" decoding="async" />
+        <span class="gallery__coord">05</span>
+      </a><a class="gallery__cell" href="/assets/img/papers/iceNeuronGallery/web/iceneuron_6.jpg" data-gallery-item="walden-ice" data-caption="" aria-label="Open image 6 of 12 full size"><img src="/assets/img/papers/iceNeuronGallery/thumb/iceneuron_6.jpg" alt="Ice formation on Walden Pond resembling a neuron — 6" loading="lazy" decoding="async" />
+        <span class="gallery__coord">06</span>
+      </a><a class="gallery__cell" href="/assets/img/papers/iceNeuronGallery/web/iceneuron_7.jpg" data-gallery-item="walden-ice" data-caption="" aria-label="Open image 7 of 12 full size"><img src="/assets/img/papers/iceNeuronGallery/thumb/iceneuron_7.jpg" alt="Ice formation on Walden Pond resembling a neuron — 7" loading="lazy" decoding="async" />
+        <span class="gallery__coord">07</span>
+      </a><a class="gallery__cell" href="/assets/img/papers/iceNeuronGallery/web/iceneuron_8.jpg" data-gallery-item="walden-ice" data-caption="" aria-label="Open image 8 of 12 full size"><img src="/assets/img/papers/iceNeuronGallery/thumb/iceneuron_8.jpg" alt="Ice formation on Walden Pond resembling a neuron — 8" loading="lazy" decoding="async" />
+        <span class="gallery__coord">08</span>
+      </a><a class="gallery__cell" href="/assets/img/papers/iceNeuronGallery/web/iceneuron_9.jpg" data-gallery-item="walden-ice" data-caption="" aria-label="Open image 9 of 12 full size"><img src="/assets/img/papers/iceNeuronGallery/thumb/iceneuron_9.jpg" alt="Ice formation on Walden Pond resembling a neuron — 9" loading="lazy" decoding="async" />
+        <span class="gallery__coord">09</span>
+      </a><a class="gallery__cell" href="/assets/img/papers/iceNeuronGallery/web/iceneuron_10.jpg" data-gallery-item="walden-ice" data-caption="" aria-label="Open image 10 of 12 full size"><img src="/assets/img/papers/iceNeuronGallery/thumb/iceneuron_10.jpg" alt="Ice formation on Walden Pond resembling a neuron — 10" loading="lazy" decoding="async" />
+        <span class="gallery__coord">10</span>
+      </a><a class="gallery__cell" href="/assets/img/papers/iceNeuronGallery/web/iceneuron_11.jpg" data-gallery-item="walden-ice" data-caption="" aria-label="Open image 11 of 12 full size"><img src="/assets/img/papers/iceNeuronGallery/thumb/iceneuron_11.jpg" alt="Ice formation on Walden Pond resembling a neuron — 11" loading="lazy" decoding="async" />
+        <span class="gallery__coord">11</span>
+      </a><a class="gallery__cell" href="/assets/img/papers/iceNeuronGallery/web/iceneuron_12.jpg" data-gallery-item="walden-ice" data-caption="" aria-label="Open image 12 of 12 full size"><img src="/assets/img/papers/iceNeuronGallery/thumb/iceneuron_12.jpg" alt="Ice formation on Walden Pond resembling a neuron — 12" loading="lazy" decoding="async" />
+        <span class="gallery__coord">12</span>
+      </a></div>
+  <figcaption class="gallery__note">Walden Pond, under the snow-covered ice. Click any plate for the full frame; arrow keys walk the set.</figcaption>
+</figure>
+
+<p>I also started lining some of the ice neurons up next to one another, because once you have seen enough cortical anatomy it is almost impossible not to start making comparisons.</p>
+
+<figure class="gallery reveal" data-gallery="ice-aligned">
+  <div class="gallery__grid" style="grid-template-columns: 1fr;">
+    <a class="gallery__cell" style="aspect-ratio: 19 / 6;" href="/assets/img/papers/fig_ice_walden.png" data-gallery-item="ice-aligned" data-caption="Ice formations, aligned the way one would plate cortical anatomy." aria-label="Open the aligned ice-neuron figure full size">
+      <img src="/assets/img/papers/fig_ice_walden.png" alt="Three ice formations aligned side by side" loading="lazy" decoding="async" />
+      <span class="gallery__coord">01</span>
+    </a>
+  </div>
+</figure>
+
+<p>There is actually another paper hiding behind that figure. I have been working, on and off, on something about cortical columns, but I still have not found the final bit of magic that makes the whole thing click. So for now it is in my drawer.</p>
+
+<p>At this rate the drawer is turning into Professor Balthazar’s closet — if you ever saw that charming Croatian animation for kids, you know exactly the sort of place I mean: half laboratory, half cabinet of unfinished wonders, with some contraption in the back that may one day suddenly work.</p>
+
+<p>And here is another photograph I particularly like, taken from farther away, where I was trying to get the branches of an actual tree and the branching ice formations into the same frame.</p>
+
+<figure class="gallery gallery--one reveal" data-gallery="ice-tree">
+  <div class="gallery__grid"><a class="gallery__cell" href="/assets/img/papers/iceNeuronGallery/web/icetree.jpg" data-gallery-item="ice-tree" data-caption="Tree branches and ice branches in one frame." aria-label="Open image 1 of 1 full size"><img src="/assets/img/papers/iceNeuronGallery/thumb/icetree.jpg" alt="Tree branches above ice formations at Walden Pond — 1" loading="lazy" decoding="async" />
+        <span class="gallery__coord">01</span>
+      </a></div>
+</figure>
+
+<p>The whole thing fascinated me enough that I started searching around to see whether anyone else had noticed these structures.</p>
+
+<p>Lo and behold: they had.</p>
+
+<p>And, wonderfully, one of the reports was by a neurologist. Sandra Kostyk had published an image in <em>Neurology</em> under the title <strong>“Pond neurons.”</strong> (see <a href="https://www.neurology.org/doi/10.1212/WNL.0000000000004810">Here!</a>)</p>
+
+<p>So I was not the first person to see the neuron in the ice (In fact, search for “Ice Neuron” in Google images and you will see numerous such examples by amused photographers).</p>
+
+<p>But for me the interesting question was almost the reverse of what fascinated the neurologist.</p>
+
+<p>The ice was obviously <em>not</em> a neuron. So why did it look so convincingly like one?</p>
+
+<p>And what, exactly, was missing?</p>
+
+<p>That made it a perfect negative control for something I had already been thinking about. In trying to understand information processing in biological systems, I had been circling around <strong>physical computing</strong> and <strong>closure</strong>: when does the physical substrate merely evolve, and when does its own internal state participate in organizing the operations we want to call computation?</p>
+
+<p>And now there it was, staring at me from a frozen pond: a structure that had acquired the silhouette without acquiring the computation.</p>
+
+<p><a id="claude"></a></p>
+<h3 id="the-other-claude">The other Claude</h3>
+
+<p>The other half of the story came from Claude.</p>
+
+<p>No, not the Anthropic Claude.</p>
+
+<p>A Québécois Claude! <em>Claude Bédard.</em></p>
+
+<p>A fine mathematical physicist, a very good classical guitarist, and a great chess player.</p>
+
+<p>He’s the only one who’s ever beaten me twice in a row. I still carry that agonizing scar in my memory — even though I hold the better overall score against him.</p>
+
+<p>Claude was an ex-teacher later turned research scientist in Alain Destexhe’s lab where I was doing my PhD with Alain. Alain himself came through the scientific lineage of Ilya Prigogine, and that mixture of nonlinear dynamics, statistical physics, biophysics, and neuroscience was simply the air of the lab.</p>
+
+<p>At the time we were in Gif-sur-Yvette, on the CNRS campus outside Paris; a bit after I graduated, the lab moved to Saclay. Extracellular potential was bread and butter there. It was neurophysiology, biophysics, cable theory, and Maxwell’s equations all tangled together in exactly the way I liked.</p>
+
+<p>With Claude and Alain I worked on my first PhD paper, on the scaling of extracellular sources in magnetoencephalography. Claude and Alain were also thinking deeply about cable theory and extracellular fields (you should read their paper!), and I had countless discussions with them: Claude smoking back-to-back cigarettes, all of us drinking a frankly unreasonable number of coffees, alternating between equations, neuroscience, physics, and sometimes chess.</p>
+
+<p>What I learned from Claude was not one formula.</p>
+
+<p>It was a way of moving.</p>
+
+<p>He had this wonderful ability to jump from one physical concept to another through a chain of equations, never treating the mathematics as decoration. The equations were the road. You could begin with one physical statement and, if you followed the chain carefully enough, arrive somewhere that initially looked like a completely different subject.</p>
+
+<p>From Alain, I learned to think about neuroscience as neurophysics in the deepest sense: to look for the organizing principles beneath the biological detail, with the nonequilibrium intuition of the Prigogine school always in the background.</p>
+
+<p>That way of thinking became ingrained in me.</p>
+
+<p>So years later, when I was staring at the ice neurons and thinking about field closure, the ingredients were already somewhere in my head: extracellular potentials are generated by neural activity; fields are physical variables, not merely observer-side readouts; cable dynamics lives on the morphology; and the extracellular medium gives you another route by which one part of the system can act on another. Ephatic coupling is not something that we can easily discount away.</p>
+
+<p>I had the pieces.</p>
+
+<p>I just did not know how to connect them.</p>
+
+<p>And that annoyed the hell out of me.</p>
+
+<p><a id="home-at-last"></a></p>
+<h3 id="mullinssekerka-home-at-last">Mullins–Sekerka: home at last</h3>
+
+<p>The connection finally arrived from a completely different direction.</p>
+
+<p>One day I was reading parts of Michael Cross and Henry Greenside’s insanely good and intensely dense <em>Pattern Formation and Dynamics in Nonequilibrium Systems</em>.</p>
+
+<p>And there it was:</p>
+
+<p><strong>Mullins–Sekerka instability.</strong></p>
+
+<p>Boom.</p>
+
+<p>Home at last.</p>
+
+<figure class="gallery reveal" data-gallery="mullins-sekerka">
+  <div class="gallery__grid"><a class="gallery__cell" href="/assets/img/papers/msGallery/web/ms1.jpg" data-gallery-item="mullins-sekerka" data-caption="" aria-label="Open image 1 of 3 full size"><img src="/assets/img/papers/msGallery/thumb/ms1.jpg" alt="Book pages on pattern formation far from threshold — 1" loading="lazy" decoding="async" />
+        <span class="gallery__coord">01</span>
+      </a><a class="gallery__cell" href="/assets/img/papers/msGallery/web/ms2.jpg" data-gallery-item="mullins-sekerka" data-caption="" aria-label="Open image 2 of 3 full size"><img src="/assets/img/papers/msGallery/thumb/ms2.jpg" alt="Book pages on pattern formation far from threshold — 2" loading="lazy" decoding="async" />
+        <span class="gallery__coord">02</span>
+      </a><a class="gallery__cell" href="/assets/img/papers/msGallery/web/ms3.jpg" data-gallery-item="mullins-sekerka" data-caption="" aria-label="Open image 3 of 3 full size"><img src="/assets/img/papers/msGallery/thumb/ms3.jpg" alt="Book pages on pattern formation far from threshold — 3" loading="lazy" decoding="async" />
+        <span class="gallery__coord">03</span>
+      </a></div>
+  <figcaption class="gallery__note">The section on &ldquo;patterns based on front properties&rdquo; gave me the clue I needed &mdash; Mullins&ndash;Sekerka!</figcaption>
+</figure>
+
+<p>The ice-neuron morphology suddenly had the right language. A moving interface, driven by a transported field, can become morphologically unstable. The branching did not need a neural explanation because there was already a beautiful piece of nonequilibrium physics that told me how the silhouette could arise.</p>
+
+<p>And once that was clear, the rest of the problem could be posed properly.</p>
+
+<p>Instead of asking, <em>Why does ice look like a neuron?</em>, I could ask:</p>
+
+<blockquote>
+  <p><strong>What has to be added to the physics of the ice before the dendritic silhouette becomes a dynamical motif?</strong></p>
+</blockquote>
+
+<p>That is a much better question.</p>
+
+<p>The rest was a matter of going step by step: branching and branching, like the ice neurons themselves, but now with purpose and with a map. Growth instability. Internal state. Field source. Feedback. Freeze the geometry. Ask what remains.</p>
+
+<p>Very much the way Claude had taught me to move through a problem: follow the physics through the equations and do not jump ahead of what the system actually possesses.</p>
+
+<hr />
+
+<p><a id="fallacy"></a></p>
+<h2 id="the-silhouette-fallacy-1">The silhouette fallacy</h2>
+
+<p>Walden gave me a useful inversion.</p>
+
+<p>The ice neuron was not interesting because ice had somehow discovered neuroscience. It was interesting because it had acquired the thing most likely to fool us — the <strong>shape</strong> — while withholding almost everything else we normally smuggle into the word <em>neuron</em>.</p>
+
+<p>A dendritic silhouette is so strongly associated with a neuron that it is tempting to let the picture do the reasoning for us. Branching becomes computation. A motif in the geometry becomes a motif in the dynamics. A tree that <em>looks</em> neuronal quietly inherits the properties of a neuron.</p>
+
+<p>I call that the <strong>silhouette fallacy</strong>.</p>
+
+<p>The paper is an attempt to make that mistake mathematically difficult to commit.</p>
+
+<hr />
+
+<p><a id="ice"></a></p>
+<h2 id="ice-is-not-pretending-to-be-a-neuron">Ice is not pretending to be a neuron</h2>
+
+<p>The resemblance between ice and dendrites is not mysterious. It is not even especially biological.</p>
+
+<p>A front advancing through a transported field can become unstable. Small perturbations grow, tips compete for flux, curvature suppresses very small features, and a branching structure emerges. Crystal growth does this. Diffusion-limited aggregation does this. Many biological growth processes do this. Neuronal arbors can share some of the same geometric statistics because the physics of making a cheap branching tree is not unique to neurons.</p>
+
+<p>So the first lesson is almost disappointingly simple:</p>
+
+<blockquote>
+  <p><strong>A branching form can be evidence of a growth instability without being evidence of a computation.</strong></p>
+</blockquote>
+
+<p>This matters because the word <em>motif</em> is often asked to do two different jobs.</p>
+
+<p>One meaning is structural: a recurring or overrepresented piece of a graph.</p>
+
+<p>The other is dynamical: a primitive that does something when driven — filters, persists, oscillates, selects, amplifies.</p>
+
+<p>Ice can have the first kind of motif. It can grow the same little branching shapes over and over.</p>
+
+<p>That does not give it the second.</p>
+
+<p>A silhouette is morphology. A dynamical motif needs a state.</p>
+
+<hr />
+
+<p><a id="state"></a></p>
+<h2 id="the-missing-state">The missing state</h2>
+
+<p>This is the first real separation in the paper.</p>
+
+<p>Imagine freezing the geometry of a dendrite. The tree no longer grows. But if it is a biological dendrite, the object is not dead mathematically just because its shape is fixed. Membrane voltage still evolves. Channels still open and close. Local nonlinearities remain. Excitable events can propagate.</p>
+
+<p>That is already something ice does not possess.</p>
+
+<p>So I add an internal state to the interface. I use a minimal excitable system because the point is not to reproduce a membrane channel by channel. The point is to give the interface degrees of freedom that can evolve on their own, even after the geometry is frozen.</p>
+
+<p>At that point we have moved from an <strong>ice neuron</strong> to an <strong>active cable</strong>.</p>
+
+<p>But that is still not the full distinction I wanted.</p>
+
+<p>A biological neuron does not merely carry dynamics along its own cable.</p>
+
+<p>It also changes the field around it.</p>
+
+<hr />
+
+<p><a id="writes-field"></a></p>
+<h2 id="the-neuron-is-not-only-in-the-field-it-writes-the-field">The neuron is not only in the field. It writes the field.</h2>
+
+<p>This is where ephaptic coupling enters the story.</p>
+
+<p>Neural activity generates extracellular electric fields. Those fields are not just pretty measurements sitting outside the “real” computation. They are produced by membrane currents, and they can in turn act back on excitable membranes.</p>
+
+<p>So there is a physical loop:</p>
+
+<p><strong>membrane state → extracellular field → membrane state</strong></p>
+
+<p>The neuron is therefore not only a consumer of its environment. It is one of the authors of the environment that subsequently acts on it.</p>
+
+<p>That is the step I call <strong>field closure</strong>.</p>
+
+<p>In the model, almost the entire conceptual distinction is carried by one parameter, (\gamma).</p>
+
+<p>When</p>
+
+<p>[
+\gamma = 0,
+]</p>
+
+<p>the interface responds to the field but does not contribute an independent state-dependent source back into it.</p>
+
+<p>That is the ice limit.</p>
+
+<p>When</p>
+
+<p>[
+\gamma &gt; 0,
+]</p>
+
+<p>the internal state writes into the field, and the field feeds back onto subsequent dynamics.</p>
+
+<p>The object has closed a physical loop.</p>
+
+<p>The point of (\gamma) is not that neurons have a literal knob called gamma. The point is that it lets the same mathematical object cross a very clean conceptual boundary:</p>
+
+<p><strong>passive silhouette → field-closed dynamical system.</strong></p>
+
+<hr />
+
+<p><a id="why-closure"></a></p>
+<h2 id="why-closure-rather-than-just-feedback">Why closure, rather than just feedback?</h2>
+
+<p>Because feedback is cheap too.</p>
+
+<p>Many physical systems feed back on themselves. That alone does not make them computers.</p>
+
+<p>I use <em>closure</em> here in a deliberately restricted sense. Field closure means that an internally realized physical state contributes to a field and that this field then changes the future dynamics of the state.</p>
+
+<p>That is already stronger than a structure merely responding to an imposed environment.</p>
+
+<p>But it is still weaker than what I have elsewhere called <strong>computational closure</strong>.</p>
+
+<p>The distinction matters.</p>
+
+<p>In physical computing, one should not be able to declare an arbitrary physical trajectory a computation simply by inventing a convenient encoding afterward. The computational description has to correspond to the physical organization of the system.</p>
+
+<p>And in the stronger autonomous case, internally realized readout states must participate in selecting what happens next.</p>
+
+<p>Field closure does not automatically guarantee that.</p>
+
+<p>It supplies the physical loop.</p>
+
+<p>Whether the loop realizes a computation in the stronger sense depends on the transition structure, the readout, and what operations the dynamics actually implement.</p>
+
+<p>So I think of the hierarchy this way:</p>
+
+<ol>
+  <li><strong>structure</strong> gives the object a shape;</li>
+  <li><strong>internal state</strong> gives it autonomous dynamics;</li>
+  <li><strong>field closure</strong> lets those dynamics modify the medium that acts back on them;</li>
+  <li><strong>computational closure</strong>, when present, is a further claim about what that closed physical loop implements.</li>
+</ol>
+
+<p>The distinctions are easy to blur because all four can live in the same biological object.</p>
+
+<p>The ice neuron separates them for us.</p>
+
+<hr />
+
+<p><a id="one-knob"></a></p>
+<h2 id="one-knob-deforms-the-physics">One knob deforms the physics</h2>
+
+<p>Once the loop is switched on, it does not merely add a decorative correction.</p>
+
+<p>The field-coupled state changes the growth spectrum of the interface. In the ice limit, the familiar morphological instability selects the growing modes. With finite closure, those modes are shifted and amplified.</p>
+
+<p>More interestingly, the coupled system can become oscillatory in a region where the isolated internal oscillator is still quiescent.</p>
+
+<p>That is important conceptually.</p>
+
+<p>The oscillation is not simply “the neuron already oscillated and then we attached it to a tree.” The coupling itself opens a dynamical region unavailable to the isolated state.</p>
+
+<p>The field is therefore not just carrying activity from one place to another.</p>
+
+<p>It changes what dynamics are available to the combined system.</p>
+
+<p>This is one reason I find the physics of ephaptic coupling more interesting than treating it as a small correction to ordinary cable theory. Even a weak shared field can alter the effective dynamical object because it changes the closure of the system.</p>
+
+<hr />
+
+<p><a id="freeze-tree"></a></p>
+<h2 id="freeze-the-tree">Freeze the tree</h2>
+
+<p>But a spectrum on a growing interface still leaves an obvious objection.</p>
+
+<p>Perhaps all we have done is change the growth.</p>
+
+<p>Perhaps the field-closed system looks different because it grows differently.</p>
+
+<p>So the cleanest test is to remove growth entirely.</p>
+
+<p>Grow the tree with (\gamma=0).</p>
+
+<p>Freeze its geometry.</p>
+
+<p>Then turn on finite (\gamma).</p>
+
+<p>Now the morphology cannot save the argument. The branches are identical before and after. The graph is identical. The cable is identical.</p>
+
+<p>Only the closure changes.</p>
+
+<p>In the assay, two distant tips are driven and another distant tip is read out. At (\gamma=0), transmission has to work through the active cable. At finite (\gamma), the state-generated field adds spatial interactions that do not follow the cable graph.</p>
+
+<p>Persistence at the readout increases.</p>
+
+<p>That sentence is the heart of the paper:</p>
+
+<blockquote>
+  <p><strong>The shape no longer changes; only the dynamical closure does.</strong></p>
+</blockquote>
+
+<p>So the extra effect cannot be credited to the silhouette.</p>
+
+<p>And because the first-order contribution can be decomposed spatially, one can ask <em>where</em> the closure actually does its work.</p>
+
+<p>The answer is not “everywhere in the dendritic shape.”</p>
+
+<p>A small set of field-mediated shortcuts contributes most strongly.</p>
+
+<p>The dynamical motif is therefore not the outline of the tree. It is a set of physical interactions that the outline does not contain.</p>
+
+<p>That is a much more demanding use of the word <em>motif</em>.</p>
+
+<hr />
+
+<p><a id="graph"></a></p>
+<h2 id="the-graph-is-not-the-whole-architecture">The graph is not the whole architecture</h2>
+
+<p>This is where the ephaptic story becomes especially relevant to neuroscience.</p>
+
+<p>A cable graph gives one geometry of interaction: current flows along the neurite.</p>
+
+<p>A synaptic connectome gives another: activity moves through synaptic edges.</p>
+
+<p>But an extracellular field introduces a different geometry altogether. It depends on space, conductivity, screening, tissue organization, and the activity of the surrounding population.</p>
+
+<p>Two compartments that are far apart along the cable can be close through the field.</p>
+
+<p>So the physical interaction graph need not be the anatomical graph.</p>
+
+<p>This is not a semantic detail.</p>
+
+<p>If computation is implemented by the physical degrees of freedom of the nervous system, then the effective architecture is whatever set of interactions those degrees of freedom actually realize.</p>
+
+<p>The extracellular field is part of that substrate.</p>
+
+<p>It does not have to dominate every regime to matter conceptually. Its existence already tells us that the neuron is not exhausted by a tree of compartments connected only by cable edges.</p>
+
+<p>The system can write nonlocal couplings into the medium around itself.</p>
+
+<hr />
+
+<p><a id="three-possessions"></a></p>
+<h2 id="three-possessions">Three possessions</h2>
+
+<p>The whole paper can be compressed into three rows:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>object</th>
+      <th style="text-align: right">growth structure</th>
+      <th style="text-align: right">internal dynamics</th>
+      <th style="text-align: right">field feedback</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>ice neuron</strong></td>
+      <td style="text-align: right">✓</td>
+      <td style="text-align: right">–</td>
+      <td style="text-align: right">–</td>
+    </tr>
+    <tr>
+      <td><strong>active cable</strong></td>
+      <td style="text-align: right">✓</td>
+      <td style="text-align: right">✓</td>
+      <td style="text-align: right">–</td>
+    </tr>
+    <tr>
+      <td><strong>field-closed neuron</strong></td>
+      <td style="text-align: right">✓</td>
+      <td style="text-align: right">✓</td>
+      <td style="text-align: right">✓</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>I like this hierarchy because each row possesses something the previous one does not.</p>
+
+<p>The ice neuron has the branching structure.</p>
+
+<p>The active cable adds an internal state.</p>
+
+<p>The field-closed neuron adds the loop by which that state writes into a shared physical field and receives the consequences back.</p>
+
+<p>A silhouette census cannot distinguish these rows.</p>
+
+<p>That is exactly why the silhouette is dangerous.</p>
+
+<hr />
+
+<p><a id="physical-computing"></a></p>
+<h2 id="the-physical-computing-lesson">The physical-computing lesson</h2>
+
+<p>The broader point is not really about ice.</p>
+
+<p>It is about what we mean when we say that a physical object computes.</p>
+
+<p>There is a strong temptation to identify computation with form: a network, a circuit diagram, a dendritic tree, a lattice, a reservoir.</p>
+
+<p>But the physical computation is not in the picture.</p>
+
+<p>It is in the organized evolution of physical states.</p>
+
+<p>A useful architecture has to specify not only where the degrees of freedom sit, but what states they possess, how those states transform, and what parts of the physical substrate those transformations can modify.</p>
+
+<p>Field closure is one concrete mechanism by which the substrate becomes an active participant rather than a passive stage.</p>
+
+<p>The membrane writes the field.</p>
+
+<p>The field rewrites the conditions for the membrane.</p>
+
+<p>The “wiring” is therefore partly produced dynamically by the physics itself.</p>
+
+<p>That is much closer to the kind of object I want to call a physical computer.</p>
+
+<hr />
+
+<p><a id="neuroai"></a></p>
+<h2 id="and-the-neuroai-lesson">And the NeuroAI lesson</h2>
+
+<p>This is also why I am cautious about biomimetic geometry in NeuroAI.</p>
+
+<p>A dendrite-inspired architecture can be useful.</p>
+
+<p>A branched neuromorphic device can be useful.</p>
+
+<p>A network can borrow the visual language of a neuron and still do something interesting.</p>
+
+<p>But resemblance is not inheritance.</p>
+
+<p>If all we copied is the tree, then in the hierarchy above we have copied the first row.</p>
+
+<p>We have copied the <strong>ice neuron</strong>.</p>
+
+<p>To move beyond that, the branches need internal dynamical states.</p>
+
+<p>And to recover the field-closed organization, those states must be able to write into some shared physical variable that acts back on the computation.</p>
+
+<p>It does not have to be an extracellular electric field. It could be optical, mechanical, chemical, acoustic, electromagnetic, or some other collective physical mode.</p>
+
+<p>The essential feature is not the material.</p>
+
+<p>It is the loop:</p>
+
+<p><strong>state writes field; field acts on state.</strong></p>
+
+<p>That is the structural motif I care about.</p>
+
+<p>Not the silhouette.</p>
+
+<hr />
+
+<p><a id="one-sentence"></a></p>
+<h2 id="the-fallacy-in-one-sentence">The fallacy, in one sentence</h2>
+
+<p>Pond ice can look like a neuron because a growth instability is enough to draw the tree.</p>
+
+<p>A biological neuron is different because the tree carries an internal state, and that state can help write the field that acts back on the tree.</p>
+
+<p>That is the contrast.</p>
+
+<p><strong>Shape is morphology without an internal state and a source term. That is the ice neuron.</strong></p>
+
+<p><strong>Excitability adds an active cable.</strong></p>
+
+<p><strong>Field closure is the biophysical mélange in which the neuron writes part of the field that then acts back on it. That is the biological neuron.</strong></p>
+
+<p>The pond can draw the silhouette.</p>
+
+<p>It cannot close the loop.</p>
+
+<p><em>I hope Papa Prigogine would be proud.</em></p>
+
+<hr />
+
+<p>And then there are the patterns that refuse even my best attempt at a story.</p>
+
+<figure class="gallery gallery--one gallery--full reveal" data-gallery="ice-circle">
+  <div class="gallery__grid"><a class="gallery__cell" href="/assets/img/papers/iceNeuronGallery/web/icecircle.jpg" data-gallery-item="ice-circle" data-caption="" aria-label="Open image 1 of 1 full size"><img src="/assets/img/papers/iceNeuronGallery/web/icecircle.jpg" alt="A circular ice pattern on Walden Pond — 1" loading="lazy" decoding="async" />
+        <span class="gallery__coord">01</span>
+      </a></div>
+</figure>
+
+<p><strong>And here is one pattern that I have no explanation for. If you do, you know who to call.</strong></p>
+
+  </section>
+
+  
+  <section class="paper__section prose">
+    <h2>Cite this post</h2>
+    
+<div class="citeblock">
+  <div class="citeblock__head">
+    <span class="citeblock__label">BibTeX</span>
+    <button type="button" class="citeblock__copy" data-cite-copy>Copy</button>
+  </div>
+  <pre><code>@misc{dehghani2026SilhouetteFallacy,
+  author       = {Nima Dehghani},
+  title        = {{The Silhouette Fallacy}},
+  year         = {2026},
+  howpublished = {\url{https://neurovium.science/posts/pblog-IceNeuron/}},
+  note         = {Companion post to: Field closure, ice neurons, and when a dendrite is a motif
+                  (2026). doi:10.48550/arXiv.2610.00184}
+}</code></pre>
+</div>
+  </section>
+  
+
+  
+  <section class="paper__section">
+    <h2>The room this opens</h2>
+    <div class="linkbar">
+      <a href="/papers/IceNeuron/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="20" x2="12" y2="12"/><line x1="12" y1="12" x2="21" y2="4"/><line x1="12" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="21" y2="20"/></svg>
+        Follow this path into the Maze
+      </a>
+    </div>
+  </section>
+  
+</article>
+
+      <footer class="foot">
+  <span>© 2026 · Nima Dehghani</span>
+  <span>
+    <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    ·
+    <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+  </span>
+</footer>
+
+    </main>
+  </div>
+
+  <script src="/assets/js/quotes.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
