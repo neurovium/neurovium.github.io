@@ -1,8 +1,8 @@
 {
   "meta": {
-    "paper_count": 30,
-    "concept_count": 178,
-    "edge_count": 541,
+    "paper_count": 31,
+    "concept_count": 193,
+    "edge_count": 562,
     "tfidf": false
   },
   "nodes": [
@@ -99,6 +99,32 @@
         "functional initialization",
         "wiring economy",
         "biological computation"
+      ]
+    },
+    {
+      "id": "IceNeuron",
+      "kind": "paper",
+      "title": "Field closure, ice neurons, and when a dendrite is a motif",
+      "year": 2026,
+      "url": "/papers/IceNeuron/",
+      "wash": "--wash-plum",
+      "tags": [
+        "Field Closure",
+        "Ice Neurons",
+        "Dendritic Computation",
+        "Ephaptic Coupling",
+        "Pattern Formation",
+        "Morphological Instability",
+        "Mullins–Sekerka Instability",
+        "FitzHugh–Nagumo Dynamics",
+        "Nonlinear Dynamics",
+        "Network Motifs",
+        "Physical Computation",
+        "NeuroAI",
+        "Neuromorphic Computing",
+        "Dendritic Morphology",
+        "Excitable Media",
+        "Structure–Function Coupling"
       ]
     },
     {
@@ -804,7 +830,7 @@
       "wash": "--wash-teal",
       "blurb": "",
       "curated": false,
-      "weight": 6
+      "weight": 7
     },
     {
       "id": "computational closure",
@@ -915,6 +941,15 @@
       "weight": 1
     },
     {
+      "id": "Dendritic Computation",
+      "kind": "concept",
+      "name": "Dendritic Computation",
+      "wash": "--wash-oxblood",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
       "id": "dendritic current",
       "kind": "concept",
       "name": "dendritic current",
@@ -922,6 +957,15 @@
       "blurb": "The transmembrane current along the dendritic tree that is the dominant source of extracellular field potentials.",
       "curated": true,
       "weight": 2
+    },
+    {
+      "id": "Dendritic Morphology",
+      "kind": "concept",
+      "name": "Dendritic Morphology",
+      "wash": "--wash-amber",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
     },
     {
       "id": "Diffusion Tensor Imaging",
@@ -993,7 +1037,7 @@
       "wash": "--wash-oxblood",
       "blurb": "",
       "curated": false,
-      "weight": 14
+      "weight": 15
     },
     {
       "id": "Dynamics",
@@ -1086,9 +1130,27 @@
       "weight": 1
     },
     {
+      "id": "Ephaptic Coupling",
+      "kind": "concept",
+      "name": "Ephaptic Coupling",
+      "wash": "--wash-teal",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
       "id": "Evoked potentials",
       "kind": "concept",
       "name": "Evoked potentials",
+      "wash": "--wash-slate",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Excitable Media",
+      "kind": "concept",
+      "name": "Excitable Media",
       "wash": "--wash-slate",
       "blurb": "",
       "curated": false,
@@ -1120,6 +1182,24 @@
       "blurb": "",
       "curated": false,
       "weight": 3
+    },
+    {
+      "id": "Field Closure",
+      "kind": "concept",
+      "name": "Field Closure",
+      "wash": "--wash-amber",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "FitzHugh–Nagumo Dynamics",
+      "kind": "concept",
+      "name": "FitzHugh–Nagumo Dynamics",
+      "wash": "--wash-rust",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
     },
     {
       "id": "fMRI",
@@ -1198,6 +1278,15 @@
       "kind": "concept",
       "name": "IAAFT",
       "wash": "--wash-plum",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Ice Neurons",
+      "kind": "concept",
+      "name": "Ice Neurons",
+      "wash": "--wash-dust",
       "blurb": "",
       "curated": false,
       "weight": 1
@@ -1374,10 +1463,28 @@
       "weight": 1
     },
     {
+      "id": "Morphological Instability",
+      "kind": "concept",
+      "name": "Morphological Instability",
+      "wash": "--wash-plum",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
       "id": "Motif",
       "kind": "concept",
       "name": "Motif",
       "wash": "--wash-amber",
+      "blurb": "",
+      "curated": false,
+      "weight": 2
+    },
+    {
+      "id": "Mullins–Sekerka Instability",
+      "kind": "concept",
+      "name": "Mullins–Sekerka Instability",
+      "wash": "--wash-oxblood",
       "blurb": "",
       "curated": false,
       "weight": 1
@@ -1446,6 +1553,15 @@
       "weight": 7
     },
     {
+      "id": "Network Motifs",
+      "kind": "concept",
+      "name": "Network Motifs",
+      "wash": "--wash-slate",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
       "id": "neural computation",
       "kind": "concept",
       "name": "neural computation",
@@ -1488,7 +1604,7 @@
       "wash": "--wash-rust",
       "blurb": "",
       "curated": false,
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "Neuroanatomy",
@@ -1504,6 +1620,15 @@
       "kind": "concept",
       "name": "neuromoprhic",
       "wash": "--wash-rust",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Neuromorphic Computing",
+      "kind": "concept",
+      "name": "Neuromorphic Computing",
+      "wash": "--wash-amber",
       "blurb": "",
       "curated": false,
       "weight": 1
@@ -1533,6 +1658,15 @@
       "wash": "--wash-plum",
       "blurb": "A medium whose impedance varies with frequency. Implies most forward models are systematically biased.",
       "curated": true,
+      "weight": 1
+    },
+    {
+      "id": "Nonlinear Dynamics",
+      "kind": "concept",
+      "name": "Nonlinear Dynamics",
+      "wash": "--wash-oxblood",
+      "blurb": "",
+      "curated": false,
       "weight": 1
     },
     {
@@ -1572,10 +1706,28 @@
       "weight": 5
     },
     {
+      "id": "Pattern Formation",
+      "kind": "concept",
+      "name": "Pattern Formation",
+      "wash": "--wash-dust",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
       "id": "phase shuffling",
       "kind": "concept",
       "name": "phase shuffling",
       "wash": "--wash-oxblood",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
+      "id": "Physical Computation",
+      "kind": "concept",
+      "name": "Physical Computation",
+      "wash": "--wash-dust",
       "blurb": "",
       "curated": false,
       "weight": 1
@@ -2004,6 +2156,15 @@
       "weight": 4
     },
     {
+      "id": "Structure–Function Coupling",
+      "kind": "concept",
+      "name": "Structure–Function Coupling",
+      "wash": "--wash-teal",
+      "blurb": "",
+      "curated": false,
+      "weight": 1
+    },
+    {
       "id": "surrogate data",
       "kind": "concept",
       "name": "surrogate data",
@@ -2182,7 +2343,7 @@
     {
       "source": "Category Theory",
       "target": "Computation",
-      "weight": 0.3333,
+      "weight": 0.2857,
       "kind": "cooccur"
     },
     {
@@ -2200,7 +2361,7 @@
     {
       "source": "Circuits",
       "target": "Computation",
-      "weight": 0.2857,
+      "weight": 0.25,
       "kind": "cooccur"
     },
     {
@@ -2260,7 +2421,7 @@
     {
       "source": "Compositionality",
       "target": "Computation",
-      "weight": 0.2857,
+      "weight": 0.25,
       "kind": "cooccur"
     },
     {
@@ -2284,67 +2445,79 @@
     {
       "source": "Compositionality",
       "target": "dynamics",
-      "weight": 0.2143,
+      "weight": 0.2,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Computation",
+      "target": "Motif",
+      "weight": 0.2857,
+      "kind": "cooccur"
+    },
+    {
+      "source": "Computation",
+      "target": "NeuroAI",
+      "weight": 0.2857,
       "kind": "cooccur"
     },
     {
       "source": "Computation",
       "target": "Physical computing",
-      "weight": 0.3333,
+      "weight": 0.2857,
       "kind": "cooccur"
     },
     {
       "source": "Computation",
       "target": "RNNs",
-      "weight": 0.3333,
+      "weight": 0.2857,
       "kind": "cooccur"
     },
     {
       "source": "Computation",
       "target": "Recurrence",
-      "weight": 0.3333,
+      "weight": 0.2857,
       "kind": "cooccur"
     },
     {
       "source": "Computation",
       "target": "biological computation",
-      "weight": 0.6667,
+      "weight": 0.5714,
       "kind": "cooccur"
     },
     {
       "source": "Computation",
       "target": "dynamics",
-      "weight": 0.25,
+      "weight": 0.2941,
       "kind": "cooccur"
     },
     {
       "source": "Computation",
       "target": "modularity",
-      "weight": 0.3333,
+      "weight": 0.2857,
       "kind": "cooccur"
     },
     {
       "source": "Computation",
       "target": "physical computing",
-      "weight": 0.5,
+      "weight": 0.4286,
       "kind": "cooccur"
     },
     {
       "source": "Computation",
       "target": "recurrent",
-      "weight": 0.5,
+      "weight": 0.4444,
       "kind": "cooccur"
     },
     {
       "source": "Computation",
       "target": "spatiotemporal",
-      "weight": 0.2222,
+      "weight": 0.2,
       "kind": "cooccur"
     },
     {
       "source": "Computation",
       "target": "wiring economy",
-      "weight": 0.3333,
+      "weight": 0.2857,
       "kind": "cooccur"
     },
     {
@@ -2470,7 +2643,7 @@
     {
       "source": "Dynamics",
       "target": "dynamics",
-      "weight": 0.4667,
+      "weight": 0.4375,
       "kind": "cooccur"
     },
     {
@@ -2614,7 +2787,7 @@
     {
       "source": "Emergence",
       "target": "dynamics",
-      "weight": 0.2353,
+      "weight": 0.2222,
       "kind": "cooccur"
     },
     {
@@ -2710,7 +2883,7 @@
     {
       "source": "Inhibition",
       "target": "dynamics",
-      "weight": 0.375,
+      "weight": 0.3529,
       "kind": "cooccur"
     },
     {
@@ -2740,7 +2913,7 @@
     {
       "source": "LFP",
       "target": "dynamics",
-      "weight": 0.2,
+      "weight": 0.1875,
       "kind": "cooccur"
     },
     {
@@ -2842,13 +3015,13 @@
     {
       "source": "Multielectrode Arrays (MEA)",
       "target": "dynamics",
-      "weight": 0.2,
+      "weight": 0.1875,
       "kind": "cooccur"
     },
     {
       "source": "Multiscale",
       "target": "dynamics",
-      "weight": 0.2,
+      "weight": 0.1875,
       "kind": "cooccur"
     },
     {
@@ -3040,7 +3213,7 @@
     {
       "source": "Sleep-Wake Dynamics",
       "target": "dynamics",
-      "weight": 0.2,
+      "weight": 0.1875,
       "kind": "cooccur"
     },
     {
@@ -3058,7 +3231,7 @@
     {
       "source": "Slow-Wave Sleep (SWS)",
       "target": "dynamics",
-      "weight": 0.2,
+      "weight": 0.1875,
       "kind": "cooccur"
     },
     {
@@ -3082,7 +3255,7 @@
     {
       "source": "Spike",
       "target": "dynamics",
-      "weight": 0.2667,
+      "weight": 0.25,
       "kind": "cooccur"
     },
     {
@@ -3136,7 +3309,7 @@
     {
       "source": "Statistical Physics",
       "target": "dynamics",
-      "weight": 0.2,
+      "weight": 0.1875,
       "kind": "cooccur"
     },
     {
@@ -3178,7 +3351,7 @@
     {
       "source": "Wave",
       "target": "dynamics",
-      "weight": 0.1765,
+      "weight": 0.1667,
       "kind": "cooccur"
     },
     {
@@ -3208,7 +3381,7 @@
     {
       "source": "biological computation",
       "target": "dynamics",
-      "weight": 0.2,
+      "weight": 0.1875,
       "kind": "cooccur"
     },
     {
@@ -3244,19 +3417,19 @@
     {
       "source": "dynamics",
       "target": "physical computing",
-      "weight": 0.2143,
+      "weight": 0.2,
       "kind": "cooccur"
     },
     {
       "source": "dynamics",
       "target": "recurrent",
-      "weight": 0.3333,
+      "weight": 0.3125,
       "kind": "cooccur"
     },
     {
       "source": "dynamics",
       "target": "spatiotemporal",
-      "weight": 0.2667,
+      "weight": 0.25,
       "kind": "cooccur"
     },
     {
@@ -3640,6 +3813,102 @@
     {
       "source": "Cortical-blueprint-RNN",
       "target": "wiring economy",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "IceNeuron",
+      "target": "Dendritic Computation",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "IceNeuron",
+      "target": "Dendritic Morphology",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "IceNeuron",
+      "target": "Ephaptic Coupling",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "IceNeuron",
+      "target": "Excitable Media",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "IceNeuron",
+      "target": "Field Closure",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "IceNeuron",
+      "target": "FitzHugh–Nagumo Dynamics",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "IceNeuron",
+      "target": "Ice Neurons",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "IceNeuron",
+      "target": "Morphological Instability",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "IceNeuron",
+      "target": "Mullins–Sekerka Instability",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "IceNeuron",
+      "target": "Network Motifs",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "IceNeuron",
+      "target": "NeuroAI",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "IceNeuron",
+      "target": "Neuromorphic Computing",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "IceNeuron",
+      "target": "Nonlinear Dynamics",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "IceNeuron",
+      "target": "Pattern Formation",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "IceNeuron",
+      "target": "Physical Computation",
+      "weight": 1.0,
+      "kind": "explicit"
+    },
+    {
+      "source": "IceNeuron",
+      "target": "Structure–Function Coupling",
       "weight": 1.0,
       "kind": "explicit"
     },
@@ -4966,6 +5235,24 @@
     {
       "source": "Cortical-blueprint-RNN",
       "target": "recurrent",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "IceNeuron",
+      "target": "Computation",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "IceNeuron",
+      "target": "Motif",
+      "weight": 0.6,
+      "kind": "mined"
+    },
+    {
+      "source": "IceNeuron",
+      "target": "dynamics",
       "weight": 0.6,
       "kind": "mined"
     },

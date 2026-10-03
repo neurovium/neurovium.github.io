@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ead7be">
+<title>Field closure, ice neurons, and when a dendrite is a motif · Nima Dehghani</title>
+<meta name="description" content="This paper asks when a dendritic-looking structure becomes a genuine dynamical motif rather than simply the product of a growth instability. It introduces a continuum model in which “ice neurons” arise as the zero-field-closure limit, while finite coupling allows an internal excitable state to write into—and be acted on by—the surrounding field, producing enhanced persistence and a coupled Hopf regime. The results separate morphology, active cable dynamics, and field closure as distinct ingredients of neuronal computation.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="/assets/css/neurovium.css">
+
+<link type="application/atom+xml" rel="alternate" href="https://neurovium.github.io/feed.xml" title="Nima Dehghani" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Field closure, ice neurons, and when a dendrite is a motif | Nima Dehghani</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Field closure, ice neurons, and when a dendrite is a motif" />
+<meta name="author" content="Nima Dehghani" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This paper asks when a dendritic-looking structure becomes a genuine dynamical motif rather than simply the product of a growth instability. It introduces a continuum model in which “ice neurons” arise as the zero-field-closure limit, while finite coupling allows an internal excitable state to write into—and be acted on by—the surrounding field, producing enhanced persistence and a coupled Hopf regime. The results separate morphology, active cable dynamics, and field closure as distinct ingredients of neuronal computation." />
+<meta property="og:description" content="This paper asks when a dendritic-looking structure becomes a genuine dynamical motif rather than simply the product of a growth instability. It introduces a continuum model in which “ice neurons” arise as the zero-field-closure limit, while finite coupling allows an internal excitable state to write into—and be acted on by—the surrounding field, producing enhanced persistence and a coupled Hopf regime. The results separate morphology, active cable dynamics, and field closure as distinct ingredients of neuronal computation." />
+<link rel="canonical" href="https://neurovium.github.io/papers/IceNeuron/" />
+<meta property="og:url" content="https://neurovium.github.io/papers/IceNeuron/" />
+<meta property="og:site_name" content="Nima Dehghani" />
+<meta property="og:image" content="https://neurovium.github.io/assets/img/papers/ice_walden.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-09-17T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://neurovium.github.io/assets/img/papers/ice_walden.png" />
+<meta property="twitter:title" content="Field closure, ice neurons, and when a dendrite is a motif" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Nima Dehghani"},"dateModified":"2026-09-17T00:00:00+00:00","datePublished":"2026-09-17T00:00:00+00:00","description":"This paper asks when a dendritic-looking structure becomes a genuine dynamical motif rather than simply the product of a growth instability. It introduces a continuum model in which “ice neurons” arise as the zero-field-closure limit, while finite coupling allows an internal excitable state to write into—and be acted on by—the surrounding field, producing enhanced persistence and a coupled Hopf regime. The results separate morphology, active cable dynamics, and field closure as distinct ingredients of neuronal computation.","headline":"Field closure, ice neurons, and when a dendrite is a motif","image":"https://neurovium.github.io/assets/img/papers/ice_walden.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://neurovium.github.io/papers/IceNeuron/"},"url":"https://neurovium.github.io/papers/IceNeuron/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+
+
+
+
+
+</head>
+<body>
+  <header class="topbar">
+    <a href="/" class="topbar__brand">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"><line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/><line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/><line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/></g><circle cx="18" cy="20" r="2.2" fill="currentColor"/></svg>
+      Nima Dehghani
+    </a>
+    <button class="topbar__toggle" id="sidebar-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sidebar">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </header>
+
+  <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
+
+  <div class="app">
+    
+
+<aside class="side" id="sidebar" aria-label="Primary">
+  <a class="side__brand" href="/">
+    <svg class="glyph" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none">
+        <line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/>
+        <line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/>
+        <line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/>
+      </g>
+      <circle cx="18" cy="20" r="2.2" fill="currentColor"/>
+    </svg>
+    <span>
+      <span class="side__name">Nima Dehghani</span>
+      <span class="side__tag">@neurovium · MIT</span>
+    </span>
+  </a>
+
+  
+  
+  <nav class="side__nav" aria-label="Main navigation">
+    <a href="/about/" class="">About</a>
+    <a href="/news/" class="">News<span class="side__pip" aria-label="new"></span></a>
+    <a href="/research/" class="">Research</a>
+    <a href="/fullmetal_decade/" class="side__mark ">fullmetal_decade</a>
+    <a href="/papers/" class="is-active">Paper Maze</a>
+    <a href="/garden/" class="">Idea Garden</a>
+
+    
+    
+    
+    <details class="side__group side__group--books" open>
+      <summary class="side__group-sum" aria-label="Books — 1 title">
+        <span class="side__group-label"><a href="/books/">Books</a></span>
+        <span class="side__group-meta">
+          <span class="side__group-count">1</span>
+          <svg class="side__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </span>
+      </summary>
+      <div class="side__subnav">
+        
+        <a href="/books/NeuroAI/" class="">NeuroAI</a>
+        
+      </div>
+    </details>
+
+    <a href="/blog/" class="">Blog</a>
+    <a href="/open-science/" class="">Open Science</a>
+
+    <details class="side__group">
+      <summary class="side__group-sum" aria-label="Reflections — 4 pages">
+        <span class="side__group-label">Reflections</span>
+        <span class="side__group-meta">
+          <span class="side__group-count">4</span>
+          <svg class="side__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </span>
+      </summary>
+      <div class="side__subnav">
+        <a href="/on-liberty/" class="">On Liberty</a>
+        <a href="/neurovium-decoded/" class="">Neurovium Decoded</a>
+        <a href="/leibnizian-dream/" class="">Leibnizian Dream</a>
+        <a href="/scientific-understanding/" class="">Scientific Understanding</a>
+      </div>
+    </details>
+  </nav>
+
+  <div class="side__social" aria-label="Social links">
+    <div class="side__social-row">
+      <a href="https://scholar.google.com/citations?user=acFMrVUAAAAJ&hl=en" title="Google Scholar" target="_blank" rel="noopener" aria-label="Google Scholar">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9zm6.82 7L12 12.72 5.18 9 12 5.28zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73z"/></svg>
+      </a>
+      <a href="mailto:nima.dehghani@mit.edu" title="Email" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/nimadehghani/" title="LinkedIn" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+    </div>
+    <div class="side__social-row">
+      <a href="https://github.com/neurovium" title="GitHub" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      </a>
+      <a href="https://twitter.com/neurovium" title="X" target="_blank" rel="noopener" aria-label="X">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://bsky.app/profile/neurovium.bsky.social" class="is-bsky" title="Bluesky" target="_blank" rel="noopener" aria-label="Bluesky">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.335 5.144c2.606 1.957 5.41 5.923 6.44 8.051.99-2.046 3.855-6.132 6.44-8.051 1.864-1.383 4.885-2.453 4.885 1.002 0 .69-.396 5.795-.629 6.624-.809 2.882-3.748 3.616-6.363 3.17 4.573.78 5.737 3.359 3.224 5.939-4.772 4.9-6.859-1.23-7.394-2.802-.534 1.572-2.622 7.702-7.394 2.802-2.513-2.58-1.349-5.16 3.224-5.939-2.615.446-5.554-.288-6.363-3.17-.233-.829-.629-5.934-.629-6.624 0-3.455 3.021-2.385 4.885-1.002z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="n4-set" aria-label="N⁴ : NeuroAI ⊃ N³">
+    <span class="n4-set__lbl">N&#8308;</span>
+    <div class="n4-set n4-set--ai">
+      <span class="n4-set__lbl">NeuroAI</span>
+      <div class="n4-set n4-set--n3">
+        <span class="n4-set__lbl">N&#179;</span>
+        <ul>
+          <li>NeuroPhysics</li>
+          <li>NeuroComputation</li>
+          <li>NeuroDynamics</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="side__foot">
+    <span>
+      <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+      ·
+      <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    </span>
+  </div>
+</aside>
+
+    <main class="main">
+      <div class="paper-shell" id="paper-shell">
+  <article class="paper">
+    <div class="paper__crumb">
+      <span class="paper__crumb-left">
+        <a href="/papers/">← Paper Maze</a>
+        <span style="color:var(--muted-soft);">·</span>
+        <span>Room 31 · 2026</span>
+      </span>
+      <a class="paper__crumb-right" href="/garden/">Idea Garden &rarr;</a>
+    </div>
+
+    <h1>Field closure, ice neurons, and when a dendrite is a motif</h1>
+    <div class="paper__subtitle">Ice Neuron</div>
+    <p class="paper__authors">Nima Dehghani</p>
+    <div class="paper__venue">
+      <span>arXiv · 2026</span>
+      <span>DOI · https://doi.org/10.48550/arXiv.2610.00184</span>
+    </div>
+
+    <div class="paper__teaser" style="--wash-color: var(--wash-plum);">
+      
+        <img src="/assets/img/papers/ice_walden.png" alt="Field closure, ice neurons, and when a dendrite is a motif — teaser figure">
+      
+    </div>
+
+    
+    <section class="paper__section">
+      <h2>Summary</h2>
+      <p style="font-family:var(--sans);font-size:16px;color:var(--ink-soft);line-height:1.65;max-width:62ch;letter-spacing:0.16px;">This paper asks when a dendritic-looking structure becomes a genuine dynamical motif rather than simply the product of a growth instability. It introduces a continuum model in which “ice neurons” arise as the zero-field-closure limit, while finite coupling allows an internal excitable state to write into—and be acted on by—the surrounding field, producing enhanced persistence and a coupled Hopf regime. The results separate morphology, active cable dynamics, and field closure as distinct ingredients of neuronal computation.</p>
+    </section>
+    
+
+    <section class="paper__section">
+      <h2>Links</h2>
+      <div class="linkbar">
+        
+        <a href="https://arxiv.org/abs/2610.00184v1" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          arXiv
+        </a>
+        
+        
+        <a href="https://doi.org/https://doi.org/10.48550/arXiv.2610.00184" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          DOI
+        </a>
+        
+        
+        <a href="https://arxiv.org/pdf/2610.00184v1" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          PDF
+        </a>
+        
+        
+        <a href="/posts/pblog-IceNeuron/">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="14 3 14 9 20 9"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="16" x2="16" y2="16"/></svg>
+          Blog post
+        </a>
+        
+        
+        
+        <a href="https://github.com/neurovium/IceNeuron" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          Repo
+        </a>
+        
+      </div>
+
+      
+      <details class="bibtex">
+        <summary>BibTeX <span style="color:var(--muted-soft);">tap to expand</span></summary>
+        <pre><code>@misc{dehghani2026iceneurons,
+      title={Field closure, ice neurons, and when a dendrite is a motif}, 
+      author={Nima Dehghani},
+      year={2026},
+      eprint={2610.00184},
+      archivePrefix={arXiv},
+      primaryClass={q-bio.NC},
+      url={https://arxiv.org/abs/2610.00184}, 
+}
+</code></pre>
+      </details>
+      
+    </section>
+
+    
+    <section class="paper__section">
+      <h2>Code &amp; Data</h2>
+      
+      <div class="linkbar">
+        <a href="https://github.com/neurovium/IceNeuron" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          neurovium/IceNeuron
+        </a>
+      </div>
+      
+      
+      <span class="meta" style="display:block;margin:18px 0 8px;">Mirrors &amp; related repos</span>
+      <ul style="list-style:none;padding:0;margin:0;">
+        
+        <li style="padding:8px 0;border-bottom:1px solid var(--hairline);"><a class="inline" href="" target="_blank" rel="noopener"></a></li>
+        
+      </ul>
+      
+    </section>
+    
+
+    
+    <section class="paper__section paper__blogcta">
+      <a class="ebtn ebtn--outline" href="/posts/pblog-IceNeuron/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="9" y1="7" x2="16" y2="7"/><line x1="9" y1="11" x2="16" y2="11"/></svg>
+        Read more in the blog post
+      </a>
+    </section>
+    
+
+    <section class="paper__section prose">
+      <h2>The room</h2>
+      <p><em>Abstract</em></p>
+
+<p>Dendritic silhouettes are cheap. Pond ice neurons, diffusion-limited aggregates, wiring-minimizing arbors, and biological neurons can share a branching statistic because they share a growth instability, not because they are functionally similar. We take that observation as a modeling constraint. The ice neuron only structurally resembles a biological neuron. A biological neuron carries an internal state and a field that it helps generate, letting geometry, dynamics, and field co-sculpt one another. In our construction, the ice neuron is the zero-gain limit of an interfacial system in which a FitzHugh–Nagumo state lives on the moving front and writes back into the field that drives it, with dimensionless gain γ. At γ=0, morphology and internal dynamics decouple into a Mullins–Sekerka growth band and a damped oscillator. Finite γ deforms the spectrum, shifts the selected instability, and opens an oscillatory region below the isolated Hopf threshold. On a dendrite grown at γ=0 and then frozen, field closure increases distal persistence without changing the geometry; its first-order effect remains positive across repeated realizations of the same growth rule and localizes to a small set of non-cable field shortcuts. Nonlinear dynamics remain finite beyond the linear instability: below threshold, closure is almost the transmission; at spike amplitude, it is a correction to a regenerative cable event. A dendritic tree therefore is not intrinsically a structural spandrel. Shape alone is morphology without an internal state or a source term. That is the dendritic silhouette of the ice neuron. Excitability adds an active cable. Field closure is the biophysical mélange in which the neuron helps write the field that acts back on it, sculpting its dynamics and, during growth, its structure. That is a biological neuron.</p>
+
+<h2 id="citing">Citing</h2>
+
+<p>If you use this code or build on these ideas, please cite the paper using the
+BibTeX entry above.</p>
+
+    </section>
+
+    
+    <section class="paper__section">
+      <h2>Doors · concepts in this room</h2>
+      <div class="paper__tags">
+        <a href="/papers/?tag=Field%20Closure">Field Closure</a><a href="/papers/?tag=Ice%20Neurons">Ice Neurons</a><a href="/papers/?tag=Dendritic%20Computation">Dendritic Computation</a><a href="/papers/?tag=Ephaptic%20Coupling">Ephaptic Coupling</a><a href="/papers/?tag=Pattern%20Formation">Pattern Formation</a><a href="/papers/?tag=Morphological%20Instability">Morphological Instability</a><a href="/papers/?tag=Mullins%E2%80%93Sekerka%20Instability">Mullins–Sekerka Instability</a><a href="/papers/?tag=FitzHugh%E2%80%93Nagumo%20Dynamics">FitzHugh–Nagumo Dynamics</a><a href="/papers/?tag=Nonlinear%20Dynamics">Nonlinear Dynamics</a><a href="/papers/?tag=Network%20Motifs">Network Motifs</a><a href="/papers/?tag=Physical%20Computation">Physical Computation</a><a href="/papers/?tag=NeuroAI">NeuroAI</a><a href="/papers/?tag=Neuromorphic%20Computing">Neuromorphic Computing</a><a href="/papers/?tag=Dendritic%20Morphology">Dendritic Morphology</a><a href="/papers/?tag=Excitable%20Media">Excitable Media</a><a href="/papers/?tag=Structure%E2%80%93Function%20Coupling">Structure–Function Coupling</a>
+      </div>
+    </section>
+    
+
+    <nav class="corridor" aria-label="Corridor navigation">
+      
+      <a class="corridor__cell" href="/papers/AlgebraicCanonicalNet/">
+          <span class="corridor__glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></span>
+          <span><span class="corridor__lbl">Previous room · 2026</span><span class="corridor__t" style="display:block;">Algebraic Emergence of Effective Theories in Canonical Recurrent Motifs of Biological Neuronal Networks</span></span>
+        </a>
+      
+      
+      <span></span>
+    </nav>
+
+    
+    
+    <section class="paper__section">
+      <h2>Related rooms</h2>
+      <div class="card-grid">
+        
+
+<a class="card pcard reveal" href="/papers/AlgebraicCanonicalNet/" data-tags="Circuits,Recurrence,Computation,Motif,Compositionality,Emergence,Decomposition,Effective theories,Physical computing,Inhibition" style="--wash-color: var(--wash-plum);">
+  <div class="card__media">
+    
+      <img class="card__image" src="/assets/img/papers/witness_figure.png" alt="Algebraic Emergence of Effective Theories in Canonical Recurrent Motifs of Biological Neuronal Networks">
+    
+  </div>
+  <div class="card__body">
+    <span class="card__kicker">2026 · arXiv</span>
+    <h3 class="card__title">Algebraic Emergence of Effective Theories in Canonical Recurrent Motifs of Biological Neuronal Networks</h3>
+    <div class="card__meta">Nima Dehghani</div>
+    
+    <div class="card__tags">
+      <span class="tag">Circuits</span><span class="tag">Recurrence</span><span class="tag">Computation</span>
+    </div>
+    
+  </div>
+</a>
+
+
+<a class="card pcard reveal" href="/papers/Wave-compute/" data-tags="physical computing,mechanistic interpretability,recurrent,dynamics,spatiotemporal,biological computation,state-space dynamics,computational closure,reservoir computing,neuromoprhic,dynamical memory,Turing,Category Theory" style="--wash-color: var(--wash-plum);">
+  <div class="card__media">
+    
+      <img class="card__image" src="/assets/img/papers/waveComp_1.png" alt="Autonomous Physical Computation: A Categorical Closure Criterion for Physical and Neuromorphic Reservoirs.">
+    
+  </div>
+  <div class="card__body">
+    <span class="card__kicker">2026 · arXiv</span>
+    <h3 class="card__title">Autonomous Physical Computation: A Categorical Closure Criterion for Physical and Neuromorphic Reservoirs.</h3>
+    <div class="card__meta">Nima Dehghani</div>
+    
+    <div class="card__tags">
+      <span class="tag">physical computing</span><span class="tag">mechanistic interpretability</span><span class="tag">recurrent</span>
+    </div>
+    
+  </div>
+</a>
+
+
+<a class="card pcard reveal" href="/papers/Adaptive-reservoir/" data-tags="adaptive,optimization,bio-inspired,prediction,inference,AI,RNNs,modularity,wiring economy,biological computation,physical computing,mechanistic,interpretability,recurrent,dynamics,chaos,optimality,neuroai,spatiotemporal" style="--wash-color: var(--wash-plum);">
+  <div class="card__media">
+    
+      <img class="card__image" src="/assets/img/papers/adaptres_1.jpg" alt="Evolutionary Optimization Reveals Structural Constraints on Reservoir Architecture for Spatiotemporal Chaos">
+    
+  </div>
+  <div class="card__body">
+    <span class="card__kicker">2026 · arXiv</span>
+    <h3 class="card__title">Evolutionary Optimization Reveals Structural Constraints on Reservoir Architecture for Spatiotemporal Chaos</h3>
+    <div class="card__meta">Nima Dehghani</div>
+    
+    <div class="card__tags">
+      <span class="tag">adaptive</span><span class="tag">optimization</span><span class="tag">bio-inspired</span>
+    </div>
+    
+  </div>
+</a>
+
+      </div>
+    </section>
+    
+  </article>
+
+  <aside class="fork-panel" id="fork-panel" hidden aria-label="Concept fork">
+    <div class="fork-panel__inner">
+      <header class="fork-panel__head">
+        <div class="fork-panel__lbl">&#8997; Fork · concept</div>
+        <button class="fork-panel__close" id="fork-close" aria-label="Close fork">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </header>
+      <h3 id="fork-title"></h3>
+      <div class="fork-panel__body" id="fork-body"></div>
+      <div class="fork-panel__rooms" id="fork-rooms" hidden>
+        <span class="lbl">Rooms that share this concept</span>
+        <ul id="fork-rooms-list"></ul>
+      </div>
+      <div class="fork-panel__warp" id="fork-warp"></div>
+    </div>
+  </aside>
+</div>
+
+<script id="concepts-data" type="application/json">{"cortical down-state": {
+  "wash": "--wash-plum",
+  "blurb": "A brief, profound silence of neuronal firing — the negative half of the cortical slow oscillation. In humans it appears, isolated, as the K-complex.",
+  "rooms": []
+},"multiunit firing": {
+  "wash": "--wash-plum",
+  "blurb": "The pooled spiking activity of many neurons recorded at a single electrode. Goes to zero during a down-state.",
+  "rooms": []
+},"dendritic current": {
+  "wash": "--wash-plum",
+  "blurb": "The transmembrane current along the dendritic tree that is the dominant source of extracellular field potentials.",
+  "rooms": []
+},"down-state": {
+  "wash": "--wash-plum",
+  "blurb": "See cortical down-state. The label preferred when describing the slow oscillation in animal preparations.",
+  "rooms": []
+},"focal asynchronous oscillation": {
+  "wash": "--wash-slate",
+  "blurb": "A spindle observed in MEG but not yet in EEG — a single cortical patch oscillating before global recruitment.",
+  "rooms": []
+},"thalamocortical matrix": {
+  "wash": "--wash-slate",
+  "blurb": "The diffusely-projecting thalamocortical system that synchronises broad cortical territory.",
+  "rooms": []
+},"thalamocortical core": {
+  "wash": "--wash-slate",
+  "blurb": "The focally-projecting thalamocortical system that writes specific content into a single cortical patch.",
+  "rooms": []
+},"EEG/MEG asynchrony": {
+  "wash": "--wash-slate",
+  "blurb": "The disagreement between EEG and MEG over whether a spindle is synchronous — informative, not noise.",
+  "rooms": []
+},"distributed source modelling": {
+  "wash": "--wash-teal",
+  "blurb": "An inverse-problem method that places thousands of dipoles on the cortical surface and lets the data choose which fire.",
+  "rooms": []
+},"synchronous wave": {
+  "wash": "--wash-oxblood",
+  "blurb": "The global, EEG-visible appearance of a spindle once enough cortical territory has been recruited.",
+  "rooms": []
+},"recruitment time": {
+  "wash": "--wash-oxblood",
+  "blurb": "The ~200 ms latency between a focal MEG spindle and its global EEG counterpart — the time the cortex takes to ignite.",
+  "rooms": []
+},"travelling frequency front": {
+  "wash": "--wash-dust",
+  "blurb": "A spindle whose central frequency drifts spatially across the cortex over its lifetime.",
+  "rooms": []
+},"spatially-propagating oscillator": {
+  "wash": "--wash-dust",
+  "blurb": "A model in which spindle frequency is set by local cortical properties that vary in space, not by a single thalamic clock.",
+  "rooms": []
+},"purely resistive": {
+  "wash": "--wash-plum",
+  "blurb": "An extracellular medium whose impedance is the same at every frequency. The standard simplifying assumption — and, we argue, wrong.",
+  "rooms": []
+},"non-resistive extracellular medium": {
+  "wash": "--wash-plum",
+  "blurb": "A medium whose impedance varies with frequency. Implies most forward models are systematically biased.",
+  "rooms": []
+},"renormalisation-group": {
+  "wash": "--wash-slate",
+  "blurb": "A flow through theory space that integrates out short-distance physics to reveal effective long-distance behaviour. The mathematical heart of the depth-as-coarse-graining proposal.",
+  "rooms": [{"title": "Depth as Successive Coarse-Graining in Plain MLPs", "year": 2025, "url": "/papers/depth-coarse-graining/"}]
+},"coarse-graining": {
+  "wash": "--wash-slate",
+  "blurb": "Any operation that throws away short-scale degrees of freedom while preserving long-scale ones. Each MLP layer is, we claim, an instance.",
+  "rooms": [{"title": "Depth as Successive Coarse-Graining in Plain MLPs", "year": 2025, "url": "/papers/depth-coarse-graining/"}]
+},"RG flow": {
+  "wash": "--wash-slate",
+  "blurb": "The trajectory of an effective theory under successive coarse-grainings.",
+  "rooms": [{"title": "Depth as Successive Coarse-Graining in Plain MLPs", "year": 2025, "url": "/papers/depth-coarse-graining/"}]
+},"information-bottleneck": {
+  "wash": "--wash-slate",
+  "blurb": "A formalism that describes the compression-relevance trade-off across layers of a deep network.",
+  "rooms": [{"title": "Depth as Successive Coarse-Graining in Plain MLPs", "year": 2025, "url": "/papers/depth-coarse-graining/"}]
+}}</script>
+
+      <footer class="foot">
+  <span>© 2026 · Nima Dehghani</span>
+  <span>
+    <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    ·
+    <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+  </span>
+</footer>
+
+    </main>
+  </div>
+
+  <script src="/assets/js/quotes.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

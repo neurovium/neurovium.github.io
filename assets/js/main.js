@@ -215,6 +215,116 @@
   }
 
   /* ---------------------------------------------------------------
+     Gallery lightbox — thumbnails open full size; ← / → / Esc
+     --------------------------------------------------------------- */
+  (function () {
+    var cells = Array.prototype.slice.call(
+      document.querySelectorAll('.gallery__cell')
+    );
+    if (!cells.length) return;
+
+    var box, img, cap, count, prevBtn, nextBtn, closeBtn;
+    var group = [], at = 0, lastFocus = null;
+
+    function build() {
+      box = document.createElement('div');
+      box.className = 'lightbox';
+      box.hidden = true;
+      box.setAttribute('role', 'dialog');
+      box.setAttribute('aria-modal', 'true');
+      box.setAttribute('aria-label', 'Image viewer');
+      box.innerHTML =
+        '<button class="lightbox__btn lightbox__close" type="button" aria-label="Close">×</button>' +
+        '<button class="lightbox__btn lightbox__prev" type="button" aria-label="Previous image">←</button>' +
+        '<button class="lightbox__btn lightbox__next" type="button" aria-label="Next image">→</button>' +
+        '<figure class="lightbox__stage">' +
+          '<img class="lightbox__img" alt="">' +
+          '<figcaption class="lightbox__cap"></figcaption>' +
+        '</figure>' +
+        '<div class="lightbox__count" aria-live="polite"></div>';
+      document.body.appendChild(box);
+
+      img = box.querySelector('.lightbox__img');
+      cap = box.querySelector('.lightbox__cap');
+      count = box.querySelector('.lightbox__count');
+      prevBtn = box.querySelector('.lightbox__prev');
+      nextBtn = box.querySelector('.lightbox__next');
+      closeBtn = box.querySelector('.lightbox__close');
+
+      closeBtn.addEventListener('click', close);
+      prevBtn.addEventListener('click', function () { go(-1); });
+      nextBtn.addEventListener('click', function () { go(1); });
+      box.addEventListener('click', function (e) {
+        if (e.target === box || e.target === box.querySelector('.lightbox__stage')) close();
+      });
+      img.addEventListener('load', function () { img.classList.add('is-loaded'); });
+    }
+
+    function pad(n) { return (n < 10 ? '0' : '') + n; }
+
+    function show(i) {
+      at = (i + group.length) % group.length;
+      var cell = group[at];
+      img.classList.remove('is-loaded');
+      img.src = cell.getAttribute('href');
+      img.alt = (cell.querySelector('img') || {}).alt || '';
+      cap.textContent = cell.getAttribute('data-caption') || '';
+      count.textContent = pad(at + 1) + ' / ' + pad(group.length);
+      var solo = group.length < 2;
+      prevBtn.disabled = solo;
+      nextBtn.disabled = solo;
+      /* Warm the neighbours so stepping through feels instant. */
+      [-1, 1].forEach(function (d) {
+        var n = group[(at + d + group.length) % group.length];
+        if (n) { var pre = new Image(); pre.src = n.getAttribute('href'); }
+      });
+    }
+
+    function go(d) { show(at + d); }
+
+    function open(cell) {
+      if (!box) build();
+      var id = cell.getAttribute('data-gallery-item');
+      group = cells.filter(function (c) {
+        return c.getAttribute('data-gallery-item') === id;
+      });
+      if (!group.length) group = [cell];
+      lastFocus = document.activeElement;
+      box.hidden = false;
+      document.body.style.overflow = 'hidden';
+      show(group.indexOf(cell));
+      requestAnimationFrame(function () { box.classList.add('is-open'); });
+      closeBtn.focus();
+    }
+
+    function close() {
+      if (!box || box.hidden) return;
+      box.classList.remove('is-open');
+      document.body.style.overflow = '';
+      window.setTimeout(function () {
+        box.hidden = true;
+        img.src = '';
+      }, 180);
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+
+    cells.forEach(function (cell) {
+      cell.addEventListener('click', function (e) {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+        e.preventDefault();
+        open(cell);
+      });
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (!box || box.hidden) return;
+      if (e.key === 'Escape') { e.stopPropagation(); close(); }
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); e.stopPropagation(); go(-1); }
+      else if (e.key === 'ArrowRight') { e.preventDefault(); e.stopPropagation(); go(1); }
+    }, true);
+  })();
+
+  /* ---------------------------------------------------------------
      BibTeX copy buttons (.citeblock)
      --------------------------------------------------------------- */
   document.addEventListener('click', function (e) {
