@@ -230,7 +230,43 @@ DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.1088/
 
 <hr />
 
-<h1 id="when-does-a-physical-system-compute">When Does a Physical System Compute?</h1>
+<figure class="video">
+  <div class="video__head">
+    <span class="video__kicker">Watch · the paper in brief</span>
+    <a class="video__out" href="https://www.youtube.com/watch?v=iXiZRvFW-6U" target="_blank" rel="noopener">YouTube ↗</a>
+  </div>
+  <a class="video__frame" href="https://www.youtube.com/watch?v=iXiZRvFW-6U" data-video="iXiZRvFW-6U" data-title="What is “Physical Computation”? Computational closure and System Compositionality" aria-label="Play video: What is “Physical Computation”? Computational closure and System Compositionality">
+    <img class="video__poster" src="https://i.ytimg.com/vi/iXiZRvFW-6U/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/iXiZRvFW-6U/hqdefault.jpg'" alt="" loading="lazy" decoding="async" />
+    <span class="video__play" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5.5v13l11-6.5z" fill="currentColor" /></svg>
+    </span>
+  </a>
+  <figcaption class="video__caption">What is physical computation? Computational closure and system compositionality.</figcaption>
+</figure>
+
+<nav class="toc" aria-label="Contents">
+  <div class="toc__kicker">Contents</div>
+
+<ul id="markdown-toc">
+  <li><a href="#how-this-paper-began-the-problem-with-saying-that-everything-computes" id="markdown-toc-how-this-paper-began-the-problem-with-saying-that-everything-computes">How this paper began? The problem with saying that everything computes</a></li>
+  <li><a href="#from-abstractionrepresentation-theory-to-categorical-structure" id="markdown-toc-from-abstractionrepresentation-theory-to-categorical-structure">From abstraction/representation theory to categorical structure</a></li>
+  <li><a href="#why-category-theory" id="markdown-toc-why-category-theory">Why category theory?</a></li>
+  <li><a href="#physical-computation-as-a-pair-of-functors" id="markdown-toc-physical-computation-as-a-pair-of-functors">Physical computation as a pair of functors</a></li>
+  <li><a href="#computation-is-not-just-representation" id="markdown-toc-computation-is-not-just-representation">Computation is not just representation</a></li>
+  <li><a href="#natural-transformations-refinement-and-change-of-representation" id="markdown-toc-natural-transformations-refinement-and-change-of-representation">Natural transformations: refinement and change of representation</a></li>
+  <li><a href="#multiple-realizability-and-adjunctions" id="markdown-toc-multiple-realizability-and-adjunctions">Multiple realizability and adjunctions</a></li>
+  <li><a href="#scale-matters" id="markdown-toc-scale-matters">Scale matters</a></li>
+  <li><a href="#nested-composition-and-biological-systems" id="markdown-toc-nested-composition-and-biological-systems">Nested composition and biological systems</a></li>
+  <li><a href="#implications-for-computational-neuroscience" id="markdown-toc-implications-for-computational-neuroscience">Implications for computational neuroscience</a></li>
+  <li><a href="#implications-for-unconventional-and-quantum-computing" id="markdown-toc-implications-for-unconventional-and-quantum-computing">Implications for unconventional and quantum computing</a></li>
+  <li><a href="#what-the-framework-rules-out" id="markdown-toc-what-the-framework-rules-out">What the framework rules out</a></li>
+  <li><a href="#toward-a-more-precise-theory-of-biological-computation" id="markdown-toc-toward-a-more-precise-theory-of-biological-computation">Toward a more precise theory of biological computation</a></li>
+  <li><a href="#conclusion" id="markdown-toc-conclusion">Conclusion</a></li>
+</ul>
+
+</nav>
+
+<h1 id="overview-when-does-a-physical-system-compute">Overview: When Does a Physical System Compute?</h1>
 
 <p>In classical computer science, the direction of thought is usually clear. We begin with an abstract notion of a computable function. We then define a model of computation, such as a Turing machine, lambda calculus, finite-state automata, process calculi, or other formally equivalent models. Finally, we build physical devices that implement those models. In that direction, the conceptual pipeline is relatively well behaved:</p>
 
@@ -248,16 +284,9 @@ DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.1088/
 
 <p>The difficulty is that natural systems change state all the time. Electrons move. Molecules interact. Cells signal. Brains evolve through high-dimensional neural trajectories. A rock rolling down a hill follows physical law. The Solar System evolves according to gravitational dynamics. But we do not want a definition of computation so weak that every physical state transition becomes a computation. If everything computes simply because it changes state, then computation has lost its explanatory power.</p>
 
-<p>This is the central motivation of our paper:</p>
+<p><em>This is the central motivation of our paper!</em> The paper develops a category-theoretic framework for physical computation. The goal is not to add another metaphor to the already crowded discussion of whether brains, bacteria, slime moulds, chemical waves, or quantum systems “compute.” The goal is to provide a formal way to ask when a physical process can be treated as a computation, under what constraints, and at what scale.</p>
 
-<p><strong>Physical computing: a category theoretic perspective on physical computation and system compositionality</strong><br />
-Nima Dehghani and Gianluca Caterina<br />
-<em>Journal of Physics: Complexity</em> 5, 035005, 2024<br />
-DOI: <code class="language-plaintext highlighter-rouge">10.1088/2632-072X/ad6051</code></p>
-
-<p>The paper develops a category-theoretic framework for physical computation. The goal is not to add another metaphor to the already crowded discussion of whether brains, bacteria, slime moulds, chemical waves, or quantum systems “compute.” The goal is to provide a formal way to ask when a physical process can be treated as a computation, under what constraints, and at what scale.</p>
-
-<h2 id="the-problem-with-saying-that-everything-computes">The problem with saying that everything computes</h2>
+<h2 id="how-this-paper-began-the-problem-with-saying-that-everything-computes">How this paper began? The problem with saying that everything computes</h2>
 
 <p>The history of physical computation is entangled with a persistent problem: <strong>pancomputationalism</strong>. In its broadest form, pancomputationalism is the view that every physical system computes, or at least that every physical system implements some computation. The reasoning often begins with the observation that physical systems have states and transitions. If we can map those physical states onto computational states, then perhaps the system implements the corresponding computation.</p>
 

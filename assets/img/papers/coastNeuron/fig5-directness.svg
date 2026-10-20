@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-label="At the neuronal ruler a connection from neuron j to neuron i is one edge with one weight. At the contact ruler the same connection is three contacts on two dendritic subunits whose effect depends on local state n, so an anatomically direct edge need not be informationally direct." font-family="'IBM Plex Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif">
+<defs>
+<marker id="f5-ah" orient="auto" markerWidth="10" markerHeight="10" refX="8" refY="5" overflow="visible"><path d="M0 0 L10 5 L0 10 Z" fill="#5B6270"/></marker>
+<marker id="f5-ahb" orient="auto" markerWidth="10" markerHeight="10" refX="8" refY="5" overflow="visible"><path d="M0 0 L10 5 L0 10 Z" fill="#1A73A8"/></marker>
+</defs>
+<rect width="1200" height="680" fill="#FCFCFB"/>
+<text x="40" y="52" font-size="28" font-weight="600" fill="#1B1F26">One edge at one ruler is not one edge at every ruler</text>
+<text x="40" y="82" font-size="16" fill="#5B6270">Anatomical directness asks "is there a connection?"  Informational directness asks "does its effect factor out of the local context?"</text>
+
+<!-- left card: neuronal ruler -->
+<rect x="40" y="120" width="380" height="440" rx="10" fill="#FFFFFF" stroke="#E6E5E1"/>
+<text x="64" y="152" font-size="18" font-weight="600" fill="#1A73A8">Neuronal ruler</text>
+<text x="64" y="174" font-size="13" fill="#5B6270">one node per cell, one number per connection</text>
+<line x1="170" y1="300" x2="292" y2="300" stroke="#1A73A8" stroke-width="5" marker-end="url(#f5-ahb)"/>
+<circle cx="130" cy="300" r="36" fill="#FFFFFF" stroke="#5B6270" stroke-width="3"/>
+<circle cx="330" cy="300" r="36" fill="#1A73A8"/>
+<text x="130" y="308" font-size="22" font-weight="600" fill="#1B1F26" text-anchor="middle" font-family="'IBM Plex Mono', Menlo, monospace">j</text>
+<text x="330" y="308" font-size="22" font-weight="600" fill="#FFFFFF" text-anchor="middle" font-family="'IBM Plex Mono', Menlo, monospace">i</text>
+<text x="230" y="282" font-size="16" font-weight="600" fill="#1A73A8" text-anchor="middle" font-family="'IBM Plex Mono', Menlo, monospace">w_ij</text>
+<text x="230" y="384" font-size="15" fill="#1B1F26" text-anchor="middle" font-family="'IBM Plex Mono', Menlo, monospace">A_ij = 1</text>
+<text x="230" y="408" font-size="13" fill="#5B6270" text-anchor="middle">anatomically direct: adjacency</text>
+<text x="230" y="456" font-size="15" fill="#1B1F26" text-anchor="middle" font-family="'IBM Plex Mono', Menlo, monospace">logit P = b + α·x_j</text>
+<text x="230" y="480" font-size="13" fill="#5B6270" text-anchor="middle">one additive term, informationally direct by construction</text>
+<text x="230" y="528" font-size="13" fill="#5B6270" text-anchor="middle">w_ij is the projection Π_ε of everything on the right</text>
+
+<!-- refine arrow -->
+<line x1="428" y1="340" x2="472" y2="340" stroke="#5B6270" stroke-width="2" marker-end="url(#f5-ah)"/>
+<text x="450" y="322" font-size="13" fill="#5B6270" text-anchor="middle">refine ε</text>
+
+<!-- right card: contact ruler -->
+<rect x="480" y="120" width="680" height="440" rx="10" fill="#FFFFFF" stroke="#E6E5E1"/>
+<text x="504" y="152" font-size="18" font-weight="600" fill="#D9643A">Contact ruler</text>
+<text x="504" y="174" font-size="13" fill="#5B6270">the same connection: a field of contacts, each read in its local state n</text>
+
+<!-- dendritic tree of i -->
+<g transform="translate(780 -40)" fill="none" stroke="#C9C8C2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<path d="M180 460 C170 420 150 390 130 360"/>
+<path d="M180 460 C190 420 210 390 230 360"/>
+<path d="M130 360 C110 330 90 300 60 265"/>
+<path d="M130 360 C125 320 120 280 112 235"/>
+<path d="M130 360 C140 330 155 300 165 270"/>
+<path d="M230 360 C220 330 205 300 198 270"/>
+<path d="M230 360 C235 320 240 280 248 235"/>
+<path d="M230 360 C250 330 275 300 300 265"/>
+<circle cx="180" cy="480" r="20" fill="#1A73A8" stroke="#1A73A8"/>
+</g>
+<text x="960" y="447" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="middle" font-family="'IBM Plex Mono', Menlo, monospace">i</text>
+<!-- subunits -->
+<ellipse cx="892" cy="250" rx="84" ry="72" fill="#7A4FB5" fill-opacity="0.12" stroke="#7A4FB5" stroke-width="2" stroke-dasharray="6 5"/>
+<ellipse cx="1028" cy="250" rx="84" ry="72" fill="#7A4FB5" fill-opacity="0.12" stroke="#7A4FB5" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="892" y="340" font-size="13" font-weight="600" fill="#7A4FB5" text-anchor="middle" font-family="'IBM Plex Mono', Menlo, monospace">subunit a</text>
+<text x="1028" y="340" font-size="13" font-weight="600" fill="#7A4FB5" text-anchor="middle" font-family="'IBM Plex Mono', Menlo, monospace">subunit b</text>
+<!-- presynaptic j and axon contacts -->
+<circle cx="580" cy="300" r="34" fill="#FFFFFF" stroke="#5B6270" stroke-width="3"/>
+<text x="580" y="308" font-size="22" font-weight="600" fill="#1B1F26" text-anchor="middle" font-family="'IBM Plex Mono', Menlo, monospace">j</text>
+<g fill="none" stroke="#D9643A" stroke-width="2.5" stroke-linecap="round">
+<path d="M614 290 C700 250 760 230 832 226"/>
+<path d="M614 300 C720 300 850 270 938 232"/>
+<path d="M612 312 C700 380 900 330 1022 205"/>
+</g>
+<g fill="#D9643A" stroke="#FFFFFF" stroke-width="2">
+<circle cx="840" cy="225" r="9"/><circle cx="945" cy="230" r="9"/><circle cx="1028" cy="195" r="9"/>
+</g>
+<g font-size="12" font-weight="600" fill="#D9643A" font-family="'IBM Plex Mono', Menlo, monospace">
+<text x="822" y="212">k=1</text><text x="927" y="217">k=2</text><text x="1040" y="190">k=3</text>
+</g>
+<!-- local state badge -->
+<rect x="620" y="372" width="150" height="54" rx="8" fill="#FFF4EE" stroke="#D9643A" stroke-width="1.5"/>
+<text x="695" y="393" font-size="13" font-weight="600" fill="#D9643A" text-anchor="middle">local state n</text>
+<text x="695" y="412" font-size="11" fill="#5B6270" text-anchor="middle">voltage · Mg²⁺ block · neighbours</text>
+<path d="M770 399 C800 399 820 340 842 304" fill="none" stroke="#D9643A" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+<!-- equation -->
+<text x="820" y="492" font-size="16" fill="#1B1F26" text-anchor="middle" font-family="'IBM Plex Mono', Menlo, monospace">logit P(Y=1 | x_j, n) = b + α x_j + β n + γ x_j n</text>
+<text x="820" y="518" font-size="14" fill="#1B1F26" text-anchor="middle" font-family="'IBM Plex Mono', Menlo, monospace">Δ_j(n=0) = α        Δ_j(n=1) = α + γ</text>
+<text x="820" y="543" font-size="13" fill="#5B6270" text-anchor="middle">γ ≠ 0: the edge's effect depends on its context → I_higher &gt; 0 with the same anatomy</text>
+
+<!-- bottom strip -->
+<rect x="40" y="584" width="1120" height="76" rx="10" fill="#F1F0EC"/>
+<text x="70" y="616" font-size="22" font-weight="600" fill="#1B1F26" font-family="'IBM Plex Mono', Menlo, monospace">A_ij = 1   ⇏   I_higher(ε) = 0</text>
+<text x="70" y="642" font-size="13" fill="#5B6270">adjacency does not imply additivity</text>
+<text x="1130" y="612" font-size="13" fill="#1B1F26" text-anchor="end">Sparsity moves too: 1 cell-level edge here is 3 contact-level edges on 2 subunits.</text>
+<text x="1130" y="636" font-size="13" fill="#5B6270" text-anchor="end" font-family="'IBM Plex Mono', Menlo, monospace">χ(ε) = |E_ε| / |E_cell| ≥ 1,   ρ_ε / ρ_cell = χ(ε) / s̄(ε)</text>
+</svg>

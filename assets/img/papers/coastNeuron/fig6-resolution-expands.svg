@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-label="Nested feature sets: exposing more nonlinear subunits of a fixed architecture enlarges the readout's approximation space without adding information about the target. Normalized inverse error scales as n to the 0.31 and effective rank as n to the 0.24. Three aligned subunits beat shuffled contacts and the point neuron, matching forty generic random features." font-family="'IBM Plex Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif">
+<rect width="1200" height="700" fill="#FCFCFB"/>
+<text x="40" y="52" font-size="28" font-weight="600" fill="#1B1F26">Refining the ruler expands what a readout can express</text>
+<text x="40" y="82" font-size="16" fill="#5B6270">The coastline argument in reverse: resolve more of the same neuron and "residual" interactions become usable coordinates.</text>
+
+<!-- left: nested hierarchy -->
+<rect x="40" y="120" width="520" height="540" rx="10" fill="#FFFFFF" stroke="#E6E5E1"/>
+<text x="64" y="152" font-size="18" font-weight="600" fill="#D9643A">A nested resolution hierarchy</text>
+<text x="64" y="174" font-size="13" fill="#5B6270">one fixed 24-subunit sigma–pi architecture;</text>
+<text x="64" y="192" font-size="13" fill="#5B6270">resolution n exposes its first n subunits</text>
+<g fill="#D9643A" fill-opacity="0.07" stroke="#D9643A" stroke-opacity="0.7" stroke-width="1.5">
+<rect x="70" y="262" width="460" height="276" rx="16"/>
+<rect x="105" y="284" width="390" height="232" rx="14"/>
+<rect x="140" y="306" width="320" height="188" rx="12"/>
+<rect x="175" y="328" width="250" height="144" rx="10"/>
+<rect x="210" y="350" width="180" height="100" rx="8"/>
+</g>
+<rect x="245" y="372" width="110" height="56" rx="6" fill="#1A73A8"/>
+<text x="300" y="396" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle" font-family="'IBM Plex Mono', Menlo, monospace">x ∈ ℝ⁶</text>
+<text x="300" y="414" font-size="11" fill="#FFFFFF" text-anchor="middle">point neuron</text>
+<g font-size="12" font-weight="600" fill="#D9643A" text-anchor="end" font-family="'IBM Plex Mono', Menlo, monospace">
+<text x="382" y="366">Φ₁</text><text x="417" y="344">Φ₂</text><text x="452" y="322">Φ₄</text><text x="487" y="300">Φ₈</text><text x="522" y="278">Φ₂₄</text>
+</g>
+<text x="300" y="470" font-size="12" fill="#5B6270" text-anchor="middle">Φₙ = x plus the first n nonlinear subunits</text>
+<text x="300" y="578" font-size="15" fill="#1B1F26" text-anchor="middle" font-family="'IBM Plex Mono', Menlo, monospace">I(Y; Φₙ) = I(Y; x)   for every n</text>
+<text x="300" y="598" font-size="13" fill="#5B6270" text-anchor="middle">no new information: every Φₙ is a function of x</text>
+<text x="300" y="628" font-size="15" fill="#1B1F26" text-anchor="middle" font-family="'IBM Plex Mono', Menlo, monospace">ℋₙ ⊆ ℋₙ₊₁</text>
+<text x="300" y="648" font-size="13" fill="#5B6270" text-anchor="middle">but the linear readout's hypothesis class grows — access, not availability</text>
+
+<!-- right top: scaling -->
+<rect x="600" y="120" width="560" height="290" rx="10" fill="#FFFFFF" stroke="#E6E5E1"/>
+<text x="624" y="152" font-size="18" font-weight="600" fill="#1B1F26">Approximation and effective dimension grow together</text>
+<text x="624" y="172" font-size="13" fill="#5B6270">power-law fits over n = 1…24; dots mark the measured endpoints (60 held-out trials)</text>
+<!-- axes -->
+<line x1="680" y1="350" x2="1060" y2="350" stroke="#C9C8C2" stroke-width="1"/>
+<line x1="680" y1="350" x2="680" y2="190" stroke="#C9C8C2" stroke-width="1"/>
+<g font-size="11" fill="#5B6270" text-anchor="middle">
+<text x="680" y="368">1</text><text x="763" y="368">2</text><text x="846" y="368">4</text><text x="929" y="368">8</text><text x="1012" y="368">16</text><text x="1060" y="368">24</text>
+</g>
+<text x="870" y="392" font-size="12" fill="#5B6270" text-anchor="middle">resolved nonlinear subunits n (log)</text>
+<g font-size="11" fill="#5B6270" text-anchor="end">
+<text x="672" y="354">1×</text><text x="672" y="247">2×</text><text x="672" y="194">3×</text>
+</g>
+<line x1="680" y1="350" x2="1060" y2="197" stroke="#1A73A8" stroke-width="2.5"/>
+<line x1="680" y1="350" x2="1060" y2="232" stroke="#D9643A" stroke-width="2.5"/>
+<circle cx="680" cy="350" r="5" fill="#1B1F26"/>
+<circle cx="1060" cy="192" r="5" fill="#1A73A8" stroke="#FFFFFF" stroke-width="1.5"/>
+<circle cx="1060" cy="239" r="5" fill="#D9643A" stroke="#FFFFFF" stroke-width="1.5"/>
+<text x="960" y="222" font-size="13" font-weight="600" fill="#1A73A8" text-anchor="end" font-family="'IBM Plex Mono', Menlo, monospace">C_approx ∝ n^0.31</text>
+<text x="700" y="268" font-size="13" font-weight="600" fill="#D9643A" font-family="'IBM Plex Mono', Menlo, monospace">r_eff ∝ n^0.24</text>
+<text x="1072" y="196" font-size="12" font-weight="600" fill="#1A73A8">2.77×</text>
+<text x="1072" y="244" font-size="12" font-weight="600" fill="#D9643A">2.05×</text>
+<rect x="840" y="318" width="12" height="12" rx="2" fill="#1A73A8"/>
+<text x="858" y="329" font-size="12" fill="#1B1F26">1/MSE, normalized (0.0421 → 0.0152)</text>
+<rect x="840" y="338" width="12" height="12" rx="2" fill="#D9643A"/>
+<text x="858" y="349" font-size="12" fill="#1B1F26">r_eff, normalized (6.86 → 14.03)</text>
+
+<!-- right bottom: organization vs count -->
+<rect x="600" y="430" width="560" height="230" rx="10" fill="#FFFFFF" stroke="#E6E5E1"/>
+<text x="624" y="462" font-size="18" font-weight="600" fill="#1B1F26">Organization beats contact count</text>
+<text x="624" y="482" font-size="13" fill="#5B6270">held-out MSE, same six axons in every model (100 trials)</text>
+<line x1="640" y1="620" x2="960" y2="620" stroke="#C9C8C2" stroke-width="1"/>
+<rect x="660" y="520" width="70" height="100" rx="3" fill="#1A73A8"/>
+<rect x="765" y="530" width="70" height="90" rx="3" fill="#8A8F99"/>
+<rect x="870" y="549" width="70" height="71" rx="3" fill="#D9643A"/>
+<g font-size="14" font-weight="600" fill="#1B1F26" text-anchor="middle" font-family="'IBM Plex Mono', Menlo, monospace">
+<text x="695" y="512">0.044</text><text x="800" y="522">0.039</text><text x="905" y="541">0.031</text>
+</g>
+<g font-size="12" fill="#5B6270" text-anchor="middle">
+<text x="695" y="638">point neuron</text><text x="800" y="638">shuffled contacts</text><text x="905" y="638">aligned contacts</text>
+</g>
+<text x="695" y="654" font-size="11" fill="#5B6270" text-anchor="middle">6 inputs</text>
+<text x="852" y="654" font-size="11" fill="#5B6270" text-anchor="middle">18 contacts in 3 subunits each</text>
+<rect x="984" y="520" width="152" height="100" rx="8" fill="#F1F0EC"/>
+<text x="1060" y="552" font-size="30" font-weight="600" fill="#1B1F26" text-anchor="middle" font-family="'IBM Plex Mono', Menlo, monospace">40</text>
+<text x="1060" y="574" font-size="12" fill="#1B1F26" text-anchor="middle">generic sigmoid features</text>
+<text x="1060" y="592" font-size="12" fill="#5B6270" text-anchor="middle">needed to match</text>
+<text x="1060" y="608" font-size="12" fill="#5B6270" text-anchor="middle">3 aligned subunits</text>
+</svg>

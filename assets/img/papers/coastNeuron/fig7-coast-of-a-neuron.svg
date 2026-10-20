@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-label="Summary: coarsening the ruler projects away available information and can make the neuron look more direct; refining the ruler keeps information fixed but enlarges the readout's approximation space. The coast of a neuron is well defined only after fixing the ruler, the target observable, the class of perturbations and the domain of conditions." font-family="'IBM Plex Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif">
+<defs>
+<marker id="f7-ahl" orient="auto" markerWidth="10" markerHeight="10" refX="8" refY="5" overflow="visible"><path d="M0 0 L10 5 L0 10 Z" fill="#1A73A8"/></marker>
+<marker id="f7-ahr" orient="auto" markerWidth="10" markerHeight="10" refX="8" refY="5" overflow="visible"><path d="M0 0 L10 5 L0 10 Z" fill="#D9643A"/></marker>
+</defs>
+<rect width="1200" height="620" fill="#FCFCFB"/>
+<text x="40" y="52" font-size="28" font-weight="600" fill="#1B1F26">How long is the coast of a neuron?</text>
+<text x="40" y="82" font-size="16" fill="#5B6270">Like Mandelbrot's coastline, the answer belongs jointly to the object and the ruler. Two directions, two different things happen.</text>
+
+<!-- the coastline -->
+<polygon points="695,225 667,247 671,277 636,275 628,312 600,300 574,306 561,278 521,283 532,247 510,225 543,206 530,174 557,165 570,134 600,157 626,145 638,173 674,171 674,201" fill="#E6E5E1" stroke="none"/>
+<polygon points="695,225 636,275 561,278 510,225 557,165 638,173" fill="none" stroke="#1A73A8" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="695,225 667,247 671,277 636,275 628,312 600,300 574,306 561,278 521,283 532,247 510,225 543,206 530,174 557,165 570,134 600,157 626,145 638,173 674,171 674,201" fill="none" stroke="#D9643A" stroke-width="2" stroke-dasharray="5 4" stroke-linejoin="round"/>
+<g fill="#1A73A8"><circle cx="695" cy="225" r="4"/><circle cx="636" cy="275" r="4"/><circle cx="561" cy="278" r="4"/><circle cx="510" cy="225" r="4"/><circle cx="557" cy="165" r="4"/><circle cx="638" cy="173" r="4"/></g>
+<text x="600" y="232" font-size="13" font-weight="600" fill="#1B1F26" text-anchor="middle">the same neuron</text>
+<text x="600" y="340" font-size="12" fill="#1A73A8" text-anchor="middle">coarse ruler: 6 segments</text>
+<text x="600" y="358" font-size="12" fill="#D9643A" text-anchor="middle">fine ruler: 20 segments, 44% longer</text>
+
+<!-- left: coarsen -->
+<line x1="470" y1="150" x2="392" y2="150" stroke="#1A73A8" stroke-width="2.5" marker-end="url(#f7-ahl)"/>
+<rect x="40" y="120" width="340" height="250" rx="10" fill="#FFFFFF" stroke="#1A73A8" stroke-width="2"/>
+<text x="64" y="152" font-size="18" font-weight="600" fill="#1A73A8">Coarsen the ruler (project)</text>
+<text x="64" y="174" font-size="13" fill="#5B6270">fewer distinctions, same input–output law</text>
+<g font-size="14" fill="#1B1F26">
+<text x="64" y="212"><tspan font-family="'IBM Plex Mono', Menlo, monospace" font-weight="500">I_avail</tspan> can only fall  <tspan fill="#5B6270">(data processing)</tspan></text>
+<text x="64" y="240"><tspan font-family="'IBM Plex Mono', Menlo, monospace" font-weight="500">I_higher</tspan> falls under closure  <tspan fill="#5B6270">(KL contracts)</tspan></text>
+<text x="64" y="268"><tspan font-family="'IBM Plex Mono', Menlo, monospace" font-weight="500">F</tspan> may rise toward 100%  <tspan fill="#5B6270">(denominator trap)</tspan></text>
+<text x="64" y="296">order can change  <tspan fill="#5B6270">(3-body → pairwise)</tspan></text>
+</g>
+<text x="64" y="340" font-size="14" font-weight="600" fill="#1A73A8">The neuron looks simpler. It is not.</text>
+
+<!-- right: refine -->
+<line x1="730" y1="150" x2="808" y2="150" stroke="#D9643A" stroke-width="2.5" marker-end="url(#f7-ahr)"/>
+<rect x="820" y="120" width="340" height="250" rx="10" fill="#FFFFFF" stroke="#D9643A" stroke-width="2"/>
+<text x="844" y="152" font-size="18" font-weight="600" fill="#D9643A">Refine the ruler (resolve)</text>
+<text x="844" y="174" font-size="13" fill="#5B6270">more subunits exposed, same architecture</text>
+<g font-size="14" fill="#1B1F26">
+<text x="844" y="212"><tspan font-family="'IBM Plex Mono', Menlo, monospace" font-weight="500">I(Y; Φₙ)</tspan> stays fixed  <tspan fill="#5B6270">(no new information)</tspan></text>
+<text x="844" y="240"><tspan font-family="'IBM Plex Mono', Menlo, monospace" font-weight="500">ℋₙ</tspan> grows  <tspan fill="#5B6270">(access, not availability)</tspan></text>
+<text x="844" y="268">held-out error falls  <tspan fill="#5B6270">(C_approx ∝ n^0.31)</tspan></text>
+<text x="844" y="296">effective rank rises  <tspan fill="#5B6270">(r_eff ∝ n^0.24)</tspan></text>
+</g>
+<text x="844" y="340" font-size="14" font-weight="600" fill="#D9643A">Residual structure becomes coordinates.</text>
+
+<!-- four things -->
+<text x="40" y="414" font-size="16" font-weight="600" fill="#1B1F26">The question is well posed only after fixing four things</text>
+<g>
+<rect x="40" y="430" width="262" height="110" rx="10" fill="#F1F0EC"/>
+<text x="60" y="458" font-size="22" font-weight="600" fill="#1B1F26" font-family="'IBM Plex Mono', Menlo, monospace">1</text>
+<text x="84" y="458" font-size="15" font-weight="600" fill="#1B1F26">the ruler ε</text>
+<text x="60" y="486" font-size="13" fill="#5B6270">which variables are resolved:</text>
+<text x="60" y="504" font-size="13" fill="#5B6270">cells, branches, contacts, local state</text>
+</g>
+<g>
+<rect x="326" y="430" width="262" height="110" rx="10" fill="#F1F0EC"/>
+<text x="346" y="458" font-size="22" font-weight="600" fill="#1B1F26" font-family="'IBM Plex Mono', Menlo, monospace">2</text>
+<text x="370" y="458" font-size="15" font-weight="600" fill="#1B1F26">the target observable Y</text>
+<text x="346" y="486" font-size="13" fill="#5B6270">spikes, branch voltage, plasticity —</text>
+<text x="346" y="504" font-size="13" fill="#5B6270">each needs its own adequate ruler</text>
+</g>
+<g>
+<rect x="612" y="430" width="262" height="110" rx="10" fill="#F1F0EC"/>
+<text x="632" y="458" font-size="22" font-weight="600" fill="#1B1F26" font-family="'IBM Plex Mono', Menlo, monospace">3</text>
+<text x="656" y="458" font-size="15" font-weight="600" fill="#1B1F26">the class of perturbations</text>
+<text x="632" y="486" font-size="13" fill="#5B6270">branch-targeted inhibition, input</text>
+<text x="632" y="504" font-size="13" fill="#5B6270">clustering, temporal regime shifts</text>
+</g>
+<g>
+<rect x="898" y="430" width="262" height="110" rx="10" fill="#F1F0EC"/>
+<text x="918" y="458" font-size="22" font-weight="600" fill="#1B1F26" font-family="'IBM Plex Mono', Menlo, monospace">4</text>
+<text x="942" y="458" font-size="15" font-weight="600" fill="#1B1F26">the domain of conditions</text>
+<text x="918" y="486" font-size="13" fill="#5B6270">the input distribution and state</text>
+<text x="918" y="504" font-size="13" fill="#5B6270">regime where adequacy is claimed</text>
+</g>
+<text x="600" y="580" font-size="16" font-weight="600" fill="#1B1F26" text-anchor="middle">The point neuron is a ruler: a useful, predictive abstraction.</text>
+<text x="600" y="604" font-size="15" fill="#5B6270" text-anchor="middle">It misleads only when its readings are reported as properties of the coast.</text>
+</svg>

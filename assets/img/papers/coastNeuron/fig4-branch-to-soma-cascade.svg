@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-label="Six binary contacts with 64 states are saturated into two branch variables with 9 states and averaged into one somatic variable with 5 states. Along the cascade the direct fraction F rises from 55 to 96 to 100 percent while available information falls from 0.157 to 0.029 to 0.024 bits and the higher-order residual falls from 0.071 to 0.001 to 0 bits." font-family="'IBM Plex Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif">
+<defs>
+<marker id="f4-ah" orient="auto" markerWidth="10" markerHeight="10" refX="8" refY="5" overflow="visible"><path d="M0 0 L10 5 L0 10 Z" fill="#5B6270"/></marker>
+</defs>
+<rect width="1200" height="760" fill="#FCFCFB"/>
+<text x="40" y="52" font-size="28" font-weight="600" fill="#1B1F26">The branch-to-soma cascade: coarser ruler, "more direct" neuron</text>
+<text x="40" y="82" font-size="16" fill="#5B6270">The input–output law never changes:  <tspan font-family="'IBM Plex Mono', Menlo, monospace" fill="#1B1F26">P(Y=1 | x) = 0.06 + 0.40 (x₁x₂x₃ + x₄x₅x₆)</tspan>.  Only what the observer can distinguish changes.</text>
+
+<!-- stage cards -->
+<rect x="40" y="120" width="300" height="180" rx="10" fill="#FFFFFF" stroke="#D9643A" stroke-width="2"/>
+<text x="64" y="152" font-size="18" font-weight="600" fill="#D9643A">Contacts</text>
+<text x="64" y="220" font-size="48" font-weight="600" fill="#1B1F26" font-family="'IBM Plex Mono', Menlo, monospace">64</text>
+<text x="150" y="220" font-size="16" fill="#5B6270">distinguishable states</text>
+<text x="64" y="258" font-size="14" fill="#5B6270" font-family="'IBM Plex Mono', Menlo, monospace">x ∈ {0,1}⁶ · two triplets of 3</text>
+<text x="64" y="282" font-size="13" fill="#5B6270">a triplet = NMDA-like coincidence gate</text>
+
+<line x1="348" y1="210" x2="442" y2="210" stroke="#5B6270" stroke-width="2" marker-end="url(#f4-ah)"/>
+<text x="395" y="190" font-size="13" fill="#5B6270" text-anchor="middle">saturate</text>
+
+<rect x="450" y="120" width="300" height="180" rx="10" fill="#FFFFFF" stroke="#7A4FB5" stroke-width="2"/>
+<text x="474" y="152" font-size="18" font-weight="600" fill="#7A4FB5">Branches</text>
+<text x="474" y="220" font-size="48" font-weight="600" fill="#1B1F26" font-family="'IBM Plex Mono', Menlo, monospace">9</text>
+<text x="530" y="220" font-size="16" fill="#5B6270">distinguishable states</text>
+<text x="474" y="258" font-size="14" fill="#5B6270" font-family="'IBM Plex Mono', Menlo, monospace">Bᵢ = min(sum of 3, 2) ∈ {0,1,2}</text>
+<text x="474" y="282" font-size="13" fill="#5B6270">2-of-3 and 3-of-3 active become identical</text>
+
+<line x1="758" y1="210" x2="852" y2="210" stroke="#5B6270" stroke-width="2" marker-end="url(#f4-ah)"/>
+<text x="805" y="190" font-size="13" fill="#5B6270" text-anchor="middle">average</text>
+
+<rect x="860" y="120" width="300" height="180" rx="10" fill="#FFFFFF" stroke="#1A73A8" stroke-width="2"/>
+<text x="884" y="152" font-size="18" font-weight="600" fill="#1A73A8">Soma</text>
+<text x="884" y="220" font-size="48" font-weight="600" fill="#1B1F26" font-family="'IBM Plex Mono', Menlo, monospace">5</text>
+<text x="940" y="220" font-size="16" fill="#5B6270">distinguishable states</text>
+<text x="884" y="258" font-size="14" fill="#5B6270" font-family="'IBM Plex Mono', Menlo, monospace">Z = (B₁ + B₂)/2</text>
+<text x="884" y="282" font-size="13" fill="#5B6270">(2,0) ≡ (0,2): branch identity is lost</text>
+
+<!-- panel: F -->
+<rect x="40" y="340" width="340" height="340" rx="10" fill="#FFFFFF" stroke="#E6E5E1"/>
+<text x="64" y="372" font-size="17" font-weight="600" fill="#1B1F26">Direct fraction  <tspan font-family="'IBM Plex Mono', Menlo, monospace">F</tspan></text>
+<text x="64" y="394" font-size="13" fill="#5B6270"><tspan font-family="'IBM Plex Mono', Menlo, monospace">I_dir / I_avail</tspan> · rises as the ruler coarsens</text>
+<line x1="64" y1="620" x2="356" y2="620" stroke="#C9C8C2" stroke-width="1"/>
+<rect x="84" y="510" width="70" height="110" rx="3" fill="#D9643A"/>
+<rect x="175" y="428" width="70" height="192" rx="3" fill="#7A4FB5"/>
+<rect x="266" y="420" width="70" height="200" rx="3" fill="#1A73A8"/>
+<g font-size="15" font-weight="600" fill="#1B1F26" text-anchor="middle" font-family="'IBM Plex Mono', Menlo, monospace">
+<text x="119" y="500">55.0%</text><text x="210" y="418">96.1%</text><text x="301" y="410">100%</text>
+</g>
+<g font-size="13" fill="#5B6270" text-anchor="middle">
+<text x="119" y="642">contacts</text><text x="210" y="642">branches</text><text x="301" y="642">soma</text>
+</g>
+<text x="210" y="668" font-size="12" fill="#5B6270" text-anchor="middle">(meanwhile R = I_dir/S_tot falls 13.6% → 3.7%)</text>
+
+<!-- panel: I_avail -->
+<rect x="430" y="340" width="340" height="340" rx="10" fill="#FFFFFF" stroke="#E6E5E1"/>
+<text x="454" y="372" font-size="17" font-weight="600" fill="#1B1F26">Available information  <tspan font-family="'IBM Plex Mono', Menlo, monospace">I_avail</tspan></text>
+<text x="454" y="394" font-size="13" fill="#5B6270">bits about Y carried by the observables</text>
+<line x1="454" y1="620" x2="746" y2="620" stroke="#C9C8C2" stroke-width="1"/>
+<rect x="474" y="420" width="70" height="200" rx="3" fill="#D9643A"/>
+<rect x="565" y="584" width="70" height="36" rx="3" fill="#7A4FB5"/>
+<rect x="656" y="590" width="70" height="30" rx="3" fill="#1A73A8"/>
+<g font-size="15" font-weight="600" fill="#1B1F26" text-anchor="middle" font-family="'IBM Plex Mono', Menlo, monospace">
+<text x="509" y="410">0.157</text><text x="600" y="574">0.029</text><text x="691" y="580">0.024</text>
+</g>
+<g font-size="13" fill="#5B6270" text-anchor="middle">
+<text x="509" y="642">contacts</text><text x="600" y="642">branches</text><text x="691" y="642">soma</text>
+</g>
+<text x="600" y="668" font-size="12" fill="#5B6270" text-anchor="middle">85% of the predictive information is thrown away</text>
+
+<!-- panel: I_higher -->
+<rect x="820" y="340" width="340" height="340" rx="10" fill="#FFFFFF" stroke="#E6E5E1"/>
+<text x="844" y="372" font-size="17" font-weight="600" fill="#1B1F26">Higher-order residual  <tspan font-family="'IBM Plex Mono', Menlo, monospace">I_higher</tspan></text>
+<text x="844" y="394" font-size="13" fill="#5B6270">the part no additive model captures</text>
+<line x1="844" y1="620" x2="1136" y2="620" stroke="#C9C8C2" stroke-width="1"/>
+<rect x="864" y="420" width="70" height="200" rx="3" fill="#D9643A"/>
+<rect x="955" y="617" width="70" height="3" fill="#7A4FB5"/>
+<line x1="1046" y1="620" x2="1116" y2="620" stroke="#1A73A8" stroke-width="3"/>
+<g font-size="15" font-weight="600" fill="#1B1F26" text-anchor="middle" font-family="'IBM Plex Mono', Menlo, monospace">
+<text x="899" y="410">0.071</text><text x="990" y="606">0.001</text><text x="1081" y="606">0.000</text>
+</g>
+<g font-size="13" fill="#5B6270" text-anchor="middle">
+<text x="899" y="642">contacts</text><text x="990" y="642">branches</text><text x="1081" y="642">soma</text>
+</g>
+<text x="990" y="668" font-size="12" fill="#5B6270" text-anchor="middle">one coordinate left: nothing can be non-additive</text>
+
+<text x="600" y="716" font-size="15" font-weight="600" fill="#1B1F26" text-anchor="middle">The denominator trap: F reaches 100% because the denominator collapsed, not because the mechanism became additive.</text>
+<text x="600" y="740" font-size="13" fill="#5B6270" text-anchor="middle">Exact sums over all 64 input states, uniform input distribution, coordinate-invariant categorical-additive direct family.</text>
+</svg>

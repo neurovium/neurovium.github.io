@@ -358,6 +358,29 @@
   });
 
   /* ---------------------------------------------------------------
+     Video — poster until play, then a youtube-nocookie iframe
+     --------------------------------------------------------------- */
+  document.querySelectorAll('.video__frame[data-video]').forEach(function (frame) {
+    frame.addEventListener('click', function (e) {
+      if (frame.classList.contains('is-playing')) return;
+      e.preventDefault();
+      var src = 'https://www.youtube-nocookie.com/embed/' + frame.getAttribute('data-video') +
+        '?autoplay=1&rel=0&modestbranding=1&playsinline=1' +
+        (frame.getAttribute('data-start') ? '&start=' + frame.getAttribute('data-start') : '');
+      var f = document.createElement('iframe');
+      f.src = src;
+      f.title = frame.getAttribute('data-title') || 'Video';
+      f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      f.allowFullscreen = true;
+      f.referrerPolicy = 'strict-origin-when-cross-origin';
+      frame.classList.add('is-playing');
+      frame.removeAttribute('href');
+      frame.appendChild(f);
+      f.focus();
+    });
+  });
+
+  /* ---------------------------------------------------------------
      Corridor keyboard navigation (paper rooms): ← / →
      --------------------------------------------------------------- */
   if (document.querySelector('.corridor')) {

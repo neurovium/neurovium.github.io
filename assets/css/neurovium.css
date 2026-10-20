@@ -2791,6 +2791,159 @@ a.chap__pill--room:hover { border-color: var(--ink); color: var(--ink); }
 .gallery--one .gallery__coord { display: none; }
 .gallery--full .gallery__grid { max-width: none; }
 
+/* `cols` / `ratio` include options: a fixed column count and a plate shape
+   other than square (portrait artwork should not be cropped to 1:1). */
+.gallery--cols .gallery__grid { grid-template-columns: repeat(var(--gal-cols), 1fr); }
+.gallery__cell { aspect-ratio: var(--gal-ratio, 1 / 1); }
+@media (max-width: 560px) {
+  .gallery--cols .gallery__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---------------------------------------------------------------
+   Video — `_includes/video.html`. An embossed slab framing a 16:9
+   poster; play swaps in a youtube-nocookie iframe (main.js).
+   --------------------------------------------------------------- */
+.video {
+  /* Breaks out of the 68ch prose column to the full main width (capped):
+     YouTube picks its start resolution from the player's rendered size, and
+     at prose width it starts at 360–480p. ~900px+ starts at 720p or better. */
+  width: min(960px, calc(100vw - 296px - 96px - 20px));  /* 20px: scrollbar */
+  max-width: none;
+  margin: 30px 0 34px;
+  padding: 14px 14px 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.55),
+    0 1px 0 var(--card-edge),
+    0 6px 14px -8px rgba(74,46,24,0.18);
+}
+.video__head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 2px 4px 10px;
+}
+.video__kicker,
+.prose .video__out {
+  font-family: var(--mono); font-weight: 500;
+  font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--muted);
+}
+.prose .video__out { border-bottom: 0; transition: color 180ms var(--ease); }
+.prose .video__out:hover { color: var(--fork); }
+.prose .video__frame {
+  position: relative; display: block;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--card-edge);
+  border-radius: 10px; overflow: hidden;
+  background: var(--ink);
+  box-shadow: 0 8px 18px -8px rgba(26,24,20,0.30);
+}
+.prose .video__poster {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; border: 0; border-radius: 0;
+  filter: saturate(0.92);
+  transition: transform 600ms var(--ease-glide), filter 320ms var(--ease);
+}
+.video__frame::after {        /* soft ink vignette so the play disc reads */
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 45%, rgba(26,24,20,0.32));
+  transition: opacity 320ms var(--ease);
+}
+.video__play {
+  position: absolute; left: 50%; top: 50%; z-index: 1;
+  width: 64px; height: 64px; margin: -32px 0 0 -32px;
+  display: grid; place-items: center;
+  border-radius: 9999px;
+  color: var(--ink);
+  background: var(--card-bg);
+  border: 1px solid var(--hairline-strong);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.7),
+    0 2px 0 var(--card-edge),
+    0 10px 22px -8px rgba(26,24,20,0.45);
+  transition: transform 320ms var(--ease), color 180ms var(--ease);
+}
+.video__play svg { margin-left: 3px; }
+.video__frame:hover .video__poster { transform: scale(1.015); filter: saturate(1); }
+.video__frame:hover::after { opacity: 0.6; }
+.video__frame:hover .video__play,
+.video__frame:focus-visible .video__play { transform: scale(1.06); color: var(--fork); }
+.video__frame:focus-visible { outline: 2px solid var(--fork); outline-offset: 3px; }
+.video__frame.is-playing::after,
+.video__frame.is-playing .video__play { display: none; }
+.video__frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video__caption {
+  margin: 10px 4px 2px;
+  font-family: var(--serif); font-style: italic; font-weight: 300;
+  font-size: 15.5px; line-height: 1.45; color: var(--ink-soft);
+}
+@media (max-width: 760px) { .video { width: auto; padding: 10px 10px 8px; } }
+@media (prefers-reduced-motion: reduce) {
+  .prose .video__poster, .video__play { transition: none; }
+  .video__frame:hover .video__poster { transform: none; }
+}
+
+/* ---------------------------------------------------------------
+   Table of contents — kramdown `{:toc}` inside <nav class="toc">.
+   A quiet embossed slab: mono kicker, serif entries, mono indices
+   for the top level, hairline-indented sub-levels.
+   --------------------------------------------------------------- */
+.toc {
+  margin: 30px 0 34px;
+  padding: 20px 26px 18px;
+  background: var(--card-bg);
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.55),
+    0 1px 0 #c9b48f,
+    0 6px 14px -8px rgba(74,46,24,0.18);
+}
+.toc__kicker {
+  font-family: var(--mono); font-weight: 500;
+  font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.prose .toc ul { list-style: none; margin: 0; padding: 0; }
+.prose .toc li { margin: 0; }
+.prose .toc a {
+  border-bottom: 0;
+  color: var(--ink-soft);
+  transition: color 180ms var(--ease);
+}
+.prose .toc a:hover { color: var(--fork); }
+/* Top level (# parts): Spectral, numbered with a mono index. */
+#markdown-toc { counter-reset: toc; }
+#markdown-toc > li {
+  counter-increment: toc;
+  padding: 9px 0 7px;
+  border-top: 1px solid var(--hairline);
+}
+#markdown-toc > li:first-child { border-top: 0; padding-top: 2px; }
+#markdown-toc > li > a {
+  font-family: var(--serif); font-weight: 300;
+  font-size: 19px; line-height: 1.35; color: var(--ink);
+}
+#markdown-toc > li > a::before {
+  content: counter(toc, decimal-leading-zero);
+  display: inline-block; min-width: 2.4em;
+  font-family: var(--mono); font-weight: 500;
+  font-size: 11px; letter-spacing: 0.08em;
+  color: var(--muted-soft);
+  vertical-align: 2px;
+}
+/* Sub-levels: Inter, indented under a hairline. */
+#markdown-toc ul {
+  margin: 6px 0 2px 0.55em !important;
+  padding-left: calc(1.85em - 1px) !important;
+  border-left: 1px solid var(--hairline);
+}
+#markdown-toc ul a { font-size: 14.5px; line-height: 1.7; }
+#markdown-toc ul ul a { font-size: 13.5px; color: var(--muted); }
+.prose :is(h1, h2, h3) { scroll-margin-top: 80px; }
+
 .gallery__note {
   margin: 14px 0 0;
   font-family: var(--serif); font-weight: 300; font-style: italic;

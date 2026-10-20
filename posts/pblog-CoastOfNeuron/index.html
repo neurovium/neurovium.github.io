@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ead7be">
+<title>What the resolution of a neuron model does to the computation · Nima Dehghani</title>
+<meta name="description" content="Neuroscience researcher at MIT — NeuroPhysics, NeuroComputation, NeuroDynamics">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="/assets/css/neurovium.css">
+
+<link type="application/atom+xml" rel="alternate" href="https://neurovium.github.io/feed.xml" title="Nima Dehghani" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>What the resolution of a neuron model does to the computation | Nima Dehghani</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="What the resolution of a neuron model does to the computation" />
+<meta name="author" content="Nima Dehghani" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Companion post to: How Long Is the Coast of a Neuron? Resolution-Dependent Interaction Order and Computational Capacity Nima Dehghani arXiv DOI: https://doi.org/10.48550/arXiv.2610.19487" />
+<meta property="og:description" content="Companion post to: How Long Is the Coast of a Neuron? Resolution-Dependent Interaction Order and Computational Capacity Nima Dehghani arXiv DOI: https://doi.org/10.48550/arXiv.2610.19487" />
+<link rel="canonical" href="https://neurovium.github.io/posts/pblog-CoastOfNeuron/" />
+<meta property="og:url" content="https://neurovium.github.io/posts/pblog-CoastOfNeuron/" />
+<meta property="og:site_name" content="Nima Dehghani" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-10-14T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="What the resolution of a neuron model does to the computation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Nima Dehghani"},"dateModified":"2026-10-14T00:00:00+00:00","datePublished":"2026-10-14T00:00:00+00:00","description":"Companion post to: How Long Is the Coast of a Neuron? Resolution-Dependent Interaction Order and Computational Capacity Nima Dehghani arXiv DOI: https://doi.org/10.48550/arXiv.2610.19487","headline":"What the resolution of a neuron model does to the computation","mainEntityOfPage":{"@type":"WebPage","@id":"https://neurovium.github.io/posts/pblog-CoastOfNeuron/"},"url":"https://neurovium.github.io/posts/pblog-CoastOfNeuron/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+  },
+  options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+
+</head>
+<body>
+  <header class="topbar">
+    <a href="/" class="topbar__brand">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"><line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/><line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/><line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/></g><circle cx="18" cy="20" r="2.2" fill="currentColor"/></svg>
+      Nima Dehghani
+    </a>
+    <button class="topbar__toggle" id="sidebar-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sidebar">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </header>
+
+  <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
+
+  <div class="app">
+    
+
+<aside class="side" id="sidebar" aria-label="Primary">
+  <a class="side__brand" href="/">
+    <svg class="glyph" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none">
+        <line x1="6" y1="20" x2="18" y2="20"/><line x1="18" y1="20" x2="26" y2="12"/><line x1="18" y1="20" x2="26" y2="28"/>
+        <line x1="26" y1="12" x2="34" y2="9"/><line x1="26" y1="12" x2="34" y2="15"/>
+        <line x1="26" y1="28" x2="34" y2="25"/><line x1="26" y1="28" x2="34" y2="31"/>
+      </g>
+      <circle cx="18" cy="20" r="2.2" fill="currentColor"/>
+    </svg>
+    <span>
+      <span class="side__name">Nima Dehghani</span>
+      <span class="side__tag">@neurovium · MIT</span>
+    </span>
+  </a>
+
+  
+  
+  <nav class="side__nav" aria-label="Main navigation">
+    <a href="/about/" class="">About</a>
+    <a href="/news/" class="">News<span class="side__pip" aria-label="new"></span></a>
+    <a href="/research/" class="">Research</a>
+    <a href="/fullmetal_decade/" class="side__mark ">fullmetal_decade</a>
+    <a href="/papers/" class="">Paper Maze</a>
+    <a href="/garden/" class="">Idea Garden</a>
+
+    
+    
+    
+    <details class="side__group side__group--books" open>
+      <summary class="side__group-sum" aria-label="Books — 1 title">
+        <span class="side__group-label"><a href="/books/">Books</a></span>
+        <span class="side__group-meta">
+          <span class="side__group-count">1</span>
+          <svg class="side__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </span>
+      </summary>
+      <div class="side__subnav">
+        
+        <a href="/books/NeuroAI/" class="">NeuroAI</a>
+        
+      </div>
+    </details>
+
+    <a href="/blog/" class="">Blog</a>
+    <a href="/open-science/" class="">Open Science</a>
+
+    <details class="side__group">
+      <summary class="side__group-sum" aria-label="Reflections — 4 pages">
+        <span class="side__group-label">Reflections</span>
+        <span class="side__group-meta">
+          <span class="side__group-count">4</span>
+          <svg class="side__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </span>
+      </summary>
+      <div class="side__subnav">
+        <a href="/on-liberty/" class="">On Liberty</a>
+        <a href="/neurovium-decoded/" class="">Neurovium Decoded</a>
+        <a href="/leibnizian-dream/" class="">Leibnizian Dream</a>
+        <a href="/scientific-understanding/" class="">Scientific Understanding</a>
+      </div>
+    </details>
+  </nav>
+
+  <div class="side__social" aria-label="Social links">
+    <div class="side__social-row">
+      <a href="https://scholar.google.com/citations?user=acFMrVUAAAAJ&hl=en" title="Google Scholar" target="_blank" rel="noopener" aria-label="Google Scholar">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9zm6.82 7L12 12.72 5.18 9 12 5.28zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73z"/></svg>
+      </a>
+      <a href="mailto:nima.dehghani@mit.edu" title="Email" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/nimadehghani/" title="LinkedIn" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+    </div>
+    <div class="side__social-row">
+      <a href="https://github.com/neurovium" title="GitHub" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      </a>
+      <a href="https://twitter.com/neurovium" title="X" target="_blank" rel="noopener" aria-label="X">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://bsky.app/profile/neurovium.bsky.social" class="is-bsky" title="Bluesky" target="_blank" rel="noopener" aria-label="Bluesky">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.335 5.144c2.606 1.957 5.41 5.923 6.44 8.051.99-2.046 3.855-6.132 6.44-8.051 1.864-1.383 4.885-2.453 4.885 1.002 0 .69-.396 5.795-.629 6.624-.809 2.882-3.748 3.616-6.363 3.17 4.573.78 5.737 3.359 3.224 5.939-4.772 4.9-6.859-1.23-7.394-2.802-.534 1.572-2.622 7.702-7.394 2.802-2.513-2.58-1.349-5.16 3.224-5.939-2.615.446-5.554-.288-6.363-3.17-.233-.829-.629-5.934-.629-6.624 0-3.455 3.021-2.385 4.885-1.002z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="n4-set" aria-label="N⁴ : NeuroAI ⊃ N³">
+    <span class="n4-set__lbl">N&#8308;</span>
+    <div class="n4-set n4-set--ai">
+      <span class="n4-set__lbl">NeuroAI</span>
+      <div class="n4-set n4-set--n3">
+        <span class="n4-set__lbl">N&#179;</span>
+        <ul>
+          <li>NeuroPhysics</li>
+          <li>NeuroComputation</li>
+          <li>NeuroDynamics</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="side__foot">
+    <span>
+      <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+      ·
+      <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    </span>
+  </div>
+</aside>
+
+    <main class="main">
+      <article class="paper">
+  <div class="paper__crumb">
+    <a href="/blog/">← Blog</a>
+    <span style="color:var(--muted-soft);">·</span>
+    <span>Oct 14, 2026</span>
+  </div>
+
+  <h1>What the resolution of a neuron model does to the computation</h1>
+  
+  
+  <div class="paper__venue" style="margin-top:10px;">
+    <span>NeuroAI</span><span>dendritic computation</span><span>coarse-graining</span><span>higher-order interactions</span><span>maximum entropy</span><span>representational capacity</span>
+  </div>
+  
+
+  
+  <div class="linkbar" style="margin-top:24px;">
+    <a href="/papers/Catcomp/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="20" x2="12" y2="12"/><line x1="12" y1="12" x2="21" y2="4"/><line x1="12" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="21" y2="20"/></svg>
+      Follow this path into the Maze
+    </a>
+  </div>
+  
+
+  <section class="paper__section prose" style="margin-top:28px;">
+    <p><em>Companion post to:</em><br />
+<strong>How Long Is the Coast of a Neuron? Resolution-Dependent Interaction Order and Computational Capacity</strong><br />
+Nima Dehghani
+<em>arXiv</em> 
+DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.48550/arXiv.2610.19487</code></p>
+
+<div class="citeblock">
+  <div class="citeblock__head">
+    <span class="citeblock__label">Cite this post</span>
+    <button type="button" class="citeblock__copy" data-cite-copy="">Copy</button>
+  </div>
+  <pre><code>@misc{dehghani2026CompRes,
+  author       = {Nima Dehghani},
+  title        = {{What the resolution of a neuron model does to the computation}},
+  year         = {2026},
+  howpublished = {\url{https://neurovium.science/posts/pblog-CoastOfNeuron/}},
+  note         = {Companion post to: How Long Is the Coast of a Neuron? Resolution-Dependent Interaction Order and Computational Capacity (2026). doi:10.48550/arXiv.2610.19487}
+}</code></pre>
+</div>
+
+<figure class="video">
+  <div class="video__head">
+    <span class="video__kicker">Watch · the paper in brief</span>
+    <a class="video__out" href="https://www.youtube.com/watch?v=kv1xyPqG-X4" target="_blank" rel="noopener">YouTube ↗</a>
+  </div>
+  <a class="video__frame" href="https://www.youtube.com/watch?v=kv1xyPqG-X4" data-video="kv1xyPqG-X4" data-title="How Long Is the Coast of a Neuron? Resolution-Dependent Interaction Order and Computational Capacity" aria-label="Play video: How Long Is the Coast of a Neuron? Resolution-Dependent Interaction Order and Computational Capacity">
+    <img class="video__poster" src="https://i.ytimg.com/vi/kv1xyPqG-X4/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/kv1xyPqG-X4/hqdefault.jpg'" alt="" loading="lazy" decoding="async" />
+    <span class="video__play" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5.5v13l11-6.5z" fill="currentColor" /></svg>
+    </span>
+  </a>
+  <figcaption class="video__caption">How long is the coast of a neuron? A walk through the paper.</figcaption>
+</figure>
+
+<nav class="toc" aria-label="Contents">
+  <div class="toc__kicker">Contents</div>
+
+<ul id="markdown-toc">
+  <li><a href="#how-this-paper-began" id="markdown-toc-how-this-paper-began">How This Paper Began</a>    <ul>
+      <li><a href="#chaitin-complexity-information" id="markdown-toc-chaitin-complexity-information">Chaitin, complexity, information</a></li>
+      <li><a href="#tyler-hobbs-fidenza" id="markdown-toc-tyler-hobbs-fidenza">Tyler Hobb’s Fidenza</a></li>
+      <li><a href="#the-click-" id="markdown-toc-the-click-">The click !</a></li>
+    </ul>
+  </li>
+  <li><a href="#how-long-is-the-coast-of-a-neuron" id="markdown-toc-how-long-is-the-coast-of-a-neuron">How long is the coast of a neuron?</a>    <ul>
+      <li><a href="#1-every-model-of-a-neuron-picks-a-ruler" id="markdown-toc-1-every-model-of-a-neuron-picks-a-ruler">1. Every model of a neuron picks a ruler</a></li>
+      <li><a href="#2-keeping-honest-books-what-direct-means" id="markdown-toc-2-keeping-honest-books-what-direct-means">2. Keeping honest books: what “direct” means</a></li>
+      <li><a href="#3-a-coarser-ruler-can-make-a-neuron-look-simpler" id="markdown-toc-3-a-coarser-ruler-can-make-a-neuron-look-simpler">3. A coarser ruler can make a neuron look simpler</a></li>
+      <li><a href="#4-a-weight-is-a-compressed-field" id="markdown-toc-4-a-weight-is-a-compressed-field">4. A weight is a compressed field</a></li>
+      <li><a href="#5-a-finer-ruler-buys-capacity-not-information" id="markdown-toc-5-a-finer-ruler-buys-capacity-not-information">5. A finer ruler buys capacity, not information</a></li>
+      <li><a href="#6-what-this-means-for-neuroai" id="markdown-toc-6-what-this-means-for-neuroai">6. What this means for NeuroAI</a></li>
+      <li><a href="#7-so-how-long-is-the-coast" id="markdown-toc-7-so-how-long-is-the-coast">7. So how long is the coast?</a></li>
+    </ul>
+  </li>
+</ul>
+
+</nav>
+
+<hr />
+<h1 id="how-this-paper-began">How This Paper Began</h1>
+
+<h2 id="chaitin-complexity-information">Chaitin, complexity, information</h2>
+<p>The paper began, as many things did, in the wreckage of the pandemic.</p>
+
+<p>Everything had been reduced, too abruptly, to rooms, screens, and a strange public simulation of normal life. I spent a great deal of that period thinking about the foundations of physical computation, playing chess against engines that seemed to have acquired a Mikhail Tal temperament, and working on a book about information processing in biological systems. That book is still in preparation. I have been too busy finishing papers and research projects from the last decade to bring it to a proper close, but much of the thinking behind this paper came from that period.</p>
+
+<p>As part of the book, I was speaking with people whose work had shaped how I thought about computation, randomness, biology, and mathematics. One of them was <a href="https://www.google.com/search?q=gregory+chaitin&amp;kgmid=/m/037b8">Gregory Chaitin</a>. Yes, that Gregory Chaitin, of algorithmic information theory and Chaitin complexity.</p>
+
+<p>I had been reading Chaitin’s work on metabiology, his attempt to think about evolution as a kind of open-ended software process. Some parts of it caught my attention immediately. In Chaitin’s information-theoretic incompleteness theorem, a formal system has a finite informational scale. If its axioms contain only so many bits, then there are hard limits on what it can prove about the complexity or randomness of objects beyond that scale. A system cannot, from within a fixed budget of axioms, certify arbitrary complexity. There is an informational ceiling built into the formal description itself.</p>
+
+<p>Metabiology pushes that idea into a stylized picture of evolution: digital organisms climbing an unbounded landscape of increasing algorithmic complexity. The model deliberately removes much of the physical world. No metabolism, no finite body, no material cost of memory, no ecological limit on the length of the code. Evolution becomes a mathematical process of open-ended search. That abstraction is precisely what makes it powerful, but it also made me think about what happens when physical scale re-enters the story.</p>
+
+<p>My long Zoom conversations with Chaitin took place in late mid 2021, last of them on May 21. They were among the few Zoom conversations from that period that I actually enjoyed. I hated Zoom with unusual passion. It was not only the inconvenience; it was the flattening. Encounters that should have had space, timing, posture, and peripheral presence were compressed into rectangles. Human beings were projected into two-dimensional tiles, and then we all pretended that the projection was the meeting.</p>
+
+<p>That irritation was probably already part of the idea, although I did not yet know it.</p>
+
+<h2 id="tyler-hobbs-fidenza">Tyler Hobb’s Fidenza</h2>
+
+<p>A little later, while rereading my notes and letting the Chaitin conversation settle, I came across Tyler Hobbs’s <em>Fidenza</em>, released in early June 2021. I was immediately drawn to it, not simply as an artwork but as a computational object. <em>Fidenza</em> was not a single image in the ordinary sense. It was a generative recipe: a rule system with controlled variation, producing individual works at minting. The pieces differed in palette, density, texture, turbulence, collision, and scale. Some were dominated by large, block-like forms; others were dense with small filaments and delicate local structure.</p>
+
+<p>What interested me was not the usual surface description of generative art. It was the coexistence of a hidden rule and a visible scale. A few mathematical choices could make the same canvas look sparse or crowded, massive or filamentary, calm or turbulent. The computer was drawing blindly in one sense, but it was not drawing randomly. The paths were guided by a hidden field.</p>
+
+<p>Here are some beautiful examples of Fidenza that Tyler sent me that I can share on this blog post (<em>Thank you Tyler!</em>):</p>
+
+<figure class="gallery gallery--cols reveal" data-gallery="fidenza" style="--gal-cols: 3; --gal-ratio: 5 / 6;">
+  <div class="gallery__grid"><a class="gallery__cell" href="/assets/img/papers/coastNeuron/fidenza/web/fidenza_222.jpg" data-gallery-item="fidenza" data-caption="" aria-label="Open image 1 of 6 full size"><img src="/assets/img/papers/coastNeuron/fidenza/thumb/fidenza_222.jpg" alt="Fidenza by Tyler Hobbs — 1" loading="lazy" decoding="async" />
+        <span class="gallery__coord">01</span>
+      </a><a class="gallery__cell" href="/assets/img/papers/coastNeuron/fidenza/web/fidenza_11.jpg" data-gallery-item="fidenza" data-caption="" aria-label="Open image 2 of 6 full size"><img src="/assets/img/papers/coastNeuron/fidenza/thumb/fidenza_11.jpg" alt="Fidenza by Tyler Hobbs — 2" loading="lazy" decoding="async" />
+        <span class="gallery__coord">02</span>
+      </a><a class="gallery__cell" href="/assets/img/papers/coastNeuron/fidenza/web/fidenza_24.jpg" data-gallery-item="fidenza" data-caption="" aria-label="Open image 3 of 6 full size"><img src="/assets/img/papers/coastNeuron/fidenza/thumb/fidenza_24.jpg" alt="Fidenza by Tyler Hobbs — 3" loading="lazy" decoding="async" />
+        <span class="gallery__coord">03</span>
+      </a><a class="gallery__cell" href="/assets/img/papers/coastNeuron/fidenza/web/fidenza_2.jpg" data-gallery-item="fidenza" data-caption="" aria-label="Open image 4 of 6 full size"><img src="/assets/img/papers/coastNeuron/fidenza/thumb/fidenza_2.jpg" alt="Fidenza by Tyler Hobbs — 4" loading="lazy" decoding="async" />
+        <span class="gallery__coord">04</span>
+      </a><a class="gallery__cell" href="/assets/img/papers/coastNeuron/fidenza/web/fidenza_6.jpg" data-gallery-item="fidenza" data-caption="" aria-label="Open image 5 of 6 full size"><img src="/assets/img/papers/coastNeuron/fidenza/thumb/fidenza_6.jpg" alt="Fidenza by Tyler Hobbs — 5" loading="lazy" decoding="async" />
+        <span class="gallery__coord">05</span>
+      </a><a class="gallery__cell" href="/assets/img/papers/coastNeuron/fidenza/web/fidenza_22.jpg" data-gallery-item="fidenza" data-caption="" aria-label="Open image 6 of 6 full size"><img src="/assets/img/papers/coastNeuron/fidenza/thumb/fidenza_22.jpg" alt="Fidenza by Tyler Hobbs — 6" loading="lazy" decoding="async" />
+        <span class="gallery__coord">06</span>
+      </a></div>
+  <figcaption class="gallery__note">Fidenza, Tyler Hobbs (2021). Six outputs of one generative rule, shared with permission.</figcaption>
+</figure>
+
+<p>Also, Tyler sent me this `ArtBlocks’ link to his work: <a href="https://www.artblocks.io/collection/fidenza-by-tyler-hobbs?sort=Number:+Low+to+high">Fidenza on ArtBlocks</a></p>
+
+<p>Out of boredom, or perhaps the useful kind of boredom that comes when the mind has no obvious administrative object to attach itself to, I started wondering whether one could quantify some of those rules. Could one extract a mathematical principle from the visual family rather than merely describe its traits? Not the color palette, not the nominal size categories, but something about how rule, scale, and visible complexity were related.</p>
+
+<h2 id="the-click-">The click !</h2>
+<p>That is when the Chaitin thread and the Fidenza thread clicked together.</p>
+
+<p>In Chaitin’s metabiology, scale is not a matter of visual size. It is a scale of complexity: how much algorithmic information is present, how much can be specified, how far a formal or evolutionary process can climb. In <em>Fidenza</em>, scale is visual and geometric, but it also changes the apparent information density of the work. A “jumbo” piece can look simple because the canvas is organized by a few large structures. A dense micro-scale piece can look as if far more computation has been packed into the same bounded surface. The canvas has not changed. The rule has not become a different physical world. What changes is the relation between the rule and the scale at which its consequences are made visible.</p>
+
+<p>That was the bridge to neurons.</p>
+
+<p>The point neuron is one of the great abstractions in theoretical neuroscience. It has earned its place. Treating a neuron as a unit with inputs, a state variable, and an output has made enormous parts of neural network theory possible. It underlies models of recurrent dynamics, balanced networks, population computation, and much of modern NeuroAI. But a biological neuron is not literally a point. It has dendrites, branches, synapses, local nonlinearities, conductances, and spatially organized input. It is not a single computational degree of freedom before we choose to describe it that way.</p>
+
+<p>The question that began to form was therefore not: are point neurons useful? Of course they are. The question was: what kind of projection has taken place when a spatially structured biological object is represented as a point?</p>
+
+<p>Once stated that way, the problem became an information-theoretic one. If a detailed object is viewed through a coarse ruler, some information survives and some is lost. But more subtly, the structure of the surviving information can change. A dependency that is higher-order at one scale can appear pairwise at another. A mechanism that is nonlinear in the contact-level variables can look direct after those variables have been collapsed into a somatic or population-level observable. Conversely, a model can predict very well at the coarse scale while being silent about the finer computation that generated the variables it uses.</p>
+
+<p>This is the core of the paper. The coastline paradox says that the length of a coast is not a property of the coast alone; it is a joint property of the coast and the ruler. I wanted to ask the analogous question for neural computation. How long is the coast of a neuron? More precisely: how does the apparent order, directness, sparsity, and computational capacity of a neuron change when the ruler changes from contacts, to branches, to soma, to population activity?</p>
+
+<p>The framework that came out of this separates several quantities that are often verbally blurred together. At a given resolution, how much predictive information about the output is available at all? How much of that information can be captured by a direct model? How much remains as a residual outside the direct family? Coarse-graining cannot increase the total information available, by data processing. But it can change the apparent order of the information that remains. It can erase distinctions needed to see a nonlinear interaction. The coarse description can therefore look more direct precisely because the relevant microscopic distinctions have been removed.</p>
+
+<p>That is the <em>“denominator trap”</em> in the paper: a direct fraction can rise as the total surviving information falls. A model can look closer to perfectly direct at the coarse scale not because the underlying mechanism has become simple, but because the ruler has discarded the degrees of freedom that would have revealed the complexity.</p>
+
+<p>The later timing of the project became unexpectedly fortunate. A recent paper by Christopher Lynn in <em>Nature Physics</em> argued that simple input-output dependencies explain a large fraction of neuronal activity. The result generated a strong reaction among neuroscientists. Some saw it as evidence that low-order or direct descriptions may be much more powerful than expected. Others objected that such models could not settle the underlying cellular or circuit mechanism. Safaai and Sabatini, for example, pushed on the identifiability problem from another direction: when a model attributes activity to direct dependencies, how stable is that attribution under changes in the sampled input distribution?</p>
+
+<p>This debate made the scale issue unavoidable. My paper is not simply an argument against Lynn’s result, nor is it a dismissal of the objections to it. I think the more interesting point is that both sides are looking at real aspects of the same problem. A successful direct model is a real fact about a system at a declared scale, under a declared distribution, using a declared family of models. But it is not automatically a mechanistic identification of the computation beneath that scale. Predictive adequacy and mechanistic identification are two sides of one moon. The missing piece is the map between rulers.</p>
+
+<p>That is why the biophysics matters. The paper is not trying to float an abstract information-theoretic objection above the cell. Dendrites give the problem its physical content. Local voltage, conductance, driving force, NMDA nonlinearities, branch saturation, electrotonic attenuation, and somatic mixing are not decorative details. They are the actual operations through which a contact-level computation becomes a branch-level signal and then a somatic variable. The point neuron is the weak-input, coarse-ruler limit of a richer physical object. It is a regime, not the identity of the cell.</p>
+
+<p>This also changes how I think about NeuroAI. A standard artificial unit is closer to a point-neuron abstraction than to a biological neuron. A pyramidal cell, with its dendritic subunits and local nonlinearities, is closer to a small network whose internal architecture has been compressed into one biological unit. If we compare artificial networks and brains only at the level of point units, we may be comparing the wrong objects. Some computation can be allocated between units; some can be allocated within units. Which scale we choose determines which possibilities are even visible.</p>
+
+<p>In retrospect, the path from Chaitin to <em>Fidenza</em> to neurons was not as strange as it first sounds. Chaitin forced the question of information scale. <em>Fidenza</em> made vivid how hidden rules become visible differently at different scales. The pandemic made projection itself feel almost physical: a world of high-dimensional encounters flattened into surfaces. And the point neuron was sitting there in neuroscience as our most productive, most dangerous projection.</p>
+
+<p>The paper came from trying to take that projection seriously.</p>
+
+<p>Not to abolish it. Not to claim that the finest ruler is always the right one. A fine ruler can be costly, noisy, and unnecessary for a given question. But a ruler should be declared. If a point-neuron model predicts well, that is a statement about what is visible at the somatic or population scale. It does not by itself tell us how long the coast is at the dendritic scale, or which computations were folded into the point before the measurement began.</p>
+
+<p>So the question <em>“How long is the coast of a neuron?”</em> is not a metaphor added after the fact. It is the origin of the paper. It asks what happens when a biological computation is measured with different rulers, and when we forget that the ruler was part of the measurement all along.</p>
+
+<hr />
+
+<h1 id="how-long-is-the-coast-of-a-neuron">How long is the coast of a neuron?</h1>
+
+<p><em>What the resolution of a neuron model does to the computation you can see — and to the computation you can build.</em></p>
+
+<blockquote>
+  <p><strong>TL;DR.</strong> A neuron’s apparent complexity depends on the ruler you measure it with. Coarsen the ruler (point neuron, scalar weights) and genuinely multiplicative dendritic computation can look additive — not because it went away, but because the states it depends on were merged. Refine the ruler (resolve dendritic subunits) and a plain linear readout gains approximation power without receiving a single extra bit of information. For NeuroAI the consequence is sharp: the computational unit is a <em>choice of resolution</em>, not a neuron count, and three well-placed nonlinear subunits did the work of forty generic hidden features in my experiments.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="1-every-model-of-a-neuron-picks-a-ruler">1. Every model of a neuron picks a ruler</h2>
+
+<p>Mandelbrot’s coastline paradox is a statement about measurement, not geography: a coastline’s length is a joint property of the shoreline and the stick you walk along it with. Shorter stick, more inlets, longer coast.</p>
+
+<p>Neuroscience and AI both walk the neuron with a very long stick. The point neuron — weighted sum, nonlinearity, out — is the default unit of recurrent-network theory, of balanced-network theory, and of essentially every artificial neural network ever trained. It has earned that status. It is also a coarse ruler, and it is worth asking what a coarse ruler cannot see.</p>
+
+<p>The prompt for this work was a striking empirical result: maximum-entropy fits in which direct, pairwise dependencies on a small set of recorded neurons account for over 90% of a target neuron’s output entropy in mouse recordings (and about 60% in <em>C. elegans</em>). Read one way, that says single neurons are nearly additive. Read another way, it says a coarse description is <em>predictively adequate at the scale of the recording</em>. The paper is about why those two readings are not the same thing, and what each implies for building neural networks.</p>
+
+<p align="center"><img src="/assets/img/papers/coastNeuron/fig1-three-rulers.svg" width="100%" alt="The same dendritic tree measured with three rulers" /></p>
+
+<p><em>Figure 1. One neuron, three rulers. The somatic ruler sees a single variable; the branch ruler two; the contact ruler six. They are connected by many-to-one maps, and only one of them matches what a point-neuron ANN unit computes.</em></p>
+
+<hr />
+
+<h2 id="2-keeping-honest-books-what-direct-means">2. Keeping honest books: what “direct” means</h2>
+
+<p>To make “direct” precise, fix a resolution $\varepsilon$, call the visible inputs $\mathbf X_\varepsilon$ and the output $Y$. The <strong>direct family</strong> is every model of the form $\sigma[b + \sum_i u_i(x_i)]$ — any function of each input on its own, no joint terms. Fit the best member of that family and the output uncertainty splits into three non-negative pieces:</p>
+
+\[I_{\text{avail}} \;=\; I_{\text{dir}} \;+\; I_{\text{higher}},\]
+
+<p>where $I_{\text{avail}} = I(Y;\mathbf X_\varepsilon)$ is everything the inputs could tell you at this ruler, $I_{\text{dir}}$ is the part the best additive model captures, and $I_{\text{higher}}$ — which turns out to be exactly a conditional KL divergence between the truth and the best direct fit — is what demands joint terms.</p>
+
+<p align="center"><img src="/assets/img/papers/coastNeuron/fig2-information-ledger.svg" width="100%" alt="The information ledger" /></p>
+
+<p><em>Figure 2. The ledger at one ruler, and the two ratios people quote.</em></p>
+
+<p>Two ratios follow. $R = I_{\text{dir}}/H(Y)$ is the share of <em>total</em> output entropy that is direct — the max-ent number. $F = I_{\text{dir}}/I_{\text{avail}}$ is the share of <em>available</em> information that is direct. They look interchangeable and are not: $R$’s denominator is pinned by the output, while <em>both</em> parts of $F$ move when the ruler changes. That asymmetry is the whole story.</p>
+
+<hr />
+
+<h2 id="3-a-coarser-ruler-can-make-a-neuron-look-simpler">3. A coarser ruler can make a neuron look simpler</h2>
+
+<p>Projecting fine variables onto coarse ones can only lose predictive information (data processing). What it does to the <em>structure</em> of the survivors is not constrained at all. Two exact constructions make this concrete.</p>
+
+<p><strong>Order is not invariant.</strong> Take three spins coupled only through a three-body term, $P\propto\exp(K s_1 s_2 s_3)$. Every pair marginal is flat, so a pairwise model sees nothing; the entire dependence is third-order (0.823 bits at $K=1.8$). Now keep only $x = b_1$ and $z = b_2 \wedge b_3$: the ordinary mutual information between these two coarse variables is 0.261 bits. Keep $z = \mathbb 1[b_2=b_3]$ instead and it is the full 0.823 bits. Nothing was added; a many-to-one map re-expressed existing third-order structure as pairwise.</p>
+
+<p align="center"><img src="/assets/img/papers/coastNeuron/fig3-interaction-order.svg" width="100%" alt="A third-order dependency becomes pairwise after projection" /></p>
+
+<p><em>Figure 3. The order at which a dependency appears belongs to the observables you keep, not to the system.</em></p>
+
+<p><strong>The denominator trap.</strong> Now a neuron-shaped version. Six binary inputs feed two three-input dendritic subunits, and the output fires strongly only when a whole triplet is co-active — a cartoon of NMDA-type coincidence detection. Follow that fixed law through three rulers, all 64 input states enumerated exactly:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>ruler</th>
+      <th>observable</th>
+      <th>states</th>
+      <th>$F$ (direct share)</th>
+      <th>$I_{\text{avail}}$ (bits)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>contacts</td>
+      <td>$\mathbf x\in{0,1}^6$</td>
+      <td>64</td>
+      <td>55%</td>
+      <td>0.157</td>
+    </tr>
+    <tr>
+      <td>branches</td>
+      <td>$B_i = \min(\text{active in branch } i,\,2)$</td>
+      <td>9</td>
+      <td>96%</td>
+      <td>0.029</td>
+    </tr>
+    <tr>
+      <td>soma</td>
+      <td>$Z=(B_1+B_2)/2$</td>
+      <td>5</td>
+      <td>100%</td>
+      <td>0.024</td>
+    </tr>
+  </tbody>
+</table>
+
+<p align="center"><img src="/assets/img/papers/coastNeuron/fig4-branch-to-soma-cascade.svg" width="100%" alt="The branch-to-soma cascade" /></p>
+
+<p><em>Figure 4. Saturation merges “two active” with “three active” — the exact distinction the coincidence gate depends on. Averaging then merges the two branches. The direct share climbs to 100% while 85% of the predictive information is discarded and the higher-order residual collapses to zero.</em></p>
+
+<p>The neuron is “more direct” at each step for one reason: the observer can no longer tell apart the states on which the interaction lives. Meanwhile $R$ <em>falls</em> (13.6% → 3.7%). A high $F$ with a shrinking $I_{\text{avail}}$ is not evidence of an additive mechanism — it is evidence that the ruler got longer. Two sanity checks in the paper: the direct family must be categorical (forcing branch states onto a line fakes a residual), and an asymmetric somatic mixture ($0.6B_1 + 0.4B_2$) keeps branch identity recoverable and drops the linear direct share from 99% to 78%. “Directness” is a property of the whole measurement pipeline, not of the cell.</p>
+
+<hr />
+
+<h2 id="4-a-weight-is-a-compressed-field">4. A weight is a compressed field</h2>
+
+<p>The most basic object in any network model inherits the same issue. At neuron resolution a connection is one scalar $w_{ij}$. At contact resolution the same connection is a <em>field</em> of synapses on different branches, each read in a local state (local voltage, Mg²⁺ block, what the neighbours are doing). The scalar is the output of a projection applied to that field, and the projection obeys the data-processing inequality like any other.</p>
+
+<p>So <strong>anatomical directness and informational directness come apart.</strong> A connection can exist ($A_{ij}=1$) and still fail to contribute additively, because its effect depends on the dendritic context it lands in. One line captures it:</p>
+
+\[\operatorname{logit}P(Y=1\mid x_j,n) = b + \alpha x_j + \beta n + \gamma\, x_j n .\]
+
+<p>Same anatomy for every $\gamma$; informationally direct only when $\gamma=0$.</p>
+
+<p align="center"><img src="/assets/img/papers/coastNeuron/fig5-directness.svg" width="100%" alt="Anatomical vs informational directness" /></p>
+
+<p><em>Figure 5. One edge at the neuronal ruler is a context-dependent contact field at the contact ruler. Adjacency does not imply additivity.</em></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>For NeuroAI this bites twice. An ANN weight is informationally direct <em>by construction</em> — it has no local context to depend on — so an architecture built from scalar weights has already committed to the coarse ruler before training starts. And when a connectome is translated into a network, collapsing contact-level edges to cell-level edges changes sparsity, degree and density (the compression factor $\chi(\varepsilon)=</td>
+      <td>E_\varepsilon</td>
+      <td>/</td>
+      <td>E_{\text{cell}}</td>
+      <td>$ is at least 1 and can be large). A graph that is sparse axon-to-cell can be dense contact-to-subunit, and that denser graph is where the nonlinear features live.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="5-a-finer-ruler-buys-capacity-not-information">5. A finer ruler buys capacity, not information</h2>
+
+<p>Now the reverse direction, and the part aimed squarely at architecture design. Resolving dendritic subunits does not change the target function or the information available about it; it changes the <em>feature space</em> a readout can draw on. I tested this with held-out regression on a target with known pairwise and triple interactions over six centered inputs.</p>
+
+<p><strong>Organization beats count.</strong> A linear point neuron reaches held-out MSE 0.044. Give each input three contacts grouped into three nonlinear subunits <em>aligned</em> with the target’s pair structure: 0.031. Same 18 contacts, same three subunits, contacts <em>shuffled</em>: 0.039. Exposing nonlinearity helps; placing it where the computation is helps more. A generic network of fixed sigmoid random features needs <strong>40 units</strong> to match the three aligned subunits.</p>
+
+<p><strong>Resolution as a dial.</strong> To isolate resolution itself, draw one 24-subunit sigma–pi architecture and expose its first $n$ subunits to a linear readout. Because every feature set is a deterministic function of the inputs, $I(Y;\Phi_n)$ is identical for all $n$ — refinement adds <strong>zero</strong> information — yet the hypothesis class is strictly nested and held-out error falls monotonically (0.042 → 0.015), scaling as $n^{0.31}$. The participation ratio of the feature covariance, a label-free effective rank, rises from 6.9 to 14.0, scaling as $n^{0.24}$. The new coordinates span new directions; they are not duplicates.</p>
+
+<p align="center"><img src="/assets/img/papers/coastNeuron/fig6-resolution-expands.svg" width="100%" alt="Resolution expands the approximation space" /></p>
+
+<p><em>Figure 6. Access, not availability. Exponents describe this construction, not a biological law.</em></p>
+
+<hr />
+
+<h2 id="6-what-this-means-for-neuroai">6. What this means for NeuroAI</h2>
+
+<p>Putting the two directions together gives a set of design and interpretation rules I think are under-appreciated.</p>
+
+<p><strong>The unit is a resolution, not a neuron.</strong> “Biologically plausible” networks are often specified by matching cell counts or cell-level connectivity. Neither fixes the computation at a node. The question that does is: <em>which contact groups, nonlinear features and state dependencies does each unit retain?</em> Three aligned subunits ≈ forty random features is the kind of exchange rate that answer sets.</p>
+
+<p><strong>Multiplicative structure is cheap when it is local.</strong> Coincidence detection, saturation and context-gated synapses are all forms of $x_j n$ terms. A point unit has to synthesize those from width; a unit with resolved subunits gets them as coordinates. This is the biophysical argument for sigma–pi, gated, or dendrite-like units — not mimicry, but approximation economy.</p>
+
+<p><strong>Sparsity has to be stated with its graph.</strong> Pruning, lottery tickets and connectome-constrained models all quantify sparsity on a cell-level graph. The same system can be far denser at the subunit level, and the subunit level is where the usable nonlinear features are. Compare sparsity across models only at matched resolution.</p>
+
+<p><strong>Probes are rulers too.</strong> A linear probe on hidden activations, or a pairwise model fitted to recorded units, is a coarse ruler applied to a network. A high direct fraction tells you the probe’s coordinates suffice for that readout under that input distribution. It does not tell you the mechanism is linear, and a vanishing residual can mean the interesting states were merged, not that they were absent. Report $I_{\text{avail}}$ alongside $F$, and perturb the input distribution before calling a representation “simple”.</p>
+
+<p><strong>Bounds are real, and they are scale-indexed.</strong> A fit with $R&gt;0.9$ <em>does</em> bound what any unobserved variable can add to predicting that output under that state distribution — at most $(1-R)H(Y)$. That is a useful guarantee. It is a statement about a readout, not about dendrites.</p>
+
+<hr />
+
+<h2 id="7-so-how-long-is-the-coast">7. So how long is the coast?</h2>
+
+<p>Like the coastline, the question is well posed only after four things are fixed: the <strong>ruler</strong> (which variables are resolved), the <strong>target observable</strong> (spikes, branch voltage and plasticity each want a different adequate resolution), the <strong>class of perturbations</strong> you will test adequacy against, and the <strong>domain of conditions</strong> over which you claim it. Hold the output fixed, ask how much finer variables add, perturb, repeat. Continued success validates the reduction inside that domain and nowhere else.</p>
+
+<p align="center"><img src="/assets/img/papers/coastNeuron/fig7-coast-of-a-neuron.svg" width="100%" alt="How long is the coast of a neuron?" /></p>
+
+<p><em>Figure 7. Coarsening hides; refining exposes. Neither direction creates or destroys the neuron — only the description.</em></p>
+
+<p>The point neuron is a ruler. It is a good one, and most of deep learning is built on it. The mistake is not using it; the mistake is reporting its readings as properties of the coast — and then designing the next generation of networks to match the readings instead of the coast.</p>
+
+<hr />
+<p align="center"><img src="/assets/img/papers/coastNeuron/pyramidal_neurons_fine_left_coarse_right.png" width="100%" alt="NeuroFidenza!" /></p>
+
+<p><em>NeuroFidenza!</em></p>
+
+  </section>
+
+  
+  <section class="paper__section prose">
+    <h2>Cite this post</h2>
+    
+<div class="citeblock">
+  <div class="citeblock__head">
+    <span class="citeblock__label">BibTeX</span>
+    <button type="button" class="citeblock__copy" data-cite-copy>Copy</button>
+  </div>
+  <pre><code>@misc{dehghani2026CompRes,
+  author       = {Nima Dehghani},
+  title        = {{What the resolution of a neuron model does to the computation}},
+  year         = {2026},
+  howpublished = {\url{https://neurovium.science/posts/pblog-CoastOfNeuron/}},
+  note         = {Companion post to: How Long Is the Coast of a Neuron? Resolution-Dependent Interaction Order and Computational Capacity (2026). doi:10.48550/arXiv.2610.19487}
+}</code></pre>
+</div>
+  </section>
+  
+
+  
+  <section class="paper__section">
+    <h2>The room this opens</h2>
+    <div class="linkbar">
+      <a href="/papers/Catcomp/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="20" x2="12" y2="12"/><line x1="12" y1="12" x2="21" y2="4"/><line x1="12" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="21" y2="20"/></svg>
+        Follow this path into the Maze
+      </a>
+    </div>
+  </section>
+  
+</article>
+
+      <footer class="foot">
+  <span>© 2026 · Nima Dehghani</span>
+  <span>
+    <a href="https://compneuro.mit.edu/" target="_blank" rel="noopener">compneuro@MIT</a>
+    ·
+    <a href="https://sites.mit.edu/n3hub/" target="_blank" rel="noopener">N3HUB</a>
+  </span>
+</footer>
+
+    </main>
+  </div>
+
+  <script src="/assets/js/quotes.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

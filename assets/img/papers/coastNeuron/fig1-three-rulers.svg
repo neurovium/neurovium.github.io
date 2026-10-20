@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-label="The same dendritic tree measured with three rulers: a somatic ruler sees one variable with five states, a branch ruler two variables with nine states, a contact ruler six variables with sixty-four states." font-family="'IBM Plex Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif">
+<defs>
+<g id="f1-tree" fill="none" stroke="#C9C8C2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<path d="M180 460 C170 420 150 390 130 360"/>
+<path d="M180 460 C190 420 210 390 230 360"/>
+<path d="M130 360 C110 330 90 300 60 265"/>
+<path d="M130 360 C125 320 120 280 112 235"/>
+<path d="M130 360 C140 330 155 300 165 270"/>
+<path d="M230 360 C220 330 205 300 198 270"/>
+<path d="M230 360 C235 320 240 280 248 235"/>
+<path d="M230 360 C250 330 275 300 300 265"/>
+<path d="M180 500 L180 540" stroke-dasharray="2 7"/>
+<circle cx="180" cy="480" r="20" fill="#FCFCFB"/>
+</g>
+<g id="f1-contacts" fill="#C9C8C2">
+<circle cx="60" cy="265" r="5"/><circle cx="112" cy="235" r="5"/><circle cx="165" cy="270" r="5"/>
+<circle cx="198" cy="270" r="5"/><circle cx="248" cy="235" r="5"/><circle cx="300" cy="265" r="5"/>
+</g>
+</defs>
+<rect width="1200" height="680" fill="#FCFCFB"/>
+<text x="40" y="52" font-size="28" font-weight="600" fill="#1B1F26">Same neuron, three rulers</text>
+<text x="40" y="82" font-size="16" fill="#5B6270">What a model "sees" is a joint property of the cell and the ruler used to observe it.</text>
+<line x1="60" y1="112" x2="1140" y2="112" stroke="#5B6270" stroke-width="1.5" marker-end="url(#f1-ah)"/>
+<defs><marker id="f1-ah" orient="auto" markerWidth="8" markerHeight="8" refX="6" refY="4" overflow="visible"><path d="M0 0 L8 4 L0 8 Z" fill="#5B6270"/></marker></defs>
+<text x="60" y="130" font-size="13" fill="#5B6270">coarse ruler (large ε)</text>
+<text x="1140" y="130" font-size="13" fill="#5B6270" text-anchor="end">fine ruler (small ε)</text>
+
+<!-- panel a: somatic ruler -->
+<g transform="translate(40 150)">
+<text x="0" y="0" font-size="18" font-weight="600" fill="#1A73A8">a · Somatic ruler</text>
+<g transform="translate(0 -140)">
+<use href="#f1-tree"/><use href="#f1-contacts"/>
+<circle cx="180" cy="480" r="28" fill="#1A73A8"/>
+<text x="180" y="487" font-size="20" font-weight="600" fill="#FFFFFF" text-anchor="middle" font-family="'IBM Plex Mono', Menlo, monospace">Z</text>
+</g>
+<line x1="40" y1="425" x2="320" y2="425" stroke="#1A73A8" stroke-width="3"/>
+<line x1="40" y1="415" x2="40" y2="435" stroke="#1A73A8" stroke-width="3"/>
+<line x1="320" y1="415" x2="320" y2="435" stroke="#1A73A8" stroke-width="3"/>
+<text x="180" y="412" font-size="13" fill="#1A73A8" text-anchor="middle">one ruler length spans the whole cell</text>
+</g>
+<text x="220" y="630" font-size="15" font-weight="600" fill="#1B1F26" text-anchor="middle">1 variable · 5 states</text>
+<text x="220" y="654" font-size="14" fill="#5B6270" text-anchor="middle" font-family="'IBM Plex Mono', Menlo, monospace">Z = (B₁ + B₂)/2</text>
+
+<!-- panel b: branch ruler -->
+<g transform="translate(420 150)">
+<text x="0" y="0" font-size="18" font-weight="600" fill="#7A4FB5">b · Branch ruler</text>
+<g transform="translate(0 -140)">
+<use href="#f1-tree"/><use href="#f1-contacts"/>
+<ellipse cx="112" cy="300" rx="80" ry="78" fill="#7A4FB5" fill-opacity="0.14" stroke="#7A4FB5" stroke-width="2.5"/>
+<ellipse cx="248" cy="300" rx="80" ry="78" fill="#7A4FB5" fill-opacity="0.14" stroke="#7A4FB5" stroke-width="2.5"/>
+<text x="112" y="355" font-size="18" font-weight="600" fill="#7A4FB5" text-anchor="middle" font-family="'IBM Plex Mono', Menlo, monospace">B₁</text>
+<text x="248" y="355" font-size="18" font-weight="600" fill="#7A4FB5" text-anchor="middle" font-family="'IBM Plex Mono', Menlo, monospace">B₂</text>
+</g>
+<line x1="40" y1="425" x2="320" y2="425" stroke="#7A4FB5" stroke-width="3"/>
+<line x1="40" y1="415" x2="40" y2="435" stroke="#7A4FB5" stroke-width="3"/>
+<line x1="180" y1="415" x2="180" y2="435" stroke="#7A4FB5" stroke-width="3"/>
+<line x1="320" y1="415" x2="320" y2="435" stroke="#7A4FB5" stroke-width="3"/>
+<text x="180" y="412" font-size="13" fill="#7A4FB5" text-anchor="middle">one ruler length per branch</text>
+</g>
+<text x="600" y="630" font-size="15" font-weight="600" fill="#1B1F26" text-anchor="middle">2 variables · 9 states</text>
+<text x="600" y="654" font-size="14" fill="#5B6270" text-anchor="middle" font-family="'IBM Plex Mono', Menlo, monospace">Bᵢ = min(Σ contacts, 2)</text>
+
+<!-- panel c: contact ruler -->
+<g transform="translate(800 150)">
+<text x="0" y="0" font-size="18" font-weight="600" fill="#D9643A">c · Contact ruler</text>
+<g transform="translate(0 -140)">
+<use href="#f1-tree"/>
+<g fill="#D9643A" stroke="#FCFCFB" stroke-width="2">
+<circle cx="60" cy="265" r="9"/><circle cx="112" cy="235" r="9"/><circle cx="165" cy="270" r="9"/>
+<circle cx="198" cy="270" r="9"/><circle cx="248" cy="235" r="9"/><circle cx="300" cy="265" r="9"/>
+</g>
+<g font-size="13" font-weight="500" fill="#D9643A" text-anchor="middle" font-family="'IBM Plex Mono', Menlo, monospace">
+<text x="60" y="248">x₁</text><text x="112" y="218">x₂</text><text x="165" y="253">x₃</text>
+<text x="198" y="253">x₄</text><text x="248" y="218">x₅</text><text x="300" y="248">x₆</text>
+</g>
+</g>
+<line x1="40" y1="425" x2="320" y2="425" stroke="#D9643A" stroke-width="3"/>
+<g stroke="#D9643A" stroke-width="3">
+<line x1="40" y1="415" x2="40" y2="435"/><line x1="87" y1="415" x2="87" y2="435"/><line x1="133" y1="415" x2="133" y2="435"/>
+<line x1="180" y1="415" x2="180" y2="435"/><line x1="227" y1="415" x2="227" y2="435"/><line x1="273" y1="415" x2="273" y2="435"/><line x1="320" y1="415" x2="320" y2="435"/>
+</g>
+<text x="180" y="412" font-size="13" fill="#D9643A" text-anchor="middle">one ruler length per contact</text>
+</g>
+<text x="980" y="630" font-size="15" font-weight="600" fill="#1B1F26" text-anchor="middle">6 variables · 64 states</text>
+<text x="980" y="654" font-size="14" fill="#5B6270" text-anchor="middle" font-family="'IBM Plex Mono', Menlo, monospace">x ∈ {0,1}⁶</text>
+</svg>
