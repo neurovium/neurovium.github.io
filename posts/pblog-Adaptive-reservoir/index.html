@@ -230,6 +230,51 @@ DOI: <code class="language-plaintext highlighter-rouge">https://doi.org/10.48550
 </div>
 
 <hr />
+
+<figure class="video">
+  <div class="video__head">
+    <span class="video__kicker">Watch · the paper in brief</span>
+    <a class="video__out" href="https://www.youtube.com/watch?v=rVq8NT-oLco" target="_blank" rel="noopener">YouTube ↗</a>
+  </div>
+  <a class="video__frame" href="https://www.youtube.com/watch?v=rVq8NT-oLco" data-video="rVq8NT-oLco" data-title="When Prediction Shapes the Machine! EvoOptimization &amp; Structural Constraints on Neural Architecture" aria-label="Play video: When Prediction Shapes the Machine! EvoOptimization &amp; Structural Constraints on Neural Architecture">
+    <img class="video__poster" src="https://i.ytimg.com/vi/rVq8NT-oLco/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/rVq8NT-oLco/hqdefault.jpg'" alt="" loading="lazy" decoding="async" />
+    <span class="video__play" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5.5v13l11-6.5z" fill="currentColor" /></svg>
+    </span>
+  </a>
+  <figcaption class="video__caption">Evolutionary optimization and the structural constraints it reveals on reservoir architecture.</figcaption>
+</figure>
+
+<nav class="toc" aria-label="Contents">
+  <div class="toc__kicker">Contents</div>
+
+<ul id="markdown-toc">
+  <li><a href="#how-this-project-began" id="markdown-toc-how-this-project-began">How this project began</a></li>
+  <li><a href="#1-prediction-as-a-biological-and-physical-problem" id="markdown-toc-1-prediction-as-a-biological-and-physical-problem">1. Prediction as a biological and physical problem</a></li>
+  <li><a href="#2-why-kuramotosivashinsky-chaos" id="markdown-toc-2-why-kuramotosivashinsky-chaos">2. Why Kuramoto–Sivashinsky chaos?</a></li>
+  <li><a href="#3-what-was-evolved" id="markdown-toc-3-what-was-evolved">3. What was evolved?</a></li>
+  <li><a href="#4-fitness-not-just-low-error-but-spatially-meaningful-prediction" id="markdown-toc-4-fitness-not-just-low-error-but-spatially-meaningful-prediction">4. Fitness: not just low error, but spatially meaningful prediction</a></li>
+  <li><a href="#5-the-first-result-evolution-improves-the-whole-population-not-just-a-few-elites" id="markdown-toc-5-the-first-result-evolution-improves-the-whole-population-not-just-a-few-elites">5. The first result: evolution improves the whole population, not just a few elites</a></li>
+  <li><a href="#6-forecast-horizon-prediction-in-chaos-is-about-staying-aligned" id="markdown-toc-6-forecast-horizon-prediction-in-chaos-is-about-staying-aligned">6. Forecast horizon: prediction in chaos is about staying aligned</a></li>
+  <li><a href="#7-size-helps-but-only-with-diminishing-returns" id="markdown-toc-7-size-helps-but-only-with-diminishing-returns">7. Size helps, but only with diminishing returns</a></li>
+  <li><a href="#8-spectral-analysis-looking-at-the-reservoir-as-a-dynamical-graph" id="markdown-toc-8-spectral-analysis-looking-at-the-reservoir-as-a-dynamical-graph">8. Spectral analysis: looking at the reservoir as a dynamical graph</a></li>
+  <li><a href="#9-the-key-spectral-result-evolution-targets-slow-modes" id="markdown-toc-9-the-key-spectral-result-evolution-targets-slow-modes">9. The key spectral result: evolution targets slow modes</a></li>
+  <li><a href="#10-spectral-conservation-and-selective-refinement" id="markdown-toc-10-spectral-conservation-and-selective-refinement">10. Spectral conservation and selective refinement</a></li>
+  <li><a href="#11-modularity-neither-fully-mixed-nor-fully-segregated" id="markdown-toc-11-modularity-neither-fully-mixed-nor-fully-segregated">11. Modularity: neither fully mixed nor fully segregated</a></li>
+  <li><a href="#12-connection-cost-pruning-inside-a-locked-modular-regime" id="markdown-toc-12-connection-cost-pruning-inside-a-locked-modular-regime">12. Connection cost: pruning inside a locked modular regime</a></li>
+  <li><a href="#13-pareto-geometry-the-horizontal-floor" id="markdown-toc-13-pareto-geometry-the-horizontal-floor">13. Pareto geometry: the horizontal floor</a></li>
+  <li><a href="#14-what-does-this-mean-for-mechanistic-interpretability" id="markdown-toc-14-what-does-this-mean-for-mechanistic-interpretability">14. What does this mean for mechanistic interpretability?</a></li>
+  <li><a href="#15-what-does-this-mean-for-physics" id="markdown-toc-15-what-does-this-mean-for-physics">15. What does this mean for physics?</a></li>
+  <li><a href="#16-what-does-this-mean-for-machine-learning-and-ai" id="markdown-toc-16-what-does-this-mean-for-machine-learning-and-ai">16. What does this mean for machine learning and AI?</a></li>
+  <li><a href="#17-what-does-this-mean-for-neuroscience-and-biology" id="markdown-toc-17-what-does-this-mean-for-neuroscience-and-biology">17. What does this mean for neuroscience and biology?</a></li>
+  <li><a href="#18-the-broader-principle-conserved-class-refined-feature" id="markdown-toc-18-the-broader-principle-conserved-class-refined-feature">18. The broader principle: conserved class, refined feature</a></li>
+  <li><a href="#19-why-this-work-is-not-just-hyperparameter-optimization" id="markdown-toc-19-why-this-work-is-not-just-hyperparameter-optimization">19. Why this work is not just hyperparameter optimization</a></li>
+  <li><a href="#20-outlook" id="markdown-toc-20-outlook">20. Outlook</a></li>
+  <li><a href="#21-conclusion" id="markdown-toc-21-conclusion">21. Conclusion</a></li>
+</ul>
+
+</nav>
+
 <h2 id="how-this-project-began">How this project began</h2>
 
 <p>This project began with a question much broader than reservoir computing:</p>
