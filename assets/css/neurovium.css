@@ -55,6 +55,13 @@
   --fork-soft:        rgba(122, 46, 58, 0.18);
   --fork-glow:        rgba(122, 46, 58, 0.10);
 
+  /* ---------- Released / complete (fullmetal_decade arc) ---------- */
+  /* Verdigris, not a signal green: a weathered-copper ink that sits on the
+     warm paper beside --fork without becoming a brand colour. */
+  --done:             #3f6a52;
+  --done-soft:        rgba(63, 106, 82, 0.38);
+  --done-glow:        rgba(63, 106, 82, 0.09);
+
   --semantic-error:   #b3261e;
   --semantic-success: #2e7d4f;
 
@@ -2271,6 +2278,18 @@ a.chap__pill--pdf:hover { border-color: var(--fork); color: var(--fork); }
 }
 .fmd__kicker--fork { color: var(--fork); }
 
+/* Kicker and the dateline share the top row, letter-fashion */
+.fmd__hero-top {
+  display: flex; flex-wrap: wrap; align-items: baseline;
+  justify-content: space-between; gap: 6px 24px; margin-bottom: 16px;
+}
+.fmd__hero-top .fmd__kicker { margin-bottom: 0; }
+.fmd__dateline {
+  font-family: var(--serif); font-weight: 300; font-style: italic;
+  font-size: 15px; line-height: 1.4; letter-spacing: -0.1px;
+  color: var(--muted); margin: 0;
+}
+
 .fmd__title {
   font-family: var(--mono); font-weight: 500;
   font-size: clamp(30px, 4.6vw, 56px); line-height: 1.02;
@@ -2487,6 +2506,18 @@ a.chap__pill--pdf:hover { border-color: var(--fork); color: var(--fork); }
 }
 .chap__pill--room { border-color: var(--hairline-strong); }
 a.chap__pill--room:hover { border-color: var(--ink); color: var(--ink); }
+
+/* Written in sequence and now out: the one verdigris mark on the page */
+.chap__pill--done {
+  color: var(--done); border-color: var(--done-soft); background: var(--done-glow);
+  font-style: normal;
+}
+.chap__pill--done svg { width: 11px; height: 11px; }
+.fmd__legend .chap__pill--done { padding: 3px 9px; font-size: 9px; }
+
+/* Video: a film-frame schematic; opens YouTube in a new tab */
+.chap__pill--video svg { width: 17px; height: 12px; }
+a.chap__pill--video:hover { background: var(--ink); border-color: var(--ink); color: var(--on-ink); }
 
 /* ---------- Reading routes ---------- */
 .fmd__routes {
