@@ -558,6 +558,17 @@ code, pre, kbd { font-family: var(--mono); font-size: 14px; }
 }
 .card--compact:hover, .pcard--post:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-2px); }
 .card--compact .card__title { font-size: 20px; }
+/* Blog card: a "Video" label on the kicker row when the post has video:.
+   Not a link — the whole card already is one; the post opens on the video. */
+.card__kicker-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 22px; } /* = label height, so titles align across a row */
+.card__video {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--ink-soft); line-height: 14px;
+  padding: 3px 9px 3px 8px; border-radius: 9999px;   /* 14 + 6 + 2 border = 22px */
+  border: 1px solid var(--hairline-strong);
+}
+.card__video svg { width: 15px; height: 11px; color: var(--wash-rust); flex-shrink: 0; }
 
 /* =====================================================================
    Tag filter — concept doors
