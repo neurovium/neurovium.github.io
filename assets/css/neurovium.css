@@ -234,6 +234,16 @@ code, pre, kbd { font-family: var(--mono); font-size: 14px; }
 }
 .side__nav a.side__mark:hover { color: var(--ink); }
 .side__nav a.side__mark.is-active { color: var(--fork); border-left-color: var(--fork); font-weight: 600; }
+/* Videos: a small oxblood film-frame after the label, sized to the 14px nav
+   text (the SVG also carries width/height attributes so it can never render
+   at intrinsic size). Its play wedge glows three times on load, then rests. */
+.side__film { width: 15px; height: 11px; margin-left: 6px; vertical-align: -1px; color: var(--fork); }
+.side__film path { animation: side-video-play 2.4s var(--ease) 0.8s 3 both; }
+@keyframes side-video-play {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.3; }
+}
+@media (prefers-reduced-motion: reduce) { .side__film path { animation: none; } }
 .side__pip { display: inline-block; margin-left: 6px; width: 6px; height: 6px; background: var(--fork); border-radius: 50%; vertical-align: middle; }
 
 /* Sidebar disclosure group (Reflections) */
@@ -844,6 +854,8 @@ code, pre, kbd { font-family: var(--mono); font-size: 14px; }
 .list-row__action--pdf  { --action-wash: var(--wash-teal); }
 .list-row__action--bib  { --action-wash: var(--fork); }
 .list-row__action--code { --action-wash: var(--wash-plum); }
+.list-row__action--video { --action-wash: var(--wash-rust); }
+.list-row__action--video svg { width: 17px; height: 12px; }   /* film frame is 28:20, not square */
 
 @media (max-width: 640px) {
   .list-row { grid-template-columns: 1fr; gap: 10px; padding: 16px 14px 16px 18px; }
@@ -903,6 +915,8 @@ a.tag:hover { color: var(--fork); border-color: var(--fork-soft); }
 .linkbar a:hover, .link-pill:hover { background: var(--paper); border-color: var(--ink); }
 .linkbar a svg, .link-pill svg { width: 14px; height: 14px; color: var(--muted); }
 .linkbar a:hover svg, .link-pill:hover svg { color: var(--ink); }
+/* Video: the film-frame schematic shared with the fullmetal_decade pills */
+.linkbar a.linkbar__video svg { width: 19px; height: 14px; }
 
 .bibtex { border: 1px solid var(--hairline); border-radius: 12px; overflow: hidden; margin-top: 16px; }
 .bibtex summary { list-style: none; cursor: pointer; padding: 12px 16px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; color: var(--muted); display: flex; justify-content: space-between; align-items: center; }
